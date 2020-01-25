@@ -1,0 +1,24 @@
+/* SINTESI IMPORTI */
+/* ****************************************************************** */
+.ct-series.spesaMateriaEnergia .ct-slice-donut {
+	/* fill: hsl(120, 40%, 60%); */
+	/* stroke: white; */
+	/* stroke-width: 4px; */
+	stroke: #ff7300;
+}
+
+.ct-series.spesaTrasporto .ct-slice-donut {
+	stroke: #404040;
+}
+
+.ct-series.spesaOneri .ct-slice-donut {
+	stroke: #80ff00;
+}
+
+.ct-series.imposte .ct-slice-donut {
+	stroke: #ffff00;
+}
+
+.ct-series.iva .ct-slice-donut {
+	stroke: #000000;
+}
