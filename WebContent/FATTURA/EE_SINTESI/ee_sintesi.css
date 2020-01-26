@@ -255,23 +255,23 @@ page[size="A4"] {
 	}
 	
 	#sintesiImporti .grafico .contenuto .legenda .voce-legenda.spesaMateriaEnergia .box-colore .rettangolo {
-		background-color: #ff7300;
+		background-color: #ff7300; /* vedi file charts.css */
 	}
 	
 	#sintesiImporti .grafico .contenuto .legenda .voce-legenda.spesaTrasporto .box-colore .rettangolo {
-		background-color: #404040;
+		background-color: #404040; /* vedi file charts.css */
 	}
 	
 	#sintesiImporti .grafico .contenuto .legenda .voce-legenda.spesaOneri .box-colore .rettangolo {
-		background-color: #80ff00;
+		background-color: #80ff00; /* vedi file charts.css */
 	}
 	
 	#sintesiImporti .grafico .contenuto .legenda .voce-legenda.imposte .box-colore .rettangolo {
-		background-color: #ffff00;
+		background-color: #ffff00; /* vedi file charts.css */
 	}
 	
 	#sintesiImporti .grafico .contenuto .legenda .voce-legenda.iva .box-colore .rettangolo {
-		background-color: #000000;
+		background-color: #000000; /* vedi file charts.css */
 	}
 	
 	#sintesiImporti .grafico .contenuto .legenda .voce-legenda .valore-in-euro,
@@ -405,7 +405,51 @@ page[size="A4"] {
 		}
 
 
+/* QUADRO LETTURE E CONSUMI =============================== */
+#quadroLettureEConsumi .titolo .contenuto {
+   	font-size: 13px;
+    color: #ffffff;
+    background-color: #ee9a50; /* arancione */
+    padding: 0px 5px;
+    height: 22px;
+    line-height: 24px;
+    margin-bottom: 6px;
+}
 
+#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda {
+	font-size: 8px;
+}
+
+#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda .voce-legenda {
+	margin-bottom: 1px;
+}
+
+#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda .voce-legenda .box-colorato {
+	display: inline-block;
+	width: 5px;
+	height: 5px;
+	margin-right: 4px;
+}
+
+#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda .voce-legenda .box-colorato.tipoDato {
+	background-color: #f67b28; /* vedi file charts.css */
+}
+
+#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda .voce-legenda .box-colorato.f1 {
+	background-color: #ffc604; /* vedi file charts.css */
+}
+
+#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda .voce-legenda .box-colorato.f2 {
+	background-color: #70b243; /* vedi file charts.css */
+}
+
+#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda .voce-legenda .box-colorato.f3 {
+	background-color: #a34b15; /* vedi file charts.css */
+}
+
+#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda .voce-legenda .etichetta {
+	display: inline-block;
+}
 
 
 
@@ -419,47 +463,47 @@ page[size="A4"] {
 
 
 /* FOOTER PER FOGLIO A4 */
-.footer-foglio-A4 {
-	color: #ffffff;
-	font-size: 10px;
-    text-align: center;
-    padding: 0 35px;
-    line-height: 1.2;
-	page-break-after: always;
-}
-
-.footer-foglio-A4.pagina-1 {
-	margin-top: 41px;
-}
-
-.footer-foglio-A4.pagina- {
-	margin-top: 41px;
-}
-
-.footer-foglio-A4 .contenuto {
-	background-color: #b4252d;
-	padding: 6px 0 3px;
-    border-radius: 10px 10px 0 0;
-}
-
-.footer-foglio-A4 .contenuto .nome-societa {
-	font-weight: bold;
-}
-
-.footer-foglio-A4 .contenuto .info-societa-1,
-.footer-foglio-A4 .contenuto .info-societa-2,
-.footer-foglio-A4 .contenuto .info-societa-3 {
-	font-size: 8px;
-}
-
-.footer-foglio-A4 .contenuto .sito {
-	font-size: 9px;
-}
-
-.footer-foglio-A4 .contenuto .sito,
-.footer-foglio-A4 .contenuto .numero-verde {
-	font-weight: bold;
-}
+	.footer-foglio-A4 {
+		color: #ffffff;
+		font-size: 10px;
+	    text-align: center;
+	    padding: 0 35px;
+	    line-height: 1.2;
+		page-break-after: always;
+	}
+	
+	.footer-foglio-A4.pagina-1 {
+		margin-top: 41px;
+	}
+	
+	.footer-foglio-A4.pagina- {
+		margin-top: 41px;
+	}
+	
+	.footer-foglio-A4 .contenuto {
+		background-color: #b4252d;
+		padding: 6px 0 3px;
+	    border-radius: 10px 10px 0 0;
+	}
+	
+	.footer-foglio-A4 .contenuto .nome-societa {
+		font-weight: bold;
+	}
+	
+	.footer-foglio-A4 .contenuto .info-societa-1,
+	.footer-foglio-A4 .contenuto .info-societa-2,
+	.footer-foglio-A4 .contenuto .info-societa-3 {
+		font-size: 8px;
+	}
+	
+	.footer-foglio-A4 .contenuto .sito {
+		font-size: 9px;
+	}
+	
+	.footer-foglio-A4 .contenuto .sito,
+	.footer-foglio-A4 .contenuto .numero-verde {
+		font-weight: bold;
+	}
 
 
 

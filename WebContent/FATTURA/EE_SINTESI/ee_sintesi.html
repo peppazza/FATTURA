@@ -15,6 +15,17 @@
     <script src="customs.js"></script>
     <script src="chartist/dist/chartist.min.js"></script>
 	<script src="axistitle/dist/chartist-plugin-axistitle.min.js"></script>
+	
+	<script type="text/javascript">
+		function checkValoreNumerico(val) {
+			if (val) {
+				val = val.trim();
+				if (val && !isNaN(val))
+					return Number(val);
+			}
+			return 0;
+		}	
+	</script>
 </head>
 <body>
 	<!-- LOGHI - start ========== -->
@@ -209,14 +220,14 @@
 		<div class="pure-u-17-24 grafico">
 			<div class="contenuto">
 				<div class="pure-g">
-					<!-- grafico a torta -->
+					<!-- GRAFICO A TORTA -->
 					<div class="pure-u-10-24">
 						<div class="titolo">SINTESI DEGLI IMPORTI</div>
 						<div class="grafico-torta">
 							<div id="graficoSintesiImporti" class="ct-chart ct-perfect-fourth"></div>
 						</div>
 					</div>
-					<!-- legenda + cifre da pagare -->
+					<!-- LEGENDA + CIFRE DA PAGARE -->
 					<div class="pure-u-14-24">
 						<div class="legenda">
 							<div class="pure-g voce-legenda spesaMateriaEnergia">
@@ -322,9 +333,67 @@
 		</div>
 	</div>
 	<!-- ========== end - SINTESI IMPORTI -->
-
-
-	<!-- CONTATTI/AUTOLETTURA/GUASTI - start... -->		
+	
+	<!-- ****** GRAFICO SINTESI IMPORTI - DATI -->
+	<!-- =================================================== -->
+	<div id="datiSintesiImporti" style="display: none;">
+		<div class="datiSintesiImporti spesaMateriaEnergia">131.1</div>
+		<div class="datiSintesiImporti spesaTrasporto">23.34</div>
+		<div class="datiSintesiImporti spesaOneri">79.2</div>
+		<div class="datiSintesiImporti imposte">27.9</div>
+		<div class="datiSintesiImporti iva">26</div>
+	</div>
+	<!-- ****** GRAFICO SINTESI IMPORTI - JS -->
+	<!-- =================================================== -->
+	<script type="text/javascript">
+        try {
+        	(function () {
+                var spesaMateriaEnergia = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti spesaMateriaEnergia')[0].innerHTML);
+    			var spesaTrasporto = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti spesaTrasporto')[0].innerHTML);
+    			var spesaOneri = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti spesaOneri')[0].innerHTML);
+    			var imposte = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti imposte')[0].innerHTML);
+    			var iva = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti iva')[0].innerHTML);
+    			
+            	new Chartist.Pie('#graficoSintesiImporti', {
+        			series: [{
+        			    value: spesaMateriaEnergia,
+        			    name: 'Spesa materia energia',
+        			 	className: 'spesaMateriaEnergia',
+        			    meta: 'Meta - Spesa materia energia'
+        			  }, {
+        			    value: spesaTrasporto,
+        			    name: 'Spesa trasporto',
+        			 	className: 'spesaTrasporto',
+        			    meta: 'Meta - Spesa trasporto'
+        			  }, {
+        			    value: spesaOneri,
+        			    name: 'Spesa oneri',
+        			    className: 'spesaOneri',
+        			    meta: 'Meta - Spesa oneri'
+        			  }, {
+          			    value: imposte,
+          			    name: 'Imposte',
+          			  	className: 'imposte',
+          			    meta: 'Meta - Imposte'
+        			  }, {
+          			    value: iva,
+          			    name: 'IVA',
+          			  	className: 'iva',
+          			    meta: 'Meta - IVA'
+          			  }]
+        			}, {
+        				donut : true,
+        				donutWidth: 36,
+        				showLabel : false
+        			});
+    		})();
+        } catch(err) {
+        	console.log('errore init graficoSintesiImporti', err);
+        }
+	</script>
+	
+	
+	<!-- CONTATTI/AUTOLETTURA/GUASTI - start ========== -->		
 	<div id="contattiAutoletturaGuasti" class="pure-g">
 		<!-- contatti utili -->
 		<div class="pure-u-8-24 contatti">
@@ -396,7 +465,10 @@
 			</div>
 		</div>
 	</div>
+	<!-- ========== end - CONTATTI/AUTOLETTURA/GUASTI -->		
 	
+		
+	<!-- FOOTER PAGINA 1 - start ========== -->
 	<div class="footer-foglio-A4 pagina-1">
 		<div class="contenuto">
 			<div class="nome-societa">Omnia Energia S.p.A.</div>
@@ -417,123 +489,196 @@
 			</div>
 		</div>
 	</div>
+	<!-- ========== end - FOOTER PAGINA 1 -->
+	
+	<!-- ********************** PAGINA 1 FINE ********************** -->
+	<!-- *********************************************************** -->
+
+
 	
 	<div style="padding: 10px 0"></div>
 	
-	<div class="footer-foglio-A4">
-		<div class="contenuto">
-			<div class="nome-societa">Omnia Energia S.p.A.</div>
-			<div class="info-societa-1">
-				Via Beato F. Marino, 102 Z.I. 87040 Zumpano (CS)
-				Tel. +39 0984 825356 Fax +39 0984 845148 Numero Verde <span class="numero-verde">800 98 44 55</span>
-				info@omniaenergia.it				
+	
+	<!-- QUADRO LETTURE E CONSUMI 1 - start ========== -->
+	<div id="quadroLettureEConsumi" class="pure-g">
+		<div class="pure-u-24-24">
+			<div class="pure-g titolo">
+				<div class="pure-u-24-24 contenuto">QUADRO LETTURE E CONSUMI</div>
 			</div>
-			<div class="info-societa-2">
-				Partita Iva 02599020787 Reg. Imprese CS R.E.A. 176099 Capitale Sociale € 900.000,00 interamente versato
-			</div>
-			<div class="info-societa-2">
-				La società è soggetta a direzione e coordinamento di Vida Srl
-				Cod. Fiscale 02637510781 Iscitta al Registro delle Imprese di Cosenza n° 02637510781 v° R.E.A. 178944
-			</div>
-			<div class="sito">
-				www.omniaenergia.it
+			<div class="pure-g">
+				<div class="pure-u-9-24 grafico">
+					<div class="contenuto">
+						<div id="graficoQuadroLettureEConsumi"></div>
+					</div>
+				</div>
+				<div class="pure-u-15-24">
+					<div class="legenda-grafico-plus-tabella-dati">
+						<div class="legenda">
+							<div class="voce-legenda">
+								<div class="box-colorato tipoDato"></div><div class="etichetta">Tipo Dato</div>
+							</div>
+							<div class="voce-legenda">
+								<div class="box-colorato f1"></div><div class="etichetta">Consumo Fatturato [kWh] F1</div>
+							</div>
+							<div class="voce-legenda">
+								<div class="box-colorato f2"></div><div class="etichetta">Consumo Fatturato [kWh] F2</div>
+							</div>
+							<div class="voce-legenda">
+								<div class="box-colorato f3"></div><div class="etichetta">Consumo Fatturato [kWh] F3</div>
+							</div>
+						</div>
+						<div class="tabella-dati">
+										
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
+	<!-- ========== end - QUADRO LETTURE E CONSUMI -->
 	
-	<div style="padding: 10px 0"></div>
-	
-	<div class="footer-foglio-A4">
-		<div class="contenuto">
-			<div class="nome-societa">Omnia Energia S.p.A.</div>
-			<div class="info-societa-1">
-				Via Beato F. Marino, 102 Z.I. 87040 Zumpano (CS)
-				Tel. +39 0984 825356 Fax +39 0984 845148 Numero Verde <span class="numero-verde">800 98 44 55</span>
-				info@omniaenergia.it				
-			</div>
-			<div class="info-societa-2">
-				Partita Iva 02599020787 Reg. Imprese CS R.E.A. 176099 Capitale Sociale € 900.000,00 interamente versato
-			</div>
-			<div class="info-societa-2">
-				La società è soggetta a direzione e coordinamento di Vida Srl
-				Cod. Fiscale 02637510781 Iscitta al Registro delle Imprese di Cosenza n° 02637510781 v° R.E.A. 178944
-			</div>
-			<div class="sito">
-				www.omniaenergia.it
-			</div>
-		</div>
-	</div>
-	
-	
-	
-
-
-
-	<!-- DATI PER JS -->
+	<!-- ****** GRAFICO QUADRO LETTURE E CONSUMI - DATI -->
 	<!-- =================================================== -->
-	<div id="datiSintesiImporti" style="display: none;">
-		<div class="datiSintesiImporti spesaMateriaEnergia">131.1</div>
-		<div class="datiSintesiImporti spesaTrasporto">23.34</div>
-		<div class="datiSintesiImporti spesaOneri">79.2</div>
-		<div class="datiSintesiImporti imposte">27.9</div>
-		<div class="datiSintesiImporti iva">26</div>
+	<div id="datiQuadroLettureEConsumi" style="display: none;">
+		<!-- dati distributore -->
+		<div class="datiQuadroLettureEConsumi distributoreMese">giu 19</div>
+		<div class="datiQuadroLettureEConsumi distributoreTipoDato">48</div>
+		<div class="datiQuadroLettureEConsumi distributoreF1">54</div>
+		<div class="datiQuadroLettureEConsumi distributoreF2">75</div>
+		<div class="datiQuadroLettureEConsumi distributoreF3">4</div>
+		<!-- dati stima -->
+		<div class="datiQuadroLettureEConsumi stimaMese">lug 19</div>
+		<div class="datiQuadroLettureEConsumi stimaTipoDato">45</div>
+		<div class="datiQuadroLettureEConsumi stimaF1">53</div>
+		<div class="datiQuadroLettureEConsumi stimaF2">58</div>
+		<div class="datiQuadroLettureEConsumi stimaF3">2</div>
+	</div>
+	<!-- ****** GRAFICO QUADRO LETTURE E CONSUMI - JS -->
+	<!-- =================================================== -->
+	<script type="text/javascript">
+		try {
+			(function() {
+				var distributoreMese = document.getElementsByClassName('datiQuadroLettureEConsumi distributoreMese')[0].innerHTML;
+    			var distributoreTipoDato = checkValoreNumerico(document.getElementsByClassName('datiQuadroLettureEConsumi distributoreTipoDato')[0].innerHTML);
+    			var distributoreF1 = checkValoreNumerico(document.getElementsByClassName('datiQuadroLettureEConsumi distributoreF1')[0].innerHTML);
+    			var distributoreF2 = checkValoreNumerico(document.getElementsByClassName('datiQuadroLettureEConsumi distributoreF2')[0].innerHTML);
+    			var distributoreF3 = checkValoreNumerico(document.getElementsByClassName('datiQuadroLettureEConsumi distributoreF3')[0].innerHTML);
+    			var distributoreSum = distributoreTipoDato + distributoreF1 + distributoreF2 + distributoreF3; 
+    			
+    			var stimaMese = document.getElementsByClassName('datiQuadroLettureEConsumi stimaMese')[0].innerHTML;
+    			var stimaTipoDato = checkValoreNumerico(document.getElementsByClassName('datiQuadroLettureEConsumi stimaTipoDato')[0].innerHTML);
+    			var stimaF1 = checkValoreNumerico(document.getElementsByClassName('datiQuadroLettureEConsumi stimaF1')[0].innerHTML);
+    			var stimaF2 = checkValoreNumerico(document.getElementsByClassName('datiQuadroLettureEConsumi stimaF2')[0].innerHTML);
+    			var stimaF3 = checkValoreNumerico(document.getElementsByClassName('datiQuadroLettureEConsumi stimaF3')[0].innerHTML);
+    			var stimaSum = stimaTipoDato + stimaF1 + stimaF2 + stimaF3;
+    			
+				new Chartist.Bar('#graficoQuadroLettureEConsumi', {
+					labels : [ 'Distributore' , 'Stima' ],
+					series : [ {
+							name : 'tipoDato',
+							className : 'tipoDato',
+							data : [ distributoreTipoDato, stimaTipoDato ]
+						}, {
+							name : 'f1',
+							className : 'f1',
+							data : [ distributoreF1, stimaF1 ]
+						}, {
+							name : 'f2',
+							className : 'f2',
+							data : [ distributoreF2, stimaF2 ]
+						}, {
+							name : 'f3',
+							className : 'f3',
+							data : [ distributoreF3, stimaF3 ]
+						} ]
+					}, {
+						stackBars : true,
+					    showGrid: true,
+					    axisX: {
+							labelInterpolationFnc: function(value) {
+						    	return value + '\n' + (value === 'Distributore' ? distributoreSum : stimaSum) + '\n' + (value === 'Distributore' ? distributoreMese : stimaMese);
+						    }
+						},
+						chartPadding: {
+							bottom: 15 // consente di mostrare le labels dell'asse X qualora la loro altezza superasse i 20px (valore di default?)
+					  	},
+					}).on('draw', function(data) {
+						if (data.type === 'bar') {
+							data.element.attr({
+								style : 'stroke-width: 38px'
+							});
+						}
+					});
+			})();
+		} catch (err) {
+			console.log('errore init graficoQuadroLettureEConsumi', err);
+		}
+	</script>
+    
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div style="padding: 10px 0"></div>
+	
+	<div class="footer-foglio-A4">
+		<div class="contenuto">
+			<div class="nome-societa">Omnia Energia S.p.A.</div>
+			<div class="info-societa-1">
+				Via Beato F. Marino, 102 Z.I. 87040 Zumpano (CS)
+				Tel. +39 0984 825356 Fax +39 0984 845148 Numero Verde <span class="numero-verde">800 98 44 55</span>
+				info@omniaenergia.it				
+			</div>
+			<div class="info-societa-2">
+				Partita Iva 02599020787 Reg. Imprese CS R.E.A. 176099 Capitale Sociale € 900.000,00 interamente versato
+			</div>
+			<div class="info-societa-2">
+				La società è soggetta a direzione e coordinamento di Vida Srl
+				Cod. Fiscale 02637510781 Iscitta al Registro delle Imprese di Cosenza n° 02637510781 v° R.E.A. 178944
+			</div>
+			<div class="sito">
+				www.omniaenergia.it
+			</div>
+		</div>
 	</div>
 	
-	<script type="text/javascript">
-		function checkValoreNumerico(val) {
-			if (val) {
-				val = val.trim();
-				if (val && !isNaN(val))
-					return val;
-			}
-			return 0;
-		}
+	<div style="padding: 10px 0"></div>
 	
-        (function () {
-            // createChartEE();
-            // hideElements("E");
-    
-            var spesaMateriaEnergia = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti spesaMateriaEnergia')[0].innerHTML);
-			var spesaTrasporto = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti spesaTrasporto')[0].innerHTML);
-			var spesaOneri = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti spesaOneri')[0].innerHTML);
-			var imposte = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti imposte')[0].innerHTML);
-			var iva = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti iva')[0].innerHTML);
-			
-        	new Chartist.Pie('#graficoSintesiImporti', {
-    			series: [{
-    			    value: spesaMateriaEnergia,
-    			    name: 'Series 1',
-    			 	className: 'spesaMateriaEnergia',
-    			    meta: 'Meta One'
-    			  }, {
-    			    value: spesaTrasporto,
-    			    name: 'Series 2',
-    			 	className: 'spesaTrasporto',
-    			    meta: 'Meta Two'
-    			  }, {
-    			    value: spesaOneri,
-    			    name: 'Series 3',
-    			    className: 'spesaOneri',
-    			    meta: 'Meta Three'
-    			  }, {
-      			    value: imposte,
-      			    name: 'Series 3',
-      			  	className: 'imposte',
-      			    meta: 'Meta Three'
-    			  }, {
-      			    value: iva,
-      			    name: 'Series 3',
-      			  	className: 'iva',
-      			    meta: 'Meta Three'
-      			  }]
-    			}, {
-    				donut : true,
-    				donutWidth: 36,
-    				showLabel : false
-    			});
-		})();
+	<div class="footer-foglio-A4">
+		<div class="contenuto">
+			<div class="nome-societa">Omnia Energia S.p.A.</div>
+			<div class="info-societa-1">
+				Via Beato F. Marino, 102 Z.I. 87040 Zumpano (CS)
+				Tel. +39 0984 825356 Fax +39 0984 845148 Numero Verde <span class="numero-verde">800 98 44 55</span>
+				info@omniaenergia.it				
+			</div>
+			<div class="info-societa-2">
+				Partita Iva 02599020787 Reg. Imprese CS R.E.A. 176099 Capitale Sociale € 900.000,00 interamente versato
+			</div>
+			<div class="info-societa-2">
+				La società è soggetta a direzione e coordinamento di Vida Srl
+				Cod. Fiscale 02637510781 Iscitta al Registro delle Imprese di Cosenza n° 02637510781 v° R.E.A. 178944
+			</div>
+			<div class="sito">
+				www.omniaenergia.it
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	
 
-	</script>
+	
+	
+	
+	
     
 </body>
 </html>
