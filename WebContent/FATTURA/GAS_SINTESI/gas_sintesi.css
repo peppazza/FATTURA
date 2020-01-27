@@ -50,7 +50,7 @@ page[size="A4"] {
 	#datiFornitura .dati-colonna-left .titolo {
 	    font-size: 13px;
 	    color: #ffffff;
-	    background-color: #ee9a50; /* arancione */
+	    background-color: #2f75b5; /* blu */
 	    padding: 0px 5px;
 	    height: 22px;
 	    line-height: 24px;
@@ -97,7 +97,7 @@ page[size="A4"] {
 		margin-bottom: 8px;
 	}
 	
-	#datiFornitura .dati-colonna-right .spedizione-plus-tipo-bolletta .tipo-bolletta .lampadina img {
+	#datiFornitura .dati-colonna-right .spedizione-plus-tipo-bolletta .tipo-bolletta .fiamma img {
 		width: 27px;
 	}
 
@@ -109,12 +109,12 @@ page[size="A4"] {
 	}
 	
 	#clienteBollettaImporto .separatore {
-		border-top: 1px solid #ee9a50; /* arancione */
+		border-top: 1px solid #2f75b5; /* blu */
 		margin-bottom: 4px;
 	}
 	
 	#clienteBollettaImporto .etichetta {
-		color: #ee9a50;
+		color: #2f75b5;
 	    font-weight: bold;
 	    margin-bottom: 2px;
 	}
@@ -137,12 +137,12 @@ page[size="A4"] {
 	/* bolletta */
 	#clienteBollettaImporto .bolletta .contenuto {
 		padding: 0 5px;
-		border-left: 1px solid #ee9a50; /* arancione */
-		border-right: 1px solid #ee9a50;
+		border-left: 1px solid #2f75b5; /* blu */
+		border-right: 1px solid #2f75b5;
 	}
 	
 	#clienteBollettaImporto .bolletta .contenuto .titolo {
-		color: #ee9a50;
+		color: #2f75b5;
 	    font-weight: bold;
 	    padding: 4px 0;
 	    margin-bottom: 4px;
@@ -163,7 +163,7 @@ page[size="A4"] {
 	}
 	
 	#clienteBollettaImporto .importo .contenuto .titolo {
-		color: #ee9a50;
+		color: #2f75b5;
 	    font-weight: bold;
 	    padding: 4px 0;
 	    margin-bottom: 5px;
@@ -182,7 +182,7 @@ page[size="A4"] {
 	}
 	
 	#clienteBollettaImporto .importo .contenuto .data-scadenza .data {
-		color: #ee9a50;
+		color: #2f75b5;
 	}
 	
 	/* grazie */
@@ -198,7 +198,7 @@ page[size="A4"] {
 	}
 	
 	#clienteBollettaImporto .grazie .contenuto .titolo .icona {
-		color: #ee9a50; /* arancione */
+		color: #2f75b5; /* blu */
 	}
 	
 	#clienteBollettaImporto .grazie .contenuto .messaggio {
@@ -212,7 +212,7 @@ page[size="A4"] {
 	}
 	
 	#sintesiImporti .grafico {
-		border-top: 2px solid #ee9a50; /* arancione */
+		border-top: 2px solid #2f75b5; /* blu */
 	}
 	
 	#sintesiImporti .grafico .contenuto {
@@ -222,7 +222,7 @@ page[size="A4"] {
 	}
 	
 	#sintesiImporti .grafico .contenuto .titolo {
-		color: #ee9a50; /* arancione */
+		color: #2f75b5; /* blu */
 		font-size: 14px;
 		font-weight: bold;
 	    height: 20px;
@@ -254,24 +254,24 @@ page[size="A4"] {
 	    margin-top: 1px;
 	}
 	
-	#sintesiImporti .grafico .contenuto .legenda .voce-legenda.spesaMateriaEnergia .box-colore .rettangolo {
-		background-color: #ff7300; /* vedi file charts.css */
+	#sintesiImporti .grafico .contenuto .legenda .voce-legenda.spesaMateriaGasNaturale .box-colore .rettangolo {
+		background-color: #9bc2e6; /* vedi file charts.css */
 	}
 	
 	#sintesiImporti .grafico .contenuto .legenda .voce-legenda.spesaTrasporto .box-colore .rettangolo {
-		background-color: #404040; /* vedi file charts.css */
+		background-color: #ed7d31; /* vedi file charts.css */
 	}
 	
 	#sintesiImporti .grafico .contenuto .legenda .voce-legenda.spesaOneri .box-colore .rettangolo {
-		background-color: #80ff00; /* vedi file charts.css */
+		background-color: #a6a6a6; /* vedi file charts.css */
 	}
 	
 	#sintesiImporti .grafico .contenuto .legenda .voce-legenda.imposte .box-colore .rettangolo {
-		background-color: #ffff00; /* vedi file charts.css */
+		background-color: #ffdf7f; /* vedi file charts.css */
 	}
 	
 	#sintesiImporti .grafico .contenuto .legenda .voce-legenda.iva .box-colore .rettangolo {
-		background-color: #000000; /* vedi file charts.css */
+		background-color: #2f75b5; /* vedi file charts.css */
 	}
 	
 	#sintesiImporti .grafico .contenuto .legenda .voce-legenda .valore-in-euro,
@@ -304,11 +304,11 @@ page[size="A4"] {
 	    padding: 4px 0;
 	    margin-bottom: 5px;
 	    font-size: 12px;
-	    color: #ee9a50; /* arancione */
+	    color: #2f75b5; /* blu */
 	}
 	
 	#sintesiImporti .consulente-dedicato .contenuto .titolo .icona {
-		color: #ee9a50; /* arancione */
+		color: #2f75b5; /* blu */
 	}
 	
 	#sintesiImporti .consulente-dedicato .contenuto .messaggio {
@@ -336,7 +336,7 @@ page[size="A4"] {
 		}
 		
 		#contattiAutoletturaGuasti .contatti .contenuto .elenco-contatti {
-			border: 2px solid #ee9a50; /* arancione */
+			border: 2px solid #2f75b5; /* blu */
 	    	padding: 4px 8px;
 		}
 		
@@ -359,11 +359,11 @@ page[size="A4"] {
 			font-size: 14px;
 			height: 20px;
 			line-height: 22px;
-			color: #ee9a50; /* arancione */
+			color: #2f75b5; /* blu */
 		}
 		
 		#contattiAutoletturaGuasti .autolettura .contenuto .elenco-canali {
-			border: 2px solid #ee9a50; /* arancione */
+			border: 2px solid #2f75b5; /* blu */
 	    	padding: 4px 8px;
 		}
 		
@@ -392,7 +392,7 @@ page[size="A4"] {
 		}
 		
 		#contattiAutoletturaGuasti .guasti .contenuto .contatti {
-			border: 2px solid #ee9a50; /* arancione */
+			border: 2px solid #2f75b5; /* blu */
 	    	padding: 4px 8px;
 		}
 		
@@ -409,7 +409,7 @@ page[size="A4"] {
 #quadroLettureEConsumi .titolo .contenuto {
    	font-size: 13px;
     color: #ffffff;
-    background-color: #ee9a50; /* arancione */
+    background-color: #2f75b5; /* blu */
     padding: 0px 5px;
     height: 22px;
     line-height: 24px;

@@ -5,27 +5,27 @@
 
 /* SINTESI IMPORTI */
 /* ****************************************************************** */
-.ct-series.spesaMateriaEnergia .ct-slice-donut {
+.ct-series.spesaMateriaGasNaturale .ct-slice-donut {
 	/* fill: hsl(120, 40%, 60%); */
 	/* stroke: white; */
 	/* stroke-width: 4px; */
-	stroke: #ff7300;
+	stroke: #9bc2e6;
 }
 
 .ct-series.spesaTrasporto .ct-slice-donut {
-	stroke: #404040;
+	stroke: #ed7d31;
 }
 
 .ct-series.spesaOneri .ct-slice-donut {
-	stroke: #80ff00;
+	stroke: #a6a6a6;
 }
 
 .ct-series.imposte .ct-slice-donut {
-	stroke: #ffff00;
+	stroke: #ffdf7f;
 }
 
 .ct-series.iva .ct-slice-donut {
-	stroke: #000000;
+	stroke: #2f75b5;
 }
 
 

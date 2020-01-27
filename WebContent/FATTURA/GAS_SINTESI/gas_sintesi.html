@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>EE Sintesi</title>
+	<title>GAS Sintesi</title>
 
 	<link rel="stylesheet" rel="stylesheet" href="pure/pure-min.css"/>
     <link rel="stylesheet" rel="stylesheet" href="chartist/dist/chartist.min.css"/>
     
-    <link rel="stylesheet" rel="stylesheet" href="ee_sintesi.css"/>
+    <link rel="stylesheet" rel="stylesheet" href="gas_sintesi.css"/>
     <link rel="stylesheet" rel="stylesheet" href="css/charts.css"/>
     
     <page size="A4">
@@ -51,41 +51,58 @@
 				<div class="titolo"><strong>DATI FORNITURA</strong></div>
 				<div class="contenuto pure-g">
 					<div class="pure-u-14-24">
-						<div class="etichetta">Forniamo energia elettrica in</div>
+						<div class="etichetta">Forniamo gas in</div>
 						<div class="valore">
 							<span data-data_type="single" data-first_node="ClienteFinaleIndirizzo" data-path_type="xpath" data-path_data="">Via della Prova non Proprio Provata 123</span>
-						</div>
-						<div class="etichetta">Denominazione contratto (offerta)</div>
-						<div class="valore">
-							<span data-data_type="single" data-first_node="Offerta" data-path_type="xpath" data-path_data="">Offerta di prova</span>
 						</div>
 						<div class="etichetta">Tipologia cliente</div>
 						<div class="valore">
 							<span data-data_type="single" data-first_node="TipoUso" data-path_type="xpath" data-path_data="">Domestico</span>
 						</div>
-						<div class="etichetta">Tipologia pagamento</div>
+						
+						<div class="etichetta">Tipologia di uso</div>
 						<div class="valore">
-							<span data-data_type="single" data-first_node="TipoPagamento" data-path_type="xpath" data-path_data="">??</span>						
+							<span data-data_type="single" data-first_node="CategoriaUso" data-path_type="xpath" data-path_data="">Riscaldamento + test</span>
+						</div>
+						
+						<div class="etichetta">Denominazione contratto (offerta)</div>
+						<div class="valore">
+							<span data-data_type="single" data-first_node="Offerta" data-path_type="xpath" data-path_data="">Offerta di prova</span>
+						</div>
+						
+						<div class="etichetta">Matricola contatore</div>
+						<div class="valore">
+							<span data-data_type="single" data-first_node="Offerta" data-path_type="xpath" data-path_data="">??</span>
+						</div>
+						
+						<div class="etichetta">Classe misuratore</div>
+						<div class="valore">
+							<span data-data_type="single" data-first_node="MisuratoreClasse" data-path_type="xpath" data-path_data="">G4</span>
+						</div>
+						
+						<div class="etichetta">Codice REMI</div>
+						<div class="valore">
+							<span data-data_type="single" data-first_node="TipoPagamento" data-path_type="xpath" data-path_data=""></span>						
 						</div>
 					</div>
 					<div class="pure-u-10-24">
+						<div class="etichetta">Tipologia pagamento</div>
+						<div class="valore">
+							??
+						</div>
+						<div class="etichetta">Parametro P</div>
+						<div class="valore">
+							<span data-data_type="single" data-first_node="PotereCalorificoSuperiore" data-path_type="xpath" data-path_data="">1,00002 (PCS ??)</span>
+						</div>
+						<div class="etichetta">Coefficiente C</div>
+						<div class="valore">
+							<span data-data_type="single" data-first_node="CoefficienteCorrettivo" data-path_type="xpath" data-path_data="">0,99998</span>
+						</div>
 						<div class="etichetta">Data di attivazione della fornitura</div>
 						<div class="valore">
 							<span data-data_type="single" data-first_node="DataAttivazioneFornitura" data-path_type="xpath" data-path_data="">01/01/2016</span>
 						</div>
-						<div class="etichetta">Tensione di fornitura</div>
-						<div class="valore">
-							<span data-data_type="single" data-first_node="TensioneAlimentazione" data-path_type="xpath" data-path_data="">000000000</span> Volt
-						</div>
-						<div class="etichetta">Potenza contattualmente impegnata</div>
-						<div class="valore">
-							<span data-data_type="single" data-first_node="PotenzaImpegnata" data-path_type="xpath" data-path_data="">000000000</span> kW
-						</div>
-						<div class="etichetta">Potenza disponibile</div>
-						<div class="valore">
-							<span data-data_type="single" data-first_node="PotenzaDisponibile" data-path_type="xpath" data-path_data="">000000000</span> kW
-						</div>
-						<div class="etichetta">Livello massimo di potenza</div>
+						<div class="etichetta">Comp. Sost. Mat. Prima contratto</div>
 						<div class="valore">
 							<span data-data_type="single" data-first_node="PotenzaDisponibile" data-path_type="xpath" data-path_data="">??</span> kW
 						</div>
@@ -121,8 +138,8 @@
 						<div class="tipo-bolletta">
 							<div class="tipo">Bolletta Energia Elettrica</div>
 							<div class="tipo-mercato" data-data_type="single" data-first_node="TipoMercato" data-path_type="xpath" data-path_data="">Mercato di prova</div>
-							<div class="lampadina">
-								<img src="images/lampadina.png" alt="lampadina"/>
+							<div class="fiamma">
+								<img src="images/fiamma.png" alt="fiamma"/>
 							</div>
 						</div>
 					</div>
@@ -143,7 +160,7 @@
 					<span data-data_type="single" data-first_node="ClienteFinaleCodice" data-path_type="xpath" data-path_data="">613779061</span>
 				</div>
 				<div class="separatore"></div>
-				<div class="etichetta">CODICE POD</div>
+				<div class="etichetta">CODICE PDR</div>
 				<div class="valore">
 					<span data-data_type="single" data-first_node="FornituraCodicePDP" data-path_type="xpath" data-path_data="">IT123E56789012</span>
 				</div>
@@ -164,7 +181,7 @@
 				</div>
 				<div class="info">
 					<span class="etichetta-custom">Fornitura</span>
-					<span class="valore-custom">energia elettrica</span>
+					<span class="valore-custom">Gas Naturale</span>
 				</div>
 				<div class="info">
 					<span class="etichetta-custom">N. Fattura</span>
@@ -223,7 +240,7 @@
 	
 	<!-- ****** dati nascosti ****** -->
 	<div id="datiSintesiImporti" style="display: none;">
-		<div class="datiSintesiImporti spesaMateriaEnergia">131.1</div>
+		<div class="datiSintesiImporti spesaMateriaGasNaturale">131.1</div>
 		<div class="datiSintesiImporti spesaTrasporto">23.34</div>
 		<div class="datiSintesiImporti spesaOneri">79.2</div>
 		<div class="datiSintesiImporti imposte">27.9</div>
@@ -245,9 +262,9 @@
 					<!-- LEGENDA + CIFRE DA PAGARE -->
 					<div class="pure-u-14-24">
 						<div class="legenda">
-							<div class="pure-g voce-legenda spesaMateriaEnergia">
+							<div class="pure-g voce-legenda spesaMateriaGasNaturale">
 								<div class="pure-u-2-24 box-colore"><div class="rettangolo"></div></div>
-								<div class="pure-u-17-24 etichetta">Spesa per la materia energia</div>
+								<div class="pure-u-17-24 etichetta">Spesa per la materia gas naturale</div>
 								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><div class="val">?? 131.1</div></div>
 							</div>
 							<div class="pure-g voce-legenda spesaTrasporto">
@@ -285,63 +302,6 @@
 									<div class="val" id="totaleBolletta"></div>
 								</div>
 							</div>
-							<div class="pure-g voce-importi">
-								<div class="pure-u-1-24 box-colore"></div>
-								<div class="pure-u-18-24 etichetta">Canone di abbonamento alla televisione per uso privato</div>
-								<div class="pure-u-5-24 valore-in-euro">
-									<span class="simbolo-euro">€ </span>
-									<div class="val">?? 18.00</div>
-								</div>
-							</div>
-							<div class="pure-g voce-importi">
-								<div class="pure-u-1-24 box-colore"></div>
-								<div class="pure-u-18-24 etichetta">TOTALE DA PAGARE</div>
-								<div class="pure-u-5-24 valore-in-euro">
-									<span class="simbolo-euro">€ </span>
-									<div class="val" id="totaleDaPagare"></div>	
-								</div>
-							</div>
-						</div>
-						<!-- RIEPILOGO IVA -->
-						<div class="riepilogo-iva">
-							<div class="pure-g voce-riepilogo-iva">
-								<div class="pure-u-1-24 box-colore"></div>
-								<div class="pure-u-23-24 etichetta">Riepilogo IVA - Vedi box "Informazioni Imposte"</div>
-							</div>
-							<div class="pure-g separatore">
-								<div class="pure-u-1-24"></div>
-								<div class="pure-u-23-24 bordo"></div>
-							</div>
-							<div class="pure-g voce-riepilogo-iva">
-								<div class="pure-u-3-24"></div>
-								<div class="pure-u-7-24">Aliquota</div>
-								<div class="pure-u-7-24">Imponibile</div>
-								<div class="pure-u-7-24">Importo</div>
-							</div>
-							<div class="pure-g voce-riepilogo-iva">
-								<div class="pure-u-3-24"></div>
-								<div class="pure-u-7-24 valore-perc">
-									<div class="val">131.1</div><span class="simbolo-perc"> %</span>
-								</div>
-								<div class="pure-u-7-24 valore-in-euro">
-									<span class="simbolo-euro">€ </span><div class="val">131.1</div>
-								</div>
-								<div class="pure-u-7-24 valore-in-euro">
-									<span class="simbolo-euro">€ </span><div class="val">131.1</div>
-								</div>
-							</div>
-							<div class="pure-g voce-riepilogo-iva">
-								<div class="pure-u-3-24"></div>
-								<div class="pure-u-7-24 valore-perc">
-									<div class="val">131.1</div><span class="simbolo-perc"> %</span>
-								</div>
-								<div class="pure-u-7-24 valore-in-euro">
-									<span class="simbolo-euro">€ </span><div class="val">131.1</div>
-								</div>
-								<div class="pure-u-7-24 valore-in-euro">
-									<span class="simbolo-euro">€ </span><div class="val">131.1</div>
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -361,7 +321,7 @@
 	<script type="text/javascript">
         try {
         	(function () {
-                var spesaMateriaEnergia = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti spesaMateriaEnergia')[0].innerHTML);
+                var spesaMateriaGasNaturale = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti spesaMateriaGasNaturale')[0].innerHTML);
     			var spesaTrasporto = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti spesaTrasporto')[0].innerHTML);
     			var spesaOneri = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti spesaOneri')[0].innerHTML);
     			var imposte = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti imposte')[0].innerHTML);
@@ -369,17 +329,14 @@
     			
     			var canone = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti canone')[0].innerHTML);
     			
-    			var totaleBolletta = spesaMateriaEnergia + spesaTrasporto + spesaOneri + imposte + iva
-    			var totaleDaPagare = totaleBolletta + canone;
-				
+    			var totaleBolletta = spesaMateriaGasNaturale + spesaTrasporto + spesaOneri + imposte + iva
+    			
     			// init totale bolletta
     			document.getElementById('totaleBolletta').innerHTML = totaleBolletta.toFixed(2);
-    			// init totale da pagare
-    			document.getElementById('totaleDaPagare').innerHTML = totaleDaPagare.toFixed(2);
     			
             	new Chartist.Pie('#graficoSintesiImporti', {
         			series: [{
-        			    value: spesaMateriaEnergia,  name: 'Spesa materia energia',  className: 'spesaMateriaEnergia', meta: 'Meta - Spesa materia energia'
+        			    value: spesaMateriaGasNaturale,  name: 'Spesa materia energia',  className: 'spesaMateriaGasNaturale', meta: 'Meta - Spesa materia energia'
         			  }, {
         			    value: spesaTrasporto,  name: 'Spesa trasporto', className: 'spesaTrasporto', meta: 'Meta - Spesa trasporto'
         			  }, {
