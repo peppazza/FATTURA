@@ -451,6 +451,25 @@ page[size="A4"] {
 	display: inline-block;
 }
 
+#quadroLettureEConsumi #tabellaQuadroLettureEConsumi {
+	font-size: 8px;
+	width: 100%;
+	border-top: 1px solid #555555;
+}
+
+#quadroLettureEConsumi #tabellaQuadroLettureEConsumi tr {
+	border-bottom: 1px solid #555555;
+	border-left: 1px solid #555555;
+}
+
+#quadroLettureEConsumi #tabellaQuadroLettureEConsumi tr td {
+	border-right: 1px solid #555555;
+	padding: 0 1px;
+}
+
+#quadroLettureEConsumi #tabellaQuadroLettureEConsumi tr {
+	
+}
 
 
 

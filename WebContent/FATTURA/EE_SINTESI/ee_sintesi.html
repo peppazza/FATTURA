@@ -28,6 +28,10 @@
 	</script>
 </head>
 <body>
+
+<!-- ********************** PAGINA 1 INIZIO ********************** -->
+<!-- ************************************************************* -->
+<div >
 	<!-- LOGHI - start ========== -->
 	<div id="headerLogo" class="pure-g">
 		<div class="pure-u-12-24">
@@ -177,7 +181,7 @@
 				<div class="separatore"></div>
 				<div class="etichetta">PERIODO</div>
 				<div class="valore">
-					<span data-data_type="single" data-first_node="PeriodoFatturazione" data-path_type="xpath" data-path_data="">01/01/2016 - 31/01/2016 ??</span>
+					<span data-data_type="single" data-first_node="PeriodoFatturazione" data-path_type="xpath" data-path_data="">01/01/2016 - 31/01/2016 (formattazione)??</span>
 				</div>
 			</div>
 		</div>
@@ -190,7 +194,7 @@
 				</div>
 				<div class="totale-da-pagare">
 					<div class="importo-in-euro">
-						<span data-data_type="single" data-first_node="TotaleDaPagare" data-path_type="xpath" data-path_data="">130,32</span> €
+						<span data-data_type="single" data-first_node="TotaleDaPagare" data-path_type="xpath" data-path_data="">130.32</span> €
 					</div>
 					<div class="data-scadenza">
 						<span >Entro il</span>
@@ -216,6 +220,17 @@
 
 	
 	<!-- SINTESI IMPORTI - start ========== -->
+	
+	<!-- ****** dati nascosti ****** -->
+	<div id="datiSintesiImporti" style="display: none;">
+		<div class="datiSintesiImporti spesaMateriaEnergia">131.1</div>
+		<div class="datiSintesiImporti spesaTrasporto">23.34</div>
+		<div class="datiSintesiImporti spesaOneri">79.2</div>
+		<div class="datiSintesiImporti imposte">27.9</div>
+		<div class="datiSintesiImporti iva">26</div>
+		<div class="datiSintesiImporti canone">18</div>
+	</div>
+	
 	<div id="sintesiImporti" class="pure-g">
 		<div class="pure-u-17-24 grafico">
 			<div class="contenuto">
@@ -233,27 +248,27 @@
 							<div class="pure-g voce-legenda spesaMateriaEnergia">
 								<div class="pure-u-2-24 box-colore"><div class="rettangolo"></div></div>
 								<div class="pure-u-17-24 etichetta">Spesa per la materia energia</div>
-								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><div class="val">131.1</div></div>
+								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><div class="val">?? 131.1</div></div>
 							</div>
 							<div class="pure-g voce-legenda spesaTrasporto">
 								<div class="pure-u-2-24 box-colore"><div class="rettangolo"></div></div>
 								<div class="pure-u-17-24 etichetta">Spesa per trasporto e gestione contatore</div>
-								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span class="val">23.34</span></div>
+								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span class="val">?? 23.34</span></div>
 							</div>
 							<div class="pure-g voce-legenda spesaOneri">
 								<div class="pure-u-2-24 box-colore"><div class="rettangolo"></div></div>
 								<div class="pure-u-17-24 etichetta">Spesa per oneri di sistema</div>
-								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span class="val">79.2</span></div>
+								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span class="val">?? 79.2</span></div>
 							</div>
 							<div class="pure-g voce-legenda imposte">
 								<div class="pure-u-2-24 box-colore"><div class="rettangolo"></div></div>
 								<div class="pure-u-17-24 etichetta">Imposte</div>
-								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span class="val">27.9</span></div>
+								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span class="val">?? 27.9</span></div>
 							</div>
 							<div class="pure-g voce-legenda iva">
 								<div class="pure-u-2-24 box-colore"><div class="rettangolo"></div></div>
 								<div class="pure-u-17-24 etichetta">IVA</div>
-								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span class="val">26</span></div>
+								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span class="val">?? 26</span></div>
 							</div>
 						</div>
 						<div class="pure-g separatore">
@@ -265,17 +280,26 @@
 							<div class="pure-g voce-importi">
 								<div class="pure-u-1-24 box-colore"></div>
 								<div class="pure-u-18-24 etichetta">Totale bolletta</div>
-								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><div class="val">131.1</div></div>
+								<div class="pure-u-5-24 valore-in-euro">
+									<span class="simbolo-euro">€ </span>
+									<div class="val" id="totaleBolletta"></div>
+								</div>
 							</div>
 							<div class="pure-g voce-importi">
 								<div class="pure-u-1-24 box-colore"></div>
 								<div class="pure-u-18-24 etichetta">Canone di abbonamento alla televisione per uso privato</div>
-								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><div class="val">131.1</div></div>
+								<div class="pure-u-5-24 valore-in-euro">
+									<span class="simbolo-euro">€ </span>
+									<div class="val">?? 18.00</div>
+								</div>
 							</div>
 							<div class="pure-g voce-importi">
 								<div class="pure-u-1-24 box-colore"></div>
 								<div class="pure-u-18-24 etichetta">TOTALE DA PAGARE</div>
-								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><div class="val">131.1</div></div>
+								<div class="pure-u-5-24 valore-in-euro">
+									<span class="simbolo-euro">€ </span>
+									<div class="val" id="totaleDaPagare"></div>	
+								</div>
 							</div>
 						</div>
 						<!-- RIEPILOGO IVA -->
@@ -332,19 +356,8 @@
 			</div>
 		</div>
 	</div>
-	<!-- ========== end - SINTESI IMPORTI -->
 	
-	<!-- ****** GRAFICO SINTESI IMPORTI - DATI -->
-	<!-- =================================================== -->
-	<div id="datiSintesiImporti" style="display: none;">
-		<div class="datiSintesiImporti spesaMateriaEnergia">131.1</div>
-		<div class="datiSintesiImporti spesaTrasporto">23.34</div>
-		<div class="datiSintesiImporti spesaOneri">79.2</div>
-		<div class="datiSintesiImporti imposte">27.9</div>
-		<div class="datiSintesiImporti iva">26</div>
-	</div>
-	<!-- ****** GRAFICO SINTESI IMPORTI - JS -->
-	<!-- =================================================== -->
+	<!-- ****** js - grafico e valori calcolati ****** -->
 	<script type="text/javascript">
         try {
         	(function () {
@@ -354,32 +367,27 @@
     			var imposte = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti imposte')[0].innerHTML);
     			var iva = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti iva')[0].innerHTML);
     			
+    			var canone = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti canone')[0].innerHTML);
+    			
+    			var totaleBolletta = spesaMateriaEnergia + spesaTrasporto + spesaOneri + imposte + iva
+    			var totaleDaPagare = totaleBolletta + canone;
+				
+    			// init totale bolletta
+    			document.getElementById('totaleBolletta').innerHTML = totaleBolletta.toFixed(2);
+    			// init totale da pagare
+    			document.getElementById('totaleDaPagare').innerHTML = totaleDaPagare.toFixed(2);
+    			
             	new Chartist.Pie('#graficoSintesiImporti', {
         			series: [{
-        			    value: spesaMateriaEnergia,
-        			    name: 'Spesa materia energia',
-        			 	className: 'spesaMateriaEnergia',
-        			    meta: 'Meta - Spesa materia energia'
+        			    value: spesaMateriaEnergia,  name: 'Spesa materia energia',  className: 'spesaMateriaEnergia', meta: 'Meta - Spesa materia energia'
         			  }, {
-        			    value: spesaTrasporto,
-        			    name: 'Spesa trasporto',
-        			 	className: 'spesaTrasporto',
-        			    meta: 'Meta - Spesa trasporto'
+        			    value: spesaTrasporto,  name: 'Spesa trasporto', className: 'spesaTrasporto', meta: 'Meta - Spesa trasporto'
         			  }, {
-        			    value: spesaOneri,
-        			    name: 'Spesa oneri',
-        			    className: 'spesaOneri',
-        			    meta: 'Meta - Spesa oneri'
+        			    value: spesaOneri, name: 'Spesa oneri', className: 'spesaOneri', meta: 'Meta - Spesa oneri'
         			  }, {
-          			    value: imposte,
-          			    name: 'Imposte',
-          			  	className: 'imposte',
-          			    meta: 'Meta - Imposte'
+          			    value: imposte, name: 'Imposte', className: 'imposte', meta: 'Meta - Imposte'
         			  }, {
-          			    value: iva,
-          			    name: 'IVA',
-          			  	className: 'iva',
-          			    meta: 'Meta - IVA'
+          			    value: iva, name: 'IVA', className: 'iva', meta: 'Meta - IVA'
           			  }]
         			}, {
         				donut : true,
@@ -388,9 +396,10 @@
         			});
     		})();
         } catch(err) {
-        	console.log('errore init graficoSintesiImporti', err);
+        	console.log('errore init sintesi importi', err);
         }
 	</script>
+	<!-- ========== end - SINTESI IMPORTI -->
 	
 	
 	<!-- CONTATTI/AUTOLETTURA/GUASTI - start ========== -->		
@@ -491,15 +500,34 @@
 	</div>
 	<!-- ========== end - FOOTER PAGINA 1 -->
 	
-	<!-- ********************** PAGINA 1 FINE ********************** -->
-	<!-- *********************************************************** -->
+</div>
+<!-- ********************** PAGINA 1 FINE ************************ -->
+<!-- ************************************************************* -->
 
 
-	
-	<div style="padding: 10px 0"></div>
-	
-	
+
+
+
+
+
 	<!-- QUADRO LETTURE E CONSUMI 1 - start ========== -->
+	
+	<!-- ****** dati ****** -->
+	<div id="datiQuadroLettureEConsumi" style="display: none;">
+		<!-- dati distributore -->
+		<div class="datiQuadroLettureEConsumi distributoreMese">giu 19</div>
+		<div class="datiQuadroLettureEConsumi distributoreTipoDato">48</div>
+		<div class="datiQuadroLettureEConsumi distributoreF1">54</div>
+		<div class="datiQuadroLettureEConsumi distributoreF2">75</div>
+		<div class="datiQuadroLettureEConsumi distributoreF3">4</div>
+		<!-- dati stima -->
+		<div class="datiQuadroLettureEConsumi stimaMese">lug 19</div>
+		<div class="datiQuadroLettureEConsumi stimaTipoDato">45</div>
+		<div class="datiQuadroLettureEConsumi stimaF1">53</div>
+		<div class="datiQuadroLettureEConsumi stimaF2">58</div>
+		<div class="datiQuadroLettureEConsumi stimaF3">2</div>
+	</div>
+	
 	<div id="quadroLettureEConsumi" class="pure-g">
 		<div class="pure-u-24-24">
 			<div class="pure-g titolo">
@@ -528,33 +556,45 @@
 							</div>
 						</div>
 						<div class="tabella-dati">
-										
+							<table id="tabellaQuadroLettureEConsumi">
+								<tbody>
+									<tr>
+										<td></td>
+										<td></td>
+										<td colspan="4">Lettura Precedente</td>
+										<td colspan="4">Lettura Attuale</td>
+										<td colspan="4">Consumo Fatturato [kWh]</td>
+									</tr>
+									<tr>
+										<td>Mese/anno</td>
+										<td>Tipo Dato</td>
+										<!--  -->
+										<td>Data</td>
+										<td>F1</td>
+										<td>F2</td>
+										<td>F3</td>
+										<!--  -->
+										<td>Data</td>
+										<td>F1</td>
+										<td>F2</td>
+										<td>F3</td>
+										<!--  -->
+										<td>Data</td>
+										<td>F1</td>
+										<td>F2</td>
+										<td>F3</td>
+									</tr>
+									
+								</tbody>
+							</table>	
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- ========== end - QUADRO LETTURE E CONSUMI -->
 	
-	<!-- ****** GRAFICO QUADRO LETTURE E CONSUMI - DATI -->
-	<!-- =================================================== -->
-	<div id="datiQuadroLettureEConsumi" style="display: none;">
-		<!-- dati distributore -->
-		<div class="datiQuadroLettureEConsumi distributoreMese">giu 19</div>
-		<div class="datiQuadroLettureEConsumi distributoreTipoDato">48</div>
-		<div class="datiQuadroLettureEConsumi distributoreF1">54</div>
-		<div class="datiQuadroLettureEConsumi distributoreF2">75</div>
-		<div class="datiQuadroLettureEConsumi distributoreF3">4</div>
-		<!-- dati stima -->
-		<div class="datiQuadroLettureEConsumi stimaMese">lug 19</div>
-		<div class="datiQuadroLettureEConsumi stimaTipoDato">45</div>
-		<div class="datiQuadroLettureEConsumi stimaF1">53</div>
-		<div class="datiQuadroLettureEConsumi stimaF2">58</div>
-		<div class="datiQuadroLettureEConsumi stimaF3">2</div>
-	</div>
-	<!-- ****** GRAFICO QUADRO LETTURE E CONSUMI - JS -->
-	<!-- =================================================== -->
+	<!-- ****** js - grafico e valori calcolati ****** -->
 	<script type="text/javascript">
 		try {
 			(function() {
@@ -614,14 +654,125 @@
 			console.log('errore init graficoQuadroLettureEConsumi', err);
 		}
 	</script>
+    <!-- ========== end - QUADRO LETTURE E CONSUMI -->
     
-    
+	
+	<div class="consumi_hiddenvalues" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
+        <span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">1</span>
+        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
+        <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">06</span>
+        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">10</span>
+        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">20</span>
+        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">30</span>
+        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">690</span>
+		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3000</span>
+		
+		<span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">2</span>
+        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
+        <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">07</span>
+        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">11</span>
+        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">21</span>
+        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">31</span>
+        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">691</span>
+		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3001</span>
+		
+		<span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">2</span>
+        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
+        <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">01</span>
+        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">11</span>
+        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">21</span>
+        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">31</span>
+        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">691</span>
+		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3001</span>
+    </div>
 	
 	
 	
-	
-	
-	
+	<div class="pure-g">
+		<div class="pure-u-24-24">
+			<div id="graficoTest"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		try {
+			(function() {
+				var anni = [];
+				var mesi = [];
+				var datiF1 = [];
+				var datiF2 = [];
+				var datiF3 = [];
+				
+				var elems = document.getElementsByClassName('x_consumi_anno');
+				for (var i = 0; i < elems.length; i++) {
+					anni.push(elems[i].innerHTML);
+				}
+				elems = document.getElementsByClassName('x_consumi_mese');
+				for (var i = 0; i < elems.length; i++) {
+					mesi.push(elems[i].innerHTML);
+				}
+				elems = document.getElementsByClassName('x_consumi_f1');
+				for (var i = 0; i < elems.length; i++) {
+					datiF1.push(elems[i].innerHTML);
+				}
+				elems = document.getElementsByClassName('x_consumi_f2');
+				for (var i = 0; i < elems.length; i++) {
+					datiF2.push(elems[i].innerHTML);
+				}
+				elems = document.getElementsByClassName('x_consumi_f3');
+				for (var i = 0; i < elems.length; i++) {
+					datiF3.push(elems[i].innerHTML);
+				}
+				
+				var labels = [];
+				for (var i = 0; i < anni.length; i++) {
+					labels.push(mesi[i] + '-' + anni[i])
+				}
+
+				console.log(anni);
+				console.log(mesi);
+				console.log(datiF1);
+				console.log(datiF2);
+				console.log(datiF3);
+				console.log(labels);
+				
+				new Chartist.Bar('#graficoTest', {
+					labels : labels,
+					series : [{
+							name : 'f1',
+							className : 'f1',
+							data : datiF1
+						}, {
+							name : 'f2',
+							className : 'f2',
+							data : datiF2
+						}, {
+							name : 'f3',
+							className : 'f3',
+							data : datiF3
+						}]
+					}, {
+						stackBars : true,
+					    showGrid: true,
+					    axisX: {
+							labelInterpolationFnc: function(value) {
+						    	return value;
+						    }
+						},
+						chartPadding: {
+							bottom: 15 // consente di mostrare le labels dell'asse X qualora la loro altezza superasse i 20px (valore di default?)
+					  	},
+					}).on('draw', function(data) {
+						if (data.type === 'bar') {
+							data.element.attr({
+								style : 'stroke-width: 38px'
+							});
+						}
+					});
+			})();
+		} catch (err) {
+			console.log('errore init graficoQuadroLettureEConsumi', err);
+		}
+	</script>
 	
 	
 	
