@@ -9,10 +9,20 @@ page[size="A4"] {
     height: 28.3cm;
     display: block;
     margin: 0 auto;
-    padding: 60px 4px 0;
+    padding: 60px 30px 0;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
     /* margin-bottom: 0.5cm; */
     /* padding: 0.7cm; */
+}
+
+.titolo.sfondo-arancione {
+	font-size: 13px;
+    color: #ffffff;
+    background-color: #ee9a50; /* arancione */
+    padding: 0px 5px;
+    height: 22px;
+    line-height: 24px;
+    margin-bottom: 6px;
 }
 
 
@@ -36,7 +46,7 @@ page[size="A4"] {
 
 /* DATI FORNITURA ========================================= */
 	#datiFornitura {
-		margin-bottom: 20px;	
+		margin-bottom: 15px;	
 	}
 	
 	#datiFornitura .dati-colonna-left {
@@ -45,16 +55,6 @@ page[size="A4"] {
 	
 	#datiFornitura .dati-colonna-right {
 		padding-left: 4px;
-	}
-	
-	#datiFornitura .dati-colonna-left .titolo {
-	    font-size: 13px;
-	    color: #ffffff;
-	    background-color: #ee9a50; /* arancione */
-	    padding: 0px 5px;
-	    height: 22px;
-	    line-height: 24px;
-	    margin-bottom: 6px;
 	}
 	
 	#datiFornitura .dati-colonna-left .contenuto {
@@ -105,7 +105,7 @@ page[size="A4"] {
 /* CLIENTI/BOLLETTA/IMPORTO =============================== */
 	#clienteBollettaImporto {
 		font-size: 13px;
-		margin-bottom: 20px;	
+		margin-bottom: 15px;	
 	}
 	
 	#clienteBollettaImporto .separatore {
@@ -208,7 +208,7 @@ page[size="A4"] {
 
 /* SINTESI IMPORTI ======================================== */
 	#sintesiImporti {
-	    margin-bottom: 20px;
+	    margin-bottom: 15px;
 	}
 	
 	#sintesiImporti .grafico {
@@ -320,7 +320,7 @@ page[size="A4"] {
 	
 /* CONTATTI/AUTOLETTURA =================================== */
 	#contattiAutoletturaGuasti {
-		margin-bottom: 20px;
+		margin-bottom: 15px;
 	}
 	
 	/* contatti */
@@ -405,78 +405,142 @@ page[size="A4"] {
 		}
 
 
+
+
 /* QUADRO LETTURE E CONSUMI =============================== */
-#quadroLettureEConsumi .titolo .contenuto {
-   	font-size: 13px;
-    color: #ffffff;
-    background-color: #ee9a50; /* arancione */
-    padding: 0px 5px;
-    height: 22px;
-    line-height: 24px;
-    margin-bottom: 6px;
-}
-
-#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda {
-	font-size: 8px;
-}
-
-#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda .voce-legenda {
-	margin-bottom: 1px;
-}
-
-#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda .voce-legenda .box-colorato {
-	display: inline-block;
-	width: 5px;
-	height: 5px;
-	margin-right: 4px;
-}
-
-#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda .voce-legenda .box-colorato.tipoDato {
-	background-color: #f67b28; /* vedi file charts.css */
-}
-
-#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda .voce-legenda .box-colorato.f1 {
-	background-color: #ffc604; /* vedi file charts.css */
-}
-
-#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda .voce-legenda .box-colorato.f2 {
-	background-color: #70b243; /* vedi file charts.css */
-}
-
-#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda .voce-legenda .box-colorato.f3 {
-	background-color: #a34b15; /* vedi file charts.css */
-}
-
-#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda .voce-legenda .etichetta {
-	display: inline-block;
-}
-
-#quadroLettureEConsumi #tabellaQuadroLettureEConsumi {
-	font-size: 8px;
-	width: 100%;
-	border-top: 1px solid #555555;
-}
-
-#quadroLettureEConsumi #tabellaQuadroLettureEConsumi tr {
-	border-bottom: 1px solid #555555;
-	border-left: 1px solid #555555;
-}
-
-#quadroLettureEConsumi #tabellaQuadroLettureEConsumi tr td {
-	border-right: 1px solid #555555;
-	padding: 0 1px;
-}
-
-#quadroLettureEConsumi #tabellaQuadroLettureEConsumi tr {
+	#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda {
+		font-size: 8px;
+	}
 	
-}
+	#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda .voce-legenda {
+		margin-bottom: 1px;
+	}
+	
+	#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda .voce-legenda .box-colorato {
+		display: inline-block;
+		width: 5px;
+		height: 5px;
+		margin-right: 4px;
+	}
+	
+	#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda .voce-legenda .box-colorato.tipoDato {
+		background-color: #f67b28; /* vedi file charts.css */
+	}
+	
+	#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda .voce-legenda .box-colorato.f1 {
+		background-color: #ffc604; /* vedi file charts.css */
+	}
+	
+	#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda .voce-legenda .box-colorato.f2 {
+		background-color: #70b243; /* vedi file charts.css */
+	}
+	
+	#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda .voce-legenda .box-colorato.f3 {
+		background-color: #a34b15; /* vedi file charts.css */
+	}
+	
+	#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda .voce-legenda .etichetta {
+		display: inline-block;
+	}
+	
+	#quadroLettureEConsumi #tabellaQuadroLettureEConsumi {
+		font-size: 8px;
+		width: 100%;
+	}
+	
+	#quadroLettureEConsumi #tabellaQuadroLettureEConsumi tr {
+		border-bottom: 1px solid #555555;
+	}
+	
+	#quadroLettureEConsumi #tabellaQuadroLettureEConsumi tr td {
+		border-left: 1px solid #555555;
+		padding: 0 1px;
+	}
+	
+	#quadroLettureEConsumi #tabellaQuadroLettureEConsumi tr td.header {
+		border-top: 1px solid #555555;
+	}
+	
+	#quadroLettureEConsumi #tabellaQuadroLettureEConsumi tr td.header.no-border {
+		border-top: 0;
+		border-left: 0
+	}
+	
+	#quadroLettureEConsumi #tabellaQuadroLettureEConsumi tr td.last {
+		border-right: 1px solid #555555;
+	}
 
 
+/* RIEPILOGO CONSUMI STORICI =============================== */
+	#riepilogoQuantitaECostiMediFatturati {
+		margin-bottom: 15px;
+	}
+	#riepilogoQuantitaECostiMediFatturati .col1 {
+		font-size: 12px;
+	}
+	
+	#riepilogoQuantitaECostiMediFatturati .col2 {
+		font-size: 10px;
+	}
+	
+	#riepilogoQuantitaECostiMediFatturati .col3 {
+		font-size: 11px;
+	}
+	
+	#riepilogoQuantitaECostiMediFatturati .dati {
+		padding: 5px;
+	}
+	
+	
+/* CONGUAGLI RICALCOLI NON PAGATE */
+	#conguagliRicalcoliNonPagate {
+		font-size: 12px;
+		margin-bottom: 15px;
+	}
+	
+	#conguagliRicalcoliNonPagate #conguagliRicalcoli .dati,
+	#conguagliRicalcoliNonPagate #nonPagate .dati {
+		padding: 4px;
+	}
+
+	
+/* GUIDA LETTURA FATTURA */
+	#guidaLetturaFattura {
+		margin-top: 10px;
+	}
+	
+	#guidaLetturaFattura .dati {
+		font-size: 10px;
+		padding: 4px;
+	}
+	
+	#guidaLetturaFattura .dati .paragrafo {
+		margin-bottom: 4px;
+	}
 
 
-
-
-
+/* ARERA */
+	#arera .dati {
+		font-size: 8px;
+	}
+	
+	#arera .dati table {
+		width: 100%;
+	}
+	
+	#arera .dati table tr td {
+		border-top: 1px solid #555555;
+		border-left: 1px solid #555555;
+		padding: 0 5px;
+	}
+	
+	#arera .dati table tr.last td {
+		border-bottom: 1px solid #555555;
+	}
+	
+	#arera .dati table tr td.last {
+		border-right: 1px solid #555555;
+	}
 
 
 
