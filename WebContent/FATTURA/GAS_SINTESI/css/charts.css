@@ -38,14 +38,6 @@
 	stroke: #f67b28;
 }
 
-.ct-series.f1 .ct-bar {
+.ct-series.consumo .ct-bar {
 	stroke: #ffc604;
-}
-
-.ct-series.f2 .ct-bar {
-	stroke: #70b243;
-}
-
-.ct-series.f3 .ct-bar {
-	stroke: #a34b15;
 }

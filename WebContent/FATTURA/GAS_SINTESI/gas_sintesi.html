@@ -24,15 +24,32 @@
 					return Number(val);
 			}
 			return 0;
-		}	
+		}
+		
+		function formatNumero(val) {
+			val = val.toFixed(2);
+			val = String(val);
+			try {
+				// 6 = numeroDiCifreDecimaliScelto + punto + numeroCifreIntere
+				if (val.length > 6) {
+					// da 1123232.12 a 1.123.232,12
+					return Number(val).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');	
+				}
+				// da 123.12 a 123,12
+				return val.replace(/\./, ',');
+			} catch(err) {
+				console.log('errore format numero', val, err)
+			}
+			return '';
+		}
 	</script>
 </head>
 <body>
 
 <!-- ********************** PAGINA 1 INIZIO ********************** -->
-<!-- ************************************************************* -->
 <div id="pagina1">
-	<!-- LOGHI - start ========== -->
+	<!-- LOGHI - start ==========
+		 ======================== -->
 	<div id="headerLogo" class="pure-g">
 		<div class="pure-u-12-24">
 			<div class="logo-oe"><img src="images/logo-oe.png" alt="logo-oe" /></div>
@@ -44,7 +61,8 @@
 	<!-- ========== end - LOGHI -->
 	
 	
-	<!-- DATI FORNITURA - start ========== -->
+	<!-- DATI FORNITURA - start ==========
+		 ================================= -->
 	<div id="datiFornitura" class="pure-g">
 		<div class="pure-u-12-24">
 			<div class="dati-colonna-left">
@@ -150,7 +168,8 @@
 	<!-- ========== end - DATI FORNITURA -->
 	
 	
-	<!-- CLIENTE/BOLLETTA/IMPORTO - start ========== -->		
+	<!-- CLIENTE/BOLLETTA/IMPORTO - start ==========
+		 =========================================== -->		
 	<div id="clienteBollettaImporto" class="pure-g">
 		<!-- CLIENTE -->
 		<div class="pure-u-6-24 cliente">
@@ -236,8 +255,8 @@
 	<!-- ========== end - CLIENTE/PERIODO/IMPORTO -->
 
 	
-	<!-- SINTESI IMPORTI - start ========== -->
-	
+	<!-- SINTESI IMPORTI - start ========== 
+		 ================================== -->
 	<!-- ****** dati nascosti ****** -->
 	<div id="datiSintesiImporti" style="display: none;">
 		<div class="datiSintesiImporti spesaMateriaGasNaturale">131.1</div>
@@ -359,7 +378,8 @@
 	<!-- ========== end - SINTESI IMPORTI -->
 	
 	
-	<!-- CONTATTI/AUTOLETTURA/GUASTI - start ========== -->		
+	<!-- CONTATTI/AUTOLETTURA/GUASTI - start ==========
+		 ============================================== -->		
 	<div id="contattiAutoletturaGuasti" class="pure-g">
 		<!-- contatti utili -->
 		<div class="pure-u-8-24 contatti">
@@ -434,7 +454,8 @@
 	<!-- ========== end - CONTATTI/AUTOLETTURA/GUASTI -->		
 	
 		
-	<!-- FOOTER PAGINA 1 - start ========== -->
+	<!-- FOOTER PAGINA 1 - start ==========
+		 ================================== -->
 	<div class="footer-foglio-A4 pagina-1">
 		<div class="contenuto">
 			<div class="nome-societa">Omnia Energia S.p.A.</div>
@@ -463,26 +484,20 @@
 
 
 
-
-
-
-
-	<!-- QUADRO LETTURE E CONSUMI 1 - start ========== -->
-	
+<!-- ********************** PAGINA 2 INIZIO ************************ -->
+<div id="pagina2">
+	<!-- QUADRO LETTURE E CONSUMI 1 - start ==========
+	     ============================================= -->
 	<!-- ****** dati ****** -->
 	<div id="datiQuadroLettureEConsumi" style="display: none;">
 		<!-- dati distributore -->
 		<div class="datiQuadroLettureEConsumi distributoreMese">giu 19</div>
 		<div class="datiQuadroLettureEConsumi distributoreTipoDato">48</div>
-		<div class="datiQuadroLettureEConsumi distributoreF1">54</div>
-		<div class="datiQuadroLettureEConsumi distributoreF2">75</div>
-		<div class="datiQuadroLettureEConsumi distributoreF3">4</div>
+		<div class="datiQuadroLettureEConsumi distributore">54</div>
 		<!-- dati stima -->
 		<div class="datiQuadroLettureEConsumi stimaMese">lug 19</div>
 		<div class="datiQuadroLettureEConsumi stimaTipoDato">45</div>
-		<div class="datiQuadroLettureEConsumi stimaF1">53</div>
-		<div class="datiQuadroLettureEConsumi stimaF2">58</div>
-		<div class="datiQuadroLettureEConsumi stimaF3">2</div>
+		<div class="datiQuadroLettureEConsumi stima">53</div>
 	</div>
 	
 	<div id="quadroLettureEConsumi" class="pure-g">
@@ -498,6 +513,8 @@
 				</div>
 				<div class="pure-u-15-24">
 					<div class="legenda-grafico-plus-tabella-dati">
+						<!-- NO LEGENDA -->
+						<!-- 
 						<div class="legenda">
 							<div class="voce-legenda">
 								<div class="box-colorato tipoDato"></div><div class="etichetta">Tipo Dato</div>
@@ -512,36 +529,57 @@
 								<div class="box-colorato f3"></div><div class="etichetta">Consumo Fatturato [kWh] F3</div>
 							</div>
 						</div>
+						 -->
 						<div class="tabella-dati">
 							<table id="tabellaQuadroLettureEConsumi">
 								<tbody>
 									<tr>
+										<td class="c1 header no-border"></td>
+										<td class="c2 header no-border"></td>
+										<td class="c3 header" colspan="2">Lettura Precedente</td>
+										<td class="c4 header" colspan="2">Lettura Attuale</td>
+										<td class="c5 header last">Consumi Fatturati [Smc]</td>
 										<td></td>
-										<td></td>
-										<td colspan="4">Lettura Precedente</td>
-										<td colspan="4">Lettura Attuale</td>
-										<td colspan="4">Consumo Fatturato [kWh]</td>
 									</tr>
 									<tr>
 										<td>Mese/anno</td>
 										<td>Tipo Dato</td>
 										<!--  -->
 										<td>Data</td>
-										<td>F1</td>
-										<td>F2</td>
-										<td>F3</td>
+										<td>Smc</td>
 										<!--  -->
 										<td>Data</td>
-										<td>F1</td>
-										<td>F2</td>
-										<td>F3</td>
+										<td>Smc</td>
 										<!--  -->
-										<td>Data</td>
-										<td>F1</td>
-										<td>F2</td>
-										<td>F3</td>
+										<td>Smc</td>
+										<td class="last">Smc</td>
 									</tr>
-									
+									<tr>
+										<td><span>giu-19 ??</span></td>
+										<td><span>Distributore ??</span></td>
+										<!--  -->
+										<td><span>31/05/2019 ??</span></td>
+										<td><span>3 ??</span></td>
+										<!--  -->
+										<td><span>30/06/2019 ??</span></td>
+										<td><span>3 ??</span></td>
+										<!--  -->
+										<td><span>48 ??</span></td>
+										<td class="last"><span>178 ??</span></td>
+									</tr>
+									<tr>
+										<td><span>Lug-19 ??</span></td>
+										<td><span>Stima ??</span></td>
+										<!--  -->
+										<td><span>31/06/2019 ??</span></td>
+										<td><span>3 ??</span></td>
+										<!--  -->
+										<td><span>30/07/2019 ??</span></td>
+										<td><span>3 ??</span></td>
+										<!--  -->
+										<td><span>48 ??</span></td>
+										<td class="last"><span>178 ??</span></td>
+									</tr>
 								</tbody>
 							</table>	
 						</div>
@@ -557,17 +595,13 @@
 			(function() {
 				var distributoreMese = document.getElementsByClassName('datiQuadroLettureEConsumi distributoreMese')[0].innerHTML;
     			var distributoreTipoDato = checkValoreNumerico(document.getElementsByClassName('datiQuadroLettureEConsumi distributoreTipoDato')[0].innerHTML);
-    			var distributoreF1 = checkValoreNumerico(document.getElementsByClassName('datiQuadroLettureEConsumi distributoreF1')[0].innerHTML);
-    			var distributoreF2 = checkValoreNumerico(document.getElementsByClassName('datiQuadroLettureEConsumi distributoreF2')[0].innerHTML);
-    			var distributoreF3 = checkValoreNumerico(document.getElementsByClassName('datiQuadroLettureEConsumi distributoreF3')[0].innerHTML);
-    			var distributoreSum = distributoreTipoDato + distributoreF1 + distributoreF2 + distributoreF3; 
+    			var distributore = checkValoreNumerico(document.getElementsByClassName('datiQuadroLettureEConsumi distributore')[0].innerHTML);
+    			var distributoreSum = distributoreTipoDato + distributore; 
     			
     			var stimaMese = document.getElementsByClassName('datiQuadroLettureEConsumi stimaMese')[0].innerHTML;
     			var stimaTipoDato = checkValoreNumerico(document.getElementsByClassName('datiQuadroLettureEConsumi stimaTipoDato')[0].innerHTML);
-    			var stimaF1 = checkValoreNumerico(document.getElementsByClassName('datiQuadroLettureEConsumi stimaF1')[0].innerHTML);
-    			var stimaF2 = checkValoreNumerico(document.getElementsByClassName('datiQuadroLettureEConsumi stimaF2')[0].innerHTML);
-    			var stimaF3 = checkValoreNumerico(document.getElementsByClassName('datiQuadroLettureEConsumi stimaF3')[0].innerHTML);
-    			var stimaSum = stimaTipoDato + stimaF1 + stimaF2 + stimaF3;
+    			var stima = checkValoreNumerico(document.getElementsByClassName('datiQuadroLettureEConsumi stima')[0].innerHTML);
+    			var stimaSum = stimaTipoDato + stima;
     			
 				new Chartist.Bar('#graficoQuadroLettureEConsumi', {
 					labels : [ 'Distributore' , 'Stima' ],
@@ -576,17 +610,9 @@
 							className : 'tipoDato',
 							data : [ distributoreTipoDato, stimaTipoDato ]
 						}, {
-							name : 'f1',
-							className : 'f1',
-							data : [ distributoreF1, stimaF1 ]
-						}, {
-							name : 'f2',
-							className : 'f2',
-							data : [ distributoreF2, stimaF2 ]
-						}, {
-							name : 'f3',
-							className : 'f3',
-							data : [ distributoreF3, stimaF3 ]
+							name : 'consumo',
+							className : 'consumo',
+							data : [ distributore, stima ]
 						} ]
 					}, {
 						stackBars : true,
@@ -608,41 +634,94 @@
 					});
 			})();
 		} catch (err) {
-			console.log('errore init graficoQuadroLettureEConsumi', err);
+			console.log('errore init grafico quadro letture e consumi', err);
 		}
 	</script>
     <!-- ========== end - QUADRO LETTURE E CONSUMI -->
     
 	
-	<div class="consumi_hiddenvalues" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
-        <span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">1</span>
-        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
-        <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">06</span>
-        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">10</span>
-        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">20</span>
-        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">30</span>
-        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">690</span>
-		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3000</span>
-		
-		<span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">2</span>
-        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
-        <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">07</span>
-        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">11</span>
-        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">21</span>
-        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">31</span>
-        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">691</span>
-		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3001</span>
-		
-		<span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">2</span>
-        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
-        <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">01</span>
-        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">11</span>
-        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">21</span>
-        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">31</span>
-        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">691</span>
-		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3001</span>
+	<!-- @RIEPILOGO CONSUMI FATTURATI - start ==========
+	     =============================================== -->
+	<!-- ****** dati nascosti ****** -->
+	<div style="display: none" class="consumi_hiddenvalues" data-data_type="simple_loop" data-first_node="ConsumiMesiPrecedenti" data-path_type="xpath" data-path_data="ConsumoMese">
+        <span class="x_consumi_sequenzamese" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">1</span>
+        <span class="x_consumi_anno" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
+        <span class="x_consumi_mese" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">06</span>
+        <span class="x_consumi_consumo" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Consumo">9.000</span>
+        
+        <span class="x_consumi_sequenzamese" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">1</span>
+        <span class="x_consumi_anno" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
+        <span class="x_consumi_mese" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">09</span>
+        <span class="x_consumi_consumo" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Consumo">10.4</span>
+        
+        <span class="x_consumi_sequenzamese" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">1</span>
+        <span class="x_consumi_anno" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
+        <span class="x_consumi_mese" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">09</span>
+        <span class="x_consumi_consumo" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Consumo">10.4</span>
+        
+        <span class="x_consumi_sequenzamese" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">1</span>
+        <span class="x_consumi_anno" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
+        <span class="x_consumi_mese" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">09</span>
+        <span class="x_consumi_consumo" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Consumo">10.4</span>
+        
+        <span class="x_consumi_sequenzamese" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">1</span>
+        <span class="x_consumi_anno" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
+        <span class="x_consumi_mese" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">09</span>
+        <span class="x_consumi_consumo" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Consumo">10.4</span>
+        
+        <span class="x_consumi_sequenzamese" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">1</span>
+        <span class="x_consumi_anno" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
+        <span class="x_consumi_mese" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">09</span>
+        <span class="x_consumi_consumo" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Consumo">10.4</span>
+        
+        <span class="x_consumi_sequenzamese" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">1</span>
+        <span class="x_consumi_anno" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
+        <span class="x_consumi_mese" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">09</span>
+        <span class="x_consumi_consumo" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Consumo">10.4</span>
+        
+        <span class="x_consumi_sequenzamese" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">1</span>
+        <span class="x_consumi_anno" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
+        <span class="x_consumi_mese" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">09</span>
+        <span class="x_consumi_consumo" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Consumo">10.4</span>
+        
+        <span class="x_consumi_sequenzamese" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">1</span>
+        <span class="x_consumi_anno" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
+        <span class="x_consumi_mese" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">09</span>
+        <span class="x_consumi_consumo" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Consumo">10.4</span>
+        
+        <span class="x_consumi_sequenzamese" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">1</span>
+        <span class="x_consumi_anno" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
+        <span class="x_consumi_mese" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">09</span>
+        <span class="x_consumi_consumo" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Consumo">10.4</span>
+        
+        <span class="x_consumi_sequenzamese" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">1</span>
+        <span class="x_consumi_anno" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
+        <span class="x_consumi_mese" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">09</span>
+        <span class="x_consumi_consumo" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Consumo">10.4</span>
+        
+        <span class="x_consumi_sequenzamese" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">1</span>
+        <span class="x_consumi_anno" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
+        <span class="x_consumi_mese" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">09</span>
+        <span class="x_consumi_consumo" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Consumo">10.4</span>
     </div>
-	
+    
+	<div id="riepilogoConsumiStorici" class="pure-g">
+		<div class="pure-u-24-24">
+			<div class="pure-g titolo sfondo-blu">
+				<div class="pure-u-24-24 contenuto">RIEPILOGO CONSUMI FATTURATI</div>
+			</div>
+			<div class="pure-g">
+				<div class="pure-u-15-24 grafico">
+					<div class="contenuto">
+						<div id="graficoRiepilogoConsumiStorici"></div>
+					</div>
+				</div>
+				<div class="pure-u-9-24">
+					
+				</div>
+			</div>
+		</div>
+	</div>
 	
 	
 	<div class="pure-g">
@@ -655,9 +734,7 @@
 			(function() {
 				var anni = [];
 				var mesi = [];
-				var datiF1 = [];
-				var datiF2 = [];
-				var datiF3 = [];
+				var datiConsumo = [];
 				
 				var elems = document.getElementsByClassName('x_consumi_anno');
 				for (var i = 0; i < elems.length; i++) {
@@ -667,45 +744,30 @@
 				for (var i = 0; i < elems.length; i++) {
 					mesi.push(elems[i].innerHTML);
 				}
-				elems = document.getElementsByClassName('x_consumi_f1');
+				elems = document.getElementsByClassName('x_consumi_consumo');
 				for (var i = 0; i < elems.length; i++) {
-					datiF1.push(elems[i].innerHTML);
-				}
-				elems = document.getElementsByClassName('x_consumi_f2');
-				for (var i = 0; i < elems.length; i++) {
-					datiF2.push(elems[i].innerHTML);
-				}
-				elems = document.getElementsByClassName('x_consumi_f3');
-				for (var i = 0; i < elems.length; i++) {
-					datiF3.push(elems[i].innerHTML);
+					datiConsumo.push(checkValoreNumerico(elems[i].innerHTML));
 				}
 				
 				var labels = [];
 				for (var i = 0; i < anni.length; i++) {
 					labels.push(mesi[i] + '-' + anni[i])
 				}
-
-				console.log(anni);
-				console.log(mesi);
-				console.log(datiF1);
-				console.log(datiF2);
-				console.log(datiF3);
-				console.log(labels);
 				
-				new Chartist.Bar('#graficoTest', {
+				var numeroBarre = labels.length;
+				var larghezzaBarra = 26;
+				if (5 < numeroBarre && numeroBarre < 9) {
+					larghezzaBarra = 22;
+				} else if (9 <= numeroBarre && numeroBarre < 13) {
+					larghezzaBarra = 18;
+				}
+				
+				new Chartist.Bar('#graficoRiepilogoConsumiStorici', {
 					labels : labels,
 					series : [{
-							name : 'f1',
-							className : 'f1',
-							data : datiF1
-						}, {
-							name : 'f2',
-							className : 'f2',
-							data : datiF2
-						}, {
-							name : 'f3',
-							className : 'f3',
-							data : datiF3
+							name : 'consumo',
+							className : 'consumo',
+							data : datiConsumo
 						}]
 					}, {
 						stackBars : true,
@@ -721,7 +783,7 @@
 					}).on('draw', function(data) {
 						if (data.type === 'bar') {
 							data.element.attr({
-								style : 'stroke-width: 38px'
+								style : 'stroke-width: ' + larghezzaBarra + 'px'
 							});
 						}
 					});
@@ -730,11 +792,10 @@
 			console.log('errore init graficoQuadroLettureEConsumi', err);
 		}
 	</script>
+
 	
-	
-	
-	<div style="padding: 10px 0"></div>
-	
+	<!-- @FOOTER PAGINA 2 - start ==========
+	     =================================== -->
 	<div class="footer-foglio-A4">
 		<div class="contenuto">
 			<div class="nome-societa">Omnia Energia S.p.A.</div>
@@ -755,9 +816,18 @@
 			</div>
 		</div>
 	</div>
+	<!-- ========== end - FOOTER PAGINA 2 -->
+</div>
+<!-- ********************** PAGINA 2 FINE ************************ -->
+
+
+
+<!-- ********************** PAGINA 3 INIZIO ************************ -->
+<div id="pagina3">
+
 	
-	<div style="padding: 10px 0"></div>
-	
+	<!-- @FOOTER PAGINA 3 - start ==========
+	     =================================== -->
 	<div class="footer-foglio-A4">
 		<div class="contenuto">
 			<div class="nome-societa">Omnia Energia S.p.A.</div>
@@ -778,7 +848,9 @@
 			</div>
 		</div>
 	</div>
-	
+	<!-- ========== end - FOOTER PAGINA 3 -->
+</div>
+<!-- ********************** PAGINA 3 FINE ************************ -->
 	
 	
 	
