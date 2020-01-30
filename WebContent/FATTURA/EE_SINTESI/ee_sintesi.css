@@ -15,6 +15,19 @@ page[size="A4"] {
     /* padding: 0.7cm; */
 }
 
+/* TODO cancellare */
+.icona-simbolo-euro {
+	background-color: #ee9a50;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 11px;
+    border-radius: 7px;
+    line-height: 14px;
+}
+
 .titolo.sfondo-arancione {
 	font-size: 13px;
     color: #ffffff;
@@ -25,22 +38,40 @@ page[size="A4"] {
     margin-bottom: 6px;
 }
 
+.footer .contenuto {
+	text-align: center;
+}
+
+.footer .contenuto img {
+    width: 630px;
+}
+
+.header-logo-oe {
+	margin: 24px 0;
+}
+
 
 /* HEADER ================================================= */
 	#headerLogo {
-		margin: 30px 0 60px;
+		margin: 25px 0;
 	}
 	
 	#headerLogo .logo-oe,
 	#headerLogo .logo-rina {
-		padding: 6px;
-		margin-top: 10px;
 	}
 	
-	#headerLogo .logo-oe img,
-	#headerLogo .logo-rina img {
+	#headerLogo .logo-oe img {
 		width: 240px;
 		margin-left: 20px;
+	}
+	
+	#headerLogo .logo-rina {
+		text-align: right;
+		margin-right: 20px;
+	}
+	
+	#headerLogo .logo-rina img {
+		width: 150px;
 	}
 
 
@@ -201,6 +232,10 @@ page[size="A4"] {
 		color: #ee9a50; /* arancione */
 	}
 	
+	#clienteBollettaImporto .grazie .contenuto .titolo .icona img {
+	    margin-bottom: -4px;
+	}
+	
 	#clienteBollettaImporto .grazie .contenuto .messaggio {
 		font-size: 11px;
 	}
@@ -307,6 +342,10 @@ page[size="A4"] {
 	    color: #ee9a50; /* arancione */
 	}
 	
+	#sintesiImporti .consulente-dedicato .contenuto .titolo img {
+		margin-bottom: -2px;
+	}
+	
 	#sintesiImporti .consulente-dedicato .contenuto .titolo .icona {
 		color: #ee9a50; /* arancione */
 	}
@@ -335,6 +374,11 @@ page[size="A4"] {
 			line-height: 22px;
 		}
 		
+		#contattiAutoletturaGuasti .contatti .contenuto .titolo .img-telefono {
+		    border: 0;
+		    margin-bottom: -4px;
+		}
+		
 		#contattiAutoletturaGuasti .contatti .contenuto .elenco-contatti {
 			border: 2px solid #ee9a50; /* arancione */
 	    	padding: 4px 8px;
@@ -360,6 +404,11 @@ page[size="A4"] {
 			height: 20px;
 			line-height: 22px;
 			color: #ee9a50; /* arancione */
+		}
+		
+		#contattiAutoletturaGuasti .autolettura .contenuto .titolo .img-contatore {
+			border: 0;
+			margin-bottom: -2px;
 		}
 		
 		#contattiAutoletturaGuasti .autolettura .contenuto .elenco-canali {
@@ -410,6 +459,7 @@ page[size="A4"] {
 /* QUADRO LETTURE E CONSUMI =============================== */
 	#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda {
 		font-size: 8px;
+		margin-top: 18px;
 	}
 	
 	#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda .voce-legenda {
@@ -446,6 +496,7 @@ page[size="A4"] {
 	#quadroLettureEConsumi #tabellaQuadroLettureEConsumi {
 		font-size: 8px;
 		width: 100%;
+		margin-top: 8px;
 	}
 	
 	#quadroLettureEConsumi #tabellaQuadroLettureEConsumi tr {
@@ -490,6 +541,46 @@ page[size="A4"] {
 	#riepilogoQuantitaECostiMediFatturati .dati {
 		padding: 5px;
 	}
+
+	
+/* DETTAGLIO IMPOSTE */
+	#dettaglioImposte {
+		margin-bottom: 15px;
+	}
+	
+	#dettaglioImposte .titolo {
+		font-size: 13px;
+		padding: 0px 5px;
+		border-bottom: 2px solid #e82525;
+		margin-bottom: 5px;
+	}
+	
+	#dettaglioImposte .titolo .contenuto .testo {
+		display: inline-block;
+		background-color: #e82525;
+	    color: #ffffff;
+	    padding: 3px 12px 0;
+	    border-radius: 4px 4px 0 0;
+	}
+	
+	#dettaglioImposte .dati .tabella {
+		font-size: 11px;
+	}
+	
+	#dettaglioImposte .dati .tabella .header {
+		margin-bottom: 1px;
+	}
+	
+	#dettaglioImposte .dati .tabella .header,
+	#dettaglioImposte .dati .tabella .body {
+		padding: 0 4px;
+	}
+	
+	#dettaglioImposte .dati .tabella .body {
+		border: 1px solid #555555;
+		padding-top: 2px;
+		padding-bottom: 2px;	
+	}
 	
 	
 /* CONGUAGLI RICALCOLI NON PAGATE */
@@ -525,8 +616,15 @@ page[size="A4"] {
 		padding: 4px;
 	}
 	
+	#arera .dati .titolo {
+	    background-color: #dedede;
+    	padding: 2px 4px;
+    	margin: 8px 0 2px;
+	}
+	
 	#arera .dati table {
 		width: 100%;
+		margin: 4px 0;
 	}
 	
 	#arera .dati table tr td {
@@ -547,7 +645,7 @@ page[size="A4"] {
 
 
 /* FOOTER PER FOGLIO A4 */
-	.footer-foglio-A4 {
+	/* .footer-foglio-A4 {
 		color: #ffffff;
 		font-size: 10px;
 	    text-align: center;
@@ -587,7 +685,7 @@ page[size="A4"] {
 	.footer-foglio-A4 .contenuto .sito,
 	.footer-foglio-A4 .contenuto .numero-verde {
 		font-weight: bold;
-	}
+	} */
 
 
 

@@ -47,7 +47,7 @@
 <body>
 
 <!-- ********************** PAGINA 1 INIZIO ********************** -->
-<div id="pagina1">
+<div id="pagina1" class="paginaA4" style="page-break-after: always;">
 	<!-- LOGHI - start ==========
 	     ======================== -->
 	<div id="headerLogo" class="pure-g">
@@ -210,7 +210,7 @@
 		<div class="pure-u-6-24 importo">
 			<div class="contenuto">
 				<div class="titolo">
-					<span>ICO</span>
+					<span><span class="icona-simbolo-euro">€</span></span>
 					<span>TOTALE DA PAGARE</span>
 				</div>
 				<div class="totale-da-pagare">
@@ -233,7 +233,9 @@
 		<div class="pure-u-5-24 grazie">
 			<!-- @@@@ NEL VIDEO MOSTRA COME IMPOSTARE IL MESSAGIO GRAZIE -->
 			<div class="contenuto">
-				<div class="titolo"><span class="icona">ICO</span> <span>GRAZIE ??</span></div>
+				<div class="titolo">
+					<span class="icona"><img alt="busta" src="images/busta.png" width="17px" height="17px"></span> <span>GRAZIE ??</span>
+				</div>
 				<div class="messaggio">Ti comunichiamo che, alla data attuale, le tue precedenti bollette risultano tutte pagate. ??</div>
 			</div>
 		</div>
@@ -371,7 +373,7 @@
 		</div>
 		<div class="pure-u-7-24 consulente-dedicato">
 			<div class="contenuto">
-				<div class="titolo"><span class="icona">ICO</span> <span>CONSULENTE DEDICATO</span></div>
+				<div class="titolo"><span class="icona"><img alt="consulente-dedicato" src="images/consulente-dedicato.jpg" width="15px" height="15px"> </span> <span>CONSULENTE DEDICATO</span></div>
 				<div class="messaggio">C'è qualcosa che non ti è chiaro sulla bolletta o desideri informazioni?
 					Puoi contattare il tuo consulente dedicato <span>Mario Rossi</span>. Puoi chiamarlo al numero di cellulare <span>333.6767677</span>
 					o al numero fisso <span>0984.828356</span> o inviare una mail al seguente indirizzo <span>ascavo@omnia energia.it</span></div>
@@ -430,7 +432,7 @@
 		<!-- contatti utili -->
 		<div class="pure-u-8-24 contatti">
 			<div class="contenuto">
-				<div class="titolo"><span><img src="images/telefono.png" width="14px" height="14px" alt="telefono" /></span> CONTATTI UTILI</div>
+				<div class="titolo"><span><img class="img-telefono" src="images/telefono.png" width="16px" height="16px" alt="telefono" /></span> CONTATTI UTILI</div>
 				<div class="elenco-contatti">
 					<div class="contatto">
 						<div class="etichetta">Contact Center</div>
@@ -460,7 +462,7 @@
 			<!-- autolettura -->
 			<div class="autolettura">
 				<div class="contenuto">
-					<div class="titolo"><span><img src="images/contatore.png" width="10px" height="10px" alt="contatore" /></span> AUTOLETTURA</div>
+					<div class="titolo"><span><img class="img-contatore" src="images/contatore.png" width="15px" height="15px" alt="contatore" /></span> AUTOLETTURA</div>
 					<div class="elenco-canali">
 						<div class="intro">Potrai comunicare l'autolettura della tua fornitura di energia elettrica dal <span style="font-weight: bold;">00/00/000 al 00/00/0000 ??</span> attraverso i seguenti canali:</div>
 						<div class="canale">
@@ -503,29 +505,12 @@
 	<!-- ========== end - CONTATTI/AUTOLETTURA/GUASTI -->		
 	
 		
-	<!-- @FOOTER PAGINA 1 - start ==========
-	     =================================== -->
-	<div class="footer-foglio-A4 pagina-1">
+	<!-- @FOOTER PAGINA 1 - start ========== -->
+	<div class="footer">
 		<div class="contenuto">
-			<div class="nome-societa">Omnia Energia S.p.A.</div>
-			<div class="info-societa-1">
-				Via Beato F. Marino, 102 Z.I. 87040 Zumpano (CS)
-				Tel. +39 0984 825356 Fax +39 0984 845148 Numero Verde <span class="numero-verde">800 98 44 55</span>
-				info@omniaenergia.it				
-			</div>
-			<div class="info-societa-2">
-				Partita Iva 02599020787 Reg. Imprese CS R.E.A. 176099 Capitale Sociale € 900.000,00 interamente versato
-			</div>
-			<div class="info-societa-2">
-				La società è soggetta a direzione e coordinamento di Vida Srl
-				Cod. Fiscale 02637510781 Iscitta al Registro delle Imprese di Cosenza n° 02637510781 v° R.E.A. 178944
-			</div>
-			<div class="sito">
-				www.omniaenergia.it
-			</div>
+			<img src="images/carta-intestata.jpg" alt="carta-intestata" />
 		</div>
 	</div>
-	<!-- ========== end - FOOTER PAGINA 1 -->	
 </div>
 <!-- ********************** PAGINA 1 FINE ************************ -->
 <!-- ************************************************************* -->
@@ -533,7 +518,15 @@
 
 
 <!-- ********************** PAGINA 2 INIZIO ************************ -->
-<div id="pagina2">
+<div id="pagina2" class="paginaA4" style="page-break-after: always;">
+	<!-- @HEADER CON LOGO OE =======
+		 =========================== -->
+	<div class="header-logo-oe">
+		<div class="contenuto">
+			<img src="images/logo-oe.png" alt="header-logo-oe" width="165px">
+		</div>
+	</div>
+	
 	<!-- @QUADRO LETTURE E CONSUMI - start ==========
 	     ============================================ -->
 	<!-- ****** dati ****** -->
@@ -851,7 +844,7 @@
         <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">01</span>
         <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">11</span>
         <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">21</span>
-        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">31</span>
+        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">91</span>
         <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">691</span>
 		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3001</span>
     </div>
@@ -985,6 +978,66 @@
 	<!-- ========== end - RIEPILOGO QUANTITA' E COSTI MEDI FATTURATI -->
 	
 	
+	<!-- @DETTAGLIO IMPOSTE - start ==========
+	     =============================================================== -->
+	<div id="dettaglioImposte" class="pure-g">
+		<div class="pure-u-24-24">
+			<div class="pure-g titolo">
+				<div class="pure-u-24-24 contenuto">
+					<div class="testo">DETTAGLIO IMPOSTE</div>
+				</div>
+			</div>
+			<div class="pure-g dati">
+				<div class="pure-u-24-24">
+					<div class="tabella">
+						<div class="header">
+							<div class="pure-g">
+								<div class="pure-u-5-24"></div>
+								<div class="pure-u-5-24">Periodo</div>
+								<div class="pure-u-3-24">Scaglione</div>
+								<div class="pure-u-3-24">Quantità</div>
+								<div class="pure-u-3-24">Prezzo (€/kWh)</div>
+								<div class="pure-u-3-24">Totale (€)</div>
+								<div class="pure-u-2-24">Iva %</div>
+							</div>
+						</div>
+						<div class="body">
+							<div class="pure-g riga">
+								<div class="pure-u-5-24 cella"><span>Imposta erariale</span></div>
+								<div class="pure-u-5-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+								<div class="pure-u-3-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+								<div class="pure-u-3-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+								<div class="pure-u-3-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+								<div class="pure-u-3-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+								<div class="pure-u-2-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+							</div>
+							<div class="pure-g riga">
+								<div class="pure-u-5-24 cella"><span>Imposta erariale</span></div>
+								<div class="pure-u-5-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+								<div class="pure-u-3-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+								<div class="pure-u-3-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+								<div class="pure-u-3-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+								<div class="pure-u-3-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+								<div class="pure-u-2-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+							</div>
+							<div class="pure-g riga">
+								<div class="pure-u-5-24 cella"><span>Imposta erariale</span></div>
+								<div class="pure-u-5-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+								<div class="pure-u-3-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+								<div class="pure-u-3-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+								<div class="pure-u-3-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+								<div class="pure-u-3-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+								<div class="pure-u-2-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ========== end - DETTAGLIO IMPOSTE -->
+	
+	
 	<!-- @CONGUAGLI RICALCOLI NON PAGATE - start ==========
 	     ================================================== -->
 	<div id="conguagliRicalcoliNonPagate" class="pure-g">
@@ -1102,36 +1155,27 @@
 	<!-- ========== end - GUIDA LETTURA FATTURA -->
 		
 	
-	<!-- @FOOTER PAGINA 2 - start ==========
-	     =================================== -->
-	<div class="footer-foglio-A4">
+	<!-- @FOOTER PAGINA 2 - start ========== -->
+	<div class="footer">
 		<div class="contenuto">
-			<div class="nome-societa">Omnia Energia S.p.A.</div>
-			<div class="info-societa-1">
-				Via Beato F. Marino, 102 Z.I. 87040 Zumpano (CS)
-				Tel. +39 0984 825356 Fax +39 0984 845148 Numero Verde <span class="numero-verde">800 98 44 55</span>
-				info@omniaenergia.it				
-			</div>
-			<div class="info-societa-2">
-				Partita Iva 02599020787 Reg. Imprese CS R.E.A. 176099 Capitale Sociale € 900.000,00 interamente versato
-			</div>
-			<div class="info-societa-2">
-				La società è soggetta a direzione e coordinamento di Vida Srl
-				Cod. Fiscale 02637510781 Iscitta al Registro delle Imprese di Cosenza n° 02637510781 v° R.E.A. 178944
-			</div>
-			<div class="sito">
-				www.omniaenergia.it
-			</div>
+			<img src="images/carta-intestata.jpg" alt="carta-intestata" />
 		</div>
 	</div>
-	<!-- ========== end - FOOTER PAGINA 2 -->
 </div>	
 <!-- ********************** PAGINA 2 FINE ************************ -->
 
 
 
 <!-- ********************** PAGINA 3 INIZIO ************************ -->
-<div id="pagina3">
+<div id="pagina3" class="paginaA4" style="page-break-after: always;">
+	<!-- @HEADER CON LOGO OE =======
+		 =========================== -->
+	<div class="header-logo-oe">
+		<div class="contenuto">
+			<img src="images/logo-oe.png" alt="header-logo-oe" width="165px">
+		</div>
+	</div>
+
 	<!-- @ARERA - start ==========
 	     ========================= -->	
 	<div id="arera" class="pure-g">
@@ -1192,36 +1236,37 @@
 							Mix energetico medio nazionale dell'energia elettrica immessa nel 2010 nel sistema elettrico italiano, ivi inclusa l’energia elettrica importata, di cui al Decreto 31 luglio 2009 del Ministero dello Sviluppo
 							Economico “Criteri e modalità per la fornitura ai clienti finali delle informazioni sulla composizione del mix energetico utilizzato per la produzione dell'energia elettrica fornita, nonché sull'impatto ambientale della produzione".
 						</div>
-						<table>
-							<tbody>
-								<tr class="header"><td>Fonti primarie utilizzate</td><td class="last">Mix energetico nazionale anno 2010 (%)</td></tr>
-								<tr><td>Fonti rinnovabili</td><td class="last">35,6 %</td></tr>
-								<tr><td>Carbone</td><td class="last">12,8 %</td></tr>
-								<tr><td>Gas naturale</td><td class="last">42,4 %</td></tr>
-								<tr><td>Nucleare</td><td class="last">1,6 %</td></tr>
-								<tr><td>Prodotti petroliferi</td><td class="last">1,7 %</td></tr>
-								<tr class="last"><td>Altre fonti</td><td class="last">5,9 %</td></tr>
-							</tbody>
-						</table>
+						<div class="contenitore-tabella">
+							<table>
+								<tbody>
+									<tr class="header"><td>Fonti primarie utilizzate</td><td class="last">Mix energetico nazionale anno 2010 (%)</td></tr>
+									<tr><td>Fonti rinnovabili</td><td class="last">35,6 %</td></tr>
+									<tr><td>Carbone</td><td class="last">12,8 %</td></tr>
+									<tr><td>Gas naturale</td><td class="last">42,4 %</td></tr>
+									<tr><td>Nucleare</td><td class="last">1,6 %</td></tr>
+									<tr><td>Prodotti petroliferi</td><td class="last">1,7 %</td></tr>
+									<tr class="last"><td>Altre fonti</td><td class="last">5,9 %</td></tr>
+								</tbody>
+							</table>
+						</div>
 						<div>
 							Stima del mix energetico medio nazionale dell’energia elettrica immessa nel sistema elettrico italiano e stima del mix energetico relativo all'elettricità venduta da Omnia Energia Spa nel 2011, di cui al Decreto 31
 							luglio 2009 del Ministero dello Sviluppo Economico “Criteri e modalità per la fornitura ai clienti finali delle informazioni sulla composizione del mix energetico utilizzato per la produzione dell'energia elettrica fornita,
 							nonchè sull'impatto ambientale della produzione.
 						</div>
-					</div>
-					<div class="titolo"><strong></strong></div>
-					<div class="body">
-						<table>
-							<tbody>
-								<tr class="header"><td>Fonti primarie utilizzate</td><td>Mix energetico anno 2011 (%) di Omnia Energia Spa</td><td class="last">Mix energetico nazionale anno 2011 (%)</td>
-								<tr><td>Fonti rinnovabili</td><td>30,3 %</td><td class="last">36,7 %</td>
-								<tr><td>Carbone</td><td>16,1 %</td><td class="last">14,6 %</td>
-								<tr><td>Gas naturale</td><td>44,5 %</td><td class="last">40,0 %</td>
-								<tr><td>Prodotti petroliferi</td><td>1,4 %</td><td class="last">1,2 %</td>
-								<tr><td>Nucleare</td><td>1,6 %</td><td class="last">1,8 %</td>
-								<tr class="last"><td>Altre fonti</td><td>6,3 %</td><td class="last">5,7 %</td>
-							</tbody>
-						</table>
+						<div class="contenitore-tabella">
+							<table>
+								<tbody>
+									<tr class="header"><td>Fonti primarie utilizzate</td><td>Mix energetico anno 2011 (%) di Omnia Energia Spa</td><td class="last">Mix energetico nazionale anno 2011 (%)</td>
+									<tr><td>Fonti rinnovabili</td><td>30,3 %</td><td class="last">36,7 %</td>
+									<tr><td>Carbone</td><td>16,1 %</td><td class="last">14,6 %</td>
+									<tr><td>Gas naturale</td><td>44,5 %</td><td class="last">40,0 %</td>
+									<tr><td>Prodotti petroliferi</td><td>1,4 %</td><td class="last">1,2 %</td>
+									<tr><td>Nucleare</td><td>1,6 %</td><td class="last">1,8 %</td>
+									<tr class="last"><td>Altre fonti</td><td>6,3 %</td><td class="last">5,7 %</td>
+								</tbody>
+							</table>
+						</div>
 					</div>
 					<div class="titolo"><strong>Reclami e segnalazioni</strong></div>
 					<div class="body">
@@ -1254,39 +1299,38 @@
 	<!-- ========== end - GUIDA LETTURA FATTURA -->
 	
 	
-	<!-- @FOOTER PAGINA 3 - start ==========
-	     =================================== -->
-	<div class="footer-foglio-A4">
+	<!-- @FOOTER PAGINA 3 - start ========== -->
+	<div class="footer">
 		<div class="contenuto">
-			<div class="nome-societa">Omnia Energia S.p.A.</div>
-			<div class="info-societa-1">
-				Via Beato F. Marino, 102 Z.I. 87040 Zumpano (CS)
-				Tel. +39 0984 825356 Fax +39 0984 845148 Numero Verde <span class="numero-verde">800 98 44 55</span>
-				info@omniaenergia.it				
-			</div>
-			<div class="info-societa-2">
-				Partita Iva 02599020787 Reg. Imprese CS R.E.A. 176099 Capitale Sociale € 900.000,00 interamente versato
-			</div>
-			<div class="info-societa-2">
-				La società è soggetta a direzione e coordinamento di Vida Srl
-				Cod. Fiscale 02637510781 Iscitta al Registro delle Imprese di Cosenza n° 02637510781 v° R.E.A. 178944
-			</div>
-			<div class="sito">
-				www.omniaenergia.it
-			</div>
+			<img src="images/carta-intestata.jpg" alt="carta-intestata" />
 		</div>
 	</div>
-	<!-- ========== end - FOOTER PAGINA 3 -->
 </div>
 <!-- ********************** PAGINA 3 FINE ************************ -->
 	
 	
-	
-
-	
-	
-	
-	
+<!-- 
+<div class="footer-foglio-A4 pagina-1">
+	<div class="contenuto">
+		<div class="nome-societa">Omnia Energia S.p.A.</div>
+		<div class="info-societa-1">
+			Via Beato F. Marino, 102 Z.I. 87040 Zumpano (CS)
+			Tel. +39 0984 825356 Fax +39 0984 845148 Numero Verde <span class="numero-verde">800 98 44 55</span>
+			info@omniaenergia.it				
+		</div>
+		<div class="info-societa-2">
+			Partita Iva 02599020787 Reg. Imprese CS R.E.A. 176099 Capitale Sociale € 900.000,00 interamente versato
+		</div>
+		<div class="info-societa-2">
+			La società è soggetta a direzione e coordinamento di Vida Srl
+			Cod. Fiscale 02637510781 Iscitta al Registro delle Imprese di Cosenza n° 02637510781 v° R.E.A. 178944
+		</div>
+		<div class="sito">
+			www.omniaenergia.it
+		</div>
+	</div>
+</div>
+ -->
     
 </body>
 </html>

@@ -15,30 +15,62 @@ page[size="A4"] {
     /* padding: 0.7cm; */
 }
 
+/* TODO cancellare */
+.icona-simbolo-euro {
+	background-color: #ee9a50;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 11px;
+    border-radius: 7px;
+    line-height: 14px;
+}
+
 .titolo.sfondo-blu {
 	font-size: 13px;
     color: #ffffff;
-    background-color: #2f75b5; /* blu */
+    background-color: #5b9bd5; /* blu */
     padding: 0px 5px;
     height: 22px;
     line-height: 24px;
     margin-bottom: 6px;
 }
+
+.footer .contenuto {
+	text-align: center;
+}
+
+.footer .contenuto img {
+    width: 630px;
+}
+
+.header-logo-oe {
+	margin: 24px 0;
+}
+
 /* HEADER ================================================= */
 	#headerLogo {
 		margin: 30px 0 60px;
 	}
 	
-	#headerLogo .logo-oe,
-	#headerLogo .logo-rina {
-		padding: 6px;
-		margin-top: 10px;
+	#headerLogo .loghi-rina {
+		text-align: right;
+    	margin-right: 20px;
 	}
 	
-	#headerLogo .logo-oe img,
-	#headerLogo .logo-rina img {
-		width: 240px;
-		margin-left: 20px;
+	#headerLogo .loghi-rina .uni,
+	#headerLogo .loghi-rina .iso {
+		display: inline-block;
+	}
+	
+	#headerLogo .logo-rina-uni img {
+		width: 116px;
+	}
+	
+	#headerLogo .logo-rina-iso img {
+		width: 100px;
 	}
 
 
@@ -107,12 +139,12 @@ page[size="A4"] {
 	}
 	
 	#clienteBollettaImporto .separatore {
-		border-top: 1px solid #2f75b5; /* blu */
+		border-top: 1px solid #5b9bd5; /* blu */
 		margin-bottom: 4px;
 	}
 	
 	#clienteBollettaImporto .etichetta {
-		color: #2f75b5;
+		color: #5b9bd5;
 	    font-weight: bold;
 	    margin-bottom: 2px;
 	}
@@ -135,12 +167,12 @@ page[size="A4"] {
 	/* bolletta */
 	#clienteBollettaImporto .bolletta .contenuto {
 		padding: 0 5px;
-		border-left: 1px solid #2f75b5; /* blu */
-		border-right: 1px solid #2f75b5;
+		border-left: 1px solid #5b9bd5; /* blu */
+		border-right: 1px solid #5b9bd5;
 	}
 	
 	#clienteBollettaImporto .bolletta .contenuto .titolo {
-		color: #2f75b5;
+		color: #5b9bd5;
 	    font-weight: bold;
 	    padding: 4px 0;
 	    margin-bottom: 4px;
@@ -161,7 +193,7 @@ page[size="A4"] {
 	}
 	
 	#clienteBollettaImporto .importo .contenuto .titolo {
-		color: #2f75b5;
+		color: #5b9bd5;
 	    font-weight: bold;
 	    padding: 4px 0;
 	    margin-bottom: 5px;
@@ -180,7 +212,7 @@ page[size="A4"] {
 	}
 	
 	#clienteBollettaImporto .importo .contenuto .data-scadenza .data {
-		color: #2f75b5;
+		color: #5b9bd5;
 	}
 	
 	/* grazie */
@@ -196,7 +228,11 @@ page[size="A4"] {
 	}
 	
 	#clienteBollettaImporto .grazie .contenuto .titolo .icona {
-		color: #2f75b5; /* blu */
+		color: #5b9bd5; /* blu */
+	}
+	
+	#clienteBollettaImporto .grazie .contenuto .titolo .icona img {
+	    margin-bottom: -4px;
 	}
 	
 	#clienteBollettaImporto .grazie .contenuto .messaggio {
@@ -210,7 +246,7 @@ page[size="A4"] {
 	}
 	
 	#sintesiImporti .grafico {
-		border-top: 2px solid #2f75b5; /* blu */
+		border-top: 2px solid #5b9bd5; /* blu */
 	}
 	
 	#sintesiImporti .grafico .contenuto {
@@ -220,7 +256,7 @@ page[size="A4"] {
 	}
 	
 	#sintesiImporti .grafico .contenuto .titolo {
-		color: #2f75b5; /* blu */
+		color: #5b9bd5; /* blu */
 		font-size: 14px;
 		font-weight: bold;
 	    height: 20px;
@@ -269,7 +305,7 @@ page[size="A4"] {
 	}
 	
 	#sintesiImporti .grafico .contenuto .legenda .voce-legenda.iva .box-colore .rettangolo {
-		background-color: #2f75b5; /* vedi file charts.css */
+		background-color: #5b9bd5; /* vedi file charts.css */
 	}
 	
 	#sintesiImporti .grafico .contenuto .legenda .voce-legenda .valore-in-euro,
@@ -302,11 +338,11 @@ page[size="A4"] {
 	    padding: 4px 0;
 	    margin-bottom: 5px;
 	    font-size: 12px;
-	    color: #2f75b5; /* blu */
+	    color: #5b9bd5; /* blu */
 	}
 	
 	#sintesiImporti .consulente-dedicato .contenuto .titolo .icona {
-		color: #2f75b5; /* blu */
+		color: #5b9bd5; /* blu */
 	}
 	
 	#sintesiImporti .consulente-dedicato .contenuto .messaggio {
@@ -333,8 +369,13 @@ page[size="A4"] {
 			line-height: 22px;
 		}
 		
+		#contattiAutoletturaGuasti .contatti .contenuto .titolo .img-telefono {
+		    border: 0;
+		    margin-bottom: -4px;
+		}
+		
 		#contattiAutoletturaGuasti .contatti .contenuto .elenco-contatti {
-			border: 2px solid #2f75b5; /* blu */
+			border: 2px solid #5b9bd5; /* blu */
 	    	padding: 4px 8px;
 		}
 		
@@ -357,11 +398,11 @@ page[size="A4"] {
 			font-size: 14px;
 			height: 20px;
 			line-height: 22px;
-			color: #2f75b5; /* blu */
+			color: #5b9bd5; /* blu */
 		}
 		
 		#contattiAutoletturaGuasti .autolettura .contenuto .elenco-canali {
-			border: 2px solid #2f75b5; /* blu */
+			border: 2px solid #5b9bd5; /* blu */
 	    	padding: 4px 8px;
 		}
 		
@@ -390,7 +431,7 @@ page[size="A4"] {
 		}
 		
 		#contattiAutoletturaGuasti .guasti .contenuto .contatti {
-			border: 2px solid #2f75b5; /* blu */
+			border: 2px solid #5b9bd5; /* blu */
 	    	padding: 4px 8px;
 		}
 		
@@ -407,7 +448,7 @@ page[size="A4"] {
 	#quadroLettureEConsumi .titolo .contenuto {
 	   	font-size: 13px;
 	    color: #ffffff;
-	    background-color: #2f75b5; /* blu */
+	    background-color: #5b9bd5; /* blu */
 	    padding: 0px 5px;
 	    height: 22px;
 	    line-height: 24px;
@@ -452,6 +493,7 @@ page[size="A4"] {
 	#quadroLettureEConsumi #tabellaQuadroLettureEConsumi {
 		font-size: 8px;
 		width: 100%;
+	    margin-top: 65px;
 	}
 	
 	#quadroLettureEConsumi #tabellaQuadroLettureEConsumi tr {
@@ -477,57 +519,115 @@ page[size="A4"] {
 	}
 
 
+/* DETTAGLIO IMPOSTE */
+	#dettaglioImposte {
+		margin-bottom: 15px;
+	}
+	
+	#dettaglioImposte .titolo {
+		font-size: 13px;
+		padding: 0px 5px;
+		border-bottom: 2px solid #e82525;
+		margin-bottom: 5px;
+	}
+	
+	#dettaglioImposte .titolo .contenuto .testo {
+		display: inline-block;
+		background-color: #e82525;
+	    color: #ffffff;
+	    padding: 3px 12px 0;
+	    border-radius: 4px 4px 0 0;
+	}
+	
+	#dettaglioImposte .dati .tabella {
+		font-size: 11px;
+	}
+	
+	#dettaglioImposte .dati .tabella .header {
+		margin-bottom: 1px;
+	}
+	
+	#dettaglioImposte .dati .tabella .header,
+	#dettaglioImposte .dati .tabella .body {
+		padding: 0 4px;
+	}
+	
+	#dettaglioImposte .dati .tabella .body {
+		border: 1px solid #555555;
+		padding-top: 2px;
+		padding-bottom: 2px;	
+	}
 
 
+/* CONGUAGLI RICALCOLI NON PAGATE */
+	#conguagliRicalcoliNonPagate {
+		font-size: 12px;
+		margin-bottom: 15px;
+	}
+	
+	#conguagliRicalcoliNonPagate #conguagliRicalcoli .dati,
+	#conguagliRicalcoliNonPagate #nonPagate .dati {
+		padding: 4px;
+	}
+	
 
-
-
-
-
-
-
-/* FOOTER PER FOGLIO A4 */
-	.footer-foglio-A4 {
-		color: #ffffff;
+/* GUIDA LETTURA FATTURA */
+	#guidaLetturaFattura {
+		margin-top: 10px;
+	}
+	
+	#guidaLetturaFattura .dati {
 		font-size: 10px;
-	    text-align: center;
-	    padding: 0 35px;
-	    line-height: 1.2;
-		page-break-after: always;
+		padding: 4px;
 	}
 	
-	.footer-foglio-A4.pagina-1 {
-		margin-top: 41px;
+	#guidaLetturaFattura .dati .paragrafo {
+		margin-bottom: 4px;
 	}
-	
-	.footer-foglio-A4.pagina- {
-		margin-top: 41px;
-	}
-	
-	.footer-foglio-A4 .contenuto {
-		background-color: #b4252d;
-		padding: 6px 0 3px;
-	    border-radius: 10px 10px 0 0;
-	}
-	
-	.footer-foglio-A4 .contenuto .nome-societa {
-		font-weight: bold;
-	}
-	
-	.footer-foglio-A4 .contenuto .info-societa-1,
-	.footer-foglio-A4 .contenuto .info-societa-2,
-	.footer-foglio-A4 .contenuto .info-societa-3 {
+
+
+/* ARERA */
+	#arera .dati {
 		font-size: 8px;
+		padding: 4px;
 	}
 	
-	.footer-foglio-A4 .contenuto .sito {
-		font-size: 9px;
+	#arera .dati .titolo {
+	    background-color: #dedede;
+    	padding: 2px 4px;
+    	margin: 8px 0 2px;
 	}
 	
-	.footer-foglio-A4 .contenuto .sito,
-	.footer-foglio-A4 .contenuto .numero-verde {
-		font-weight: bold;
+	#arera .dati table {
+		width: 100%;
+		margin: 4px 0;
 	}
+	
+	#arera .dati table tr td {
+		border-top: 1px solid #555555;
+		border-left: 1px solid #555555;
+		padding: 0 5px;
+	}
+	
+	#arera .dati table tr.last td {
+		border-bottom: 1px solid #555555;
+	}
+	
+	#arera .dati table tr td.last {
+		border-right: 1px solid #555555;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -25,19 +25,12 @@
 }
 
 .ct-series.iva .ct-slice-donut {
-	stroke: #2f75b5;
+	stroke: #5b9bd5;
 }
 
 
 /* QUADRO LETTURE E CONSUMI */
 /* ****************************************************************** */
-.ct-series.tipoDato .ct-bar {
-	/* fill: hsl(120, 40%, 60%); */
-	/* stroke: white; */
-	/* stroke-width: 4px; */
-	stroke: #f67b28;
-}
-
 .ct-series.consumo .ct-bar {
-	stroke: #ffc604;
+	stroke: #5b9bd5;
 }
