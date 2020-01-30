@@ -341,6 +341,10 @@ page[size="A4"] {
 	    color: #5b9bd5; /* blu */
 	}
 	
+	#sintesiImporti .consulente-dedicato .contenuto .titolo img {
+		margin-bottom: -2px;
+	}
+	
 	#sintesiImporti .consulente-dedicato .contenuto .titolo .icona {
 		color: #5b9bd5; /* blu */
 	}
