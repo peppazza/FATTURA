@@ -1028,6 +1028,14 @@
 	
 	<!-- @CONGUAGLI RICALCOLI NON PAGATE - start ==========
 	     ================================================== -->
+	<div style="display: none;" class="morosita_hiddenvalues" data-data_type="simple_loop" data-first_node="Dettagli" data-path_type="xpath" data-path_data="Morosita">
+        <span class="x_morosita_num_doc" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/NumeroDocumento">10001</span>
+        <span class="x_morosita_rata" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Rata">1</span>
+        <span class="x_morosita_data_emissione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataEmissione">01/01/2001</span>
+        <span class="x_morosita_data_scadenza" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataScadenza">21/01/2001</span>
+        <span class="x_morosita_imp_originale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoOriginale">56</span>
+        <span class="x_morosita_imp_da_pagare" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoDaPagare">34</span>
+	</div>
 	<div id="conguagliRicalcoliNonPagate" class="pure-g">
 		<div class="pure-u-11-24">
 			<div id="conguagliRicalcoli">
@@ -1101,6 +1109,49 @@
 						<div class="pure-g dati">
 							<div class="pure-u-24-24">
 								Le precedenti bollette risultano pagate ??
+								<table class="tabella-bollette-non-pagate tab-4" style="min-width: 49%">
+							      	<tbody>
+								        <tr class="bordo-titolo">
+								            <td colspan="3"><h3><span class="titolo3">Dettaglio bollette non pagate</span></h3></td> 
+								        </tr>
+								        <tr>
+								    		<td class="cella-morosita-testo" colspan="3">
+								    			<span class="morosita-testo morosita-testo-font" data-data_type="single" data-first_node="MorositaDocumenti" data-path_type="xpath" data-path_data="Testo">testo morosita</span>
+								    		</td>
+								    	</tr>
+								        <tr class="bordo-tab-sotto righe-bollette-non-pagate">
+								        	<td><span class="testo-non-pagate1 dettaglio-a-sinistra">Bolletta</span></td>
+								            <td><span class="testo-non-pagate1 dettaglio-a-sinistra">Scadenza</span></td>
+								            <td><span class="testo-non-pagate1 dettaglio-a-destra">Totale (€)</span></td>
+								        </tr>
+								         <tr class="righe-bollette-non-pagate" data-data_type="simple_loop" data-first_node="MorositaDocumenti" data-path_type="xpath" data-path_data="Dettagli/Morosita">
+								        	<td><span class="testo-non-pagate2 dettaglio-a-sinistra"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataEmissione">test</span> <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/NumeroDocumento">test</span></span></td>
+								            <td><span class="testo-non-pagate2 dettaglio-a-sinistra"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataScadenza">test</span></span></td>
+								            <td><span class="testo-non-pagate2 dettaglio-a-destra"><span class="sezione-importo-bollette-non-pagate" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoDaPagare">test</span></span></td>
+								        </tr>
+								        <tr class="righe-bollette-non-pagate">
+								        	<td><span class="testo-non-pagate3 dettaglio-a-sinistra">Totale insoluto (€)</span></td>
+								            <td></td>
+								    		<td><span class="testo-non-pagate3 dettaglio-a-destra"><span data-data_type="single" data-first_node="MorositaDocumenti" data-path_type="xpath" data-path_data="Totale">test</span></span></td>
+								    	</tr>
+								        <tr class="bordo-tab-sotto righe-bollette-non-pagate">
+								    		<td colspan="3" class="tabella1"><p class="testo-non-pagate4">Qualora le bollette sollecitate le risultassero già pagate, consideri nullo questo avviso.</span></td>
+								    	</tr>
+								        <tr class="bordo-tab-sotto righe-interessi-applicati righe-bollette-non-pagate">
+								    		<td colspan="3" class="tabella1"><p class="testo-non-pagate5">Interessi applicati</span></td>
+								    	</tr>
+								         <tr class="righe-interessi-applicati righe-bollette-non-pagate">
+								        	<td><span class="testo-non-pagate2">Periodo</span></td>
+								            <td><span class="testo-non-pagate2"></span></td>
+								            <td><span class="testo-non-pagate2">%</span></td>
+								        </tr>
+								        <tr class="righe-interessi-applicati righe-bollette-non-pagate" data-data_type="simple_loop" data-first_node="MorositaInteressiBollette" data-path_type="xpath" data-path_data="MorositaInteressi">
+								        	<td><span class="testo-non-pagate2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Periodo">test</span></span></td>
+								            <td><span class="testo-non-pagate2"></span></td>
+								            <td><span class="testo-non-pagate2"><span class="sezione-percentuale-interessi-applicati" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TassoAnnuo">test</span></span></td>
+								        </tr>   
+							      	</tbody>
+							    </table>
 							</div>
 						</div>
 					</div>				
