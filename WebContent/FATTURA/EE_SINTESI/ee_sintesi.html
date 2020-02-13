@@ -491,7 +491,11 @@
 				<div class="contenuto">
 					<div class="titolo"><span><img class="img-contatore" src="images/contatore.png" width="15px" height="15px" alt="contatore" /></span> AUTOLETTURA</div>
 					<div class="elenco-canali">
-						<div class="intro">Potrai comunicare l'autolettura della tua fornitura di energia elettrica dal <span style="font-weight: bold;">00/00/000 al 00/00/0000 ??</span> attraverso i seguenti canali:</div>
+						<div class="intro">Potrai comunicare l'autolettura della tua fornitura di energia elettrica dal 
+							<span class="valore-autolettura-dal" data-data_type="single" data-first_node="LetturaFuturaInizioAutoLettura" data-path_type="xpath" data-path_data=""></span>
+							al <span class="valore-autolettura-dal" data-data_type="single" data-first_node="LetturaFuturaFineAutoLettura" data-path_type="xpath" data-path_data=""></span>
+							attraverso i seguenti canali:
+						</div>
 						<div class="canale">
 							<span class="etichetta">Sito web:</span>
 							<span class="valore"><a href="#">www.omniaenergia.it</a> accedendo alla tua area personale</span>
@@ -521,9 +525,9 @@
 						 -->
 						<div class="contatto">
 							<span class="etichetta">Numero verde</span>
-							<span class="valore">803 500 ??</span>
+							<span class="valore"><span class="pronto-intervento" data-data_type="single" data-first_node="ProntoIntervento" data-path_type="xpath" data-path_data="">803 500</span></span>
 						</div>
-						<div class="canale">Servizio a cura di <span>E-distribuzione S.p.A. ??</span></div>
+						<div class="canale">Servizio a cura di <span class="pronto-intervento" data-data_type="single" data-first_node="DistributoreCompetente" data-path_type="xpath" data-path_data="">E-distribuzione S.p.A.</span></div>
 					</div>
 				</div>
 			</div>
@@ -955,10 +959,10 @@
 					<strong>Consumi fatturati: <span>1.198 ??</span> kWh</strong>
 				</div>
 				<div class="pure-u-8-24 col2">
-					Costo medio della materia prima: <strong><span>0,006 ??</span> €/kWh</strong>
+					Costo medio della materia prima: <strong><span class="costo-medio-materia" data-data_type="single" data-first_node="CostoMedioUnitSpesaMateria" data-path_type="xpath" data-path_data="">0,54</span> €/kWh</strong>
 				</div>
 				<div class="pure-u-8-24 col3">
-					Costo medio della bolletta: <strong><span>0,20 ??</span> €/kWh</strong>
+					Costo medio della bolletta: <strong><span class="costo-medio-bolletta" data-data_type="single" data-first_node="CostoMedioUnitBolletta" data-path_type="xpath" data-path_data="">0,63</span> €/kWh</strong>
 				</div>
 			</div>
 		</div>
