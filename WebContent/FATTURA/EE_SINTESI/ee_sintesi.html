@@ -1098,13 +1098,9 @@
 			</div>
 			<div class="pure-g dati">
 				<div class="pure-u-24-24">
-					<table class="tabella">
-						<tbody>
-							<tr class="messaggio-dettaglio-imposte">
-						        <td class="no-border" colspan="7"><span class="testo-dettaglio-imposte2">Nessuna imposta applicata in questa bolletta</span></td> 
-						    </tr>
-						</tbody>
-					</table>
+					<div id="messaggioNessunaImposta" class="messaggio">
+						Nessuna imposta applicata in questa bolletta
+					</div>
 					<table>
 				      	<tbody>
 					        <tr class="bordo-titolo">
@@ -1122,8 +1118,7 @@
 						    	<td class="left dettaglioimposte-descrizione"><span class="testo-dettaglio-imposte3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">test</span></td>
 						    	<td class="dettaglioimposte-periodo">
 						    		<span class="testo-dettaglio-imposte2">
-										<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal">05/12/2014</span> - 
-										<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al">31/12/2014</span>
+										<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal">05/12/2014</span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al">31/12/2014</span>
 									</span>
 								</td>
 						        <td class="dettaglioimposte-scaglione"><span class="testo-dettaglio-imposte2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Scaglione">test</span></span></td>
@@ -1134,7 +1129,11 @@
 						    </tr>
 						    <tr class="quota-dettaglio-imposte" data-data_type="simple_loop" data-first_node="Imposte" data-path_type="xpath" data-path_data="AccontiImposte/QuotaDettaglioImposte">
 						    	<td class="left"><span class="testo-dettaglio-imposte3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">test</span></td>
-						    	<td class="dettaglioimposte-periodo"><span class="testo-dettaglio-imposte2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal">test</span>-<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al">test</span></span></td>
+						    	<td class="dettaglioimposte-periodo">
+						    		<span class="testo-dettaglio-imposte2">
+						    			<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span>
+						    		</span>
+						    	</td>
 						        <td class="dettaglioimposte-scaglione"><span class="testo-dettaglio-imposte2"><span class="allineamento-scaglione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Scaglione">test</span></span></td>
 						        <td><span class="testo-dettaglio-imposte2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita">test</span></td>
 						        <td class="dettaglioimposte-prezzo"><span class="testo-dettaglio-imposte2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoUnitario">test</span></td>
@@ -1169,11 +1168,9 @@
 							<div class="pure-u-24-24 contenuto">CONGUAGLI E RICALCOLI</div>
 						</div>
 						<div class="pure-g dati">
-							<div class="pure-u-24-24">
-								Nessun ricalclo in bolletta ??
-							</div>
 							<!-- CONGUAGLI -->
 							<div class="pure-u-24-24">
+								<div id="messaggioNessunRicalcolo" class="messaggio">Nessun ricalcolo in bolletta ??</div>
 								<table style="width: 100%;">
 									<tbody class="sezione-conguaglio-consumi-stimati" data-data_type="simple_loop" data-first_node="ConguaglioConsumiStimati" data-path_type="xpath" data-path_data="">
 							            <tr>
@@ -1231,7 +1228,9 @@
 						</div>
 						<div class="pure-g dati">
 							<div class="pure-u-24-24">
-								<div>Le precedenti bollette risultano pagate ??</div>
+								<div id="messaggioNessunaBollettaDaPagare" class="messaggio">
+									Le precedenti bollette risultano pagate ??
+								</div>
 								<div >
 									<table class="tabella">
 								      	<tbody>

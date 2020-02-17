@@ -890,37 +890,9 @@
 			</div>
 			<div class="pure-g dati">
 				<div class="pure-u-24-24">
-					<!-- <div class="tabella">
-						<div class="header">
-							<div class="pure-g">
-								<div class="pure-u-5-24"></div>
-								<div class="pure-u-5-24">Periodo</div>
-								<div class="pure-u-3-24">Scaglione</div>
-								<div class="pure-u-3-24">Quantità</div>
-								<div class="pure-u-3-24">Prezzo (€/kWh)</div>
-								<div class="pure-u-3-24">Totale (€)</div>
-								<div class="pure-u-2-24">Iva %</div>
-							</div>
-						</div>
-						<div class="body">
-							<div class="pure-g riga">
-								<div class="pure-u-5-24 cella"><span>Imposta di consumo uso civile</span></div>
-								<div class="pure-u-5-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
-								<div class="pure-u-3-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
-								<div class="pure-u-3-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
-								<div class="pure-u-3-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
-								<div class="pure-u-3-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
-								<div class="pure-u-2-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
-							</div>
-						</div>
-					</div> -->
-					<table class="tabella">
-						<tbody>
-							<tr class="messaggio-dettaglio-imposte">
-						        <td colspan="7"><span class="testo-dettaglio-imposte2">Nessuna imposta applicata in questa bolletta</span></td> 
-						    </tr>
-						</tbody>
-					</table>
+					<div id="messaggioNessunaImposta" class="messaggio">
+						Nessuna imposta applicata in questa bolletta
+					</div>
 					<table class="tabella">
 				      	<tbody>
 					        <tr class="bordo-titolo">
@@ -973,11 +945,11 @@
 							<div class="pure-u-24-24 contenuto">CONGUAGLI E RICALCOLI</div>
 						</div>
 						<div class="pure-g dati">
-							<div class="pure-u-24-24">
-								Nessun ricalclo in bolletta ??
-							</div>
 							<!-- CONGUAGLI -->
 							<div class="pure-u-24-24">
+								<div id="messaggioNessunRicalcolo" class="messaggio">
+									Nessun ricalcolo in bolletta ??
+								</div>
 								<table style="width: 100%;">
 									<tbody class="sezione-conguaglio-consumi-stimati" data-data_type="simple_loop" data-first_node="ConguaglioConsumiStimati" data-path_type="xpath" data-path_data="">
 							            <tr>
@@ -1035,7 +1007,9 @@
 						</div>
 						<div class="pure-g dati">
 							<div class="pure-u-24-24">
-								<div>Le precedenti bollette risultano pagate ??</div>
+								<div id="messaggioNessunaBollettaDaPagare" class="messaggio">
+									Le precedenti bollette risultano pagate ??
+								</div>
 								<div >
 									<table>
 										<tbody>
