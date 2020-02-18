@@ -20,11 +20,11 @@
 	stroke: #a6a6a6;
 }
 
-.ct-series.imposte .ct-slice-donut {
+.ct-series.altrePartite .ct-slice-donut {
 	stroke: #ffdf7f;
 }
 
-.ct-series.iva .ct-slice-donut {
+.ct-series.imposte .ct-slice-donut {
 	stroke: #5b9bd5;
 }
 

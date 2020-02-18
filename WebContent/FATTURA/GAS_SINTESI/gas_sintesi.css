@@ -317,11 +317,11 @@ table tbody tr td .no-border {
 		background-color: #a6a6a6; /* vedi file charts.css */
 	}
 	
-	#sintesiImporti .grafico .contenuto .legenda .voce-legenda.imposte .box-colore .rettangolo {
+	#sintesiImporti .grafico .contenuto .legenda .voce-legenda.altrePartite .box-colore .rettangolo {
 		background-color: #ffdf7f; /* vedi file charts.css */
 	}
 	
-	#sintesiImporti .grafico .contenuto .legenda .voce-legenda.iva .box-colore .rettangolo {
+	#sintesiImporti .grafico .contenuto .legenda .voce-legenda.imposte .box-colore .rettangolo {
 		background-color: #5b9bd5; /* vedi file charts.css */
 	}
 	

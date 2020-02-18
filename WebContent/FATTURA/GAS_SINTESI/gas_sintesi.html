@@ -21,7 +21,7 @@
 	<script src="chartjs/chart.js"></script>
 	
 	<script type="text/javascript">
-		function checkValoreNumerico(val) {
+		function checkNumber_(val) {
 			try {
 				if (val) {
 					val = val.trim();
@@ -29,12 +29,22 @@
 						return Number(val);
 				}
 			} catch (err) {
-				console.log('error check vaore numerico', err);
+				console.log('error check valore numerico', err);
 			}
 			return 0;
 		}
 		
-		function formatNumero(val) {
+		function checkNumber(str) {
+			if (str) {
+				str = str.trim();
+				str = str.replace('.', ',');
+				str = str.replace(',', '.');
+				return Number(str);	
+			}
+			return '';
+		}
+		
+		function formatNumber(val) {
 			val = val.toFixed(2);
 			val = String(val);
 			try {
@@ -125,15 +135,15 @@
 						</div>
 						<div class="etichetta">Parametro P</div>
 						<div class="valore">
-							<span data-data_type="single" data-first_node="PotereCalorificoSuperiore" data-path_type="xpath" data-path_data="">XVAL</span>
+							<span data-data_type="single" data-first_node="PotereCalorificoSuperiore" data-path_type="xpath" data-path_data=""></span>
 						</div>
 						<div class="etichetta">Coefficiente C</div>
 						<div class="valore">
-							<span data-data_type="single" data-first_node="CoefficienteCorrettivo" data-path_type="xpath" data-path_data="">XVAL</span>
+							<span data-data_type="single" data-first_node="CoefficienteCorrettivo" data-path_type="xpath" data-path_data=""></span>
 						</div>
 						<div class="etichetta">Data di attivazione della fornitura</div>
 						<div class="valore">
-							<span data-data_type="single" data-first_node="DataAttivazioneFornitura" data-path_type="xpath" data-path_data="">XVAL</span>
+							<span data-data_type="single" data-first_node="DataAttivazioneFornitura" data-path_type="xpath" data-path_data=""></span>
 						</div>
 						<div class="etichetta">Comp. Sost. Mat. Prima contratto</div>
 						<div class="valore">
@@ -158,19 +168,19 @@
 				<div class="pure-g spedizione-plus-tipo-bolletta">
 					<div class="pure-u-11-24 ">
 						<div class="spedizione">
-							<div data-data_type="single" data-first_node="SpedizionePresso" data-path_type="xpath" data-path_data="">XVAL</div>							
-			                <div data-data_type="single" data-first_node="SpedizioneIndirizzo" data-path_type="xpath" data-path_data="">XVAL</div>
+							<div data-data_type="single" data-first_node="SpedizionePresso" data-path_type="xpath" data-path_data=""></div>							
+			                <div data-data_type="single" data-first_node="SpedizioneIndirizzo" data-path_type="xpath" data-path_data=""></div>
 			                <div >
-			                	<span data-data_type="single" data-first_node="SpedizioneCap" data-path_type="xpath" data-path_data="">XVAL</span>
-				                <span data-data_type="single" data-first_node="SpedizioneCitta" data-path_type="xpath" data-path_data="">XVAL</span>
-				                <span data-data_type="single" data-first_node="SpedizioneProvincia" data-path_type="xpath" data-path_data="">XVAL</span>
+			                	<span data-data_type="single" data-first_node="SpedizioneCap" data-path_type="xpath" data-path_data=""></span>
+				                <span data-data_type="single" data-first_node="SpedizioneCitta" data-path_type="xpath" data-path_data=""></span>
+				                <span data-data_type="single" data-first_node="SpedizioneProvincia" data-path_type="xpath" data-path_data=""></span>
 			                </div>
             			</div>
 					</div>
 					<div class="pure-u-13-24 codice-cliente">
 						<div class="tipo-bolletta">
 							<div class="tipo">Bolletta Energia Elettrica</div>
-							<div class="tipo-mercato" data-data_type="single" data-first_node="TipoMercato" data-path_type="xpath" data-path_data="">XVAL</div>
+							<div class="tipo-mercato" data-data_type="single" data-first_node="TipoMercato" data-path_type="xpath" data-path_data=""></div>
 							<div class="fiamma">
 								<img src="images/fiamma.png" alt="fiamma"/>
 							</div>
@@ -191,17 +201,17 @@
 			<div class="contenuto">
 				<div class="etichetta">N° CLIENTE</div>
 				<div class="valore numero-cliente">
-					<span data-data_type="single" data-first_node="ClienteFinaleCodice" data-path_type="xpath" data-path_data="">XVAL</span>
+					<span data-data_type="single" data-first_node="ClienteFinaleCodice" data-path_type="xpath" data-path_data=""></span>
 				</div>
 				<div class="separatore"></div>
 				<div class="etichetta">CODICE PDR</div>
 				<div class="valore">
-					<span data-data_type="single" data-first_node="FornituraCodicePDP" data-path_type="xpath" data-path_data="">XVAL</span>
+					<span data-data_type="single" data-first_node="FornituraCodicePDP" data-path_type="xpath" data-path_data=""></span>
 				</div>
 				<div class="separatore"></div>
 				<div class="etichetta">CODICE FISCALE</div>
 				<div class="valore">
-					<span id="cf" data-data_type="single" data-first_node="ClienteFinaleCodiceFiscale" data-path_type="xpath" data-path_data="">XVAL</span>
+					<span id="cf" data-data_type="single" data-first_node="ClienteFinaleCodiceFiscale" data-path_type="xpath" data-path_data=""></span>
 					<span id="piva" data-data_type="single" data-first_node="ClienteFinalePartitaIva" data-path_type="xpath" data-path_data=""></span>
 				</div>
 			</div>
@@ -220,19 +230,19 @@
 				<div class="info">
 					<span class="etichetta-custom">N. Fattura</span>
 					<span class="valore-custom">
-						<span data-data_type="single" data-first_node="NumeroBolletta" data-path_type="xpath" data-path_data="">XVAL</span>
+						<span data-data_type="single" data-first_node="NumeroBolletta" data-path_type="xpath" data-path_data=""></span>
 					</span>
 				</div>
 				<div class="info">
 					<span class="etichetta-custom">Del</span>
 					<span class="valore-custom">
-						<span data-data_type="single" data-first_node="DataEmissione" data-path_type="xpath" data-path_data="">XVAL</span>
+						<span data-data_type="single" data-first_node="DataEmissione" data-path_type="xpath" data-path_data=""></span>
 					</span>
 				</div>
 				<div class="separatore"></div>
 				<div class="etichetta">PERIODO</div>
 				<div class="valore">
-					<span data-data_type="single" data-first_node="PeriodoFatturazione" data-path_type="xpath" data-path_data="">??</span>
+					<span data-data_type="single" data-first_node="PeriodoFatturazione" data-path_type="xpath" data-path_data=""></span>
 				</div>
 			</div>
 		</div>
@@ -245,11 +255,11 @@
 				</div>
 				<div class="totale-da-pagare">
 					<div class="importo-in-euro">
-						<span data-data_type="single" data-first_node="TotaleDaPagare" data-path_type="xpath" data-path_data="">XVAL</span> €
+						<span data-data_type="single" data-first_node="TotaleDaPagare" data-path_type="xpath" data-path_data=""></span> €
 					</div>
 					<div class="data-scadenza">
 						<span >Entro il</span>
-						<span class="data" data-data_type="single" data-first_node="DataScadenza" data-path_type="xpath" data-path_data="">XVAL</span>
+						<span class="data" data-data_type="single" data-first_node="DataScadenza" data-path_type="xpath" data-path_data=""></span>
 					</div>
 				</div>
 				<div class="separatore"></div>
@@ -278,15 +288,41 @@
 	<!-- SINTESI IMPORTI - start ========== 
 		 ================================== -->
 	<!-- ****** dati nascosti ****** -->
-	<div id="datiSintesiImporti" style="display: none;">
-		<div class="datiSintesiImporti spesaMateriaGasNaturale">131.1</div>
-		<div class="datiSintesiImporti spesaTrasporto">23.34</div>
-		<div class="datiSintesiImporti spesaOneri">79.2</div>
-		<div class="datiSintesiImporti imposte">27.9</div>
-		<div class="datiSintesiImporti iva">26</div>
-		<div class="datiSintesiImporti canone">18</div>
-	</div>
 	
+	<div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
+    	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Spesa per la materia gas naturale</div>
+        <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">1000,3434</div>
+        <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
+    </div>
+    <div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
+    	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Spesa per trasporto e gestione contatore</div>
+        <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">89,3434</div>
+        <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
+    </div>
+    <div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
+    	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Spesa per oneri di sistema</div>
+        <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">89,3434</div>
+        <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
+    </div>
+    <div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
+    	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Altre partite ed oneri</div>
+        <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">189,3434</div>
+        <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
+    </div>
+    <div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
+    	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Imposte</div>
+        <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">189,3434</div>
+        <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
+    </div>
+    
+    <!-- 
+	<div class="sintesiImporti_riga" style="border-bottom: 1px solid #ccc;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
+    	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></div>
+        <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></div>
+        <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva"></div>
+    </div>
+     -->
+     
 	<div id="sintesiImporti" class="pure-g">
 		<div class="pure-u-17-24 grafico">
 			<div class="contenuto">
@@ -304,27 +340,27 @@
 							<div class="pure-g voce-legenda spesaMateriaGasNaturale">
 								<div class="pure-u-2-24 box-colore"><div class="rettangolo"></div></div>
 								<div class="pure-u-17-24 etichetta">Spesa per la materia gas naturale</div>
-								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><div class="val">?? 131.1</div></div>
+								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_spesaMateriaGasNaturale" class="val"></span></div>
 							</div>
 							<div class="pure-g voce-legenda spesaTrasporto">
 								<div class="pure-u-2-24 box-colore"><div class="rettangolo"></div></div>
 								<div class="pure-u-17-24 etichetta">Spesa per trasporto e gestione contatore</div>
-								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span class="val">?? 23.34</span></div>
+								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_spesaTrasporto" class="val"></span></div>
 							</div>
 							<div class="pure-g voce-legenda spesaOneri">
 								<div class="pure-u-2-24 box-colore"><div class="rettangolo"></div></div>
 								<div class="pure-u-17-24 etichetta">Spesa per oneri di sistema</div>
-								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span class="val">?? 79.2</span></div>
+								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_spesaOneri" class="val"></span></div>
+							</div>
+							<div class="pure-g voce-legenda altrePartite">
+								<div class="pure-u-2-24 box-colore"><div class="rettangolo"></div></div>
+								<div class="pure-u-17-24 etichetta">Altre partite ed oneri</div>
+								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_altrePartite" class="val"></span></div>
 							</div>
 							<div class="pure-g voce-legenda imposte">
 								<div class="pure-u-2-24 box-colore"><div class="rettangolo"></div></div>
 								<div class="pure-u-17-24 etichetta">Imposte</div>
-								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span class="val">?? 27.9</span></div>
-							</div>
-							<div class="pure-g voce-legenda iva">
-								<div class="pure-u-2-24 box-colore"><div class="rettangolo"></div></div>
-								<div class="pure-u-17-24 etichetta">IVA</div>
-								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span class="val">?? 26</span></div>
+								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_imposte" class="val"></span></div>
 							</div>
 						</div>
 						<div class="pure-g separatore">
@@ -338,7 +374,7 @@
 								<div class="pure-u-18-24 etichetta">Totale bolletta</div>
 								<div class="pure-u-5-24 valore-in-euro">
 									<span class="simbolo-euro">€ </span>
-									<div class="val" id="totaleBolletta">??</div>
+									<div class="val" id="totaleBolletta"></div>
 								</div>
 							</div>
 						</div>
@@ -349,9 +385,11 @@
 		<div class="pure-u-7-24 consulente-dedicato">
 			<div class="contenuto">
 				<div class="titolo"><span class="icona"><img alt="consulente-dedicato" src="images/consulente-dedicato.jpg" width="15px" height="15px"></span> <span>CONSULENTE DEDICATO ??</span></div>
-				<div class="messaggio">C'è qualcosa che non ti è chiaro sulla bolletta o desideri informazioni?
+				<div class="messaggio">
+					C'è qualcosa che non ti è chiaro sulla bolletta o desideri informazioni?
 					Puoi contattare il tuo consulente dedicato <span>Mario Rossi ??</span>. Puoi chiamarlo al numero di cellulare <span>333.6767677 ??</span>
-					o al numero fisso <span>0984.828356</span> o inviare una mail al seguente indirizzo <span>ascavo@omnia energia.it ??</span></div>
+					o al numero fisso <span>0984.828356</span> o inviare una mail al seguente indirizzo <span>ascavo@omnia energia.it ??</span>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -360,18 +398,50 @@
 	<script type="text/javascript">
         try {
         	(function () {
-                var spesaMateriaGasNaturale = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti spesaMateriaGasNaturale')[0].innerHTML);
-    			var spesaTrasporto = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti spesaTrasporto')[0].innerHTML);
-    			var spesaOneri = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti spesaOneri')[0].innerHTML);
-    			var imposte = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti imposte')[0].innerHTML);
-    			var iva = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti iva')[0].innerHTML);
+        		var spesaMateriaGasNaturale = 1;
+    			var spesaTrasporto = 1;
+    			var spesaOneri = 1;
+    			var altrePartite = 1;
+    			var imposte = 1;
     			
-    			var canone = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti canone')[0].innerHTML);
+        		var elems = document.getElementsByClassName('sintesiImporti_riga');
+        		// per ogni riga della sintesi importi
+        		for (var i = 0; i < elems.length; i++) {
+        			var elem = elems[i];
+        			
+        			var elemDESCRIZIONE = elem.getElementsByClassName('sintesiImporti_descrizione')[0];
+        			var descrizione = elemDESCRIZIONE.innerHTML;
+        			descrizione = descrizione.toLowerCase();
+        			console.log('descrizione', descrizione)
+        			
+        			var elemIMPONIBILE = elem.getElementsByClassName('sintesiImporti_imponibile')[0];
+        			var imponibile = checkNumber(elemIMPONIBILE.innerHTML);
+        			
+        			if (descrizione.indexOf('materia') > -1) {
+        				spesaMateriaGasNaturale = imponibile;
+        			} else if (descrizione.indexOf('trasporto') > -1) {
+        				spesaTrasporto = imponibile;
+        			} else if (descrizione.indexOf('oneri di sistema') > -1) {
+        				spesaOneri = imponibile;
+        			} else if (descrizione.indexOf('partite') > -1) {
+        				altrePartite = imponibile;
+        			} else if (descrizione.indexOf('imposte') > -1) {
+        				imposte = imponibile;
+        			}
+        		}
+        		
+    			var totaleBolletta = spesaMateriaGasNaturale + spesaTrasporto + spesaOneri + altrePartite + imposte;
+    			var totaleDaPagare = totaleBolletta;
     			
-    			var totaleBolletta = spesaMateriaGasNaturale + spesaTrasporto + spesaOneri + imposte + iva
+    			// init voci
+    			document.getElementById('valoreSintesiImporti_spesaMateriaGasNaturale').innerHTML = Number(spesaMateriaGasNaturale.toFixed(2)).toLocaleString('it');
+    			document.getElementById('valoreSintesiImporti_spesaTrasporto').innerHTML = Number(spesaTrasporto.toFixed(2)).toLocaleString('it');
+    			document.getElementById('valoreSintesiImporti_spesaOneri').innerHTML = Number(spesaOneri.toFixed(2)).toLocaleString('it');
+    			document.getElementById('valoreSintesiImporti_altrePartite').innerHTML = Number(altrePartite.toFixed(2)).toLocaleString('it');
+    			document.getElementById('valoreSintesiImporti_imposte').innerHTML = Number(imposte.toFixed(2)).toLocaleString('it');
     			
     			// init totale bolletta
-    			document.getElementById('totaleBolletta').innerHTML = totaleBolletta.toFixed(2);
+    			document.getElementById('totaleBolletta').innerHTML = Number(totaleBolletta.toFixed(2)).toLocaleString('it');
     			
             	new Chartist.Pie('#graficoSintesiImporti', {
         			series: [{
@@ -381,9 +451,9 @@
         			  }, {
         			    value: spesaOneri, name: 'Spesa oneri', className: 'spesaOneri', meta: 'Meta - Spesa oneri'
         			  }, {
-          			    value: imposte, name: 'Imposte', className: 'imposte', meta: 'Meta - Imposte'
-        			  }, {
-          			    value: iva, name: 'IVA', className: 'iva', meta: 'Meta - IVA'
+          			    value: altrePartite, name: 'Altre partite', className: 'altrePartite', meta: 'Meta - Altre partite'
+          			  }, {
+          			    value: altrePartite, name: 'Imposte', className: 'imposte', meta: 'Meta - Imposte'
           			  }]
         			}, {
         				donut : true,
@@ -423,7 +493,8 @@
 						<div class="etichetta">Punto Vendita</div>
 						<div class="valore">
 							<!-- Corso Mazzini, 5 - Cosenza -->
-							<span data-data_type="single" data-first_node="ServizioIndirizzo" data-path_type="xpath" data-path_data="">via XXX n° X Cosenza</span>	
+							<span data-data_type="single" data-first_node="ServizioIndirizzo" data-path_type="xpath" data-path_data=""></span>
+							<span data-data_type="single" data-first_node="ServizioComune" data-path_type="xpath" data-path_data=""></span>	
 						</div>
 					</div>
 				</div>
@@ -676,8 +747,8 @@
 				var consumiELEMS = document.getElementsByClassName('x_consumi_consumo');
 				N = consumiELEMS.length;
 				if (N > 1)
-					datiConsumo.push(checkValoreNumerico(consumiELEMS[N - 2].innerHTML));
-				datiConsumo.push(checkValoreNumerico(consumiELEMS[N - 1].innerHTML));
+					datiConsumo.push(checkNumber(consumiELEMS[N - 2].innerHTML));
+				datiConsumo.push(checkNumber(consumiELEMS[N - 1].innerHTML));
 				// labels
 				var labels = [];
 				for (var i = 0; i < anni.length; i++) {
@@ -790,7 +861,7 @@
 				}
 				elems = document.getElementsByClassName('x_consumi_consumo');
 				for (var i = 0; i < elems.length; i++) {
-					datiConsumo.push(checkValoreNumerico(elems[i].innerHTML));
+					datiConsumo.push(checkNumber(elems[i].innerHTML));
 				}
 				
 				var labels = [];
@@ -893,37 +964,37 @@
 					<div id="messaggioNessunaImposta" class="messaggio">
 						Nessuna imposta applicata in questa bolletta
 					</div>
-					<table class="tabella">
+					<table class="tabella" id="tabellaDettaglioImposte">
 				      	<tbody>
-					        <tr class="bordo-titolo">
+					        <tr>
 					            <td colspan="7" class="consumi"><span class="titolo3"><strong>Dettaglio imposte</strong></span></td> 
 					        </tr>
 						    <tr>
 						    	<td></td>
-						    	<td class="">Periodo</td>
-						        <td class="">Scaglione</td>
-						        <td class="">Quantità</td>
-						        <td class="">Prezzo (€/Smc)</td>
-						        <td class="">Totale (€)</td>
-						        <td class="">IVA %</td>
+						    	<td>Periodo</td>
+						        <td>Scaglione</td>
+						        <td>Quantità</td>
+						        <td>Prezzo (€/Smc)</td>
+						        <td>Totale (€)</td>
+						        <td>IVA %</td>
 						    </tr>
 						    <tr class="prima-riga-dettaglio-imposte" data-data_type="simple_loop" data-first_node="Imposte" data-path_type="xpath" data-path_data="DettagliImposte/QuotaDettaglioImposte">
-						    	<td class="left dettaglioimposte-descrizione"><span class="testo-dettaglio-imposte3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">test</span></td>
-						    	<td class="dettaglioimposte-periodo"><span class="testo-dettaglio-imposte2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal">05/12/2014</span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al">31/12/2014</span></span></td>
-						        <td class="dettaglioimposte-scaglione"><span class="testo-dettaglio-imposte2 dettaglio-a-destra"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Scaglione">test</span></span></td>
-						        <td class=""><span class="testo-dettaglio-imposte2 dettaglio-a-destra" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita">test</span></td>
-						        <td class="dettaglioimposte-prezzo"><span class="testo-dettaglio-imposte2 dettaglioimposte-prezzo dettaglio-a-destra" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoUnitario">test</span></td>
-						        <td class=""><span class="testo-dettaglio-imposte2 dettaglio-a-destra sezione-imponibile-dettaglio-imposte" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">test</span></td>
-						        <td class="right"><span class="testo-dettaglio-imposte2 dettaglio-a-destra" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">test</span></td>
+						    	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">test</span></td>
+						    	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal">05/12/2014</span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al">31/12/2014</span></td>
+						        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Scaglione">test</span></td>
+						        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita">test</span></td>
+						        <td class="dettaglio-imposte-prezzo"><span class="testo-dettaglio-imposte2 dettaglioimposte-prezzo dettaglio-a-destra" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoUnitario">test</span></td>
+						        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">test</span></td>
+						        <td class="right"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">test</span></td>
 						    </tr>
 						    <tr class="quota-dettaglio-imposte" data-data_type="simple_loop" data-first_node="Imposte" data-path_type="xpath" data-path_data="AccontiImposte/QuotaDettaglioImposte">
-						    	<td class="left"><span class="testo-dettaglio-imposte3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">test</span></td>
-						    	<td class="dettaglioimposte-periodo"><span class="testo-dettaglio-imposte2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal">test</span>-<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al">test</span></span></td>
-						        <td class="dettaglioimposte-scaglione"><span class="testo-dettaglio-imposte2 dettaglio-a-destra"><span class="allineamento-scaglione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Scaglione">test</span></span></td>
-						        <td class=""><span class="testo-dettaglio-imposte2 dettaglio-a-destra" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita">test</span></td>
-						        <td class="dettaglioimposte-prezzo"><span class="testo-dettaglio-imposte2 dettaglio-a-destra" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoUnitario">test</span></td>
-						        <td class=""><span class="testo-dettaglio-imposte2 dettaglio-a-destra" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">test</span></td>
-						        <td class="right"><span class="testo-dettaglio-imposte2 dettaglio-a-destra" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">test</span></td>
+						    	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">test</span></td>
+						    	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal">test</span>-<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al">test</span></td>
+						        <td><span class="allineamento-scaglione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Scaglione">test</span></td>
+						        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita">test</span></td>
+						        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoUnitario">test</span></td>
+						        <td><span class="allineamento-scaglione-imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">test</span></td>
+						        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">test</span></td>
 						    </tr>
 						</tbody>
 				    </table>
@@ -931,6 +1002,46 @@
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+		try {
+			(function() {
+				var esisteDettaglioImposte = false;
+				var esisteAccontiImposte = false;
+				
+				var elems = document.getElementsByClassName('dettaglio-imposte-prezzo');
+				if (elems.length > 0) {
+					var value = elems[0].innerHTML;
+					if (value) {
+						value = value.trim();
+						if (value !== '') {
+							esisteDettaglioImposte = true;
+						}
+					}
+				}
+				
+				elems = document.getElementsByClassName('allineamento-scaglione-imponibile');
+				if (elems.length > 0) {
+					var value = elems[0].innerHTML;
+					if (value) {
+						value = value.trim();
+						if (value !== '') {
+							esisteAccontiImposte = true;
+						}
+					}
+				}
+				
+				if (esisteDettaglioImposte || esisteAccontiImposte) {
+					document.getElementById('messaggioNessunaImposta').style.display = 'none';
+					document.getElementById('tabellaDettaglioImposte').style.display = 'table';
+				} else {
+					document.getElementById('messaggioNessunaImposta').style.display = 'block';
+					document.getElementById('tabellaDettaglioImposte').style.display = 'none';
+				}				
+			})();
+		} catch (err) {
+			console.log('errore init display per DETTAGLIO IMPOSTE', err);
+		}
+	</script>
 	<!-- ========== end - DETTAGLIO IMPOSTE -->
 	
 	
@@ -1010,51 +1121,49 @@
 								<div id="messaggioNessunaBollettaDaPagare" class="messaggio">
 									Le precedenti bollette risultano pagate ??
 								</div>
-								<div >
-									<table>
-										<tbody>
-											<tr class="bordo-titolo">
-									            <td colspan="3"><span class="titolo3"><strong>Dettaglio bollette non pagate</strong></span></td> 
-									        </tr>
-									        <tr>
-									    		<td class="cella-morosita-testo" colspan="3">
-									    			<span class="morosita-testo morosita-testo-font" data-data_type="single" data-first_node="MorositaDocumenti" data-path_type="xpath" data-path_data="Testo">testo morosita</span>
-									    		</td>
-									    	</tr>
-									        <tr class="bordo-tab-sotto righe-bollette-non-pagate">
-									        	<td><span class="testo-non-pagate1 dettaglio-a-sinistra">Bolletta</span></td>
-									            <td><span class="testo-non-pagate1 dettaglio-a-sinistra">Scadenza</span></td>
-									            <td><span class="testo-non-pagate1 dettaglio-a-destra">Totale (€)</span></td>
-									        </tr>
-									         <tr class="righe-bollette-non-pagate" data-data_type="simple_loop" data-first_node="MorositaDocumenti" data-path_type="xpath" data-path_data="Dettagli/Morosita">
-									        	<td><span class="testo-non-pagate2 dettaglio-a-sinistra"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataEmissione">test</span> <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/NumeroDocumento">test</span></span></td>
-									            <td><span class="testo-non-pagate2 dettaglio-a-sinistra"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataScadenza">test</span></span></td>
-									            <td><span class="testo-non-pagate2 dettaglio-a-destra"><span class="sezione-importo-bollette-non-pagate" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoDaPagare">test</span></span></td>
-									        </tr>
-									        <tr class="righe-bollette-non-pagate">
-									        	<td><span class="testo-non-pagate3 dettaglio-a-sinistra">Totale insoluto (€)</span></td>
-									            <td></td>
-									    		<td><span class="testo-non-pagate3 dettaglio-a-destra"><span data-data_type="single" data-first_node="MorositaDocumenti" data-path_type="xpath" data-path_data="Totale">test</span></span></td>
-									    	</tr>
-									        <tr class="bordo-tab-sotto righe-bollette-non-pagate">
-									    		<td colspan="3" class="tabella1"><span class="testo-non-pagate4">Qualora le bollette sollecitate le risultassero già pagate, consideri nullo questo avviso.</span></td>
-									    	</tr>
-									        <tr class="bordo-tab-sotto righe-interessi-applicati righe-bollette-non-pagate">
-									    		<td colspan="3" class="tabella1"><span class="testo-non-pagate5">Interessi applicati</span></td>
-									    	</tr>
-									         <tr class="righe-interessi-applicati righe-bollette-non-pagate">
-									        	<td><span class="testo-non-pagate2">Periodo</span></td>
-									            <td><span class="testo-non-pagate2"></span></td>
-									            <td><span class="testo-non-pagate2">%</span></td>
-									        </tr>
-									        <tr class="righe-interessi-applicati righe-bollette-non-pagate" data-data_type="simple_loop" data-first_node="MorositaInteressiBollette" data-path_type="xpath" data-path_data="MorositaInteressi">
-									        	<td><span class="testo-non-pagate2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Periodo">test</span></span></td>
-									            <td><span class="testo-non-pagate2"></span></td>
-									            <td><span class="testo-non-pagate2"><span class="sezione-percentuale-interessi-applicati" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TassoAnnuo">test</span></span></td>
-									        </tr>  
-										</tbody>
-									</table>
-								</div>
+								<table id="tabellaBolletteNonPagate">
+									<tbody>
+										<tr>
+								            <td colspan="3"><span class="titolo3"><strong>Dettaglio bollette non pagate</strong></span></td> 
+								        </tr>
+								        <tr>
+								    		<td colspan="3">
+								    			<span class="morosita-testo morosita-testo-font" data-data_type="single" data-first_node="MorositaDocumenti" data-path_type="xpath" data-path_data="Testo">testo morosita</span>
+								    		</td>
+								    	</tr>
+								        <tr>
+								        	<td><span class="testo-non-pagate1 dettaglio-a-sinistra">Bolletta</span></td>
+								            <td><span class="testo-non-pagate1 dettaglio-a-sinistra">Scadenza</span></td>
+								            <td><span class="testo-non-pagate1 dettaglio-a-destra">Totale (€)</span></td>
+								        </tr>
+								        <tr class="righe-bollette-non-pagate" data-data_type="simple_loop" data-first_node="MorositaDocumenti" data-path_type="xpath" data-path_data="Dettagli/Morosita">
+								        	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataEmissione">test</span> <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/NumeroDocumento">test</span></td>
+								            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataScadenza">test</span></td>
+								            <td><span class="importo-bollette-non-pagate" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoDaPagare">test</span></td>
+								        </tr>
+								        <tr class="righe-bollette-non-pagate">
+								        	<td><span>Totale insoluto (€)</span></td>
+								            <td></td>
+								    		<td><span data-data_type="single" data-first_node="MorositaDocumenti" data-path_type="xpath" data-path_data="Totale">test</span></td>
+								    	</tr>
+								        <tr class="righe-bollette-non-pagate">
+								    		<td colspan="3"><span>Qualora le bollette sollecitate le risultassero già pagate, consideri nullo questo avviso.</span></td>
+								    	</tr>
+								        <tr class="righe-interessi-applicati righe-bollette-non-pagate">
+								    		<td colspan="3"><span class="testo-non-pagate5">Interessi applicati</span></td>
+								    	</tr>
+								         <tr class="righe-interessi-applicati righe-bollette-non-pagate">
+								        	<td><span>Periodo</span></td>
+								            <td><span></span></td>
+								            <td><span>%</span></td>
+								        </tr>
+								        <tr class="righe-interessi-applicati righe-bollette-non-pagate" data-data_type="simple_loop" data-first_node="MorositaInteressiBollette" data-path_type="xpath" data-path_data="MorositaInteressi">
+								        	<td><span><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Periodo">test</span></span></td>
+								            <td><span></span></td>
+								            <td><span><span class="sezione-percentuale-interessi-applicati" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TassoAnnuo">test</span></span></td>
+								        </tr>  
+									</tbody>
+								</table>
 							</div>
 						</div>
 					</div>				
@@ -1062,6 +1171,34 @@
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+		try {
+			(function() {
+				var esistonoBolletteNonPagate = false;
+				
+				var elems = document.getElementsByClassName('importo-bollette-non-pagate');
+				if (elems.length > 0) {
+					var value = elems[0].innerHTML;
+					if (value) {
+						value = value.trim();
+						if (value !== '') {
+							esisteDettaglioImposte = true;
+						}
+					}
+				}
+				
+				if (!esistonoBolletteNonPagate) {
+					document.getElementById('messaggioNessunaBollettaDaPagare').style.display = 'none';
+					document.getElementById('tabellaBolletteNonPagate').style.display = 'table';
+				} else {
+					document.getElementById('messaggioNessunaBollettaDaPagare').style.display = 'block';
+					document.getElementById('tabellaBolletteNonPagate').style.display = 'none';
+				}				
+			})();
+		} catch (err) {
+			console.log('errore init display per BOLLETTE NON PAGATE', err);
+		}
+	</script>
 	<!-- ========== end - CONGUAGLI RICALCOLI NON PAGATE -->
 	
 	
