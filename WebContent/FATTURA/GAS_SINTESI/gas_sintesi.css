@@ -26,9 +26,10 @@ table {
 
 table tbody tr td {
 	border: 1px solid #555555;
+	padding: 0 1px;
 }
 
-table tbody tr td .no-border {
+table tbody tr td.no-border {
 	border: none;
 }
 

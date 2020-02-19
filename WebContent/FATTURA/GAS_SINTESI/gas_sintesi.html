@@ -288,7 +288,7 @@
 	<!-- SINTESI IMPORTI - start ========== 
 		 ================================== -->
 	<!-- ****** dati nascosti ****** -->
-	
+	<!-- 
 	<div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
     	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Spesa per la materia gas naturale</div>
         <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">1000,3434</div>
@@ -314,14 +314,12 @@
         <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">189,3434</div>
         <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
     </div>
-    
-    <!-- 
+     -->
 	<div class="sintesiImporti_riga" style="border-bottom: 1px solid #ccc;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
     	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></div>
         <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></div>
         <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva"></div>
     </div>
-     -->
      
 	<div id="sintesiImporti" class="pure-g">
 		<div class="pure-u-17-24 grafico">
@@ -507,10 +505,19 @@
 				<div class="contenuto">
 					<div class="titolo"><span><img src="images/contatore.png" width="10px" height="10px" alt="contatore" /></span> AUTOLETTURA</div>
 					<div class="elenco-canali">
-						<div class="intro">Potrai comunicare l'autolettura della tua fornitura di energia elettrica dal <span style="font-weight: bold;">00/00/000 al 00/00/0000 ??</span> attraverso i seguenti canali:</div>
+						<div class="intro">Potrai comunicare l'autolettura della tua fornitura dal 
+						<span style="font-weight: bold;">
+							<span data-data_type="single" data-first_node="LetturaFuturaInizioAutoLettura" data-path_type="xpath" data-path_data=""></span> al 
+							<span data-data_type="single" data-first_node="LetturaFuturaFineAutoLettura" data-path_type="xpath" data-path_data=""></span>						
+						</span> attraverso i seguenti canali:
+						</div>
 						<div class="canale">
 							<span class="etichetta">Sito web:</span>
-							<span class="valore"><a href="#">www.omniaenergia.it</a> accedendo alla tua area personale</span>
+							<span class="valore">
+								<a href="#">
+									<span data-data_type="single" data-first_node="AziendaInternet" data-path_type="xpath" data-path_data=""></span>
+								</a>
+							accedendo alla tua area personale</span>
 						</div>
 						<div class="canale">
 							<span class="etichetta">Whatsapp:</span>
@@ -572,36 +579,36 @@
 	<!-- QUADRO LETTURE E CONSUMI 1 - start ==========
 	     ============================================= -->
 	<!-- ****** dati nascosti ****** -->
-	<div style="display: none;" class="consumi_hiddenvalues" data-data_type="simple_loop" data-first_node="ConsumiMesiPrecedenti" data-path_type="xpath" data-path_data="ConsumoMese">
+	<!-- <div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumiMesiPrecedenti" data-path_type="xpath" data-path_data="ConsumoMese">
 		<span class="x_consumi_sequenzamese" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">1</span>
         <span class="x_consumi_anno" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2019</span>
         <span class="x_consumi_mese" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">01</span>
         <span class="x_consumi_consumo" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Consumo">22</span>
     </div>
-    <div style="display: none;" class="consumi_hiddenvalues" data-data_type="simple_loop" data-first_node="ConsumiMesiPrecedenti" data-path_type="xpath" data-path_data="ConsumoMese">
+    <div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumiMesiPrecedenti" data-path_type="xpath" data-path_data="ConsumoMese">
 		<span class="x_consumi_sequenzamese" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">2</span>
         <span class="x_consumi_anno" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2019</span>
         <span class="x_consumi_mese" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">02</span>
         <span class="x_consumi_consumo" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Consumo">29</span>
     </div>
-    <div style="display: none;" class="consumi_hiddenvalues" data-data_type="simple_loop" data-first_node="ConsumiMesiPrecedenti" data-path_type="xpath" data-path_data="ConsumoMese">
+    <div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumiMesiPrecedenti" data-path_type="xpath" data-path_data="ConsumoMese">
 		<span class="x_consumi_sequenzamese" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">3</span>
         <span class="x_consumi_anno" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2019</span>
         <span class="x_consumi_mese" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">03</span>
         <span class="x_consumi_consumo" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Consumo">42</span>
     </div>
-    <div style="display: none;" class="consumi_hiddenvalues" data-data_type="simple_loop" data-first_node="ConsumiMesiPrecedenti" data-path_type="xpath" data-path_data="ConsumoMese">
+    <div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumiMesiPrecedenti" data-path_type="xpath" data-path_data="ConsumoMese">
 		<span class="x_consumi_sequenzamese" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">4</span>
         <span class="x_consumi_anno" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2019</span>
         <span class="x_consumi_mese" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">04</span>
         <span class="x_consumi_consumo" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Consumo">22</span>
-    </div>
-	<!-- <div style="display: none;" class="consumi_hiddenvalues" data-data_type="simple_loop" data-first_node="ConsumiMesiPrecedenti" data-path_type="xpath" data-path_data="ConsumoMese">
+    </div> -->
+	<div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumiMesiPrecedenti" data-path_type="xpath" data-path_data="ConsumoMese">
 		<span class="x_consumi_sequenzamese" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese"></span>
         <span class="x_consumi_anno" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno"></span>
         <span class="x_consumi_mese" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese"></span>
         <span class="x_consumi_consumo" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Consumo"></span>
-    </div> -->
+    </div>
     
 	<div id="quadroLettureEConsumi">
 		<div>
@@ -726,6 +733,7 @@
 	
 	<!-- ****** js - grafico e valori calcolati ****** -->
 	<script type="text/javascript">
+		// *** GRAFICO A BARRE ULTIMI <<2>> MESI
 		try {
 			(function() {
 				var anni = [];
@@ -845,23 +853,19 @@
 	</div>
 	
 	<script type="text/javascript">
+		// *** GRAFICO A BARRE ULTIMI MESI 
 		try {
 			(function() {
 				var anni = [];
 				var mesi = [];
 				var datiConsumo = [];
 				
-				var elems = document.getElementsByClassName('x_consumi_anno');
-				for (var i = 0; i < elems.length; i++) {
-					anni.push(elems[i].innerHTML);
-				}
-				elems = document.getElementsByClassName('x_consumi_mese');
-				for (var i = 0; i < elems.length; i++) {
-					mesi.push(elems[i].innerHTML);
-				}
-				elems = document.getElementsByClassName('x_consumi_consumo');
-				for (var i = 0; i < elems.length; i++) {
-					datiConsumo.push(checkNumber(elems[i].innerHTML));
+				var rows = document.getElementsByClassName('consumi_hiddenvalues_row');
+				for (var i = 0; i < rows.length; i++) {
+					var row = rows[i];
+					anni.push(row.getElementsByClassName('x_consumi_anno')[0].innerHTML);
+					mesi.push(row.getElementsByClassName('x_consumi_mese')[0].innerHTML);
+					datiConsumo.push(row.getElementsByClassName('x_consumi_consumo')[0].innerHTML);
 				}
 				
 				var labels = [];

@@ -20,35 +20,45 @@
 	<script src="chartjs/chart.js"></script>
 	
 	<script type="text/javascript">
-		function checkValoreNumerico(val) {
-			try {
-				if (val) {
-					val = val.trim();
-					if (val && !isNaN(val))
-						return Number(val);
-				}
-			} catch (err) {
-				console.log('error check valore numerico', err);
+	function checkNumber_(val) {
+		try {
+			if (val) {
+				val = val.trim();
+				if (val && !isNaN(val))
+					return Number(val);
 			}
-			return 0;
+		} catch (err) {
+			console.log('error check valore numerico', err);
 		}
-		
-		function formatNumero(val) {
-			val = val.toFixed(2);
-			val = String(val);
-			try {
-				// 6 = numeroDiCifreDecimaliScelto + punto + numeroCifreIntere
-				if (val.length > 6) {
-					// da 1123232.12 a 1.123.232,12
-					return Number(val).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');	
-				}
-				// da 123.12 a 123,12
-				return val.replace(/\./, ',');
-			} catch(err) {
-				console.log('errore format numero', val, err)
+		return 0;
+	}
+	
+	function checkNumber(str) {
+		if (str) {
+			str = str.trim();
+			str = str.replace('.', ',');
+			str = str.replace(',', '.');
+			return Number(str);	
+		}
+		return '';
+	}
+	
+	function formatNumber(val) {
+		val = val.toFixed(2);
+		val = String(val);
+		try {
+			// 6 = numeroDiCifreDecimaliScelto + punto + numeroCifreIntere
+			if (val.length > 6) {
+				// da 1123232.12 a 1.123.232,12
+				return Number(val).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');	
 			}
-			return '';
+			// da 123.12 a 123,12
+			return val.replace(/\./, ',');
+		} catch(err) {
+			console.log('errore format numero', val, err)
 		}
+		return '';
+	}
 	</script>
 </head>
 <body>
@@ -78,37 +88,37 @@
 					<div class="pure-u-14-24">
 						<div class="etichetta">Forniamo energia elettrica in</div>
 						<div class="valore">
-							<span data-data_type="single" data-first_node="ClienteFinaleIndirizzo" data-path_type="xpath" data-path_data="">Via della Prova non Proprio Provata 123</span>
+							<span data-data_type="single" data-first_node="ClienteFinaleIndirizzo" data-path_type="xpath" data-path_data=""></span>
 						</div>
 						<div class="etichetta">Denominazione contratto (offerta)</div>
 						<div class="valore">
-							<span data-data_type="single" data-first_node="Offerta" data-path_type="xpath" data-path_data="">Offerta di prova</span>
+							<span data-data_type="single" data-first_node="Offerta" data-path_type="xpath" data-path_data=""></span>
 						</div>
 						<div class="etichetta">Tipologia cliente</div>
 						<div class="valore">
-							<span data-data_type="single" data-first_node="TipoUso" data-path_type="xpath" data-path_data="">Domestico</span>
+							<span data-data_type="single" data-first_node="TipoUso" data-path_type="xpath" data-path_data=""></span>
 						</div>
 						<div class="etichetta">Tipologia pagamento</div>
 						<div class="valore">
-							<span data-data_type="single" data-first_node="ComunicazioniBolletta" data-path_type="xpath" data-path_data="Comunicazioni[Codice = &quot;P&quot;]/Testo">Modalità di pagamento non disponibile</span>					
+							<span data-data_type="single" data-first_node="ComunicazioniBolletta" data-path_type="xpath" data-path_data="Comunicazioni[Codice = &quot;P&quot;]/Testo"></span>					
 						</div>
 					</div>
 					<div class="pure-u-10-24">
 						<div class="etichetta">Data di attivazione della fornitura</div>
 						<div class="valore">
-							<span data-data_type="single" data-first_node="DataAttivazioneFornitura" data-path_type="xpath" data-path_data="">01/01/2016</span>
+							<span data-data_type="single" data-first_node="DataAttivazioneFornitura" data-path_type="xpath" data-path_data=""></span>
 						</div>
 						<div class="etichetta">Tensione di fornitura</div>
 						<div class="valore">
-							<span data-data_type="single" data-first_node="TensioneAlimentazione" data-path_type="xpath" data-path_data="">000000000</span> Volt
+							<span data-data_type="single" data-first_node="TensioneAlimentazione" data-path_type="xpath" data-path_data=""></span> Volt
 						</div>
 						<div class="etichetta">Potenza contattualmente impegnata</div>
 						<div class="valore">
-							<span data-data_type="single" data-first_node="PotenzaImpegnata" data-path_type="xpath" data-path_data="">000000000</span> kW
+							<span data-data_type="single" data-first_node="PotenzaImpegnata" data-path_type="xpath" data-path_data=""></span> kW
 						</div>
 						<div class="etichetta">Potenza disponibile</div>
 						<div class="valore">
-							<span data-data_type="single" data-first_node="PotenzaDisponibile" data-path_type="xpath" data-path_data="">000000000</span> kW
+							<span data-data_type="single" data-first_node="PotenzaDisponibile" data-path_type="xpath" data-path_data=""></span> kW
 						</div>
 						<div class="etichetta">Livello massimo di potenza</div>
 						<div class="valore">
@@ -135,12 +145,12 @@
 				<div class="pure-g spedizione-plus-tipo-bolletta">
 					<div class="pure-u-11-24 ">
 						<div class="spedizione">
-							<div data-data_type="single" data-first_node="SpedizionePresso" data-path_type="xpath" data-path_data="">Nome Cognome</div>							
-			                <div data-data_type="single" data-first_node="SpedizioneIndirizzo" data-path_type="xpath" data-path_data="">via numero civico</div>
+							<div data-data_type="single" data-first_node="SpedizionePresso" data-path_type="xpath" data-path_data=""></div>							
+			                <div data-data_type="single" data-first_node="SpedizioneIndirizzo" data-path_type="xpath" data-path_data=""></div>
 			                <div >
-			                	<span data-data_type="single" data-first_node="SpedizioneCap" data-path_type="xpath" data-path_data="">CAP</span>
-				                <span data-data_type="single" data-first_node="SpedizioneCitta" data-path_type="xpath" data-path_data="">Comune</span>
-				                <span data-data_type="single" data-first_node="SpedizioneProvincia" data-path_type="xpath" data-path_data="">PR</span>
+			                	<span data-data_type="single" data-first_node="SpedizioneCap" data-path_type="xpath" data-path_data=""></span>
+				                <span data-data_type="single" data-first_node="SpedizioneCitta" data-path_type="xpath" data-path_data=""></span>
+				                <span data-data_type="single" data-first_node="SpedizioneProvincia" data-path_type="xpath" data-path_data=""></span>
 			                </div>
             			</div>
 					</div>
@@ -148,7 +158,7 @@
 						<div class="tipo-bolletta">
 							<div class="tipo">Bolletta Energia Elettrica</div>
 							<!-- @@@@ POTREBBE ESSERE IL TAG caratteristicaCommercialeFornitura -->
-							<div class="tipo-mercato" data-data_type="single" data-first_node="TipoMercato" data-path_type="xpath" data-path_data="">Mercato di prova</div>
+							<div class="tipo-mercato" data-data_type="single" data-first_node="TipoMercato" data-path_type="xpath" data-path_data=""></div>
 							<div class="lampadina">
 								<img src="images/lampadina.png" alt="lampadina"/>
 							</div>
@@ -169,17 +179,17 @@
 			<div class="contenuto">
 				<div class="etichetta">N° CLIENTE</div>
 				<div class="valore numero-cliente">
-					<span data-data_type="single" data-first_node="ClienteFinaleCodice" data-path_type="xpath" data-path_data="">613779061</span>
+					<span data-data_type="single" data-first_node="ClienteFinaleCodice" data-path_type="xpath" data-path_data=""></span>
 				</div>
 				<div class="separatore"></div>
 				<div class="etichetta">CODICE POD</div>
 				<div class="valore">
-					<span data-data_type="single" data-first_node="FornituraCodicePDP" data-path_type="xpath" data-path_data="">IT123E56789012</span>
+					<span data-data_type="single" data-first_node="FornituraCodicePDP" data-path_type="xpath" data-path_data=""></span>
 				</div>
 				<div class="separatore"></div>
 				<div class="etichetta">CODICE FISCALE</div>
 				<div class="valore">
-					<span id="cf" data-data_type="single" data-first_node="ClienteFinaleCodiceFiscale" data-path_type="xpath" data-path_data="">AAABBB00C11D234E</span>
+					<span id="cf" data-data_type="single" data-first_node="ClienteFinaleCodiceFiscale" data-path_type="xpath" data-path_data=""></span>
 					<span id="piva" data-data_type="single" data-first_node="ClienteFinalePartitaIva" data-path_type="xpath" data-path_data=""></span>
 				</div>
 			</div>
@@ -198,20 +208,20 @@
 				<div class="info">
 					<span class="etichetta-custom">N. Fattura</span>
 					<span class="valore-custom">
-						<span data-data_type="single" data-first_node="NumeroBolletta" data-path_type="xpath" data-path_data="">000</span>
+						<span data-data_type="single" data-first_node="NumeroBolletta" data-path_type="xpath" data-path_data=""></span>
 					</span>
 				</div>
 				<div class="info">
 					<span class="etichetta-custom">Del</span>
 					<span class="valore-custom">
-						<span data-data_type="single" data-first_node="DataEmissione" data-path_type="xpath" data-path_data="">00/00/0000</span>
+						<span data-data_type="single" data-first_node="DataEmissione" data-path_type="xpath" data-path_data=""></span>
 					</span>
 				</div>
 				<div class="separatore"></div>
 				<div class="etichetta">PERIODO</div>
 				<div class="valore">
 					<!-- @@@@ POTREBBE ESSERE IL TAG PeriodoCompetenza -->
-					<span data-data_type="single" data-first_node="PeriodoFatturazione" data-path_type="xpath" data-path_data="">01/01/2016 - 31/01/2016 (formattazione)??</span>
+					<span data-data_type="single" data-first_node="PeriodoFatturazione" data-path_type="xpath" data-path_data=""></span>
 				</div>
 			</div>
 		</div>
@@ -224,11 +234,11 @@
 				</div>
 				<div class="totale-da-pagare">
 					<div class="importo-in-euro">
-						<span data-data_type="single" data-first_node="TotaleDaPagare" data-path_type="xpath" data-path_data="">130.32</span> €
+						<span data-data_type="single" data-first_node="TotaleDaPagare" data-path_type="xpath" data-path_data=""></span> €
 					</div>
 					<div class="data-scadenza">
 						<span >Entro il</span>
-						<span class="data" data-data_type="single" data-first_node="DataScadenza" data-path_type="xpath" data-path_data="">12/12/2016</span>
+						<span class="data" data-data_type="single" data-first_node="DataScadenza" data-path_type="xpath" data-path_data=""></span>
 					</div>
 				</div>
 				<div class="separatore"></div>
@@ -282,32 +292,32 @@
 	<!-- ****** dati nascosti ****** -->
 	<div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
     	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Spesa per la materia energia</div>
-        <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">89</div>
+        <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">1189,123123</div>
         <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
     </div>
     <div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
     	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Spesa per trasporto e gestione contatore</div>
-        <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">89</div>
+        <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">89,123123</div>
         <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
     </div>
     <div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
     	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Spesa per oneri di sistema</div>
-        <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">89</div>
+        <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">89,123123</div>
         <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
     </div>
     <div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
     	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Imposte</div>
-        <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">89</div>
+        <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">89,123123</div>
         <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
     </div>
     <div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
     	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">IVA</div>
-        <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">89</div>
+        <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">89,123123</div>
         <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
     </div>
     <div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
     	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Canone</div>
-        <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">89</div>
+        <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">89,123123</div>
         <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
     </div>
 	
@@ -384,7 +394,7 @@
 						</div>
 						<!-- RIEPILOGO IVA -->
 						<div class="riepilogo-iva">
-							<div class="pure-g voce-riepilogo-iva">
+							<!-- <div class="pure-g voce-riepilogo-iva">
 								<div class="pure-u-1-24 box-colore"></div>
 								<div class="pure-u-23-24 etichetta">Riepilogo IVA - Vedi box "Informazioni Imposte"</div>
 							</div>
@@ -421,6 +431,33 @@
 								<div class="pure-u-7-24 valore-in-euro">
 									<span class="simbolo-euro">€ </span><div class="val">131.1</div>
 								</div>
+							</div> -->
+							<div style="padding-left: 10px;">
+								<table>
+									<tbody>
+										<tr style="border-bottom: 1px solid #000000">
+											<td class="no-border" colspan="5">Riepilogo IVA - Vedi box "Informazioni Imposte"</td>
+										</tr>
+										<tr>
+											<td class="no-border"><div style="width: 20px;"></div></td>
+											<td class="no-border" colspan="2"></td>
+								            <td class="no-border">Imponibile</td>
+								            <td class="no-border">Aliquota</td>
+										</tr>
+								        <tr data-data_type="simple_loop" data-first_node="RiepilogoIvaBolletta" data-path_type="xpath" data-path_data="RiepilogoIva">
+								        	<td class="no-border"><div style="width: 20px;"></div></td>
+								        	<td class="no-border" colspan="2"><span class="testo4sintesi" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DescrizioneImponibile">Imponibile IVA 22%</span></td>
+								            <td class="no-border"><span class="testo3sintesi" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"><span>test,00</span> €</span></td>
+								            <td class="no-border"><span class="testo3sintesi" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Aliquota"><span></span></span></td>
+								        </tr>
+								        <tr data-data_type="simple_loop" data-first_node="RiepilogoIvaBolletta" data-path_type="xpath" data-path_data="RiepilogoIva">
+								        	<td class="no-border"><div style="width: 20px;"></div></td>
+								        	<td class="no-border" colspan="2"><span class="testo4sintesi" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DescrizioneAliquota">IVA 22%</span></td>
+								            <td class="no-border"><span class="testo3sintesi" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Iva"><span>test,00</span> €</span></td>
+								            <td class="no-border"><span class="testo3sintesi testo-aliquota-iva-riepilogo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Aliquota"><span></span></span></td>
+								        </tr>
+							        </tbody>
+								</table>
 							</div>
 						</div>
 					</div>
@@ -439,6 +476,7 @@
 	
 	<!-- ****** js - grafico e valori calcolati ****** -->
 	<script type="text/javascript">
+		// *** GRAFICO A TORTA
         try {
         	(function () {
         		var spesaMateriaEnergia = null;
@@ -458,7 +496,7 @@
         			descrizione = descrizione.toLowerCase();
         			
         			var elemIMPONIBILE = elem.getElementsByClassName('sintesiImporti_imponibile')[0];
-        			var imponibile = checkValoreNumerico(elemIMPONIBILE.innerHTML);
+        			var imponibile = checkNumber(elemIMPONIBILE.innerHTML);
         			
         			if (descrizione.indexOf('materia') > -1) {
         				spesaMateriaEnergia = imponibile;
@@ -479,18 +517,18 @@
     			var totaleDaPagare = totaleBolletta + canone;
 				
     			// init voci
-    			document.getElementById('valoreSintesiImporti_spesaMateriaEnergia').innerHTML = spesaMateriaEnergia.toFixed(2);
-    			document.getElementById('valoreSintesiImporti_spesaTrasporto').innerHTML = spesaTrasporto.toFixed(2);
-    			document.getElementById('valoreSintesiImporti_spesaOneri').innerHTML = spesaOneri.toFixed(2);
-    			document.getElementById('valoreSintesiImporti_imposte').innerHTML = imposte.toFixed(2);
-    			document.getElementById('valoreSintesiImporti_iva').innerHTML = iva.toFixed(2);
+    			document.getElementById('valoreSintesiImporti_spesaMateriaEnergia').innerHTML = Number(spesaMateriaEnergia.toFixed(2)).toLocaleString('it');
+    			document.getElementById('valoreSintesiImporti_spesaTrasporto').innerHTML = Number(spesaTrasporto.toFixed(2)).toLocaleString('it');
+    			document.getElementById('valoreSintesiImporti_spesaOneri').innerHTML = Number(spesaOneri.toFixed(2)).toLocaleString('it');
+    			document.getElementById('valoreSintesiImporti_imposte').innerHTML = Number(imposte.toFixed(2)).toLocaleString('it');
+    			document.getElementById('valoreSintesiImporti_iva').innerHTML = Number(iva.toFixed(2)).toLocaleString('it');
     			
-    			document.getElementById('valoreSintesiImporti_canone').innerHTML = canone.toFixed(2);
+    			document.getElementById('valoreSintesiImporti_canone').innerHTML = Number(canone.toFixed(2)).toLocaleString('it');
     			
     			// init totale bolletta
-    			document.getElementById('totaleBolletta').innerHTML = totaleBolletta.toFixed(2);
+    			document.getElementById('totaleBolletta').innerHTML = Number(totaleBolletta.toFixed(2)).toLocaleString('it');
     			// init totale da pagare
-    			document.getElementById('totaleDaPagare').innerHTML = totaleDaPagare.toFixed(2);
+    			document.getElementById('totaleDaPagare').innerHTML = Number(totaleDaPagare.toFixed(2)).toLocaleString('it');
     			
             	new Chartist.Pie('#graficoSintesiImporti', {
         			series: [{
@@ -527,8 +565,8 @@
 				<div class="elenco-contatti">
 					<div class="contatto">
 						<div class="etichetta">Contact Center</div>
-						<div class="valore">Da rete fissa <span data-data_type="single" data-first_node="AziendaCallCenterFisso" data-path_type="xpath" data-path_data="">800 test</span></div>
-						<div class="valore">Da rete mobile <span data-data_type="single" data-first_node="AziendaCallCenterCell" data-path_type="xpath" data-path_data="">800 test</span></div>
+						<div class="valore">Da rete fissa <span data-data_type="single" data-first_node="AziendaCallCenterFisso" data-path_type="xpath" data-path_data=""></span></div>
+						<div class="valore">Da rete mobile <span data-data_type="single" data-first_node="AziendaCallCenterCell" data-path_type="xpath" data-path_data=""></span></div>
 					</div>
 					<div class="contatto">
 						<div class="etichetta">Numero Verde</div>
@@ -563,7 +601,11 @@
 						</div>
 						<div class="canale">
 							<span class="etichetta">Sito web:</span>
-							<span class="valore"><a href="#">www.omniaenergia.it</a> accedendo alla tua area personale</span>
+							<span class="valore">
+								<a href="#">
+									<span data-data_type="single" data-first_node="AziendaInternet" data-path_type="xpath" data-path_data=""></span>
+								</a>
+								accedendo alla tua area personale</span>
 						</div>
 						<div class="canale">
 							<span class="etichetta">Whatsapp:</span>
@@ -625,25 +667,8 @@
 	
 	<!-- @QUADRO LETTURE E CONSUMI - start ==========
 	     ============================================ -->
-	<!-- ****** dati ****** -->
-	<div id="datiQuadroLettureEConsumi" style="display: none;">
-		<!-- dati distributore -->
-		<div class="datiQuadroLettureEConsumi_anno">2019</div>
-		<div class="datiQuadroLettureEConsumi_mese">giu 19</div>
-		<div class="datiQuadroLettureEConsumi_tipoDato">Distributore</div>
-		<div class="datiQuadroLettureEConsumi_f1">10</div>
-		<div class="datiQuadroLettureEConsumi_f2">10</div>
-		<div class="datiQuadroLettureEConsumi_f3">5</div>
-		<!-- dati stima -->
-		<div class="datiQuadroLettureEConsumi_anno">2019</div>
-		<div class="datiQuadroLettureEConsumi_mese">lug</div>
-		<div class="datiQuadroLettureEConsumi_tipoDato">Stima</div>
-		<div class="datiQuadroLettureEConsumi_f1">15</div>
-		<div class="datiQuadroLettureEConsumi_f2">15</div>
-		<div class="datiQuadroLettureEConsumi_f3">7.5</div>
-	</div>
 	<!-- ****** dati nascosti ****** -->
-	<div style="display: none;" class="consumi_hiddenvalues" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
+	<div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
         <span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">1</span>
         <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
         <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">06</span>
@@ -653,7 +678,7 @@
         <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">690</span>
 		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3000</span>
 	</div>
-	<div style="display: none;" class="consumi_hiddenvalues" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
+	<div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
 		<span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">2</span>
         <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
         <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">07</span>
@@ -663,7 +688,7 @@
         <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">691</span>
 		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3001</span>
 	</div>	
-	<div style="display: none;" class="consumi_hiddenvalues" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
+	<div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
 		<span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">2</span>
         <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
         <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">08</span>
@@ -673,7 +698,7 @@
         <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">691</span>
 		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3001</span>
     </div>
-    <div style="display: none;" class="consumi_hiddenvalues" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
+    <div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
 		<span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">2</span>
         <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
         <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">09</span>
@@ -683,7 +708,7 @@
         <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">691</span>
 		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3001</span>
     </div>
-    <div style="display: none;" class="consumi_hiddenvalues" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
+    <div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
 		<span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">2</span>
         <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
         <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">10</span>
@@ -693,7 +718,7 @@
         <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">691</span>
 		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3001</span>
     </div>
-    <div style="display: none;" class="consumi_hiddenvalues" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
+    <div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
 		<span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">2</span>
         <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
         <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">11</span>
@@ -813,10 +838,6 @@
 				mesi.push(mesiELEMS[N - 1].innerHTML);
 				
 				// TODO ???
-// 				elems = document.getElementsByClassName('datiQuadroLettureEConsumi_tipoDato');
-// 				for (var i = 0; i < elems.length; i++) {
-// 					tipiDati.push(elems[i].innerHTML)
-// 				}
 				tipiDati = ['Stima', 'Lettura'];
 				
 				// F1
@@ -960,7 +981,7 @@
 				var datiF2 = [];
 				var datiF3 = [];
 				
-				var parents = document.getElementsByClassName('consumi_hiddenvalues');
+				/* var parents = document.getElementsByClassName('consumi_hiddenvalues_row');
 				for (var idx = 0; idx < parents.length; idx++) {
 					var parent = parents[idx];
 					var childs = parent.childNodes
@@ -984,35 +1005,24 @@
 								}
 							}
 							if (elem.className == 'x_consumi_f1')
-								datiF1.push(checkValoreNumerico(elem.innerHTML));
+								datiF1.push(checkNumber(elem.innerHTML));
 							if (elem.className == 'x_consumi_f2')
-								datiF2.push(checkValoreNumerico(elem.innerHTML));
+								datiF2.push(checkNumber(elem.innerHTML));
 							if (elem.className == 'x_consumi_f3')
-								datiF3.push(checkValoreNumerico(elem.innerHTML));
+								datiF3.push(checkNumber(elem.innerHTML));
 						}
 					}
-				}
+				} */
 				
-// 				var elems = document.getElementsByClassName('x_consumi_anno');
-// 				for (var i = 0; i < elems.length; i++) {
-// 					anni.push(elems[i].innerHTML);
-// 				}
-// 				elems = document.getElementsByClassName('x_consumi_mese');
-// 				for (var i = 0; i < elems.length; i++) {
-// 					mesi.push(elems[i].innerHTML);
-// 				}
-// 				elems = document.getElementsByClassName('x_consumi_f1');
-// 				for (var i = 0; i < elems.length; i++) {
-// 					datiF1.push(elems[i].innerHTML);
-// 				}
-// 				elems = document.getElementsByClassName('x_consumi_f2');
-// 				for (var i = 0; i < elems.length; i++) {
-// 					datiF2.push(elems[i].innerHTML);
-// 				}
-// 				elems = document.getElementsByClassName('x_consumi_f3');
-// 				for (var i = 0; i < elems.length; i++) {
-// 					datiF3.push(elems[i].innerHTML);
-// 				}
+				var rows = document.getElementsByClassName('consumi_hiddenvalues_row');
+				for (var i = 0; i < rows.length; i++) {
+					var row = rows[i];
+					anni.push(row.getElementsByClassName('x_consumi_anno')[0].innerHTML);
+					mesi.push(row.getElementsByClassName('x_consumi_mese')[0].innerHTML);
+					datiF1.push(row.getElementsByClassName('x_consumi_f1')[0].innerHTML);
+					datiF2.push(row.getElementsByClassName('x_consumi_f2')[0].innerHTML);
+					datiF3.push(row.getElementsByClassName('x_consumi_f3')[0].innerHTML);
+				}
 				
 				var labels = [];
 				for (var i = 0; i < anni.length; i++) {
