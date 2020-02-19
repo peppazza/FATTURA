@@ -525,7 +525,9 @@
 						</div>
 						<div class="canale">
 							<span class="etichetta">Numero verde</span>
-							<span class="valore">800 98 44 55</span>
+							<span class="valore">
+								<span class="dati-azienda-float-right" data-data_type="single" data-first_node="AziendaTelAutolettura" data-path_type="xpath" data-path_data=""></span>
+							</span>
 						</div>
 						<div class="canale">
 							<span class="etichetta">App:</span>
@@ -541,7 +543,7 @@
 					<div class="contatti">
 						<div class="contatto">
 							<span class="etichetta">Numero verde</span>
-							<span class="valore">803 500</span>
+							<span class="valore"><span class="dati-azienda-float-right" data-data_type="single" data-first_node="ProntoIntervento" data-path_type="xpath" data-path_data=""></span></span>
 						</div>
 						<div class="canale">Servizio a cura di E-distribuzione S.p.A.</div>
 					</div>
@@ -1061,49 +1063,68 @@
 						</div>
 						<div class="pure-g dati">
 							<!-- CONGUAGLI -->
-							<div class="pure-u-24-24">
+							<div id="conguaglioConsumiStimati_BOX" class="pure-u-24-24">
 								<div id="messaggioNessunRicalcolo" class="messaggio">
 									Nessun ricalcolo in bolletta ??
 								</div>
 								<table style="width: 100%;">
+									<tbody>
+										<tr>
+							    		    <td colspan="3">Conguaglio consumi stimati</td>
+							    	    </tr>
+									</tbody>
 									<tbody class="sezione-conguaglio-consumi-stimati" data-data_type="simple_loop" data-first_node="ConguaglioConsumiStimati" data-path_type="xpath" data-path_data="">
 							            <tr>
-							    		    <td colspan="3"><span class="testo-ricalcoli2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">test</span></td>
+							    		    <td colspan="3"><span class="testo-ricalcoli2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></span></td>
 							    	    </tr>
 							            <tr class="bordo-tab-sotto">
-							        	    <td><span class="testo-ricalcoli2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal">test</span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al">test</span></span></td>
-							                <td><span class="testo-ricalcoli3"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita">test</span></span></td>
-							                <td><span class="testo-ricalcoli3"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">test</span></span></td>
+							        	    <td><span class="testo-ricalcoli2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span></span></td>
+							                <td><span class="testo-ricalcoli3"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></span></td>
+							                <td><span class="testo-ricalcoli3"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></span></span></td>
 							            </tr>
 							        </tbody>
 								</table>
 							</div>
 							<!--  -->
-							<div class="pure-u-24-24">
-								<table style="width: 100%;">
+							<div id="rettificheLetture_BOX" class="pure-u-24-24">
+								<table style="width: 100%; margin-top: 2px;">
+									<tbody>
+										<tr>
+							    		    <td colspan="3">Rettifiche letture</td>
+							    	    </tr>
+									</tbody>
 									<tbody class="sezione-rettifiche-letture" data-data_type="simple_loop" data-first_node="RettificheLetture" data-path_type="xpath" data-path_data="Rettifiche">
 								        <tr>
-								    		<td colspan="3"><span class="testo-ricalcoli2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">test</span> del <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataLetturaRettificata">01/01/2016</span> di <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/LetturaRettificata">test</span> kWh</span></td>
+								    		<td colspan="3"><span class="testo-ricalcoli2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></span>
+								    		del <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataLetturaRettificata"></span>
+								    		di <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/LetturaRettificata"></span> kWh</span></td>
 								    	</tr>
 								        <tr>
-								        	<td><span class="testo-ricalcoli2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal">test</span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al">test</span></span></td>
-								            <td><span class="testo-ricalcoli3"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita">test</span></span></td>
-								            <td><span class="testo-ricalcoli3"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">test</span></span></td>
+								        	<td><span class="testo-ricalcoli2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span></span></td>
+								            <td><span class="testo-ricalcoli3"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></span></td>
+								            <td><span class="testo-ricalcoli3"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></span></span></td>
 								        </tr>
 							        </tbody>
 								</table>
 							</div>
 							<!--  -->
-							<div class="pure-u-24-24">
-								<table style="width: 100%;">
+							<div id="conguaglioTariffario_BOX" class="pure-u-24-24">
+								<table style="width: 100%; margin-top: 2px;">
+									<tbody>
+										<tr>
+							    		    <td colspan="3">Conguaglio tariffario</td>
+							    	    </tr>
+									</tbody>
 									<tbody class="sezione-conguaglio-tariffario" data-data_type="simple_loop" data-first_node="ConguaglioTariffario" data-path_type="xpath" data-path_data="Ricalcolo">
 								        <tr>
-								    		<td colspan="3"><span class="testo-ricalcoli2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">test</span> <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ComponenteConguagliata">test</span></span></td>
+								    		<td colspan="3"><span class="testo-ricalcoli2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></span>
+								    			<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ComponenteConguagliata"></span></span>
+								    		</td>
 								    	</tr>
 								        <tr class="bordo-tab-sotto">
-								        	<td><span class="testo-ricalcoli2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal">test</span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al">test</span></span></td>
-								            <td><span class="testo-ricalcoli3"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita">test</span></span></td>
-								            <td><span class="testo-ricalcoli3"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">test</span></span></td>
+								        	<td><span class="testo-ricalcoli2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span></span></td>
+								            <td><span class="testo-ricalcoli3"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></span></td>
+								            <td><span class="testo-ricalcoli3"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></span></span></td>
 								        </tr>
 							        </tbody>
 								</table>
