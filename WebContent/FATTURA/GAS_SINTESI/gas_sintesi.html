@@ -1063,11 +1063,9 @@
 						</div>
 						<div class="pure-g dati">
 							<!-- CONGUAGLI -->
-							<div id="conguaglioConsumiStimati_BOX" class="pure-u-24-24">
-								<div id="messaggioNessunRicalcolo" class="messaggio">
-									Nessun ricalcolo in bolletta ??
-								</div>
-								<table style="width: 100%;">
+							<div class="pure-u-24-24">
+								<div id="messaggioNessunConguaglioConsumiStimati" class="messaggio">Nessun conguaglio consumi stimati</div>
+								<table id="tabellaConguaglioConsumiStimati" style="width: 100%;">
 									<tbody>
 										<tr>
 							    		    <td colspan="3">Conguaglio consumi stimati</td>
@@ -1075,19 +1073,48 @@
 									</tbody>
 									<tbody class="sezione-conguaglio-consumi-stimati" data-data_type="simple_loop" data-first_node="ConguaglioConsumiStimati" data-path_type="xpath" data-path_data="">
 							            <tr>
-							    		    <td colspan="3"><span class="testo-ricalcoli2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></span></td>
+							    		    <td colspan="3"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></span></td>
 							    	    </tr>
 							            <tr class="bordo-tab-sotto">
-							        	    <td><span class="testo-ricalcoli2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span></span></td>
-							                <td><span class="testo-ricalcoli3"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></span></td>
-							                <td><span class="testo-ricalcoli3"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></span></span></td>
+							        	    <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span></td>
+							                <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
+							                <td><span class="y_conguaglio-consumi-stimati-imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></span></td>
 							            </tr>
 							        </tbody>
 								</table>
 							</div>
-							<!--  -->
-							<div id="rettificheLetture_BOX" class="pure-u-24-24">
-								<table style="width: 100%; margin-top: 2px;">
+							<script type="text/javascript">
+								try {
+									(function() {
+										var esistonoRicalcoli = false;
+										
+										var elems = document.getElementsByClassName('y_conguaglio-consumi-stimati-imponibile');
+										if (elems.length > 0) {
+											var value = elems[0].innerHTML;
+											if (value) {
+												value = value.trim();
+												if (value !== '') {
+													esistonoRicalcoli = true;
+												}
+											}
+										}
+										
+										if (esistonoRicalcoli) {
+											document.getElementById('messaggioNessunConguaglioConsumiStimati').style.display = 'none';
+											document.getElementById('tabellaConguaglioConsumiStimati').style.display = 'table';
+										} else {
+											document.getElementById('messaggioNessunConguaglioConsumiStimati').style.display = 'block';
+											document.getElementById('tabellaConguaglioConsumiStimati').style.display = 'none';
+										}				
+									})();
+								} catch (err) {
+									console.log('errore init display per CONGUAGLIO CONSUMI STIMATI', err);
+								}
+							</script>
+							<!-- RETTIFICHE -->
+							<div class="pure-u-24-24">
+								<div id="messaggioNessunaRettificaLetture" class="messaggio">Nessun conguaglio consumi stimati</div>
+								<table id="tabellaRettificheLetture" style="width: 100%; margin-top: 2px;">
 									<tbody>
 										<tr>
 							    		    <td colspan="3">Rettifiche letture</td>
@@ -1095,21 +1122,53 @@
 									</tbody>
 									<tbody class="sezione-rettifiche-letture" data-data_type="simple_loop" data-first_node="RettificheLetture" data-path_type="xpath" data-path_data="Rettifiche">
 								        <tr>
-								    		<td colspan="3"><span class="testo-ricalcoli2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></span>
-								    		del <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataLetturaRettificata"></span>
-								    		di <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/LetturaRettificata"></span> kWh</span></td>
+								    		<td colspan="3">
+								    			<span><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></span>
+									    		del <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataLetturaRettificata"></span>
+									    		di <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/LetturaRettificata"></span> kWh</span>
+									    	</td>
 								    	</tr>
 								        <tr>
-								        	<td><span class="testo-ricalcoli2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span></span></td>
-								            <td><span class="testo-ricalcoli3"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></span></td>
-								            <td><span class="testo-ricalcoli3"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></span></span></td>
+								        	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span></td>
+								            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
+								            <td><span class="y_rettifiche-letture-imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></span></td>
 								        </tr>
 							        </tbody>
 								</table>
 							</div>
+							<script type="text/javascript">
+								try {
+									(function() {
+										var esistonoRettifiche = false;
+										
+										var elems = document.getElementsByClassName('y_rettifiche-letture-imponibile');
+										if (elems.length > 0) {
+											var value = elems[0].innerHTML;
+											if (value) {
+												value = value.trim();
+												if (value !== '') {
+													esistonoRettifiche = true;
+												}
+											}
+										}
+										
+										if (esistonoRettifiche) {
+											document.getElementById('messaggioNessunaRettificaLetture').style.display = 'none';
+											document.getElementById('tabellaRettificheLetture').style.display = 'table';
+										} else {
+											document.getElementById('messaggioNessunaRettificaLetture').style.display = 'block';
+											document.getElementById('tabellaRettificheLetture').style.display = 'none';
+										}				
+									})();
+								} catch (err) {
+									console.log('errore init display per RETTIFICHE LETTURE', err);
+								}
+							</script>
 							<!--  -->
-							<div id="conguaglioTariffario_BOX" class="pure-u-24-24">
-								<table style="width: 100%; margin-top: 2px;">
+							<!-- CONGUAGLI TARIFFARI -->
+							<div class="pure-u-24-24">
+								<div id="messaggioNessunConguaglioTariffario">Nessun conguaglio tariffario</div>
+								<table id="tabellaConguaglioTariffario" style="width: 100%; margin-top: 2px;">
 									<tbody>
 										<tr>
 							    		    <td colspan="3">Conguaglio tariffario</td>
@@ -1117,18 +1176,49 @@
 									</tbody>
 									<tbody class="sezione-conguaglio-tariffario" data-data_type="simple_loop" data-first_node="ConguaglioTariffario" data-path_type="xpath" data-path_data="Ricalcolo">
 								        <tr>
-								    		<td colspan="3"><span class="testo-ricalcoli2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></span>
-								    			<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ComponenteConguagliata"></span></span>
+								    		<td colspan="3">
+								    			<span>
+									    			<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></span>
+									    			<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ComponenteConguagliata"></span>
+									    		</span>
 								    		</td>
 								    	</tr>
 								        <tr class="bordo-tab-sotto">
-								        	<td><span class="testo-ricalcoli2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span></span></td>
-								            <td><span class="testo-ricalcoli3"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></span></td>
-								            <td><span class="testo-ricalcoli3"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></span></span></td>
+								        	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span></td>
+								            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
+								            <td><span class="y_conguaglio-tariffario-imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></span></td>
 								        </tr>
 							        </tbody>
 								</table>
 							</div>
+							<script type="text/javascript">
+								try {
+									(function() {
+										var esistonoConguagiTariffari = false;
+										
+										var elems = document.getElementsByClassName('y_conguaglio-tariffario-imponibile');
+										if (elems.length > 0) {
+											var value = elems[0].innerHTML;
+											if (value) {
+												value = value.trim();
+												if (value !== '') {
+													esistonoConguagiTariffari = true;
+												}
+											}
+										}
+										
+										if (esistonoConguagiTariffari) {
+											document.getElementById('messaggioNessunConguaglioTariffario').style.display = 'none';
+											document.getElementById('tabellaConguaglioTariffario').style.display = 'table';
+										} else {
+											document.getElementById('messaggioNessunConguaglioTariffario').style.display = 'block';
+											document.getElementById('tabellaConguaglioTariffario').style.display = 'none';
+										}				
+									})();
+								} catch (err) {
+									console.log('errore init display per RETTIFICHE LETTURE', err);
+								}
+							</script>
 						</div>
 					</div>				
 				</div>
