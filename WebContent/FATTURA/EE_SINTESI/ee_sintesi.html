@@ -34,11 +34,15 @@
 	}
 	
 	function checkNumber(str) {
-		if (str) {
-			str = str.trim();
-			str = str.replace('.', ',');
-			str = str.replace(',', '.');
-			return Number(str);	
+		try {
+			if (str) {
+				str = str.trim();
+				str = str.replace('.', '');
+				str = str.replace(',', '.');
+				return Number(str);	
+			}
+		} catch (err) {
+			console.log('error check valore numerico', err);
 		}
 		return '';
 	}
@@ -303,7 +307,7 @@
     </div>
     <div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
     	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">SPESA PER ONERI DI SISTEMA</div>
-        <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">89,123123</div>
+        <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">2.745,59</div>
         <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
     </div>
     <div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
@@ -639,7 +643,6 @@
 	<!-- @QUADRO LETTURE E CONSUMI - start ==========
 	     ============================================ -->
 	<!-- ****** dati nascosti ****** -->
-	<!-- 
 	<div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
         <span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">1</span>
         <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
@@ -700,19 +703,18 @@
         <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">691</span>
 		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3001</span>
     </div>
-    -->
-    
+    <!-- 
     <div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
 		<span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">2</span>
         <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
         <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">11</span>
-        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">11</span>
-        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">21</span>
-        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">31</span>
+        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">11,123</span>
+        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">21,123</span>
+        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">31,123</span>
         <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">691</span>
 		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3001</span>
     </div>
-	
+	 -->
 	<div id="quadroLettureEConsumi" class="pure-g">
 		<div class="pure-u-24-24">
 			<div class="pure-g titolo sfondo-arancione">
@@ -827,21 +829,39 @@
 				// F1
 				var f1ELEMS = document.getElementsByClassName('x_consumi_f1');
 				N = f1ELEMS.length;
-				if (N > 1)
-					consumiF1.push(f1ELEMS[N - 2].innerHTML);
-				consumiF1.push(f1ELEMS[N - 1].innerHTML);
+				if (N > 1) {
+					var num = f1ELEMS[N - 2].innerHTML;
+					if (num)
+						num = checkNumber(num);
+					else
+						num = 0;
+					consumiF1.push(num);
+				}
+				consumiF1.push(checkNumber(f1ELEMS[N - 1].innerHTML));
 				// F2
 				var f2ELEMS = document.getElementsByClassName('x_consumi_f2');
 				N = f2ELEMS.length;
-				if (N > 1)
-					consumiF2.push(f2ELEMS[N - 2].innerHTML);
-				consumiF2.push(f2ELEMS[N - 1].innerHTML);
+				if (N > 1) {
+					var num = f2ELEMS[N - 2].innerHTML;
+					if (num)
+						num = checkNumber(num);
+					else
+						num = 0;
+					consumiF2.push(num);
+				}
+				consumiF2.push(checkNumber(f2ELEMS[N - 1].innerHTML));
 				// F3
 				var f3ELEMS = document.getElementsByClassName('x_consumi_f3');
 				N = f3ELEMS.length;
-				if (N > 1)
-					consumiF3.push(f3ELEMS[N - 2].innerHTML);
-				consumiF3.push(f3ELEMS[N - 1].innerHTML);
+				if (N > 1) {
+					var num = f2ELEMS[N - 2].innerHTML;
+					if (num)
+						num = checkNumber(num);
+					else
+						num = 0;
+					consumiF3.push(num);
+				}
+				consumiF3.push(checkNumber(f3ELEMS[N - 1].innerHTML));
 				
 				var labels = [];
 				for (var i = 0; i < anni.length; i++) {
@@ -873,6 +893,28 @@
 						},
 						responsive: true,
 						maintainAspectRatio : false,
+						hover: {
+              				animationDuration: 0
+            			},
+             			animation: {
+                			duration: 1,
+              				onComplete: function() {
+                				var chartInstance = this.chart,
+                  				ctx = chartInstance.ctx;
+				                // ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+				                ctx.font = Chart.helpers.fontString(10, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+				                ctx.textAlign = 'center';
+				                ctx.textBaseline = 'bottom';
+ 								
+                				this.data.datasets.forEach(function(dataset, i) {
+                  					var meta = chartInstance.controller.getDatasetMeta(i);
+                  					meta.data.forEach(function(bar, index) {
+	                    				var data = Number(dataset.data[index]).toFixed(2).toLocaleString('it');
+	                    				ctx.fillText(data, bar._model.x, bar._model.y + 2);
+                  					});
+                				});
+              				}
+            			},
 						scales : {
 							xAxes : [ {
 								stacked : true,
@@ -889,7 +931,7 @@
 						}
 					}
 				});
-
+ 
 // 				new Chartist.Bar('#graficoQuadroLettureEConsumi', {
 // 					labels : labels,
 // 					series : [{
@@ -966,7 +1008,8 @@
 				var datiF2 = [];
 				var datiF3 = [];
 				
-				/* var parents = document.getElementsByClassName('consumi_hiddenvalues_row');
+				/*
+				var parents = document.getElementsByClassName('consumi_hiddenvalues_row');
 				for (var idx = 0; idx < parents.length; idx++) {
 					var parent = parents[idx];
 					var childs = parent.childNodes
@@ -997,7 +1040,8 @@
 								datiF3.push(checkNumber(elem.innerHTML));
 						}
 					}
-				} */
+				}
+				 */
 				
 				var rows = document.getElementsByClassName('consumi_hiddenvalues_row');
 				for (var i = 0; i < rows.length; i++) {
@@ -1295,7 +1339,7 @@
 							</script>
 							<!-- RETTIFICHE -->
 							<div class="pure-u-24-24">
-								<div id="messaggioNessunaRettificaLetture" class="messaggio">Nessun conguaglio consumi stimati</div>
+								<div id="messaggioNessunaRettificaLetture" class="messaggio">Nessuna rettifica lettura</div>
 								<table id="tabellaRettificheLetture" style="width: 100%; margin-top: 2px;">
 									<tbody>
 										<tr>

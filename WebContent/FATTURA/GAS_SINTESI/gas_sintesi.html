@@ -35,11 +35,15 @@
 		}
 		
 		function checkNumber(str) {
-			if (str) {
-				str = str.trim();
-				str = str.replace('.', ',');
-				str = str.replace(',', '.');
-				return Number(str);	
+			try {
+				if (str) {
+					str = str.trim();
+					str = str.replace('.', '');
+					str = str.replace(',', '.');
+					return Number(str);	
+				}
+			} catch (err) {
+				console.log('error check valore numerico', err);
 			}
 			return '';
 		}
@@ -623,7 +627,6 @@
 						<div class="chart-container" style="width: 270px; height: 120px;">
 							<canvas id="graficoQuadroLettureEConsumi"></canvas>
 						</div>
-						<!-- <div id="graficoQuadroLettureEConsumi" style="width: auto; height: 170px; padding-top: 5px;"></div> -->
 					</div>
 				</div>
 				<div class="pure-u-15-24">
@@ -784,6 +787,28 @@
 				    	},
 				    	responsive: true,
 				    	maintainAspectRatio : false,
+				    	hover: {
+              				animationDuration: 0
+            			},
+             			animation: {
+                			duration: 1,
+              				onComplete: function() {
+                				var chartInstance = this.chart,
+                  				ctx = chartInstance.ctx;
+				                // ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+				                ctx.font = Chart.helpers.fontString(10, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+				                ctx.textAlign = 'center';
+				                ctx.textBaseline = 'bottom';
+ 								
+                				this.data.datasets.forEach(function(dataset, i) {
+                  					var meta = chartInstance.controller.getDatasetMeta(i);
+                  					meta.data.forEach(function(bar, index) {
+	                    				var data = Number(dataset.data[index]).toFixed(2).toLocaleString('it');
+	                    				ctx.fillText(data, bar._model.x, bar._model.y + 2);
+                  					});
+                				});
+              				}
+            			},
 						scales : {
 							xAxes : [ {
 								ticks: {
