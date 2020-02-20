@@ -318,13 +318,13 @@ table tbody tr td.no-border {
 	#sintesiImporti .grafico .contenuto .legenda .voce-legenda.spesaOneri .box-colore .rettangolo {
 		background-color: #80ff00; /* vedi file charts.css */
 	}
-	
+
+	#sintesiImporti .grafico .contenuto .legenda .voce-legenda.altrePartite .box-colore .rettangolo {
+		background-color: #000000; /* vedi file charts.css */
+	}
+		
 	#sintesiImporti .grafico .contenuto .legenda .voce-legenda.imposte .box-colore .rettangolo {
 		background-color: #ffff00; /* vedi file charts.css */
-	}
-	
-	#sintesiImporti .grafico .contenuto .legenda .voce-legenda.iva .box-colore .rettangolo {
-		background-color: #000000; /* vedi file charts.css */
 	}
 	
 	#sintesiImporti .grafico .contenuto .legenda .voce-legenda .valore-in-euro,

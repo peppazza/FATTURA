@@ -246,7 +246,7 @@
 				<div class="valore">
 					<!-- init in JS -->
 					<!-- fat := fattura, ndc := nota di credito, ndd := nota di debito -->
-					<span class="tipo-documento" style="display: hidden;" data-data_type="single" data-first_node="TipoDocumento" data-path_type="xpath" data-path_data=""></span>
+					<span class="tipo-documento" style="display: none;" data-data_type="single" data-first_node="TipoDocumento" data-path_type="xpath" data-path_data=""></span>
 					<span id="tipoDocumento"></span>
 				</div>
 			</div>
@@ -290,28 +290,29 @@
 	<!-- @SINTESI IMPORTI - start ==========
 	     =================================== -->
 	<!-- ****** dati nascosti ****** -->
+	 
 	<div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
-    	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Spesa per la materia energia</div>
+    	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">SPESA PER LA MATERIA ENERGIA</div>
         <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">1189,123123</div>
         <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
     </div>
     <div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
-    	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Spesa per trasporto e gestione contatore</div>
+    	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">SPESA PER IL TRASPORTO E LA GESTIONE DEL CONTATORE</div>
         <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">89,123123</div>
         <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
     </div>
     <div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
-    	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Spesa per oneri di sistema</div>
+    	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">SPESA PER ONERI DI SISTEMA</div>
         <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">89,123123</div>
         <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
     </div>
     <div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
-    	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Imposte</div>
+    	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">ALTRE PARTITE ED ONERI</div>
         <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">89,123123</div>
         <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
     </div>
     <div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
-    	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">IVA</div>
+    	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">IMPOSTE</div>
         <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">89,123123</div>
         <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
     </div>
@@ -320,7 +321,13 @@
         <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">89,123123</div>
         <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
     </div>
-	
+	<!--
+	<div class="sintesiImporti_riga" style="border-bottom: 1px solid red;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
+    	<div class="sintesiImporti_descrizione" style="border: 1px solid #ddd; padding: 0 2px; margin-right: 2px;" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Canone</div>
+        <div class="sintesiImporti_imponibile" style="border: 1px solid #ddd; padding: 0 2px; margin-right: 2px;" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">89,123123</div>
+        <div class="sintesiImporti_aliquotaIva" style="border: 1px solid #ddd; padding: 0 2px; margin-right: 2px;" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
+    </div>
+    -->
 	<div id="sintesiImporti" class="pure-g">
 		<div class="pure-u-17-24 grafico">
 			<div class="contenuto">
@@ -350,15 +357,15 @@
 								<div class="pure-u-17-24 etichetta">Spesa per oneri di sistema</div>
 								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_spesaOneri" class="val">?? 79.2</span></div>
 							</div>
+							<div class="pure-g voce-legenda altrePartite">
+								<div class="pure-u-2-24 box-colore"><div class="rettangolo"></div></div>
+								<div class="pure-u-17-24 etichetta">Altre partite ed oneri</div>
+								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_altrePartite" class="val">?? 27.9</span></div>
+							</div>
 							<div class="pure-g voce-legenda imposte">
 								<div class="pure-u-2-24 box-colore"><div class="rettangolo"></div></div>
 								<div class="pure-u-17-24 etichetta">Imposte</div>
-								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_imposte" class="val">?? 27.9</span></div>
-							</div>
-							<div class="pure-g voce-legenda iva">
-								<div class="pure-u-2-24 box-colore"><div class="rettangolo"></div></div>
-								<div class="pure-u-17-24 etichetta">IVA</div>
-								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_iva" class="val">?? 26</span></div>
+								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_imposte" class="val">?? 26</span></div>
 							</div>
 						</div>
 						<div class="pure-g separatore">
@@ -394,44 +401,6 @@
 						</div>
 						<!-- RIEPILOGO IVA -->
 						<div class="riepilogo-iva">
-							<!-- <div class="pure-g voce-riepilogo-iva">
-								<div class="pure-u-1-24 box-colore"></div>
-								<div class="pure-u-23-24 etichetta">Riepilogo IVA - Vedi box "Informazioni Imposte"</div>
-							</div>
-							<div class="pure-g separatore">
-								<div class="pure-u-1-24"></div>
-								<div class="pure-u-23-24 bordo"></div>
-							</div>
-							<div class="pure-g voce-riepilogo-iva">
-								<div class="pure-u-3-24"></div>
-								<div class="pure-u-7-24">Aliquota</div>
-								<div class="pure-u-7-24">Imponibile</div>
-								<div class="pure-u-7-24">Importo</div>
-							</div>
-							<div class="pure-g voce-riepilogo-iva">
-								<div class="pure-u-3-24"></div>
-								<div class="pure-u-7-24 valore-perc">
-									<div class="val">131.1</div><span class="simbolo-perc"> %</span>
-								</div>
-								<div class="pure-u-7-24 valore-in-euro">
-									<span class="simbolo-euro">€ </span><div class="val">131.1</div>
-								</div>
-								<div class="pure-u-7-24 valore-in-euro">
-									<span class="simbolo-euro">€ </span><div class="val">131.1</div>
-								</div>
-							</div>
-							<div class="pure-g voce-riepilogo-iva">
-								<div class="pure-u-3-24"></div>
-								<div class="pure-u-7-24 valore-perc">
-									<div class="val">131.1</div><span class="simbolo-perc"> %</span>
-								</div>
-								<div class="pure-u-7-24 valore-in-euro">
-									<span class="simbolo-euro">€ </span><div class="val">131.1</div>
-								</div>
-								<div class="pure-u-7-24 valore-in-euro">
-									<span class="simbolo-euro">€ </span><div class="val">131.1</div>
-								</div>
-							</div> -->
 							<div style="padding-left: 10px;">
 								<table>
 									<tbody>
@@ -482,8 +451,8 @@
         		var spesaMateriaEnergia = null;
     			var spesaTrasporto = null;
     			var spesaOneri = null;
-    			var imposte = null;
-    			var iva = null;
+    			var altrePartite = null;
+    			var imposte = null;    			
     			var canone = null;
     			
         		var elems = document.getElementsByClassName('sintesiImporti_riga');
@@ -502,26 +471,29 @@
         				spesaMateriaEnergia = imponibile;
         			} else if (descrizione.indexOf('trasporto') > -1) {
         				spesaTrasporto = imponibile;
-        			} else if (descrizione.indexOf('oneri') > -1) {
+        			} else if (descrizione.indexOf('oneri di sistema') > -1) {
         				spesaOneri = imponibile;
+        			} else if (descrizione.indexOf('partite') > -1) {
+        				altrePartite = imponibile;
         			} else if (descrizione.indexOf('imposte') > -1) {
         				imposte = imponibile;
-        			} else if (descrizione.indexOf('iva') > -1) {
-        				iva = imponibile;
         			} else if (descrizione.indexOf('canone') > -1) {
         				canone = imponibile;
         			}
+        			
+        			if (!canone)
+        				canone = 0.0;
         		}
 				    			
-    			var totaleBolletta = spesaMateriaEnergia + spesaTrasporto + spesaOneri + imposte + iva;
+    			var totaleBolletta = spesaMateriaEnergia + spesaTrasporto + spesaOneri + altrePartite + imposte;
     			var totaleDaPagare = totaleBolletta + canone;
 				
     			// init voci
     			document.getElementById('valoreSintesiImporti_spesaMateriaEnergia').innerHTML = Number(spesaMateriaEnergia.toFixed(2)).toLocaleString('it');
     			document.getElementById('valoreSintesiImporti_spesaTrasporto').innerHTML = Number(spesaTrasporto.toFixed(2)).toLocaleString('it');
     			document.getElementById('valoreSintesiImporti_spesaOneri').innerHTML = Number(spesaOneri.toFixed(2)).toLocaleString('it');
+    			document.getElementById('valoreSintesiImporti_altrePartite').innerHTML = Number(altrePartite.toFixed(2)).toLocaleString('it');
     			document.getElementById('valoreSintesiImporti_imposte').innerHTML = Number(imposte.toFixed(2)).toLocaleString('it');
-    			document.getElementById('valoreSintesiImporti_iva').innerHTML = Number(iva.toFixed(2)).toLocaleString('it');
     			
     			document.getElementById('valoreSintesiImporti_canone').innerHTML = Number(canone.toFixed(2)).toLocaleString('it');
     			
@@ -538,10 +510,10 @@
         			  }, {
         			    value: spesaOneri, name: 'Spesa oneri', className: 'spesaOneri', meta: 'Meta - Spesa oneri'
         			  }, {
+          			    value: altrePartite, name: 'Altre partite', className: 'altrePartite', meta: 'Meta - Altre partite'
+          			  }, {
           			    value: imposte, name: 'Imposte', className: 'imposte', meta: 'Meta - Imposte'
-        			  }, {
-          			    value: iva, name: 'IVA', className: 'iva', meta: 'Meta - IVA'
-          			  }]
+        			  }]
         			}, {
         				donut : true,
         				donutWidth: 36,
@@ -549,7 +521,7 @@
         			});
     		})();
         } catch(err) {
-        	console.log('errore init sintesi importi', err);
+        	console.log('errore init SINTESI IMPORTI', err);
         }
 	</script>
 	<!-- ========== end - SINTESI IMPORTI -->
@@ -667,6 +639,7 @@
 	<!-- @QUADRO LETTURE E CONSUMI - start ==========
 	     ============================================ -->
 	<!-- ****** dati nascosti ****** -->
+	<!-- 
 	<div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
         <span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">1</span>
         <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
@@ -727,6 +700,18 @@
         <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">691</span>
 		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3001</span>
     </div>
+    -->
+    
+    <div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
+		<span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">2</span>
+        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
+        <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">11</span>
+        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">11</span>
+        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">21</span>
+        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">31</span>
+        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">691</span>
+		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3001</span>
+    </div>
 	
 	<div id="quadroLettureEConsumi" class="pure-g">
 		<div class="pure-u-24-24">
@@ -735,7 +720,7 @@
 			</div>
 			<div class="pure-g">
 				<div class="pure-u-9-24 grafico">
-					<div class="contenuto">
+					<div class="contenuto" style="width: 270px; height: 120px;">
 						<canvas id="graficoQuadroLettureEConsumi"></canvas>
 					</div>
 				</div>
@@ -886,6 +871,7 @@
 						legend : {
 							display : false
 						},
+						responsive: true,
 						maintainAspectRatio : false,
 						scales : {
 							xAxes : [ {
@@ -958,7 +944,7 @@
 			<div class="pure-g">
 				<div class="pure-u-15-24 grafico">
 					<div class="contenuto">
-						<div class="chart-container" style="height: 120px;">
+						<div class="chart-container" style="width: 460px; height: 120px;">
 							<canvas id="graficoRiepilogoConsumiStorici"></canvas>
 						</div>
 					</div>
@@ -1062,6 +1048,7 @@
 						legend : {
 							display : false
 						},
+						responsive: true,
 						maintainAspectRatio : false,
 						scales : {
 							xAxes : [ {
@@ -1128,9 +1115,6 @@
 			<div class="pure-g titolo sfondo-arancione">
 				<div class="pure-u-24-24 contenuto">RIEPILOGO QUANTITA' E COSTI MEDI FATTURATI</div>
 			</div>
-			<!-- 
-				@@@@ ARTURO DEVE VERIFICARE SE CONSUMO BIMESTRALE O ANNUALE				
-			 -->
 			<div class="pure-g dati">
 				<div class="pure-u-8-24 col1">
 					<strong>Consumi fatturati: <span>1.198 ??</span> kWh</strong>
