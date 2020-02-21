@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bolletta</title>
+    <link rel="stylesheet" href="style.css" media="all" />
+	<!--
+	Versione 1.6.1
+		Introduzione tabella come contenitore per sezioni ricalcoli e morosità per anomalie rilevate su alcune casistiche di stampa.
+	-->
+  </head>
+  <body>
+  <script src="customs.js"></script>
+  <script src="chartist/dist/chartist.min.js"></script>
+  <link rel="stylesheet" href="chartist/dist/chartist.min.css"/>
+    <page size="A4">
+    <!-- dati nascosti per js -->
+    <div class="consumi_hiddenvalues" style="display: none" data-data_type="simple_loop" data-first_node="ConsumiMesiPrecedenti" data-path_type="xpath" data-path_data="ConsumoMese">
+        <span class="consumi_sequenzamese" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">1</span>
+        <span class="consumi_anno" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
+        <span class="consumi_mese" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">06</span>
+        <span class="consumi_consumo" style="display: none" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Consumo">9</span>
+    </div>
+    <span id="bonusammissione" style="display: none" data-data_type="single" data-first_node="BonusAmmissione" data-path_type="xpath" data-path_data="">0</span>
+    <span id="letturafutura" style="display: none" data-data_type="single" data-first_node="LetturaFuturaMisura" data-path_type="xpath" data-path_data="">ciao</span>
+    <span id="rettificalettura" style="display: none" data-data_type="single" data-first_node="RettificheLetture" data-path_type="xpath" data-path_data="Rettifiche[1]/Imponibile"></span>
+    <span id="letturabollettatipo" style="display: none" data-data_type="single" data-first_node="LetturaBollettaTipo" data-path_type="xpath" data-path_data="">S</span>
+    <span id="quotadettaglioimposte" style="display: none" data-data_type="single" data-first_node="Imposte" data-path_type="xpath" data-path_data="AccontiImposte/QuotaDettaglioImposte[1]/Imponibile">1</span>
+    <span id="conguaglioconsumistimati" style="display: none" data-data_type="single" data-first_node="ConguaglioConsumiStimati" data-path_type="xpath" data-path_data="/Imponibile"></span>
+    <span id="conguagliotariffario" style="display: none" data-data_type="single" data-first_node="ConguaglioTariffario" data-path_type="xpath" data-path_data="Ricalcolo[1]/Imponibile"></span>
+    <span id="altrepartite" style="display: none" data-data_type="single" data-first_node="AltrePartite" data-path_type="xpath" data-path_data="QuotaDettaglioAltrePartite[1]/Imponibile">a</span>
+    <span class="sezione-riepilogo-split-payment" style="display: none" data-data_type="single" data-first_node="SplitPayment" data-path_type="xpath" data-path_data="">a</span>
+	<span id="prescrizione-pagina" data-data_type="single" style="display: none" data-first_node="PrescrizioneBiennale" data-path_type="xpath" data-path_data="PrescrizionePaginaAggiuntiva"></span>
+
+    <table id="globaltable">
+   <thead><tr><td>
+    <table>
+      <tbody>
+        <tr>
+    <td><img class="logo" src="logo.png" alt="logo" /></td>
+    <td><img class="header_logo" src="header.png" alt="header" /></td>
+    
+    </tr>
+      </tbody>
+    </table>
+    </td></tr></thead>
+
+    <tbody>
+     <tr><td>
+    
+    
+    
+    <h3 class="titolo">Bolletta per la fornitura di gas naturale</h3>
+    
+    
+    
+     <table class="tab-3">
+      <tbody>
+        <tr class="bordo-titolo">
+            <td colspan="4" class="consumi"><h3><span class="titolo3">Informazioni generali</span></h3></td> 
+        </tr>
+        <tr >
+        	<td class=""><img class="" src="cliente.png" alt="cliente" /></td>
+            <td class=""><p class="testo4"><strong>Codice cliente </strong><span data-data_type="single" data-first_node="ClienteFinaleCodice" data-path_type="xpath" data-path_data="">000000000</span><br/>
+                <span data-data_type="single" data-first_node="ClienteFinaleRagioneSociale" data-path_type="xpath" data-path_data="">Prova cliente</span><br/>
+                <span><span data-data_type="single" data-first_node="ClienteFinaleIndirizzo" data-path_type="xpath" data-path_data="">Via prova 1</span></span><br/>
+                <span data-data_type="single" data-first_node="ClienteFinaleCap" data-path_type="xpath" data-path_data="">80000</span>
+                <span data-data_type="single" data-first_node="ClienteFinaleCitta" data-path_type="xpath" data-path_data="">Grosseto</span>
+                <span><span data-data_type="single" data-first_node="ClienteFinaleProvincia" data-path_type="xpath" data-path_data="">GR</span></span><br/>
+                <span>CF/PIVA: 
+                    <span id="CF" data-data_type="single" data-first_node="ClienteFinaleCodiceFiscale" data-path_type="xpath" data-path_data="">AAABBB00C11D234E</span><span id="PIVA" data-data_type="single" data-first_node="ClienteFinalePartitaIva" data-path_type="xpath" data-path_data=""></span>
+                </span>
+            </p></td>
+            
+        </tr>
+        <tr >
+        	<td class=""><img class="" src="fornitura.png" alt="fornitura" /></td>
+            <td class=""><p class="testo4"><strong>Codice contratto </strong><span data-data_type="single" data-first_node="CodiceContratto" data-path_type="xpath" data-path_data="">000000000</span><br/>
+                <span data-data_type="single" data-first_node="FornituraIndirizzo" data-path_type="xpath" data-path_data="">Via prova</span>
+                <span>
+                    <span data-data_type="single" data-first_node="FornituraCivico" data-path_type="xpath" data-path_data="">1</span><span data-data_type="single" data-first_node="FornituraCivicoAlternativo" data-path_type="xpath" data-path_data="">/A</span><br/>
+                </span>
+                <span data-data_type="single" data-first_node="FornituraCap" data-path_type="xpath" data-path_data="">800000</span>
+                <span><span data-data_type="single" data-first_node="FornituraComune" data-path_type="xpath" data-path_data="">Grosseto</span> <span data-data_type="single" data-first_node="FornituraProvincia" data-path_type="xpath" data-path_data="">GR</span></span>
+                <br/>
+                <span>Codice PDR: <span data-data_type="single" data-first_node="FornituraCodicePDP" data-path_type="xpath" data-path_data="">16511561566</span></span><br/>
+                <span>Codice REMI: <span data-data_type="single" data-first_node="FornituraCodicePDC" data-path_type="xpath" data-path_data="">0123456789</span></span><br/></p>
+            </td>
+        </tr>
+        <tr >
+        	<td class=""><img class="" src="offerta.png" alt="offerta" /></td>
+            <td class=""><p class="testo4"><strong data-data_type="single" data-first_node="Offerta" data-path_type="xpath" data-path_data="">Offerta di prova</strong><br/>
+                <span>Data inizio contratto: <span data-data_type="single" data-first_node="DataAttivazioneFornitura" data-path_type="xpath" data-path_data="">01/01/2016</span></span><br/>
+                <span data-data_type="single" data-first_node="TipoMercato" data-path_type="xpath" data-path_data="">Mercato di prova</span><br/>
+                <span>Tipo cliente: <span data-data_type="single" data-first_node="TipoUso" data-path_type="xpath" data-path_data="">Domestico</span></span></p>
+				<p class="testo4 spaziato" data-data_type="simple_loop" data-first_node="Eventi" data-path_type="xpath" data-path_data="Evento">
+					<span class="evento-singolo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Descrizione evento</span>
+					<span> 
+						<span>fino al </span>
+						<span class="data-fine-evento" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/FineEvento">01/01/2000</span>
+					</span>
+				</p>
+            </td>
+
+        </tr>
+      </tbody>
+    </table>
+    
+    
+    
+      <table class="tab-4">
+        <tbody>
+            <tr>
+    		    <td style="padding-top: 10px" colspan="4" class="dato-informazioni-ausiliari tabella1"><p>Fattura n° <span style="font-weight: bold" data-data_type="single" data-first_node="NumeroBolletta" data-path_type="xpath" data-path_data="">000</span> del <span style="font-weight: bold" data-data_type="single" data-first_node="DataEmissione" data-path_type="xpath" data-path_data="">00/00/0000</span></p></td>
+    	    </tr>
+            <tr>
+                <td class="dato-informazioni-ausiliari tabella1" colspan="4"><p>Periodo di fatturazione: <span style="font-weight: bold" data-data_type="single" data-first_node="PeriodoFatturazione" data-path_type="xpath" data-path_data="">01/01/2016 - 31/01/2016</span></p></td>
+        </tr>
+        </tbody>
+    </table>
+    
+      <table class="tabella-indirizzo-spedizione tab-4">
+      <tbody>
+        <tr>
+    		<td class="box-round-td" colspan="4"><div class="box-round">
+            <p class="box-round-testo"><span data-data_type="single" data-first_node="SpedizionePresso" data-path_type="xpath" data-path_data="">Nome Cognome</span><br/>
+                <span data-data_type="single" data-first_node="SpedizioneIndirizzo" data-path_type="xpath" data-path_data="">via numero civico</span><br/>
+                <span data-data_type="single" data-first_node="SpedizioneCap" data-path_type="xpath" data-path_data="">CAP</span>
+                <span data-data_type="single" data-first_node="SpedizioneCitta" data-path_type="xpath" data-path_data="">Comune</span>
+                <span data-data_type="single" data-first_node="SpedizioneProvincia" data-path_type="xpath" data-path_data="">PR</span>
+            </p></div></td>
+    	</tr>
+        <tr>
+        <td class="testo_cont"><p class="testo">Importo da pagare</p><p class="dato"><span data-data_type="single" data-first_node="TotaleDaPagare" data-path_type="xpath" data-path_data="">test</span> €</p><p class="dato_informazioni"></p></td>
+            <td class="testo_cont"><p class="testo">Scadenza</p><p class="dato"><span data-data_type="single" data-first_node="DataScadenza" data-path_type="xpath" data-path_data="">test</span></p><p class="dato_informazioni"></p></td>
+        </tr>
+        
+      </tbody>
+    </table>
+    
+    <table class="tab-3" style="margin-top: 20px">
+        <tbody>
+            <tr>
+                <td class="dato-informazioni-ausiliari2"><strong>Modalità di pagamento: </strong>
+                    <span data-data_type="single" data-first_node="ComunicazioniBolletta" data-path_type="xpath" data-path_data="Comunicazioni[Codice = &quot;P&quot;]/Testo">Modalità di pagamento non disponibile</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    
+    
+
+    <table style="width: 100%">
+      <tbody>
+        <tr class="bordo-titolo">
+            <td colspan="4" class="consumi_no_padding"><h3><span class="titolo3">I miei consumi</span></h3></td> 
+        </tr>
+    <tr>
+    	<td class=""><p class="testo2"><strong>Classe misuratore: </strong><span data-data_type="single" data-first_node="MisuratoreClasse" data-path_type="xpath" data-path_data="">G4</span></p></td>
+        <td class=""><p class="testo2"><strong>Coefficiente C: </strong><span data-data_type="single" data-first_node="CoefficienteCorrettivo" data-path_type="xpath" data-path_data="">0,99998</span></p></td>
+        <td class=""><p class="testo2"><strong>PCS: </strong><span data-data_type="single" data-first_node="PotereCalorificoSuperiore" data-path_type="xpath" data-path_data="">1,00002</span></p></td>
+        <td class=""><p class="testo2"><strong>Utilizzo Gas: </strong><span data-data_type="single" data-first_node="CategoriaUso" data-path_type="xpath" data-path_data="">Riscaldamento + Cucina</span></p></td>
+    </tr>
+    <tr>
+        
+    </tr>
+      </tbody>
+    </table>
+    <div class="ct-chart" style="width: auto; height: 170px; padding-top: 5px;"></div>
+	<div class="chart-not-exists">Storico consumi non disponibile</div>
+    <span id="consumi-stimati-messaggio">In questa bolletta abbiamo fatturato <span data-data_type="single" data-first_node="ConsumoFatturatoStimato" data-path_type="xpath" data-path_data="">50</span> Smc stimati che verranno conguagliati con la prima fattura a consumo reale.</span>
+    <span id="lettura-stimata-messaggio"></BR>La bolletta è stata calcolata sulla base di una lettura <span id="tipo-lettura">STIMATA </span> pari a <span id="lettura-misura" data-data_type="single" data-first_node="LetturaBollettaMisura" data-path_type="xpath" data-path_data="">50</span> mc al <span id="lettura-data" data-data_type="single" data-first_node="LetturaBollettaData" data-path_type="xpath" data-path_data="">12/12/12</span></span>
+    
+    <table class="tab-3" style="page-break-before: avoid">
+      <tbody>
+        <tr class="bordo-titolo">
+            <td colspan="4" class="consumi_no_padding"><h3><span class="titolo3">Riepilogo importi fatturati</span></h3></td> 
+        </tr>
+        <tr>
+        	<td colspan="2"></td>
+            <td><p class="testo3b dettaglio-a-destra">Importi (€)</p></td>
+            <td><p class="testo3b dettaglio-a-destra">IVA (%)</p></td>
+        </tr>
+        <tr data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
+        	<td colspan="2"><p class="testo4sintesi" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">test</p></td>
+            <td><p class="testo3sintesi" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"><span>test,89</span> €</p></td>
+            <td><p class="testo3sintesi" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva"><span>00<span>%</span></span></p></td>
+        </tr>
+        <tr class="border_bottom">
+        	<td colspan="4"></td>
+        </tr>
+         <tr>
+        	<td colspan="2"><p class="testo5">Imponibile (€)</p></td>
+            <td><p class="testo3"><span data-data_type="single" data-first_node="TotaleImponibile" data-path_type="xpath" data-path_data="">test,00</span></p></td>
+            <td><p class="testo3"><span></span></p></td>
+        </tr>
+        <tr class="border_bottom">
+        	<td colspan="4"></td>
+        </tr>
+        </tbody>
+        <tbody data-data_type="simple_loop" data-first_node="RiepilogoIvaBolletta" data-path_type="xpath" data-path_data="RiepilogoIva">
+        <tr>
+        	<td colspan="2"><p class="testo4sintesi" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DescrizioneImponibile">Imponibile IVA 22%</p></td>
+            <td><p class="testo3sintesi" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"><span>test,00</span> €</p></td>
+            <td><p class="testo3sintesi" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Aliquota"><span></span></p></td>
+        </tr>
+        <tr>
+        	<td colspan="2"><p class="testo4sintesi" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DescrizioneAliquota">IVA 22%</p></td>
+            <td><p class="testo3sintesi" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Iva"><span>test,00</span> €</p></td>
+            <td><p class="testo3sintesi testo-aliquota-iva-riepilogo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Aliquota"><span></span></p></td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr class="border_bottom">
+        	<td colspan="4"></td>
+        </tr>
+        <tr>
+        	<td colspan="2"><p class="testo4 testo4totale"><strong>Totale documento (€)</strong></p></td>
+            <td><p class="testo3 testo4totale"><strong><span data-data_type="single" data-first_node="TotaleDocumento" data-path_type="xpath" data-path_data="">test,00</span></strong></p></td>
+            <td><p class="testo3"><strong><span></span></strong></p></td>
+        </tr>
+        <tr class="righe-riepilogo-split-payment border_bottom">
+        	<td colspan="4"></td>
+        </tr>
+        <tr class="righe-riepilogo-split-payment" data-data_type="simple_loop" data-first_node="RiepilogoRigheFuoriCorpo" data-path_type="xpath" data-path_data="RigaFuoriCorpo">
+        	<td colspan="2"><p class="testo4sintesi" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Riga fuori corpo</p></td>
+            <td><p class="testo3sintesi"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Totale">test,00</span></p></td>
+            <td><p class="testo3sintesi"><strong><span></span></strong></p></td>
+        </tr>
+        <tr class="righe-riepilogo-split-payment border_bottom">
+        	<td colspan="4"></td>
+        </tr>
+        <tr class="righe-riepilogo-split-payment">
+        	<td colspan="2"><p class="testo4 testo4totale"><strong>Totale da pagare (€)</strong></p></td>
+            <td><p class="testo3 testo4totale"><strong><span data-data_type="single" data-first_node="TotaleDaPagare" data-path_type="xpath" data-path_data="">test,00</span></strong></p></td>
+            <td><p class="testo3"><strong><span></span></strong></p></td>
+        </tr>
+        <tr class="righe-riepilogo-split-payment">
+        	<td colspan="4"><p class="testo4">Operazione con "scissione dei pagamenti"</p></td>
+        </tr>
+      </tbody>
+    </table>
+    
+    
+    
+     <table class="tab-4" style="max-width: 48%; page-break-before: avoid">
+      <tbody>
+        <tr class="bordo-titolo">
+            <td colspan="5"><h3><span class="titolo3">Informazioni e recapiti</span></h3></td> 
+        </tr>
+        <tr>
+        	<td><img class="" src="callcenter.png" alt="callcenter" /></td>
+            <td colspan="4"><h1 class="titolo2">Call center</h1><p class="testo5b">Da Rete Fissa <span class="dati-azienda-float-right" data-data_type="single" data-first_node="AziendaCallCenterFisso" data-path_type="xpath" data-path_data="">800 test</span><br/>Da Cellulare <span class="dati-azienda-float-right" data-data_type="single" data-first_node="AziendaCallCenterCell" data-path_type="xpath" data-path_data="">800 test</span></p></td>
+        </tr>
+        <tr>
+        	<td><img class="" src="ufficio.png" alt="callcenter" /></td>
+            <td colspan="4"><h1 class="titolo2">Ufficio locale</h1><p class="testo5b"> <span class="dati-azienda-float-right" ></span><br/><span data-data_type="single" data-first_node="ServizioIndirizzo" data-path_type="xpath" data-path_data="">via XXX n° X </span><span class="dati-azienda-float-right" data-data_type="single" data-first_node="ServizioComune" data-path_type="xpath" data-path_data="">test</span></p></td>
+        </tr>
+        <tr>
+        	<td><img class="" src="info_.png" alt="callcenter" /></td>
+            <td colspan="4"><h1 class="titolo2">Informazioni e reclami</h1><p class="testo5b">Tel. <span data-data_type="single" data-first_node="ServizioClientiTelefono" data-path_type="xpath" data-path_data="">+39 test</span><span class="dati-azienda-float-right">Fax <span data-data_type="single" data-first_node="ServizioFax" data-path_type="xpath" data-path_data=""> +39 test</span></span><br/>email:<span class="dati-azienda-float-right" data-data_type="single" data-first_node="ServizioEmail" data-path_type="xpath" data-path_data="">info@test.eu</span></p></td>
+        </tr>
+        <tr>
+        	<td><img class="" src="telef.png" alt="callcenter" /></td>
+            <td colspan="4"><h1 class="titolo2">Pronto intervento/segnalazione guasti</h1><p class="testo5b">24 ore su 24<span class="dati-azienda-float-right" data-data_type="single" data-first_node="ProntoIntervento" data-path_type="xpath" data-path_data="">800 test</span></p></td>
+        </tr>
+        <tr>
+        	<td><img class="" src="autolettura.png" alt="callcenter" /></td>
+            <td colspan="4"><h1 class="titolo2">Autolettura</h1><p class="testo5b">Telefono<span class="dati-azienda-float-right" data-data_type="single" data-first_node="AziendaTelAutolettura" data-path_type="xpath" data-path_data="">800 test</span><br/>WEB<span class="dati-azienda-float-right" data-data_type="single" data-first_node="AziendaInternet" data-path_type="xpath" data-path_data="">www.test.test</span></p></td>
+        </tr>
+        
+      </tbody>
+    </table>
+    
+    <table class="tabella-dettaglio-imposte" style="top:20px; width: 100%; page-break-before:always !important">
+      <tbody>
+        <tr class="bordo-titolo">
+            <td colspan="7" class="consumi"><h3><span class="titolo3">Dettaglio imposte</span></h3></td> 
+        </tr>
+    <tr>
+    	<td></td>
+    	<td class=""><p class="testo-dettaglio-imposte1">Periodo</p></td>
+        <td class=""><p class="testo-dettaglio-imposte1">Scaglione</p></td>
+        <td class=""><p class="testo-dettaglio-imposte1">Quantità</p></td>
+        <td class=""><p class="testo-dettaglio-imposte1">Prezzo (€/Smc)</p></td>
+        <td class=""><p class="testo-dettaglio-imposte1">Totale (€)</p></td>
+        <td class=""><p class="testo-dettaglio-imposte1">Iva %</p></td>
+    </tr>
+    <tr class="messaggio-dettaglio-imposte">
+        <td colspan="7"><p class="testo-dettaglio-imposte2">Nessuna imposta applicata in questa bolletta</p></td> 
+    </tr>
+    <tr class="prima-riga-dettaglio-imposte" data-data_type="simple_loop" data-first_node="Imposte" data-path_type="xpath" data-path_data="DettagliImposte/QuotaDettaglioImposte">
+    	<td class="left dettaglioimposte-descrizione"><p class="testo-dettaglio-imposte3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">test</p></td>
+    	<td class="dettaglioimposte-periodo"><p class="testo-dettaglio-imposte2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal">05/12/2014</span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al">31/12/2014</span></p></td>
+        <td class="dettaglioimposte-scaglione"><p class="testo-dettaglio-imposte2 dettaglio-a-destra"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Scaglione">test</span></p></td>
+        <td class=""><p class="testo-dettaglio-imposte2 dettaglio-a-destra" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita">test</p></td>
+        <td class="dettaglioimposte-prezzo"><p class="testo-dettaglio-imposte2 dettaglioimposte-prezzo dettaglio-a-destra" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoUnitario">test</p></td>
+        <td class=""><p class="testo-dettaglio-imposte2 dettaglio-a-destra sezione-imponibile-dettaglio-imposte" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">test</p></td>
+        <td class="right"><p class="testo-dettaglio-imposte2 dettaglio-a-destra" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">test</p></td>
+    </tr>
+    <tr class="quota-dettaglio-imposte" data-data_type="simple_loop" data-first_node="Imposte" data-path_type="xpath" data-path_data="AccontiImposte/QuotaDettaglioImposte">
+    	<td class="left"><p class="testo-dettaglio-imposte3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">test</p></td>
+    	<td class="dettaglioimposte-periodo"><p class="testo-dettaglio-imposte2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal">test</span>-<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al">test</span></p></td>
+        <td class="dettaglioimposte-scaglione"><p class="testo-dettaglio-imposte2 dettaglio-a-destra"><span class="allineamento-scaglione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Scaglione">test</span></p></td>
+        <td class=""><p class="testo-dettaglio-imposte2 dettaglio-a-destra" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita">test</p></td>
+        <td class="dettaglioimposte-prezzo"><p class="testo-dettaglio-imposte2 dettaglio-a-destra" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoUnitario">test</p></td>
+        <td class=""><p class="testo-dettaglio-imposte2 dettaglio-a-destra" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">test</p></td>
+        <td class="right"><p class="testo-dettaglio-imposte2 dettaglio-a-destra" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">test</p></td>
+    </tr>
+    
+      </tbody>
+    </table>
+    
+    
+    
+     <table class="tabella-quadro-consumi" style="margin-top:10px">
+      <tbody>
+        <tr class="bordo-titolo">
+            <td colspan="7" class="consumi"><h3><span class="titolo3">Quadro letture e consumi</span></h3></td> 
+        </tr>
+        <tr>
+            <td colspan="7"></td> 
+        </tr>
+    <tr>
+    	<td class="td-letture"><p class="testo-dettaglio-letture1">Tipo Lettura</p></td>
+    	<td class="td-letture"><p class="testo-dettaglio-letture1">Lettura Precedente</p></td>
+        <td class="td-letture"><p class="testo-dettaglio-letture1">Lettura Attuale</p></td>
+        <td class="td-letture"><p class="testo-dettaglio-letture1">Consumo rilevato (mc)</p></td>
+        <td class="td-letture"><p class="testo-dettaglio-letture1">Coeff. C</p></td>
+        <td class="td-letture"><p class="testo-dettaglio-letture1">Tipo consumo</p></td>
+        <td class="td-letture"><p class="testo-dettaglio-letture1">Consumo fatturato (Smc)</p></td>
+    </tr>
+   <tr data-data_type="simple_loop" data-first_node="ConsumiBolletta" data-path_type="xpath" data-path_data="/ConsumoELetture/DettagliConsumo/Consumo">
+    	<td class="td-letture"><p class="sezione-tipo-lettura testo-dettaglio-letture2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TipoLettura">test</p></td>
+    	<td class="td-letture"><p class="testo-dettaglio-letture3 dettaglio-a-sinistra"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataLetturaPrecedente">11/05/2015</span> <span style="float: right" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/LetturaMcPrecedente">120023</span></p></td>
+        <td class="td-letture"><p class="testo-dettaglio-letture3 dettaglio-a-sinistra"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataOPeriodo">15/06/2015</span> <span style="float: right" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Lettura">121023</span></p></td>
+        <td class="td-letture"><p class="testo-dettaglio-letture3 dettaglio-a-destra"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoMc">1000</span></p></td>
+        <td class="td-letture"><p class="testo-dettaglio-letture3"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/CoefficienteCorrettivo">1,03214</span></p></td>
+        <td class="td-letture"><p class="testo-dettaglio-letture3 dettaglio-a-sinistra"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TipoConsumo">Reale</span></p></td>
+        <td class="td-letture"><p class="testo-dettaglio-letture3 dettaglio-a-destra"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoSmc">1023</span></p></td>
+    </tr>
+    <tr>
+    	<td colspan="3"><p class="testo-dettaglio-letture2"><span></span></p></td>
+    	<td colspan="3"><p class="testo-dettaglio-letture4"><span>Totale Consumo Fatturato (Smc)</span></p></td>
+        <td colspan="3"><p class="testo-dettaglio-letture4 dettaglio-a-destra"><span data-data_type="single" data-first_node="ConsumiBolletta" data-path_type="xpath" data-path_data="/ConsumoELetture/TotaleConsumoSmc">1177</span></p></td>
+    </tr>
+    
+      </tbody>
+    </table>
+    
+    
+    
+    
+         <table style="margin-top:10px">
+      <tbody>
+        <tr>
+        	<td style="border-bottom:1px solid #000000"><p class="testo-inizio-fornitura1"><span id="consumo-tempo">Consumo da inizio fornitura / Consumo annuo:</span> <span class="ConsumoAnnuoStorico-testo"> <span class="ConsumoAnnuoStorico-valore" data-data_type="single" data-first_node="ConsumoAnnuoStorico" data-path_type="xpath" data-path_data="">1254</span> Smc</span></p></td>
+        </tr>
+        <tr id="messaggioletturafutura">
+        	<td style="border-bottom:1px solid #000000"><p class="testo-inizio-fornitura2">Qualora <strong>entro il <span id="letturafuturadata" data-data_type="single" data-first_node="LetturaFuturaData" data-path_type="xpath" data-path_data="">30/11/2015</span></strong> non ricevessimo dall'impresa distributrice una lettura rilevata, emetteremo la prossima fattura in acconto sulla base di una <strong>lettura stimata pari a <span id="LetturaFuturaMisura" data-data_type="single" data-first_node="LetturaFuturaMisura" data-path_type="xpath" data-path_data="">8543</span> mc al <span data-data_type="single" data-first_node="LetturaFuturaData" data-path_type="xpath" data-path_data="">30/11/2015</span></strong>. In caso di scostamenti significativi dal consumo reale La invitiamo a comunicarci, nel periodo dal <span data-data_type="single" data-first_node="LetturaFuturaInizioAutoLettura" data-path_type="xpath" data-path_data="">20/11/2015</span> al <span data-data_type="single" data-first_node="LetturaFuturaFineAutoLettura" data-path_type="xpath" data-path_data="">26/11/2015</span>, la lettura effettiva usando i nostri servizi gratuiti. </p></td>
+        </tr>
+        <tr>
+        	<td><p class="testo-inizio-fornitura3">Ai sensi di quanto previsto dalla delibera AEEG ARG/gas 159/08 il volume consumato, espresso in metri cubi (mc) e calcolato come differenza tra due letture in un determinato periodo, viene moltiplicato per il coefficiente C ottenendo così un volume riportato alle condizioni standard di pressione e temperatura ed espresso in standard metri cubi (Smc). Su tale volume vengono applicate le tariffe relative ai servizi di vendita e di rete, oltre che le imposte. </p></td>
+        </tr>
+    
+      </tbody>
+    </table>
+    
+    
+    
+    
+            <table style="margin-top:10px">
+      <tbody>
+        <tr>
+        	<td><p class="costo-medio">Costo medio della materia prima: <span class="costo-medio-valore" data-data_type="single" data-first_node="CostoMedioUnitSpesaMateria" data-path_type="xpath" data-path_data="">0,54</span><span class="costo-medio-um"> €/Smc</span></p></td>
+            <td><p class="costo-medio2">Costo medio della bolletta: <span class="costo-medio2-valore" data-data_type="single" data-first_node="CostoMedioUnitBolletta" data-path_type="xpath" data-path_data="">0,63</span><span class="costo-medio2-um"> €/Smc</span></p></td>
+            
+        </tr>
+    
+      </tbody>
+    </table>
+    
+    <table style="margin-top:10px; page-break-inside: avoid; clear: both; min-width: 100%;">
+        <tbody>
+            <tr>
+                <td>    
+    
+    <table class="tab-3" style="min-width: 49%">
+      <tbody>
+        <tr class="bordo-titolo">
+            <td colspan="3" class="consumi_no_padding"><h3><span class="titolo3">Ricalcoli in bolletta</span></h3></td> 
+        </tr>
+        <tr>
+    		<td colspan="3" class="messaggio-ricalcoli-sintesi tabella1 cella-morosita-testo morosita-testo-font">Nessun ricalcolo in bolletta.</td>
+    	</tr>
+        <tr class="tabella-ricalcoli-sintesi bordo-tab-sotto">
+        	<td></td>
+            <td><p class="testo-ricalcoli1">Consumo (Smc)</p></td>
+            <td><p class="testo-ricalcoli1">Importo (€)</p></td>
+        </tr>
+        </tbody>
+        <tbody class="sezione-conguaglio-consumi-stimati" data-data_type="simple_loop" data-first_node="ConguaglioConsumiStimati" data-path_type="xpath" data-path_data="">
+            <tr>
+    		    <td colspan="3"><p class="testo-ricalcoli2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">test</p></td>
+    	    </tr>
+            <tr class="bordo-tab-sotto">
+        	    <td><p class="testo-ricalcoli2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal">test</span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al">test</span></p></td>
+                <td><p class="testo-ricalcoli3 dettaglio-a-destra"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita">test</span></p></td>
+                <td><p class="testo-ricalcoli3 dettaglio-a-destra"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">test</span></p></td>
+            </tr>
+        </tbody>
+        <tbody class="sezione-rettifiche-letture" data-data_type="simple_loop" data-first_node="RettificheLetture" data-path_type="xpath" data-path_data="Rettifiche">
+        <tr>
+    		<td colspan="3"><p class="testo-ricalcoli2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">test</span> del <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataLetturaRettificata">01/01/2016</span> di <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/LetturaRettificata">test</span> Smc</p></td>
+    	</tr>
+        <tr>
+        	<td><p class="testo-ricalcoli2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal">test</span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al">test</span></p></td>
+            <td><p class="testo-ricalcoli3 dettaglio-a-destra"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita">test</span></p></td>
+            <td><p class="testo-ricalcoli3 dettaglio-a-destra"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">test</span></p></td>
+        </tr>
+        </tbody>
+        <tbody class="sezione-conguaglio-tariffario" data-data_type="simple_loop" data-first_node="ConguaglioTariffario" data-path_type="xpath" data-path_data="Ricalcolo">
+        <tr>
+    		<td colspan="3"><p class="testo-ricalcoli2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">test</span> <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ComponenteConguagliata">test</span></p></td>
+    	</tr>
+        <tr class="bordo-tab-sotto">
+        	<td><p class="testo-ricalcoli2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal">test</span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al">test</span></p></td>
+            <td><p class="testo-ricalcoli3 dettaglio-a-destra"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita">test</span></p></td>
+            <td><p class="testo-ricalcoli3 dettaglio-a-destra"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">test</span></p></td>
+        </tr>
+        </tbody>
+        <tbody>
+        <tr class="tabella-dettaglio-altre-partite bordo-titolo">
+            <td colspan="3" class="consumi"><h3><span class="titolo3">Dettaglio altre partite</span></h3></td> 
+        </tr>
+        <tr class="tabella-dettaglio-altre-partite bordo-tab-sotto">
+        	<td></td>
+            <td><p class="testo-partite1">Importo (€)</p></td>
+            <td><p class="testo-partite1">Iva (%)</p></td>
+        </tr>
+        <tr class="sezione-dettaglio-altre-partite" data-data_type="simple_loop" data-first_node="AltrePartite" data-path_type="xpath" data-path_data="QuotaDettaglioAltrePartite">
+        	<td><p class="testo-partite2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Test</span></p></td>
+            <td><p class="testo-partite3"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">test</span></p></td>
+            <td><p class="testo-partite3"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">C</span></p></td>
+        </tr>
+        <tr>
+    		<td colspan="3" class="tabella1"><p id="bonustesto" class="testo-partite4">La sua fornitura è ammessa alla compensazione della spesa per la fornitura di gas  (cosiddetto bonus sociale gas) ai sensi del decreto-legge 186/08. La richiesta di rinnovo deve essere effettuata entro <span data-data_type="single" data-first_node="BonusRichiestaData" data-path_type="xpath" data-path_data="">MARZO 2016.</span></p></td>
+    	</tr>
+
+      </tbody>
+    </table>
+    
+    
+    
+     <table class="tabella-bollette-non-pagate tab-4" style="min-width: 49%">
+      <tbody>
+        <tr class="bordo-titolo">
+            <td colspan="3"><h3><span class="titolo3">Dettaglio bollette non pagate</span></h3></td> 
+        </tr>
+        <tr>
+    		<td class="cella-morosita-testo" colspan="3"><span class="morosita-testo morosita-testo-font" data-data_type="single" data-first_node="MorositaDocumenti" data-path_type="xpath" data-path_data="Testo">testo morosita</span></td>
+    	</tr>
+        <tr class="bordo-tab-sotto righe-bollette-non-pagate">
+        	<td><p class="testo-non-pagate1 dettaglio-a-sinistra">Bolletta</p></td>
+            <td><p class="testo-non-pagate1 dettaglio-a-sinistra">Scadenza</p></td>
+            <td><p class="testo-non-pagate1 dettaglio-a-destra">Totale (€)</p></td>
+        </tr>
+         <tr class="righe-bollette-non-pagate" data-data_type="simple_loop" data-first_node="MorositaDocumenti" data-path_type="xpath" data-path_data="Dettagli/Morosita">
+        	<td><p class="testo-non-pagate2 dettaglio-a-sinistra"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataEmissione">test</span> <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/NumeroDocumento">test</span></p></td>
+            <td><p class="testo-non-pagate2 dettaglio-a-sinistra"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataScadenza">test</span></p></td>
+            <td><p class="testo-non-pagate2 dettaglio-a-destra"><span class="sezione-importo-bollette-non-pagate" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoDaPagare">test</span></p></td>
+        </tr>
+        <tr class="righe-bollette-non-pagate">
+        	<td><p class="testo-non-pagate3 dettaglio-a-sinistra">Totale insoluto (€)</p></td>
+            <td></td>
+    		<td><p class="testo-non-pagate3 dettaglio-a-destra"><span data-data_type="single" data-first_node="MorositaDocumenti" data-path_type="xpath" data-path_data="Totale">test</span></p></td>
+    	</tr>
+        <tr class="bordo-tab-sotto righe-bollette-non-pagate">
+    		<td colspan="3" class="tabella1"><p class="testo-non-pagate4">Qualora le bollette sollecitate le risultassero già pagate, consideri nullo questo avviso.</p></td>
+    	</tr>
+        <tr class="bordo-tab-sotto righe-interessi-applicati righe-bollette-non-pagate">
+    		<td colspan="3" class="tabella1"><p class="testo-non-pagate5">Interessi applicati</p></td>
+    	</tr>
+         <tr class="righe-interessi-applicati righe-bollette-non-pagate">
+        	<td><p class="testo-non-pagate2">Periodo</p></td>
+            <td><p class="testo-non-pagate2"></p></td>
+            <td><p class="testo-non-pagate2">%</p></td>
+        </tr>
+        <tr class="righe-interessi-applicati righe-bollette-non-pagate" data-data_type="simple_loop" data-first_node="MorositaInteressiBollette" data-path_type="xpath" data-path_data="MorositaInteressi">
+        	<td><p class="testo-non-pagate2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Periodo">test</span></p></td>
+            <td><p class="testo-non-pagate2"></p></td>
+            <td><p class="testo-non-pagate2"><span class="sezione-percentuale-interessi-applicati" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TassoAnnuo">test</span></p></td>
+        </tr>   
+      </tbody>
+    </table>
+    
+                 </td>
+            </tr>
+        </tbody>
+    </table>    
+    
+    
+    
+    <table style="margin-top:10px; clear:both !important; page-break-after: always; page-break-inside: avoid">
+      <tbody>
+        <tr class="bordo-titolo">
+            <td colspan="7" class="consumi"><h3><span class="titolo3">Comunicazioni varie / Informazioni periodiche</span></h3></td> 
+        </tr>
+    <tr>
+    
+        <td colspan="7">
+            <div class="messaggi-personalizzati" data-data_type="simple_loop" data-first_node="ComunicazioniBolletta" data-path_type="xpath" data-path_data="Comunicazioni[not(Codice = &quot;P&quot;)]">
+                <p class="testo-comunicazioni1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Titolo">Test</p>
+                <p class="testo-comunicazioni2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Testo">Test</p>
+            </div>
+            <div class="messaggio-rateizzazione">
+                <span class="controllo-messaggio-rateizzazione" style="display: none" data-data_type="single" data-first_node="Rateizzazione" data-path_type="xpath" data-path_data=""></span>
+                <p class="testo-comunicazioni1">Rateizzazione</p>
+                <p class="testo-comunicazioni2">Il pagamento della presente fattura può, su richiesta del Cliente, essere rateizzato con modalità stabilite dall’AEEG. 
+                Se la dilazione è di suo interesse, contatti i nostri uffici entro la data di scadenza della fattura.</p>
+            </div>
+</td> 
+    </tr>
+      </tbody>
+    </table>
+
+
+    </td></tr>
+   </tbody>
+</table>
+
+<table id="globaltabledettaglio" class="tabella-contenitore-dettaglio">
+   <thead><tr><td>
+    <table>
+      <tbody>
+        <tr>
+    <td><img class="logo" src="logo.png" alt="logo" /></td>
+    <td><img class="header_logo" src="header.png" alt="header" /></td>
+    
+    </tr>
+      </tbody>
+    </table>
+    </td></tr></thead>
+
+    <tbody>
+     <tr><td>
+     
+    <!-- elementi di dettaglio -->
+    <h1 class="titolo">Elementi di dettaglio</h1>
+    <!--<table class="tabella-dettaglio" data-data_type="nested_loop" data-level="0" data-first_node="ElementiDettaglio" data-path_type="xpath" data-path_data="Servizi/Servizio">-->
+    <table class="tabella-dettaglio" data-data_type="nested_loop" data-level="0" data-first_node="ElementiDettaglio" data-path_type="xpath" data-path_data="Servizi/Servizio[not(Descrizione = &quot;DETTAGLIO RICALCOLI&quot; or Descrizione = &quot;CALCOLO INTERESSI&quot;)]">
+        <tbody>
+                  <tr class="bordo-titolo">
+        <td colspan="8" class="consumi"><h3><span class="riga-intestazione-voce-dettaglio titolo3" data-data_type="nested_loop_data" data-level="0" data-path_type="xpath" data-path_data="/Descrizione">test</span></h3></td> 
+        </tr>
+            <!-- <tr>
+        <td colspan="8"><img class="consumi" src="materia-prima.png" alt="dettaglio imposte" /></td> 
+        </tr> -->
+        <tr>
+    	    <td></td>
+    	    <td class=""><p class="materia1">Periodo</p></td>
+            <td class=""><p class="materia1">Scaglione</p></td>
+            <td class=""><p class="materia1">Quantità</p></td>
+            <td class=""><p class="materia1">U. M.</p></td>
+            <td class=""><p class="materia1">Prezzo Unitario</p></td>
+            <td class=""><p class="materia1">Totale (€)</p></td>
+            <td class=""><p class="materia1">IVA %</p></td>
+        </tr>
+        <tr data-data_type="nested_loop_child" data-level="1" data-path_type="xpath" data-path_data="Quote/Quota/Dettagli/QuotaDettaglio">
+    	    <td class="left right dettaglio-descrizione"><p class="materia3" data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Descrizione">Stest</p></td>
+    	    <td class="left right dettaglio-periodo"><p class="materia2 dettaglio-a-sinistra"><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Dal">01/01/2016</span> - <span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Al">31/01/2016</span></p></td>
+            <td class="left right dettaglio-scaglione"><p class="materia2"><span class="allineamento-scaglione" data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Scaglione">0 - 4.000.000</span></p></td>
+            <td class="left"><p class="materia2 dettaglio-a-destra"><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Quantita">test</span></p></td>
+            <td class=""><p class="materia2 dettaglio-a-sinistra"><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/UnitaMisura">€/Smc</span></p></td>
+            <td class=""><p class="materia2 dettaglio-a-destra"><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/ImportoUnitario">test</span></p></td>
+            <td class=""><p class="materia2 dettaglio-a-destra"><span class="singola-riga-dettaglio" data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Imponibile">test</span></p></td>
+            <td class="right"><p class="materia2 dettaglio-a-destra"><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/AliquotaIva">t</span></p></td>
+        </tr>
+        <tr class="riga-dettaglio-acconti" data-data_type="nested_loop_child" data-level="1" data-path_type="xpath" data-path_data="Quote/Quota/Acconti/QuotaDettaglioAcconti">
+    	    <td class="left right dettaglio-descrizione"><p class="materia3" data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Descrizione">test</p></td>
+    	    <td class="left right dettaglio-periodo"><p class="materia2"><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Dal">test</span> - <span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Al">test</span></p></td>
+            <td class="left right dettaglio-scaglione"><p class="materia2"></p></td>
+            <td class=""><p class="materia2 dettaglio-a-destra"><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Quantita">test</span></p></td>
+            <td class=""><p class="materia2 dettaglio-a-sinistra"><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/UnitaMisura">€/Smc</span></p></td>
+            <td class=""><p class="materia2 dettaglio-a-destra"><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/ImportoUnitario">test</span></p></td>
+            <td class=""><p class="materia2 dettaglio-a-destra"><span class="sezione-imponibile-riga-dettaglio-acconti singola-riga-dettaglio" data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Imponibile">test</span></p></td>
+            <td class="right"><p class="materia2 dettaglio-a-destra"><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/AliquotaIva">t</span></p></td>
+        </tr>
+          </tbody>
+        </table>
+    
+    
+    
+
+    
+    
+    
+    
+         <table class="tabella-ricalcoli" style="margin-top:10px">
+          
+          <tr class="bordo-titolo">
+        <td colspan="8" class="consumi"><h3><span class="titolo3">dettaglio ricalcoli</span></h3></td> 
+        </tr>
+            <!--
+            <tr>
+        <td colspan="8"><img class="consumi" src="dettaglio-ricalcoli.png" alt="oneri" /></td> 
+        </tr> -->
+        <tbody data-data_type="nested_loop" data-level="0" data-first_node="ElementiDettaglio" data-path_type="xpath" data-path_data="Servizi/Servizio[Descrizione = &quot;DETTAGLIO RICALCOLI&quot;]/Quote/Quota">
+            <tr class="riga-intestazione-ricalcoli">
+    	        <td><p class="rica-dett1b" data-data_type="nested_loop_data" data-level="0" data-path_type="xpath" data-path_data="/Descrizione">test</p></td>
+    	        <td class=""><p class="rica-dett1">Periodo</p></td>
+                <td class=""><p class="rica-dett1">Scaglione/PCS</p></td>
+                <td class=""><p class="rica-dett1">Quantità</p></td>
+                <td class=""><p class="rica-dett1">U. M.</p></td>
+                <td class=""><p class="rica-dett1">Prezzo Unitario</p></td>
+                <td class=""><p class="rica-dett1">Totale (€)</p></td>
+                <td class=""><p class="rica-dett1">IVA %</p></td>
+            </tr>
+            <tr class="bordo-tab-sopra riga-dettaglio-ricalcoli" data-data_type="nested_loop_child" data-level="1" data-path_type="xpath" data-path_data="Dettagli/QuotaDettaglio">
+    	        <td class="left right dettaglio-descrizione"><p class="rica-dett3" data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Descrizione">test</p></td>
+    	        <td class="left right dettaglio-periodo"><p class="rica-dett2 dettaglio-a-sinistra"><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Dal">test</span> - <span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Al">test</span></p></td>
+                <td class="left right dettaglio-scaglione"><p class="rica-dett2"><span class="allineamento-scaglione" data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Scaglione">test</span></p></td>
+                <td class=""><p class="rica-dett2 dettaglio-a-destra"><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Quantita">test</span></p></td>
+                <td class=""><p class="rica-dett2 dettaglio-a-destra"><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/UnitaMisura">test</span></p></td>
+                <td class=""><p class="rica-dett2 dettaglio-a-destra"><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/ImportoUnitario">test</span></p></td>
+                <td class=""><p class="rica-dett2 dettaglio-a-destra"><span class="sezione-imponibile-dettaglio-ricalcoli" data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Imponibile">a</span></p></td>
+                <td class="right"><p class="rica-dett2 dettaglio-a-destra"><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/AliquotaIva">test</span></p></td>
+            </tr>
+        
+        </tbody>
+        </table>
+    
+    
+    
+    
+        <table style="margin-top:10px; page-break-inside: avoid" class="tabella-interessiapplicati">
+          <tbody>
+          <tr class="bordo-titolo">
+        <td colspan="9" class="consumi"><h3><span class="titolo3">Calcolo interessi</span></h3></td> 
+        </tr>
+            <!--
+            <tr>
+        <td colspan="9"><img class="consumi" src="rica-int.png" alt="oneri" /></td> 
+        </tr> -->
+        <tr>
+    	    <td><p class="rica-int1">Bolletta</p></td>
+    	    <td class=""><p class="rica-int1">Totale <br/>Bolletta (€)</p></td>
+            <td class=""><p class="rica-int1">Scadenza</p></td>
+            <td class=""><p class="rica-int1">Data inizio <br/>calcolo interessi</p></td>
+            <td class=""><p class="rica-int1">Data Fine calcolo <br/>interessi</p></td>
+            <td class=""><p class="rica-int1">Numero Giorni</p></td>
+            <td class=""><p class="rica-int1">Importo per <br/>calcolo (€)</p></td>
+            <td class=""><p class="rica-int1">Aliquota %</p></td>
+            <td class=""><p class="rica-int1">Totale <br/>interessi (€)</p></td>
+        </tr>
+       <tr data-data_type="simple_loop" data-first_node="ElementiDettaglio" data-path_type="xpath" data-path_data="MorositaInteressiApplicatiBollette/MorositaInteressiApplicati">
+    	    <td class="left"><p class="rica-int3 no-wrap-cell"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataEmissione">test</span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/NumeroDocumento">test</span></p></td>
+    	    <td class=""><p class="rica-int2 dettaglio-a-destra"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoOriginale">test</span></p></td>
+            <td class="right"><p class="rica-int2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataScadenza">test</span></p></td>
+            <td class=""><p class="rica-int2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/InteressiDal">test</span></p></td>
+            <td class=""><p class="rica-int2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/InteressiAl">test</span></p></td>
+            <td class="right"><p class="rica-int2 dettaglio-a-destra"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/NumeroGiorni">test</span></p></td>
+            <td class=""><p class="rica-int2 dettaglio-a-destra"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Valore">test</span></p></td>
+            <td class="right"><p class="rica-int2 dettaglio-a-destra"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/InteressiTassoPercentuale">test</span></p></td>
+            <td class="right"><p class="rica-int2 dettaglio-a-destra"><span class="sezione-totale-interessiapplicati" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleInteressiAddebitati">test</span></p></td>
+        </tr>
+        
+          </tbody>
+        </table>
+
+    </td></tr>
+   </tbody>
+</table>
+
+
+	<table id="prescrizione-biennale-modulo" class="prescrizione-biennale" style="margin-top:10px; clear:both; page-break-before: always; page-break-inside: avoid">
+        <thead>
+             <tr>
+                 <td>
+                     <table>
+                        <tbody>
+                            <tr>
+                                <td><img class="logo" src="logo.png" alt="logo" /></td>
+                                <td><img class="header_logo" src="header.png" alt="header"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                 </td>
+             </tr>
+         </thead>
+        <tbody class="prescrizione-biennale-frasi">
+            <tr class="prescrizione-biennale-testo prescrizione-biennale-frase-j">
+                <td class="prescrizione-biennale-frase-td">
+                    <span class="prescrizione-biennale-testo-val" data-data_type="single" data-first_node="PrescrizioneBiennale" data-path_type="xpath" data-path_data="TestoInfoPrescrizione">La presente fattura contiene importi per consumi risalenti a più di due anni, che potrebbero non essere pagati qualora la responsabilità del ritardo di fatturazione di tali importi non sia a Lei attribuibile, in applicazione della Legge di bilancio 2018 (Legge n. 205/17). La invitiamo a comunicare tempestivamente la Sua volontà di non pagare tali importi, ad esempio inoltrando il modulo compilato presente in questa pagina ai recapiti di seguito riportati.</span>
+                </td>
+            </tr>
+            <tr id="prescrizione-frase-importo" class="prescrizione-biennale-importo prescrizione-biennale-frase-b">
+                <td class="prescrizione-biennale-frase-td">
+                    <p><span>Ammontare degli importi oggetto di prescrizione </span><span data-data_type="single" data-first_node="TotaleDaPagare" data-path_type="xpath" data-path_data="">10,00</span> €</p>
+                </td>
+            </tr>
+		</tbody>
+        <tbody class="prescrizione-biennale-recapiti" style="margin-top:10px; page-break-inside: avoid">
+            <tr>
+                <td class="prescrizione-biennale-frase-td">
+                    <div style="width:100%">
+                        <span class="prescrizione-biennale-testo-left-bold"><strong>Rispedire con una delle seguenti modalità:</strong></span>
+                    </div>
+                </td>
+            </tr>
+            <tr class="email-prescrizione">
+                <td>
+                    <div  style="width:100%">
+						<div class="div-l" style="width:50%">
+							<span class="prescrizione-biennale-testo-left-bold"><strong>Email</strong></span>
+						</div>
+						<div class="div-r"  style="width:50%">
+							<span class="email-prescrizione-valore prescrizione-biennale-testo-left" data-data_type="single" data-first_node="PrescrizioneBiennale" data-path_type="xpath" data-path_data="MailInfoPrescrizione">email@email.it</span>
+						</div>
+					</div>
+                </td>
+            </tr>
+            <tr class="fax-prescrizione">
+                <td>
+                    <div  style="width:100%">
+						<div class="div-l" style="width:50%">
+							<span class="prescrizione-biennale-testo-left-bold"><strong>Fax</strong></span>
+						</div>
+						<div class="div-r"  style="width:50%">
+							<span class="fax-prescrizione-valore prescrizione-biennale-testo-left" data-data_type="single" data-first_node="PrescrizioneBiennale" data-path_type="xpath" data-path_data="FaxInfoPrescrizione">0564 5623145</span>
+						</div>
+					</div>
+                </td>
+            </tr>
+            <tr class="posta-prescrizione">
+                <td>
+                    <div style="width:100%">
+						<div class="div-l" style="width:50%">
+							<span class="prescrizione-biennale-testo-left-bold"><strong>Posta</strong></span>
+						</div>
+						<div class="div-r"  style="width:50%">
+							<span class="posta-prescrizione-valore prescrizione-biennale-testo-left" data-data_type="single" data-first_node="PrescrizioneBiennale" data-path_type="xpath" data-path_data="IndirizzoInfoPrescrizione">Via Siria 96, 58100 Grosseto (GR)</span>
+						</div>
+					</div>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="prescrizione-biennale-modulo" style="margin-top:10px; page-break-inside: avoid">
+            <tr>
+                <td class="prescrizione-biennale-testo-td prescrizione-biennale-testo-left-bold">
+                    <span class="testo-pres-bie"><strong>MODULO PER LA RICHIESTA DI PRESCRIZIONE DEGLI IMPORTI FATTURATI PER LA FORNITURA DI GAS NATURALE</strong></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="prescrizione-biennale-testo-td">
+                    <div  style="width:100%">
+						<div class="div-l" style="width:30%">
+							<span class="testo-pres-bie"><strong>Numero Cliente</strong></span>
+						</div>
+						<div class="div-r"  style="width:70%">
+							<span class="testo-pres-bie" data-data_type="single" data-first_node="ClienteFinaleCodice" data-path_type="xpath" data-path_data="">01234567897</span>
+						</div>
+					</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="prescrizione-biennale-testo-td">
+                    <div  style="width:100%">
+						<div class="div-l" style="width:30%">
+							<span class="testo-pres-bie"><strong>Numero di telefono</strong></span>
+						</div>
+						<div class="div-r"  style="width:70%">
+							<span class="testo-pres-bie">______________________________________________________</span>
+						</div>
+					</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="prescrizione-biennale-testo-td">
+                    <div  style="width:100%">
+						<div class="div-l" style="width:30%">
+							<span class="testo-pres-bie"><strong>Indirizzo email</strong></span>
+						</div>
+						<div class="div-r"  style="width:70%">
+							<span class="testo-pres-bie">______________________________________________________</span>
+						</div>
+					</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="prescrizione-biennale-testo-td" style="width:100%"></td>
+            </tr>
+            <tr style="width:100%">
+                <td class="prescrizione-biennale-testo-td" >
+                    <div class="testo-pres-bie" style="width:100%; display: inline-block;" >
+                       <p">Il/La sottoscritto/a (Cognome)__________________________________ (Nome)__________________________</p>
+                            </br>
+                        <p>nato/a a ______________________________________________________ il |__|__| |__|__| |__|__|__|__|</p>
+                        </br>
+                        <p>Codice fiscale |__|__|__|__|__|__|__|__|__|__|__|__|__|__|__|__| titolare del contratto di fornitura di gas</p>
+                        </br>
+                        <p>relativo all’immobile di (Via/Piazza)______________________________________________ n° civ ______ </p>
+                        </br>
+                        <p>Comune _____________________________________________________ Provincia _________________</p>
+                        </br>
+                        <p>PDR |__|__|__|__|__|__|__|__|__|__|__|__|__|__|__|</p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="prescrizione-biennale-testo-cent-bold">
+                     <div style="width:100%; display: inline-block;">
+                        <p>CHIEDE</p>
+                     </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="testo-pres-bie" style="width:100%; display: inline-block;">
+                        <p>la prescrizione degli importi presenti nella fattura numero ______________________________, in applicazione della Legge di bilancio 2018 (Legge n. 205/17).</p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="prescrizione-biennale-testo-td">
+                    <div  style="width:100%">
+						<div class="div-l" style="width:50%">
+							<span class="prescrizione-biennale-testo-just-bold">Luogo e Data</span>
+                            </br></br>
+                            <span class="testo-pres-bie">____________________________________________</span>
+						</div>
+						<div class="div-r"  style="width:50%">
+							<span class="prescrizione-biennale-testo-just-bold">Il richiedente</span>
+                            </br></br>
+                            <span class="testo-pres-bie">  ___________________________________________</span>
+						</div>
+					</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="prescrizione-biennale-testo-td prescrizione-biennale-testo-just-bold">
+                    <span>N.B. Allegare una copia (fronte/retro) di un documento di riconoscimento valido del richiedente.</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="prescrizione-biennale-testo-td">
+                    <p>
+                        <span>Titolare del trattamento dei dati personali è </span><span data-data_type="single" data-first_node="AziendaRagioneSociale" data-path_type="xpath" data-path_data="">test</span>
+                    </p>
+                    <p>
+                        <span>L’informativa completa è disponibile sul sito </span><span data-data_type="single" data-first_node="AziendaInternet" data-path_type="xpath" data-path_data="">www.test.eu</span>
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+	<script type="text/javascript">
+        (function () {
+            createChart();
+            hideElements("G");
+        })();
+    </script>
+
+    </page>
+  </body>
+</html>

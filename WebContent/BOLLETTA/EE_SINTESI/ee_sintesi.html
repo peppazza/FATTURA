@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>EE Sintesi</title>
+
+	<link rel="stylesheet" rel="stylesheet" href="pure/pure-min.css"/>
+    <link rel="stylesheet" rel="stylesheet" href="chartist/dist/chartist.min.css"/>
+    
+    <link rel="stylesheet" rel="stylesheet" href="ee_sintesi.css"/>
+    <link rel="stylesheet" rel="stylesheet" href="css/charts.css"/>
+    
+    <page size="A4">
+    
+    <script src="customs.js"></script>
+    <script src="chartist/dist/chartist.min.js"></script>
+	<script src="axistitle/dist/chartist-plugin-axistitle.min.js"></script>
+	
+	<script type="text/javascript">
+		function checkValoreNumerico(val) {
+			if (val) {
+				val = val.trim();
+				if (val && !isNaN(val))
+					return Number(val);
+			}
+			return 0;
+		}
+		
+		function formatNumero(val) {
+			val = val.toFixed(2);
+			val = String(val);
+			try {
+				// 6 = numeroDiCifreDecimaliScelto + punto + numeroCifreIntere
+				if (val.length > 6) {
+					// da 1123232.12 a 1.123.232,12
+					return Number(val).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');	
+				}
+				// da 123.12 a 123,12
+				return val.replace(/\./, ',');
+			} catch(err) {
+				console.log('errore format numero', val, err)
+			}
+			return '';
+		}
+	</script>
+</head>
+<body>
+
+<!-- ********************** PAGINA 1 INIZIO ********************** -->
+<div id="pagina1" class="paginaA4" style="page-break-after: always;">
+	<!-- LOGHI - start ==========
+	     ======================== -->
+	<div id="headerLogo" class="pure-g">
+		<div class="pure-u-12-24">
+			<div class="logo-oe"><img src="images/logo-oe.png" alt="logo-oe" /></div>
+		</div>
+		<div class="pure-u-12-24">
+			<div class="logo-rina"><img src="images/logo-rina.png" alt="logo-rina"/></div>
+		</div>
+	</div>
+	<!-- ========== end - LOGHI -->
+	
+	
+	<!-- @DATI FORNITURA - start ==========
+		 ================================== -->
+	<div id="datiFornitura" class="pure-g">
+		<div class="pure-u-12-24">
+			<div class="dati-colonna-left">
+				<div class="titolo sfondo-arancione"><strong>DATI FORNITURA</strong></div>
+				<div class="contenuto pure-g">
+					<div class="pure-u-14-24">
+						<div class="etichetta">Forniamo energia elettrica in</div>
+						<div class="valore">
+							<span data-data_type="single" data-first_node="ClienteFinaleIndirizzo" data-path_type="xpath" data-path_data="">Via della Prova non Proprio Provata 123</span>
+						</div>
+						<div class="etichetta">Denominazione contratto (offerta)</div>
+						<div class="valore">
+							<span data-data_type="single" data-first_node="Offerta" data-path_type="xpath" data-path_data="">Offerta di prova</span>
+						</div>
+						<div class="etichetta">Tipologia cliente</div>
+						<div class="valore">
+							<span data-data_type="single" data-first_node="TipoUso" data-path_type="xpath" data-path_data="">Domestico</span>
+						</div>
+						<div class="etichetta">Tipologia pagamento</div>
+						<div class="valore">
+							<span data-data_type="single" data-first_node="TipoPagamento" data-path_type="xpath" data-path_data="">??</span>						
+						</div>
+					</div>
+					<div class="pure-u-10-24">
+						<div class="etichetta">Data di attivazione della fornitura</div>
+						<div class="valore">
+							<span data-data_type="single" data-first_node="DataAttivazioneFornitura" data-path_type="xpath" data-path_data="">01/01/2016</span>
+						</div>
+						<div class="etichetta">Tensione di fornitura</div>
+						<div class="valore">
+							<span data-data_type="single" data-first_node="TensioneAlimentazione" data-path_type="xpath" data-path_data="">000000000</span> Volt
+						</div>
+						<div class="etichetta">Potenza contattualmente impegnata</div>
+						<div class="valore">
+							<span data-data_type="single" data-first_node="PotenzaImpegnata" data-path_type="xpath" data-path_data="">000000000</span> kW
+						</div>
+						<div class="etichetta">Potenza disponibile</div>
+						<div class="valore">
+							<span data-data_type="single" data-first_node="PotenzaDisponibile" data-path_type="xpath" data-path_data="">000000000</span> kW
+						</div>
+						<div class="etichetta">Livello massimo di potenza</div>
+						<div class="valore">
+							<span data-data_type="single" data-first_node="PotenzaDisponibile" data-path_type="xpath" data-path_data="">??</span> kW
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="pure-u-12-24">
+			<div class="dati-colonna-right">
+				<!-- QR code + Identificativo cliente  -->
+				<div class="pure-g qr-code-plus-identificativo-cliente">
+					<div class="pure-u-1-2 qr-code">
+						<div class="qr-code">
+							<!--<img src="images/qr-code.png" alt="qr-code"/>-->
+							<span data-data_type="single" data-first_node="SpedizioneDataMatrix" data-path_type="xpath" data-path_data=""></span>
+						</div>
+					</div>
+					<div class="pure-u-1-2 identificativo-cliente">
+						<span data-data_type="single" data-first_node="SpedizioneDataMatrixCodice" data-path_type="xpath" data-path_data="">??</span>
+					</div>
+				</div>
+				<!-- Spedizione + Tipologia bolletta -->
+				<div class="pure-g spedizione-plus-tipo-bolletta">
+					<div class="pure-u-11-24 ">
+						<div class="spedizione">
+							<div data-data_type="single" data-first_node="SpedizionePresso" data-path_type="xpath" data-path_data="">Nome Cognome</div>							
+			                <div data-data_type="single" data-first_node="SpedizioneIndirizzo" data-path_type="xpath" data-path_data="">via numero civico</div>
+			                <div >
+			                	<span data-data_type="single" data-first_node="SpedizioneCap" data-path_type="xpath" data-path_data="">CAP</span>
+				                <span data-data_type="single" data-first_node="SpedizioneCitta" data-path_type="xpath" data-path_data="">Comune</span>
+				                <span data-data_type="single" data-first_node="SpedizioneProvincia" data-path_type="xpath" data-path_data="">PR</span>
+			                </div>
+            			</div>
+					</div>
+					<div class="pure-u-13-24 codice-cliente">
+						<div class="tipo-bolletta">
+							<div class="tipo">Bolletta Energia Elettrica</div>
+							<!-- @@@@ POTREBBE ESSERE IL TAG caratteristicaCommercialeFornitura -->
+							<div class="tipo-mercato" data-data_type="single" data-first_node="TipoMercato" data-path_type="xpath" data-path_data="">Mercato di prova</div>
+							<div class="lampadina">
+								<img src="images/lampadina.png" alt="lampadina"/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ========== end - DATI FORNITURA -->
+	
+	
+	<!-- @CLIENTE/BOLLETTA/IMPORTO - start ==========
+		 ============================================ -->		
+	<div id="clienteBollettaImporto" class="pure-g">
+		<!-- CLIENTE -->
+		<div class="pure-u-6-24 cliente">
+			<div class="contenuto">
+				<div class="etichetta">N° CLIENTE</div>
+				<div class="valore numero-cliente">
+					<span data-data_type="single" data-first_node="ClienteFinaleCodice" data-path_type="xpath" data-path_data="">613779061</span>
+				</div>
+				<div class="separatore"></div>
+				<div class="etichetta">CODICE POD</div>
+				<div class="valore">
+					<span data-data_type="single" data-first_node="FornituraCodicePDP" data-path_type="xpath" data-path_data="">IT123E56789012</span>
+				</div>
+				<div class="separatore"></div>
+				<div class="etichetta">CODICE FISCALE</div>
+				<div class="valore">
+					<span id="cf" data-data_type="single" data-first_node="ClienteFinaleCodiceFiscale" data-path_type="xpath" data-path_data="">AAABBB00C11D234E</span>
+					<span id="piva" data-data_type="single" data-first_node="ClienteFinalePartitaIva" data-path_type="xpath" data-path_data=""></span>
+				</div>
+			</div>
+		</div>
+		<!-- BOLLETTA -->
+		<div class="pure-u-7-24 bolletta">
+			<div class="contenuto">
+				<div class="titolo">
+					<span>ICO</span>
+					<span>DATI BOLLETTA</span>
+				</div>
+				<div class="info">
+					<span class="etichetta-custom">Fornitura</span>
+					<span class="valore-custom">Energia Elettrica</span>
+				</div>
+				<div class="info">
+					<span class="etichetta-custom">N. Fattura</span>
+					<span class="valore-custom">
+						<span data-data_type="single" data-first_node="NumeroBolletta" data-path_type="xpath" data-path_data="">000</span>
+					</span>
+				</div>
+				<div class="info">
+					<span class="etichetta-custom">Del</span>
+					<span class="valore-custom">
+						<span data-data_type="single" data-first_node="DataEmissione" data-path_type="xpath" data-path_data="">00/00/0000</span>
+					</span>
+				</div>
+				<div class="separatore"></div>
+				<div class="etichetta">PERIODO</div>
+				<div class="valore">
+					<!-- @@@@ POTREBBE ESSERE IL TAG PeriodoCompetenza -->
+					<span data-data_type="single" data-first_node="PeriodoFatturazione" data-path_type="xpath" data-path_data="">01/01/2016 - 31/01/2016 (formattazione)??</span>
+				</div>
+			</div>
+		</div>
+		<!-- IMPORTO -->
+		<div class="pure-u-6-24 importo">
+			<div class="contenuto">
+				<div class="titolo">
+					<span><span class="icona-simbolo-euro">€</span></span>
+					<span>TOTALE DA PAGARE</span>
+				</div>
+				<div class="totale-da-pagare">
+					<div class="importo-in-euro">
+						<span data-data_type="single" data-first_node="TotaleDaPagare" data-path_type="xpath" data-path_data="">130.32</span> €
+					</div>
+					<div class="data-scadenza">
+						<span >Entro il</span>
+						<span class="data" data-data_type="single" data-first_node="DataScadenza" data-path_type="xpath" data-path_data="">12/12/2016</span>
+					</div>
+				</div>
+				<div class="separatore"></div>
+				<div class="etichetta">TIPO FATTURA</div>
+				<div class="valore">
+					??
+				</div>
+			</div>
+		</div>
+		<!-- GRAZIE -->
+		<div class="pure-u-5-24 grazie">
+			<!-- @@@@ NEL VIDEO MOSTRA COME IMPOSTARE IL MESSAGIO GRAZIE -->
+			<div class="contenuto">
+				<div class="titolo">
+					<span class="icona"><img alt="busta" src="images/busta.png" width="17px" height="17px"></span> <span>GRAZIE ??</span>
+				</div>
+				<div class="messaggio">Ti comunichiamo che, alla data attuale, le tue precedenti bollette risultano tutte pagate. ??</div>
+			</div>
+		</div>
+	</div>
+	<!-- ========== end - CLIENTE/PERIODO/IMPORTO -->
+
+	
+	<!-- @SINTESI IMPORTI - start ==========
+	     =================================== -->
+	<!-- ****** dati nascosti ****** -->
+	<div id="datiSintesiImporti" style="display: none;">
+		<div class="datiSintesiImporti spesaMateriaEnergia">131.1</div>
+		<div class="datiSintesiImporti spesaTrasporto">23.34</div>
+		<div class="datiSintesiImporti spesaOneri">79.2</div>
+		<div class="datiSintesiImporti imposte">27.9</div>
+		<div class="datiSintesiImporti iva">26</div>
+		<div class="datiSintesiImporti canone">18</div>
+	</div>
+	
+	<div id="sintesiImporti" class="pure-g">
+		<div class="pure-u-17-24 grafico">
+			<div class="contenuto">
+				<div class="pure-g">
+					<!-- GRAFICO A TORTA -->
+					<div class="pure-u-10-24">
+						<div class="titolo">SINTESI DEGLI IMPORTI</div>
+						<div class="grafico-torta">
+							<div id="graficoSintesiImporti" class="ct-chart ct-perfect-fourth"></div>
+						</div>
+					</div>
+					<!-- LEGENDA + CIFRE DA PAGARE -->
+					<div class="pure-u-14-24">
+						<div class="legenda">
+							<div class="pure-g voce-legenda spesaMateriaEnergia">
+								<div class="pure-u-2-24 box-colore"><div class="rettangolo"></div></div>
+								<div class="pure-u-17-24 etichetta">Spesa per la materia energia</div>
+								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><div class="val">?? 131.1</div></div>
+							</div>
+							<div class="pure-g voce-legenda spesaTrasporto">
+								<div class="pure-u-2-24 box-colore"><div class="rettangolo"></div></div>
+								<div class="pure-u-17-24 etichetta">Spesa per trasporto e gestione contatore</div>
+								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span class="val">?? 23.34</span></div>
+							</div>
+							<div class="pure-g voce-legenda spesaOneri">
+								<div class="pure-u-2-24 box-colore"><div class="rettangolo"></div></div>
+								<div class="pure-u-17-24 etichetta">Spesa per oneri di sistema</div>
+								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span class="val">?? 79.2</span></div>
+							</div>
+							<div class="pure-g voce-legenda imposte">
+								<div class="pure-u-2-24 box-colore"><div class="rettangolo"></div></div>
+								<div class="pure-u-17-24 etichetta">Imposte</div>
+								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span class="val">?? 27.9</span></div>
+							</div>
+							<div class="pure-g voce-legenda iva">
+								<div class="pure-u-2-24 box-colore"><div class="rettangolo"></div></div>
+								<div class="pure-u-17-24 etichetta">IVA</div>
+								<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span class="val">?? 26</span></div>
+							</div>
+						</div>
+						<div class="pure-g separatore">
+							<div class="pure-u-1-24"></div>
+							<div class="pure-u-23-24 bordo"></div>
+						</div>
+						<!-- IMPORTI -->
+						<div class="importi">
+							<div class="pure-g voce-importi">
+								<div class="pure-u-1-24 box-colore"></div>
+								<div class="pure-u-18-24 etichetta">Totale bolletta</div>
+								<div class="pure-u-5-24 valore-in-euro">
+									<span class="simbolo-euro">€ </span>
+									<div class="val" id="totaleBolletta"></div>
+								</div>
+							</div>
+							<div class="pure-g voce-importi">
+								<div class="pure-u-1-24 box-colore"></div>
+								<div class="pure-u-18-24 etichetta">Canone di abbonamento alla televisione per uso privato</div>
+								<div class="pure-u-5-24 valore-in-euro">
+									<span class="simbolo-euro">€ </span>
+									<div class="val">?? 18.00</div>
+								</div>
+							</div>
+							<div class="pure-g voce-importi">
+								<div class="pure-u-1-24 box-colore"></div>
+								<div class="pure-u-18-24 etichetta">TOTALE DA PAGARE</div>
+								<div class="pure-u-5-24 valore-in-euro">
+									<span class="simbolo-euro">€ </span>
+									<div class="val" id="totaleDaPagare"></div>	
+								</div>
+							</div>
+						</div>
+						<!-- RIEPILOGO IVA -->
+						<div class="riepilogo-iva">
+							<div class="pure-g voce-riepilogo-iva">
+								<div class="pure-u-1-24 box-colore"></div>
+								<div class="pure-u-23-24 etichetta">Riepilogo IVA - Vedi box "Informazioni Imposte"</div>
+							</div>
+							<div class="pure-g separatore">
+								<div class="pure-u-1-24"></div>
+								<div class="pure-u-23-24 bordo"></div>
+							</div>
+							<div class="pure-g voce-riepilogo-iva">
+								<div class="pure-u-3-24"></div>
+								<div class="pure-u-7-24">Aliquota</div>
+								<div class="pure-u-7-24">Imponibile</div>
+								<div class="pure-u-7-24">Importo</div>
+							</div>
+							<div class="pure-g voce-riepilogo-iva">
+								<div class="pure-u-3-24"></div>
+								<div class="pure-u-7-24 valore-perc">
+									<div class="val">131.1</div><span class="simbolo-perc"> %</span>
+								</div>
+								<div class="pure-u-7-24 valore-in-euro">
+									<span class="simbolo-euro">€ </span><div class="val">131.1</div>
+								</div>
+								<div class="pure-u-7-24 valore-in-euro">
+									<span class="simbolo-euro">€ </span><div class="val">131.1</div>
+								</div>
+							</div>
+							<div class="pure-g voce-riepilogo-iva">
+								<div class="pure-u-3-24"></div>
+								<div class="pure-u-7-24 valore-perc">
+									<div class="val">131.1</div><span class="simbolo-perc"> %</span>
+								</div>
+								<div class="pure-u-7-24 valore-in-euro">
+									<span class="simbolo-euro">€ </span><div class="val">131.1</div>
+								</div>
+								<div class="pure-u-7-24 valore-in-euro">
+									<span class="simbolo-euro">€ </span><div class="val">131.1</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="pure-u-7-24 consulente-dedicato">
+			<div class="contenuto">
+				<div class="titolo"><span class="icona"><img alt="consulente-dedicato" src="images/consulente-dedicato.jpg" width="15px" height="15px"></span> <span>CONSULENTE DEDICATO</span></div>
+				<div class="messaggio">C'è qualcosa che non ti è chiaro sulla bolletta o desideri informazioni?
+					Puoi contattare il tuo consulente dedicato <span>Mario Rossi</span>. Puoi chiamarlo al numero di cellulare <span>333.6767677</span>
+					o al numero fisso <span>0984.828356</span> o inviare una mail al seguente indirizzo <span>ascavo@omnia energia.it</span></div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- ****** js - grafico e valori calcolati ****** -->
+	<script type="text/javascript">
+        try {
+        	(function () {
+                var spesaMateriaEnergia = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti spesaMateriaEnergia')[0].innerHTML);
+    			var spesaTrasporto = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti spesaTrasporto')[0].innerHTML);
+    			var spesaOneri = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti spesaOneri')[0].innerHTML);
+    			var imposte = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti imposte')[0].innerHTML);
+    			var iva = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti iva')[0].innerHTML);
+    			
+    			var canone = checkValoreNumerico(document.getElementsByClassName('datiSintesiImporti canone')[0].innerHTML);
+    			
+    			var totaleBolletta = spesaMateriaEnergia + spesaTrasporto + spesaOneri + imposte + iva
+    			var totaleDaPagare = totaleBolletta + canone;
+				
+    			// init totale bolletta
+    			document.getElementById('totaleBolletta').innerHTML = totaleBolletta.toFixed(2);
+    			// init totale da pagare
+    			document.getElementById('totaleDaPagare').innerHTML = totaleDaPagare.toFixed(2);
+    			
+            	new Chartist.Pie('#graficoSintesiImporti', {
+        			series: [{
+        			    value: spesaMateriaEnergia,  name: 'Spesa materia energia',  className: 'spesaMateriaEnergia', meta: 'Meta - Spesa materia energia'
+        			  }, {
+        			    value: spesaTrasporto,  name: 'Spesa trasporto', className: 'spesaTrasporto', meta: 'Meta - Spesa trasporto'
+        			  }, {
+        			    value: spesaOneri, name: 'Spesa oneri', className: 'spesaOneri', meta: 'Meta - Spesa oneri'
+        			  }, {
+          			    value: imposte, name: 'Imposte', className: 'imposte', meta: 'Meta - Imposte'
+        			  }, {
+          			    value: iva, name: 'IVA', className: 'iva', meta: 'Meta - IVA'
+          			  }]
+        			}, {
+        				donut : true,
+        				donutWidth: 36,
+        				showLabel : false
+        			});
+    		})();
+        } catch(err) {
+        	console.log('errore init sintesi importi', err);
+        }
+	</script>
+	<!-- ========== end - SINTESI IMPORTI -->
+	
+	
+	<!-- @CONTATTI/AUTOLETTURA/GUASTI - start ==========
+	     ============================================== -->	
+	<div id="contattiAutoletturaGuasti" class="pure-g">
+		<!-- contatti utili -->
+		<div class="pure-u-8-24 contatti">
+			<div class="contenuto">
+				<div class="titolo"><span><img class="img-telefono" src="images/telefono.png" width="16px" height="16px" alt="telefono" /></span> CONTATTI UTILI</div>
+				<div class="elenco-contatti">
+					<div class="contatto">
+						<div class="etichetta">Contact Center</div>
+						<div class="valore">Da rete fissa <span data-data_type="single" data-first_node="AziendaCallCenterFisso" data-path_type="xpath" data-path_data="">800 test</span></div>
+						<div class="valore">Da rete mobile <span data-data_type="single" data-first_node="AziendaCallCenterCell" data-path_type="xpath" data-path_data="">800 test</span></div>
+					</div>
+					<div class="contatto">
+						<div class="etichetta">Numero Verde</div>
+						<div class="valore">800 98 44 55 ??</div>
+					</div>
+					<div class="contatto">
+						<div class="etichetta">Sede</div>
+						<div class="valore">Via Beato F. Marino, 102 Z.I. - Zumpano ??</div>
+					</div>
+					<div class="contatto">
+						<div class="etichetta">Punto Vendita</div>
+						<div class="valore">
+							<!-- Corso Mazzini, 5 - Cosenza -->
+							<span data-data_type="single" data-first_node="ServizioIndirizzo" data-path_type="xpath" data-path_data="">via XXX n° X Cosenza ??</span>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- autolettura/guasti -->
+		<div class="pure-u-16-24">
+			<!-- autolettura -->
+			<div class="autolettura">
+				<div class="contenuto">
+					<div class="titolo"><span><img class="img-contatore" src="images/contatore.png" width="15px" height="15px" alt="contatore" /></span> AUTOLETTURA</div>
+					<div class="elenco-canali">
+						<div class="intro">Potrai comunicare l'autolettura della tua fornitura di energia elettrica dal <span style="font-weight: bold;">00/00/000 al 00/00/0000 ??</span> attraverso i seguenti canali:</div>
+						<div class="canale">
+							<span class="etichetta">Sito web:</span>
+							<span class="valore"><a href="#">www.omniaenergia.it</a> accedendo alla tua area personale</span>
+						</div>
+						<div class="canale">
+							<span class="etichetta">Whatsapp:</span>
+							<span class="valore">invia al 346.8605478 (STESSO CONTACT CENTER) una foto del contatore con il numero del POD</span>
+						</div>
+						<div class="canale">
+							<span class="etichetta">Numero verde</span>
+							<span class="valore">800 98 44 55</span>
+						</div>
+						<div class="canale">
+							<span class="etichetta">App:</span>
+							<span class="valore">Omnia Energia</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- guasti -->
+			<div class="guasti">
+				<div class="contenuto">
+					<div class="titolo">EMERGENZA GUASTI</div>
+					<div class="contatti">
+						<!-- 
+						@@@@ NUMERO VERDE E NOME DESISTRIBUTORE: CI SONO 2 TAG
+						 -->
+						<div class="contatto">
+							<span class="etichetta">Numero verde</span>
+							<span class="valore">803 500 ??</span>
+						</div>
+						<div class="canale">Servizio a cura di <span>E-distribuzione S.p.A. ??</span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ========== end - CONTATTI/AUTOLETTURA/GUASTI -->		
+	
+		
+	<!-- @FOOTER PAGINA 1 - start ========== -->
+	<div class="footer">
+		<div class="contenuto">
+			<img src="images/carta-intestata.jpg" alt="carta-intestata" />
+		</div>
+	</div>
+</div>
+<!-- ********************** PAGINA 1 FINE ************************ -->
+<!-- ************************************************************* -->
+
+
+
+<!-- ********************** PAGINA 2 INIZIO ************************ -->
+<div id="pagina2" class="paginaA4" style="page-break-after: always;">
+	<!-- @HEADER CON LOGO OE =======
+		 =========================== -->
+	<div class="header-logo-oe">
+		<div class="contenuto">
+			<img src="images/logo-oe.png" alt="header-logo-oe" width="165px">
+		</div>
+	</div>
+	
+	<!-- @QUADRO LETTURE E CONSUMI - start ==========
+	     ============================================ -->
+	<!-- ****** dati ****** -->
+	<div id="datiQuadroLettureEConsumi" style="display: none;">
+		<!-- dati distributore -->
+		<div class="datiQuadroLettureEConsumi_anno">2019</div>
+		<div class="datiQuadroLettureEConsumi_mese">giu 19</div>
+		<div class="datiQuadroLettureEConsumi_tipoDato">Distributore</div>
+		<div class="datiQuadroLettureEConsumi_f1">10</div>
+		<div class="datiQuadroLettureEConsumi_f2">10</div>
+		<div class="datiQuadroLettureEConsumi_f3">5</div>
+		<!-- dati stima -->
+		<div class="datiQuadroLettureEConsumi_anno">2019</div>
+		<div class="datiQuadroLettureEConsumi_mese">lug</div>
+		<div class="datiQuadroLettureEConsumi_tipoDato">Stima</div>
+		<div class="datiQuadroLettureEConsumi_f1">15</div>
+		<div class="datiQuadroLettureEConsumi_f2">15</div>
+		<div class="datiQuadroLettureEConsumi_f3">7.5</div>
+	</div>
+	
+	<div id="quadroLettureEConsumi" class="pure-g">
+		<div class="pure-u-24-24">
+			<div class="pure-g titolo sfondo-arancione">
+				<div class="pure-u-24-24 contenuto">QUADRO LETTURE E CONSUMI</div>
+			</div>
+			<div class="pure-g">
+				<div class="pure-u-9-24 grafico">
+					<div class="contenuto">
+						<div id="graficoQuadroLettureEConsumi"></div>
+					</div>
+				</div>
+				<div class="pure-u-15-24">
+					<div class="legenda-grafico-plus-tabella-dati">
+						<div class="legenda">
+							<div class="voce-legenda">
+								<div class="box-colorato tipoDato"></div><div class="etichetta">Tipo Dato</div>
+							</div>
+							<div class="voce-legenda">
+								<div class="box-colorato f1"></div><div class="etichetta">Consumo Fatturato [kWh] F1</div>
+							</div>
+							<div class="voce-legenda">
+								<div class="box-colorato f2"></div><div class="etichetta">Consumo Fatturato [kWh] F2</div>
+							</div>
+							<div class="voce-legenda">
+								<div class="box-colorato f3"></div><div class="etichetta">Consumo Fatturato [kWh] F3</div>
+							</div>
+						</div>
+						<div class="tabella-dati">
+							<table id="tabellaQuadroLettureEConsumi">
+								<tbody>
+									<tr>
+										<td class="c1 header no-border"></td>
+										<td class="c2 header no-border"></td>
+										<td class="c3 header" colspan="4">Lettura Precedente</td>
+										<td class="c4 header" colspan="4">Lettura Attuale</td>
+										<td class="c5 header last" colspan="4">Consumo Fatturato [kWh]</td>
+									</tr>
+									<tr>
+										<td>Mese/anno</td>
+										<td>Tipo Dato</td>
+										<!--  -->
+										<td>Data</td><td>F1</td><td>F2</td><td>F3</td>
+										<!--  -->
+										<td>Data</td><td>F1</td><td>F2</td><td>F3</td>
+										<!--  -->
+										<td>F1</td><td>F2</td><td>F3</td><td class="last">Totale</td>
+									</tr>
+									<tr>
+										<td><span>giu-19 ??</span></td>
+										<td><span>Distributore ??</span></td>
+										<!--  -->
+										<td><span>31/05/2019 ??</span></td>
+										<td><span>1 ??</span></td>
+										<td><span>2 ??</span></td>
+										<td><span>3 ??</span></td>
+										<!--  -->
+										<td><span>30/06/2019 ??</span></td>
+										<td><span>1 ??</span></td>
+										<td><span>2 ??</span></td>
+										<td><span>3 ??</span></td>
+										<!--  -->
+										<td><span>48 ??</span></td>
+										<td><span>54 ??</span></td>
+										<td><span>76 ??</span></td>
+										<td class="last"><span>178 ??</span></td>
+									</tr>
+									<tr>
+										<td><span>Lug-19 ??</span></td>
+										<td><span>Stima ??</span></td>
+										<!--  -->
+										<td><span>31/06/2019 ??</span></td>
+										<td><span>1 ??</span></td>
+										<td><span>2 ??</span></td>
+										<td><span>3 ??</span></td>
+										<!--  -->
+										<td><span>30/07/2019 ??</span></td>
+										<td><span>1 ??</span></td>
+										<td><span>2 ??</span></td>
+										<td><span>3 ??</span></td>
+										<!--  -->
+										<td><span>48 ??</span></td>
+										<td><span>54 ??</span></td>
+										<td><span>76 ??</span></td>
+										<td class="last"><span>178 ??</span></td>
+									</tr>
+								</tbody>
+							</table>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- ****** js - grafico e valori calcolati ****** -->
+	<script type="text/javascript">
+		try {
+			(function() {
+				var anni = [];
+				var mesi = [];
+				var tipiDati = [];
+				var consumiF1 = [];
+				var consumiF2 = [];
+				var consumiF3 = [];
+				
+				var elems = document.getElementsByClassName('datiQuadroLettureEConsumi_anno');
+				for (var i = 0; i < elems.length; i++) {
+					anni.push(elems[i].innerHTML)
+				}
+				elems = document.getElementsByClassName('datiQuadroLettureEConsumi_mese');
+				for (var i = 0; i < elems.length; i++) {
+					mesi.push(elems[i].innerHTML)
+				}
+				elems = document.getElementsByClassName('datiQuadroLettureEConsumi_tipoDato');
+				for (var i = 0; i < elems.length; i++) {
+					tipiDati.push(elems[i].innerHTML)
+				}
+				
+				elems = document.getElementsByClassName('datiQuadroLettureEConsumi_f1');
+				for (var i = 0; i < elems.length; i++) {
+					consumiF1.push(elems[i].innerHTML)
+				}
+				elems = document.getElementsByClassName('datiQuadroLettureEConsumi_f2');
+				for (var i = 0; i < elems.length; i++) {
+					consumiF2.push(elems[i].innerHTML)
+				}
+				elems = document.getElementsByClassName('datiQuadroLettureEConsumi_f3');
+				for (var i = 0; i < elems.length; i++) {
+					consumiF3.push(elems[i].innerHTML)
+				}
+				
+				var labels = [];
+				for (var i = 0; i < anni.length; i++) {
+					labels.push(mesi[i] + '-' + anni[i] + '\n' + tipiDati[i])
+				}
+				
+				console.log('datiQuadroLettureEConsumi');
+				console.log(anni);
+				console.log(mesi);
+				console.log(tipiDati);
+				console.log(labels);
+				console.log(consumiF1);
+				console.log(consumiF2);
+				console.log(consumiF3);				
+				
+				new Chartist.Bar('#graficoQuadroLettureEConsumi', {
+					labels : labels,
+					series : [{
+							name : 'f1',
+							className : 'f1',
+							data : consumiF1
+						}, {
+							name : 'f2',
+							className : 'f2',
+							data : consumiF2
+						}, {
+							name : 'f3',
+							className : 'f3',
+							data : consumiF3
+						}]
+					}, {
+						stackBars : true,
+					    showGrid: true,
+					    axisX: {
+							labelInterpolationFnc: function(value) {
+						    	return value;
+						    }
+						},
+						chartMarging: {
+							left: -15
+						},
+						chartPadding: {
+							bottom: 15 // consente di mostrare le labels dell'asse X qualora la loro altezza superasse i 20px (valore di default?)
+					  	},
+					}).on('draw', function(data) {
+						if (data.type === 'bar') {
+							data.element.attr({
+								style : 'stroke-width: 38px'
+							});
+						}
+					});
+			})();
+		} catch (err) {
+			console.log('errore init grafico quadro letture e consumi', err);
+		}
+	</script>
+    <!-- ========== end - QUADRO LETTURE E CONSUMI -->
+    
+	
+	<!-- @RIEPILOGO CONSUMI STORICI - start ==========
+	     ============================================= -->
+	<!-- ****** dati nascosti ****** -->
+	<div style="display: none;" class="consumi_hiddenvalues" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
+        <span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">1</span>
+        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
+        <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">06</span>
+        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">10</span>
+        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">20</span>
+        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">30</span>
+        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">690</span>
+		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3000</span>
+	</div>
+	<div style="display: none;" class="consumi_hiddenvalues" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
+		<span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">2</span>
+        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
+        <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">07</span>
+        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">11</span>
+        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">21</span>
+        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">31</span>
+        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">691</span>
+		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3001</span>
+	</div>	
+	<div style="display: none;" class="consumi_hiddenvalues" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
+		<span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">2</span>
+        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
+        <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">01</span>
+        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">11</span>
+        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">21</span>
+        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">31</span>
+        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">691</span>
+		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3001</span>
+    </div>
+	
+	<div id="riepilogoConsumiStorici" class="pure-g">
+		<div class="pure-u-24-24">
+			<div class="pure-g titolo sfondo-arancione">
+				<div class="pure-u-24-24 contenuto">RIEPILOGO CONSUMI STORICI</div>
+			</div>
+			<div class="pure-g">
+				<div class="pure-u-15-24 grafico">
+					<div class="contenuto">
+						<div id="graficoRiepilogoConsumiStorici"></div>
+					</div>
+				</div>
+				<div class="pure-u-9-24">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- ****** js - grafico e valori calcolati ****** -->
+	<script type="text/javascript">
+		try {
+			(function() {
+				var anni = [];
+				var mesi = [];
+				var datiF1 = [];
+				var datiF2 = [];
+				var datiF3 = [];
+				
+				var parents = document.getElementsByClassName('consumi_hiddenvalues');
+				for (var idx = 0; idx < parents.length; idx++) {
+					var parent = parents[idx];
+					var childs = parent.childNodes
+					for (var i = 0; i < childs.length; i++) {
+						var elem = childs[i];
+						if (elem.className) {
+							if (elem.className == 'x_consumi_anno') {
+								if (elem.innerHTML)
+									anni.push(elem.innerHTML);
+								else {
+									console.og('errore - anno mancante');
+									anni.push('-');
+								}
+							}
+							if (elem.className == 'x_consumi_mese') {
+								if (elem.innerHTML)
+									mesi.push(elem.innerHTML);
+								else {
+									console.og('errore - mese mancante');
+									mese.push('-');
+								}
+							}
+							if (elem.className == 'x_consumi_f1')
+								datiF1.push(checkValoreNumerico(elem.innerHTML));
+							if (elem.className == 'x_consumi_f2')
+								datiF2.push(checkValoreNumerico(elem.innerHTML));
+							if (elem.className == 'x_consumi_f3')
+								datiF3.push(checkValoreNumerico(elem.innerHTML));
+						}
+					}
+				}
+				
+				console.log('riepilogoConsumiStorici');
+				console.log(anni);
+				console.log(mesi);
+				console.log(datiF1);
+				console.log(datiF2);
+				console.log(datiF3);
+				
+// 				var elems = document.getElementsByClassName('x_consumi_anno');
+// 				for (var i = 0; i < elems.length; i++) {
+// 					anni.push(elems[i].innerHTML);
+// 				}
+// 				elems = document.getElementsByClassName('x_consumi_mese');
+// 				for (var i = 0; i < elems.length; i++) {
+// 					mesi.push(elems[i].innerHTML);
+// 				}
+// 				elems = document.getElementsByClassName('x_consumi_f1');
+// 				for (var i = 0; i < elems.length; i++) {
+// 					datiF1.push(elems[i].innerHTML);
+// 				}
+// 				elems = document.getElementsByClassName('x_consumi_f2');
+// 				for (var i = 0; i < elems.length; i++) {
+// 					datiF2.push(elems[i].innerHTML);
+// 				}
+// 				elems = document.getElementsByClassName('x_consumi_f3');
+// 				for (var i = 0; i < elems.length; i++) {
+// 					datiF3.push(elems[i].innerHTML);
+// 				}
+				
+				var labels = [];
+				for (var i = 0; i < anni.length; i++) {
+					labels.push(mesi[i] + '-' + anni[i])
+				}
+				
+				var numeroBarre = labels.length;
+				var larghezzaBarra = 26;
+				if (5 < numeroBarre && numeroBarre < 9) {
+					larghezzaBarra = 22;
+				} else if (9 <= numeroBarre && numeroBarre < 13) {
+					larghezzaBarra = 18;
+				}
+				
+				new Chartist.Bar('#graficoRiepilogoConsumiStorici', {
+					labels : labels,
+					series : [{
+							name : 'f1',
+							className : 'f1',
+							data : datiF1
+						}, {
+							name : 'f2',
+							className : 'f2',
+							data : datiF2
+						}, {
+							name : 'f3',
+							className : 'f3',
+							data : datiF3
+						}]
+					}, {
+						stackBars : true,
+					    showGrid: true,
+					    axisX: {
+							labelInterpolationFnc: function(value) {
+						    	return value;
+						    }
+						},
+						chartPadding: {
+							bottom: 15 // consente di mostrare le labels dell'asse X qualora la loro altezza superasse i 20px (valore di default?)
+					  	},
+					}).on('draw', function(data) {
+						if (data.type === 'bar') {
+							data.element.attr({
+								style : 'stroke-width: ' + larghezzaBarra + 'px'
+							});
+						}
+					});
+			})();
+		} catch (err) {
+			console.log('errore init grafico riepilogo consumi storici', err);
+		}
+	</script>
+	<!-- ========== end - RIEPILOGO CONSUMI STORICI -->
+	
+	
+	<!-- @RIEPILOGO QUANTITA' E COSTI MEDI FATTURATI - start ==========
+	     =============================================================== -->
+	<div id="riepilogoQuantitaECostiMediFatturati" class="pure-g">
+		<div class="pure-u-24-24">
+			<div class="pure-g titolo sfondo-arancione">
+				<div class="pure-u-24-24 contenuto">RIEPILOGO QUANTITA' E COSTI MEDI FATTURATI</div>
+			</div>
+			<!-- 
+				@@@@ ARTURO DEVE VERIFICARE SE CONSUMO BIMESTRALE O ANNUALE				
+			 -->
+			<div class="pure-g dati">
+				<div class="pure-u-8-24 col1">
+					<strong>Consumi fatturati: <span>1.198 ??</span> kWh</strong>
+				</div>
+				<div class="pure-u-8-24 col2">
+					Costo medio della materia prima: <strong><span>0,006 ??</span> €/kWh</strong>
+				</div>
+				<div class="pure-u-8-24 col3">
+					Costo medio della bolletta: <strong><span>0,20 ??</span> €/kWh</strong>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ========== end - RIEPILOGO QUANTITA' E COSTI MEDI FATTURATI -->
+	
+	
+	<!-- @DETTAGLIO IMPOSTE - start ==========
+	     =============================================================== -->
+	<div id="dettaglioImposte" class="pure-g">
+		<div class="pure-u-24-24">
+			<div class="pure-g titolo">
+				<div class="pure-u-24-24 contenuto">
+					<div class="testo">DETTAGLIO IMPOSTE</div>
+				</div>
+			</div>
+			<div class="pure-g dati">
+				<div class="pure-u-24-24">
+					<div class="tabella">
+						<div class="header">
+							<div class="pure-g">
+								<div class="pure-u-5-24"></div>
+								<div class="pure-u-5-24">Periodo</div>
+								<div class="pure-u-3-24">Scaglione</div>
+								<div class="pure-u-3-24">Quantità</div>
+								<div class="pure-u-3-24">Prezzo (€/kWh)</div>
+								<div class="pure-u-3-24">Totale (€)</div>
+								<div class="pure-u-2-24">Iva %</div>
+							</div>
+						</div>
+						<div class="body">
+							<div class="pure-g riga">
+								<div class="pure-u-5-24 cella"><span>Imposta erariale</span></div>
+								<div class="pure-u-5-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+								<div class="pure-u-3-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+								<div class="pure-u-3-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+								<div class="pure-u-3-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+								<div class="pure-u-3-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+								<div class="pure-u-2-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+							</div>
+							<div class="pure-g riga">
+								<div class="pure-u-5-24 cella"><span>Imposta erariale</span></div>
+								<div class="pure-u-5-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+								<div class="pure-u-3-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+								<div class="pure-u-3-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+								<div class="pure-u-3-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+								<div class="pure-u-3-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+								<div class="pure-u-2-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+							</div>
+							<div class="pure-g riga">
+								<div class="pure-u-5-24 cella"><span>Imposta erariale</span></div>
+								<div class="pure-u-5-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+								<div class="pure-u-3-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+								<div class="pure-u-3-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+								<div class="pure-u-3-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+								<div class="pure-u-3-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+								<div class="pure-u-2-24 cella"><span data-data_type="single" data-first_node="" data-path_type="xpath" data-path_data=""></span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ========== end - DETTAGLIO IMPOSTE -->
+	
+	
+	<!-- @CONGUAGLI RICALCOLI NON PAGATE - start ==========
+	     ================================================== -->
+	<div id="conguagliRicalcoliNonPagate" class="pure-g">
+		<div class="pure-u-11-24">
+			<div id="conguagliRicalcoli">
+				<div class="pure-g">
+					<div class="pure-u-24-24">
+						<div class="pure-g titolo sfondo-arancione">
+							<div class="pure-u-24-24 contenuto">CONGUAGLI E RICALCOLI</div>
+						</div>
+						<div class="pure-g dati">
+							<div class="pure-u-24-24">
+								Nessun ricalclo in bolletta ??
+							</div>
+						</div>
+					</div>				
+				</div>
+			</div>	
+		</div>
+		<div class="pure-u-2-24"></div>
+		<div class="pure-u-11-24">
+			<div id="nonPagate">
+				<div class="pure-g">
+					<div class="pure-u-24-24">
+						<div class="pure-g titolo sfondo-arancione">
+							<div class="pure-u-24-24 contenuto">BOLLETTE NON PAGATE</div>
+						</div>
+						<div class="pure-g dati">
+							<div class="pure-u-24-24">
+								Le precedenti bollette risultano pagate ??
+							</div>
+						</div>
+					</div>				
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ========== end - CONGUAGLI RICALCOLI NON PAGATE -->
+	
+	
+	<!-- @GUIDA LETTURA FATTURA - start ==========
+	     ========================================= -->
+	<div id="guidaLetturaFattura" class="pure-g">
+		<div class="pure-u-24-24">
+			<div class="pure-g titolo sfondo-arancione">
+				<div class="pure-u-24-24 contenuto">GUIDA ALLA LETTURA DELLA TUA FATTURA</div>
+			</div>
+			<div class="pure-g dati">
+				<div class="pure-u-24-24">
+					<div class="paragrafo">
+						<div class="paragrafo-corpo">
+							Essere informati è il miglior modo per essere sicuri di pagare ciò che è dovuto. Per noi di Omnia Energia essere vicini al cliente significa anche renderlo autonomo nella corretta lettura della propria bolletta. Per questa ragione ti forniamo informazioni che possono esserti utili.
+						</div>
+					</div>
+					<div class="paragrafo">
+						<div class="paragrafo-titolo"><strong>Il prezzo della spesa per la materia energia è composto da:</strong></div>
+						<div class="paragrafo-corpo">
+							<div>• una quota fissa (euro/anno) che è la parte del prezzo che si paga per avere un punto di consegna attivo, anche in assenza di consumo e qualunque sia la potenza impegnata</div> 
+							<div>• una quota energia (euro/kWh) che comprende tutti gli importi da pagare in proporzione al consumo.</div>
+						</div>
+					</div>
+					<div class="paragrafo">
+						<div class="paragrafo-titolo"><strong>La spesa per il trasporto e la gestione del contatore è composta da:</strong></div>
+						<div class="paragrafo-corpo">
+							<div>• una quota fissa (euro/anno)</div>
+							<div>• una quota potenza (euro/kW/anno)</div>
+							<div>• una quota energia (euro/kWh) e comprende gli importi per le diverse attività che consentono ai fornitori di consegnare ai clienti finali l’energia elettrica.</div>
+						</div>
+					</div>
+					<div class="paragrafo">
+						<div class="paragrafo-titolo"><strong>La spesa per oneri di sistema è composta da:</strong></div>
+						<div class="paragrafo-corpo">
+							<div>• una quota energia (euro/kWh)</div>
+							<div>• una quota potenza (euro/kW/anno)</div>
+							<div>• una quota fissa (euro/anno).</div>
+							<div>La quota fissa non è applicata alle abitazioni di residenza anagrafica. ). Comprende gli importi per la copertura di costi relativi ad attività di interesse generale per il sistema elettrico, che vengono pagati da tutti i clienti finali del servizio elettrico.</div>
+						</div>
+					</div>
+					<div class="paragrafo">
+						<div class="paragrafo-titolo"><strong>Altre partite:</strong></div>
+						<div class="paragrafo-corpo">
+							<div>Questa voce è presente solo nelle bollette in cui vengono addebitati o accreditati importi diversi da quelli inclusi nelle altre voci di spesa. Ad esempio, possono essere inserite in questa voce gli interessi di mora, l’addebbito/restituzione del deposito cauzionale, i contributi di allacciamento.</div>
+						</div>
+					</div>
+					<div class="paragrafo">
+						<div class="paragrafo-titolo"><strong>Imposte:</strong></div>
+						<div class="paragrafo-corpo">
+							<div>Comprende le voci relative all’imposta di consumo (accisa) e all’imposta sul valore aggiunto (IVA). L’accisa si applica alla quantità di energia consumata mentre l’IVA si applica sull’importo totale della bolletta.</div>
+						</div>
+					</div>
+					<div class="paragrafo">
+						<div class="paragrafo-titolo"><strong>Ricalcoli</strong></div>
+						<div class="paragrafo-corpo">
+							<div>Questa voce è presente solo nelle bollette in cui vengono ricalcolati importi già pagati in bollette precedenti, a causa di una modifica dei consumi o dei prezzi applicati.</div>
+						</div>
+					</div>
+					<div class="paragrafo">
+						<div class="paragrafo-titolo"><strong></strong></div>
+						<div class="paragrafo-corpo">
+							<div></div>
+							<div></div>
+						</div>
+					</div>
+					<div class="paragrafo">
+						<div class="paragrafo-titolo"><strong></strong></div>
+						<div class="paragrafo-corpo">
+							<div></div>
+							<div></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ========== end - GUIDA LETTURA FATTURA -->
+		
+	
+	<!-- @FOOTER PAGINA 2 - start ========== -->
+	<div class="footer">
+		<div class="contenuto">
+			<img src="images/carta-intestata.jpg" alt="carta-intestata" />
+		</div>
+	</div>
+</div>	
+<!-- ********************** PAGINA 2 FINE ************************ -->
+
+
+
+<!-- ********************** PAGINA 3 INIZIO ************************ -->
+<div id="pagina3" class="paginaA4" style="page-break-after: always;">
+	<!-- @HEADER CON LOGO OE =======
+		 =========================== -->
+	<div class="header-logo-oe">
+		<div class="contenuto">
+			<img src="images/logo-oe.png" alt="header-logo-oe" width="165px">
+		</div>
+	</div>
+
+	<!-- @ARERA - start ==========
+	     ========================= -->	
+	<div id="arera" class="pure-g">
+		<div class="pure-u-24-24">
+			<div class="pure-g titolo sfondo-arancione">
+				<div class="pure-u-24-24 contenuto">ANNOTAZIONI E ULTERIORI INFORMAZIONI PREVISTE DALL’ARERA</div>
+			</div>
+			<div class="pure-g dati">
+				<div class="pure-u-24-24">
+					<div class="titolo"><strong>Accedi alla tua area riservata</strong></div>
+					<div class="body">
+						<div>Gentile cliente, può accedere alla sua area personale online per la gestione della sua fornitura tramite il sito www.omniaenergia.it nella sezione Area Clienti digitando username e password riportati di seguito:</div> 
+						<div class="pure-g">
+							<div class="pure-u-6-24">Username: <span>CLI9353 ??</span></div>
+							<div class="pure-u-18-24">Password: <span>gi******</span></div>
+						</div>
+					</div>
+					<div class="titolo"><strong>Pagamenti sospesi e rateizzazioni</strong></div>
+					<div class="body">
+						Nei casi indicati agli artt. 13-bis TIV 12-bis TIVG, il Cliente può richiedere la rateizzazione degli importi dovuti, entro i 10 giorni
+						successivi dal termine fissato per il pagamento della bolletta, chiamando il Numero Verde gratuito <span>800-98 44 55 ??</span> dalle 09.00 alle 13:00 e dalle 14:30 alle 18:30.
+						In caso di letture e consumi stimati, gli importi fatturati saranno oggetto di successivo ricalcolo.
+					</div>
+					
+					<div class="titolo"><strong>Informazioni relative alla morosità</strong></div>
+					<div class="body">
+						<div>
+							Nei casi previsti dalla delibera dell’ARERA ARG/elt 4/08 e s.m.i., a fronte di mancato pagamento da parte del Cliente del corrispettivo di una o più fatture, sarà attivata la procedura per la sospensione
+							della fornitura di energia per i punti di prelievo intestati al cliente. Come specificato nelle CGF fornite alla stipula del contratto, tale procedura prevede:
+						</div>
+						<div>
+							a) Inoltro della raccomandata A/R o posta PEC di messa in mora, contenente indicazioni relative alle modalità di pagamento consentite e alle modalità di comunicazione a Omnia Energia Spa degli avvenuti pagamenti;
+						</div>
+						<div>
+							b) Avvio del processo di sospensione della fornitura, decorso il termine di pagamento riportato nella raccomandata A/R o posta PEC di messa in mora, in presenza di insoluti e nelle modalità previste dalle delibere vigenti.
+						</div>
+						<div>
+							Eventuali disservizi o danni derivanti dalla sospensione della fornitura, a seguito del processo di messa in mora, non sono da considerarsi di responsabilità di Omnia Energia Spa. Come previsto dalla delibera
+							dell’ARERA ARG/elt 4/08 e s.m.i. i corrispettivi di sospensione ed eventuale riattivazione della fornitura nonché le spese sostenute per l'inoltro delle messe in mora e dei solleciti di pagamento saranno incluse
+							nella prima fattura utile. In ogni caso di risoluzione del Contratto per morosità del Cliente, il Fornitore avrà diritto al versamento degli interessi di mora oltre al maggior danno.						
+						</div>
+					</div>					
+					<div class="titolo"><strong>Informazioni relative ai pagamenti ed agli interessi di mora</strong></div>
+					<div class="body">
+						In caso di ritardato pagamento delle fatture, il Cliente Business sarà tenuto, senza la necessità di formale messa in mora da parte del Fornitore, alla corresponsione in favore di quest'ultimo di interessi moratori
+						sugli importi delle fatture insolute al tasso BCE tempo per tempo vigente aumentato di 8 punti percentuali, così come previsto dal D. Lgs. n.231/2002, dal giorno successivo alla scadenza di ciascuna fattura e sino
+						all'integrale soddisfo. Per il Cliente Domestico saranno dovuti gli interessi moratori sull'importo delle fatture insolute calcolati al tasso ufficiale di riferimento (TUR) tempo per tempo vigente aumentato di 3,5 punti percentuali.
+					</div>
+					<div class="titolo"><strong>Aggiornamento corrispettivi</strong></div>
+					<div class="body">
+						Il prezzo dell’energia e delle perdite di rete sono definiti secondo quanto previsto dalle CTE o da modifiche successivamente comunicate. La tariffa di distribuzione, le componenti tariffarie A/UC/MCT, il
+						corrispettivo a copertura dei costi di trasmissione ed il corrispettivo di misura sono aggiornati ai sensi della delibera ARERA 348/07 e s.m.i. Il corrispettivo a copertura dei costi di dispacciamento è
+						aggiornato ai sensi della delibera ARERA 111/06 e s.m.i.
+					</div>
+					<div class="titolo"><strong>Mix di fonti della produzione nazionale</strong></div>
+					<div class="body">
+						<div>
+							Mix energetico medio nazionale dell'energia elettrica immessa nel 2010 nel sistema elettrico italiano, ivi inclusa l’energia elettrica importata, di cui al Decreto 31 luglio 2009 del Ministero dello Sviluppo
+							Economico “Criteri e modalità per la fornitura ai clienti finali delle informazioni sulla composizione del mix energetico utilizzato per la produzione dell'energia elettrica fornita, nonché sull'impatto ambientale della produzione".
+						</div>
+						<div class="contenitore-tabella">
+							<table>
+								<tbody>
+									<tr class="header"><td>Fonti primarie utilizzate</td><td class="last">Mix energetico nazionale anno 2010 (%)</td></tr>
+									<tr><td>Fonti rinnovabili</td><td class="last">35,6 %</td></tr>
+									<tr><td>Carbone</td><td class="last">12,8 %</td></tr>
+									<tr><td>Gas naturale</td><td class="last">42,4 %</td></tr>
+									<tr><td>Nucleare</td><td class="last">1,6 %</td></tr>
+									<tr><td>Prodotti petroliferi</td><td class="last">1,7 %</td></tr>
+									<tr class="last"><td>Altre fonti</td><td class="last">5,9 %</td></tr>
+								</tbody>
+							</table>
+						</div>
+						<div>
+							Stima del mix energetico medio nazionale dell’energia elettrica immessa nel sistema elettrico italiano e stima del mix energetico relativo all'elettricità venduta da Omnia Energia Spa nel 2011, di cui al Decreto 31
+							luglio 2009 del Ministero dello Sviluppo Economico “Criteri e modalità per la fornitura ai clienti finali delle informazioni sulla composizione del mix energetico utilizzato per la produzione dell'energia elettrica fornita,
+							nonchè sull'impatto ambientale della produzione.
+						</div>
+						<div class="contenitore-tabella">
+							<table>
+								<tbody>
+									<tr class="header"><td>Fonti primarie utilizzate</td><td>Mix energetico anno 2011 (%) di Omnia Energia Spa</td><td class="last">Mix energetico nazionale anno 2011 (%)</td>
+									<tr><td>Fonti rinnovabili</td><td>30,3 %</td><td class="last">36,7 %</td>
+									<tr><td>Carbone</td><td>16,1 %</td><td class="last">14,6 %</td>
+									<tr><td>Gas naturale</td><td>44,5 %</td><td class="last">40,0 %</td>
+									<tr><td>Prodotti petroliferi</td><td>1,4 %</td><td class="last">1,2 %</td>
+									<tr><td>Nucleare</td><td>1,6 %</td><td class="last">1,8 %</td>
+									<tr class="last"><td>Altre fonti</td><td>6,3 %</td><td class="last">5,7 %</td>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="titolo"><strong>Reclami e segnalazioni</strong></div>
+					<div class="body">
+						Eventuali reclami, possono essere inoltrati a Omnia Energia Spa, oltre che all'indirizzo postale indicato nella prima pagina, anche utilizzando l'apposito modulo disponibile nella sua Area Clienti sul sito www.omniaenergia.it. Nel caso si decida di non utilizzare l'apposito modulo, nella comunicazione si dovranno indicare obbligatoriamente le seguenti informazioni minime: nome, cognome, indirizzo di fornitura, indirizzo postale (se diverso dall'indirizzo di fornitura) o telematico e il servizio a cui si riferisce il reclamo (elettrico, gas o entrambi).
+					</div>
+					<div class="titolo"><strong>Servizi aggiuntivi</strong></div>
+					<div class="body">
+						Hai la possibilità di ricevere GRATUITAMENTE la fattura via e-mail attivando il servizio in modo semplice e immediato accedendo alla tua area riservata. Per ogni fattura cartacea spedita verrà addebitato il costo di € 1,50 + IVA per i clienti domestici e di € 2,30 + IVA per i clienti Business.
+					</div>
+					<div class="titolo"><strong>Dati Catastali</strong></div>
+					<div class="body">
+						Il modulo per la comunicazione dei dati catastali è disponibile nella sua Area Clienti sul sito web www.omniaenergia.it. Il modulo debitamente compilato e firmato può essere inoltrato a mezzo fax al numero <span>0984 825148</span> ??.
+					</div>
+					<div class="titolo"><strong>Comunicazione da parte dell'Autorità</strong></div>
+					<div class="body">
+						"A partire dal 1 marzo 2018, qualora Ella riceva una fattura contenente importi per consumi riferiti a periodi trascorsi da almeno due anni, può contestarli e non pagarli, in applicazione della Legge di Bilancio 2018 (Legge n. 205/17). Il
+						Suo venditore ha l'obbligo, contestualmente a tale fattura e comunque almeno 10 giorni prima della scadenza del pagamento, di informarLa per agevolarLa nell'esercizio di questa facoltà. Per ulteriori informazioni chiami il numero verde 
+						dello Sportello dell'Autorità di Regolazione per Energia Reti e Ambiente (ARERA) <span>800 166 654 ??</span>."
+					</div>
+					<div class="titolo"><strong>Comunicazione sulla fatturazione elettronica</strong></div>
+					<div class="body">
+						Qualora la fattura elettronica associata alla presente fattura cortesia non risulti essere stata recapitata dallo SDI, perché il codice destinatario relativo risulta essere "0000000"" a causa della mancata
+						comunicazione del Suo codice destinatario o in alternativa del Suo indirizzo PEC in precedenza richiesto o per qualsiasi altra motivazione, La informiamo che lo SDI rende disponibile la fattura elettronica nell’area
+						a Lei riservata del sito web dell’Agenzia delle Entrate e che pertanto può provvedere a scaricarla.
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ========== end - GUIDA LETTURA FATTURA -->
+	
+	
+	<!-- @FOOTER PAGINA 3 - start ========== -->
+	<div class="footer">
+		<div class="contenuto">
+			<img src="images/carta-intestata.jpg" alt="carta-intestata" />
+		</div>
+	</div>
+</div>
+<!-- ********************** PAGINA 3 FINE ************************ -->
+	
+	
+<!-- 
+<div class="footer-foglio-A4 pagina-1">
+	<div class="contenuto">
+		<div class="nome-societa">Omnia Energia S.p.A.</div>
+		<div class="info-societa-1">
+			Via Beato F. Marino, 102 Z.I. 87040 Zumpano (CS)
+			Tel. +39 0984 825356 Fax +39 0984 845148 Numero Verde <span class="numero-verde">800 98 44 55</span>
+			info@omniaenergia.it				
+		</div>
+		<div class="info-societa-2">
+			Partita Iva 02599020787 Reg. Imprese CS R.E.A. 176099 Capitale Sociale € 900.000,00 interamente versato
+		</div>
+		<div class="info-societa-2">
+			La società è soggetta a direzione e coordinamento di Vida Srl
+			Cod. Fiscale 02637510781 Iscitta al Registro delle Imprese di Cosenza n° 02637510781 v° R.E.A. 178944
+		</div>
+		<div class="sito">
+			www.omniaenergia.it
+		</div>
+	</div>
+</div>
+ -->
+    
+</body>
+</html>

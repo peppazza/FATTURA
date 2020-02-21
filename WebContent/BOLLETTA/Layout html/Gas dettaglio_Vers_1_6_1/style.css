@@ -1,0 +1,861 @@
+@font-face {
+  font-family: SourceSansPro;
+  src: url(SourceSansPro-Regular.ttf);
+}
+
+body {
+  font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+page[size="A4"] {
+  background: white;
+  width: 19.6cm;
+  height: 28.3cm;
+  display: block;
+  margin: 0 auto;
+  /*margin-bottom: 0.5cm;*/
+  /*box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);*/
+  /*padding:0.7cm;*/
+}
+
+
+
+@media screen {
+    #globaltabledettaglio thead {
+        display: none;
+    }
+}
+
+
+@media print {
+  body, page[size="A4"] 
+  {
+    margin-top: 0mm;
+    box-shadow: 0;
+  }
+  #globaltable
+  {
+	margin-top: 0mm;
+  
+  }
+   #globaltabledettaglio
+  {
+      /*display: block;*/ 
+      page-break-before: always;
+  }
+  
+  
+
+}
+
+p {
+	line-height:1;
+	margin:2px;
+  }
+  
+ 
+  
+ /* Stile pagina gas-naturale.html */
+
+.logo {
+	width:9cm;
+	height: 63px;
+  }
+  
+.header_logo 
+{
+    width: 396px;
+    height: 63px;
+}
+ .dati_terranova {
+	 margin-left:0.7cm;
+	 text-align:left;
+	 width:13.7cm;
+	 font-size:15px;
+  }
+  
+ .titolo {
+	 color: #ED1C24;
+	 text-transform:uppercase;
+	 font-size:18px;
+	 text-align:center;
+	 }
+.titolo2 {
+	 color: #ED1C24;
+	 text-transform:uppercase;
+	 font-size:13px;
+	 text-align:left;
+	 margin:0;
+	 line-height:1;
+	 }
+ .tabella1 {
+	 width:9.4cm;
+	 }
+ .top{
+	 max-width:9.4cm;
+	 width:100%;
+	 }
+.fisso{
+	font-weight:bold;
+	 }
+.testo{
+	background: #ED1C24;
+	 text-transform:uppercase;
+	 color: #ffffff;
+	 text-align:center;
+	 font-weight:bold;
+	 font-size:14px;
+	 padding:3px;
+	 }
+.testo_cont
+{
+        display:table-cell;
+        width: 172px;
+        padding-top: 33px;
+}      
+.dato{
+	background: #ffffff;
+	 text-transform:uppercase;
+	 color: #000000;
+	 text-align:center;
+	 font-weight:bold;
+	 font-size:26px;
+	 margin-top:-2px;
+	 border:1px solid #ED1C24;
+	 border-bottom: none;
+	 padding:5px;
+	 width: 162px;
+	 height: 24px;
+	 }
+.dato_informazioni{
+	background: #ffffff;
+	 color: #000000;
+	 font-size:7.5px;
+	 text-align:center;
+	 margin-top:-2px;
+	 border:1px solid #ED1C24;
+	 border-top: none;
+	 padding:2px;
+	 word-wrap: break-word;
+	 height: 1px;
+	 }
+.consumi
+{
+    padding-top: 10px;
+	width: 19.6cm;
+}
+.consumi_no_padding
+{
+	width: 19.6cm;
+}
+.testo2{
+	 color: #000000;
+	 text-align:center;
+	 font-size:10.8px;
+	 }
+.testo3{
+	 color: #000000;
+	 text-align:right;
+	 font-size:14px;
+	 margin-right:3px;
+	 white-space: nowrap;
+	 }
+.testo3b{
+	 color: #000000;
+	 text-align:right;
+	 font-size:14px;
+	 white-space: nowrap;
+	 }
+.testo4{
+	 color: #000000;
+	 text-align:left;
+	 font-size:14px;
+	 width: 100%;
+	 }
+.testo4totale{
+	 font-size:14px !important;
+ }
+.testo3sintesi{
+    color: #000000;
+    text-align:right;
+    font-size:12px;
+    margin-right:3px;
+    white-space: nowrap;
+}
+.testo4sintesi{
+    color: #000000;
+    text-align:left;
+    font-size:12px;
+    width: 100%;
+}
+.testo5{
+	 color: #000000;
+	 text-align:left;
+	 font-size:14px;
+	 line-height:2;
+	 }
+.testo5b{
+	 color: #000000;
+	 text-align:left;
+	 font-size:12px;
+	 line-height:1;
+	 }
+.dati-azienda-float-right {
+	float:right;
+	 }
+.tab-3{
+	float:left;
+	 }
+.tab-4{
+	float:right;
+	 }
+tr.border_bottom td {
+  border-bottom:1pt solid black;
+}
+.box-round{
+	width: 318px;
+    height: 75px;
+	padding:20px;
+	 }
+	 
+	 
+/*Padding per busta*/
+.informazioni-generali-td
+{
+    padding-top: 17px;
+}
+.box-round-testo{
+	text-transform:uppercase;
+	color:#000000;
+	font-size:13px;
+	line-height:1.4;
+}
+
+/* Stile pagina dettaglio-imposte.html */
+table
+{
+    border-collapse: collapse;
+}
+
+.td-letture{
+	border:1px solid #000000;	
+	 }
+	 
+.testo-dettaglio-imposte1{
+	text-transform:capitalize;
+	color:#000000;
+	font-size:10px;
+	font-weight:bold;
+	text-align:center;	
+	 }
+	 
+.testo-dettaglio-imposte2{
+	color:#000000;
+	font-size:13px;
+	 }
+	 
+.testo-dettaglio-imposte3{
+	color:#000000;
+	font-size:13px;
+	text-align:left;	
+	 }
+	 
+.testo-dettaglio-letture1{
+	color:#000000;
+	font-size:10px;
+	font-weight:bold;
+	text-align:center;	
+	 }
+	 
+.testo-dettaglio-letture2{
+	color:#000000;
+	font-size:11px;
+	text-align:left;	
+	 }
+	 
+.testo-dettaglio-letture3{
+	color:#000000;
+	font-size:11px;
+	text-align:center;	
+	 }
+
+.testo-dettaglio-letture4{
+	color:#000000;
+	font-size:14px;
+	font-weight:bold;
+	text-align:center;	
+	 }
+
+.testo-inizio-fornitura1{
+	color:#000000;
+	font-weight:bold;
+	text-align:left;
+	font-size:16px;		
+	 }
+
+.testo-inizio-fornitura2{
+	color:#000000;
+	text-align:justify;
+	font-size:13px;	
+	 }
+.testo-inizio-fornitura3{
+	color:#000000;
+	text-align:justify;
+	font-size:9px;	
+	 }
+
+.costo-medio{
+	color:#ED1C24;
+	text-align:left;
+	font-size:12px;	
+	font-weight:bold;
+	 }
+.costo-medio span{
+	color:#000000;
+	text-align:left;
+	font-size:12px;	
+	font-weight:bold;
+	 }
+	 
+.costo-medio2{
+	color:#ED1C24;
+	text-align:center;
+	font-size:12px;	
+	font-weight:bold;
+	margin-left:50px;
+	 }
+.costo-medio2 span{
+	color:#000000;
+	text-align:center;
+	font-size:12px;	
+	font-weight:bold;
+	 }
+
+.testo-ricalcoli1{
+	color:#000000;
+	text-align:center;
+	font-size:12px;	
+	font-weight:bold;
+	 }
+.testo-ricalcoli2{
+	color:#000000;
+	text-align:left;
+	font-size:12px;	
+	 }
+.testo-ricalcoli3{
+	color:#000000;
+	text-align:center;
+	font-size:12px;	
+	 }
+	 
+.testo-partite1{
+	color:#000000;
+	text-align:center;
+	font-size:12px;	
+	font-weight:bold;
+	 }
+.testo-partite2{
+	color:#000000;
+	text-align:left;
+	font-size:12px;	
+	 }
+.testo-partite3{
+	color:#000000;
+	text-align:center;
+	font-size:12px;	
+	 }
+.testo-partite4{
+	color:#000000;
+	text-align:justify;
+	font-size:9px;
+	font-style:italic;
+	 }
+.testo-non-pagate1{
+	color:#000000;
+	text-align:center;
+	font-size:12px;	
+	font-weight:bold;
+	 }
+.testo-non-pagate2{
+	color:#000000;
+	text-align:center;
+	font-size:12px;	
+	 }
+.testo-non-pagate3{
+	color:#000000;
+	text-align:center;
+	font-size:12px;
+	font-weight:bold;
+	 }
+.testo-non-pagate4{
+	color:#000000;
+	text-align:justify;
+	font-size:11px;
+	 }
+.testo-non-pagate5{
+	color:#ED1C24;
+	font-size:12px;
+	font-weight:bold;
+	margin-top:10px;
+	 }
+.testo-comunicazioni1{
+	color:#000000;
+	text-align:justify;
+	font-size:9.5px;
+	font-weight:bold;
+	text-decoration:underline;
+	 }
+.testo-comunicazioni2{
+	color:#000000;
+	text-align:justify;
+	font-size:8.5px;
+	white-space:pre-line;
+	 }
+	 	 
+/* Stile pagina gas-naturale-2.html */
+
+.materia1{
+	color:#000000;
+	text-align:center;
+	font-size:12px;	
+	font-weight:bold;
+	 }
+.materia2{
+	color:#000000;
+	text-align:center;
+	font-size:12px;	
+	 }
+.materia3{
+	color:#000000;
+	text-align:left;
+	font-size:12px;	
+	 }
+.contatore1{
+	color:#000000;
+	text-align:center;
+	font-size:12px;	
+	font-weight:bold;
+	 }
+.contatore2{
+	color:#000000;
+	text-align:center;
+	font-size:12px;	
+	 }
+.contatore3{
+	color:#000000;
+	text-align:left;
+	font-size:12px;	
+	 }
+.oneri1{
+	color:#000000;
+	text-align:center;
+	font-size:12px;	
+	font-weight:bold;
+	 }
+.oneri2{
+	color:#000000;
+	text-align:center;
+	font-size:12px;	
+	 }
+.oneri3{
+	color:#000000;
+	text-align:left;
+	font-size:12px;	
+	 }
+.rica-dett1{
+	color:#000000;
+	text-align:center;
+	font-size:12px;	
+	font-weight:bold;
+	 }
+.rica-dett1b{
+	color:#ED1C24;
+	text-align:left;
+	font-size:12px;	
+	font-weight:bold;
+	 }
+.rica-dett2{
+	color:#000000;
+	text-align:center;
+	font-size:12px;	
+	 }
+.rica-dett3{
+	color:#000000;
+	text-align:left;
+	font-size:12px;	
+	 }
+.rica-int1{
+	color:#000000;
+	text-align:center;
+	font-size:12px;	
+	font-weight:bold;
+	 }
+.rica-int1b{
+	color:#ED1C24;
+	text-align:left;
+	font-size:12px;	
+	font-weight:bold;
+	 }
+.rica-int2{
+	color:#000000;
+	text-align:center;
+	font-size:12px;	
+	 }
+.rica-int3{
+	color:#000000;
+	text-align:left;
+	font-size:12px;	
+	 }
+	 
+.bordo-tab-sopra{
+	border-top:1px solid #000000;
+	 }
+.bordo-tab-sotto{
+	border-bottom:1px solid #000000;
+	 }
+.left{
+	border-left:1px solid #000000;
+	 }
+.right{
+	border-right:1px solid #000000;
+	 }
+
+/* Stile pagina energia-elettrica-2.html */
+
+.materia1a{
+	color:#000000;
+	text-align:center;
+	font-size:12px;	
+	font-weight:bold;
+	 }
+.materia2a{
+	color:#000000;
+	text-align:center;
+	font-size:12px;	
+	 }
+.materia3a{
+	color:#000000;
+	text-align:left;
+	font-size:12px;	
+	 }
+.materia3b{
+	color:#000000;
+	text-align:left;
+	font-size:14px;	
+	 }
+	 
+.titolo3{
+	color:#ffffff;
+	font-size:12px;
+	text-transform:uppercase;
+	background-color:#ED1C24;
+	font-weight:bold;
+	border-radius:5px 5px 0 0;
+	padding:2px 7px;
+	text-align:left;
+	 }
+.bordo-titolo{
+	border-bottom:3px solid #ED1C24;
+
+	 }
+
+h3 {
+	margin:0;
+	margin-bottom:-1px;
+	margin-left:-1px;
+	 }
+	 
+	 .tab-3
+	 {
+	     width: 50%;
+	 }
+	 
+	 
+	 
+	 .tabella-dettaglio tr:nth-child(3) td 
+	 {
+	     border-top: 1px solid #000000;
+	 }
+	 
+	  .tabella-dettaglio tr:last-child td 
+	 {
+	     border-bottom: 1px solid #000000;
+	 }
+	 
+	 
+	 
+	 .tabella-dettaglio-imposte tr:nth-child(3) td 
+	 {
+	     border-top: 1px solid #000000;
+	 }
+	 
+	  .tabella-dettaglio-imposte tr:last-child td 
+	 {
+	     border-bottom: 1px solid #000000;
+	 }
+	 
+	 
+	 
+	 
+	 .tabella-interessiapplicati tr:nth-child(3) td 
+	 {
+	     border-top: 1px solid #000000;
+	 }
+	 
+	  .tabella-interessiapplicati tr:last-child td 
+	 {
+	     border-bottom: 1px solid #000000;
+	 }
+	 
+	 
+	 
+	 .tabella-ricalcoli tr:nth-child(3) td 
+	 {
+	     border-top: 1px solid #000000;
+	 }
+	 
+	  .tabella-ricalcoli tr:last-child td 
+	 {
+	     border-bottom: 1px solid #000000;
+	 }
+	 
+	 
+	 
+	 .riga-intestazione-ricalcoli td 
+	 {
+	     border-top: 1px solid #000000;
+	 }
+	 
+	 
+	 
+	 
+	 
+	.ct-bar {
+        
+    stroke-width: 20px;
+    }
+        
+    .ct-label-custom 
+    {
+        font-weight:bold;
+    }
+        
+    .no-wrap-cell
+    {
+        white-space: nowrap;
+    }
+    
+    #consumi-stimati-messaggio
+    {
+        font-size: 12px;
+        font-style:italic;
+    }
+	#lettura-stimata-messaggio
+	{
+		font-size: 12px;
+        font-style:italic;
+	}
+    
+    
+    /*Editato a seguito di revisione layout con Erminio*/
+    .dettaglio-a-sinistra
+    {
+        text-align: left;
+    }
+    
+    .dettaglio-a-destra
+    {
+        text-align: right;
+    }
+    
+    .dettaglio-al-centro
+    {
+        text-align: center;
+    }
+    
+    
+    .dettaglio-periodo
+    {
+        width: 140px;
+        max-width: 140px;
+        min-width: 140px;
+    }
+    
+    .dettaglio-descrizione
+    {
+        width: 200px;
+        max-width: 200px;
+        min-width: 200px;
+    }
+    
+    .dettaglio-scaglione
+    {
+        width: 90px;
+        max-width: 90px;
+        min-width: 90px;
+    }
+    
+    
+    
+    .cella-morosita-testo
+    {
+        max-width: 356px;
+        height: 20px;
+    }
+    
+    
+    .morosita-testo-font
+    {
+        font-size: 11px;
+    }
+    
+    .dato-informazioni-ausiliari
+    {
+        font-size: 14px;
+    } 
+    .dato-informazioni-ausiliari2
+    {
+        font-size: 12px;
+    } 
+    
+    
+    /*Dettaglio imposte seconda pagina*/
+    .dettaglioimposte-periodo
+    {
+        white-space: nowrap;
+    }
+    
+        
+    .dettaglioimposte-scaglione
+    {
+        width: 90px;
+        max-width: 90px;
+        min-width: 90px;
+    }
+    
+    
+    
+    .dettaglioimposte-descrizione
+    {
+        width: 200px;
+        max-width: 200px;
+        min-width: 200px;
+    }
+    
+    /*Dettaglio imposte seconda pagina*/
+    
+    
+    .tabella-indirizzo-spedizione
+    {
+        margin-top: 70px;
+    }
+    
+    .tabella-bollette-non-pagate
+    {
+        width: 48%;
+    }
+	
+	
+	.chart-not-exists
+	{
+		text-align: center;
+		width: auto; 
+		height: 50px; 
+		padding-top: 10px;
+	}
+
+/* Prescrizione biennale*/	
+
+	#prescrizione-biennale-modulo
+	{
+		page-break-before: always;
+	}
+	
+	.prescrizione-biennale-frase
+	{
+		color:#000000;
+		text-align:left;
+		font-size:14px;
+	}
+	.prescrizione-biennale-frase-td
+	{
+		padding-top: 0.54cm;
+		padding-bottom: 0.28cm;
+	}
+	.prescrizione-biennale-frase-b
+	{
+		color:#000000;
+		text-align:left;
+		font-size:14px;
+		font-weight:bold;
+	}
+	
+	.prescrizione-biennale-frase-j
+	{
+		color:#000000;
+		text-align:justify;
+		font-size:14px;
+	}
+	
+	.prescrizione-biennale-recapiti
+	{
+		color:#000000;
+		text-align:right;
+		font-size:14px;
+	}
+	
+	.prescrizione-biennale-modulo
+	{
+		color:#000000;
+		text-align:left;
+		font-size:14px;
+	}
+	.prescrizione-biennale-testo-td
+	{
+		padding-top: 0.54cm;
+		padding-bottom: 0.28cm;
+	}
+	.prescrizione-biennale-testo-cent-bold
+	{
+		color:#000000;
+		text-align:center;
+		font-weight:bold;
+		font-size:14px;
+	}
+	.prescrizione-biennale-testo-left
+	{
+		color:#000000;
+		text-align:left;
+		font-size:14px;
+	}
+	.prescrizione-biennale-testo-left-bold
+	{
+		color:#000000;
+		text-align:left;
+		font-weight:bold;
+		font-size:14px;
+	}
+	.prescrizione-biennale-testo-just-bold
+	{
+		color:#000000;
+		text-align:justify;
+		font-weight:bold;
+		font-size:14px;
+	}
+	.testo-pres-bie{
+	 color: #000000;
+	 text-align:justify;
+	 font-size:14px;
+	 width: 100%;
+	 line-height:1.5;
+}
+	.div-l
+	{
+		float:left;	
+		line-height:1.5;
+	}
+
+	.div-r
+	{
+		float:right;
+		line-height:1.5;
+	}		
