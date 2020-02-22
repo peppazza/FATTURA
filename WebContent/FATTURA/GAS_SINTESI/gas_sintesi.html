@@ -162,10 +162,13 @@
 				<!-- QR code + Identificativo cliente  -->
 				<div class="pure-g qr-code-plus-identificativo-cliente">
 					<div class="pure-u-1-2 qr-code">
-						<div class="qr-code"><img src="images/qr-code.png" alt="qr-code"/></div>
+						<div class="qr-code">
+							<!--<img src="images/qr-code.png" alt="qr-code"/>-->
+							<span data-data_type="single" data-first_node="SpedizioneDataMatrix" data-path_type="xpath" data-path_data=""></span>
+						</div>
 					</div>
 					<div class="pure-u-1-2 identificativo-cliente">
-						??
+						<span data-data_type="single" data-first_node="SpedizioneDataMatrixCodice" data-path_type="xpath" data-path_data=""></span>
 					</div>
 				</div>
 				<!-- Spedizione + Tipologia bolletta -->
@@ -632,57 +635,6 @@
 				<div class="pure-u-15-24">
 					<div class="legenda-grafico-plus-tabella-dati" style="padding: 0 5px;">
 						<div class="tabella-dati">
-							<!-- <table id="tabellaQuadroLettureEConsumi">
-								<tbody>
-									<tr>
-										<td class="c1 header no-border"></td>
-										<td class="c2 header no-border"></td>
-										<td class="c3 header" colspan="2">Lettura Precedente</td>
-										<td class="c4 header" colspan="2">Lettura Attuale</td>
-										<td class="c5 header last">Consumi Fatturati [Smc]</td>
-										<td></td>
-									</tr>
-									<tr>
-										<td>Mese/anno</td>
-										<td>Tipo Dato</td>
-										
-										<td>Data</td>
-										<td>Smc</td>
-										
-										<td>Data</td>
-										<td>Smc</td>
-										
-										<td>Smc</td>
-										<td class="last">Smc</td>
-									</tr>
-									<tr>
-										<td><span id="tabellaLettureConsumi_annoMese_1">giu-19 ??</span></td>
-										<td><span>Distributore ??</span></td>
-										
-										<td><span>31/05/2019 ??</span></td>
-										<td><span>3 ??</span></td>
-										
-										<td><span>30/06/2019 ??</span></td>
-										<td><span>3 ??</span></td>
-										
-										<td><span>48 ??</span></td>
-										<td class="last"><span>178 ??</span></td>
-									</tr>
-									<tr>
-										<td><span id="tabellaLettureConsumi_annoMese_2">Lug-19 ??</span></td>
-										<td><span>Stima ??</span></td>
-										
-										<td><span>31/06/2019 ??</span></td>
-										<td><span>3 ??</span></td>
-										
-										<td><span>30/07/2019 ??</span></td>
-										<td><span>3 ??</span></td>
-										
-										<td><span>48 ??</span></td>
-										<td class="last"><span>178 ??</span></td>
-									</tr>
-								</tbody>
-							</table> -->
 							<table id="tabellaQuadroLettureEConsumi">
 						      	<tbody>
 								    <tr>
@@ -1091,7 +1043,7 @@
 						<div class="pure-g dati">
 							<!-- CONGUAGLI -->
 							<div class="pure-u-24-24">
-								<div id="messaggioNessunConguaglioConsumiStimati" class="messaggio">Nessun conguaglio consumi stimati</div>
+								<div id="messaggioNessunConguaglioConsumiStimati" class="messaggio-nessun-dato-trovato">Nessun conguaglio consumi stimati</div>
 								<table id="tabellaConguaglioConsumiStimati" style="width: 100%;">
 									<tbody>
 										<tr>
@@ -1140,7 +1092,7 @@
 							</script>
 							<!-- RETTIFICHE -->
 							<div class="pure-u-24-24">
-								<div id="messaggioNessunaRettificaLetture" class="messaggio">Nessun conguaglio consumi stimati</div>
+								<div id="messaggioNessunaRettificaLetture" class="messaggio-nessun-dato-trovato">Nessun conguaglio consumi stimati</div>
 								<table id="tabellaRettificheLetture" style="width: 100%; margin-top: 2px;">
 									<tbody>
 										<tr>
@@ -1194,7 +1146,7 @@
 							<!--  -->
 							<!-- CONGUAGLI TARIFFARI -->
 							<div class="pure-u-24-24">
-								<div id="messaggioNessunConguaglioTariffario">Nessun conguaglio tariffario</div>
+								<div id="messaggioNessunConguaglioTariffario" class="messaggio-nessun-dato-trovato">Nessun conguaglio tariffario</div>
 								<table id="tabellaConguaglioTariffario" style="width: 100%; margin-top: 2px;">
 									<tbody>
 										<tr>
@@ -1457,7 +1409,7 @@
 						<div>Gentile cliente, può accedere alla sua area personale online per la gestione della sua fornitura tramite il sito www.omniaenergia.it nella sezione Area Clienti digitando username e password riportati di seguito:</div> 
 						<div class="pure-g">
 							<div class="pure-u-6-24">Username: <span>CLI9353 ??</span></div>
-							<div class="pure-u-18-24">Password: <span>gi******</span></div>
+							<div class="pure-u-18-24">Password: <span>gi****** ??</span></div>
 						</div>
 					</div>
 					<div class="titolo"><strong>Pagamenti sospesi e rateizzazioni</strong></div>
