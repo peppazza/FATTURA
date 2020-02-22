@@ -177,7 +177,7 @@
 				</div>
 				<!-- Spedizione + Tipologia bolletta -->
 				<div class="pure-g spedizione-plus-tipo-bolletta">
-					<div class="pure-u-11-24 ">
+					<div class="pure-u-12-24 ">
 						<div class="spedizione">
 							<div data-data_type="single" data-first_node="SpedizionePresso" data-path_type="xpath" data-path_data=""></div>							
 			                <div data-data_type="single" data-first_node="SpedizioneIndirizzo" data-path_type="xpath" data-path_data=""></div>
@@ -188,7 +188,7 @@
 			                </div>
             			</div>
 					</div>
-					<div class="pure-u-13-24 codice-cliente">
+					<div class="pure-u-12-24 codice-cliente">
 						<div class="tipo-bolletta">
 							<div class="tipo">Bolletta Energia Elettrica</div>
 							<!-- potrebbe essere il tag caratteristicaCommercialeFornitura -->
@@ -222,10 +222,26 @@
 				</div>
 				<div class="separatore"></div>
 				<div class="etichetta">CODICE FISCALE</div>
-				<div class="valore">
-					<span id="cf" data-data_type="single" data-first_node="ClienteFinaleCodiceFiscale" data-path_type="xpath" data-path_data=""></span>
-					<span id="piva" data-data_type="single" data-first_node="ClienteFinalePartitaIva" data-path_type="xpath" data-path_data=""></span>
+				<div class="dati-cf-iva">
+					<span id="codiceFiscale" style="display: none;" data-data_type="single" data-first_node="ClienteFinaleCodiceFiscale" data-path_type="xpath" data-path_data=""></span>
+					<span id="piva" style="display: none;" data-data_type="single" data-first_node="ClienteFinalePartitaIva" data-path_type="xpath" data-path_data=""></span>
 				</div>
+				<div class="valore">
+					<span id="codiceFiscaleOrPartitaIvaContainer"></span>
+				</div>
+				<script type="text/javascript">
+					(function() {
+						var codiceFiscaleOrPartitaIvaContainer = document.getElementById('codiceFiscaleOrPartitaIvaContainer');
+						var cf = document.getElementById('codiceFiscale').innerHTML;
+						if (cf) {
+							codiceFiscaleOrPartitaIvaContainer.innerHTML = cf;
+						} else {
+							var piva = document.getElementById('piva').innerHTML;
+							if (piva)
+								codiceFiscaleOrPartitaIvaContainer.innerHTML = piva;
+						}
+					})();
+				</script>
 			</div>
 		</div>
 		<!-- BOLLETTA -->
@@ -295,7 +311,6 @@
 			</div>
 		</div>
 	</div>
-	
 	<script type="text/javascript">
 		try {
 	    	(function () {
@@ -480,12 +495,12 @@
 		// *** GRAFICO A TORTA
         try {
         	(function () {
-        		var spesaMateriaEnergia = null;
-    			var spesaTrasporto = null;
-    			var spesaOneri = null;
-    			var altrePartite = null;
-    			var imposte = null;    			
-    			var canone = null;
+        		var spesaMateriaEnergia = 0;
+    			var spesaTrasporto = 0;
+    			var spesaOneri = 0;
+    			var altrePartite = 0;
+    			var imposte = 0;    			
+    			var canone = 0;
     			
         		var elems = document.getElementsByClassName('sintesiImporti_riga');
         		// per ogni riga della sintesi importi
@@ -549,7 +564,9 @@
         			}, {
         				donut : true,
         				donutWidth: 36,
-        				showLabel : false
+        				showLabel : false,
+        				width: '210px',
+       				  	height: '150px'
         			});
     		})();
         } catch(err) {
@@ -750,7 +767,7 @@
 			</div>
 			<div class="pure-g">
 				<div class="pure-u-9-24 grafico">
-					<div class="contenuto" style="width: 270px; height: 120px;">
+					<div class="contenuto" style="width: 270px; height: 110px;">
 						<canvas id="graficoQuadroLettureEConsumi"></canvas>
 					</div>
 				</div>
@@ -930,7 +947,7 @@
                 				var chartInstance = this.chart,
                   				ctx = chartInstance.ctx;
 				                // ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
-				                ctx.font = Chart.helpers.fontString(10, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+				                ctx.font = Chart.helpers.fontString(9, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
 				                ctx.textAlign = 'center';
 				                ctx.textBaseline = 'bottom';
  								
@@ -938,7 +955,7 @@
                   					var meta = chartInstance.controller.getDatasetMeta(i);
                   					meta.data.forEach(function(bar, index) {
 	                    				var data = Number(dataset.data[index]).toFixed(2).toLocaleString('it');
-	                    				ctx.fillText(data, bar._model.x, bar._model.y + 2);
+	                    				ctx.fillText(data, bar._model.x, bar._model.y + 6);
                   					});
                 				});
               				}
@@ -1090,7 +1107,29 @@
 						          fontSize: 8
 						        }
 							} ]
-						}
+						},
+						hover: {
+              				animationDuration: 0
+            			},
+             			animation: {
+                			duration: 1,
+              				onComplete: function() {
+                				var chartInstance = this.chart,
+                  				ctx = chartInstance.ctx;
+				                // ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+				                ctx.font = Chart.helpers.fontString(9, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+				                ctx.textAlign = 'center';
+				                ctx.textBaseline = 'bottom';
+ 								
+                				this.data.datasets.forEach(function(dataset, i) {
+                  					var meta = chartInstance.controller.getDatasetMeta(i);
+                  					meta.data.forEach(function(bar, index) {
+	                    				var data = Number(dataset.data[index]).toFixed(2).toLocaleString('it');
+	                    				ctx.fillText(data, bar._model.x, bar._model.y + 6);
+                  					});
+                				});
+              				}
+            			},
 					}
 				});
 			})();

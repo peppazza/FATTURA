@@ -129,7 +129,7 @@
 						
 						<div class="etichetta">Codice REMI</div>
 						<div class="valore">
-							??						
+							<span data-data_type="single" data-first_node="FornituraCodicePDC" data-path_type="xpath" data-path_data=""></span>
 						</div>
 					</div>
 					<div class="pure-u-10-24">
@@ -173,7 +173,7 @@
 				</div>
 				<!-- Spedizione + Tipologia bolletta -->
 				<div class="pure-g spedizione-plus-tipo-bolletta">
-					<div class="pure-u-11-24 ">
+					<div class="pure-u-12-24 ">
 						<div class="spedizione">
 							<div data-data_type="single" data-first_node="SpedizionePresso" data-path_type="xpath" data-path_data=""></div>							
 			                <div data-data_type="single" data-first_node="SpedizioneIndirizzo" data-path_type="xpath" data-path_data=""></div>
@@ -184,9 +184,9 @@
 			                </div>
             			</div>
 					</div>
-					<div class="pure-u-13-24 codice-cliente">
+					<div class="pure-u-12-24 codice-cliente">
 						<div class="tipo-bolletta">
-							<div class="tipo">Bolletta Energia Elettrica</div>
+							<div class="tipo">Bolletta Gas</div>
 							<div class="tipo-mercato" data-data_type="single" data-first_node="TipoMercato" data-path_type="xpath" data-path_data=""></div>
 							<div class="fiamma">
 								<img src="images/fiamma.png" alt="fiamma"/>
@@ -217,10 +217,26 @@
 				</div>
 				<div class="separatore"></div>
 				<div class="etichetta">CODICE FISCALE</div>
-				<div class="valore">
-					<span id="cf" data-data_type="single" data-first_node="ClienteFinaleCodiceFiscale" data-path_type="xpath" data-path_data=""></span>
-					<span id="piva" data-data_type="single" data-first_node="ClienteFinalePartitaIva" data-path_type="xpath" data-path_data=""></span>
+				<div class="dati-cf-iva">
+					<span id="codiceFiscale" style="display: none;" data-data_type="single" data-first_node="ClienteFinaleCodiceFiscale" data-path_type="xpath" data-path_data=""></span>
+					<span id="piva" style="display: none;" data-data_type="single" data-first_node="ClienteFinalePartitaIva" data-path_type="xpath" data-path_data=""></span>
 				</div>
+				<div class="valore">
+					<span id="codiceFiscaleOrPartitaIvaContainer"></span>
+				</div>
+				<script type="text/javascript">
+					(function() {
+						var codiceFiscaleOrPartitaIvaContainer = document.getElementById('codiceFiscaleOrPartitaIvaContainer');
+						var cf = document.getElementById('codiceFiscale').innerHTML;
+						if (cf) {
+							codiceFiscaleOrPartitaIvaContainer.innerHTML = cf;
+						} else {
+							var piva = document.getElementById('piva').innerHTML;
+							if (piva)
+								codiceFiscaleOrPartitaIvaContainer.innerHTML = piva;
+						}
+					})();
+				</script>
 			</div>
 		</div>
 		<!-- BOLLETTA -->
@@ -274,7 +290,7 @@
 				<div class="valore">
 					<!-- init in JS -->
 					<!-- fat := fattura, ndc := nota di credito, ndd := nota di debito -->
-					<span class="tipo-documento" style="display: hidden;" data-data_type="single" data-first_node="TipoDocumento" data-path_type="xpath" data-path_data=""></span>
+					<span class="tipo-documento" style="display: none;" data-data_type="single" data-first_node="TipoDocumento" data-path_type="xpath" data-path_data=""></span>
 					<span id="tipoDocumento"></span>
 				</div>
 			</div>
@@ -289,13 +305,34 @@
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+		try {
+	    	(function () {
+	    		var tipoDocumento = '';
+	    		
+	    		var tipoDocumentoAbbr = document.getElementsByClassName('tipo-documento')[0].innerHTML;
+	    		if (tipoDocumentoAbbr) {
+	    			if (tipoDocumentoAbbr === 'fat')
+	    				tipoDocumento = 'Fattura';
+	    			else if (tipoDocumentoAbbr === 'ndc')
+	    				tipoDocumento = 'Nota di credito';
+	    			else if (tipoDocumentoAbbr === 'ndd')
+	    				tipoDocumento = 'Nota di debito';
+	    		}
+				            	
+				document.getElementById('tipoDocumento').innerHTML = tipoDocumento;			
+			})();
+	    } catch(err) {
+	    	console.log('errore init TIPO DOCUMENTO', err);
+	    }
+	</script>
 	<!-- ========== end - CLIENTE/PERIODO/IMPORTO -->
 
 	
 	<!-- SINTESI IMPORTI - start ========== 
 		 ================================== -->
 	<!-- ****** dati nascosti ****** -->
-	<!-- 
+	 
 	<div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
     	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Spesa per la materia gas naturale</div>
         <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">1000,3434</div>
@@ -303,31 +340,31 @@
     </div>
     <div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
     	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Spesa per trasporto e gestione contatore</div>
-        <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">89,3434</div>
+        <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">1000,3434</div>
         <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
     </div>
     <div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
     	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Spesa per oneri di sistema</div>
-        <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">89,3434</div>
+        <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">1000,3434</div>
         <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
     </div>
     <div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
     	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Altre partite ed oneri</div>
-        <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">189,3434</div>
+        <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">1000,3434</div>
         <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
     </div>
     <div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
     	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Imposte</div>
-        <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">189,3434</div>
+        <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">1000,3434</div>
         <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
     </div>
-     -->
-	<div class="sintesiImporti_riga" style="border-bottom: 1px solid #ccc;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
+    <!-- 
+	<div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
     	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></div>
         <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></div>
         <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva"></div>
     </div>
-     
+     --> 
 	<div id="sintesiImporti" class="pure-g">
 		<div class="pure-u-17-24 grafico">
 			<div class="contenuto">
@@ -403,11 +440,11 @@
 	<script type="text/javascript">
         try {
         	(function () {
-        		var spesaMateriaGasNaturale = 1;
-    			var spesaTrasporto = 1;
-    			var spesaOneri = 1;
-    			var altrePartite = 1;
-    			var imposte = 1;
+        		var spesaMateriaGasNaturale = 0;
+    			var spesaTrasporto = 0;
+    			var spesaOneri = 0;
+    			var altrePartite = 0;
+    			var imposte = 0;
     			
         		var elems = document.getElementsByClassName('sintesiImporti_riga');
         		// per ogni riga della sintesi importi
@@ -458,12 +495,14 @@
         			  }, {
           			    value: altrePartite, name: 'Altre partite', className: 'altrePartite', meta: 'Meta - Altre partite'
           			  }, {
-          			    value: altrePartite, name: 'Imposte', className: 'imposte', meta: 'Meta - Imposte'
+          			    value: imposte, name: 'Imposte', className: 'imposte', meta: 'Meta - Imposte'
           			  }]
         			}, {
         				donut : true,
         				donutWidth: 36,
-        				showLabel : false
+        				showLabel : false,
+        				width: '210px',
+       				  	height: '150px'
         			});
     		})();
         } catch(err) {
@@ -488,11 +527,11 @@
 					</div>
 					<div class="contatto">
 						<div class="etichetta">Numero Verde</div>
-						<div class="valore">800 98 44 55</div>
+						<div class="valore">??</div>
 					</div>
 					<div class="contatto">
 						<div class="etichetta">Sede</div>
-						<div class="valore">Via Beato F. Marino, 102 Z.I. - Zumpano</div>
+						<div class="valore">??</div>
 					</div>
 					<div class="contatto">
 						<div class="etichetta">Punto Vendita</div>
@@ -588,7 +627,8 @@
 	<!-- QUADRO LETTURE E CONSUMI 1 - start ==========
 	     ============================================= -->
 	<!-- ****** dati nascosti ****** -->
-	<!-- <div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumiMesiPrecedenti" data-path_type="xpath" data-path_data="ConsumoMese">
+	<!-- 
+	<div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumiMesiPrecedenti" data-path_type="xpath" data-path_data="ConsumoMese">
 		<span class="x_consumi_sequenzamese" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">1</span>
         <span class="x_consumi_anno" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2019</span>
         <span class="x_consumi_mese" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">01</span>
@@ -611,14 +651,14 @@
         <span class="x_consumi_anno" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2019</span>
         <span class="x_consumi_mese" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">04</span>
         <span class="x_consumi_consumo" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Consumo">22</span>
-    </div> -->
+    </div>
+     -->
 	<div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumiMesiPrecedenti" data-path_type="xpath" data-path_data="ConsumoMese">
 		<span class="x_consumi_sequenzamese" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese"></span>
         <span class="x_consumi_anno" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno"></span>
         <span class="x_consumi_mese" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese"></span>
         <span class="x_consumi_consumo" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Consumo"></span>
     </div>
-    
 	<div id="quadroLettureEConsumi">
 		<div>
 			<div class="titolo">
@@ -627,14 +667,14 @@
 			<div class="pure-g">
 				<div class="pure-u-9-24 grafico">
 					<div class="contenuto">
-						<div class="chart-container" style="width: 270px; height: 120px;">
+						<div class="chart-container" style="width: 270px; height: 110px;">
 							<canvas id="graficoQuadroLettureEConsumi"></canvas>
 						</div>
 					</div>
 				</div>
 				<div class="pure-u-15-24">
 					<div class="legenda-grafico-plus-tabella-dati" style="padding: 0 5px;">
-						<div class="tabella-dati">
+						<div class="tabella-dati" style="margin-bottom: 4px;">
 							<table id="tabellaQuadroLettureEConsumi">
 						      	<tbody>
 								    <tr>
@@ -748,7 +788,7 @@
                 				var chartInstance = this.chart,
                   				ctx = chartInstance.ctx;
 				                // ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
-				                ctx.font = Chart.helpers.fontString(10, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+				                ctx.font = Chart.helpers.fontString(9, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
 				                ctx.textAlign = 'center';
 				                ctx.textBaseline = 'bottom';
  								
@@ -756,7 +796,7 @@
                   					var meta = chartInstance.controller.getDatasetMeta(i);
                   					meta.data.forEach(function(bar, index) {
 	                    				var data = Number(dataset.data[index]).toFixed(2).toLocaleString('it');
-	                    				ctx.fillText(data, bar._model.x, bar._model.y + 2);
+	                    				ctx.fillText(data, bar._model.x, bar._model.y + 6);
                   					});
                 				});
               				}
@@ -775,33 +815,6 @@
 						}
 				    }
 				});
-				
-// 				var larghezzaBarra = 24;
-// 				new Chartist.Bar('#graficoQuadroLettureEConsumi', {
-// 					labels : labels,
-// 					series : [{
-// 							name : 'consumo',
-// 							className : 'consumo',
-// 							data : datiConsumo
-// 						}]
-// 					}, {
-// 						stackBars : true,
-// 					    showGrid: true,
-// 					    axisX: {
-// 							labelInterpolationFnc: function(value) {
-// 						    	return value;
-// 						    }
-// 						},
-// 						chartPadding: {
-// 							bottom: 15 // consente di mostrare le labels dell'asse X qualora la loro altezza superasse i 20px (valore di default?)
-// 					  	},
-// 					}).on('draw', function(data) {
-// 						if (data.type === 'bar') {
-// 							data.element.attr({
-// 								style : 'stroke-width: ' + larghezzaBarra + 'px'
-// 							});
-// 						}
-// 					});
 			})();
 		} catch (err) {
 			console.log('errore init grafico quadro letture e consumi', err);
@@ -891,7 +904,29 @@
 						          fontSize: 8
 						        }
 							} ]
-						}
+						},
+						hover: {
+              				animationDuration: 0
+            			},
+             			animation: {
+                			duration: 1,
+              				onComplete: function() {
+                				var chartInstance = this.chart,
+                  				ctx = chartInstance.ctx;
+				                // ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+				                ctx.font = Chart.helpers.fontString(9, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+				                ctx.textAlign = 'center';
+				                ctx.textBaseline = 'bottom';
+ 								
+                				this.data.datasets.forEach(function(dataset, i) {
+                  					var meta = chartInstance.controller.getDatasetMeta(i);
+                  					meta.data.forEach(function(bar, index) {
+	                    				var data = Number(dataset.data[index]).toFixed(2).toLocaleString('it');
+	                    				ctx.fillText(data, bar._model.x, bar._model.y + 6);
+                  					});
+                				});
+              				}
+            			},
 				    }
 				});
 				
