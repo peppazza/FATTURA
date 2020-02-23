@@ -501,7 +501,7 @@
         			});
     		})();
         } catch(err) {
-        	console.log('errore init sintesi importi', err);
+        	console.log('errore init SINTESI IMPORTI', err);
         }
 	</script>
 	<!-- ========== end - SINTESI IMPORTI -->
@@ -689,26 +689,16 @@
 								        <td class="header"><span>Tipo consumo</span></td>
 								        <td class="header last"><span>Consumo fatturato (Smc)</span></td>
 								    </tr>
-								   	<tr data-data_type="simple_loop" data-first_node="ConsumiBolletta" data-path_type="xpath" data-path_data="/ConsumoELetture/DettagliConsumo/Consumo">
-								    	<td>
-								    		<span class="sezione-tipo-lettura testo-dettaglio-letture2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TipoLettura">Stimata</span>
-								    	</td>
-								    	<td>
-							    			<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataLetturaPrecedente">11/05/2015</span>
-							    		</td>
-							    		<td>
-							    			<span style="float: right" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/LetturaMcPrecedente">120023</span>
-								    	</td>
-								        <td>
-							        		<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataOPeriodo">15/06/2015</span>
-							        	</td>
-							        	<td>
-							        		<span style="float: right" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Lettura">121023</span>
-								        </td>
-								        <td><span class="testo-dettaglio-letture3 dettaglio-a-destra"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoMc">1000</span></span></td>
-								        <td><span class="testo-dettaglio-letture3"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/CoefficienteCorrettivo">1,03214</span></span></td>
-								        <td><span class="testo-dettaglio-letture3 dettaglio-a-sinistra"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TipoConsumo">Reale</span></span></td>
-								        <td class="last"><span class="testo-dettaglio-letture3 dettaglio-a-destra"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoSmc">1023</span></span></td>
+								   	<tr class="_data_ConsumoELetture" data-data_type="simple_loop" data-first_node="ConsumiBolletta" data-path_type="xpath" data-path_data="/ConsumoELetture/DettagliConsumo/Consumo">
+							    		<td><span class="_data_TipoLettura" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TipoLettura">Stimata</span></td>
+						    			<td><span class="_data_DataLetturaPrecedente" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataLetturaPrecedente">11/05/2015</span></td>
+						    			<td><span class="_data_LetturaMcPrecedente" style="float: right" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/LetturaMcPrecedente">120,023</span></td>
+						        		<td><span class="_data_DataOPeriodo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataOPeriodo">15/06/2015</span></td>
+						        		<td><span class="_data_Lettura" style="float: right" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Lettura">121,023</span></td>
+								        <td><span class="_data_ConsumoMc" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoMc">1000</span></td>
+								        <td><span class="_data_CoefficienteCorrettivo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/CoefficienteCorrettivo">1,03214</span></td>
+								        <td><span class="_data_TipoConsumo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TipoConsumo">Reale</span></td>
+								        <td class="last"><span class="_data_ConsumoSmc" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoSmc">1023</span></td>
 								    </tr>
 								    <tr>
 								    	<td colspan="6"><span>Totale Consumo Fatturato (Smc)</span></td>
@@ -725,95 +715,198 @@
 	
 	<!-- ****** js - grafico e valori calcolati ****** -->
 	<script type="text/javascript">
-		// *** GRAFICO A BARRE ULTIMI <<2>> MESI
+		// TODO *****************************************************
 		try {
 			(function() {
-				var anni = [];
-				var mesi = [];
-				var datiConsumo = [];
-				// anni utimi 2
-				var anniELEMS = document.getElementsByClassName('x_consumi_anno');
-				var N = anniELEMS.length;
-				if (N > 1)
-					anni.push(anniELEMS[N - 2].innerHTML);
-				anni.push(anniELEMS[N - 1].innerHTML);
-				// mesi utimi 2
-				var mesiELEMS = document.getElementsByClassName('x_consumi_mese');
-				N = mesiELEMS.length;
-				if (N > 1)
-					mesi.push(mesiELEMS[N - 2].innerHTML);
-				mesi.push(mesiELEMS[N - 1].innerHTML);
-				// consumi
-				var consumiELEMS = document.getElementsByClassName('x_consumi_consumo');
-				N = consumiELEMS.length;
-				if (N > 1)
-					datiConsumo.push(checkNumber(consumiELEMS[N - 2].innerHTML));
-				datiConsumo.push(checkNumber(consumiELEMS[N - 1].innerHTML));
-				// labels
+				console.log('@@@');
+				var lettureTIPI = [];
+				var lettureDATE = [];
+				var letture = [];
 				var labels = [];
-				for (var i = 0; i < anni.length; i++) {
-					labels.push(mesi[i] + '-' + anni[i])
+				
+				// tipi letture
+				var elements = document.getElementsByClassName('_data_TipoLettura');
+				var counter = 0;
+				for (var j = elements.length - 1; j > -1; j--) {
+					lettureTIPI.push(elements[j].innerHTML);
+					counter++;
+					if (counter > 1)
+						break;
 				}
+				// date
+				elements = document.getElementsByClassName('_data_DataOPeriodo');
+				counter = 0;
+				for (var j = elements.length - 1; j > -1; j--) {
+					lettureDATE.push(elements[j].innerHTML);
+					counter++;
+					if (counter > 1)
+						break;
+				}
+				// letture
+				elements = document.getElementsByClassName('_data_ConsumoMc');
+				counter = 0;
+				for (var j = elements.length - 1; j > -1; j--) {
+					letture.push(checkNumber(elements[j].innerHTML));
+					counter++;
+					if (counter > 1)
+						break;
+				}
+				// labels for x-axis	
+				for (var i = 0; i < lettureDATE.length; i++)
+					labels.push(lettureDATE[i] + "\n" + lettureTIPI[i]);
+				console.log(letture)
 				
 				var ctx = document.getElementById('graficoQuadroLettureEConsumi').getContext('2d');
 				var chart = new Chart(ctx, {
 				    type: 'bar',
 				    data: {
-				        labels: labels,
-				        datasets: [{
-				            label: false,
-				            backgroundColor: '#5b9bd5',
-				            borderColor: '#5b9bd5',
-				            barThickness: 36,
-				            data: datiConsumo
-				        }]
-				    },
-				    options: {
-				    	legend: {
-				    		display: false
-				    	},
-				    	responsive: true,
-				    	maintainAspectRatio : false,
-				    	hover: {
-              				animationDuration: 0
-            			},
-             			animation: {
-                			duration: 1,
-              				onComplete: function() {
-                				var chartInstance = this.chart,
-                  				ctx = chartInstance.ctx;
+				     	labels: labels,
+				       	datasets : [ {
+							label : '',
+							data : letture,
+							backgroundColor : '#5b9bd5' // blu
+						} ]
+					},
+					options : {
+						legend : {
+							display : false
+						},
+						responsive: true,
+						maintainAspectRatio : false,
+						hover: {
+	          				animationDuration: 0
+	        			},
+	         			animation: {
+	            			duration: 1,
+	          				onComplete: function() {
+	            				var chartInstance = this.chart,
+	              				ctx = chartInstance.ctx;
 				                // ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
 				                ctx.font = Chart.helpers.fontString(9, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
 				                ctx.textAlign = 'center';
 				                ctx.textBaseline = 'bottom';
- 								
-                				this.data.datasets.forEach(function(dataset, i) {
-                  					var meta = chartInstance.controller.getDatasetMeta(i);
-                  					meta.data.forEach(function(bar, index) {
+									
+	            				this.data.datasets.forEach(function(dataset, i) {
+	              					var meta = chartInstance.controller.getDatasetMeta(i);
+	              					meta.data.forEach(function(bar, index) {
 	                    				var data = Number(dataset.data[index]).toFixed(2).toLocaleString('it');
 	                    				ctx.fillText(data, bar._model.x, bar._model.y + 6);
-                  					});
-                				});
-              				}
-            			},
+	              					});
+	            				});
+	          				}
+	        			},
 						scales : {
 							xAxes : [ {
+								stacked : true,
 								ticks: {
 						          fontSize: 8
 						        }
 							} ],
 							yAxes : [ {
+								stacked : true,
 								ticks: {
 						          fontSize: 8
 						        }
 							} ]
 						}
-				    }
+					}
 				});
+				console.log('@@@');
 			})();
 		} catch (err) {
-			console.log('errore init grafico quadro letture e consumi', err);
+			console.log('errore init grafico QUADRO LETTURE E CONSUMI v2', err);
 		}
+		// TODO *****************************************************
+		
+		// *** GRAFICO A BARRE ULTIMI <<2>> MESI
+// 		try {
+// 			(function() {
+// 				var anni = [];
+// 				var mesi = [];
+// 				var datiConsumo = [];
+// 				// anni utimi 2
+// 				var anniELEMS = document.getElementsByClassName('x_consumi_anno');
+// 				var N = anniELEMS.length;
+// 				if (N > 1)
+// 					anni.push(anniELEMS[N - 2].innerHTML);
+// 				anni.push(anniELEMS[N - 1].innerHTML);
+// 				// mesi utimi 2
+// 				var mesiELEMS = document.getElementsByClassName('x_consumi_mese');
+// 				N = mesiELEMS.length;
+// 				if (N > 1)
+// 					mesi.push(mesiELEMS[N - 2].innerHTML);
+// 				mesi.push(mesiELEMS[N - 1].innerHTML);
+// 				// consumi
+// 				var consumiELEMS = document.getElementsByClassName('x_consumi_consumo');
+// 				N = consumiELEMS.length;
+// 				if (N > 1)
+// 					datiConsumo.push(checkNumber(consumiELEMS[N - 2].innerHTML));
+// 				datiConsumo.push(checkNumber(consumiELEMS[N - 1].innerHTML));
+// 				// labels
+// 				var labels = [];
+// 				for (var i = 0; i < anni.length; i++) {
+// 					labels.push(mesi[i] + '-' + anni[i])
+// 				}
+				
+// 				var ctx = document.getElementById('graficoQuadroLettureEConsumi').getContext('2d');
+// 				var chart = new Chart(ctx, {
+// 				    type: 'bar',
+// 				    data: {
+// 				        labels: labels,
+// 				        datasets: [{
+// 				            label: false,
+// 				            backgroundColor: '#5b9bd5',
+// 				            borderColor: '#5b9bd5',
+// 				            barThickness: 36,
+// 				            data: datiConsumo
+// 				        }]
+// 				    },
+// 				    options: {
+// 				    	legend: {
+// 				    		display: false
+// 				    	},
+// 				    	responsive: true,
+// 				    	maintainAspectRatio : false,
+// 				    	hover: {
+//               				animationDuration: 0
+//             			},
+//              			animation: {
+//                 			duration: 1,
+//               				onComplete: function() {
+//                 				var chartInstance = this.chart,
+//                   				ctx = chartInstance.ctx;
+// 				                // ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+// 				                ctx.font = Chart.helpers.fontString(9, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+// 				                ctx.textAlign = 'center';
+// 				                ctx.textBaseline = 'bottom';
+ 								
+//                 				this.data.datasets.forEach(function(dataset, i) {
+//                   					var meta = chartInstance.controller.getDatasetMeta(i);
+//                   					meta.data.forEach(function(bar, index) {
+// 	                    				var data = Number(dataset.data[index]).toFixed(2).toLocaleString('it');
+// 	                    				ctx.fillText(data, bar._model.x, bar._model.y + 6);
+//                   					});
+//                 				});
+//               				}
+//             			},
+// 						scales : {
+// 							xAxes : [ {
+// 								ticks: {
+// 						          fontSize: 8
+// 						        }
+// 							} ],
+// 							yAxes : [ {
+// 								ticks: {
+// 						          fontSize: 8
+// 						        }
+// 							} ]
+// 						}
+// 				    }
+// 				});
+// 			})();
+// 		} catch (err) {
+// 			console.log('errore init grafico quadro letture e consumi', err);
+// 		}
 	</script>
     <!-- ========== end - QUADRO LETTURE E CONSUMI -->
     
@@ -841,7 +934,7 @@
 	</div>
 	
 	<script type="text/javascript">
-		// *** GRAFICO A BARRE ULTIMI MESI 
+		// *** GRAFICO A BARRE ULTIMI <<12>> MESI 
 		try {
 			(function() {
 				var anni = [];
