@@ -4,20 +4,17 @@
 	<meta charset="utf-8">
 	<title>EE Sintesi</title>
 
-	<link rel="stylesheet" rel="stylesheet" href="pure/pure-min.css"/>
-    <link rel="stylesheet" rel="stylesheet" href="chartist/dist/chartist.min.css"/>
-    
-    <link rel="stylesheet" rel="stylesheet" href="ee_sintesi.css"/>
+	<link rel="stylesheet" rel="stylesheet" href="css/pure/pure-min.css"/>
+    <link rel="stylesheet" rel="stylesheet" href="js/chartist/dist/chartist.min.css"/>
+    <link rel="stylesheet" rel="stylesheet" href="css/ee_sintesi.css"/>
     <link rel="stylesheet" rel="stylesheet" href="css/charts.css"/>
     
     <page size="A4">
     
-    <script src="customs.js"></script>
-    <script src="chartist/dist/chartist.min.js"></script>
-	<script src="axistitle/dist/chartist-plugin-axistitle.min.js"></script>
-	
-	<link rel="stylesheet" rel="stylesheet" href="chartjs/chart.css"/>
-	<script src="chartjs/chart.js"></script>
+    <script src="js/customs.js"></script>
+    <script src="js/chartist/dist/chartist.min.js"></script>
+	<script src="js/axistitle/dist/chartist-plugin-axistitle.min.js"></script>
+	<script src="js/chartjs/chart.js"></script>
 	
 	<script type="text/javascript">
 	function checkNumber_(val) {
@@ -1610,11 +1607,30 @@
 		
 	
 	<!-- @FOOTER PAGINA 2 - start ========== -->
-	<div class="footer">
+	<div class="footer" id="footerPagina2">
 		<div class="contenuto">
 			<img src="images/carta-intestata.jpg" alt="carta-intestata" />
 		</div>
 	</div>
+	<script type="text/javascript">
+		try {
+			(function() {
+				var marginTop = 0;
+				if (document.getElementById('tabellaConguaglioConsumiStimati').style.display === 'none')
+					marginTop += 10;
+				if (document.getElementById('tabellaRettificheLetture').style.display === 'none')
+					marginTop += 10;
+				if (document.getElementById('tabellaConguaglioTariffario').style.display === 'none')
+					marginTop += 10;
+				document.getElementById('footerPagina2').style.marginTop = '' + marginTop + 'px'
+				
+				console.log(marginTop);
+				console.log(document.getElementById('footerPagina2').style.marginTop);
+			})();
+		} catch (err) {
+			console.log('errore init POSIZONE FOOTER PAGINA 2', err);
+		}	
+	</script>
 </div>	
 <!-- ********************** PAGINA 2 FINE ************************ -->
 
