@@ -17,49 +17,49 @@
 	<script src="js/chartjs/chart.js"></script>
 	
 	<script type="text/javascript">
-	function checkNumber_(val) {
-		try {
-			if (val) {
-				val = val.trim();
-				if (val && !isNaN(val))
-					return Number(val);
+		function checkNumber_(val) {
+			try {
+				if (val) {
+					val = val.trim();
+					if (val && !isNaN(val))
+						return Number(val);
+				}
+			} catch (err) {
+				console.log('error check valore numerico', err);
 			}
-		} catch (err) {
-			console.log('error check valore numerico', err);
+			return 0;
 		}
-		return 0;
-	}
-	
-	function checkNumber(str) {
-		try {
-			if (str) {
-				str = str.trim();
-				str = str.replace('.', '');
-				str = str.replace(',', '.');
-				return Number(str);	
+		
+		function checkNumber(str) {
+			try {
+				if (str) {
+					str = str.trim();
+					str = str.replace('.', '');
+					str = str.replace(',', '.');
+					return Number(str);	
+				}
+			} catch (err) {
+				console.log('error check valore numerico', err);
 			}
-		} catch (err) {
-			console.log('error check valore numerico', err);
+			return '';
 		}
-		return '';
-	}
-	
-	function formatNumber(val) {
-		val = val.toFixed(2);
-		val = String(val);
-		try {
-			// 6 = numeroDiCifreDecimaliScelto + punto + numeroCifreIntere
-			if (val.length > 6) {
-				// da 1123232.12 a 1.123.232,12
-				return Number(val).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');	
+		
+		function formatNumber(val) {
+			val = val.toFixed(2);
+			val = String(val);
+			try {
+				// 6 = numeroDiCifreDecimaliScelto + punto + numeroCifreIntere
+				if (val.length > 6) {
+					// da 1123232.12 a 1.123.232,12
+					return Number(val).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');	
+				}
+				// da 123.12 a 123,12
+				return val.replace(/\./, ',');
+			} catch(err) {
+				console.log('errore format numero', val, err)
 			}
-			// da 123.12 a 123,12
-			return val.replace(/\./, ',');
-		} catch(err) {
-			console.log('errore format numero', val, err)
+			return '';
 		}
-		return '';
-	}
 	</script>
 </head>
 <body>
