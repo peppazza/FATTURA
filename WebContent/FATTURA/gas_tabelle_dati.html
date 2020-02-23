@@ -4,6 +4,8 @@
 	<meta charset="utf-8">
 	<title>GAS Sintesi</title>
 	
+	<page size="A4">
+	
 	<style type="text/css">
 		table {
 			border-spacing: 0;
@@ -19,10 +21,10 @@
 </head>
 <body>
 
-	<table>
+	<table style="width: 100%;">
 		<tbody>
 			<tr>
-				<td style="border-top: 1px solid #777;" class="last" colspan="4"><h3>RIEPILOGO CONSUMI FATTURATI</h3></td>
+				<td style="border-top: 1px solid #777;" class="last" colspan="4"><h3>RIEPILOGO CONSUMI FATTURATI</h3></div>
 			</tr>
 			<tr>
 		    	<td>SequenzaMese</td>
@@ -39,35 +41,20 @@
 		</tbody>
 	</table>
      
-	<table style="margin-top: 20px;">
-		<tbody>
-			<tr>
-				<td style="border-top: 1px solid #777;" class="last" colspan="9"><h3>QUADRO LETTURE E CONSUMI</h3></td>
-			</tr>
-			<tr class="_data_ConsumoELetture" data-data_type="simple_loop" data-first_node="ConsumiBolletta" data-path_type="xpath" data-path_data="/ConsumoELetture/DettagliConsumo/Consumo">
-	    		<td>TipoLettura</td>
-    			<td>DataLetturaPrecedente</td>
-    			<td>LetturaMcPrecedente</td>
-        		<td>DataOPeriodo</td>
-        		<td>Lettura</td>
-		        <td>ConsumoMc</td>
-		        <td>CoefficienteCorrettivo</td>
-		        <td>TipoConsumo</td>
-		        <td class="last">ConsumoSmc</td>
-		    </tr>
-		    <tr class="_data_ConsumoELetture" data-data_type="simple_loop" data-first_node="ConsumiBolletta" data-path_type="xpath" data-path_data="/ConsumoELetture/DettagliConsumo/Consumo">
-	    		<td><span class="_data_TipoLettura" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TipoLettura">Stimata</span></td>
-    			<td><span class="_data_DataLetturaPrecedente" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataLetturaPrecedente">11/05/2015</span></td>
-    			<td><span class="_data_LetturaMcPrecedente" style="float: right" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/LetturaMcPrecedente">120,023</span></td>
-        		<td><span class="_data_DataOPeriodo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataOPeriodo">15/06/2015</span></td>
-        		<td><span class="_data_Lettura" style="float: right" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Lettura">121,023</span></td>
-		        <td><span class="_data_ConsumoMc" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoMc">1000</span></td>
-		        <td><span class="_data_CoefficienteCorrettivo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/CoefficienteCorrettivo">1,03214</span></td>
-		        <td><span class="_data_TipoConsumo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TipoConsumo">Reale</span></td>
-		        <td class="last"><span class="_data_ConsumoSmc" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoSmc">1023</span></td>
-		    </tr>
-	    </tbody>
-	</table>
+	<div style="margin-top: 20px;">
+		<div style="border: 1px solid #777;" class="last" colspan="9"><h3>QUADRO LETTURE E CONSUMI</h3></div>
+	    <div style="border: 1px solid #777;" class="_data_ConsumoELetture" data-data_type="simple_loop" data-first_node="ConsumiBolletta" data-path_type="xpath" data-path_data="/ConsumoELetture/DettagliConsumo/Consumo">
+    		<div>TipoLettura <span class="_data_TipoLettura" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TipoLettura">Stimata</span></div>
+   			<div>DataLetturaPrecedente: <span class="_data_DataLetturaPrecedente" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataLetturaPrecedente">11/05/2015</span></div>
+   			<div>LetturaMcPrecedente: <span class="_data_LetturaMcPrecedente" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/LetturaMcPrecedente">120,023</span></div>
+       		<div>DataOPeriodo: <span class="_data_DataOPeriodo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataOPeriodo">15/06/2015</span></div>
+       		<div>Lettura: <span class="_data_Lettura" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Lettura">121,023</span></div>
+	        <div>ConsumoMc: <span class="_data_ConsumoMc" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoMc">1000</span></div>
+	        <div>CoefficienteCorrettivo: <span class="_data_CoefficienteCorrettivo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/CoefficienteCorrettivo">1,03214</span></div>
+	        <div>TipoConsumo: <span class="_data_TipoConsumo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TipoConsumo">Reale</span></div>
+	        <div>ConsumoSmc: <span class="_data_ConsumoSmc" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoSmc">1023</span></div>
+	    </div>
+	</div>
 								    
 </body>
 </html>

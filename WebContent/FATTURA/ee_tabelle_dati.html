@@ -4,6 +4,8 @@
 	<meta charset="utf-8">
 	<title>EE Sintesi</title>
 	
+	<page size="A4">
+	
 	<style type="text/css">
 		table {
 			border-spacing: 0;
@@ -19,12 +21,12 @@
 </head>
 <body>
 
-    <table>
+    <table style="width: 100%;">
 		<tbody>
 			<tr>
 				<td style="border-top: 1px solid #777;" class="last" colspan="8"><h3>RIEPILOGO CONSUMI STORICI??</h3></td>
 			</tr>
-			<tr class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
+			<tr>
 				<td>SequenzaMese</td>
 		        <td>Anno</td>
 		        <td>Mese</td>
@@ -34,6 +36,8 @@
 		        <td>TotaleEnergiaAttiva</td>
 				<td class="last">Picco</td>
 		    </tr>
+		</tbody>
+		<tbody>
 			<tr class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
 				<td><span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese"></span></td>
 		        <td><span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno"></span></td>
@@ -43,12 +47,36 @@
 		        <td><span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3"></span></td>
 		        <td><span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva"></span></td>
 				<td class="last"><span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco"></span></td>
-		    </tr>
+		    </tr>		
 		</tbody>
 	</table>
 	
+	
+	
+	<div style="margin-top: 20px;">
+		<div style="border: 1px solid #777;"><h3>QUADRO LETTURE E CONSUMI??</h3></div>
+		<div style="border: 1px solid #777; margin-bottom: 2px;" class="_data_ConsumoELetture" data-data_type="simple_loop" data-first_node="ConsumiBollettaEle" data-path_type="xpath" data-path_data="ConsumoELetture[Descrizione = &quot;Energia attiva&quot;]/DettagliConsumo/Consumo">
+	    	<div>TipoLettura: <span class="_data_TipoLettura" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TipoLettura">Distributore</span></div>
+	        <div>DataLetturaPrecedente: <span class="_data_DataLetturaPrecedente" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataLetturaPrecedente">11/05/2015</span></div>
+	        <div>Fascia1Precedente: <span class="_data_Fascia1Precedente" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Fascia1Precedente"></span></div>
+	        <div>Fascia2Precedente: <span class="_data_Fascia2Precedente" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Fascia2Precedente"></span></div>
+	        <div>Fascia3Precedente: <span class="_data_Fascia3Precedente" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Fascia3Precedente"></span></div>
+	        <div>DataOPeriodo: <span class="_data_DataOPeriodo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataOPeriodo">11/05/2015</span></div>
+	        <div>Fascia1: <span class="_data_Fascia1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Fascia1"></span></div>
+	        <div>Fascia2: <span class="_data_Fascia2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Fascia2"></span></div>
+	        <div>Fascia3: <span class="_data_Fascia3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Fascia3"></span></div>
+	        <div>ConsumoF1: <span class="_data_ConsumoF1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoF1">12,22</span></div>
+	        <div>PercentualeFascia1: <span class="_data_PercentualeFascia1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/PercentualeFascia1"></span></div>
+	        <div>ConsumoF2: <span class="_data_ConsumoF2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoF2">34,34</span></div>
+	        <div>PercentualeFascia2: <span class="_data_PercentualeFascia2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/PercentualeFascia2"></span></div>
+	        <div>ConsumoF3: <span class="_data_ConsumoF3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoF3">2,45</span></div>
+	        <div>PercentualeFascia3: <span class="_data_PercentualeFascia3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/PercentualeFascia3"></span></div>
+	        <div class="_data_TotaleParziale last">TotaleParziale: <span class="sezione-totale-energia-attiva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleParziale"></span></div>
+	    </div>
+    </div>
+    
 
-	<table style="margin-top: 20px;">
+	<!-- <table style="margin-top: 20px;">
 		<tbody>
 			<tr>
 				<td style="border-top: 1px solid #777;" class="last" colspan="16"><h3>QUADRO LETTURE E CONSUMI??</h3></td>
@@ -90,7 +118,7 @@
 		        <td class="_data_TotaleParziale last"><span class="sezione-totale-energia-attiva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleParziale"></span></td>
 		    </tr>
 	    </tbody>
-    </table>
+    </table> -->
 	    
 </body>
 </html>
