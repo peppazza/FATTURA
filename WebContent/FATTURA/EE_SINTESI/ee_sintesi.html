@@ -140,7 +140,7 @@
 									var picchiELEM = document.getElementsByClassName('pot-picco-potenza-valore-per-fascia');
 						    		if (picchiELEM) {
 						    			for (var i = 0; i < picchiELEM.length; i++) {
-						    				var value = checkNumber(picchiELEM[0].innerHTML);
+						    				var value = checkNumber(picchiELEM[i].innerHTML);
 						    				if (value && typeof value === 'number') {
 						    					if (!picco || value > picco)
 						    						picco = value;
@@ -684,79 +684,6 @@
 	
 	<!-- @QUADRO LETTURE E CONSUMI - start ==========
 	     ============================================ -->
-	<!-- ****** dati nascosti ****** -->
-	<!-- 
-	<div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
-        <span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">1</span>
-        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
-        <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">06</span>
-        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">10</span>
-        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">20</span>
-        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">30</span>
-        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">690</span>
-		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3000</span>
-	</div>
-	<div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
-		<span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">2</span>
-        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
-        <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">07</span>
-        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">11</span>
-        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">21</span>
-        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">31</span>
-        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">691</span>
-		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3001</span>
-	</div>	
-	<div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
-		<span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">2</span>
-        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
-        <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">08</span>
-        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">11</span>
-        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">21</span>
-        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">31</span>
-        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">691</span>
-		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3001</span>
-    </div>
-    <div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
-		<span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">2</span>
-        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
-        <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">09</span>
-        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">11</span>
-        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">21</span>
-        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">31</span>
-        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">691</span>
-		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3001</span>
-    </div>
-    <div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
-		<span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">2</span>
-        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
-        <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">10</span>
-        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">11</span>
-        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">21</span>
-        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">31</span>
-        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">691</span>
-		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3001</span>
-    </div>
-    <div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
-		<span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">2</span>
-        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
-        <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">11</span>
-        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">11</span>
-        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">21</span>
-        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">31</span>
-        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">691</span>
-		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3001</span>
-    </div>
-     -->
-    <div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
-		<span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese"></span>
-        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno"></span>
-        <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese"></span>
-        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1"></span>
-        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2"></span>
-        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3"></span>
-        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva"></span>
-		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco"></span>
-    </div>
 	<div id="quadroLettureEConsumi" class="pure-g">
 		<div class="pure-u-24-24">
 			<div class="pure-g titolo sfondo-arancione">
@@ -817,6 +744,42 @@
 								        <td><span class="_data_Fascia1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Fascia1"></span></td>
 								        <td><span class="_data_Fascia2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Fascia2"></span></td>
 								        <td><span class="_data_Fascia3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Fascia3"></span></td>
+								        <td><span class="_data_ConsumoF1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoF1">4,4</span></td>
+								        <td><span class="_data_PercentualeFascia1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/PercentualeFascia1"></span></td>
+								        <td><span class="_data_ConsumoF2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoF2">4,4</span></td>
+								        <td><span class="_data_PercentualeFascia2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/PercentualeFascia2"></span></td>
+								        <td><span class="_data_ConsumoF3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoF3">4,4</span></td>
+								        <td><span class="_data_PercentualeFascia3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/PercentualeFascia3"></span></td>
+								        <td class="_data_TotaleParziale last"><span class="sezione-totale-energia-attiva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleParziale"></span></td>
+								    </tr>
+								    <tr class="_data_ConsumoELetture" data-data_type="simple_loop" data-first_node="ConsumiBollettaEle" data-path_type="xpath" data-path_data="ConsumoELetture[Descrizione = &quot;Energia attiva&quot;]/DettagliConsumo/Consumo">
+								    	<td><span class="_data_TipoLettura" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TipoLettura">Distributore</span></td>
+								        <td><span class="_data_DataLetturaPrecedente" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataLetturaPrecedente">11/06/2015</span></td>
+								        <td><span class="_data_Fascia1Precedente" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Fascia1Precedente"></span></td>
+								        <td><span class="_data_Fascia2Precedente" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Fascia2Precedente"></span></td>
+								        <td><span class="_data_Fascia3Precedente" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Fascia3Precedente"></span></td>
+								        <td><span class="_data_DataOPeriodo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataOPeriodo">11/05/2015</span></td>
+								        <td><span class="_data_Fascia1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Fascia1"></span></td>
+								        <td><span class="_data_Fascia2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Fascia2"></span></td>
+								        <td><span class="_data_Fascia3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Fascia3"></span></td>
+								        <td><span class="_data_ConsumoF1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoF1">12,22</span></td>
+								        <td><span class="_data_PercentualeFascia1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/PercentualeFascia1"></span></td>
+								        <td><span class="_data_ConsumoF2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoF2">34,34</span></td>
+								        <td><span class="_data_PercentualeFascia2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/PercentualeFascia2"></span></td>
+								        <td><span class="_data_ConsumoF3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoF3">2,45</span></td>
+								        <td><span class="_data_PercentualeFascia3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/PercentualeFascia3"></span></td>
+								        <td class="_data_TotaleParziale last"><span class="sezione-totale-energia-attiva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleParziale"></span></td>
+								    </tr>
+								    <tr class="_data_ConsumoELetture" data-data_type="simple_loop" data-first_node="ConsumiBollettaEle" data-path_type="xpath" data-path_data="ConsumoELetture[Descrizione = &quot;Energia attiva&quot;]/DettagliConsumo/Consumo">
+								    	<td><span class="_data_TipoLettura" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TipoLettura">Distributore</span></td>
+								        <td><span class="_data_DataLetturaPrecedente" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataLetturaPrecedente">11/06/2015</span></td>
+								        <td><span class="_data_Fascia1Precedente" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Fascia1Precedente"></span></td>
+								        <td><span class="_data_Fascia2Precedente" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Fascia2Precedente"></span></td>
+								        <td><span class="_data_Fascia3Precedente" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Fascia3Precedente"></span></td>
+								        <td><span class="_data_DataOPeriodo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataOPeriodo">11/05/2015</span></td>
+								        <td><span class="_data_Fascia1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Fascia1"></span></td>
+								        <td><span class="_data_Fascia2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Fascia2"></span></td>
+								        <td><span class="_data_Fascia3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Fascia3"></span></td>
 								        <td><span class="_data_ConsumoF1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoF1">12,22</span></td>
 								        <td><span class="_data_PercentualeFascia1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/PercentualeFascia1"></span></td>
 								        <td><span class="_data_ConsumoF2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoF2">34,34</span></td>
@@ -840,13 +803,30 @@
 			</div>
 		</div>
 	</div>
-	
 	<!-- ****** js - grafico e valori calcolati ****** -->
 	<script type="text/javascript">
-		// TODO *****************************************************
+		// *** GRAFICO A BARRE ULTIMI <<2>> MESI
+		try {
+			// righe della tabella
+			var rows = document.getElementsByClassName('_data_ConsumoELetture');
+			if (rows) {
+				var N = rows.length;
+				var visibleRows = [];
+				if (N > 0)
+					visibleRows.push(rows[N - 1]);
+				if (N > 1)
+					visibleRows.push(rows[N - 2]);
+				for (var i = 0; i < rows.length; i++)
+					rows[i].style.display = 'none';
+				for (var i = 0; i < visibleRows.length; i++)
+					visibleRows[i].style.display = 'table-row';					
+			}			
+		} catch (err) {
+			console.log('errore show solo le ultime due righe nella tabella QUADRO LETTURE E CONSUMI', err);
+		}
+		
 		try {
 			(function() {
-				console.log('@@@');
 				var lettureTIPI = [];
 				var lettureDATE = [];
 				var lettureF1 = [];
@@ -966,12 +946,10 @@
 						}
 					}
 				});
-				console.log('@@@');
 			})();
 		} catch (err) {
-			console.log('errore init grafico QUADRO LETTURE E CONSUMI v2', err);
+			console.log('errore init grafico QUADRO LETTURE E CONSUMI', err);
 		}
-		// TODO *****************************************************
 	
 		// *** GRAFICO A BARRE ULTIMI <<2>> MESI
 // 		try {
@@ -1114,6 +1092,79 @@
 	
 	<!-- @RIEPILOGO CONSUMI STORICI - start ==========
 	     ============================================= -->
+	<!-- ****** dati nascosti ****** -->
+	<div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
+        <span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">1</span>
+        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
+        <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">06</span>
+        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">10</span>
+        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">20</span>
+        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">30</span>
+        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">690</span>
+		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3000</span>
+	</div>
+	<div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
+		<span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">2</span>
+        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
+        <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">07</span>
+        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">11</span>
+        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">21</span>
+        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">31</span>
+        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">691</span>
+		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3001</span>
+	</div>	
+	<div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
+		<span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">2</span>
+        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
+        <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">08</span>
+        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">11</span>
+        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">21</span>
+        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">31</span>
+        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">691</span>
+		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3001</span>
+    </div>
+    <div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
+		<span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">2</span>
+        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
+        <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">09</span>
+        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">11</span>
+        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">21</span>
+        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">31</span>
+        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">691</span>
+		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3001</span>
+    </div>
+    <div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
+		<span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">2</span>
+        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
+        <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">10</span>
+        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">11</span>
+        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">21</span>
+        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">31</span>
+        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">691</span>
+		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3001</span>
+    </div>
+    <div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
+		<span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">2</span>
+        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
+        <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">11</span>
+        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">11</span>
+        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">21</span>
+        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">31</span>
+        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">691</span>
+		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3001</span>
+    </div>
+    <!--
+    <div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
+		<span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese"></span>
+        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno"></span>
+        <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese"></span>
+        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1"></span>
+        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2"></span>
+        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3"></span>
+        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva"></span>
+		<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco"></span>
+    </div>
+     -->
 	<div id="riepilogoConsumiStorici" class="pure-g">
 		<div class="pure-u-24-24">
 			<div class="pure-g titolo sfondo-arancione">
