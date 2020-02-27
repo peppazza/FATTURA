@@ -38,6 +38,43 @@ new Chartist.Bar('#graficoQuadroLettureEConsumi', {
 	});
 
 
+
+
+var numeroBarre = labels.length;
+var larghezzaBarra = 26;
+if (5 < numeroBarre && numeroBarre < 9) {
+	larghezzaBarra = 22;
+} else if (9 <= numeroBarre && numeroBarre < 13) {
+	larghezzaBarra = 18;
+}
+new Chartist.Bar('#graficoRiepilogoConsumiStorici', {
+	labels : labels,
+	series : [{
+			name : 'consumo',
+			className : 'consumo',
+			data : datiConsumo
+		}]
+	}, {
+		stackBars : true,
+	    showGrid: true,
+	    axisX: {
+			labelInterpolationFnc: function(value) {
+		    	return value;
+		    }
+		},
+		chartPadding: {
+			bottom: 15 // consente di mostrare le labels dell'asse X qualora la loro altezza superasse i 20px (valore di default?)
+	  	},
+	}).on('draw', function(data) {
+		if (data.type === 'bar') {
+			data.element.attr({
+				style : 'stroke-width: ' + larghezzaBarra + 'px'
+			});
+		}
+	});
+
+
+
 /*
 var parents = document.getElementsByClassName('consumi_hiddenvalues_row');
 for (var idx = 0; idx < parents.length; idx++) {

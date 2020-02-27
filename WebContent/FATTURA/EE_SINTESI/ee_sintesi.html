@@ -300,7 +300,7 @@
 		</div>
 		<!-- GRAZIE -->
 		<div class="pure-u-5-24 grazie">
-			<div class="contenuto">
+			<div id="messaggioGraziePerBolletteTuttePagate" class="contenuto">
 				<div class="titolo">
 					<span class="icona"><img alt="busta" src="images/busta.png" width="17px" height="17px"></span> <span>GRAZIE ??</span>
 				</div>
@@ -953,142 +953,6 @@
 		} catch (err) {
 			console.log('errore init grafico QUADRO LETTURE E CONSUMI', err);
 		}
-	
-		// *** GRAFICO A BARRE ULTIMI <<2>> MESI
-// 		try {
-// 			(function() {
-// 				var anni = [];
-// 				var mesi = [];
-// 				var tipiDati = [];
-// 				var consumiF1 = [];
-// 				var consumiF2 = [];
-// 				var consumiF3 = [];
-				
-// 				// anni utimi 2
-// 				var anniELEMS = document.getElementsByClassName('x_consumi_anno');
-// 				var N = anniELEMS.length;
-// 				if (N > 1)
-// 					anni.push(anniELEMS[N - 2].innerHTML);
-// 				anni.push(anniELEMS[N - 1].innerHTML);
-// 				// mesi utimi 2
-// 				var mesiELEMS = document.getElementsByClassName('x_consumi_mese');
-// 				N = mesiELEMS.length;
-// 				if (N > 1)
-// 					mesi.push(mesiELEMS[N - 2].innerHTML);
-// 				mesi.push(mesiELEMS[N - 1].innerHTML);
-				
-// 				// TODO ???
-// 				tipiDati = ['Stima', 'Lettura'];
-				
-// 				// F1
-// 				var f1ELEMS = document.getElementsByClassName('x_consumi_f1');
-// 				N = f1ELEMS.length;
-// 				if (N > 1) {
-// 					var num = f1ELEMS[N - 2].innerHTML;
-// 					if (num)
-// 						num = checkNumber(num);
-// 					else
-// 						num = 0;
-// 					consumiF1.push(num);
-// 				}
-// 				consumiF1.push(checkNumber(f1ELEMS[N - 1].innerHTML));
-// 				// F2
-// 				var f2ELEMS = document.getElementsByClassName('x_consumi_f2');
-// 				N = f2ELEMS.length;
-// 				if (N > 1) {
-// 					var num = f2ELEMS[N - 2].innerHTML;
-// 					if (num)
-// 						num = checkNumber(num);
-// 					else
-// 						num = 0;
-// 					consumiF2.push(num);
-// 				}
-// 				consumiF2.push(checkNumber(f2ELEMS[N - 1].innerHTML));
-// 				// F3
-// 				var f3ELEMS = document.getElementsByClassName('x_consumi_f3');
-// 				N = f3ELEMS.length;
-// 				if (N > 1) {
-// 					var num = f2ELEMS[N - 2].innerHTML;
-// 					if (num)
-// 						num = checkNumber(num);
-// 					else
-// 						num = 0;
-// 					consumiF3.push(num);
-// 				}
-// 				consumiF3.push(checkNumber(f3ELEMS[N - 1].innerHTML));
-				
-// 				var labels = [];
-// 				for (var i = 0; i < anni.length; i++) {
-// 					labels.push(mesi[i] + '-' + anni[i] + '\n' + tipiDati[i])
-// 				}
-				
-// 				var ctx = document.getElementById('graficoQuadroLettureEConsumi').getContext('2d');
-// 				var chart = new Chart(ctx, {
-// 				    type: 'bar',
-// 				    data: {
-// 				     	labels: labels,
-// 				       	datasets : [ {
-// 							label : 'F1',
-// 							data : consumiF1,
-// 							backgroundColor : '#ffc604' // giallo
-// 						}, {
-// 							label : 'F2',
-// 							data : consumiF2,
-// 							backgroundColor : '#70b243' // verde
-// 						}, {
-// 							label : 'F3',
-// 							data : consumiF3,
-// 							backgroundColor : '#a34b15' // rosso
-// 						} ]
-// 					},
-// 					options : {
-// 						legend : {
-// 							display : false
-// 						},
-// 						responsive: true,
-// 						maintainAspectRatio : false,
-// 						hover: {
-//               				animationDuration: 0
-//             			},
-//              			animation: {
-//                 			duration: 1,
-//               				onComplete: function() {
-//                 				var chartInstance = this.chart,
-//                   				ctx = chartInstance.ctx;
-// 				                // ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
-// 				                ctx.font = Chart.helpers.fontString(9, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
-// 				                ctx.textAlign = 'center';
-// 				                ctx.textBaseline = 'bottom';
- 								
-//                 				this.data.datasets.forEach(function(dataset, i) {
-//                   					var meta = chartInstance.controller.getDatasetMeta(i);
-//                   					meta.data.forEach(function(bar, index) {
-// 	                    				var data = Number(dataset.data[index]).toFixed(2).toLocaleString('it');
-// 	                    				ctx.fillText(data, bar._model.x, bar._model.y + 6);
-//                   					});
-//                 				});
-//               				}
-//             			},
-// 						scales : {
-// 							xAxes : [ {
-// 								stacked : true,
-// 								ticks: {
-// 						          fontSize: 8
-// 						        }
-// 							} ],
-// 							yAxes : [ {
-// 								stacked : true,
-// 								ticks: {
-// 						          fontSize: 8
-// 						        }
-// 							} ]
-// 						}
-// 					}
-// 				});
-// 			})();
-// 		} catch (err) {
-// 			console.log('errore init grafico QUADRO LETTURE E CONSUMI', err);
-// 		}
 	</script>
     <!-- ========== end - QUADRO LETTURE E CONSUMI -->
     
@@ -1543,9 +1407,8 @@
 											var value = elems[0].innerHTML;
 											if (value) {
 												value = value.trim();
-												if (value !== '') {
+												if (value !== '')
 													esistonoRettifiche = true;
-												}
 											}
 										}
 										
@@ -1597,9 +1460,8 @@
 											var value = elems[0].innerHTML;
 											if (value) {
 												value = value.trim();
-												if (value !== '') {
+												if (value !== '')
 													esistonoConguagiTariffari = true;
-												}
 											}
 										}
 										
@@ -1648,7 +1510,7 @@
 									            <td><span>Scadenza</span></td>
 									            <td><span>Totale (€)</span></td>
 									        </tr>
-									         <tr data-data_type="simple_loop" data-first_node="MorositaDocumenti" data-path_type="xpath" data-path_data="Dettagli/Morosita">
+									        <tr data-data_type="simple_loop" data-first_node="MorositaDocumenti" data-path_type="xpath" data-path_data="Dettagli/Morosita">
 									        	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataEmissione"></span> <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/NumeroDocumento"></span></td>
 									            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataScadenza"></span></td>
 									            <td><span class="importo-bollette-non-pagate" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoDaPagare"></span></td>
@@ -1656,7 +1518,7 @@
 									        <tr class="righe-bollette-non-pagate">
 									        	<td><span class="testo-non-pagate3">Totale insoluto (€)</span></td>
 									            <td></td>
-									    		<td><span data-data_type="single" data-first_node="MorositaDocumenti" data-path_type="xpath" data-path_data="Totale">test</span></td>
+									    		<td><span data-data_type="single" data-first_node="MorositaDocumenti" data-path_type="xpath" data-path_data="Totale"></span></td>
 									    	</tr>
 									        <tr class="righe-bollette-non-pagate">
 									    		<td colspan="3"><span class="testo-non-pagate4">Qualora le bollette sollecitate le risultassero già pagate, consideri nullo questo avviso.</span></td>
@@ -1695,18 +1557,29 @@
 					if (value) {
 						value = value.trim();
 						if (value !== '') {
-							esisteDettaglioImposte = true;
+							esistonoBolletteNonPagate = true;
 						}
 					}
 				}
+				console.log('esistonoBolletteNonPagate', esistonoBolletteNonPagate)
 				
-				if (!esistonoBolletteNonPagate) {
-					document.getElementById('messaggioNessunaBollettaDaPagare').style.display = 'none';
+				if (esistonoBolletteNonPagate) {
 					document.getElementById('tabellaBolletteNonPagate').style.display = 'table';
+					document.getElementById('messaggioNessunaBollettaDaPagare').style.display = 'none';
+					// manage messaggio GRAZIE BOLLETTE TUTTE PAGATE
+					document.getElementById('messaggioGraziePerBolletteTuttePagate').style.display = 'none';
+					// manage messaggio BOLLETTE NON TUTTE PAGATE
+					// TODO
+					// ...
 				} else {
-					document.getElementById('messaggioNessunaBollettaDaPagare').style.display = 'block';
-					document.getElementById('tabellaBolletteNonPagate').style.display = 'none';
-				}				
+					document.getElementById('tabellaBolletteNonPagate').style.display = 'table';
+					document.getElementById('messaggioNessunaBollettaDaPagare').style.display = 'none';
+					// manage messaggio GRAZIE BOLLETTE TUTTE PAGATE
+					document.getElementById('messaggioGraziePerBolletteTuttePagate').style.display = 'block';
+					// manage messaggio BOLLETTE NON TUTTE PAGATE
+					// TODO
+					// ...
+				}
 			})();
 		} catch (err) {
 			console.log('errore init display per BOLLETTE NON PAGATE', err);
@@ -1809,9 +1682,6 @@
 				if (document.getElementById('tabellaConguaglioTariffario').style.display === 'none')
 					marginTop += 10;
 				document.getElementById('footerPagina2').style.marginTop = '' + marginTop + 'px'
-				
-				console.log(marginTop);
-				console.log(document.getElementById('footerPagina2').style.marginTop);
 			})();
 		} catch (err) {
 			console.log('errore init POSIZONE FOOTER PAGINA 2', err);
