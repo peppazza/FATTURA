@@ -734,7 +734,7 @@
 								        <td colspan="2" class="header"><span>F3 <span>%</span></span></td>
 								        <td class="header last"><span>Totale</span></td>
 								    </tr>
-								    <tr class="_data_ConsumoELetture" data-data_type="simple_loop" data-first_node="ConsumiBollettaEle" data-path_type="xpath" data-path_data="ConsumoELetture[Descrizione = &quot;Energia attiva&quot;]/DettagliConsumo/Consumo">
+								    <!-- <tr class="_data_ConsumoELetture" data-data_type="simple_loop" data-first_node="ConsumiBollettaEle" data-path_type="xpath" data-path_data="ConsumoELetture[Descrizione = &quot;Energia attiva&quot;]/DettagliConsumo/Consumo">
 								    	<td><span class="_data_TipoLettura" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TipoLettura">Distributore</span></td>
 								        <td><span class="_data_DataLetturaPrecedente" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataLetturaPrecedente">11/05/2015</span></td>
 								        <td><span class="_data_Fascia1Precedente" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Fascia1Precedente"></span></td>
@@ -769,7 +769,7 @@
 								        <td><span class="_data_ConsumoF3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoF3">2,45</span></td>
 								        <td><span class="_data_PercentualeFascia3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/PercentualeFascia3"></span></td>
 								        <td class="_data_TotaleParziale last"><span class="sezione-totale-energia-attiva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleParziale"></span></td>
-								    </tr>
+								    </tr> -->
 								    <tr class="_data_ConsumoELetture" data-data_type="simple_loop" data-first_node="ConsumiBollettaEle" data-path_type="xpath" data-path_data="ConsumoELetture[Descrizione = &quot;Energia attiva&quot;]/DettagliConsumo/Consumo">
 								    	<td><span class="_data_TipoLettura" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TipoLettura">Distributore</span></td>
 								        <td><span class="_data_DataLetturaPrecedente" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataLetturaPrecedente">11/06/2015</span></td>
@@ -805,7 +805,7 @@
 	</div>
 	<!-- ****** js - grafico e valori calcolati ****** -->
 	<script type="text/javascript">
-		// *** GRAFICO A BARRE ULTIMI <<2>> MESI
+		// SHOW SOLO LE ULTIME <<2>> RIGHE DELLA TABELLA (a destra del grafico)
 		try {
 			// righe della tabella
 			var rows = document.getElementsByClassName('_data_ConsumoELetture');
@@ -816,8 +816,10 @@
 					visibleRows.push(rows[N - 1]);
 				if (N > 1)
 					visibleRows.push(rows[N - 2]);
+				// nascondi tutto
 				for (var i = 0; i < rows.length; i++)
 					rows[i].style.display = 'none';
+				// visualizza ultime 2 righe
 				for (var i = 0; i < visibleRows.length; i++)
 					visibleRows[i].style.display = 'table-row';					
 			}			
@@ -825,6 +827,7 @@
 			console.log('errore show solo le ultime due righe nella tabella QUADRO LETTURE E CONSUMI', err);
 		}
 		
+		// *** GRAFICO A BARRE ULTIMI <<2>> MESI
 		try {
 			(function() {
 				var lettureTIPI = [];
