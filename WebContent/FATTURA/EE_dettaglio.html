@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>EE Sintesi</title>
+	
+	<page size="A4"></page>
+	
+	<link rel="stylesheet" rel="stylesheet" href="EE_SINTESI/css/styles.css"/>
+		
+</head>
+<body>
+
+	<!-- @DETTAGLIO IMPOSTE - start ==========
+	     =============================================================== -->
+	<div id="_box_dettaglioImposte" class="pure-g">
+		<div class="pure-u-24-24">
+			<div class="pure-g titolo">
+				<div class="pure-u-24-24 contenuto">
+					<div class="testo">DETTAGLIO IMPOSTE</div>
+				</div>
+			</div>
+			<div class="pure-g dati">
+				<div class="pure-u-24-24">
+					<div class="table-container">
+						<table id="tabellaDettaglioImposte">
+					      	<tbody>
+						        <tr class="bordo-titolo">
+						            <td colspan="7" class="consumi"><span class="titolo3"><strong>Dettaglio imposte</strong></span></td> 
+						        </tr>
+							    <tr>
+							    	<td colspan="2">Periodo</td>
+							        <td>Scaglione</td>
+							        <td>Quantità</td>
+							        <td>Prezzo (€/kWh)</td>
+							        <td>Totale (€)</td>
+							        <td>Iva %</td>
+							    </tr>
+							    <tr class="prima-riga-dettaglio-imposte" data-data_type="simple_loop" data-first_node="Imposte" data-path_type="xpath" data-path_data="DettagliImposte/QuotaDettaglioImposte">
+							    	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></span></td>
+							    	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span></td>
+							        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Scaglione"></span></td>
+							        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
+							        <td><span class="dettaglio-imposte-prezzo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoUnitario"></span></td>
+							        <td><span class="sezione-imponibile-dettaglio-imposte" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></span></td>
+							        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva"></span></td>
+							    </tr>
+							    <tr class="quota-dettaglio-imposte" data-data_type="simple_loop" data-first_node="Imposte" data-path_type="xpath" data-path_data="AccontiImposte/QuotaDettaglioImposte">
+							    	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></span></td>
+							    	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span></td>
+							        <td><span class="allineamento-scaglione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Scaglione"></span></td>
+							        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
+							        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoUnitario"></span></td>
+							        <td><span class="allineamento-scaglione-imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></span></td>
+							        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva"></span></td>
+							    </tr>
+					      	</tbody>
+					    </table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		try {
+			(function() {
+				var esisteDettaglioImposte = false;
+				var esisteAccontiImposte = false;
+				
+				var elems = document.getElementsByClassName('dettaglio-imposte-prezzo');
+				if (elems.length > 0) {
+					var value = elems[0].innerHTML;
+					if (value) {
+						value = value.trim();
+						if (value !== '') {
+							esisteDettaglioImposte = true;
+						}
+					}
+				}
+				
+				elems = document.getElementsByClassName('allineamento-scaglione-imponibile');
+				if (elems.length > 0) {
+					var value = elems[0].innerHTML;
+					if (value) {
+						value = value.trim();
+						if (value !== '') {
+							esisteAccontiImposte = true;
+						}
+					}
+				}
+				
+				if (esisteDettaglioImposte || esisteAccontiImposte) {
+					document.getElementById('_box_dettaglioImposte').style.display = 'block';
+				} else {
+					document.getElementById('_box_dettaglioImposte').style.display = 'none';
+				}				
+			})();
+		} catch (err) {
+			console.log('errore init display per DETTAGLIO IMPOSTE', err);
+		}
+	</script>
+	<!-- ========== end - DETTAGLIO IMPOSTE -->
+
+</body>
+</html>

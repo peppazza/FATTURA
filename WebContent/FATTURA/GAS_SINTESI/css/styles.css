@@ -60,6 +60,10 @@ table tbody tr td.no-border {
     margin-bottom: 6px;
 }
 
+.footer {
+	margin-top: 200px;
+}
+
 .footer .contenuto {
 	text-align: center;
 }
@@ -541,46 +545,6 @@ table tbody tr td.no-border {
 	
 	#quadroLettureEConsumi #tabellaQuadroLettureEConsumi tr td.last {
 		border-right: 1px solid #555555;
-	}
-
-
-/* DETTAGLIO IMPOSTE */
-	#dettaglioImposte {
-		margin-bottom: 15px;
-	}
-	
-	#dettaglioImposte .titolo {
-		font-size: 13px;
-		padding: 0px 5px;
-		border-bottom: 2px solid #e82525;
-		margin-bottom: 8px;
-	}
-	
-	#dettaglioImposte .titolo .contenuto .testo {
-		display: inline-block;
-		background-color: #e82525;
-	    color: #ffffff;
-	    padding: 3px 12px 0;
-	    border-radius: 4px 4px 0 0;
-	}
-	
-	#dettaglioImposte .dati .tabella {
-		width: 100%;
-	}
-	
-	#dettaglioImposte .dati .tabella .header {
-		margin-bottom: 1px;
-	}
-	
-	#dettaglioImposte .dati .tabella .header,
-	#dettaglioImposte .dati .tabella .body {
-		padding: 0 4px;
-	}
-	
-	#dettaglioImposte .dati .tabella .body {
-		border: 1px solid #555555;
-		padding-top: 2px;
-		padding-bottom: 2px;	
 	}
 
 
