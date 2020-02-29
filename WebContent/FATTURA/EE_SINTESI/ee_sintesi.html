@@ -1188,14 +1188,6 @@
 		
 		<!-- @CONGUAGLI RICALCOLI NON PAGATE - start ==========
 		     ================================================== -->
-		<div style="display: none;" class="morosita_hiddenvalues" data-data_type="simple_loop" data-first_node="Dettagli" data-path_type="xpath" data-path_data="Morosita">
-	        <span class="x_morosita_num_doc" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/NumeroDocumento"></span>
-	        <span class="x_morosita_rata" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Rata"></span>
-	        <span class="x_morosita_data_emissione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataEmissione"></span>
-	        <span class="x_morosita_data_scadenza" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataScadenza"></span>
-	        <span class="x_morosita_imp_originale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoOriginale"></span>
-	        <span class="x_morosita_imp_da_pagare" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoDaPagare"></span>
-		</div>
 		<div id="conguagliRicalcoliNonPagate" class="pure-g">
 			<div class="pure-u-12-24">
 				<div id="conguagliRicalcoli" style="padding-right: 5px">
@@ -1205,164 +1197,43 @@
 								<div class="pure-u-24-24 contenuto">CONGUAGLI E RICALCOLI</div>
 							</div>
 							<div class="pure-g dati">
-								<!-- CONGUAGLI -->
+								<!-- CONGUAGLI CONSUMI STIMATI -->
+								<div style="display: none;" class="sezione-conguaglio-consumi-stimati" data-data_type="simple_loop" data-first_node="ConguaglioConsumiStimati" data-path_type="xpath" data-path_data="">
+					    		    <div data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></div>
+					        	    <div data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></div> - <div data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></div>
+					                <div data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></div>
+					                <div class="y_conguaglio-consumi-stimati-imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></div>
+						        </div>
 								<div class="pure-u-24-24">
-									<div id="messaggioNessunConguaglioConsumiStimati" class="messaggio-nessun-dato-trovato">Nessun conguaglio consumi stimati</div>
-									<div class="table-container">
-										<table id="tabellaConguaglioConsumiStimati" style="width: 100%;">
-											<tbody>
-												<tr>
-									    		    <td colspan="3">Conguaglio consumi stimati</td>
-									    	    </tr>
-											</tbody>
-											<tbody class="sezione-conguaglio-consumi-stimati" data-data_type="simple_loop" data-first_node="ConguaglioConsumiStimati" data-path_type="xpath" data-path_data="">
-									            <tr>
-									    		    <td colspan="3"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></span></td>
-									    	    </tr>
-									            <tr class="bordo-tab-sotto">
-									        	    <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span></td>
-									                <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
-									                <td><span class="y_conguaglio-consumi-stimati-imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></span></td>
-									            </tr>
-									        </tbody>
-										</table>
-									</div>
+									<!-- messaggi conguaglio consumi stimati -->
+									<div id="messaggioNessunConguaglioConsumiStimati">Nessun conguaglio consumi stimati</div>
+									<div id="messaggioEsistenzaConguaglioConsumiStimati">Sono presenti conguagli consumi stimati</div>
 								</div>
 								<script type="text/javascript">
 									try {
 										(function() {
-											var esistonoRicalcoli = false;
+											var esistonoConguagliConsumiStimati = false;
 											
 											var elems = document.getElementsByClassName('y_conguaglio-consumi-stimati-imponibile');
 											if (elems.length > 0) {
 												var value = elems[0].innerHTML;
 												if (value) {
 													value = value.trim();
-													if (value !== '') {
-														esistonoRicalcoli = true;
-													}
+													if (value !== '')
+														esistonoConguagliConsumiStimati = true;
 												}
 											}
 											
-											if (esistonoRicalcoli) {
+											if (esistonoConguagliConsumiStimati) {
 												document.getElementById('messaggioNessunConguaglioConsumiStimati').style.display = 'none';
-												document.getElementById('tabellaConguaglioConsumiStimati').style.display = 'table';
+												document.getElementById('messaggioEsistenzaConguaglioConsumiStimati').style.display = 'block';
 											} else {
 												document.getElementById('messaggioNessunConguaglioConsumiStimati').style.display = 'block';
-												document.getElementById('tabellaConguaglioConsumiStimati').style.display = 'none';
+												document.getElementById('messaggioEsistenzaConguaglioConsumiStimati').style.display = 'none';
 											}				
 										})();
 									} catch (err) {
 										console.log('errore init display per CONGUAGLIO CONSUMI STIMATI', err);
-									}
-								</script>
-								<!-- RETTIFICHE -->
-								<div class="pure-u-24-24">
-									<div id="messaggioNessunaRettificaLetture" class="messaggio-nessun-dato-trovato">Nessuna rettifica lettura</div>
-									<div class="table-container">
-										<table id="tabellaRettificheLetture" style="width: 100%; margin-top: 2px;">
-											<tbody>
-												<tr>
-									    		    <td colspan="3">Rettifiche letture</td>
-									    	    </tr>
-											</tbody>
-											<tbody class="sezione-rettifiche-letture" data-data_type="simple_loop" data-first_node="RettificheLetture" data-path_type="xpath" data-path_data="Rettifiche">
-										        <tr>
-										    		<td colspan="3">
-										    			<span><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></span>
-											    		del <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataLetturaRettificata"></span>
-											    		di <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/LetturaRettificata"></span> kWh</span>
-											    	</td>
-										    	</tr>
-										        <tr>
-										        	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span></td>
-										            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
-										            <td><span class="y_rettifiche-letture-imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></span></td>
-										        </tr>
-									        </tbody>
-										</table>
-									</div>
-								</div>
-								<script type="text/javascript">
-									try {
-										(function() {
-											var esistonoRettifiche = false;
-											
-											var elems = document.getElementsByClassName('y_rettifiche-letture-imponibile');
-											if (elems.length > 0) {
-												var value = elems[0].innerHTML;
-												if (value) {
-													value = value.trim();
-													if (value !== '')
-														esistonoRettifiche = true;
-												}
-											}
-											
-											if (esistonoRettifiche) {
-												document.getElementById('messaggioNessunaRettificaLetture').style.display = 'none';
-												document.getElementById('tabellaRettificheLetture').style.display = 'table';
-											} else {
-												document.getElementById('messaggioNessunaRettificaLetture').style.display = 'block';
-												document.getElementById('tabellaRettificheLetture').style.display = 'none';
-											}				
-										})();
-									} catch (err) {
-										console.log('errore init display per RETTIFICHE LETTURE', err);
-									}
-								</script>
-								<!-- CONGUAGLI TARIFFARI -->
-								<div class="pure-u-24-24">
-									<div id="messaggioNessunConguaglioTariffario" class="messaggio-nessun-dato-trovato">Nessun conguaglio tariffario</div>
-									<div class="table-container">
-										<table id="tabellaConguaglioTariffario" style="width: 100%; margin-top: 2px;">
-											<tbody>
-												<tr>
-									    		    <td colspan="3">Conguaglio tariffario</td>
-									    	    </tr>
-											</tbody>
-											<tbody class="sezione-conguaglio-tariffario" data-data_type="simple_loop" data-first_node="ConguaglioTariffario" data-path_type="xpath" data-path_data="Ricalcolo">
-										        <tr>
-										    		<td colspan="3">
-										    			<span>
-											    			<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></span>
-											    			<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ComponenteConguagliata"></span>
-											    		</span>
-										    		</td>
-										    	</tr>
-										        <tr class="bordo-tab-sotto">
-										        	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span></td>
-										            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
-										            <td><span class="y_conguaglio-tariffario-imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></span></td>
-										        </tr>
-									        </tbody>
-										</table>
-									</div>
-								</div>
-								<script type="text/javascript">
-									try {
-										(function() {
-											var esistonoConguagiTariffari = false;
-											
-											var elems = document.getElementsByClassName('y_conguaglio-tariffario-imponibile');
-											if (elems.length > 0) {
-												var value = elems[0].innerHTML;
-												if (value) {
-													value = value.trim();
-													if (value !== '')
-														esistonoConguagiTariffari = true;
-												}
-											}
-											
-											if (esistonoConguagiTariffari) {
-												document.getElementById('messaggioNessunConguaglioTariffario').style.display = 'none';
-												document.getElementById('tabellaConguaglioTariffario').style.display = 'table';
-											} else {
-												document.getElementById('messaggioNessunConguaglioTariffario').style.display = 'block';
-												document.getElementById('tabellaConguaglioTariffario').style.display = 'none';
-											}				
-										})();
-									} catch (err) {
-										console.log('errore init display per RETTIFICHE LETTURE', err);
 									}
 								</script>
 							</div>
@@ -1380,7 +1251,7 @@
 							<div class="pure-g dati">
 								<div class="pure-u-24-24">
 									<div id="messaggioNessunaBollettaDaPagare" class="messaggio">
-										Le precedenti bollette risultano pagate ??
+										Le precedenti bollette risultano pagate
 									</div>
 									<div class="table-container">
 										<table id="tabellaBolletteNonPagate" class="tabella">
@@ -1444,11 +1315,11 @@
 						var value = elems[0].innerHTML;
 						if (value) {
 							value = value.trim();
-							if (value !== '') {
+							if (value !== '')
 								esistonoBolletteNonPagate = true;
-							}
 						}
 					}
+					
 					console.log('esistonoBolletteNonPagate', esistonoBolletteNonPagate)
 					
 					if (esistonoBolletteNonPagate) {
@@ -1460,8 +1331,8 @@
 						// TODO
 						// ...
 					} else {
-						document.getElementById('tabellaBolletteNonPagate').style.display = 'table';
-						document.getElementById('messaggioNessunaBollettaDaPagare').style.display = 'none';
+						document.getElementById('tabellaBolletteNonPagate').style.display = 'none';
+						document.getElementById('messaggioNessunaBollettaDaPagare').style.display = 'block';
 						// manage messaggio GRAZIE BOLLETTE TUTTE PAGATE
 						document.getElementById('messaggioGraziePerBolletteTuttePagate').style.display = 'block';
 						// manage messaggio BOLLETTE NON TUTTE PAGATE
