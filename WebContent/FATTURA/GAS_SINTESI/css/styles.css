@@ -87,6 +87,10 @@ table tbody tr td.no-border {
 		display: inline-block;
 	}
 	
+	#headerLogo .logo-rina-2-in-1 img {
+		width: 260px;
+	}
+	
 	#headerLogo .logo-rina-uni img {
 		width: 116px;
 	}
