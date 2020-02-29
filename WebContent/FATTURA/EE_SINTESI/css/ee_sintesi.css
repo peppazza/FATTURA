@@ -25,7 +25,7 @@ page[size="A4"] {
 
 table {
 	width: 100%;
-	font-size: 8px;
+	font-size: 7px;
 }
 
 table tbody tr td {
@@ -69,7 +69,7 @@ table tbody tr td.no-border {
 }
 
 .header-logo-oe {
-	margin: 24px 0;
+	margin: 6px 0;
 }
 
 
@@ -481,7 +481,6 @@ table tbody tr td.no-border {
 /* QUADRO LETTURE E CONSUMI =============================== */
 	#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda {
 		font-size: 8px;
-		margin-top: 20px;
 	}
 	
 	#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda .voce-legenda {
@@ -587,7 +586,6 @@ table tbody tr td.no-border {
 	
 	#dettaglioImposte .dati .tabella {
 		width: 100%;
-		font-size: 11px;
 	}
 	
 	#dettaglioImposte .dati .tabella .header {

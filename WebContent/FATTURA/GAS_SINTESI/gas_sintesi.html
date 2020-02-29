@@ -9,7 +9,7 @@
     <link rel="stylesheet" rel="stylesheet" href="css/gas_sintesi.css"/>
     <link rel="stylesheet" rel="stylesheet" href="css/charts.css"/>
     
-    <page size="A4">
+    <!-- <page size="A4"></page> -->
     
     <script src="js/customs.js"></script>
     <script src="js/chartist/dist/chartist.min.js"></script>
@@ -65,6 +65,7 @@
 <body>
 
 <!-- ********************** PAGINA 1 INIZIO ********************** -->
+<page size="A4">
 <div id="pagina1" class="paginaA4" style="page-break-after: always;">
 	<!-- LOGHI - start ==========
 		 ======================== -->
@@ -328,7 +329,7 @@
 	<!-- SINTESI IMPORTI - start ========== 
 		 ================================== -->
 	<!-- ****** dati nascosti ****** -->
-	 
+	<!--  
 	<div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
     	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Spesa per la materia gas naturale</div>
         <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">1000,3434</div>
@@ -344,23 +345,13 @@
         <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">1000,3434</div>
         <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
     </div>
-    <div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
-    	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Altre partite ed oneri</div>
-        <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">1000,3434</div>
-        <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
-    </div>
-    <div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
-    	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Imposte</div>
-        <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">1000,3434</div>
-        <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
-    </div>
-    <!-- 
+     -->
 	<div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
     	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></div>
         <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></div>
         <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva"></div>
     </div>
-     --> 
+     
 	<div id="sintesiImporti" class="pure-g">
 		<div class="pure-u-17-24 grafico">
 			<div class="contenuto">
@@ -602,15 +593,15 @@
 		</div>
 	</div>
 </div>
+</page>
 <!-- ********************** PAGINA 1 FINE ************************ -->
 <!-- ************************************************************* -->
 
 
 
 <!-- ********************** PAGINA 2 INIZIO ************************ -->
+<page size="A4">
 <div id="pagina2" class="paginaA4" style="page-break-after: always;">
-	<div style="padding: 40px 0"></div>
-	
 	<!-- @HEADER CON LOGO OE =======
 		 =========================== -->
 	<div class="header-logo-oe">
@@ -641,12 +632,6 @@
         <span class="x_consumi_mese" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">03</span>
         <span class="x_consumi_consumo" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Consumo">42</span>
     </div>
-    <div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumiMesiPrecedenti" data-path_type="xpath" data-path_data="ConsumoMese">
-		<span class="x_consumi_sequenzamese" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">4</span>
-        <span class="x_consumi_anno" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2019</span>
-        <span class="x_consumi_mese" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">04</span>
-        <span class="x_consumi_consumo" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Consumo">22</span>
-    </div>
      -->
 	<div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumiMesiPrecedenti" data-path_type="xpath" data-path_data="ConsumoMese">
 		<span class="x_consumi_sequenzamese" style="display: block" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese"></span>
@@ -669,7 +654,7 @@
 				</div>
 				<div class="pure-u-15-24">
 					<div class="legenda-grafico-plus-tabella-dati" style="padding: 0 5px;">
-						<div class="tabella-dati" style="margin-bottom: 4px;">
+						<div class="table-container" style="margin-bottom: 4px;">
 							<table id="tabellaQuadroLettureEConsumi">
 						      	<tbody>
 								    <tr>
@@ -689,28 +674,6 @@
 								        <td class="header"><span>Tipo consumo</span></td>
 								        <td class="header last"><span>Consumo fatturato (Smc)</span></td>
 								    </tr>
-								   	<!-- <tr class="_data_ConsumoELetture" data-data_type="simple_loop" data-first_node="ConsumiBolletta" data-path_type="xpath" data-path_data="/ConsumoELetture/DettagliConsumo/Consumo">
-							    		<td><span class="_data_TipoLettura" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TipoLettura">Stimata</span></td>
-						    			<td><span class="_data_DataLetturaPrecedente" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataLetturaPrecedente">11/05/2015</span></td>
-						    			<td><span class="_data_LetturaMcPrecedente" style="float: right" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/LetturaMcPrecedente">5</span></td>
-						        		<td><span class="_data_DataOPeriodo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataOPeriodo">15/06/2015</span></td>
-						        		<td><span class="_data_Lettura" style="float: right" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Lettura">5</span></td>
-								        <td><span class="_data_ConsumoMc" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoMc">5</span></td>
-								        <td><span class="_data_CoefficienteCorrettivo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/CoefficienteCorrettivo">5</span></td>
-								        <td><span class="_data_TipoConsumo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TipoConsumo">Reale</span></td>
-								        <td class="last"><span class="_data_ConsumoSmc" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoSmc">1023</span></td>
-								    </tr>
-								    <tr class="_data_ConsumoELetture" data-data_type="simple_loop" data-first_node="ConsumiBolletta" data-path_type="xpath" data-path_data="/ConsumoELetture/DettagliConsumo/Consumo">
-							    		<td><span class="_data_TipoLettura" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TipoLettura">Stimata</span></td>
-						    			<td><span class="_data_DataLetturaPrecedente" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataLetturaPrecedente">11/05/2015</span></td>
-						    			<td><span class="_data_LetturaMcPrecedente" style="float: right" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/LetturaMcPrecedente">99</span></td>
-						        		<td><span class="_data_DataOPeriodo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataOPeriodo">15/06/2015</span></td>
-						        		<td><span class="_data_Lettura" style="float: right" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Lettura">99</span></td>
-								        <td><span class="_data_ConsumoMc" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoMc">99</span></td>
-								        <td><span class="_data_CoefficienteCorrettivo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/CoefficienteCorrettivo">99</span></td>
-								        <td><span class="_data_TipoConsumo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TipoConsumo">Reale</span></td>
-								        <td class="last"><span class="_data_ConsumoSmc" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoSmc">1023</span></td>
-								    </tr> -->
 								    <tr class="_data_ConsumoELetture" data-data_type="simple_loop" data-first_node="ConsumiBolletta" data-path_type="xpath" data-path_data="/ConsumoELetture/DettagliConsumo/Consumo">
 							    		<td><span class="_data_TipoLettura" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TipoLettura">Stimata</span></td>
 						    			<td><span class="_data_DataLetturaPrecedente" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataLetturaPrecedente">11/05/2015</span></td>
@@ -873,7 +836,6 @@
 					<div class="contenuto">
 						<div class="chart-container" style="width: 460px; height: 120px;">
 							<canvas id="graficoRiepilogoConsumiStorici"></canvas>
-							<!-- <div id="graficoRiepilogoConsumiStorici"></div> -->
 						</div>
 					</div>
 				</div>
@@ -986,40 +948,42 @@
 					<div id="messaggioNessunaImposta" class="messaggio">
 						Nessuna imposta applicata in questa bolletta
 					</div>
-					<table class="tabella" id="tabellaDettaglioImposte">
-				      	<tbody>
-					        <tr>
-					            <td colspan="7" class="consumi"><span class="titolo3"><strong>Dettaglio imposte</strong></span></td> 
-					        </tr>
-						    <tr>
-						    	<td></td>
-						    	<td>Periodo</td>
-						        <td>Scaglione</td>
-						        <td>Quantità</td>
-						        <td>Prezzo (€/Smc)</td>
-						        <td>Totale (€)</td>
-						        <td>IVA %</td>
-						    </tr>
-						    <tr class="prima-riga-dettaglio-imposte" data-data_type="simple_loop" data-first_node="Imposte" data-path_type="xpath" data-path_data="DettagliImposte/QuotaDettaglioImposte">
-						    	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></span></td>
-						    	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal">05/12/2014</span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al">31/12/2014</span></td>
-						        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Scaglione"></span></td>
-						        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
-						        <td class="dettaglio-imposte-prezzo"><span class="testo-dettaglio-imposte2 dettaglioimposte-prezzo dettaglio-a-destra" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoUnitario"></span></td>
-						        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></span></td>
-						        <td class="right"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva"></span></td>
-						    </tr>
-						    <tr class="quota-dettaglio-imposte" data-data_type="simple_loop" data-first_node="Imposte" data-path_type="xpath" data-path_data="AccontiImposte/QuotaDettaglioImposte">
-						    	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></span></td>
-						    	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span>-<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span></td>
-						        <td><span class="allineamento-scaglione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Scaglione"></span></td>
-						        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
-						        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoUnitario"></span></td>
-						        <td><span class="allineamento-scaglione-imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></span></td>
-						        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva"></span></td>
-						    </tr>
-						</tbody>
-				    </table>
+					<div class="table-container">
+						<table class="tabella" id="tabellaDettaglioImposte">
+					      	<tbody>
+						        <tr>
+						            <td colspan="7" class="consumi"><span class="titolo3"><strong>Dettaglio imposte</strong></span></td> 
+						        </tr>
+							    <tr>
+							    	<td></td>
+							    	<td>Periodo</td>
+							        <td>Scaglione</td>
+							        <td>Quantità</td>
+							        <td>Prezzo (€/Smc)</td>
+							        <td>Totale (€)</td>
+							        <td>IVA %</td>
+							    </tr>
+							    <tr class="prima-riga-dettaglio-imposte" data-data_type="simple_loop" data-first_node="Imposte" data-path_type="xpath" data-path_data="DettagliImposte/QuotaDettaglioImposte">
+							    	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></span></td>
+							    	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal">05/12/2014</span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al">31/12/2014</span></td>
+							        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Scaglione"></span></td>
+							        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
+							        <td class="dettaglio-imposte-prezzo"><span class="testo-dettaglio-imposte2 dettaglioimposte-prezzo dettaglio-a-destra" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoUnitario"></span></td>
+							        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></span></td>
+							        <td class="right"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva"></span></td>
+							    </tr>
+							    <tr class="quota-dettaglio-imposte" data-data_type="simple_loop" data-first_node="Imposte" data-path_type="xpath" data-path_data="AccontiImposte/QuotaDettaglioImposte">
+							    	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></span></td>
+							    	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span>-<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span></td>
+							        <td><span class="allineamento-scaglione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Scaglione"></span></td>
+							        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
+							        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoUnitario"></span></td>
+							        <td><span class="allineamento-scaglione-imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></span></td>
+							        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva"></span></td>
+							    </tr>
+							</tbody>
+					    </table>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -1080,23 +1044,25 @@
 							<!-- CONGUAGLI -->
 							<div class="pure-u-24-24">
 								<div id="messaggioNessunConguaglioConsumiStimati" class="messaggio-nessun-dato-trovato">Nessun conguaglio consumi stimati</div>
-								<table id="tabellaConguaglioConsumiStimati" style="width: 100%;">
-									<tbody>
-										<tr>
-							    		    <td colspan="3">Conguaglio consumi stimati</td>
-							    	    </tr>
-									</tbody>
-									<tbody class="sezione-conguaglio-consumi-stimati" data-data_type="simple_loop" data-first_node="ConguaglioConsumiStimati" data-path_type="xpath" data-path_data="">
-							            <tr>
-							    		    <td colspan="3"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></span></td>
-							    	    </tr>
-							            <tr class="bordo-tab-sotto">
-							        	    <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span></td>
-							                <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
-							                <td><span class="y_conguaglio-consumi-stimati-imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></span></td>
-							            </tr>
-							        </tbody>
-								</table>
+								<div class="table-container">
+									<table id="tabellaConguaglioConsumiStimati" style="width: 100%;">
+										<tbody>
+											<tr>
+								    		    <td colspan="3">Conguaglio consumi stimati</td>
+								    	    </tr>
+										</tbody>
+										<tbody class="sezione-conguaglio-consumi-stimati" data-data_type="simple_loop" data-first_node="ConguaglioConsumiStimati" data-path_type="xpath" data-path_data="">
+								            <tr>
+								    		    <td colspan="3"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></span></td>
+								    	    </tr>
+								            <tr class="bordo-tab-sotto">
+								        	    <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span></td>
+								                <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
+								                <td><span class="y_conguaglio-consumi-stimati-imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></span></td>
+								            </tr>
+								        </tbody>
+									</table>
+								</div>
 							</div>
 							<script type="text/javascript">
 								try {
@@ -1128,27 +1094,29 @@
 							<!-- RETTIFICHE -->
 							<div class="pure-u-24-24">
 								<div id="messaggioNessunaRettificaLetture" class="messaggio-nessun-dato-trovato">Nessun rettifica lettura</div>
-								<table id="tabellaRettificheLetture" style="width: 100%; margin-top: 2px;">
-									<tbody>
-										<tr>
-							    		    <td colspan="3">Rettifiche letture</td>
-							    	    </tr>
-									</tbody>
-									<tbody class="sezione-rettifiche-letture" data-data_type="simple_loop" data-first_node="RettificheLetture" data-path_type="xpath" data-path_data="Rettifiche">
-								        <tr>
-								    		<td colspan="3">
-								    			<span><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></span>
-									    		del <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataLetturaRettificata"></span>
-									    		di <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/LetturaRettificata"></span> kWh</span>
-									    	</td>
-								    	</tr>
-								        <tr>
-								        	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span></td>
-								            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
-								            <td><span class="y_rettifiche-letture-imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></span></td>
-								        </tr>
-							        </tbody>
-								</table>
+								<div class="table-container">
+									<table id="tabellaRettificheLetture" style="width: 100%; margin-top: 2px;">
+										<tbody>
+											<tr>
+								    		    <td colspan="3">Rettifiche letture</td>
+								    	    </tr>
+										</tbody>
+										<tbody class="sezione-rettifiche-letture" data-data_type="simple_loop" data-first_node="RettificheLetture" data-path_type="xpath" data-path_data="Rettifiche">
+									        <tr>
+									    		<td colspan="3">
+									    			<span><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></span>
+										    		del <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataLetturaRettificata"></span>
+										    		di <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/LetturaRettificata"></span> kWh</span>
+										    	</td>
+									    	</tr>
+									        <tr>
+									        	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span></td>
+									            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
+									            <td><span class="y_rettifiche-letture-imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></span></td>
+									        </tr>
+								        </tbody>
+									</table>
+								</div>
 							</div>
 							<script type="text/javascript">
 								try {
@@ -1182,28 +1150,30 @@
 							<!-- CONGUAGLI TARIFFARI -->
 							<div class="pure-u-24-24">
 								<div id="messaggioNessunConguaglioTariffario" class="messaggio-nessun-dato-trovato">Nessun conguaglio tariffario</div>
-								<table id="tabellaConguaglioTariffario" style="width: 100%; margin-top: 2px;">
-									<tbody>
-										<tr>
-							    		    <td colspan="3">Conguaglio tariffario</td>
-							    	    </tr>
-									</tbody>
-									<tbody class="sezione-conguaglio-tariffario" data-data_type="simple_loop" data-first_node="ConguaglioTariffario" data-path_type="xpath" data-path_data="Ricalcolo">
-								        <tr>
-								    		<td colspan="3">
-								    			<span>
-									    			<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></span>
-									    			<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ComponenteConguagliata"></span>
-									    		</span>
-								    		</td>
-								    	</tr>
-								        <tr class="bordo-tab-sotto">
-								        	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span></td>
-								            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
-								            <td><span class="y_conguaglio-tariffario-imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></span></td>
-								        </tr>
-							        </tbody>
-								</table>
+								<div class="table-container">
+									<table id="tabellaConguaglioTariffario" style="width: 100%; margin-top: 2px;">
+										<tbody>
+											<tr>
+								    		    <td colspan="3">Conguaglio tariffario</td>
+								    	    </tr>
+										</tbody>
+										<tbody class="sezione-conguaglio-tariffario" data-data_type="simple_loop" data-first_node="ConguaglioTariffario" data-path_type="xpath" data-path_data="Ricalcolo">
+									        <tr>
+									    		<td colspan="3">
+									    			<span>
+										    			<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></span>
+										    			<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ComponenteConguagliata"></span>
+										    		</span>
+									    		</td>
+									    	</tr>
+									        <tr class="bordo-tab-sotto">
+									        	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span></td>
+									            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
+									            <td><span class="y_conguaglio-tariffario-imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></span></td>
+									        </tr>
+								        </tbody>
+									</table>
+								</div>
 							</div>
 							<script type="text/javascript">
 								try {
@@ -1249,49 +1219,51 @@
 								<div id="messaggioNessunaBollettaDaPagare" class="messaggio">
 									Le precedenti bollette risultano pagate ??
 								</div>
-								<table id="tabellaBolletteNonPagate">
-									<tbody>
-										<tr>
-								            <td colspan="3"><span class="titolo3"><strong>Dettaglio bollette non pagate</strong></span></td> 
-								        </tr>
-								        <tr>
-								    		<td colspan="3">
-								    			<span class="morosita-testo morosita-testo-font" data-data_type="single" data-first_node="MorositaDocumenti" data-path_type="xpath" data-path_data="Testo">testo morosita</span>
-								    		</td>
-								    	</tr>
-								        <tr>
-								        	<td><span class="testo-non-pagate1 dettaglio-a-sinistra">Bolletta</span></td>
-								            <td><span class="testo-non-pagate1 dettaglio-a-sinistra">Scadenza</span></td>
-								            <td><span class="testo-non-pagate1 dettaglio-a-destra">Totale (€)</span></td>
-								        </tr>
-								        <tr class="righe-bollette-non-pagate" data-data_type="simple_loop" data-first_node="MorositaDocumenti" data-path_type="xpath" data-path_data="Dettagli/Morosita">
-								        	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataEmissione"></span> <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/NumeroDocumento">test</span></td>
-								            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataScadenza"></span></td>
-								            <td><span class="importo-bollette-non-pagate" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoDaPagare"></span></td>
-								        </tr>
-								        <tr class="righe-bollette-non-pagate">
-								        	<td><span>Totale insoluto (€)</span></td>
-								            <td></td>
-								    		<td><span data-data_type="single" data-first_node="MorositaDocumenti" data-path_type="xpath" data-path_data="Totale"></span></td>
-								    	</tr>
-								        <tr class="righe-bollette-non-pagate">
-								    		<td colspan="3"><span>Qualora le bollette sollecitate le risultassero già pagate, consideri nullo questo avviso.</span></td>
-								    	</tr>
-								        <tr class="righe-interessi-applicati righe-bollette-non-pagate">
-								    		<td colspan="3"><span class="testo-non-pagate5">Interessi applicati</span></td>
-								    	</tr>
-								         <tr class="righe-interessi-applicati righe-bollette-non-pagate">
-								        	<td><span>Periodo</span></td>
-								            <td><span></span></td>
-								            <td><span>%</span></td>
-								        </tr>
-								        <tr class="righe-interessi-applicati righe-bollette-non-pagate" data-data_type="simple_loop" data-first_node="MorositaInteressiBollette" data-path_type="xpath" data-path_data="MorositaInteressi">
-								        	<td><span><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Periodo"></span></span></td>
-								            <td><span></span></td>
-								            <td><span><span class="sezione-percentuale-interessi-applicati" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TassoAnnuo"></span></span></td>
-								        </tr>  
-									</tbody>
-								</table>
+								<div class="table-container">
+									<table id="tabellaBolletteNonPagate">
+										<tbody>
+											<tr>
+									            <td colspan="3"><span class="titolo3"><strong>Dettaglio bollette non pagate</strong></span></td> 
+									        </tr>
+									        <tr>
+									    		<td colspan="3">
+									    			<span class="morosita-testo morosita-testo-font" data-data_type="single" data-first_node="MorositaDocumenti" data-path_type="xpath" data-path_data="Testo">testo morosita</span>
+									    		</td>
+									    	</tr>
+									        <tr>
+									        	<td><span class="testo-non-pagate1 dettaglio-a-sinistra">Bolletta</span></td>
+									            <td><span class="testo-non-pagate1 dettaglio-a-sinistra">Scadenza</span></td>
+									            <td><span class="testo-non-pagate1 dettaglio-a-destra">Totale (€)</span></td>
+									        </tr>
+									        <tr class="righe-bollette-non-pagate" data-data_type="simple_loop" data-first_node="MorositaDocumenti" data-path_type="xpath" data-path_data="Dettagli/Morosita">
+									        	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataEmissione"></span> <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/NumeroDocumento">test</span></td>
+									            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataScadenza"></span></td>
+									            <td><span class="importo-bollette-non-pagate" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoDaPagare"></span></td>
+									        </tr>
+									        <tr class="righe-bollette-non-pagate">
+									        	<td><span>Totale insoluto (€)</span></td>
+									            <td></td>
+									    		<td><span data-data_type="single" data-first_node="MorositaDocumenti" data-path_type="xpath" data-path_data="Totale"></span></td>
+									    	</tr>
+									        <tr class="righe-bollette-non-pagate">
+									    		<td colspan="3"><span>Qualora le bollette sollecitate le risultassero già pagate, consideri nullo questo avviso.</span></td>
+									    	</tr>
+									        <tr class="righe-interessi-applicati righe-bollette-non-pagate">
+									    		<td colspan="3"><span class="testo-non-pagate5">Interessi applicati</span></td>
+									    	</tr>
+									         <tr class="righe-interessi-applicati righe-bollette-non-pagate">
+									        	<td><span>Periodo</span></td>
+									            <td><span></span></td>
+									            <td><span>%</span></td>
+									        </tr>
+									        <tr class="righe-interessi-applicati righe-bollette-non-pagate" data-data_type="simple_loop" data-first_node="MorositaInteressiBollette" data-path_type="xpath" data-path_data="MorositaInteressi">
+									        	<td><span><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Periodo"></span></span></td>
+									            <td><span></span></td>
+									            <td><span><span class="sezione-percentuale-interessi-applicati" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TassoAnnuo"></span></span></td>
+									        </tr>  
+										</tbody>
+									</table>
+								</div>
 							</div>
 						</div>
 					</div>				
@@ -1439,10 +1411,12 @@
 		}	
 	</script>
 </div>
+</page>
 <!-- ********************** PAGINA 2 FINE ************************ -->
 
 
 
+<page size="A4">
 <!-- ********************** PAGINA 3 INIZIO ************************ -->
 <div id="pagina3" class="paginaA4" style="page-break-after: always;">
 	<!-- @HEADER CON LOGO OE =======
@@ -1514,7 +1488,7 @@
 							Mix energetico medio nazionale dell'energia elettrica immessa nel 2010 nel sistema elettrico italiano, ivi inclusa l’energia elettrica importata, di cui al Decreto 31 luglio 2009 del Ministero dello Sviluppo
 							Economico “Criteri e modalità per la fornitura ai clienti finali delle informazioni sulla composizione del mix energetico utilizzato per la produzione dell'energia elettrica fornita, nonché sull'impatto ambientale della produzione".
 						</div>
-						<div class="contenitore-tabella">
+						<div class="table-container">
 							<table>
 								<tbody>
 									<tr class="header"><td>Fonti primarie utilizzate</td><td class="last">Mix energetico nazionale anno 2010 (%)</td></tr>
@@ -1532,7 +1506,7 @@
 							luglio 2009 del Ministero dello Sviluppo Economico “Criteri e modalità per la fornitura ai clienti finali delle informazioni sulla composizione del mix energetico utilizzato per la produzione dell'energia elettrica fornita,
 							nonchè sull'impatto ambientale della produzione.
 						</div>
-						<div class="contenitore-tabella">
+						<div class="table-container">
 							<table>
 								<tbody>
 									<tr class="header"><td>Fonti primarie utilizzate</td><td>Mix energetico anno 2011 (%) di Omnia Energia Spa</td><td class="last">Mix energetico nazionale anno 2011 (%)</td>
@@ -1585,7 +1559,7 @@
 	</div>
 </div>
 <!-- ********************** PAGINA 3 FINE ************************ -->
-	
+</page>
 	
 	
 </body>
