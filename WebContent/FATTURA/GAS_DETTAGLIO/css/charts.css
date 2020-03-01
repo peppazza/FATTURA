@@ -1,0 +1,36 @@
+.ct-label {
+    color: #555555;
+    font-size: .55rem;
+}
+
+/* SINTESI IMPORTI */
+/* ****************************************************************** */
+.ct-series.spesaMateriaGasNaturale .ct-slice-donut {
+	/* fill: hsl(120, 40%, 60%); */
+	/* stroke: white; */
+	/* stroke-width: 4px; */
+	stroke: #9bc2e6;
+}
+
+.ct-series.spesaTrasporto .ct-slice-donut {
+	stroke: #ed7d31;
+}
+
+.ct-series.spesaOneri .ct-slice-donut {
+	stroke: #a6a6a6;
+}
+
+.ct-series.altrePartite .ct-slice-donut {
+	stroke: #ffdf7f;
+}
+
+.ct-series.imposte .ct-slice-donut {
+	stroke: #5b9bd5;
+}
+
+
+/* QUADRO LETTURE E CONSUMI */
+/* ****************************************************************** */
+.ct-series.consumo .ct-bar {
+	stroke: #5b9bd5;
+}

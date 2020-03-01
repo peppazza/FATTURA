@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>EE Sintesi</title>
+	
+	<link rel="stylesheet" rel="stylesheet" href="EE_SINTESI/css/styles.css"/>
+		
+</head>
+<body>
+	
+		<!-- @DETTAGLIO IMPOSTE - start ==========
+		     =============================================================== -->
+		<div id="_BOX_DETTAGLIO_Imposte" class="pure-g" style="margin-top: 10px;">
+			<div class="pure-u-24-24">
+				<div class="content">
+					<div class="pure-g">
+						<div class="pure-u-24-24">
+							<div class="pure-g titolo sfondo-arancione">
+								<div class="pure-u-24-24 contenuto">DETTAGLIO IMPOSTE</div>
+							</div>
+							<div class="pure-g dati">
+								<div class="pure-u-24-24">
+									<div class="table-container">
+										<table id="tabellaDettaglioImposte">
+									      	<tbody>
+										        <tr class="bordo-titolo">
+										            <td colspan="7" class="consumi"><span class="titolo3"><strong>Dettaglio imposte</strong></span></td> 
+										        </tr>
+											    <tr>
+											    	<td colspan="2">Periodo</td>
+											        <td>Scaglione</td>
+											        <td>Quantità</td>
+											        <td>Prezzo (€/kWh)</td>
+											        <td>Totale (€)</td>
+											        <td>Iva %</td>
+											    </tr>
+											    <tr class="prima-riga-dettaglio-imposte" data-data_type="simple_loop" data-first_node="Imposte" data-path_type="xpath" data-path_data="DettagliImposte/QuotaDettaglioImposte">
+											    	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">xxx</span></td>
+											    	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal">xxx</span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al">xxx</span></td>
+											        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Scaglione"></span></td>
+											        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
+											        <td><span class="dettaglio-imposte-prezzo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoUnitario"></span></td>
+											        <td><span class="sezione-imponibile-dettaglio-imposte" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">123</span></td>
+											        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva"></span></td>
+											    </tr>
+											    <tr class="quota-dettaglio-imposte" data-data_type="simple_loop" data-first_node="Imposte" data-path_type="xpath" data-path_data="AccontiImposte/QuotaDettaglioImposte">
+											    	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></span></td>
+											    	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span></td>
+											        <td><span class="allineamento-scaglione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Scaglione"></span></td>
+											        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
+											        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoUnitario"></span></td>
+											        <td><span class="allineamento-scaglione-imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">678</span></td>
+											        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva"></span></td>
+											    </tr>
+									      	</tbody>
+									    </table>
+									</div>							
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			try {
+				(function() {
+					var esisteDettaglioImposte = false;
+					var esisteAccontiImposte = false;
+					
+					var elems = document.getElementsByClassName('dettaglio-imposte-prezzo');
+					if (elems.length > 0) {
+						var value = elems[0].innerHTML;
+						if (value) {
+							value = value.trim();
+							if (value !== '')
+								esisteDettaglioImposte = true;
+						}
+					}
+					
+					elems = document.getElementsByClassName('allineamento-scaglione-imponibile');
+					if (elems.length > 0) {
+						var value = elems[0].innerHTML;
+						if (value) {
+							value = value.trim();
+							if (value !== '')
+								esisteAccontiImposte = true;
+						}
+					}
+					
+					if (esisteDettaglioImposte || esisteAccontiImposte) {
+						document.getElementById('_BOX_DETTAGLIO_Imposte').style.display = 'block';
+					} else {
+						document.getElementById('_BOX_DETTAGLIO_Imposte').style.display = 'none';
+					}
+				})();
+			} catch (err) {
+				console.log('errore init display per DETTAGLIO IMPOSTE', err);
+			}
+		</script>
+		<!-- ========== end - DETTAGLIO IMPOSTE -->
+		
+		
+		
+		<script type="text/javascript">
+			function showHideBoxBasedOnNumericValue(idOfBoxToShowHide, cssClassOfCheckedNumericValueContainer, boxNameForLog) {
+				try {
+					var esisteDettaglioImposte = false;
+					var esisteAccontiImposte = false;
+					
+					var elems = document.getElementsByClassName(cssClassOfCheckedNumericValueContainer);
+					if (elems.length > 0) {
+						var value = elems[0].innerHTML;
+						if (value) {
+							value = value.trim();
+							if (value !== '') {
+								esisteDettaglioImposte = true;
+							}
+						}
+					}
+					
+					if (esisteDettaglioImposte || esisteAccontiImposte) {
+						document.getElementById(idOfBoxToShowHide).style.display = 'block';
+					} else {
+						document.getElementById(idOfBoxToShowHide).style.display = 'none';
+					}
+				} catch (err) {
+					console.log('errore init display per ' + boxNameForLog, err);
+				}
+			}
+		</script>
+		
+		<!-- @CONGUAGLI CONSUMI STIMATI - start ==========
+			 ============================================= -->
+		<div id="_BOX_DETTAGLIO_ConguagliConsumiStimati" class="pure-g" style="margin-top: 10px;">
+			<div class="pure-u-24-24">
+				<div class="content">
+					<div class="pure-g">
+						<div class="pure-u-24-24">
+							<div class="pure-g titolo sfondo-arancione">
+								<div class="pure-u-24-24 contenuto">CONGUAGLI CONSUMI STIMATI</div>
+							</div>
+							<div class="pure-g dati">
+								<div class="pure-u-24-24">
+									<div class="table-container">
+										<table id="tabellaConguagliConsumiStimati">
+											<tbody class="sezione-conguaglio-consumi-stimati" data-data_type="simple_loop" data-first_node="ConguaglioConsumiStimati" data-path_type="xpath" data-path_data="">
+									            <tr>
+									    		    <td colspan="3"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">xxx</span></td>
+									    	    </tr>
+									            <tr class="bordo-tab-sotto">
+									        	    <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span></td>
+									                <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
+									                <td><span class="_CHECKED_VALUE_conguagli-consumi-stimati-imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">123</span></td>
+									            </tr>
+									        </tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			// ***CONGUAGLI CONSUMI STIMATI
+			showHideBoxBasedOnNumericValue('_BOX_DETTAGLIO_ConguagliConsumiStimati', '_CHECKED_VALUE_conguagli-consumi-stimati-imponibile', 'CONGUAGLI CONSUMI STIMATI');
+		</script>
+		
+		
+		<!-- @RETTIFICHE LETTURE - start ==========
+			 ====================================== -->
+		<div id="_BOX_DETTAGLIO_RettificheLetture" class="pure-g" style="margin-top: 10px;">
+			<div class="pure-u-24-24">
+				<div class="content">
+					<div class="pure-g">
+						<div class="pure-u-24-24">
+							<div class="pure-g titolo sfondo-arancione">
+								<div class="pure-u-24-24 contenuto">RETTIFICHE LETTURE</div>
+							</div>
+							<div class="pure-g dati">
+								<div class="pure-u-24-24">
+									<div class="table-container">
+										<table id="tabellaRettificheLetture">
+											<tbody class="sezione-rettifiche-letture" data-data_type="simple_loop" data-first_node="RettificheLetture" data-path_type="xpath" data-path_data="Rettifiche">
+										        <tr>
+										    		<td colspan="3">
+										    			<span><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></span>
+											    		del <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataLetturaRettificata"></span>
+											    		di <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/LetturaRettificata"></span> kWh</span>
+											    	</td>
+										    	</tr>
+										        <tr>
+										        	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span></td>
+										            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
+										            <td><span class="_CHECKED_VALUE_rettifiche-letture-imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">123</span></td>
+										        </tr>
+									        </tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			// ***RETTIFICHE LETTURE
+			showHideBoxBasedOnNumericValue('_BOX_DETTAGLIO_RettificheLetture', '_CHECKED_VALUE_rettifiche-letture-imponibile', 'RETTIFICHE LETTURE');
+		</script>
+		
+		
+		<!-- @CONGUAGLI TARIFFARI - start ==========
+			 ======================================= -->
+		<div id="_BOX_DETTAGLIO_ConguagliTariffari" class="pure-g" style="margin-top: 10px;">
+			<div class="pure-u-24-24">
+				<div class="content">
+					<div class="pure-g">
+						<div class="pure-u-24-24">
+							<div class="pure-g titolo sfondo-arancione">
+								<div class="pure-u-24-24 contenuto">CONGUAGLI TARIFFARI</div>
+							</div>
+							<div class="pure-g dati">
+								<div class="pure-u-24-24">
+									<div class="table-container">
+										<table id="tabellaConguaglioTariffario">
+											<tbody class="sezione-conguaglio-tariffario" data-data_type="simple_loop" data-first_node="ConguaglioTariffario" data-path_type="xpath" data-path_data="Ricalcolo">
+										        <tr>
+										    		<td colspan="3">
+										    			<span>
+											    			<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">XXX</span>
+											    			<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ComponenteConguagliata"></span>
+											    		</span>
+										    		</td>
+										    	</tr>
+										        <tr class="bordo-tab-sotto">
+										        	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span></td>
+										            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
+										            <td><span class="_CHECKED_VALUE_conguaglio-tariffario-imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">123</span></td>
+										        </tr>
+									        </tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<script type="text/javascript">
+			// ***CONGUAGLI TARIFFARI
+			showHideBoxBasedOnNumericValue('_BOX_DETTAGLIO_ConguagliTariffari', '_CHECKED_VALUE_conguaglio-tariffario-imponibile', 'CONGUAGLI TARIFFARI');
+		</script>
+	
+		
+	
+		<!-- <table class="tabella-dettaglio" data-data_type="nested_loop" data-level="0" data-first_node="ElementiDettaglio" data-path_type="xpath" data-path_data="Servizi/Servizio[not(Descrizione = &quot;DETTAGLIO RICALCOLI&quot; or Descrizione = &quot;CALCOLO INTERESSI&quot;)]">
+			<tbody>
+				<tr class="bordo-titolo">
+					<td colspan="8" class="consumi"><span class="riga-intestazione-voce-dettaglio titolo3" data-data_type="nested_loop_data" data-level="0" data-path_type="xpath" data-path_data="/Descrizione">test</span></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>Periodo</td>
+					<td>Scaglione</td>
+					<td>Quantità</td>
+					<td>U. M.</td>
+					<td>Prezzo Unitario</td>
+					<td>Totale (€)</td>
+					<td>IVA %</td>
+				</tr>
+				<tr data-data_type="nested_loop_child" data-level="1" data-path_type="xpath" data-path_data="Quote/Quota/Dettagli/QuotaDettaglio">
+					<td><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Descrizione">Stest</span></td>
+					<td><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Dal">01/01/2016</span> - <span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Al">31/01/2016</span></td>
+					<td><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Scaglione">0 - 4.000.000</span></td>
+					<td><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Quantita">test</span></td>
+					<td><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/UnitaMisura">€/</span></td>
+					<td><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/ImportoUnitario">test</span></td>
+					<td><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Imponibile">test</span></td>
+					<td><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/AliquotaIva">t</span></td>
+				</tr>
+				<tr class="riga-dettaglio-acconti" data-data_type="nested_loop_child" data-level="1" data-path_type="xpath" data-path_data="Quote/Quota/Acconti/QuotaDettaglioAcconti">
+					<td class="dettaglio-descrizione"><span class="materia3" data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Descrizione">test</span></td>
+					<td><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Dal">test</span> - <span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Al">test</span></td>
+					<td class="dettaglio-scaglione"></td>
+					<td><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Quantita">test</span></td>
+					<td><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/UnitaMisura">€/</span></td>
+					<td><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/ImportoUnitario">test</span></td>
+					<td><span class="sezione-imponibile-riga-dettaglio-acconti singola-riga-dettaglio" data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Imponibile">test</span></td>
+					<td><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/AliquotaIva">t</span></td>
+				</tr>
+			</tbody>
+		</table> -->
+	
+		
+		<!-- @DETTAGLIO RICALCOLI - start ==========
+			 ======================================= -->
+		<div id="_BOX_DETTAGLIO_DettaglioRicalcoli" class="pure-g" style="margin-top: 10px;">
+			<div class="pure-u-24-24">
+				<div class="content">
+					<div class="pure-g">
+						<div class="pure-u-24-24">
+							<div class="pure-g titolo sfondo-arancione">
+								<div class="pure-u-24-24 contenuto">DETTAGLIO RICALCOLI</div>
+							</div>
+							<div class="pure-g dati">
+								<div class="pure-u-24-24">
+									<div class="table-container">
+										<table class="tabella-ricalcoli">
+											<tbody data-data_type="nested_loop" data-level="0" data-first_node="ElementiDettaglio" data-path_type="xpath" data-path_data="Servizi/Servizio[Descrizione = &quot;DETTAGLIO RICALCOLI&quot;]/Quote/Quota">
+												<tr class="riga-intestazione-ricalcoli">
+													<td><span class="rica-dett1b" data-data_type="nested_loop_data" data-level="0" data-path_type="xpath" data-path_data="/Descrizione">test</span></td>
+													<td>Periodo</td>
+													<td>Scaglione</td>
+													<td>Quantità</td>
+													<td>U. M.</td>
+													<td>Prezzo Unitario</td>
+													<td>Totale (€)</td>
+													<td>IVA %</td>
+												</tr>
+												<tr class="bordo-tab-sopra riga-dettaglio-ricalcoli" data-data_type="nested_loop_child" data-level="1" data-path_type="xpath" data-path_data="Dettagli/QuotaDettaglio">
+													<td class="dettaglio-descrizione"><span class="rica-dett3" data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Descrizione">test</span></td>
+													<td class="dettaglio-periodo">
+														<span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Dal">test</span> - <span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Al">test</span>
+													</td>
+													<td class="dettaglio-scaglione"><span class="allineamento-scaglione" data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Scaglione">test</span></td>
+													<td><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Quantita">test</span></td>
+													<td><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/UnitaMisura">test</span></td>
+													<td><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/ImportoUnitario">test</span></td>
+													<td><span class="_CHECKED_VALUE_dettaglio-ricalcoli-imponibile" data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Imponibile">123</span></td>
+													<td><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/AliquotaIva">test</span></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<script type="text/javascript">
+			// ***DETTAGLIO RICALCOLI
+			showHideBoxBasedOnNumericValue('_BOX_DETTAGLIO_DettaglioRicalcoli', '_CHECKED_VALUE_dettaglio-ricalcoli-imponibile', 'DETTAGLIO RICALCOLI');
+		</script>
+		
+	
+		<!-- @CALCOLO INTERESSI - start ==========
+			 ======================================= -->
+		<div id="_BOX_DETTAGLIO_CalcoloInteressi" class="pure-g" style="margin-top: 10px;">
+			<div class="pure-u-24-24">
+				<div class="content">
+					<div class="pure-g">
+						<div class="pure-u-24-24">
+							<div class="pure-g titolo sfondo-arancione">
+								<div class="pure-u-24-24 contenuto">CALCOLO INTERESSI</div>
+							</div>
+							<div class="pure-g dati">
+								<div class="pure-u-24-24">
+									<div class="table-container">
+										<table class="tabella-interessiapplicati">
+									   		<tbody>
+										        <tr>
+										    	    <td>Bolletta</td>
+										    	    <td>Totale <br/>Bolletta (€)</td>
+										            <td>Scadenza</td>
+										            <td>Data inizio <br/>calcolo interessi</td>
+										            <td>Data Fine calcolo <br/>interessi</td>
+										            <td>Numero Giorni</td>
+										            <td>Importo per <br/>calcolo (€)</td>
+										            <td>Aliquota %</td>
+										            <td>Totale <br/>interessi (€)</td>
+										        </tr>
+										       <tr data-data_type="simple_loop" data-first_node="ElementiDettaglio" data-path_type="xpath" data-path_data="MorositaInteressiApplicatiBollette/MorositaInteressiApplicati">
+										    	    <td class="left"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataEmissione">test</span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/NumeroDocumento">test</span></td>
+										    	    <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoOriginale">test</span></td>
+										            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataScadenza">test</span></td>
+										            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/InteressiDal">test</span></td>
+										            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/InteressiAl">test</span></td>
+										            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/NumeroGiorni">test</span></td>
+										            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Valore">test</span></td>
+										            <td><span class="_CHECKED_VALUE_calcolo-interessi-InteressiTassoPercentuale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/InteressiTassoPercentuale">test</span></td>
+										            <td><span class="_CHECKED_VALUE_calcolo-interessi-TotaleInteressiAddebitati" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleInteressiAddebitati">test</span></td>
+										    	</tr>
+									     	</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			// ***CALCOLO INTERESSI
+			// per questa tabella fa un test su 2 valori (al contrario delle altre su cui si effettua un test soo sull'imponibile)
+			showHideBoxBasedOnNumericValue('_BOX_DETTAGLIO_CalcoloInteressi', '_CHECKED_VALUE_calcolo-interessi-InteressiTassoPercentuale', 'CALCOLO INTERESSI');
+			showHideBoxBasedOnNumericValue('_BOX_DETTAGLIO_CalcoloInteressi', '_CHECKED_VALUE_calcolo-interessi-TotaleInteressiAddebitati', 'CALCOLO INTERESSI');
+		</script>
+	
+</body>
+</html>

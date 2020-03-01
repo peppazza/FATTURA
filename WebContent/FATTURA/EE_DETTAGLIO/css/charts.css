@@ -1,0 +1,51 @@
+.ct-label {
+    color: #555555;
+    font-size: .55rem;
+}
+
+/* SINTESI IMPORTI */
+/* ****************************************************************** */
+.ct-series.spesaMateriaEnergia .ct-slice-donut {
+	/* fill: hsl(120, 40%, 60%); */
+	/* stroke: white; */
+	/* stroke-width: 4px; */
+	stroke: #ff7300;
+}
+
+.ct-series.spesaTrasporto .ct-slice-donut {
+	stroke: #404040;
+}
+
+.ct-series.spesaOneri .ct-slice-donut {
+	stroke: #80ff00;
+}
+
+.ct-series.altrePartite .ct-slice-donut {
+	stroke: #000000;
+}
+
+.ct-series.imposte .ct-slice-donut {
+	stroke: #ffff00;
+}
+
+
+/* QUADRO LETTURE E CONSUMI */
+/* ****************************************************************** */
+.ct-series.tipoDato .ct-bar {
+	/* fill: hsl(120, 40%, 60%); */
+	/* stroke: white; */
+	/* stroke-width: 4px; */
+	stroke: #f67b28;
+}
+
+.ct-series.f1 .ct-bar {
+	stroke: #ffc604;
+}
+
+.ct-series.f2 .ct-bar {
+	stroke: #70b243;
+}
+
+.ct-series.f3 .ct-bar {
+	stroke: #a34b15;
+}

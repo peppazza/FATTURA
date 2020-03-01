@@ -1,0 +1,639 @@
+body {
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin: 8px;
+}
+
+page[size="A4"] {
+    background: white;
+    width: 19.6cm;
+    height: 28.3cm;
+    display: block;
+    margin: 0 auto;
+    padding: 60px 30px 0;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+    /* margin-bottom: 0.5cm; */
+    /* padding: 0.7cm; */
+}
+
+.messaggio {
+	font-size: 12px;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	font-size: 7px;
+}
+
+table tbody tr td {
+	border: 1px solid #555555;
+	padding: 0 1px;
+}
+
+table tbody tr td.no-border {
+	border: none;
+}
+
+/* TODO cancellare */
+.icona-simbolo-euro {
+	background-color: #ee9a50;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 11px;
+    border-radius: 7px;
+    line-height: 14px;
+}
+
+.titolo.sfondo-blu {
+	font-size: 13px;
+    color: #ffffff;
+    background-color: #5b9bd5; /* blu */
+    padding: 0px 5px;
+    height: 22px;
+    line-height: 24px;
+    margin-top: 12px;
+    margin-bottom: 6px;
+}
+
+.footer {
+	margin-top: 200px;
+}
+
+.footer .contenuto {
+	text-align: center;
+}
+
+.footer .contenuto img {
+    width: 630px;
+}
+
+.header-logo-oe {
+	margin: 24px 0;
+}
+
+/* HEADER ================================================= */
+	#headerLogo {
+		margin: 30px 0 60px;
+	}
+	
+	#headerLogo .loghi-rina {
+		text-align: right;
+    	margin-right: 20px;
+	}
+	
+	#headerLogo .loghi-rina .uni,
+	#headerLogo .loghi-rina .iso {
+		display: inline-block;
+	}
+	
+	#headerLogo .logo-rina-2-in-1 img {
+		width: 260px;
+	}
+	
+	#headerLogo .logo-rina-uni img {
+		width: 116px;
+	}
+	
+	#headerLogo .logo-rina-iso img {
+		width: 100px;
+	}
+
+
+/* DATI FORNITURA ========================================= */
+	#datiFornitura .dati-colonna-left {
+		padding-right: 4px;
+	}
+	
+	#datiFornitura .dati-colonna-right {
+		padding-left: 4px;
+	}
+		
+	#datiFornitura .dati-colonna-left .contenuto {
+		padding: 0 5px;	
+	}
+	
+	#datiFornitura .dati-colonna-left .contenuto .etichetta {
+		font-size: 11px;
+	    font-weight: bold;
+	    margin-bottom: 2px;
+	}
+	
+	#datiFornitura .dati-colonna-left .contenuto .valore {
+		font-size: 11px;
+		margin-bottom: 3px;
+	}
+	
+	#datiFornitura .dati-colonna-right .qr-code-plus-identificativo-cliente {
+		margin-bottom: 14px;
+	}
+	
+	#datiFornitura .dati-colonna-right .qr-code-plus-identificativo-cliente .identificativo-cliente {
+		padding: 20px 0;
+		text-align: center;	
+		font-size: 13px;
+	}
+	
+	#datiFornitura .dati-colonna-right .spedizione-plus-tipo-bolletta .spedizione {
+		text-transform: uppercase;
+		font-size: 12px;
+		font-weight: bold;
+	}
+	
+	#datiFornitura .dati-colonna-right .spedizione-plus-tipo-bolletta .tipo-bolletta .tipo {
+		font-size: 14px;
+	}
+	
+	#datiFornitura .dati-colonna-right .spedizione-plus-tipo-bolletta .tipo-bolletta .tipo-mercato {
+		font-size: 12px;
+		margin-bottom: 8px;
+	}
+	
+	#datiFornitura .dati-colonna-right .spedizione-plus-tipo-bolletta .tipo-bolletta .fiamma img {
+		width: 40px;
+	}
+
+
+/* CLIENTI/BOLLETTA/IMPORTO =============================== */
+	#clienteBollettaImporto {
+		font-size: 13px;
+	}
+	
+	#clienteBollettaImporto .separatore {
+		border-top: 1px solid #5b9bd5; /* blu */
+		margin-bottom: 4px;
+	}
+	
+	#clienteBollettaImporto .etichetta {
+		color: #5b9bd5;
+	    font-weight: bold;
+	    margin-bottom: 2px;
+	}
+	
+	#clienteBollettaImporto .valore {
+		font-size: 14px;
+		margin-bottom: 4px;
+	}
+	
+	/* cliente */
+	#clienteBollettaImporto .cliente .contenuto {
+		padding: 0 5px;
+	}
+	
+	#clienteBollettaImporto .cliente .contenuto .valore.numero-cliente {
+		font-weight: 800;
+		color: #e4226a;
+	}
+	
+	/* bolletta */
+	#clienteBollettaImporto .bolletta .contenuto {
+		padding: 0 5px;
+		border-left: 1px solid #5b9bd5; /* blu */
+		border-right: 1px solid #5b9bd5;
+	}
+	
+	#clienteBollettaImporto .bolletta .contenuto .titolo {
+		color: #5b9bd5;
+	    font-weight: bold;
+	    padding: 4px 0;
+	    margin-bottom: 4px;
+	    font-size: 14px;
+	}
+	
+	#clienteBollettaImporto .bolletta .contenuto .info {
+		margin-bottom: 3px;
+	}
+	
+	#clienteBollettaImporto .bolletta .contenuto .info .etichetta-custom {
+		font-weight: bold;
+	}
+	
+	/* importo (totale da pagare) */
+	#clienteBollettaImporto .importo .contenuto {
+		padding: 0 5px;
+	}
+	
+	#clienteBollettaImporto .importo .contenuto .titolo {
+		color: #5b9bd5;
+	    font-weight: bold;
+	    padding: 4px 0;
+	    margin-bottom: 5px;
+	    font-size: 14px;
+	}
+	
+	#clienteBollettaImporto .importo .contenuto .importo-in-euro {
+		font-size: 26px;
+	    font-weight: bold;
+	    text-align: right;
+	}
+	
+	#clienteBollettaImporto .importo .contenuto .data-scadenza {
+		text-align: right;
+	    margin-bottom: 7px;
+	}
+	
+	#clienteBollettaImporto .importo .contenuto .data-scadenza .data {
+		color: #5b9bd5;
+	}
+	
+	/* grazie */
+	#clienteBollettaImporto .grazie .contenuto {
+		padding: 4px 8px;	
+	}
+	
+	#clienteBollettaImporto .grazie .contenuto .titolo {
+	    font-weight: bold;
+	    padding: 4px 0;
+	    margin-bottom: 5px;
+	    font-size: 14px;
+	}
+	
+	#clienteBollettaImporto .grazie .contenuto .titolo .icona {
+		color: #5b9bd5; /* blu */
+	}
+	
+	#clienteBollettaImporto .grazie .contenuto .titolo .icona img {
+	    margin-bottom: -4px;
+	}
+	
+	#clienteBollettaImporto .grazie .contenuto .messaggio {
+		font-size: 11px;
+	}
+
+
+/* SINTESI IMPORTI ======================================== */
+	#sintesiImporti {
+	    margin-bottom: 20px;
+	}
+	
+	#sintesiImporti .grafico {
+		border-top: 2px solid #5b9bd5; /* blu */
+	}
+	
+	#sintesiImporti .grafico .contenuto {
+		padding-top: 4px;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	
+	#sintesiImporti .grafico .contenuto .titolo {
+		color: #5b9bd5; /* blu */
+		font-size: 14px;
+		font-weight: bold;
+	    height: 20px;
+	    line-height: 22px;
+	}
+	
+	#sintesiImporti .grafico .contenuto .separatore .bordo {
+		border-top: 1px solid #000000;
+		margin-left: -2px;
+	}
+	
+	#sintesiImporti .grafico .contenuto .legenda,
+	#sintesiImporti .grafico .contenuto .importi {
+		font-size: 10px;
+	}
+	
+	#sintesiImporti .grafico .contenuto .legenda .voce-legenda {
+		margin-bottom: 4px;
+	}
+	
+	#sintesiImporti .grafico .contenuto .legenda .box-colore {
+		text-align: center;
+	}
+	
+	#sintesiImporti .grafico .contenuto .legenda .box-colore .rettangolo {
+	    display: inline-block;
+	    height: 9px;
+	    width: 15px;
+	    margin-top: 1px;
+	}
+	
+	#sintesiImporti .grafico .contenuto .legenda .voce-legenda.spesaMateriaGasNaturale .box-colore .rettangolo {
+		background-color: #9bc2e6; /* vedi file charts.css */
+	}
+	
+	#sintesiImporti .grafico .contenuto .legenda .voce-legenda.spesaTrasporto .box-colore .rettangolo {
+		background-color: #ed7d31; /* vedi file charts.css */
+	}
+	
+	#sintesiImporti .grafico .contenuto .legenda .voce-legenda.spesaOneri .box-colore .rettangolo {
+		background-color: #a6a6a6; /* vedi file charts.css */
+	}
+	
+	#sintesiImporti .grafico .contenuto .legenda .voce-legenda.altrePartite .box-colore .rettangolo {
+		background-color: #ffdf7f; /* vedi file charts.css */
+	}
+	
+	#sintesiImporti .grafico .contenuto .legenda .voce-legenda.imposte .box-colore .rettangolo {
+		background-color: #5b9bd5; /* vedi file charts.css */
+	}
+	
+	#sintesiImporti .grafico .contenuto .legenda .voce-legenda .valore-in-euro,
+	#sintesiImporti .grafico .contenuto .importi .voce-importi .valore-in-euro {
+		text-align: right;
+	}
+	
+	#sintesiImporti .grafico .contenuto .legenda .voce-legenda .valore-in-euro .val,
+	#sintesiImporti .grafico .contenuto .importi .voce-importi .valore-in-euro .val,
+	#sintesiImporti .grafico .contenuto .riepilogo-iva .voce-riepilogo-iva .valore-in-euro .val,
+	#sintesiImporti .grafico .contenuto .riepilogo-iva .voce-riepilogo-iva .valore-perc .val {
+		display: inline-block;
+	}
+	
+	#sintesiImporti .grafico .contenuto .importi .voce-importi {
+		margin-bottom: 2px;
+	}
+	
+	#sintesiImporti .grafico .contenuto .riepilogo-iva {
+	    font-size: 10px;
+	    margin-top: 5px;
+	}
+	
+	#sintesiImporti .consulente-dedicato .contenuto {
+		padding: 0 8px;	
+	}
+	
+	#sintesiImporti .consulente-dedicato .contenuto .titolo {
+	    font-weight: bold;
+	    padding: 4px 0;
+	    margin-bottom: 5px;
+	    font-size: 12px;
+	    color: #5b9bd5; /* blu */
+	}
+	
+	#sintesiImporti .consulente-dedicato .contenuto .titolo img {
+		margin-bottom: -2px;
+	}
+	
+	#sintesiImporti .consulente-dedicato .contenuto .titolo .icona {
+		color: #5b9bd5; /* blu */
+	}
+	
+	#sintesiImporti .consulente-dedicato .contenuto .messaggio {
+		font-size: 11px;
+		font-size: 11px;
+	    line-height: 1.4;
+	}
+
+	
+/* CONTATTI/AUTOLETTURA =================================== */
+	#contattiAutoletturaGuasti {
+		margin-bottom: 15px;
+	}
+	
+	/* contatti */
+		#contattiAutoletturaGuasti .contatti .contenuto {
+			font-size: 12px;
+			padding: 0 5px;
+		}
+		
+		#contattiAutoletturaGuasti .contatti .contenuto .titolo {
+			font-size: 14px;
+			height: 20px;
+			line-height: 22px;
+		}
+		
+		#contattiAutoletturaGuasti .contatti .contenuto .titolo .img-telefono {
+		    border: 0;
+		    margin-bottom: -4px;
+		}
+		
+		#contattiAutoletturaGuasti .contatti .contenuto .elenco-contatti {
+			border: 2px solid #5b9bd5; /* blu */
+	    	padding: 4px 8px;
+		}
+		
+		#contattiAutoletturaGuasti .contatti .contenuto .elenco-contatti .contatto {
+			margin-bottom: 4px;
+		}
+		
+		#contattiAutoletturaGuasti .contatti .contenuto .elenco-contatti .contatto .etichetta {
+			font-weight: bold;
+			margin-bottom: 1px;
+		}
+		
+	/* autolettura */
+		#contattiAutoletturaGuasti .autolettura .contenuto {
+			font-size: 12px;
+			padding: 0 5px;
+		}
+		
+		#contattiAutoletturaGuasti .autolettura .contenuto .titolo {
+			font-size: 14px;
+			height: 20px;
+			line-height: 22px;
+			color: #5b9bd5; /* blu */
+		}
+		
+		#contattiAutoletturaGuasti .autolettura .contenuto .elenco-canali {
+			border: 2px solid #5b9bd5; /* blu */
+	    	padding: 4px 8px;
+		}
+		
+		#contattiAutoletturaGuasti .autolettura .contenuto .elenco-canali .intro {
+			margin-bottom: 5px;
+		}
+		
+		#contattiAutoletturaGuasti .autolettura .contenuto .elenco-canali .canale {
+			margin-bottom: 4px;
+		}
+		
+		#contattiAutoletturaGuasti .autolettura .contenuto .elenco-canali .canale .etichetta {
+			font-weight: bold;
+		}
+		
+	/* guasti */
+		#contattiAutoletturaGuasti .guasti .contenuto {
+			font-size: 12px;
+			padding: 0 5px;
+		}
+		
+		#contattiAutoletturaGuasti .guasti .contenuto .titolo {
+			font-size: 14px;
+			height: 20px;
+			line-height: 22px;
+		}
+		
+		#contattiAutoletturaGuasti .guasti .contenuto .contatti {
+			border: 2px solid #5b9bd5; /* blu */
+	    	padding: 4px 8px;
+		}
+		
+		#contattiAutoletturaGuasti .guasti .contenuto .contatti .contatto {
+			margin-bottom: 4px;
+		}
+		
+		#contattiAutoletturaGuasti .guasti .contenuto .contatti .contatto .etichetta {
+			font-weight: bold;
+		}
+
+
+/* QUADRO LETTURE E CONSUMI =============================== */
+	#quadroLettureEConsumi .titolo .contenuto {
+	   	font-size: 13px;
+	    color: #ffffff;
+	    background-color: #5b9bd5; /* blu */
+	    padding: 0px 5px;
+	    height: 22px;
+	    line-height: 24px;
+	    margin-bottom: 6px;
+	}
+	
+	#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda {
+		font-size: 8px;
+	}
+	
+	#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda .voce-legenda {
+		margin-bottom: 1px;
+	}
+	
+	#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda .voce-legenda .box-colorato {
+		display: inline-block;
+		width: 5px;
+		height: 5px;
+		margin-right: 4px;
+	}
+	
+	#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda .voce-legenda .box-colorato.tipoDato {
+		background-color: #f67b28; /* vedi file charts.css */
+	}
+	
+	#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda .voce-legenda .box-colorato.f1 {
+		background-color: #ffc604; /* vedi file charts.css */
+	}
+	
+	#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda .voce-legenda .box-colorato.f2 {
+		background-color: #70b243; /* vedi file charts.css */
+	}
+	
+	#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda .voce-legenda .box-colorato.f3 {
+		background-color: #a34b15; /* vedi file charts.css */
+	}
+	
+	#quadroLettureEConsumi .legenda-grafico-plus-tabella-dati .legenda .voce-legenda .etichetta {
+		display: inline-block;
+	}
+	
+	#quadroLettureEConsumi #tabellaQuadroLettureEConsumi {
+		font-size: 8px;
+		width: 100%;
+	}
+	
+	#quadroLettureEConsumi #tabellaQuadroLettureEConsumi tr {
+		border-bottom: 1px solid #555555;
+	}
+	
+	#quadroLettureEConsumi #tabellaQuadroLettureEConsumi tr td {
+		border-left: 1px solid #555555;
+		padding: 0 1px;
+	}
+	
+	#quadroLettureEConsumi #tabellaQuadroLettureEConsumi tr td.header {
+		border-top: 1px solid #555555;
+	}
+	
+	#quadroLettureEConsumi #tabellaQuadroLettureEConsumi tr td.header.no-border {
+		border-top: 0;
+		border-left: 0
+	}
+	
+	#quadroLettureEConsumi #tabellaQuadroLettureEConsumi tr td.last {
+		border-right: 1px solid #555555;
+	}
+
+
+/* CONGUAGLI RICALCOLI NON PAGATE */
+	#conguagliRicalcoliNonPagate {
+		font-size: 12px;
+	}
+	
+	#conguagliRicalcoliNonPagate #conguagliRicalcoli .dati,
+	#conguagliRicalcoliNonPagate #nonPagate .dati {
+		padding: 4px;
+	}
+	
+
+/* GUIDA LETTURA FATTURA */
+	#guidaLetturaFattura .dati {
+		font-size: 10px;
+		padding: 4px;
+	}
+	
+	#guidaLetturaFattura .dati .paragrafo {
+		margin-bottom: 4px;
+	}
+
+
+/* ARERA */
+	#arera .dati {
+		font-size: 8px;
+		padding: 4px;
+	}
+	
+	#arera .dati .titolo {
+	    background-color: #dedede;
+    	padding: 2px 4px;
+    	margin: 8px 0 2px;
+	}
+	
+	#arera .dati table {
+		width: 100%;
+		margin: 4px 0;
+	}
+	
+	#arera .dati table tr td {
+		border-top: 1px solid #555555;
+		border-left: 1px solid #555555;
+		padding: 0 5px;
+	}
+	
+	#arera .dati table tr.last td {
+		border-bottom: 1px solid #555555;
+	}
+	
+	#arera .dati table tr td.last {
+		border-right: 1px solid #555555;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
