@@ -55,6 +55,7 @@ table tbody tr td.no-border {
     padding: 0px 5px;
     height: 22px;
     line-height: 24px;
+    margin-top: 12px;
     margin-bottom: 6px;
 }
 
@@ -547,9 +548,6 @@ table tbody tr td.no-border {
 
 
 /* RIEPILOGO CONSUMI STORICI =============================== */
-	#riepilogoQuantitaECostiMediFatturati {
-		margin-bottom: 15px;
-	}
 	#riepilogoQuantitaECostiMediFatturati .col1 {
 		font-size: 12px;
 	}
@@ -570,7 +568,6 @@ table tbody tr td.no-border {
 /* CONGUAGLI RICALCOLI NON PAGATE */
 	#conguagliRicalcoliNonPagate {
 		font-size: 12px;
-		margin-bottom: 15px;
 	}
 	
 	#conguagliRicalcoliNonPagate #conguagliRicalcoli .dati,
@@ -580,10 +577,6 @@ table tbody tr td.no-border {
 
 	
 /* GUIDA LETTURA FATTURA */
-	#guidaLetturaFattura {
-		margin-top: 10px;
-	}
-	
 	#guidaLetturaFattura .dati {
 		font-size: 10px;
 		padding: 4px;

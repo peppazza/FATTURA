@@ -55,6 +55,7 @@ table tbody tr td.no-border {
     padding: 0px 5px;
     height: 22px;
     line-height: 24px;
+    margin-top: 12px;
     margin-bottom: 6px;
 }
 
@@ -103,10 +104,6 @@ table tbody tr td.no-border {
 
 
 /* DATI FORNITURA ========================================= */
-	#datiFornitura {
-		margin-bottom: 15px;	
-	}
-	
 	#datiFornitura .dati-colonna-left {
 		padding-right: 4px;
 	}
@@ -163,7 +160,6 @@ table tbody tr td.no-border {
 /* CLIENTI/BOLLETTA/IMPORTO =============================== */
 	#clienteBollettaImporto {
 		font-size: 13px;
-		margin-bottom: 15px;	
 	}
 	
 	#clienteBollettaImporto .separatore {
@@ -553,7 +549,6 @@ table tbody tr td.no-border {
 /* CONGUAGLI RICALCOLI NON PAGATE */
 	#conguagliRicalcoliNonPagate {
 		font-size: 12px;
-		margin-bottom: 15px;
 	}
 	
 	#conguagliRicalcoliNonPagate #conguagliRicalcoli .dati,
@@ -563,10 +558,6 @@ table tbody tr td.no-border {
 	
 
 /* GUIDA LETTURA FATTURA */
-	#guidaLetturaFattura {
-		margin-top: 10px;
-	}
-	
 	#guidaLetturaFattura .dati {
 		font-size: 10px;
 		padding: 4px;
