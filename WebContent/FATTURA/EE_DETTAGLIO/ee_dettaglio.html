@@ -1320,8 +1320,6 @@
 						}
 					}
 					
-					console.log('esistonoBolletteNonPagate', esistonoBolletteNonPagate)
-					
 					if (esistonoBolletteNonPagate) {
 						document.getElementById('tabellaBolletteNonPagate').style.display = 'table';
 						document.getElementById('messaggioNessunaBollettaDaPagare').style.display = 'none';
@@ -1585,7 +1583,7 @@
 
 
 <!-- ********************** PAGINA 4 INIZIO ************************ -->
-<div id="pagina3" class="paginaA4" style="page-break-after: always;">
+<div id="pagina4" class="paginaA4" style="page-break-after: always;">
 	<div style="height: 970px;">
 		<!-- @HEADER CON LOGO OE =======
 			 =========================== -->
@@ -1598,7 +1596,7 @@
 		
 		<!-- @DETTAGLIO IMPOSTE - start ==========
 		     =============================================================== -->
-		<div id="_BOX_DETTAGLIO_Imposte" class="pure-g" style="margin-top: 10px;">
+		<div id="boxDettaglioImposte" class="pure-g">
 			<div class="pure-u-24-24">
 				<div class="content">
 					<div class="pure-g">
@@ -1609,7 +1607,10 @@
 							<div class="pure-g dati">
 								<div class="pure-u-24-24">
 									<div class="table-container">
-										<table id="tabellaDettaglioImposte">
+										<div id="_MESSAGGIO_NO_DATI_DETTAGLIO_Imposte" class="messaggio-no-dati-per-dettaglio">
+											Nessun dato
+										</div>
+										<table id="_TABELLA_DETTAGLIO_Imposte">
 									      	<tbody>
 										        <tr class="bordo-titolo">
 										            <td colspan="7" class="consumi"><span class="titolo3"><strong>Dettaglio imposte</strong></span></td> 
@@ -1677,9 +1678,11 @@
 					}
 					
 					if (esisteDettaglioImposte || esisteAccontiImposte) {
-						document.getElementById('_BOX_DETTAGLIO_Imposte').style.display = 'block';
+						document.getElementById('_TABELLA_DETTAGLIO_Imposte').style.display = 'table';
+						document.getElementById('_MESSAGGIO_NO_DATI_DETTAGLIO_Imposte').style.display = 'none';
 					} else {
-						document.getElementById('_BOX_DETTAGLIO_Imposte').style.display = 'none';
+						document.getElementById('_TABELLA_DETTAGLIO_Imposte').style.display = 'none';
+						document.getElementById('_MESSAGGIO_NO_DATI_DETTAGLIO_Imposte').style.display = 'block';
 					}
 				})();
 			} catch (err) {
@@ -1690,36 +1693,37 @@
 		
 		
 		<script type="text/javascript">
-			function showHideBoxBasedOnNumericValue(idOfBoxToShowHide, cssClassOfCheckedNumericValueContainer, boxNameForLog) {
+			function showHideBoxBasedOnNumericValue(tableId, noDataMessageBoxId, checkNumericValueBoxId, boxNameForLogging) {
 				try {
 					var esisteDettaglioImposte = false;
 					var esisteAccontiImposte = false;
 					
-					var elems = document.getElementsByClassName(cssClassOfCheckedNumericValueContainer);
+					var elems = document.getElementsByClassName(checkNumericValueBoxId);
 					if (elems.length > 0) {
 						var value = elems[0].innerHTML;
 						if (value) {
 							value = value.trim();
-							if (value !== '') {
+							if (value !== '')
 								esisteDettaglioImposte = true;
-							}
 						}
 					}
 					
 					if (esisteDettaglioImposte || esisteAccontiImposte) {
-						document.getElementById(idOfBoxToShowHide).style.display = 'block';
+						document.getElementById(tableId).style.display = 'table';
+						document.getElementById(noDataMessageBoxId).style.display = 'none';
 					} else {
-						document.getElementById(idOfBoxToShowHide).style.display = 'none';
+						document.getElementById(tableId).style.display = 'none';
+						document.getElementById(noDataMessageBoxId).style.display = 'block';
 					}
 				} catch (err) {
-					console.log('errore init display per ' + boxNameForLog, err);
+					console.log('errore init display per ' + boxNameForLogging, err);
 				}
 			}
 		</script>
 		
 		<!-- @CONGUAGLI CONSUMI STIMATI - start ==========
 			 ============================================= -->
-		<div id="_BOX_DETTAGLIO_ConguagliConsumiStimati" class="pure-g" style="margin-top: 10px;">
+		<div id="boxConguagliConsumiStimati" class="pure-g">
 			<div class="pure-u-24-24">
 				<div class="content">
 					<div class="pure-g">
@@ -1730,7 +1734,10 @@
 							<div class="pure-g dati">
 								<div class="pure-u-24-24">
 									<div class="table-container">
-										<table id="tabellaConguagliConsumiStimati">
+										<div id="_MESSAGGIO_NO_DATI_DETTAGLIO_ConguaglioConsumiStimati" class="messaggio-no-dati-per-dettaglio">
+											Nessun dato
+										</div>
+										<table id="_TABELLA_DETTAGLIO_ConguaglioConsumiStimati">
 											<tbody class="sezione-conguaglio-consumi-stimati" data-data_type="simple_loop" data-first_node="ConguaglioConsumiStimati" data-path_type="xpath" data-path_data="">
 									            <tr>
 									    		    <td colspan="3"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">xxx</span></td>
@@ -1752,13 +1759,13 @@
 		</div>
 		<script type="text/javascript">
 			// ***CONGUAGLI CONSUMI STIMATI
-			showHideBoxBasedOnNumericValue('_BOX_DETTAGLIO_ConguagliConsumiStimati', '_CHECKED_VALUE_conguagli-consumi-stimati-imponibile', 'CONGUAGLI CONSUMI STIMATI');
+			showHideBoxBasedOnNumericValue('_TABELLA_DETTAGLIO_ConguaglioConsumiStimati', '_MESSAGGIO_NO_DATI_DETTAGLIO_ConguaglioConsumiStimati', '_CHECKED_VALUE_conguagli-consumi-stimati-imponibile', 'CONGUAGLI CONSUMI STIMATI');
 		</script>
 		
 		
 		<!-- @RETTIFICHE LETTURE - start ==========
 			 ====================================== -->
-		<div id="_BOX_DETTAGLIO_RettificheLetture" class="pure-g" style="margin-top: 10px;">
+		<div id="boxRettificheLetture" class="pure-g">
 			<div class="pure-u-24-24">
 				<div class="content">
 					<div class="pure-g">
@@ -1769,7 +1776,10 @@
 							<div class="pure-g dati">
 								<div class="pure-u-24-24">
 									<div class="table-container">
-										<table id="tabellaRettificheLetture">
+										<div id="_MESSAGGIO_NO_DATI_DETTAGLIO_RettificheLetture" class="messaggio-no-dati-per-dettaglio">
+											Nessun dato
+										</div>
+										<table id="_TABELLA_DETTAGLIO_RettificheLetture">
 											<tbody class="sezione-rettifiche-letture" data-data_type="simple_loop" data-first_node="RettificheLetture" data-path_type="xpath" data-path_data="Rettifiche">
 										        <tr>
 										    		<td colspan="3">
@@ -1795,24 +1805,27 @@
 		</div>
 		<script type="text/javascript">
 			// ***RETTIFICHE LETTURE
-			showHideBoxBasedOnNumericValue('_BOX_DETTAGLIO_RettificheLetture', '_CHECKED_VALUE_rettifiche-letture-imponibile', 'RETTIFICHE LETTURE');
+			showHideBoxBasedOnNumericValue('_TABELLA_DETTAGLIO_RettificheLetture', '_MESSAGGIO_NO_DATI_DETTAGLIO_RettificheLetture', '_CHECKED_VALUE_rettifiche-letture-imponibile', 'RETTIFICHE LETTURE');
 		</script>
 		
 		
-		<!-- @CONGUAGLI TARIFFARI - start ==========
+		<!-- @CONGUAGLIO TARIFFARIO - start ==========
 			 ======================================= -->
-		<div id="_BOX_DETTAGLIO_ConguagliTariffari" class="pure-g" style="margin-top: 10px;">
+		<div id="boxConguagliTariffari" class="pure-g">
 			<div class="pure-u-24-24">
 				<div class="content">
 					<div class="pure-g">
 						<div class="pure-u-24-24">
 							<div class="pure-g titolo sfondo-arancione">
-								<div class="pure-u-24-24 contenuto">CONGUAGLI TARIFFARI</div>
+								<div class="pure-u-24-24 contenuto">CONGUAGLIO TARIFFARIO</div>
 							</div>
 							<div class="pure-g dati">
 								<div class="pure-u-24-24">
 									<div class="table-container">
-										<table id="tabellaConguaglioTariffario">
+										<div id="_MESSAGGIO_NO_DATI_DETTAGLIO_ConguaglioTariffario" class="messaggio-no-dati-per-dettaglio">
+											Nessun dato
+										</div>
+										<table id="_TABELLA_DETTAGLIO_ConguaglioTariffario">
 											<tbody class="sezione-conguaglio-tariffario" data-data_type="simple_loop" data-first_node="ConguaglioTariffario" data-path_type="xpath" data-path_data="Ricalcolo">
 										        <tr>
 										    		<td colspan="3">
@@ -1839,7 +1852,7 @@
 		</div>	
 		<script type="text/javascript">
 			// ***CONGUAGLI TARIFFARI
-			showHideBoxBasedOnNumericValue('_BOX_DETTAGLIO_ConguagliTariffari', '_CHECKED_VALUE_conguaglio-tariffario-imponibile', 'CONGUAGLI TARIFFARI');
+			showHideBoxBasedOnNumericValue('_TABELLA_DETTAGLIO_ConguaglioTariffario', '_MESSAGGIO_NO_DATI_DETTAGLIO_ConguaglioTariffario', '_CHECKED_VALUE_conguaglio-tariffario-imponibile', 'CONGUAGLI TARIFFARI');
 		</script>
 	
 	
@@ -1884,7 +1897,7 @@
 		
 		<!-- @DETTAGLIO RICALCOLI - start ==========
 			 ======================================= -->
-		<div id="_BOX_DETTAGLIO_DettaglioRicalcoli" class="pure-g" style="margin-top: 10px;">
+		<div id="boxDettaglioRicalcoli" class="pure-g">
 			<div class="pure-u-24-24">
 				<div class="content">
 					<div class="pure-g">
@@ -1895,7 +1908,10 @@
 							<div class="pure-g dati">
 								<div class="pure-u-24-24">
 									<div class="table-container">
-										<table class="tabella-ricalcoli">
+										<div id="_MESSAGGIO_NO_DATI_DETTAGLIO_Ricalcoli" class="messaggio-no-dati-per-dettaglio">
+											Nessun dato
+										</div>
+										<table id="_TABELLA_DETTAGLIO_Ricalcoli">
 											<tbody data-data_type="nested_loop" data-level="0" data-first_node="ElementiDettaglio" data-path_type="xpath" data-path_data="Servizi/Servizio[Descrizione = &quot;DETTAGLIO RICALCOLI&quot;]/Quote/Quota">
 												<tr class="riga-intestazione-ricalcoli">
 													<td><span class="rica-dett1b" data-data_type="nested_loop_data" data-level="0" data-path_type="xpath" data-path_data="/Descrizione">test</span></td>
@@ -1931,13 +1947,13 @@
 		</div>	
 		<script type="text/javascript">
 			// ***DETTAGLIO RICALCOLI
-			showHideBoxBasedOnNumericValue('_BOX_DETTAGLIO_DettaglioRicalcoli', '_CHECKED_VALUE_dettaglio-ricalcoli-imponibile', 'DETTAGLIO RICALCOLI');
+			showHideBoxBasedOnNumericValue('_TABELLA_DETTAGLIO_Ricalcoli', '_MESSAGGIO_NO_DATI_DETTAGLIO_Ricalcoli', '_CHECKED_VALUE_dettaglio-ricalcoli-imponibile', 'DETTAGLIO RICALCOLI');
 		</script>
 		
 	
 		<!-- @CALCOLO INTERESSI - start ==========
 			 ======================================= -->
-		<div id="_BOX_DETTAGLIO_CalcoloInteressi" class="pure-g" style="margin-top: 10px;">
+		<div id="boxCalcoloInteressi" class="pure-g" style="margin-top: 10px;">
 			<div class="pure-u-24-24">
 				<div class="content">
 					<div class="pure-g">
@@ -1948,7 +1964,10 @@
 							<div class="pure-g dati">
 								<div class="pure-u-24-24">
 									<div class="table-container">
-										<table class="tabella-interessiapplicati">
+										<div id="_MESSAGGIO_NO_DATI_DETTAGLIO_CalcoloInteressi" class="messaggio-no-dati-per-dettaglio">
+											Nessun dato
+										</div>
+										<table id="_TABELLA_DETTAGLIO_CalcoloInteressi">
 									   		<tbody>
 										        <tr>
 										    	    <td>Bolletta</td>
@@ -1985,8 +2004,42 @@
 		<script type="text/javascript">
 			// ***CALCOLO INTERESSI
 			// per questa tabella fa un test su 2 valori (al contrario delle altre su cui si effettua un test soo sull'imponibile)
-			showHideBoxBasedOnNumericValue('_BOX_DETTAGLIO_CalcoloInteressi', '_CHECKED_VALUE_calcolo-interessi-InteressiTassoPercentuale', 'CALCOLO INTERESSI');
-			showHideBoxBasedOnNumericValue('_BOX_DETTAGLIO_CalcoloInteressi', '_CHECKED_VALUE_calcolo-interessi-TotaleInteressiAddebitati', 'CALCOLO INTERESSI');
+			try {
+				(function() {
+					var esisteInteressiTassoPercentuale = false;
+					var esisteTotaleInteressiAddebitati = false;
+					
+					var elems = document.getElementsByClassName('_CHECKED_VALUE_calcolo-interessi-InteressiTassoPercentuale');
+					if (elems.length > 0) {
+						var value = elems[0].innerHTML;
+						if (value) {
+							value = value.trim();
+							if (value !== '')
+								esisteInteressiTassoPercentuale = true;
+						}
+					}
+					
+					elems = document.getElementsByClassName('_CHECKED_VALUE_calcolo-interessi-TotaleInteressiAddebitati');
+					if (elems.length > 0) {
+						var value = elems[0].innerHTML;
+						if (value) {
+							value = value.trim();
+							if (value !== '')
+								esisteTotaleInteressiAddebitati = true;
+						}
+					}
+					
+					if (esisteInteressiTassoPercentuale || esisteTotaleInteressiAddebitati) {
+						document.getElementById('_TABELLA_DETTAGLIO_CalcoloInteressi').style.display = 'table';
+						document.getElementById('_MESSAGGIO_NO_DATI_DETTAGLIO_CalcoloInteressi').style.display = 'none';
+					} else {
+						document.getElementById('_TABELLA_DETTAGLIO_CalcoloInteressi').style.display = 'none';
+						document.getElementById('_MESSAGGIO_NO_DATI_DETTAGLIO_CalcoloInteressi').style.display = 'block';
+					}				
+				})();
+			} catch (err) {
+				console.log('errore init display per DETTAGLIO IMPOSTE', err);
+			}
 		</script>
 	</div>
 	
