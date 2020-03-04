@@ -140,7 +140,7 @@
 										var picco;						    		
 							    		
 										var picchiELEM = document.getElementsByClassName('pot-picco-potenza-valore-per-fascia');
-							    		if (picchiELEM) {
+							    		if (picchiELEM && picchiELEM.length > 0) {
 							    			for (var i = 0; i < picchiELEM.length; i++) {
 							    				var value = checkNumber(picchiELEM[i].innerHTML);
 							    				if (value && typeof value === 'number') {
