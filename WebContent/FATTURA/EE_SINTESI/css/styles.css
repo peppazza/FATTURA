@@ -82,21 +82,17 @@ table tbody tr td.no-border {
 		margin: 25px 0;
 	}
 	
-	#headerLogo .logo-oe,
-	#headerLogo .logo-rina {
-	}
-	
-	#headerLogo .logo-oe img {
+	#headerLogo .logo img {
 		width: 240px;
 		margin-left: 20px;
 	}
 	
-	#headerLogo .logo-rina {
+	#headerLogo .header_logo {
 		text-align: right;
 		margin-right: 20px;
 	}
 	
-	#headerLogo .logo-rina img {
+	#headerLogo .header_logo img {
 		width: 150px;
 	}
 

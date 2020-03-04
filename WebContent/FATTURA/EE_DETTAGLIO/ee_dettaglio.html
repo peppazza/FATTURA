@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>EE Sintesi</title>
+	<title>EE Dettaglio</title>
 
 	<link rel="stylesheet" rel="stylesheet" href="css/pure/pure-min.css"/>
     <link rel="stylesheet" rel="stylesheet" href="js/chartist/dist/chartist.min.css"/>
@@ -70,11 +70,12 @@
 		<!-- LOGHI - start ==========
 		     ======================== -->
 		<div id="headerLogo" class="pure-g">
+			<!-- NB NON modificare i valori degli attributi class e alt -->
 			<div class="pure-u-12-24">
-				<div class="logo-oe"><img src="images/logo-oe.png" width="240" alt="logo-oe" /></div>
+				<div class="logo"><img src="images/logo-oe.png" width="240" alt="logo" /></div>
 			</div>
 			<div class="pure-u-12-24">
-				<div class="logo-rina"><img src="images/logo-rina-iso.jpg" alt="logo-rina"/></div>
+				<div class="header_logo"><img src="images/logo-rina-iso.jpg" alt="header"/></div>
 			</div>
 		</div>
 		<!-- ========== end - LOGHI -->
@@ -303,9 +304,15 @@
 			<div class="pure-u-5-24 grazie">
 				<div id="messaggioGraziePerBolletteTuttePagate" class="contenuto">
 					<div class="titolo">
-						<span class="icona"><img alt="busta" src="images/busta.png" width="17px" height="17px"></span> <span>GRAZIE ??</span>
+						<span class="icona"><img alt="busta" src="images/busta.png" width="17px" height="17px"></span> <span>GRAZIE</span>
 					</div>
-					<div class="messaggio">Ti comunichiamo che, alla data attuale, le tue precedenti bollette risultano tutte pagate. ??</div>
+					<div class="messaggio">Ti comunichiamo che, alla data attuale, le tue precedenti bollette risultano tutte pagate.</div>
+				</div>
+				<div id="messaggioAttenzionePerBolletteNonTuttePagate" class="contenuto">
+					<div class="titolo">
+						<span class="icona"><img alt="busta" src="images/busta.png" width="17px" height="17px"></span> <span>ATTENZIONE</span>
+					</div>
+					<div class="messaggio">Ti comunichiamo che, alla data attuale, una o più delle tue precedenti bollette risultano non pagate.</div>
 				</div>
 			</div>
 		</div>
@@ -1326,16 +1333,14 @@
 						// manage messaggio GRAZIE BOLLETTE TUTTE PAGATE
 						document.getElementById('messaggioGraziePerBolletteTuttePagate').style.display = 'none';
 						// manage messaggio BOLLETTE NON TUTTE PAGATE
-						// TODO
-						// ...
+						document.getElementById('messaggioAttenzionePerBolletteNonTuttePagate').style.display = 'block';
 					} else {
 						document.getElementById('tabellaBolletteNonPagate').style.display = 'none';
 						document.getElementById('messaggioNessunaBollettaDaPagare').style.display = 'block';
 						// manage messaggio GRAZIE BOLLETTE TUTTE PAGATE
 						document.getElementById('messaggioGraziePerBolletteTuttePagate').style.display = 'block';
 						// manage messaggio BOLLETTE NON TUTTE PAGATE
-						// TODO
-						// ...
+						document.getElementById('messaggioAttenzionePerBolletteNonTuttePagate').style.display = 'none';
 					}
 				})();
 			} catch (err) {
