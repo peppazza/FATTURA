@@ -75,7 +75,7 @@ table tbody tr td.no-border {
     width: 630px;
 }
 
-.header-logo-oe {
+.header-inizio-pagina {
 	margin: 24px 0;
 }
 
@@ -94,7 +94,7 @@ table tbody tr td.no-border {
 	}
 	
 	#headerLogo .header_logo img {
-		width: 260px;
+		width: 150px;
 	}
 
 

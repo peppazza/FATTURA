@@ -71,7 +71,7 @@ table tbody tr td.no-border {
     width: 630px;
 }
 
-.header-logo-oe {
+.header-inizio-pagina {
 	margin: 6px 0;
 	padding: 24px 0;
 }
@@ -95,7 +95,6 @@ table tbody tr td.no-border {
 	#headerLogo .header_logo img {
 		width: 150px;
 	}
-
 
 /* DATI FORNITURA ========================================= */
 	#datiFornitura {

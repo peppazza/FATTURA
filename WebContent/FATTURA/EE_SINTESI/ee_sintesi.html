@@ -72,10 +72,10 @@
 		<div id="headerLogo" class="pure-g">
 			<!-- NB NON modificare i valori degli attributi class e alt -->
 			<div class="pure-u-12-24">
-				<div class="logo"><img src="images/logo-oe.png" width="240" alt="logo" /></div>
+				<div class="logo"><img src="images/logo.png" alt="logo" /></div>
 			</div>
 			<div class="pure-u-12-24">
-				<div class="header_logo"><img src="images/logo-rina-iso.jpg" alt="header"/></div>
+				<div class="header_logo"><img src="images/header.png" alt="header" /></div>
 			</div>
 		</div>
 		<!-- ========== end - LOGHI -->
@@ -686,9 +686,16 @@
 	<div style="height: 970px;">
 		<!-- @HEADER CON LOGO OE =======
 			 =========================== -->
-		<div class="header-logo-oe">
+		<!--
+		OLD 
+		<div class="header-inizio-pagina">
 			<div class="contenuto">
-				<img src="images/logo-oe.png" alt="header-logo-oe" width="165px">
+				<img src="images/logo.png" alt="logo" width="165px">
+			</div>
+		</div> -->
+		<div class="header-inizio-pagina">
+			<div class="contenuto">
+				<div class="logo"><img src="images/logo.png" alt="logo" /></div>
 			</div>
 		</div>
 		
@@ -1179,7 +1186,15 @@
 				</div>
 				<div class="pure-g dati">
 					<div class="pure-u-8-24 col1">
+						<!-- coincide con la somma del "consumo fatturato totale" degli ultimi 2 mesi della tabelle in QUADRO LETTURE E CONSUMI -->
 						<strong>Consumi fatturati: <span>1.198 ??</span> kWh</strong>
+						<script type="text/javascript">
+							try {
+								
+							} catch (e) {
+								console.error('errore init "Consumi fatturati"', e);
+							}
+						</script>
 					</div>
 					<div class="pure-u-8-24 col2">
 						Costo medio della materia prima: <strong><span class="costo-medio-materia" data-data_type="single" data-first_node="CostoMedioUnitSpesaMateria" data-path_type="xpath" data-path_data="">0,54</span> €/kWh</strong>
@@ -1327,8 +1342,6 @@
 						}
 					}
 					
-					console.log('esistonoBolletteNonPagate', esistonoBolletteNonPagate)
-					
 					if (esistonoBolletteNonPagate) {
 						document.getElementById('tabellaBolletteNonPagate').style.display = 'table';
 						document.getElementById('messaggioNessunaBollettaDaPagare').style.display = 'none';
@@ -1447,12 +1460,19 @@
 	<div style="height: 970px;">
 		<!-- @HEADER CON LOGO OE =======
 			 =========================== -->
-		<div class="header-logo-oe">
+		<!--
+		OLD 
+		<div class="header-inizio-pagina">
 			<div class="contenuto">
-				<img src="images/logo-oe.png" alt="header-logo-oe" width="165px">
+				<img src="images/logo.png" alt="logo" width="165px">
+			</div>
+		</div> -->
+		<div class="header-inizio-pagina">
+			<div class="contenuto">
+				<div class="logo"><img src="images/logo.png" alt="logo" /></div>
 			</div>
 		</div>
-	
+		
 		<!-- @ARERA - start ==========
 		     ========================= -->	
 		<div id="arera" class="pure-g">
