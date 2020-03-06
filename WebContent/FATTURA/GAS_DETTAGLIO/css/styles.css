@@ -1,3 +1,8 @@
+@font-face {
+  font-family: SourceSansPro;
+  src: url(SourceSansPro-Regular.ttf);
+}
+
 body {
 	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	margin: 8px;
@@ -13,6 +18,17 @@ page[size="A4"] {
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
     /* margin-bottom: 0.5cm; */
     /* padding: 0.7cm; */
+}
+
+.qr-code {
+	font-family: "IDAutomationDMatrix";
+	font-size: 8px;
+	line-height: 1;
+	max-width: 22mm !important;
+	max-height: 10mm !important;
+	display:inline-block;
+	min-width: 22mm !important;
+	min-height: 10mm !important;
 }
 
 .messaggio {
@@ -122,11 +138,11 @@ table tbody tr td.no-border {
 		margin-bottom: 3px;
 	}
 	
-	#datiFornitura .dati-colonna-right .qr-code-plus-identificativo-cliente {
+	#datiFornitura .dati-colonna-right .qrcode-plus-identificativo-cliente {
 		margin-bottom: 14px;
 	}
 	
-	#datiFornitura .dati-colonna-right .qr-code-plus-identificativo-cliente .identificativo-cliente {
+	#datiFornitura .dati-colonna-right .qrcode-plus-identificativo-cliente .identificativo-cliente {
 		padding: 20px 0;
 		text-align: center;	
 		font-size: 13px;
