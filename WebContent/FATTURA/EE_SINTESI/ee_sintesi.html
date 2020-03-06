@@ -15,6 +15,7 @@
     <script src="js/chartist/dist/chartist.min.js"></script>
 	<script src="js/axistitle/dist/chartist-plugin-axistitle.min.js"></script>
 	<script src="js/chartjs/chart.js"></script>
+	<script src="js/chartjs-plugin-datalabels.min.js"></script>
 	
 	<script type="text/javascript">
 		function checkNumber_(val) {
@@ -904,25 +905,34 @@
 							hover: {
 	              				animationDuration: 0
 	            			},
-	             			animation: {
-	                			duration: 1,
-	              				onComplete: function() {
-	                				var chartInstance = this.chart,
-	                  				ctx = chartInstance.ctx;
-					                // ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
-					                ctx.font = Chart.helpers.fontString(7, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
-					                ctx.textAlign = 'center';
-					                ctx.textBaseline = 'bottom';
+// 	             			animation: {
+// 	                			duration: 1,
+// 	              				onComplete: function() {
+// 	                				var chartInstance = this.chart,
+// 	                  				ctx = chartInstance.ctx;
+// 					                // ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+// 					                ctx.font = Chart.helpers.fontString(7, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+// 					                ctx.textAlign = 'center';
+// 					                ctx.textBaseline = 'bottom';
 	 								
-	                				this.data.datasets.forEach(function(dataset, i) {
-	                  					var meta = chartInstance.controller.getDatasetMeta(i);
-	                  					meta.data.forEach(function(bar, index) {
-		                    				var data = Number(dataset.data[index]).toFixed(2).toLocaleString('it');
-		                    				ctx.fillText(data, bar._model.x, bar._model.y + 12);
-	                  					});
-	                				});
-	              				}
-	            			},
+// 	                				this.data.datasets.forEach(function(dataset, i) {
+// 	                  					var meta = chartInstance.controller.getDatasetMeta(i);
+// 	                  					meta.data.forEach(function(bar, index) {
+// 		                    				var data = Number(dataset.data[index]).toFixed(2).toLocaleString('it');
+// 		                    				ctx.fillText(data, bar._model.x, bar._model.y + 12);
+// 	                  					});
+// 	                				});
+// 	              				}
+// 	            			},
+							plugins: {
+					            datalabels: {
+					                color: '#333333',
+					                font: {
+					                	size: 7,
+					                	weight: 600
+					                }
+					            }
+							},
 							scales : {
 								xAxes : [ {
 									stacked : true,
@@ -950,7 +960,7 @@
 		<!-- @RIEPILOGO CONSUMI STORICI - start ==========
 		     ============================================= -->
 		<!-- ****** dati nascosti ****** -->
-		
+		<!-- 
 		<div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
 	        <span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">1</span>
 	        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
@@ -981,17 +991,17 @@
 	        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">691</span>
 			<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3001</span>
 	    </div>
-	    
-	    <!-- <div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
-			<span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese"></span>
-	        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno"></span>
-	        <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese"></span>
-	        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1"></span>
-	        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2"></span>
-	        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3"></span>
-	        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva"></span>
-			<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco"></span>
-	    </div> -->
+	     -->
+	    <div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
+			<span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">5</span>
+	        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
+	        <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">09</span>
+	        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">45</span>
+	        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">56</span>
+	        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">55</span>
+	        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">677</span>
+			<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3088</span>
+	    </div>
 	
 		<div id="riepilogoConsumiStorici" class="pure-g">
 			<div class="pure-u-24-24">
@@ -1121,25 +1131,34 @@
 							hover: {
 	              				animationDuration: 0
 	            			},
-	             			animation: {
-	                			duration: 1,
-	              				onComplete: function() {
-	                				var chartInstance = this.chart,
-	                  				ctx = chartInstance.ctx;
-					                // ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
-					                ctx.font = Chart.helpers.fontString(7, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
-					                ctx.textAlign = 'center';
-					                ctx.textBaseline = 'bottom';
+// 	             			animation: {
+// 	                			duration: 1,
+// 	              				onComplete: function() {
+// 	                				var chartInstance = this.chart,
+// 	                  				ctx = chartInstance.ctx;
+// 					                // ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+// 					                ctx.font = Chart.helpers.fontString(7, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+// 					                ctx.textAlign = 'center';
+// 					                ctx.textBaseline = 'bottom';
 	 								
-	                				this.data.datasets.forEach(function(dataset, i) {
-	                  					var meta = chartInstance.controller.getDatasetMeta(i);
-	                  					meta.data.forEach(function(bar, index) {
-		                    				var data = Number(dataset.data[index]).toFixed(2).toLocaleString('it');
-		                    				ctx.fillText(data, bar._model.x, bar._model.y + 12);
-	                  					});
-	                				});
-	              				}
-	            			},
+// 	                				this.data.datasets.forEach(function(dataset, i) {
+// 	                  					var meta = chartInstance.controller.getDatasetMeta(i);
+// 	                  					meta.data.forEach(function(bar, index) {
+// 		                    				var data = Number(dataset.data[index]).toFixed(2).toLocaleString('it');
+// 		                    				ctx.fillText(data, bar._model.x, bar._model.y + 12);
+// 	                  					});
+// 	                				});
+// 	              				}
+// 	            			},
+	            			plugins: {
+					            datalabels: {
+					                color: '#333333',
+					                font: {
+					                	size: 7,
+					                	weight: 600
+					                }
+					            }
+							}
 						}
 					});
 				})();

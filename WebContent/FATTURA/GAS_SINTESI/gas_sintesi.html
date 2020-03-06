@@ -15,6 +15,7 @@
     <script src="js/chartist/dist/chartist.min.js"></script>
 	<script src="js/axistitle/dist/chartist-plugin-axistitle.min.js"></script>
 	<script src="js/chartjs/chart.js"></script>
+	<script src="js/chartjs-plugin-datalabels.min.js"></script>
 	
 	<script type="text/javascript">
 		function checkNumber_(val) {
@@ -826,25 +827,34 @@
 							hover: {
 		          				animationDuration: 0
 		        			},
-		         			animation: {
-		            			duration: 1,
-		          				onComplete: function() {
-		            				var chartInstance = this.chart,
-		              				ctx = chartInstance.ctx;
-					                // ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
-					                ctx.font = Chart.helpers.fontString(7, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
-					                ctx.textAlign = 'center';
-					                ctx.textBaseline = 'bottom';
+// 		         			animation: {
+// 		            			duration: 1,
+// 		          				onComplete: function() {
+// 		            				var chartInstance = this.chart,
+// 		              				ctx = chartInstance.ctx;
+// 					                // ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+// 					                ctx.font = Chart.helpers.fontString(7, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+// 					                ctx.textAlign = 'center';
+// 					                ctx.textBaseline = 'bottom';
 										
-		            				this.data.datasets.forEach(function(dataset, i) {
-		              					var meta = chartInstance.controller.getDatasetMeta(i);
-		              					meta.data.forEach(function(bar, index) {
-		                    				var data = Number(dataset.data[index]).toFixed(2).toLocaleString('it');
-		                    				ctx.fillText(data, bar._model.x, bar._model.y + 12);
-		              					});
-		            				});
-		          				}
-		        			},
+// 		            				this.data.datasets.forEach(function(dataset, i) {
+// 		              					var meta = chartInstance.controller.getDatasetMeta(i);
+// 		              					meta.data.forEach(function(bar, index) {
+// 		                    				var data = Number(dataset.data[index]).toFixed(2).toLocaleString('it');
+// 	                    					ctx.fillText(data, bar._model.x, bar._model.y + 12);
+// 		              					});
+// 		            				});
+// 		          				}
+// 		        			},
+							plugins: {
+					            datalabels: {
+					                color: '#333333',
+					                font: {
+					                	size: 7,
+					                	weight: 600
+					                }
+					            }
+							},
 							scales : {
 								xAxes : [ {
 									stacked : true,
@@ -951,25 +961,34 @@
 							hover: {
 	              				animationDuration: 0
 	            			},
-	             			animation: {
-	                			duration: 1,
-	              				onComplete: function() {
-	                				var chartInstance = this.chart,
-	                  				ctx = chartInstance.ctx;
-					                // ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
-					                ctx.font = Chart.helpers.fontString(7, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
-					                ctx.textAlign = 'center';
-					                ctx.textBaseline = 'bottom';
+// 	             			animation: {
+// 	                			duration: 1,
+// 	              				onComplete: function() {
+// 	                				var chartInstance = this.chart,
+// 	                  				ctx = chartInstance.ctx;
+// 					                // ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+// 					                ctx.font = Chart.helpers.fontString(7, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+// 					                ctx.textAlign = 'center';
+// 					                ctx.textBaseline = 'bottom';
 	 								
-	                				this.data.datasets.forEach(function(dataset, i) {
-	                  					var meta = chartInstance.controller.getDatasetMeta(i);
-	                  					meta.data.forEach(function(bar, index) {
-		                    				var data = Number(dataset.data[index]).toFixed(2).toLocaleString('it');
-		                    				ctx.fillText(data, bar._model.x, bar._model.y + 6);
-	                  					});
-	                				});
-	              				}
-	            			},
+// 	                				this.data.datasets.forEach(function(dataset, i) {
+// 	                  					var meta = chartInstance.controller.getDatasetMeta(i);
+// 	                  					meta.data.forEach(function(bar, index) {
+// 		                    				var data = Number(dataset.data[index]).toFixed(2).toLocaleString('it');
+// 		                    				ctx.fillText(data, bar._model.x, bar._model.y + 6);
+// 	                  					});
+// 	                				});
+// 	              				}
+// 	            			},
+	            			plugins: {
+					            datalabels: {
+					                color: '#333333',
+					                font: {
+					                	size: 7,
+					                	weight: 600
+					                }
+					            }
+							}
 					    }
 					});
 				})();
