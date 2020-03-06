@@ -697,17 +697,52 @@
 									    </tr>
 									    <tr>
 									    	<td colspan="6"><span>Totale Consumo Fatturato (Smc)</span></td>
-									        <td colspan="3" class="last"><span class="testo-dettaglio-letture4 dettaglio-a-destra"><span data-data_type="single" data-first_node="ConsumiBolletta" data-path_type="xpath" data-path_data="/ConsumoELetture/TotaleConsumoSmc">1177</span></span></td>
+									        <td colspan="3" class="last">
+									        	<span class="testo-dettaglio-letture4 dettaglio-a-destra">
+									        		<!-- <span data-data_type="single" data-first_node="ConsumiBolletta" data-path_type="xpath" data-path_data="/ConsumoELetture/TotaleConsumoSmc">1177</span> -->
+									        		<span id="totaleConsumoSmc">1177</span>
+									        	</span>
+									        </td>
 									    </tr>						    
 							      	</tbody>
-							    </table>	
+							    </table>
+							    <script type="text/javascript">
+									try {
+										var totaleConsumoSmc;
+										
+										var elems = document.getElementsByClassName('_data_ConsumoSmc');
+										if (elems) {
+											totaleConsumoSmc = 0;
+											var N = elems.length;
+											// ultimo mese
+											if (elems.length > 0) {
+												var elem = elems[N - 1];
+												var consumo = checkNumber(elem.innerHTML);
+												if (consumo && typeof consumo === 'number')
+													totaleConsumoSmc += consumo;
+											}
+											if (elems.length > 1) {
+												var elem = elems[N - 2];
+												var consumo = checkNumber(elem.innerHTML);
+												if (consumo && typeof consumo === 'number')
+													totaleConsumoSmc += consumo;
+											}
+										}
+										
+										if (totaleConsumoSmc === 0 || totaleConsumoSmc && typeof totaleConsumoSmc === 'number')
+											document.getElementById('totaleConsumoSmc').innerHTML = totaleConsumoSmc;	
+										else
+											document.getElementById('totaleConsumoSmc').innerHTML = '-';
+									} catch (e) {
+										console.error('errore init "Totale Consumo Fatturato"', e);
+									}
+								</script>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		
+		</div>		
 		<!-- ****** js - grafico e valori calcolati ****** -->
 		<script type="text/javascript">
 			// SHOW SOLO LE ULTIME <<2>> RIGHE DELLA TABELLA (a destra del grafico)

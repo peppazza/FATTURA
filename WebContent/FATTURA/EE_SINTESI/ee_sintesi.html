@@ -1186,7 +1186,7 @@
 									}
 								}
 								
-								if (consumiFatturati && typeof consumiFatturati === 'number') {
+								if (consumiFatturati === 0 || consumiFatturati && typeof consumiFatturati === 'number') {
 									var valore = Number(consumiFatturati.toFixed(2)).toLocaleString('it');
 									document.getElementById('valoreConsumiFatturatiContainer').innerHTML = valore + ' kWh';
 									document.getElementById('totaleEnergiaAttivaFatturata').innerHTML = valore;	
