@@ -411,17 +411,17 @@
 								<div class="pure-g voce-legenda spesaOneri">
 									<div class="pure-u-2-24 box-colore"><div class="rettangolo"></div></div>
 									<div class="pure-u-17-24 etichetta">Spesa per oneri di sistema</div>
-									<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_spesaOneri" class="val">?? 79.2</span></div>
+									<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_spesaOneri" class="val">79.2</span></div>
 								</div>
 								<div class="pure-g voce-legenda altrePartite">
 									<div class="pure-u-2-24 box-colore"><div class="rettangolo"></div></div>
 									<div class="pure-u-17-24 etichetta">Altre partite ed oneri</div>
-									<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_altrePartite" class="val">?? 27.9</span></div>
+									<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_altrePartite" class="val">27.9</span></div>
 								</div>
 								<div class="pure-g voce-legenda imposte">
 									<div class="pure-u-2-24 box-colore"><div class="rettangolo"></div></div>
 									<div class="pure-u-17-24 etichetta">Imposte</div>
-									<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_imposte" class="val">?? 26</span></div>
+									<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_imposte" class="val">26</span></div>
 								</div>
 							</div>
 							<div class="pure-g separatore">
@@ -600,11 +600,11 @@
 						</div>
 						<div class="contatto">
 							<div class="etichetta">Numero Verde</div>
-							<div class="valore">??</div>
+							<div class="valore">800 984 455</div>
 						</div>
 						<div class="contatto">
 							<div class="etichetta">Sede</div>
-							<div class="valore">??</div>
+							<div class="valore">Via Beato Francesco Marino, 102 - zona indistriale 87040 Zumpano (CS)</div>
 						</div>
 						<div class="contatto">
 							<div class="etichetta">Punto Vendita</div>
@@ -913,7 +913,7 @@
 	                  					var meta = chartInstance.controller.getDatasetMeta(i);
 	                  					meta.data.forEach(function(bar, index) {
 		                    				var data = Number(dataset.data[index]).toFixed(2).toLocaleString('it');
-		                    				ctx.fillText(data, bar._model.x, bar._model.y + 6);
+		                    				ctx.fillText(data, bar._model.x, bar._model.y + 12);
 	                  					});
 	                				});
 	              				}
@@ -945,7 +945,7 @@
 		<!-- @RIEPILOGO CONSUMI STORICI - start ==========
 		     ============================================= -->
 		<!-- ****** dati nascosti ****** -->
-		<!--
+		
 		<div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
 	        <span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">1</span>
 	        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
@@ -976,8 +976,8 @@
 	        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">691</span>
 			<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3001</span>
 	    </div>
-	     -->
-	    <div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
+	    
+	    <!-- <div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
 			<span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese"></span>
 	        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno"></span>
 	        <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese"></span>
@@ -986,7 +986,7 @@
 	        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3"></span>
 	        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva"></span>
 			<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco"></span>
-	    </div>
+	    </div> -->
 	
 		<div id="riepilogoConsumiStorici" class="pure-g">
 			<div class="pure-u-24-24">
@@ -1130,7 +1130,7 @@
 	                  					var meta = chartInstance.controller.getDatasetMeta(i);
 	                  					meta.data.forEach(function(bar, index) {
 		                    				var data = Number(dataset.data[index]).toFixed(2).toLocaleString('it');
-		                    				ctx.fillText(data, bar._model.x, bar._model.y + 6);
+		                    				ctx.fillText(data, bar._model.x, bar._model.y + 12);
 	                  					});
 	                				});
 	              				}
@@ -1487,7 +1487,7 @@
 						<div class="titolo"><strong>Pagamenti sospesi e rateizzazioni</strong></div>
 						<div class="body">
 							Nei casi indicati agli artt. 13-bis TIV 12-bis TIVG, il Cliente può richiedere la rateizzazione degli importi dovuti, entro i 10 giorni
-							successivi dal termine fissato per il pagamento della bolletta, chiamando il Numero Verde gratuito <span>800-98 44 55 ??</span> dalle 09.00 alle 13:00 e dalle 14:30 alle 18:30.
+							successivi dal termine fissato per il pagamento della bolletta, chiamando il Numero Verde gratuito <span>800 984 455</span> dalle 09.00 alle 13:00 e dalle 14:30 alle 18:30.
 							In caso di letture e consumi stimati, gli importi fatturati saranno oggetto di successivo ricalcolo.
 						</div>
 						
@@ -1569,13 +1569,13 @@
 						</div>
 						<div class="titolo"><strong>Dati Catastali</strong></div>
 						<div class="body">
-							Il modulo per la comunicazione dei dati catastali è disponibile nella sua Area Clienti sul sito web www.omniaenergia.it. Il modulo debitamente compilato e firmato può essere inoltrato a mezzo fax al numero <span>0984 825148</span> ??.
+							Il modulo per la comunicazione dei dati catastali è disponibile nella sua Area Clienti sul sito web www.omniaenergia.it. Il modulo debitamente compilato e firmato può essere inoltrato a mezzo fax al numero <span>0984 825148</span>.
 						</div>
 						<div class="titolo"><strong>Comunicazione da parte dell'Autorità</strong></div>
 						<div class="body">
 							"A partire dal 1 marzo 2018, qualora Ella riceva una fattura contenente importi per consumi riferiti a periodi trascorsi da almeno due anni, può contestarli e non pagarli, in applicazione della Legge di Bilancio 2018 (Legge n. 205/17). Il
 							Suo venditore ha l'obbligo, contestualmente a tale fattura e comunque almeno 10 giorni prima della scadenza del pagamento, di informarLa per agevolarLa nell'esercizio di questa facoltà. Per ulteriori informazioni chiami il numero verde 
-							dello Sportello dell'Autorità di Regolazione per Energia Reti e Ambiente (ARERA) <span>800 166 654 ??</span>."
+							dello Sportello dell'Autorità di Regolazione per Energia Reti e Ambiente (ARERA) <span>800 166 654</span>."
 						</div>
 						<div class="titolo"><strong>Comunicazione sulla fatturazione elettronica</strong></div>
 						<div class="body">
