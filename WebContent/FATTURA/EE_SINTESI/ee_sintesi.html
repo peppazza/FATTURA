@@ -776,7 +776,12 @@
 									    <tr class="tabella-energia-attiva">
 									    	<td colspan="16" class="last">
 									    		<span style="text-align: right;">Totale energia attiva fatturata (kWh)
-									    			<span data-data_type="single" data-first_node="ConsumiBollettaEle" data-path_type="xpath" data-path_data="ConsumoELetture[Descrizione = &quot;Energia attiva&quot;]/Totale">En.Att.Tot.</span>
+									    			<!-- dal momento che nella presente tabelle possono comparire più di 2 righe,
+									    				il valore del tag seguente viene sostituito con la somma delle ultme 2 righe del tag '/TotaleParziale';
+									    				tale sostituzione viene fatta in RIEPILOGO QUANTITA' E COSTI MEDI FATTURATI e 
+									    				il valore calcolato è anche quello che compare appunto in 'Consumi fatturati: ' -->
+									    			<!-- <span data-data_type="single" data-first_node="ConsumiBollettaEle" data-path_type="xpath" data-path_data="ConsumoELetture[Descrizione = &quot;Energia attiva&quot;]/Totale">En.Att.Tot.</span> -->
+									    			<span>En.Att.Tot. <span id="totaleEnergiaAttivaFatturata"></span></span>
 									    		</span>
 									    	</td>
 									    </tr>
@@ -905,7 +910,7 @@
 	                				var chartInstance = this.chart,
 	                  				ctx = chartInstance.ctx;
 					                // ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
-					                ctx.font = Chart.helpers.fontString(9, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+					                ctx.font = Chart.helpers.fontString(7, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
 					                ctx.textAlign = 'center';
 					                ctx.textBaseline = 'bottom';
 	 								
@@ -1122,7 +1127,7 @@
 	                				var chartInstance = this.chart,
 	                  				ctx = chartInstance.ctx;
 					                // ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
-					                ctx.font = Chart.helpers.fontString(9, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+					                ctx.font = Chart.helpers.fontString(7, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
 					                ctx.textAlign = 'center';
 					                ctx.textBaseline = 'bottom';
 	 								
@@ -1181,10 +1186,14 @@
 									}
 								}
 								
-								if (consumiFatturati && typeof consumiFatturati === 'number')
-									document.getElementById('valoreConsumiFatturatiContainer').innerHTML = Number(consumiFatturati.toFixed(2)).toLocaleString('it') + ' kWh';
-								else
+								if (consumiFatturati && typeof consumiFatturati === 'number') {
+									var valore = Number(consumiFatturati.toFixed(2)).toLocaleString('it');
+									document.getElementById('valoreConsumiFatturatiContainer').innerHTML = valore + ' kWh';
+									document.getElementById('totaleEnergiaAttivaFatturata').innerHTML = valore;	
+								} else {
 									document.getElementById('valoreConsumiFatturatiContainer').innerHTML = '-';
+									document.getElementById('totaleEnergiaAttivaFatturata').innerHTML = '-';
+								}
 							} catch (e) {
 								console.error('errore init "Consumi fatturati"', e);
 							}
