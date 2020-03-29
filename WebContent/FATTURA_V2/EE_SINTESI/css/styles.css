@@ -6,12 +6,14 @@
   font-family: SourceSansPro;
   src: url(SourceSansPro-Regular.ttf);
 }
+
 body {
 	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 10px;
 	color: #444444;
 	margin: 8px;
 }
+
 page[size="A4"] {
     background: white;
     width: 19.6cm;
@@ -21,6 +23,10 @@ page[size="A4"] {
     padding: 60px 30px 0;
     padding: 0 20px 0;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+table{
+	width: 100%;
 }
 table.custom {
 	width: 100%;
@@ -453,8 +459,38 @@ table.custom tbody tr td.no-back {
 
 #guidaLetturaFattura {
 	margin-top: 1.125rem;
+	font-size: 9px;
+}
+#guidaLetturaFattura .content > .header {
+	color: #b6262f;
+	font-size: 11px;
+	font-weight: 800;
+	margin-bottom: 2px;
+}
+#guidaLetturaFattura .content .dati .paragrafo {
+	margin-bottom: 4px;
 }
 
+
+#arera {
+	margin-top: 1.125rem;
+	font-size: 9px;
+}
+#arera .content > .header {
+	color: #b6262f;
+	font-size: 11px;
+	font-weight: 800;
+	margin-bottom: 2px;
+}
+#arera .content > .dati .body {
+	margin-bottom: 4px;
+}
+#arera .tabella-arera {
+	margin-top: 10px;
+}
+#arera .tabella-arera tbody tr td {
+	padding: 1px;	
+}
 
 
 
