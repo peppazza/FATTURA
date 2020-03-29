@@ -235,8 +235,7 @@
 									<script type="text/javascript">
 										try {
 									    	(function () {
-									    		var tipoDocumento = '';
-									    		
+									    		var tipoDocumento = '';									    		
 									    		var elems = document.getElementsByClassName('tipo-documento');
 									    		if (elems && elems.length > 0) {
 									    			var tipoDocumentoAbbr = elems[0].innerHTML;
@@ -248,8 +247,7 @@
 										    			else if (tipoDocumentoAbbr === 'ndd')
 										    				tipoDocumento = 'Nota di debito';
 									    			}
-									    		}
-												            	
+									    		}												            	
 												document.getElementById('tipoDocumento').innerHTML = tipoDocumento;			
 											})();
 									    } catch(err) {
@@ -358,8 +356,7 @@
 										<script type="text/javascript">
 											try {
 										    	(function () {
-													var picco;						    		
-										    		
+													var picco;										    		
 													var picchiELEM = document.getElementsByClassName('pot-picco-potenza-valore-per-fascia');
 										    		if (picchiELEM && picchiELEM.length > 0) {
 										    			for (var i = 0; i < picchiELEM.length; i++) {
@@ -369,7 +366,7 @@
 										    						picco = value;
 										    				} 
 										    			}
-										    			if (picco)
+										    			if (picco || typeof picco === 'number')
 										    				document.getElementById('livelloMassimoDiPotenzaPrelevata').innerHTML = Number(picco.toFixed(2)).toLocaleString('it');
 										    		}
 												})();
@@ -510,19 +507,19 @@
 									<table id="tabellaRiepilogoIVA">
 										<tbody>
 											<tr>
-												<td class="no-border" colspan="2">Aliquota Iva</td>
-									            <td class="no-border">Imponibile</td>
-									            <td class="no-border">Aliquota</td>
+												<td colspan="2">Aliquota Iva</td>
+									            <td>Imponibile</td>
+									            <td>Aliquota</td>
 											</tr>
 									        <tr data-data_type="simple_loop" data-first_node="RiepilogoIvaBolletta" data-path_type="xpath" data-path_data="RiepilogoIva">
-									        	<td class="no-border" colspan="2"><span class="testo4sintesi" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DescrizioneImponibile">Imponibile IVA 22%</span></td>
-									            <td class="no-border"><span class="testo3sintesi" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">9,99</span><span> €</span></td>
-									            <td class="no-border"><span class="testo3sintesi" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Aliquota">9,99</span><span></span></td>
+									        	<td colspan="2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DescrizioneImponibile">Imponibile IVA 22%</span></td>
+									            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">9,99</span><span> €</span></td>
+									            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Aliquota">9,99</span><span></span></td>
 									        </tr>
 									        <tr data-data_type="simple_loop" data-first_node="RiepilogoIvaBolletta" data-path_type="xpath" data-path_data="RiepilogoIva">
-									        	<td class="no-border" colspan="2"><span class="testo4sintesi" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DescrizioneAliquota">IVA 22%</span></td>
-									            <td class="no-border"><span class="testo3sintesi" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Iva">9,99</span><span> €</span></td>
-									            <td class="no-border"><span class="testo3sintesi testo-aliquota-iva-riepilogo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Aliquota">9,99</span><span></span></td>
+									        	<td colspan="2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DescrizioneAliquota">IVA 22%</span></td>
+									            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Iva">9,99</span><span> €</span></td>
+									            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Aliquota">9,99</span><span></span></td>
 									        </tr>
 								        </tbody>
 									</table>
@@ -577,18 +574,26 @@
 			    			var totaleDaPagare = totaleBolletta + canone;
 							
 			    			// init voci
-			    			document.getElementById('valoreSintesiImporti_spesaMateriaEnergia').innerHTML = Number(spesaMateriaEnergia.toFixed(2)).toLocaleString('it');
-			    			document.getElementById('valoreSintesiImporti_spesaTrasporto').innerHTML = Number(spesaTrasporto.toFixed(2)).toLocaleString('it');
-			    			document.getElementById('valoreSintesiImporti_spesaOneri').innerHTML = Number(spesaOneri.toFixed(2)).toLocaleString('it');
-			    			document.getElementById('valoreSintesiImporti_altrePartite').innerHTML = Number(altrePartite.toFixed(2)).toLocaleString('it');
-			    			document.getElementById('valoreSintesiImporti_imposte').innerHTML = Number(imposte.toFixed(2)).toLocaleString('it');
+			    			if (spesaMateriaEnergia || typeof spesaMateriaEnergia === 'number')
+			    				document.getElementById('valoreSintesiImporti_spesaMateriaEnergia').innerHTML = Number(spesaMateriaEnergia.toFixed(2)).toLocaleString('it');
+			    			if (spesaTrasporto || typeof spesaTrasporto === 'number')
+			    				document.getElementById('valoreSintesiImporti_spesaTrasporto').innerHTML = Number(spesaTrasporto.toFixed(2)).toLocaleString('it');
+			    			if (spesaOneri || typeof spesaOneri === 'number')
+			    				document.getElementById('valoreSintesiImporti_spesaOneri').innerHTML = Number(spesaOneri.toFixed(2)).toLocaleString('it');
+			    			if (altrePartite || typeof altrePartite === 'number')
+			    				document.getElementById('valoreSintesiImporti_altrePartite').innerHTML = Number(altrePartite.toFixed(2)).toLocaleString('it');
+			    			if (imposte || typeof imposte === 'number')
+			    				document.getElementById('valoreSintesiImporti_imposte').innerHTML = Number(imposte.toFixed(2)).toLocaleString('it');
 			    			
-			    			document.getElementById('valoreSintesiImporti_canone').innerHTML = Number(canone.toFixed(2)).toLocaleString('it');
+			    			if (canone || typeof canone === 'number')
+			    				document.getElementById('valoreSintesiImporti_canone').innerHTML = Number(canone.toFixed(2)).toLocaleString('it');
 			    			
 			    			// init totale bolletta
-			    			document.getElementById('totaleBolletta').innerHTML = Number(totaleBolletta.toFixed(2)).toLocaleString('it');
+			    			if (totaleBolletta || typeof totaleBolletta === 'number')
+			    				document.getElementById('totaleBolletta').innerHTML = Number(totaleBolletta.toFixed(2)).toLocaleString('it');
 			    			// init totale da pagare
-			    			document.getElementById('totaleDaPagare').innerHTML = Number(totaleDaPagare.toFixed(2)).toLocaleString('it');
+			    			if (totaleDaPagare || typeof totaleDaPagare === 'number')
+			    				document.getElementById('totaleDaPagare').innerHTML = Number(totaleDaPagare.toFixed(2)).toLocaleString('it');
 			    			
 			            	new Chartist.Pie('#graficoSintesiImporti', {
 			        			series: [{
@@ -777,7 +782,7 @@
 					    				tale sostituzione viene fatta in RIEPILOGO QUANTITA' E COSTI MEDI FATTURATI e 
 					    				il valore calcolato è anche quello che compare appunto in 'Consumi fatturati: ' -->
 					    			<!-- <span data-data_type="single" data-first_node="ConsumiBollettaEle" data-path_type="xpath" data-path_data="ConsumoELetture[Descrizione = &quot;Energia attiva&quot;]/Totale">En.Att.Tot.</span> -->
-									<span id="totaleEnergiaAttivaFatturata">99999.99</span> kWh
+									<span id="totaleEnergiaAttivaFatturata">99999,99</span> kWh
 								</span> 
 							</div>
 						</div>
@@ -809,24 +814,24 @@
 									 <tbody>
 									    <tr class="tabella-energia-attiva">
 									    	<td class="header no-back"></td>
-									    	<td colspan="4" class="header"><span>LETTURA INIZIALE</span></td>
-									        <td colspan="4" class="header grigio-scuro"><span>LETTURA FINALE</span></td>
-									        <td colspan="7" class="header last"><span>CONSUMO FATTURATO [kWh]</span></td>
+									    	<td colspan="4" class="header"><span><strong>LETTURA INIZIALE</strong></span></td>
+									        <td colspan="4" class="header grigio-scuro"><span><strong>LETTURA FINALE</strong></span></td>
+									        <td colspan="7" class="header last"><span><strong>CONSUMO FATTURATO [kWh]</strong></span></td>
 									    </tr>
 									    <tr class="tabella-energia-attiva header-riga-2">
-									    	<td class="header grigio-scuro"><span>Tipo dato</span></td>
-									    	<td class="header"><span>Data</span></td>
-									    	<td class="header"><span>F1</span></td>
-									        <td class="header"><span>F2</span></td>
-									        <td class="header"><span>F3</span></td>
-									        <td class="header grigio-scuro"><span>Data</span></td>
-									    	<td class="header grigio-scuro"><span>F1</span></td>
-									        <td class="header grigio-scuro"><span>F2</span></td>
-									        <td class="header grigio-scuro"><span>F3</span></td>
-									        <td colspan="1" class="header"><span>F1</span></td>
-									        <td colspan="1" class="header"><span>F2</span></td>
-									        <td colspan="1" class="header"><span>F3</span></td>
-									        <td class="header last"><span>TOTALE</span></td>
+									    	<td class="header grigio-scuro"><span><strong>Tipo dato</strong></span></td>
+									    	<td class="header"><span><strong>Data</strong></span></td>
+									    	<td class="header"><span><strong>F1</strong></span></td>
+									        <td class="header"><span><strong>F2</strong></span></td>
+									        <td class="header"><span><strong>F3</strong></span></td>
+									        <td class="header grigio-scuro"><span><strong>Data</strong></span></td>
+									    	<td class="header grigio-scuro"><span><strong>F1</strong></span></td>
+									        <td class="header grigio-scuro"><span><strong>F2</strong></span></td>
+									        <td class="header grigio-scuro"><span><strong>F3</strong></span></td>
+									        <td colspan="1" class="header"><span><strong>F1</strong></span></td>
+									        <td colspan="1" class="header"><span><strong>F2</strong></span></td>
+									        <td colspan="1" class="header"><span><strong>F3</strong></span></td>
+									        <td class="header last"><span><strong>TOTALE</strong></span></td>
 									    </tr>
 									    <tr class="_data_ConsumoELetture" data-data_type="simple_loop" data-first_node="ConsumiBollettaEle" data-path_type="xpath" data-path_data="ConsumoELetture[Descrizione = &quot;Energia attiva&quot;]/DettagliConsumo/Consumo">
 									    	<td class="grigio-scuro"><span class="_data_TipoLettura" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TipoLettura">Distributore</span></td>
@@ -991,6 +996,16 @@
 					                font: {
 					                	size: 8,
 					                	weight: 500
+					                },
+					                formatter: (value, ctx) => {
+					                    // let sum = 0;
+					                    // let dataArr = ctx.chart.data.datasets[0].data;
+					                    // dataArr.map(data => { sum += data; });
+					                    // let percentage = (value * 100 / sum).toFixed(2) + "%";
+					                    // return percentage;
+					                    if (value || typeof value === 'number')
+					                    	return Number(value.toFixed(2)).toLocaleString('it');
+					                    return '';
 					                }
 					            }
 							},
@@ -1044,7 +1059,8 @@
 				
 				if (consumiFatturati === 0 || consumiFatturati && typeof consumiFatturati === 'number') {
 					var valore = Number(consumiFatturati.toFixed(2)).toLocaleString('it');
-					document.getElementById('totaleEnergiaAttivaFatturata').innerHTML = valore;	
+					if (valore || typeof valore === 'number')
+						document.getElementById('totaleEnergiaAttivaFatturata').innerHTML = valore;	
 				} else
 					document.getElementById('totaleEnergiaAttivaFatturata').innerHTML = '-';
 			} catch (e) {
@@ -1055,15 +1071,14 @@
 	    
 		<!-- ULTIMI 12 MESI
 		########################################################################################### -->
-		<!-- ****** dati nascosti ****** -->
-		
+		<!-- ****** dati nascosti ****** -->		
 		<div style="display: none;" class="consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
 	        <span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">1</span>
 	        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
 	        <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">06</span>
-	        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">10</span>
-	        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">20</span>
-	        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">30</span>
+	        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">10,11</span>
+	        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">20,11</span>
+	        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">30,11</span>
 	        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">690</span>
 			<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3000</span>
 		</div>
@@ -1071,9 +1086,9 @@
 			<span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">2</span>
 	        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
 	        <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">07</span>
-	        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">11</span>
-	        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">21</span>
-	        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">31</span>
+	        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">11,11</span>
+	        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">21,11</span>
+	        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">31,11</span>
 	        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">691</span>
 			<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3001</span>
 		</div>	
@@ -1081,9 +1096,9 @@
 			<span class="x_consumi_sequenzamese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/SequenzaMese">2</span>
 	        <span class="x_consumi_anno" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Anno">2015</span>
 	        <span class="x_consumi_mese" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Mese">08</span>
-	        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">11</span>
-	        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">21</span>
-	        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">31</span>
+	        <span class="x_consumi_f1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F1">11,11</span>
+	        <span class="x_consumi_f2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F2">21,11</span>
+	        <span class="x_consumi_f3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/F3">31,11</span>
 	        <span class="x_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">691</span>
 			<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3001</span>
 	    </div>
@@ -1177,6 +1192,14 @@
 									        <td><span class="table_consumi_totale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleEnergiaAttiva">60,99</span></td>
 											<!-- <td><span class="table_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3000</span></td> -->
 										</tr>
+										<!-- RIGA TOTALI CALCOLATI -->
+										<tr>
+											<td><strong>TOTALE</strong></td>
+											<td><strong id="_ultimi12Mesi_totale_F1"></strong></td>
+											<td><strong id="_ultimi12Mesi_totale_F2"></strong></td>
+											<td><strong id="_ultimi12Mesi_totale_F3"></strong></td>
+											<td><strong id="_ultimi12Mesi_totale_TOT"></strong></td>
+										</tr>
 									</tbody>
 								</table>
 								<!-- *** init background righe tabella precedente, ovvero #tabellaRiepilogoUltimi12Mesi -->
@@ -1196,7 +1219,61 @@
 											}
 										}
 									} catch(err) {
-										console.log('errore init background tabella consumi storici', err);
+										console.log('errore init BACKGROUND per la tabella consumi ultimi 12 mesi (#tabellaRiepilogoUltimi12Mesi)', err);
+									}
+								</script>
+								<!-- calcolo riga totali in nella tabella #tabellaRiepilogoUltimi12Mesi -->
+								<script type="text/javascript">
+									try {
+										var totF1, totF2, totF3, tot;
+										
+										var datiF1 = [];
+										var datiF2 = [];
+										var datiF3 = [];
+										
+										var rows = document.getElementsByClassName('table_consumi_hiddenvalues_row');
+										if (rows) {
+											for (var i = 0; i < rows.length; i++) {
+												var row = rows[i];
+ 												datiF1.push(checkNumber(row.getElementsByClassName('table_consumi_f1')[0].innerHTML));
+												datiF2.push(checkNumber(row.getElementsByClassName('table_consumi_f2')[0].innerHTML));
+												datiF3.push(checkNumber(row.getElementsByClassName('table_consumi_f3')[0].innerHTML));
+											}
+											if (datiF1) {
+												totF1 = 0.0;
+												for (var i = 0; i < datiF1.length; i++)
+													totF1 += datiF1[i];
+												document.getElementById('_ultimi12Mesi_totale_F1').innerHTML = Number(totF1.toFixed(2)).toLocaleString('it');
+											}
+											if (datiF2) {
+												totF2 = 0.0;
+												for (var i = 0; i < datiF2.length; i++)
+													totF2 += datiF2[i];
+												document.getElementById('_ultimi12Mesi_totale_F2').innerHTML = Number(totF2.toFixed(2)).toLocaleString('it');
+											}
+											if (datiF3) {
+												totF3 = 0.0;
+												for (var i = 0; i < datiF3.length; i++)
+													totF3 += datiF3[i];
+												document.getElementById('_ultimi12Mesi_totale_F3').innerHTML = Number(totF3.toFixed(2)).toLocaleString('it');
+											}
+											if (totF1 || typeof totF1 === 'number')
+												tot = totF1;
+											if (totF2 || typeof totF2 === 'number') {
+												if (!tot)
+													tot = 0.0;
+												tot += totF2;
+											}												
+											if (totF3 || typeof totF3 === 'number') {
+												if (!tot)
+													tot = 0.0;
+												tot += totF3;
+											}
+											if (tot || typeof tot === 'number')
+												document.getElementById('_ultimi12Mesi_totale_TOT').innerHTML = Number(tot.toFixed(2)).toLocaleString('it');
+										}
+									} catch(err) {
+										console.log('errore init RIGA TOTALI per la tabella consumi ultimi 12 mesi (#tabellaRiepilogoUltimi12Mesi)', err);
 									}
 								</script>
 							</div>
@@ -1220,9 +1297,9 @@
 						var row = rows[i];
 						anni.push(row.getElementsByClassName('x_consumi_anno')[0].innerHTML);
 						mesi.push(row.getElementsByClassName('x_consumi_mese')[0].innerHTML);
-						datiF1.push(row.getElementsByClassName('x_consumi_f1')[0].innerHTML);
-						datiF2.push(row.getElementsByClassName('x_consumi_f2')[0].innerHTML);
-						datiF3.push(row.getElementsByClassName('x_consumi_f3')[0].innerHTML);
+						datiF1.push(checkNumber(row.getElementsByClassName('x_consumi_f1')[0].innerHTML));
+						datiF2.push(checkNumber(row.getElementsByClassName('x_consumi_f2')[0].innerHTML));
+						datiF3.push(checkNumber(row.getElementsByClassName('x_consumi_f3')[0].innerHTML));
 					}
 					
 					var labels = [];
@@ -1287,6 +1364,16 @@
 					                font: {
 					                	size: 7,
 					                	weight: 600
+					                },
+					                formatter: (value, ctx) => {
+					                    // let sum = 0;
+					                    // let dataArr = ctx.chart.data.datasets[0].data;
+					                    // dataArr.map(data => { sum += data; });
+					                    // let percentage = (value * 100 / sum).toFixed(2) + "%";
+					                    // return percentage;
+					                    if (value || typeof value === 'number')
+											return Number(value.toFixed(2)).toLocaleString('it');
+					                    return '';
 					                }
 					            }
 							}
@@ -1300,6 +1387,8 @@
 		<!-- ========== end - RIEPILOGO CONSUMI STORICI -->
 		
 		
+		<!-- ACCISE ED IVA
+		########################################################################################### -->
 		<div id="acciseEdIVA" class="pure-g">
 			<div class="pure-u-12-24">
 				<div class="colonna-accise">
@@ -1317,116 +1406,127 @@
 					      	<tbody>
 							    <tr>
 							    	<td class="no-back"></td>
-							    	<td><strong>Periodo</strong></td>
+							    	<td class="grigio-scuro"><strong>Periodo</strong></td>
 							        <td><strong>Scaglione</strong></td>
-							        <td><strong>Quantità</strong></td>
+							        <td class="grigio-scuro"><strong>Quantità</strong></td>
 							        <td><strong>Prezzo [€/kWh]</strong></td>
-							        <td><strong>Totale [€]</strong></td>
+							        <td class="grigio-scuro"><strong>Totale [€]</strong></td>
 							        <!-- <td><strong>Iva %</td> -->
 							    </tr>
 							    <tr class="prima-riga-dettaglio-imposte" data-data_type="simple_loop" data-first_node="Imposte" data-path_type="xpath" data-path_data="DettagliImposte/QuotaDettaglioImposte">
 							    	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">TEST</span></td>
-							    	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal">XX/XX/XXX</span>-<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al">XX/XX/XXX</span></td>
+							    	<td class="grigio-scuro"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal">XX/XX/XXX</span>-<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al">XX/XX/XXX</span></td>
 							        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Scaglione"></span></td>
-							        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
+							        <td class="grigio-scuro"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
 							        <td><span class="dettaglio-imposte-prezzo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoUnitario"></span></td>
-							        <td><span class="sezione-imponibile-dettaglio-imposte" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">123</span></td>
+							        <td class="grigio-scuro"><span class="sezione-imponibile-dettaglio-imposte" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">123</span></td>
 							        <!-- <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva"></span></td> -->
 							    </tr>
 							    <tr class="quota-dettaglio-imposte" data-data_type="simple_loop" data-first_node="Imposte" data-path_type="xpath" data-path_data="AccontiImposte/QuotaDettaglioImposte">
 							    	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">TEST</span></td>
-							    	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal">XX/XX/XXX</span>-<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al">XX/XX/XXX</span></td>
+							    	<td class="grigio-scuro"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal">XX/XX/XXX</span>-<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al">XX/XX/XXX</span></td>
 							        <td><span class="allineamento-scaglione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Scaglione"></span></td>
-							        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
+							        <td class="grigio-scuro"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
 							        <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoUnitario"></span></td>
-							        <td><span class="allineamento-scaglione-imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">678</span></td>
+							        <td class="grigio-scuro"><span class="allineamento-scaglione-imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">678</span></td>
 							        <!-- <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva"></span></td> -->
 							    </tr>
 					      	</tbody>
 					    </table>
 					</div>
-						<script type="text/javascript">
-							try {
-								(function() {
-									var esisteDettaglioImposte = false;
-									var esisteAccontiImposte = false;									
-									var elems = document.getElementsByClassName('dettaglio-imposte-prezzo');
-									if (elems.length > 0) {
-										var value = elems[0].innerHTML;
-										if (value) {
-											value = value.trim();
-											if (value !== '')
-												esisteDettaglioImposte = true;
-										}
-									}									
-									elems = document.getElementsByClassName('allineamento-scaglione-imponibile');
-									if (elems.length > 0) {
-										var value = elems[0].innerHTML;
-										if (value) {
-											value = value.trim();
-											if (value !== '')
-												esisteAccontiImposte = true;
-										}
-									}									
-									if (esisteDettaglioImposte || esisteAccontiImposte) {
-										document.getElementById('_TABELLA_DETTAGLIO_Imposte').style.display = 'table';
-										document.getElementById('_MESSAGGIO_NO_DATI_DETTAGLIO_Imposte').style.display = 'none';
-									} else {
-										document.getElementById('_TABELLA_DETTAGLIO_Imposte').style.display = 'none';
-										document.getElementById('_MESSAGGIO_NO_DATI_DETTAGLIO_Imposte').style.display = 'block';
+					<script type="text/javascript">
+						try {
+							(function() {
+								var esisteDettaglioImposte = false;
+								var esisteAccontiImposte = false;									
+								var elems = document.getElementsByClassName('dettaglio-imposte-prezzo');
+								if (elems.length > 0) {
+									var value = elems[0].innerHTML;
+									if (value) {
+										value = value.trim();
+										if (value !== '')
+											esisteDettaglioImposte = true;
 									}
-								})();
-							} catch (err) {
-								console.log('errore init display per DETTAGLIO IMPOSTE', err);
-							}
-						</script>
-					</div>
+								}									
+								elems = document.getElementsByClassName('allineamento-scaglione-imponibile');
+								if (elems.length > 0) {
+									var value = elems[0].innerHTML;
+									if (value) {
+										value = value.trim();
+										if (value !== '')
+											esisteAccontiImposte = true;
+									}
+								}									
+								if (esisteDettaglioImposte || esisteAccontiImposte) {
+									document.getElementById('_TABELLA_DETTAGLIO_Imposte').style.display = 'table';
+									document.getElementById('_MESSAGGIO_NO_DATI_DETTAGLIO_Imposte').style.display = 'none';
+								} else {
+									document.getElementById('_TABELLA_DETTAGLIO_Imposte').style.display = 'none';
+									document.getElementById('_MESSAGGIO_NO_DATI_DETTAGLIO_Imposte').style.display = 'block';
+								}
+							})();
+						} catch (err) {
+							console.log('errore init display per DETTAGLIO IMPOSTE', err);
+						}
+					</script>
 				</div>
-				<div class="pure-u-12-24">
-					<div class="colonna-iva">
-						<div class="header-con-riga-centrale">
-							<div class="pure-g">
-								<div class="pure-u-9-24 testo">DETTAGLIO IVA</div>
-								<div class="pure-u-15-24"><div class="riga-centrale" style="margin-left: -14px;"></div></div>
-							</div>
+			</div>
+			<div class="pure-u-12-24">
+				<div class="colonna-iva">
+					<div class="header-con-riga-centrale">
+						<div class="pure-g">
+							<div class="pure-u-9-24 testo">DETTAGLIO IVA</div>
+							<div class="pure-u-15-24"><div class="riga-centrale" style="margin-left: -14px;"></div></div>
 						</div>
-						<div class="content">
-						
-						</div>
+					</div>
+					<div class="content">
+						<table id="_TABELLA_DETTAGLIO_Iva" class="custom">
+							<tbody>
+								<tr>
+									<td>Descrizione</td>
+									<td class="grigio-scuro">Imponibile</td>
+						            <td>Aliquota (€)</td>
+						            <td class="grigio-scuro">Iva (€)</td>
+								</tr>
+						        <tr data-data_type="simple_loop" data-first_node="RiepilogoIvaBolletta" data-path_type="xpath" data-path_data="RiepilogoIva">
+						        	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DescrizioneImponibile">Imponibile IVA 22%</span></td>
+						            <td class="grigio-scuro"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">9,99</span><span> €</span></td>
+						            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Aliquota">9,99</span><span></span></td>
+						            <td class="grigio-scuro"><span class="testo3sintesi" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Iva">9,99</span><span> €</span></td>
+						        </tr>
+					        </tbody>
+						</table>
 					</div>
 				</div>
 			</div>
 		</div>
 		
 		
-		<!-- @CONGUAGLI RICALCOLI NON PAGATE - start ==========
-		     ================================================== -->
-		<div id="conguagliRicalcoliNonPagate" class="pure-g">
-			<div class="pure-u-12-24">
-				<div id="conguagliRicalcoli" style="padding-right: 5px">
-					<div class="pure-g">
-						<div class="pure-u-24-24">
-							<div class="pure-g titolo sfondo-arancione">
-								<div class="pure-u-24-24 contenuto">CONGUAGLI E RICALCOLI</div>
-							</div>
-							<div class="pure-g dati">
-								<!-- CONGUAGLI CONSUMI STIMATI -->
+		<!-- CONGUAGLI RICALCOLI E BOLLETTE NON PAGATE
+		########################################################################################### -->
+		<div id="conguagliRicalcoliEBolletteNonPagate">
+			<div class="content">
+				<div class="pure-g">
+					<div class="pure-u-12-24">
+						<div id="conguagliRicalcoli">
+							<div class="header">CONGUAGLI E RICALCOLI</div>
+							<div class="dati">
+								<!-- *** dati dei conguagli consumi stimati -->
 								<div style="display: none;" class="sezione-conguaglio-consumi-stimati" data-data_type="simple_loop" data-first_node="ConguaglioConsumiStimati" data-path_type="xpath" data-path_data="">
 					    		    <div data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></div>
 					        	    <div data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></div> - <div data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></div>
 					                <div data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></div>
 					                <div class="y_conguaglio-consumi-stimati-imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></div>
 						        </div>
-								<div class="pure-u-24-24">
-									<!-- messaggi conguaglio consumi stimati -->
+								<div>
+									<!-- *** messaggi relativi ai conguagli consumi stimati -->
 									<div id="messaggioNessunConguaglioConsumiStimati">Nessun conguaglio consumi stimati</div>
 									<div id="messaggioEsistenzaConguaglioConsumiStimati">Sono presenti conguagli consumi stimati</div>
 								</div>
 								<script type="text/javascript">
 									try {
 										(function() {
-											var esistonoConguagliConsumiStimati = false;
-											
+											var esistonoConguagliConsumiStimati = false;											
 											var elems = document.getElementsByClassName('y_conguaglio-consumi-stimati-imponibile');
 											if (elems.length > 0) {
 												var value = elems[0].innerHTML;
@@ -1435,8 +1535,7 @@
 													if (value !== '')
 														esistonoConguagliConsumiStimati = true;
 												}
-											}
-											
+											}											
 											if (esistonoConguagliConsumiStimati) {
 												document.getElementById('messaggioNessunConguaglioConsumiStimati').style.display = 'none';
 												document.getElementById('messaggioEsistenzaConguaglioConsumiStimati').style.display = 'block';
@@ -1450,19 +1549,14 @@
 									}
 								</script>
 							</div>
-						</div>				
+						</div>
 					</div>
-				</div>	
-			</div>
-			<div class="pure-u-12-24">
-				<div id="nonPagate" style="padding-left: 5px">
-					<div class="pure-g">
-						<div class="pure-u-24-24">
-							<div class="pure-g titolo sfondo-arancione">
-								<div class="pure-u-24-24 contenuto">BOLLETTE NON PAGATE</div>
-							</div>
-							<div class="pure-g dati">
-								<div class="pure-u-24-24">
+					
+					<div class="pure-u-12-24">
+						<div id="bolletteNonPagate">
+							<div class="header">BOLLETTE NON PAGATE</div>
+							<div class="dati">
+								<div>
 									<div id="messaggioNessunaBollettaDaPagare" class="messaggio">
 										Le precedenti bollette risultano pagate
 									</div>
@@ -1488,15 +1582,15 @@
 										            <td><span class="importo-bollette-non-pagate" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoDaPagare"></span></td>
 										        </tr>
 										        <tr class="righe-bollette-non-pagate">
-										        	<td><span class="testo-non-pagate3">Totale insoluto (€)</span></td>
+										        	<td><span>Totale insoluto (€)</span></td>
 										            <td></td>
 										    		<td><span data-data_type="single" data-first_node="MorositaDocumenti" data-path_type="xpath" data-path_data="Totale"></span></td>
 										    	</tr>
 										        <tr class="righe-bollette-non-pagate">
-										    		<td colspan="3"><span class="testo-non-pagate4">Qualora le bollette sollecitate le risultassero già pagate, consideri nullo questo avviso.</span></td>
+										    		<td colspan="3"><span>Qualora le bollette sollecitate le risultassero già pagate, consideri nullo questo avviso.</span></td>
 										    	</tr>
 										        <tr class="righe-interessi-applicati righe-bollette-non-pagate">
-										    		<td colspan="3"><span class="testo-non-pagate5">Interessi applicati</span></td>
+										    		<td colspan="3"><span >Interessi applicati</span></td>
 										    	</tr>
 										         <tr class="righe-interessi-applicati righe-bollette-non-pagate">
 										        	<td><span>Periodo</span></td>
@@ -1513,7 +1607,7 @@
 									</div>
 								</div>
 							</div>
-						</div>				
+						</div>
 					</div>
 				</div>
 			</div>
@@ -1556,8 +1650,8 @@
 		<!-- ========== end - CONGUAGLI RICALCOLI NON PAGATE -->
 		
 		
-		<!-- @GUIDA LETTURA FATTURA - start ==========
-		     ========================================= -->
+		<!-- GUIDA LETTURA FATTURA
+		########################################################################################### -->
 		<div id="guidaLetturaFattura" class="pure-g">
 			<div class="pure-u-24-24">
 				<div class="pure-g titolo sfondo-arancione">

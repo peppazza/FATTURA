@@ -416,4 +416,47 @@ table.custom tbody tr td.no-back {
 #acciseEdIVA #_TABELLA_DETTAGLIO_Imposte tbody tr td {
 	padding: 2px;
 }
+/* *** iva */
+#acciseEdIVA #_TABELLA_DETTAGLIO_Iva {
+	font-size: 8px;
+}
+#acciseEdIVA #_TABELLA_DETTAGLIO_Iva tbody tr td {
+	padding: 2px;
+}
+
+
+#conguagliRicalcoliEBolletteNonPagate {
+	margin-top: 1.125rem;
+}
+#conguagliRicalcoliEBolletteNonPagate .content {
+	border: 1.5px solid #b6262f;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 0.575rem;
+}
+#conguagliRicalcoliEBolletteNonPagate .content #conguagliRicalcoli {
+	padding-right: 0.5rem;
+}
+#conguagliRicalcoliEBolletteNonPagate .content #bolletteNonPagate {
+	border-left: 1px solid #777777;
+	padding-left: 0.5rem;
+}
+#conguagliRicalcoliEBolletteNonPagate .content #conguagliRicalcoli .header,
+#conguagliRicalcoliEBolletteNonPagate .content #bolletteNonPagate .header {
+	color: #b6262f;
+	font-size: 13px;
+	font-weight: 800;
+	margin-bottom: 6px;
+}
+
+
+#guidaLetturaFattura {
+	margin-top: 1.125rem;
+}
+
+
+
+
+
 
