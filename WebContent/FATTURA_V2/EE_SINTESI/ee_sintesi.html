@@ -18,6 +18,8 @@
 	<script src="js/chartjs-plugin-datalabels.min.js"></script>
 	
 	<script type="text/javascript">
+		var mesiArray = ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic'];
+	
 		function checkNumber_(val) {
 			try {
 				if (val) {
@@ -62,30 +64,14 @@
 			return '';
 		}
 		
-		var mesi = ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic'];
-		
-		function formatDateFromDDMMYYYToMMMYY(val) {
+		function formatDate_DDMMYYY_To_MMMYY(val) {
 			try {
 				m = val.trim();
 				// dd/mm/yyyy
 				var m = val.substring(3, 5);
 				m = Number(m);
 				var y = val.substring(8);
-				return mesi[m] + ' ' + y;
-			} catch(err) {
-				console.log('errore format data', val, err)
-			}
-			return val;
-		}
-		
-		function formatDateFromMMYYYToMMMYY(val) {
-			try {
-				m = val.trim();
-				// mm-yyyy
-				var m = val.substring(0, 1);
-				m = Number(m);
-				var y = val.substring(5);
-				return mesi[m] + ' ' + y;
+				return mesiArray[m - 1] + ' ' + y;
 			} catch(err) {
 				console.log('errore format data', val, err)
 			}
@@ -765,7 +751,7 @@
 			</div>
 		</div>
 		
-		<!-- PERIODO FATTURAZIONE
+		<!-- LETTURE E CONSUMI PERIODO FATTURAZIONE
 		########################################################################################### -->
 		<div id="lettureEConsumiPeriodoFatturazione">
 			<div class="inner">
@@ -958,7 +944,7 @@
 					}
 					// labels for x-axis	
 					for (var i = 0; i < lettureDATE.length; i++) {
-						var meseAnno = formatDateFromDDMMYYYToMMMYY(lettureDATE[i]);
+						var meseAnno = formatDate_DDMMYYY_To_MMMYY(lettureDATE[i]);
 						labels.push(meseAnno.toUpperCase() + ' ' + lettureTIPI[i]);
 					}
 					
@@ -1033,7 +1019,7 @@
 				console.log('errore init grafico QUADRO LETTURE E CONSUMI', err);
 			}
 		</script>
-		<!-- *** js - init "consumo fatturato totale" degli ultimi 2 mesi della tabella precedente, ovvero #tabellaQuadroLettureEConsumi -->
+		<!-- *** js - init CONSUMO FATTURATO TOTALE degli ULTIMI 2 MESI della tabella precedente, ovvero #tabellaQuadroLettureEConsumi -->
 		<script type="text/javascript">
 			try {
 				var consumiFatturati;
@@ -1114,7 +1100,6 @@
 			<span class="x_consumi_picco" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Picco">3088</span>
 	    </div>
 		 -->
-		
 		<div id="riepilogoUltimi12Mesi">
 			<div class="inner">
 				<div class="header-con-riga-centrale">
@@ -1304,7 +1289,7 @@
 										</tr>
 									</tbody>
 								</table>
-								<!-- *** init background righe tabella precedente, ovvero #tabellaRiepilogoUltimi12Mesi -->
+								<!-- *** js - init background righe tabella precedente, ovvero #tabellaRiepilogoUltimi12Mesi -->
 								<script type="text/javascript">
 									try {
 										var righeTabella = document.getElementsByClassName('table_consumi_hiddenvalues_row');
@@ -1321,10 +1306,10 @@
 											}
 										}
 									} catch(err) {
-										console.log('errore init BACKGROUND per la tabella consumi ultimi 12 mesi (#tabellaRiepilogoUltimi12Mesi)', err);
+										console.log('errore init BACKGROUND per la tabella consumi ULTIMI 12 MESI (#tabellaRiepilogoUltimi12Mesi)', err);
 									}
 								</script>
-								<!-- calcolo riga totali in nella tabella #tabellaRiepilogoUltimi12Mesi -->
+								<!-- *** js - calcolo riga totali nella tabella precedente, ovvero #tabellaRiepilogoUltimi12Mesi -->
 								<script type="text/javascript">
 									try {
 										var totF1, totF2, totF3, tot;
@@ -1375,7 +1360,7 @@
 												document.getElementById('_ultimi12Mesi_totale_TOT').innerHTML = Number(tot.toFixed(2)).toLocaleString('it');
 										}
 									} catch(err) {
-										console.log('errore init RIGA TOTALI per la tabella consumi ultimi 12 mesi (#tabellaRiepilogoUltimi12Mesi)', err);
+										console.log('errore init RIGA TOTALI per la tabella consumi ULTIMI 12 MESI (#tabellaRiepilogoUltimi12Mesi)', err);
 									}
 								</script>
 							</div>
@@ -1384,7 +1369,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- ****** js - grafico a barre ultimi <<12>> mesi ****** -->
+		<!-- ****** js - grafico a barre ULTIMI 12 MESI ****** -->
 		<script type="text/javascript">
 			try {
 				(function() {
@@ -1405,8 +1390,10 @@
 					}
 					
 					var labels = [];
-					for (var i = 0; i < anni.length; i++)
-						labels.push(mesi[i] + '-' + anni[i])
+					for (var i = 0; i < anni.length; i++) {
+						var mm = Number(mesi[i]);
+						labels.push(mesiArray[mm - 1].toUpperCase() + ' ' + anni[i])
+					}
 					
 					var numeroBarre = labels.length;
 					var larghezzaBarra = 28;
@@ -1483,7 +1470,7 @@
 					});
 				})();
 			} catch (err) {
-				console.log('errore init grafico riepilogo ultimi 12 mesi', err);
+				console.log('errore init grafico riepilogo ULTIMI 12 MESI', err);
 			}
 		</script>
 		<!-- ========== end - RIEPILOGO CONSUMI STORICI -->

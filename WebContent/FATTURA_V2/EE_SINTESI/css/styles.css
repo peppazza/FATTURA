@@ -334,7 +334,7 @@ table.custom tbody tr td.no-back {
 	}
 	#corpoPagina1Con2Colonne .riepilogo-iva #tabellaRiepilogoIVA tbody tr td {
 		text-align: left;
-		padding: 2px;
+		padding: 1px 2px;
 	}
 /* *** COLONNA DX*/
 	/* contatti utili, autolettura, emergenza guasti */
@@ -372,7 +372,9 @@ table.custom tbody tr td.no-back {
     	display: block;
 	}
 
-
+#lettureEConsumiPeriodoFatturazione {
+	margin-top: 8px;
+}
 #lettureEConsumiPeriodoFatturazione .valore-consumi-fatturati {
 	text-align: center;
     border: 1.5px solid #b6262f;
@@ -395,10 +397,10 @@ table.custom tbody tr td.no-back {
 
 
 #riepilogoUltimi12Mesi {
-	margin-top: 0.7rem;
+	margin-top: 8px;
 }
 #riepilogoUltimi12Mesi #tabellaRiepilogoUltimi12Mesi tbody tr td {
-	padding: 2px;
+	padding: 1px 2px;
 	font-size: 8px;
 }
 #riepilogoUltimi12Mesi #tabellaRiepilogoUltimi12Mesi tbody tr.background-grigio-scuro td {
@@ -410,7 +412,7 @@ table.custom tbody tr td.no-back {
 
 
 #acciseEdIVA {
-	margin-top: 0.7rem;
+	margin-top: 8px;
 }
 #acciseEdIVA .colonna-accise {
 	padding-right: 0.775rem;
@@ -423,26 +425,26 @@ table.custom tbody tr td.no-back {
 	font-size: 8px;
 }
 #acciseEdIVA #_TABELLA_DETTAGLIO_Imposte tbody tr td {
-	padding: 2px;
+	padding: 1px 2px;
 }
 /* *** iva */
 #acciseEdIVA #_TABELLA_DETTAGLIO_Iva {
 	font-size: 8px;
 }
 #acciseEdIVA #_TABELLA_DETTAGLIO_Iva tbody tr td {
-	padding: 2px;
+	padding: 1px 2px;
 }
 
 
 #conguagliRicalcoliEBolletteNonPagate {
-	margin-top: 0.7rem;
+	margin-top: 8px;
 }
 #conguagliRicalcoliEBolletteNonPagate .content {
 	border: 1.5px solid #b6262f;
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
-    padding: 0.575rem;
+    padding: 0.375rem;
 }
 #conguagliRicalcoliEBolletteNonPagate .content #conguagliRicalcoli {
 	padding-right: 0.5rem;
@@ -461,7 +463,7 @@ table.custom tbody tr td.no-back {
 
 
 #guidaLetturaFattura {
-	margin-top: 0.7rem;
+	margin-top: 8px;
 	font-size: 9px;
 }
 #guidaLetturaFattura .content > .header {
@@ -476,7 +478,7 @@ table.custom tbody tr td.no-back {
 
 
 #arera {
-	margin-top: 0.7rem;
+	margin-top: 8px;
 	font-size: 9px;
 }
 #arera .content > .header {
@@ -490,6 +492,7 @@ table.custom tbody tr td.no-back {
 }
 #arera .tabella-arera {
 	margin-top: 10px;
+	font-size: 8px;
 }
 #arera .tabella-arera tbody tr td {
 	padding: 1px;	
