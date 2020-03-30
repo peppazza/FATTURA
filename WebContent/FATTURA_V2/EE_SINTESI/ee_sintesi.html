@@ -140,24 +140,31 @@
 <div id="pagina1" class="paginaA4" style="page-break-after: always;">
 	<div class="pagina-inner" style="height: 970px;">
 		<!-- LOGO 
+		*** NB NON modificare i valori degli attributi class e alt dei tags img
 		########################################################################################### -->
+		<!-- 
 		<div id="headerLogo" class="pure-g">
-			<div class="pure-u-24-24">
-				<div class="content">
-					<img style="width: 761px;" src="images/testata.png" alt="logo" />
-				</div>
+			<div class="pure-u-12-24">
+				<div class="logo"><img src="images/logo.png" alt="logo" /></div>
 			</div>
+			<div class="pure-u-12-24">
+				<div class="header_logo"><img src="images/header.png" alt="header" /></div>
+			</div>
+		</div>
+		 -->
+		<div id="headerLogo">
+			<img src="images/testata.png" alt="header" width="761px"/>
 		</div>
 
 		<!-- CLIENTE-BOLLETTA
 		########################################################################################### -->
 		<div class="pure-g mb2">
 			<!-- INFO GENERALI BOLLETTA -->
-			<div class="pure-u-10-24">
+			<div class="pure-u-11-24">
 				<div id="datiClienteEBolletta">
 					<div class="content">
 						<div class="pure-g">
-							<div class="pure-u-12-24 colonna-sinistra">
+							<div class="pure-u-11-24 colonna-sinistra">
 								<div class="header-grassetto">N° CLIENTE</div>
 								<div class="valore-tag codice-cliente">
 									<span data-data_type="single" data-first_node="ClienteFinaleCodice" data-path_type="xpath" data-path_data="">XXX XXX XXX XXX</span>
@@ -186,7 +193,7 @@
 									})();
 								</script>
 							</div>
-							<div class="pure-u-12-24 colonna-destra">
+							<div class="pure-u-13-24 colonna-destra">
 								<div class="header-grassetto">DATI BOLLETTA</div>	
 								<div class="riga">
 									<span class="etichetta">Fornitura</span>
@@ -259,7 +266,7 @@
 				</div>
 			</div>
 			<!-- NOME, COGNOME, INDIRIZZO -->
-			<div class="pure-u-7-24">
+			<div class="pure-u-6-24">
 				<div id="indirizzoSpedizione">
 					<div class="content">
 						<div class="riga" data-data_type="single" data-first_node="SpedizionePresso" data-path_type="xpath" data-path_data="">Leonardo Da Vinci</div>							
@@ -1093,7 +1100,7 @@
 				<div class="content">
 					<div class="pure-g">
 						<div class="pure-u-15-24 grafico-dati">
-							<div class="chart-container" style="width: 460px; height: 160px;">
+							<div class="chart-container" style="width: 460px; height: 180px;">
 								<canvas id="graficoRiepilogoUltimi12Mesi"></canvas>
 							</div>
 							<div class="legenda-grafico-a-barre-per-fasce">

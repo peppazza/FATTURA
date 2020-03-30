@@ -25,6 +25,12 @@ page[size="A4"] {
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
 }
 
+.footer {
+    display: block;
+    position: relative;
+    bottom: -28px;
+}
+
 table{
 	width: 100%;
 }
@@ -68,6 +74,44 @@ table.custom tbody tr td.no-back {
 }
 .mb2 {
 	margin-bottom: 0.85rem!important;
+}
+
+/*
+#headerLogo {
+	margin-bottom: 18px;
+}
+#headerLogo .logo img {
+	width: 160px;
+	margin-top: 30px;
+}
+#headerLogo .header_logo {
+	text-align: right;
+	margin-right: 20px;
+}
+#headerLogo .header_logo img {
+	width: 308px;
+   	margin-right: -40px;
+}
+ */
+#headerLogo {
+	margin: 25px 0;
+}
+/*
+#headerLogo .logo img {
+	width: 240px;
+	margin-left: 20px;
+}
+#headerLogo .header_logo {
+	text-align: right;
+	margin-right: 20px;
+}
+#headerLogo .header_logo img {
+	width: 150px;
+}
+ */
+
+.footer {
+	margin-top: 170px;
 }
 
 
@@ -126,7 +170,19 @@ table.custom tbody tr td.no-back {
 
 
 #headerLogo {
-	margin-bottom: 1.125rem;
+	margin-bottom: 18px;
+}
+#headerLogo .logo img {
+	width: 160px;
+	margin-top: 30px;
+}
+#headerLogo .header_logo {
+	text-align: right;
+	margin-right: 20px;
+}
+#headerLogo .header_logo img {
+	width: 308px;
+   	margin-right: -40px;
 }
 
 
