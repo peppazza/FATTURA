@@ -94,7 +94,10 @@ table.custom tbody tr td.no-back {
 }
  */
 #headerLogo {
-	margin: 25px 0;
+	margin: 5px 0;
+}
+#headerLogo > img {
+	width: 780px;
 }
 /*
 #headerLogo .logo img {
