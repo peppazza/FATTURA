@@ -9,8 +9,6 @@
     <link rel="stylesheet" rel="stylesheet" href="css/styles.css"/>
     <link rel="stylesheet" rel="stylesheet" href="css/charts.css"/>
     
-    <page size="A4">
-    
     <script src="js/customs.js"></script>
     <script src="js/chartist/dist/chartist.min.js"></script>
 	<script src="js/axistitle/dist/chartist-plugin-axistitle.min.js"></script>
@@ -79,7 +77,7 @@
 		}
 	</script>
 </head>
-<body>
+<body class="color100K">
 
 <!-- ****** DATI NASCOSTI SINTESI IMPORTI ****** -->
 <!--  
@@ -137,24 +135,24 @@
  -->
 
 <!-- ********************** PAGINA 1 INIZIO ********************** -->
-<div id="pagina1" class="paginaA4" style="page-break-after: always;">
+<page size="A4">
 	<div class="pagina-inner" style="height: 970px;">
 		<!-- LOGO 
 		*** NB NON modificare i valori degli attributi class e alt dei tags img
 		########################################################################################### -->
-		<!-- 
 		<div id="headerLogo" class="pure-g">
 			<div class="pure-u-12-24">
 				<div class="logo"><img src="images/logo.png" alt="logo" /></div>
 			</div>
 			<div class="pure-u-12-24">
-				<div class="header_logo"><img src="images/header.png" alt="header" /></div>
+				<div class="header"><img src="images/header.png" alt="header" /></div>
 			</div>
 		</div>
-		 -->
+		<!-- 
 		<div id="headerLogo">
 			<img src="images/testata.png" alt="header" width="761px"/>
 		</div>
+		 -->
 
 		<!-- CLIENTE-BOLLETTA
 		########################################################################################### -->
@@ -165,15 +163,15 @@
 					<div class="content">
 						<div class="pure-g">
 							<div class="pure-u-11-24 colonna-sinistra">
-								<div class="header-grassetto">N° CLIENTE</div>
+								<div class="header-grassetto font7pt">N° CLIENTE</div>
 								<div class="valore-tag codice-cliente">
-									<span data-data_type="single" data-first_node="ClienteFinaleCodice" data-path_type="xpath" data-path_data="">XXX XXX XXX XXX</span>
+									<span class="font12pt color1805C" data-data_type="single" data-first_node="ClienteFinaleCodice" data-path_type="xpath" data-path_data="">XXX XXX XXX XXX</span>
 								</div>
-								<div class="header-grassetto">CODICE POD</div>
+								<div class="header-grassetto font7pt">CODICE POD</div>
 								<div class="valore-tag">
 									<span data-data_type="single" data-first_node="FornituraCodicePDP" data-path_type="xpath" data-path_data="">XXX XXX XXX</span>
 								</div>
-								<div class="header-grassetto">CODICE FISCALE</div>
+								<div class="header-grassetto font7pt">CODICE FISCALE</div>
 								<div class="valore-tag">
 									<span id="codiceFiscaleOrPartitaIvaContainer">XXX XXX XXXX XXX XXXX</span>
 									<span id="codiceFiscale" style="display: none;" data-data_type="single" data-first_node="ClienteFinaleCodiceFiscale" data-path_type="xpath" data-path_data=""></span>
@@ -194,7 +192,7 @@
 								</script>
 							</div>
 							<div class="pure-u-13-24 colonna-destra">
-								<div class="header-grassetto">DATI BOLLETTA</div>	
+								<div class="header-grassetto font7pt">DATI BOLLETTA</div>	
 								<div class="riga">
 									<span class="etichetta">Fornitura</span>
 									<span class="valore-tag">TEST</span>
@@ -208,7 +206,7 @@
 									<span class="valore-tag"><span data-data_type="single" data-first_node="DataEmissione" data-path_type="xpath" data-path_data="">TEST</span></span>
 								</div>
 								<div style="border-top: 1px solid #777777"></div>
-								<div class="riga periodo">
+								<div class="riga periodo color1805C">
 									<span class="etichetta">Periodo</span>
 									<span class="valore-tag">
 										<!-- potrebbe essere il tag PeriodoCompetenza -->
@@ -281,7 +279,6 @@
 			</div>
 		</div>
 		
-		
 		<!-- CORPO PAGINA 1 CON 2 COLONNE
 			 SX: dati fornitura, totale spesa e grazie, grafico a torta
 			 DX: contatti utili, autolettura, emergenza guasti
@@ -292,9 +289,9 @@
 			<div class="pure-u-16-24 colonna-sinistra">
 				<div class="colonna-sinistra-inner">
 					<!-- *** dati fornitura -->
-					<div class="dati-fornitura">
+					<div class="dati-fornitura font6pt">
 						<div class="content">
-							<div class="header">DATI FORNITURA</div>
+							<div class="header font7pt">DATI FORNITURA</div>
 							<div class="pure-g">
 								<div class="pure-u-12-24">
 									<div >
@@ -378,7 +375,7 @@
 							<div class="pure-g">				
 								<div class="pure-u-12-24">
 									<div class="totale-spesa">
-										<div class="header">TOTALE SPESA</div>
+										<div class="header font12pt">TOTALE SPESA</div>
 										<div class="cifra-da-pagare"><span class="simbolo-euro">€</span><span data-data_type="single" data-first_node="TotaleDaPagare" data-path_type="xpath" data-path_data="">123,12</span></div>			
 									</div>
 									<div class="da-saldare-entro">
@@ -733,21 +730,19 @@
 		</div>
 	</div>	
 	
-	
 	<!-- @FOOTER PAGINA 1 - start ========== -->
 	<div class="footer">
 		<div class="contenuto">
 			<img src="images/piedone.png" width="740px" alt="piedone" />
 		</div>
 	</div>
-</div>
+</page>
 <!-- ********************** PAGINA 1 FINE ************************ -->
 <!-- ************************************************************* -->
 
 
-
 <!-- ********************** PAGINA 2 INIZIO ************************ -->
-<div id="pagina2" class="paginaA4" style="page-break-after: always;">
+<page size="A4">	
 	<div class="pagina-inner" style="height: 970px;">
 		<!-- LOGO 
 		########################################################################################### -->
@@ -1657,21 +1652,19 @@
 		<!-- ========== end - GUIDA LETTURA FATTURA -->
 	</div>
 		
-		
 	<!-- @FOOTER PAGINA 2 - start ========== -->
 	<div class="footer">
 		<div class="contenuto">
 			<img src="images/piedone.png" width="740px" alt="piedone" />
 		</div>
 	</div>
-</div>
+</page>
 <!-- ********************** PAGINA 2 FINE ************************ -->
 <!-- ************************************************************* -->
 
 
-
 <!-- ********************** PAGINA 3 INIZIO ************************ -->
-<div id="pagina3" class="paginaA4" style="page-break-after: always;">
+<page size="A4">
 	<div class="pagina-inner" style="height: 970px;">
 		<!-- LOGO 
 		########################################################################################### -->
@@ -1818,14 +1811,13 @@
 		<!-- ========== end - GUIDA LETTURA FATTURA -->
 	</div>
 	
-	
 	<!-- @FOOTER PAGINA 3 - start ========== -->
 	<div class="footer">
 		<div class="contenuto">
 			<img src="images/piedone.png" width="740px" alt="piedone" />
 		</div>
 	</div>
-</div>
+</page>
 <!-- ********************** PAGINA 3 FINE ************************ -->
 <!-- ************************************************************* -->
 	
