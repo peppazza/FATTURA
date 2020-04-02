@@ -32,6 +32,9 @@ page[size="A4"] .sub.pagina-inner {
 	.font12pt {
 		font-size: 12pt!important;
 	}
+	.font11pt {
+		font-size: 11pt!important;
+	}
 	.font10pt {
 		font-size: 10pt!important;
 	}
@@ -155,7 +158,6 @@ table.custom tbody tr td.no-back {
    	margin-right: -40px;
 }
  */
-
 /*
 #headerLogo .logo img {
 	width: 240px;
@@ -169,6 +171,10 @@ table.custom tbody tr td.no-back {
 	width: 150px;
 }
  */
+ 
+.header-inizio-pagina {
+	padding-top: 20px;
+}
 
 .legenda-grafico-a-barre-per-fasce .voce-legenda {
 	display: inline-block;
