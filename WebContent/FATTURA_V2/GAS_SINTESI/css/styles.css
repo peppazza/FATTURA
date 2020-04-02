@@ -476,10 +476,10 @@ table.custom tbody tr td.no-back {
 	margin-top: 8px;
 }
 #riepilogoUltimi12Mesi #tabellaRiepilogoUltimi12Mesi tbody tr td {
-	padding: 1px 2px;
+	padding: 1px 4px;
 }
 #riepilogoUltimi12Mesi #tabellaRiepilogoUltimi12Mesi tbody tr.background-grigio-scuro td {
-	background-color: #c8c9cb;
+	background-color: #c2c4c6;
 }
 #riepilogoUltimi12Mesi #tabellaRiepilogoUltimi12Mesi tbody tr.riga-totali td {
 	border-top: 3px solid #ffffff;

@@ -1050,8 +1050,7 @@
 		<!-- *** js - init CONSUMO FATTURATO TOTALE degli ULTIMI 2 MESI della tabella precedente, ovvero #tabellaQuadroLettureEConsumi -->
 		<script type="text/javascript">
 			try {
-				var consumiFatturati;
-				
+				var consumiFatturati;				
 				var elems = document.getElementsByClassName('sezione-totale-energia-attiva');
 				if (elems) {
 					consumiFatturati = 0;
@@ -1069,8 +1068,7 @@
 						if (consumo && typeof consumo === 'number')
 							consumiFatturati += consumo;
 					}
-				}
-				
+				}				
 				if (consumiFatturati === 0 || consumiFatturati && typeof consumiFatturati === 'number') {
 					var valore = Number(consumiFatturati.toFixed(2)).toLocaleString('it');
 					if (valore || typeof valore === 'number')
@@ -1234,19 +1232,22 @@
 											if (datiF1) {
 												totF1 = 0.0;
 												for (var i = 0; i < datiF1.length; i++)
-													totF1 += datiF1[i];
+													if (datiF1[i] || typeof datiF1[i] === 'number')
+														totF1 += datiF1[i];
 												document.getElementById('_ultimi12Mesi_totale_F1').innerHTML = Number(totF1.toFixed(2)).toLocaleString('it');
 											}
 											if (datiF2) {
 												totF2 = 0.0;
 												for (var i = 0; i < datiF2.length; i++)
-													totF2 += datiF2[i];
+													if (datiF2[i] || typeof datiF2[i] === 'number')
+														totF2 += datiF2[i];
 												document.getElementById('_ultimi12Mesi_totale_F2').innerHTML = Number(totF2.toFixed(2)).toLocaleString('it');
 											}
 											if (datiF3) {
 												totF3 = 0.0;
 												for (var i = 0; i < datiF3.length; i++)
-													totF3 += datiF3[i];
+													if (datiF3[i] || typeof datiF3[i] === 'number')
+														totF3 += datiF3[i];
 												document.getElementById('_ultimi12Mesi_totale_F3').innerHTML = Number(totF3.toFixed(2)).toLocaleString('it');
 											}
 											if (totF1 || typeof totF1 === 'number')
