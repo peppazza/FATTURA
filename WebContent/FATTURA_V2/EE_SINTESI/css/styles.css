@@ -67,7 +67,15 @@ page[size="A4"] .sub.pagina-inner {
 	.back-color368C { background-color: #78be20!important; } /* verde */
 	.back-color5517C { background-color: #c7ccc4!important; } /* grigio */
 	.back-color7751C { background-color: #0097a9!important; } /* blu-verde */
-
+	/* grafico a barre*/
+		/* F3 */
+		.back-color3035K { background-color: #003e51!important; } /* blu scuro */
+		/* F2 */
+		.back-color625K { background-color: #507f70!important; } /* verde scuro */
+		/* F1 codice tampone non corretto! */
+		.back-color7693K { background-color: #e7d83b!important; } /* giallo scuro */
+			
+	
 /* @font-face {
   font-family: SourceSansPro;
   src: url(SourceSansPro-Regular.ttf);
@@ -174,6 +182,7 @@ table.custom tbody tr td.no-back {
  
 .header-inizio-pagina {
 	padding-top: 20px;
+	padding-bottom: 10px;
 }
 
 .legenda-grafico-a-barre-per-fasce .voce-legenda {
@@ -184,18 +193,9 @@ table.custom tbody tr td.no-back {
 }
 .legenda-grafico-a-barre-per-fasce .voce-legenda .box-colorato {
 	display: inline-block;
-	width: 5px;
-	height: 5px;
+	width: 7px;
+	height: 7px;
 	margin-right: 4px;
-}
-.legenda-grafico-a-barre-per-fasce .voce-legenda .box-colorato.f1 {
-	background-color: #e8ce35;
-}
-.legenda-grafico-a-barre-per-fasce .voce-legenda .box-colorato.f2 {
-	background-color: #d40d5c;
-}
-.legenda-grafico-a-barre-per-fasce .voce-legenda .box-colorato.f3 {
-	background-color: #004b6a;
 }
 .legenda-grafico-a-barre-per-fasce .voce-legenda .etichetta {
 	display: inline-block;
@@ -445,7 +445,12 @@ table.custom tbody tr td.no-back {
 #lettureEConsumiPeriodoFatturazione {
 	margin-top: 8px;
 }
-#lettureEConsumiPeriodoFatturazione .valore-consumi-fatturati {
+#lettureEConsumiPeriodoFatturazione .consumi-fatturati {
+	text-align: right;
+	margin-top: -24px;
+	background: transparent;
+}
+#lettureEConsumiPeriodoFatturazione .consumi-fatturati .valore-consumi-fatturati {
 	text-align: center;
     border: 1.5px solid #b6262f;
     border-radius: 5px;
@@ -454,6 +459,8 @@ table.custom tbody tr td.no-back {
     font-weight: 800;
     padding: 2px 8px;
     margin-top: -3px;
+    display: inline-block;
+    background-color: #ffffff;
 }
 /* *** tabella */
 #lettureEConsumiPeriodoFatturazione #tabellaQuadroLettureEConsumi {
@@ -499,10 +506,11 @@ table.custom tbody tr td.no-back {
 }
 #conguagliRicalcoliEBolletteNonPagate .content {
 	border: 1.5px solid #b6262f;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    padding: 0.375rem;
+    border-radius: 14px;
+    -moz-border-radius: 14px;
+    -webkit-border-radius: 14px;
+    padding: 14px 16px;
+    margin: 20px 0;
 }
 #conguagliRicalcoliEBolletteNonPagate .content #conguagliRicalcoli {
 	padding-right: 0.5rem;
@@ -526,7 +534,7 @@ table.custom tbody tr td.no-back {
 	margin-bottom: 2px;
 }
 #guidaLetturaFattura .content .dati .paragrafo {
-	margin-bottom: 4px;
+	margin-bottom: 8px;
 }
 
 
@@ -538,7 +546,7 @@ table.custom tbody tr td.no-back {
 	margin-bottom: 2px;
 }
 #arera .content > .dati .body {
-	margin-bottom: 4px;
+	margin-bottom: 8px;
 }
 #arera .tabella-arera {
 	margin-top: 10px;
@@ -546,9 +554,6 @@ table.custom tbody tr td.no-back {
 #arera .tabella-arera tbody tr td {
 	padding: 1px;	
 }
-
-
-
 
 
 @media print {
@@ -567,6 +572,4 @@ table.custom tbody tr td.no-back {
 		page-break-after: always;
 	}
 }
-
-
 

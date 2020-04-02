@@ -794,11 +794,11 @@
 			<div class="inner">
 				<div class="header-con-riga-centrale">
 					<div class="pure-g">
-						<div class="pure-u-13-24 testo font11pt color1805C">LETTURE E CONSUMI PERIODO DI FATTURAZIONE</div>
-						<div class="pure-u-11-24"><div class="riga-centrale" style="margin-left: -14px;"></div></div>
+						<div class="pure-u-12-24 testo font10pt color1805C">LETTURE E CONSUMI PERIODO DI FATTURAZIONE</div>
+						<div class="pure-u-12-24"><div class="riga-centrale" style="margin-left: -18px;"></div></div>
 					</div>
-					<div class="consumi-fatturati" style="text-align: right; margin-top: -24px; background: transparent;">
-						<div class="valore-consumi-fatturati" style="display: inline-block; background-color: #ffffff;">
+					<div class="consumi-fatturati">
+						<div class="valore-consumi-fatturati">
 							<span class="etichetta font12pt color1805C">CONSUMI FATTURATI: </span>
 							<span class="valore font12pt">
 								<!-- dal momento che nella tabella seguente, ovvero #tabellaQuadroLettureEConsumi, possono comparire più di 2 righe,
@@ -817,23 +817,23 @@
 							<div class="content" style="width: 240px; height: 110px;">
 								<canvas id="graficoQuadroLettureEConsumi"></canvas>
 							</div>
-							<div class="legenda-grafico-a-barre-per-fasce">
+							<div class="legenda-grafico-a-barre-per-fasce font6pt">
 								<div class="content">
 									<div class="voce-legenda voce-legenda-f1">
-										<div class="box-colorato f1"></div><div class="etichetta">Consumo Fatturato [kWh] F1</div>
+										<div class="box-colorato f1 back-color7693K"></div><div class="etichetta">Consumo Fatturato [kWh] F1</div>
 									</div>
 									<div class="voce-legenda voce-legenda-f2">
-										<div class="box-colorato f2"></div><div class="etichetta">Consumo Fatturato [kWh] F2</div>
+										<div class="box-colorato f2 back-color625K"></div><div class="etichetta">Consumo Fatturato [kWh] F2</div>
 									</div>
 									<div class="voce-legenda voce-legenda-f3">
-										<div class="box-colorato f3"></div><div class="etichetta">Consumo Fatturato [kWh] F3</div>
+										<div class="box-colorato f3 back-color3035K"></div><div class="etichetta">Consumo Fatturato [kWh] F3</div>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="pure-u-16-24 tabella-dati">
 							<div class="content">
-								<table id="tabellaQuadroLettureEConsumi" class="custom">
+								<table id="tabellaQuadroLettureEConsumi" class="custom font7pt">
 									 <tbody>
 									    <tr class="tabella-energia-attiva">
 									    	<td class="header no-back"></td>
@@ -975,15 +975,15 @@
 					       	datasets: [ {
 								label: 'F1',
 								data: lettureF1,
-								backgroundColor: '#e8ce35' // giallo
+								backgroundColor: '#e7d83b' // giallo
 							}, {
 								label: 'F2',
 								data: lettureF2,
-								backgroundColor: '#d40d5c' // amaranto
+								backgroundColor: '#507f70' // verde
 							}, {
 								label: 'F3',
 								data: lettureF3,
-								backgroundColor: '#004b6a' // bu scuro
+								backgroundColor: '#003e51' // bu scuro
 							} ]
 						},
 						options: {
@@ -1124,8 +1124,8 @@
 			<div class="inner">
 				<div class="header-con-riga-centrale">
 					<div class="pure-g">
-						<div class="pure-u-11-24 testo">RIEPILOGO CONSUMI DEGLI ULTIMI 12 MESI</div>
-						<div class="pure-u-13-24"><div class="riga-centrale" style="margin-left: -12px;"></div></div>
+						<div class="pure-u-11-24 testo font10pt color1805C">RIEPILOGO CONSUMI DEGLI ULTIMI 12 MESI</div>
+						<div class="pure-u-13-24"><div class="riga-centrale" style="margin-left: -26px;"></div></div>
 					</div>
 				</div>
 				<div class="content">
@@ -1134,23 +1134,23 @@
 							<div class="chart-container" style="width: 460px; height: 180px;">
 								<canvas id="graficoRiepilogoUltimi12Mesi"></canvas>
 							</div>
-							<div class="legenda-grafico-a-barre-per-fasce">
+							<div class="legenda-grafico-a-barre-per-fasce font6pt">
 								<div class="content">
 									<div class="voce-legenda voce-legenda-f1">
-										<div class="box-colorato f1"></div><div class="etichetta">Consumo Fatturato [kWh] F1</div>
+										<div class="box-colorato f1 back-color7693K"></div><div class="etichetta">Consumo Fatturato [kWh] F1</div>
 									</div>
 									<div class="voce-legenda voce-legenda-f2">
-										<div class="box-colorato f2"></div><div class="etichetta">Consumo Fatturato [kWh] F2</div>
+										<div class="box-colorato f2 back-color625K"></div><div class="etichetta">Consumo Fatturato [kWh] F2</div>
 									</div>
 									<div class="voce-legenda voce-legenda-f3">
-										<div class="box-colorato f3"></div><div class="etichetta">Consumo Fatturato [kWh] F3</div>
+										<div class="box-colorato f3 back-color3035K"></div><div class="etichetta">Consumo Fatturato [kWh] F3</div>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="pure-u-9-24 tabella-dati">
 							<div class="content">
-								<table id="tabellaRiepilogoUltimi12Mesi" class="custom">
+								<table id="tabellaRiepilogoUltimi12Mesi" class="custom font6pt">
 									<tbody>
 										<tr>
 											<td class="no-back"></td>
@@ -1306,17 +1306,17 @@
 					       	datasets: [ {
 								label: 'F1',
 								data: datiF1,
-								backgroundColor: '#e8ce35', // giallo
+								backgroundColor: '#e7d83b', // giallo
 								barThickness: larghezzaBarra
 							}, {
 								label: 'F2',
 								data: datiF2,
-								backgroundColor: '#d40d5c', // amaranto
+								backgroundColor: '#507f70', // verde
 								barThickness: larghezzaBarra
 							}, {
 								label: 'F3',
 								data: datiF3,
-								backgroundColor: '#004b6a', // blu scuro
+								backgroundColor: '#003e51', // blu scuro
 								barThickness: larghezzaBarra
 							} ]
 						},
@@ -1379,8 +1379,8 @@
 				<div class="colonna-accise">
 					<div class="header-con-riga-centrale">
 						<div class="pure-g">
-							<div class="pure-u-10-24 testo">DETTAGLIO ACCISE</div>
-							<div class="pure-u-14-24"><div class="riga-centrale" style="margin-left: 0;"></div></div>
+							<div class="pure-u-10-24 testo font10pt color1805C">DETTAGLIO ACCISE</div>
+							<div class="pure-u-14-24"><div class="riga-centrale" style="margin-left: -8px;"></div></div>
 						</div>
 					</div>
 					<div class="content">
@@ -1462,8 +1462,8 @@
 				<div class="colonna-iva">
 					<div class="header-con-riga-centrale">
 						<div class="pure-g">
-							<div class="pure-u-9-24 testo">DETTAGLIO IVA</div>
-							<div class="pure-u-15-24"><div class="riga-centrale" style="margin-left: -14px;"></div></div>
+							<div class="pure-u-8-24 testo font10pt color1805C">DETTAGLIO IVA</div>
+							<div class="pure-u-16-24"><div class="riga-centrale" style="margin-left: -6px;"></div></div>
 						</div>
 					</div>
 					<div class="content">
@@ -1496,7 +1496,7 @@
 				<div class="pure-g">
 					<div class="pure-u-12-24">
 						<div id="conguagliRicalcoli">
-							<div class="header">CONGUAGLI E RICALCOLI</div>
+							<div class="header font12pt color1805C">CONGUAGLI E RICALCOLI</div>
 							<div class="dati">
 								<!-- *** dati dei conguagli consumi stimati -->
 								<div style="display: none;" class="sezione-conguaglio-consumi-stimati" data-data_type="simple_loop" data-first_node="ConguaglioConsumiStimati" data-path_type="xpath" data-path_data="">
@@ -1507,8 +1507,8 @@
 						        </div>
 								<div>
 									<!-- *** messaggi relativi ai conguagli consumi stimati -->
-									<div id="messaggioNessunConguaglioConsumiStimati">Nessun conguaglio consumi stimati</div>
-									<div id="messaggioEsistenzaConguaglioConsumiStimati">Sono presenti conguagli consumi stimati</div>
+									<div id="messaggioNessunConguaglioConsumiStimati" class="font9pt">Nessun conguaglio consumi stimati</div>
+									<div id="messaggioEsistenzaConguaglioConsumiStimati" class="font9pt">Sono presenti conguagli consumi stimati</div>
 								</div>
 								<script type="text/javascript">
 									try {
@@ -1540,10 +1540,10 @@
 					</div>					
 					<div class="pure-u-12-24">
 						<div id="bolletteNonPagate">
-							<div class="header">BOLLETTE NON PAGATE</div>
+							<div class="header font12pt color1805C">DETTAGLIO BOLLETTE NON PAGATE</div>
 							<div class="dati">
 								<div>
-									<div id="messaggioNessunaBollettaDaPagare" class="messaggio">
+									<div id="messaggioNessunaBollettaDaPagare" class="messaggio font9pt">
 										Le precedenti bollette risultano pagate
 									</div>
 									<div class="table-container">
@@ -1638,8 +1638,8 @@
 		########################################################################################### -->
 		<div id="guidaLetturaFattura">
 			<div class="content">
-				<div class="header">GUIDA ALLA LETTURA DELLA TUA FATTURA</div>
-				<div class="dati">
+				<div class="header font10pt color1805C">GUIDA ALLA LETTURA DELLA TUA FATTURA</div>
+				<div class="dati font6pt">
 					<div>
 						<div class="paragrafo">
 							Essere informati è il miglior modo per essere sicuri di pagare ciò che è dovuto. Per noi di Omnia Energia essere vicini al cliente significa anche renderlo autonomo nella corretta lettura della propria bolletta. Per questa ragione ti forniamo informazioni che possono esserti utili.
@@ -1714,8 +1714,8 @@
 		########################################################################################### -->
 		<div id="arera">
 			<div class="content">
-				<div class="header">ANNOTAZIONI E ULTERIORI INFORMAZIONI PREVISTE DALL'ARERA</div>
-				<div class="dati">
+				<div class="header font10pt color1805C">ANNOTAZIONI E ULTERIORI INFORMAZIONI PREVISTE DALL'ARERA</div>
+				<div class="dati font6pt">
 					<div class="titolo"><strong>Accedi alla tua area riservata</strong></div>
 					<div class="body">
 						<div>Puoi accedere alla tua area personale online per la gestione della tua fornitura tramite il sito www.omniaenergia.it nella sezione Area Clienti digitando username e password riportati di seguito:</div> 
@@ -1834,12 +1834,6 @@
 					<div class="body">
 					Qualora la fattura elettronica associata alla presente fattura cortesia non risulti essere stata recapitata dallo SDI, perché il codice destinatario relativo risulta essere “0000000” a causa della mancata comunicazione del tuo codice destinatario o in alternativa del tuo indirizzo PEC in precedenza richiesto o per qualsiasi altra motivazione, ti informiamo che lo SDI rende disponibile la fattura elettronica nell’area a te riservata del sito web dell’Agenzia delle Entrate e che pertanto puoi provvedere a scaricarla.
 					</div>
-					
-					
-					
-					
-					
-					
 					
 				</div>
 			</div>
