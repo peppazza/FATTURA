@@ -1,33 +1,13 @@
-@media print {
-	html, body {
-		width: 210mm;
-		height: 297mm;
-	}
-	page[size="A4"] {
-		margin: 0;
-		border: initial;
-		border-radius: initial;
-		width: initial;
-		min-height: initial;
-		box-shadow: initial;
-		background: initial;
-		page-break-after: always;
-	}
-}
-
 html, body {
 	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 8pt;
 }
 
 page[size="A4"] {
-    background: white;
-    /*
-    width: 19.6cm;
-    height: 28.3cm;
-     */
-   	height: 297mm;
-    width: 210mm;
+	width: 210mm;
+	height: 297mm;
+    /* padding: 20mm;
+	margin: 10mm auto; */
     display: block;
     margin: 0 auto 10px;
     /*
@@ -37,39 +17,53 @@ page[size="A4"] {
     padding: 0 20px 0;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
 }
-
-
-.font15pt {
-	font-size: 15pt!important;
+page[size="A4"] .sub.pagina-inner {
+	height: 1048px;
 }
-.font12pt {
-	font-size: 12pt!important;
-}
-.font10pt {
-	font-size: 10pt!important;
-}
-.font9pt {
-	font-size: 9pt!important;
-}
-.font8pt {
-	font-size: 8pt!important;
-}
-.font7pt {
-	font-size: 7pt!important;
-}
-.font6pt {
-	font-size: 6pt!important;
+@page {
+	size: A4;
+	margin: 0;
 }
 
-.color100K {
-	color: #302E2C!important; /* nero */
-}
-.color75K {
-	color: #666666!important; /* grigio */
-}
-.color1805C {
-	color: #AF2626!important; /* rosso oe */
-}
+/* FONT SIZES */
+	.font15pt {
+		font-size: 15pt!important;
+	}
+	.font12pt {
+		font-size: 12pt!important;
+	}
+	.font10pt {
+		font-size: 10pt!important;
+	}
+	.font9pt {
+		font-size: 9pt!important;
+	}
+	.font8pt {
+		font-size: 8pt!important;
+	}
+	.font7pt {
+		font-size: 7pt!important;
+	}
+	.font6pt {
+		font-size: 6pt!important;
+	}
+/* COLORS */
+	.color75K { color: #666666!important; } /* grigio scuro */
+	.color100K { color: #302e2c!important; } /* nero */
+	.color142C { color: #f1be48!important; } /* giallo ocra */
+	.color158C { color: #e87722!important; } /* arancione */
+	.color1805C { color: #af2626!important; } /* rosso oe */
+	.color368C { color: #78be20!important; } /* verde */
+	.color5517C { color: #c7ccc4!important; } /* grigio */
+	.color7751C { color: #0097a9!important; } /* blu-verde */
+	.back-color75K { background-color: #666666!important; } /* grigio scuro */
+	.back-color100K { background-color: #302e2c!important; } /* nero */
+	.back-color142C { background-color: #f1be48!important; } /* giallo ocra */
+	.back-color158C { background-color: #e87722!important; } /* arancione */
+	.back-color1805C { background-color: #af2626!important; } /* rosso oe */
+	.back-color368C { background-color: #78be20!important; } /* verde */
+	.back-color5517C { background-color: #c7ccc4!important; } /* grigio */
+	.back-color7751C { background-color: #0097a9!important; } /* blu-verde */
 
 /* @font-face {
   font-family: SourceSansPro;
@@ -134,13 +128,14 @@ table.custom tbody tr td.no-back {
 	margin-bottom: 0.85rem!important;
 }
 
-
+#headerLogo {
+	margin: 0 -20px;	
+}
 #headerLogo .logo img {
 	width: 190px;
 	margin-top: 30px;
 }
 #headerLogo .header {
-	margin-right: -20px;
     text-align: right;
 }
 /*
@@ -174,11 +169,6 @@ table.custom tbody tr td.no-back {
 	width: 150px;
 }
  */
-
-.footer {
-	margin-top: 1px;
-}
-
 
 .legenda-grafico-a-barre-per-fasce .voce-legenda {
 	display: inline-block;
@@ -273,6 +263,9 @@ table.custom tbody tr td.no-back {
 #qrCodeEIdentificativo .content {
 	padding: 10px 10px 10px 30px;
 }
+#indirizzoSpedizione {
+	margin-top: 20px;
+}
 #indirizzoSpedizione .content {
 	text-transform: uppercase;
 	padding: 15px 0;
@@ -287,10 +280,13 @@ table.custom tbody tr td.no-back {
 	padding-right: 0.85rem;
 }
 #corpoPagina1Con2Colonne .colonna-destra .colonna-destra-inner {
-	border-left: 1px solid #777777;
+	border-left: 1px solid #aaaaaa;
 }
 /* *** COLONNA SX*/
 	/* *** dati fornitura */
+	#corpoPagina1Con2Colonne .dati-fornitura {
+	    margin: 6px 0 10px;
+	}
 	#corpoPagina1Con2Colonne .dati-fornitura .content .header {
 		font-weight: 800;
 	}
@@ -303,7 +299,7 @@ table.custom tbody tr td.no-back {
 	}
 	/* *** totale spesa e grazie */
 	#corpoPagina1Con2Colonne .totale-spesa-e-grazie {
-		padding: 0 8px;
+		padding: 2.5px 8px;
 	}
 	#corpoPagina1Con2Colonne .totale-spesa-e-grazie .totale-spesa .header {
 	    font-weight: 800;
@@ -323,11 +319,17 @@ table.custom tbody tr td.no-back {
 	#corpoPagina1Con2Colonne .totale-spesa-e-grazie .da-saldare-entro .valore {
 		font-weight: 600;
 	}
+	#corpoPagina1Con2Colonne .totale-spesa-e-grazie #messaggioGraziePerBolletteTuttePagate {
+		margin-top: 5px;
+	}
 	#corpoPagina1Con2Colonne .totale-spesa-e-grazie #messaggioGraziePerBolletteTuttePagate .titolo,
 	#corpoPagina1Con2Colonne .totale-spesa-e-grazie #messaggioAttenzionePerBolletteNonTuttePagate .titolo {
 		font-weight: 800;
 	}
 	/* *** grafico a torta (sintesi degli importi) */
+	#corpoPagina1Con2Colonne .sintesi-importi {
+		margin-top: 10px;
+	}
 	#corpoPagina1Con2Colonne .sintesi-importi .grafico-a-torta .titolo {
 		font-weight: 800;
 	}
@@ -347,7 +349,6 @@ table.custom tbody tr td.no-back {
 		display: inline-block;
 		width: 13px;
 		height: 13px;
-		background: red;
 		margin-right: 4px;
 	}
 	#corpoPagina1Con2Colonne .sintesi-importi .legenda .voce-legenda .etichetta .testo {
@@ -356,26 +357,6 @@ table.custom tbody tr td.no-back {
 	#corpoPagina1Con2Colonne .sintesi-importi .legenda .voce-legenda {
 		margin-bottom: 4px;
 	}
-	#corpoPagina1Con2Colonne .sintesi-importi .legenda .voce-legenda.spesaMateriaEnergia .rettangolo {
-		background-color: #ff7300; /* vedi file charts.css */
-		background-color: #b32b38;
-	}
-	#corpoPagina1Con2Colonne .sintesi-importi .legenda .voce-legenda.spesaTrasporto .rettangolo {
-		background-color: #404040; /* vedi file charts.css */
-		background-color: #f57b2e;
-	}
-	#corpoPagina1Con2Colonne .sintesi-importi .legenda .voce-legenda.spesaOneri .rettangolo {
-		background-color: #80ff00; /* vedi file charts.css */
-		background-color: #87c442;
-	}
-	#corpoPagina1Con2Colonne .sintesi-importi .legenda .voce-legenda.altrePartite .rettangolo {
-		background-color: #000000; /* vedi file charts.css */
-		background-color: #2095a9;
-	}	
-	#corpoPagina1Con2Colonne .sintesi-importi .legenda .voce-legenda.imposte .rettangolo {
-		background-color: #ffff00; /* vedi file charts.css */
-		background-color: #a2babe;
-	}
 	#corpoPagina1Con2Colonne .sintesi-importi .legenda .voce-legenda .valore-in-euro {
 		text-align: right;
 	}
@@ -383,6 +364,9 @@ table.custom tbody tr td.no-back {
 		display: inline-block;
 	}
 	/* *** totali bolletta */
+	#corpoPagina1Con2Colonne .sintesi-importi .totale-bolletta {
+		padding: 2px 0;
+	}
 	#corpoPagina1Con2Colonne .sintesi-importi .totale-bolletta .voce-importi {
 		margin-bottom: 4px;
 	}
@@ -393,6 +377,9 @@ table.custom tbody tr td.no-back {
 		display: inline-block;
 	}
 	/* *** riepilogo IVA */
+	#corpoPagina1Con2Colonne .riepilogo-iva {
+		padding: 2px 0;
+	}
 	#corpoPagina1Con2Colonne .riepilogo-iva table td {
 		text-align: right;
 	}
@@ -411,9 +398,9 @@ table.custom tbody tr td.no-back {
 	}
 	#contattiEAutoletturaEGuasti .sezione .header {
 		font-weight: 800;
-		border-bottom: 1px solid #777777;
-	    padding: 2px 0;
-    	margin-bottom: 5px;
+		border-bottom: 1px solid #aaaaaa;
+	    padding: 0 0;
+    	margin-bottom: 2px;
 	}
 	#contattiEAutoletturaEGuasti .sezione .corpo {
 		margin-bottom: 8px;
@@ -433,6 +420,21 @@ table.custom tbody tr td.no-back {
 		bottom: 0;
     	display: block;
 	}
+
+#boxOfferta {
+	margin-top: 5px;
+}
+#boxOfferta .content {
+	text-align: center;
+    background: #afafaf;
+    width: 790px;
+    height: 320px;
+    overflow: hidden;
+}
+#boxOfferta .content img {
+	width: 790px;
+    height: 320px;
+}
 
 #lettureEConsumiPeriodoFatturazione {
 	margin-top: 8px;
@@ -540,6 +542,25 @@ table.custom tbody tr td.no-back {
 }
 
 
+
+
+
+@media print {
+	html, body {
+		width: 210mm;
+		height: 297mm;
+	}
+	page[size="A4"] {
+		margin: 0;
+		border: initial;
+		border-radius: initial;
+		width: initial;
+		min-height: initial;
+		box-shadow: initial;
+		background: initial;
+		page-break-after: always;
+	}
+}
 
 
 

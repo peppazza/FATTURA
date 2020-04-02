@@ -6,19 +6,25 @@
 /* SINTESI IMPORTI */
 /* *** tipo pie */
 .ct-series.spesaMateriaEnergia .ct-slice-pie {
-	fill: #b32b38;
+	fill: #af2626;
 }
 .ct-series.spesaTrasporto .ct-slice-pie {
-	fill: #f57b2e;
+	fill: #e87722;
 }
 .ct-series.spesaOneri .ct-slice-pie {
-	fill: #87c442;
+	fill: #78be20;
 }
 .ct-series.altrePartite .ct-slice-pie {
-	fill: #2095a9;
+	fill: #0097a9;
+}
+.ct-series.bonusSociale .ct-slice-pie {
+	fill: #f1be48;
 }
 .ct-series.imposte .ct-slice-pie {
-	fill: #a2babe;
+	fill: #c7ccc4;
+}
+.ct-series.iva .ct-slice-pie {
+	fill: #302e2c;
 }
 /* *** tipo donut */
 .ct-series.spesaMateriaEnergia .ct-slice-donut {
@@ -26,23 +32,14 @@
 	/* stroke: white; */
 	/* stroke-width: 4px; */
 	stroke: #ff7300;
-	stroke: #b32b38;
 }
 .ct-series.spesaTrasporto .ct-slice-donut {
-	stroke: #404040;
-	stroke: #f57b2e;
 }
 .ct-series.spesaOneri .ct-slice-donut {
-	stroke: #80ff00;
-	stroke: #87c442;
 }
 .ct-series.altrePartite .ct-slice-donut {
-	stroke: #000000;
-	stroke: #2095a9;
 }
 .ct-series.imposte .ct-slice-donut {
-	stroke: #ffff00;
-	stroke: #a2babe;
 }
 
 
