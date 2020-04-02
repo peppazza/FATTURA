@@ -55,7 +55,7 @@ page[size="A4"] .sub.pagina-inner {
 	.color100K { color: #302e2c!important; } /* nero */
 	.color142C { color: #f1be48!important; } /* giallo ocra */
 	.color158C { color: #e87722!important; } /* arancione */
-	.color1805C { color: #af2626!important; } /* rosso oe */
+	.color7711C { color: #0097a9!important; } /* verdino gas */
 	.color368C { color: #78be20!important; } /* verde */
 	.color5517C { color: #c7ccc4!important; } /* grigio */
 	.color7751C { color: #0097a9!important; } /* blu-verde */
@@ -63,7 +63,7 @@ page[size="A4"] .sub.pagina-inner {
 	.back-color100K { background-color: #302e2c!important; } /* nero */
 	.back-color142C { background-color: #f1be48!important; } /* giallo ocra */
 	.back-color158C { background-color: #e87722!important; } /* arancione */
-	.back-color1805C { background-color: #af2626!important; } /* rosso oe */
+	.back-color7711C { background-color: #0097a9!important; } /* verdino gas */
 	.back-color368C { background-color: #78be20!important; } /* verde */
 	.back-color5517C { background-color: #c7ccc4!important; } /* grigio */
 	.back-color7751C { background-color: #0097a9!important; } /* blu-verde */
@@ -227,7 +227,7 @@ table.custom tbody tr td.no-back {
 
 
 #datiClienteEBolletta .content {
-    border: 1.5px solid #b6262f;
+    border: 1.5px solid #0097a9;
     padding: 8px;
     border-radius: 12px;
     -moz-border-radius: 12px;
@@ -453,7 +453,7 @@ table.custom tbody tr td.no-back {
 }
 #lettureEConsumiPeriodoFatturazione .consumi-fatturati .valore-consumi-fatturati {
 	text-align: center;
-    border: 1.5px solid #b6262f;
+    border: 1.5px solid #0097a9;
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -506,7 +506,7 @@ table.custom tbody tr td.no-back {
 	margin-top: 8px;
 }
 #conguagliRicalcoliEBolletteNonPagate .content {
-	border: 1.5px solid #b6262f;
+	border: 1.5px solid #0097a9;
     border-radius: 14px;
     -moz-border-radius: 14px;
     -webkit-border-radius: 14px;

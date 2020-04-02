@@ -1,0 +1,19 @@
+questa sarà aggiumta per la bolletta gas. All’emissione di fattura ordinaria di periodo, in prima pagina inseriamo uno specchietto, sul discorso autolettura gas:
+
+ 
+
+
+
+ 
+
+Come puoi bene vedere alla fine mettiamo in allerta il cliente specificando che se non ci comunicherà l’autolettura per 
+la successiva fatturazione verrà fatturato con un certo valore di mc e che la lettura sarà un di un certo valore.
+Nella documentazione di TRN vi sono i seguenti tag:
+
+ -       <LetturaFuturaData> Data entro la quale sarà basata la lettura della bolletta successiva.
+
+-       <LetturaFuturaMisura> Valore della lettura stimata della bolletta successiva.
+
+-       <LetturaFuturaInizioAutoLettura> Data iniziale del periodo entro il quale è possibile comunicare l’autolettura.
+
+-       <LetturaFuturaFineAutoLettura> Data finale del periodo entro il quale è possibile comunicare l’autolettura.
