@@ -109,13 +109,13 @@ table.custom tbody tr td {
 	padding: 7px 2px;
 }
 table.custom tbody tr td {
-	background-color: #dcdcde;
+	background-color: #d9d9d9;
 }
 table.custom tbody tr td.header {
 	text-align: center;
 }
 table.custom tbody tr td.grigio-scuro {
-	background-color: #c8c9cb;
+	background-color: #c2c4c6; /* pantone k25 */
 }
 table.custom tbody tr td.no-back {
 	background: none;
@@ -138,6 +138,9 @@ table.custom tbody tr td.no-back {
 }
 .mb2 {
 	margin-bottom: 0.85rem!important;
+}
+.mb3 {
+	margin-bottom: 1.45rem!important;
 }
 
 #headerLogo {
@@ -292,7 +295,7 @@ table.custom tbody tr td.no-back {
 /* *** COLONNA SX*/
 	/* *** dati fornitura */
 	#corpoPagina1Con2Colonne .dati-fornitura {
-	    margin: 6px 0 10px;
+	    margin: 12px 0 16px;
 	}
 	#corpoPagina1Con2Colonne .dati-fornitura .content .header {
 		font-weight: 800;
@@ -335,7 +338,7 @@ table.custom tbody tr td.no-back {
 	}
 	/* *** grafico a torta (sintesi degli importi) */
 	#corpoPagina1Con2Colonne .sintesi-importi {
-		margin-top: 10px;
+		margin-top: 16px;
 	}
 	#corpoPagina1Con2Colonne .sintesi-importi .grafico-a-torta .titolo {
 		font-weight: 800;
@@ -372,7 +375,7 @@ table.custom tbody tr td.no-back {
 	}
 	/* *** totali bolletta */
 	#corpoPagina1Con2Colonne .sintesi-importi .totale-bolletta {
-		padding: 2px 0;
+		padding: 12px 0;
 	}
 	#corpoPagina1Con2Colonne .sintesi-importi .totale-bolletta .voce-importi {
 		margin-bottom: 4px;
@@ -465,7 +468,7 @@ table.custom tbody tr td.no-back {
 }
 /* *** tabella */
 #lettureEConsumiPeriodoFatturazione #tabellaQuadroLettureEConsumi {
-	margin-top: 1.125rem;
+	margin-top: 0;
 }
 
 

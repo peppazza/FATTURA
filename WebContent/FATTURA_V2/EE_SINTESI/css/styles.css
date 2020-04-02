@@ -109,13 +109,13 @@ table.custom tbody tr td {
 	padding: 7px 2px;
 }
 table.custom tbody tr td {
-	background-color: #dcdcde;
+	background-color: #d9d9d9;
 }
 table.custom tbody tr td.header {
 	text-align: center;
 }
 table.custom tbody tr td.grigio-scuro {
-	background-color: #c8c9cb;
+	background-color: #c2c4c6; /* pantone k25 */
 }
 table.custom tbody tr td.no-back {
 	background: none;

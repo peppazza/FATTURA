@@ -78,72 +78,58 @@
 	</script>
 </head>
 <body class="color100K">
-
+<!-- 
+LEGACY
+<div class="tipo-bolletta">
+	<div class="tipo">Bolletta Gas</div>
+	<div class="tipo-mercato" data-data_type="single" data-first_node="TipoMercato" data-path_type="xpath" data-path_data=""></div>
+</div>
+ -->
+ 
 <!-- ****** DATI NASCOSTI SINTESI IMPORTI ****** -->
-<!--
 <div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
-	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">SPESA PER LA MATERIA ENERGIA</div>
-    <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">189,123123</div>
+	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Spesa per la materia gas naturale</div>
+ 	<div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">1,00</div>
+   	<div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
+</div>
+<div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
+	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Spesa per trasporto e gestione contatore</div>
+	<div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">2,00</div>
+	<div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
+</div>
+<div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
+  	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Spesa per oneri di sistema</div>
+    <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">3,00</div>
     <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
 </div>
 <div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
-	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">SPESA PER IL TRASPORTO E LA GESTIONE DEL CONTATORE</div>
-    <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">89,123123</div>
+	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Altre partite ed oneri</div>
+    <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">4,00</div>
     <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
 </div>
 <div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
-	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">SPESA PER ONERI DI SISTEMA</div>
-    <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">45,59</div>
+	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Bonus sociale</div>
+    <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">4,44</div>
     <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
 </div>
 <div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
-	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">ALTRE PARTITE ED ONERI</div>
-    <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">89,123123</div>
-    <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
-</div>
-<div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
-	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">BONUS SOCIALE</div>
-    <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">19,99</div>
-    <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
-</div>
-<div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
-	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">IMPOSTE</div>
-    <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">89,123123</div>
+	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">Imposte</div>
+    <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">5,00</div>
     <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
 </div>
 <div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
 	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">IVA</div>
-    <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">89,123123</div>
+    <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">6,00</div>
     <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
 </div>
+<!-- 
 <div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
-	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">CANONE</div>
-    <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">22,22</div>
-    <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva">22</div>
+	<div class="sintesiImporti_descrizione" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></div>
+    <div class="sintesiImporti_imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></div>
+    <div class="sintesiImporti_aliquotaIva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva"></div>
 </div>
  -->
-<div class="sintesiImporti_riga" style="display: none;" data-data_type="simple_loop" data-first_node="RiepilogoFornitura" data-path_type="xpath" data-path_data="Importo">
-	<div class="sintesiImporti_descrizione" style="border: 1px solid #ddd; padding: 0 2px; margin-right: 2px;" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></div>
-   	<div class="sintesiImporti_imponibile" style="border: 1px solid #ddd; padding: 0 2px; margin-right: 2px;" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></div>
-   	<div class="sintesiImporti_aliquotaIva" style="border: 1px solid #ddd; padding: 0 2px; margin-right: 2px;" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/AliquotaIva"></div>
-</div>
- 
-<!-- LEGACY -->
-<!--
-<div class="tipo-bolletta">
-	<div class="tipo">Bolletta Energia Elettrica</div>
-	*** potrebbe essere il tag caratteristicaCommercialeFornitura
-	<div class="tipo-mercato" data-data_type="single" data-first_node="TipoMercato" data-path_type="xpath" data-path_data="">TIPO MERCATO (TAG)</div>
-</div>
-
-<div class="pure-u-8-24 col2">
-	Costo medio della materia prima: <strong><span class="costo-medio-materia" data-data_type="single" data-first_node="CostoMedioUnitSpesaMateria" data-path_type="xpath" data-path_data="">0,54</span> €/kWh</strong>
-</div>
-<div class="pure-u-8-24 col3">
-	Costo medio della bolletta: <strong><span class="costo-medio-bolletta" data-data_type="single" data-first_node="CostoMedioUnitBolletta" data-path_type="xpath" data-path_data="">0,63</span> €/kWh</strong>
-</div>
- -->
-
+	    
 <!-- ********************** PAGINA 1 INIZIO ********************** -->
 <page size="A4">
 	<div class="sub pagina-inner">
@@ -166,7 +152,7 @@
 
 		<!-- CLIENTE-BOLLETTA
 		########################################################################################### -->
-		<div class="pure-g mb2">
+		<div class="pure-g mb3">
 			<!-- INFO GENERALI BOLLETTA -->
 			<div class="pure-u-11-24">
 				<div id="datiClienteEBolletta">
@@ -177,7 +163,7 @@
 								<div class="valore-tag codice-cliente">
 									<span class="font12pt color7711C" data-data_type="single" data-first_node="ClienteFinaleCodice" data-path_type="xpath" data-path_data="">C-ABC-DEF-GHI</span>
 								</div>
-								<div class="header-grassetto font7pt">CODICE POD</div>
+								<div class="header-grassetto font7pt">CODICE PDR</div>
 								<div class="valore-tag">
 									<span data-data_type="single" data-first_node="FornituraCodicePDP" data-path_type="xpath" data-path_data="">XXX XXX XXX</span>
 								</div>
@@ -306,11 +292,11 @@
 								<div class="pure-u-12-24">
 									<div >
 										<div class="dato-riga-doppia">
-											<div class="etichetta">Forniamo energia elettrica in</div>
+											<div class="etichetta">Forniamo gas in</div>
 											<div class="valore"><span data-data_type="single" data-first_node="ClienteFinaleIndirizzo" data-path_type="xpath" data-path_data="">Via Monte Curcio 14 87040 Castrolibero CS</span></div>
 										</div>
 										<div class="dato-riga-singola">
-											<div class="etichetta">Denominazione contratto (offerta)</div>
+											<div class="etichetta">Denominazione contratto</div>
 											<div class="valore"><span data-data_type="single" data-first_node="Offerta" data-path_type="xpath" data-path_data="">Sempre Con Te</span></div>
 										</div>
 										<div class="dato-riga-singola">
@@ -318,61 +304,47 @@
 											<div class="valore"><span data-data_type="single" data-first_node="TipoUso" data-path_type="xpath" data-path_data="">Domestico residente</span></div>
 										</div>
 										<div class="dato-riga-doppia">
-											<div class="etichetta">Tipologia pagamento</div>
-											<div class="valore"><span data-data_type="single" data-first_node="ComunicazioniBolletta" data-path_type="xpath" data-path_data="Comunicazioni[Codice = &quot;P&quot;]/Testo">Addebito nel giorno esatto della scadenza su conto corrente bancario: Banca Carime S.p.a.</span></div>
+											<div class="etichetta">Tipologia di uso</div>
+											<div class="valore"><span data-data_type="single" data-first_node="CategoriaUso" data-path_type="xpath" data-path_data="">TEST</span></div>
+										</div>
+										<div class="dato-riga-singola">
+											<div class="etichetta">Matricola contatore</div>
+											<div class="valore"><span data-data_type="single" data-first_node="MisuratoreMatricola" data-path_type="xpath" data-path_data="">TEST</span></div>
+										</div>
+										<div class="dato-riga-singola">	
+											<div class="etichetta">Classe misuratore</div>
+											<div class="valore"><span data-data_type="single" data-first_node="MisuratoreClasse" data-path_type="xpath" data-path_data="">TEST</span></div>
 										</div>
 									</div>
 								</div>
 								<div class="pure-u-12-24">
 									<div >
 										<div class="dato-riga-singola">
+											<div class="etichetta">Codice REMI</div>
+											<div class="valore"><span data-data_type="single" data-first_node="FornituraCodicePDC" data-path_type="xpath" data-path_data="">TEST</span></div>
+										</div>
+										<div class="dato-riga-doppia">
+											<div class="etichetta">Tipologia pagamento</div>
+											<div class="valore"><span data-data_type="single" data-first_node="ComunicazioniBolletta" data-path_type="xpath" data-path_data="Comunicazioni[Codice = &quot;P&quot;]/Testo">Addebito nel giorno esatto della scadenza su conto corrente bancario: Banca Carime S.p.a.</span></div>
+										</div>
+										<div class="dato-riga-singola">
+											<div class="etichetta">PCS (MJ7)</div>
+											<div class="valore"><span data-data_type="single" data-first_node="PotereCalorificoSuperiore" data-path_type="xpath" data-path_data="">TEST</span></div>
+										</div>
+										<div class="dato-riga-singola">
+											<div class="etichetta">C correttivo</div>
+											<div class="valore"><span data-data_type="single" data-first_node="CoefficienteCorrettivo" data-path_type="xpath" data-path_data=""></span>TEST</div>
+										</div>
+										<div class="dato-riga-singola">
 											<div class="etichetta">Data di attivazione della fornitura</div>
 											<div class="valore"><span data-data_type="single" data-first_node="DataAttivazioneFornitura" data-path_type="xpath" data-path_data="">TEST</span></div>
 										</div>
 										<div class="dato-riga-singola">
-											<div class="etichetta">Tensione di fornitura</div>
-											<div class="valore"><span data-data_type="single" data-first_node="TensioneAlimentazione" data-path_type="xpath" data-path_data="">TEST</span> Volt</div>
+											<div class="etichetta">Comp. Sost. Mat. Prima contratto ??</div>
+											<div class="valore"><span data-data_type="single" data-first_node="PotenzaDisponibile" data-path_type="xpath" data-path_data="">TEST</span></div>
 										</div>
-										<div class="dato-riga-singola">
-											<div class="etichetta">Potenza contattualmente impegnata</div>
-											<div class="valore"><span data-data_type="single" data-first_node="PotenzaImpegnata" data-path_type="xpath" data-path_data="">TEST</span> kW</div>
-										</div>
-										<div class="dato-riga-singola">
-											<div class="etichetta">Potenza disponibile</div>
-											<div class="valore"><span data-data_type="single" data-first_node="PotenzaDisponibile" data-path_type="xpath" data-path_data="">TEST</span> kW</div>
-										</div>
-										<div class="dato-riga-singola">
-											<div class="etichetta">Livello massimo di potenza</div>
-											<div class="valore"><span id="livelloMassimoDiPotenzaPrelevata">TEST</span> kW</div>
-										</div>
-										<!-- dati picchi di potenza prelevata -->
-										<div style="display: none;" data-data_type="simple_loop" data-first_node="PotenzaPrelevata" data-path_type="xpath" data-path_data="MassimaPotenzaPrelevata">
-									    	<div data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Data"></div>
-									        <div class="pot-picco-potenza-valore-per-fascia" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/PotenzaF1">1,11</div>
-									        <div class="pot-picco-potenza-valore-per-fascia" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/PotenzaF2">3,33</div>
-									        <div class="pot-picco-potenza-valore-per-fascia" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/PotenzaF3">5,55</div>
-										</div>
-										<script type="text/javascript">
-											try {
-										    	(function () {
-													var picco;										    		
-													var picchiELEM = document.getElementsByClassName('pot-picco-potenza-valore-per-fascia');
-										    		if (picchiELEM && picchiELEM.length > 0) {
-										    			for (var i = 0; i < picchiELEM.length; i++) {
-										    				var value = checkNumber(picchiELEM[i].innerHTML);
-										    				if (value && typeof value === 'number') {
-										    					if (!picco || value > picco)
-										    						picco = value;
-										    				} 
-										    			}
-										    			if (picco || typeof picco === 'number')
-										    				document.getElementById('livelloMassimoDiPotenzaPrelevata').innerHTML = Number(picco.toFixed(2)).toLocaleString('it');
-										    		}
-												})();
-										    } catch(err) {
-										    	console.log('errore init PICCO DI POTENZA', err);
-										    }					
-										</script>
+							
+							
 									</div>
 								</div>
 							</div>
@@ -428,58 +400,58 @@
 								<!-- legenda + totale bolletta -->
 								<div class="pure-u-14-24">
 									<div class="legenda font6pt">
-										<div class="pure-g voce-legenda spesaMateriaEnergia">
+										<div class="pure-g voce-legenda spesaMateriaGasNaturale">
 											<div class="pure-u-19-24 etichetta">
 												<div class="rettangolo back-color7711C"></div>
-												<div class="testo">Spesa per la materia energia</div>
+												<div class="testo">Spesa per la materia gas naturale</div>
 											</div>
-											<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_spesaMateriaEnergia" class="val">99,99</span></div>
+											<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_spesaMateriaGasNaturale" class="val">1,00</span></div>
 										</div>
 										<div class="pure-g voce-legenda spesaTrasporto">
 											<div class="pure-u-19-24 etichetta">
 												<div class="rettangolo back-color158C"></div>										
 												<div class="testo">Spesa per trasporto e gestione contatore</div>
 											</div>
-											<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_spesaTrasporto" class="val">99,99</span></div>
+											<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_spesaTrasporto" class="val">1,00</span></div>
 										</div>
 										<div class="pure-g voce-legenda spesaOneri">
 											<div class="pure-u-19-24 etichetta">
 												<div class="rettangolo back-color368C"></div>
 												<div class="testo">Spesa per oneri di sistema</div>
 											</div>
-											<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_spesaOneri" class="val">99,99</span></div>
+											<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_spesaOneri" class="val">1,00</span></div>
 										</div>
 										<div class="pure-g voce-legenda altrePartite">
 											<div class="pure-u-19-24 etichetta">
 												<div class="rettangolo back-color7751C"></div>
 												<div class="testo">Altre partite</div>
 											</div>
-											<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_altrePartite" class="val">99,99</span></div>
+											<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_altrePartite" class="val">1,00</span></div>
 										</div>
 										<div class="pure-g voce-legenda altrePartite">
 											<div class="pure-u-19-24 etichetta">
 												<div class="rettangolo back-color142C"></div>
 												<div class="testo">Bonus sociale</div>
 											</div>
-											<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_bonusSociale" class="val">99,99</span></div>
+											<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_bonusSociale" class="val">1,00</span></div>
 										</div>
 										<div class="pure-g voce-legenda imposte">
 											<div class="pure-u-19-24 etichetta">
 												<div class="rettangolo back-color5517C"></div>
 												<div class="testo">Imposte</div>
 											</div>
-											<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_imposte" class="val">99,99</span></div>
+											<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_imposte" class="val">1,00</span></div>
 										</div>
 										<div class="pure-g voce-legenda imposte mb0">
 											<div class="pure-u-19-24 etichetta">
 												<div class="rettangolo back-color100K"></div>
 												<div class="testo">IVA</div>
 											</div>
-											<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_iva" class="val">99,99</span></div>
+											<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_iva" class="val">1,00</span></div>
 										</div>
 									</div>
-									<div class="separatore mt1 mb1" style="border-top: 1px solid #aaaaaa;"></div>
-									<div class="totale-bolletta font6pt">
+									<div class="separatore mt2 mb2" style="border-top: 1px solid #aaaaaa;"></div>
+									<div class="totale-bolletta font7pt">
 										<div class="content">
 											<div class="pure-g voce-importi">
 												<div class="pure-u-19-24 etichetta">TOTALE BOLLETTA</div>
@@ -488,73 +460,24 @@
 													<div class="val" id="totaleBolletta">99,99</div>
 												</div>
 											</div>
-											<div class="pure-g voce-importi">
-												<div class="pure-u-19-24 etichetta">Canone di abbonamento alla televisione per uso privato</div>
-												<div class="pure-u-5-24 valore-in-euro">
-													<span class="simbolo-euro">€ </span>
-													<div id="valoreSintesiImporti_canone" class="val">99,99</div>
-												</div>
-											</div>
-											<div class="pure-g voce-importi">
-												<div class="pure-u-19-24 etichetta">TOTALE DA PAGARE</div>
-												<div class="pure-u-5-24 valore-in-euro">
-													<span class="simbolo-euro">€ </span>
-													<div class="val" id="totaleDaPagare">99,99</div>	
-												</div>
-											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="separatore mt1 mb1" style="border-top: 1px solid #aaaaaa;"></div>
-					<!-- *** riepilogo IVA -->
-					<div class="riepilogo-iva font6pt">
-						<div class="pure-g">
-							<div class="pure-u-11-24">
-								<div class="content">Riepilogo IVA - Vedi box "Informazioni Imposte"</div>
-							</div>
-							<div class="pure-u-13-24">
-								<div class="content">
-									<table id="tabellaRiepilogoIVA">
-										<tbody>
-											<tr>
-												<td colspan="2">Aliquota Iva</td>
-									            <td>Imponibile</td>
-									            <td>Aliquota</td>
-											</tr>
-									        <tr data-data_type="simple_loop" data-first_node="RiepilogoIvaBolletta" data-path_type="xpath" data-path_data="RiepilogoIva">
-									        	<td colspan="2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DescrizioneImponibile">Imponibile IVA 22%</span></td>
-									            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">9,99</span><span> €</span></td>
-									            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Aliquota">9,99</span><span></span></td>
-									        </tr>
-									        <tr data-data_type="simple_loop" data-first_node="RiepilogoIvaBolletta" data-path_type="xpath" data-path_data="RiepilogoIva">
-									        	<td colspan="2"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DescrizioneAliquota">IVA 22%</span></td>
-									            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Iva">9,99</span><span> €</span></td>
-									            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Aliquota">9,99</span><span></span></td>
-									        </tr>
-								        </tbody>
-									</table>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="separatore mt1 mb1" style="border-top: 1px solid #aaaaaa;"></div>
 					<!-- ****** js - grafico e valori calcolati ****** -->
 					<script type="text/javascript">
 					// *** GRAFICO A TORTA
 			        try {
 			        	(function () {
-			        		var spesaMateriaEnergia = 0.0;
+			        		var spesaMateriaGasNaturale = 0.0;
 			    			var spesaTrasporto = 0.0;
 			    			var spesaOneri = 0.0;
 			    			var altrePartite = 0.0;
 			    			var bonusSociale = 0.0;
 			    			var imposte = 0.0;
 			    			var iva = 0.0;
-			    			
-			    			var canone = 0.0;
 			    			
 			        		var elems = document.getElementsByClassName('sintesiImporti_riga');
 			        		// per ogni riga della sintesi importi
@@ -569,7 +492,7 @@
 			        			var imponibile = checkNumber(elemIMPONIBILE.innerHTML);
 			        			
 			        			if (descrizione.indexOf('materia') > -1) {
-			        				spesaMateriaEnergia = imponibile;
+			        				spesaMateriaGasNaturale = imponibile;
 			        			} else if (descrizione.indexOf('trasporto') > -1) {
 			        				spesaTrasporto = imponibile;
 			        			} else if (descrizione.indexOf('oneri di sistema') > -1) {
@@ -582,17 +505,14 @@
 			        				imposte = imponibile;
 			        			} else if (descrizione.indexOf('iva') > -1) {
 			        				iva = imponibile;
-			        			} else if (descrizione.indexOf('canone') > -1) {
-			        				canone = imponibile;
 			        			}
 			        		}
 							
-			    			var totaleBolletta = spesaMateriaEnergia + spesaTrasporto + spesaOneri + altrePartite + bonusSociale + imposte + iva;
-			    			var totaleDaPagare = totaleBolletta + canone;
-							
+			    			var totaleBolletta = spesaMateriaGasNaturale + spesaTrasporto + spesaOneri + altrePartite + bonusSociale + imposte + iva;
+			    			
 			    			// init elenco voci (che compaiono nel grafico)
-			    			if (spesaMateriaEnergia || typeof spesaMateriaEnergia === 'number')
-			    				document.getElementById('valoreSintesiImporti_spesaMateriaEnergia').innerHTML = Number(spesaMateriaEnergia.toFixed(2)).toLocaleString('it');
+			    			if (spesaMateriaGasNaturale || typeof spesaMateriaGasNaturale === 'number')
+			    				document.getElementById('valoreSintesiImporti_spesaMateriaGasNaturale').innerHTML = Number(spesaMateriaGasNaturale.toFixed(2)).toLocaleString('it');
 			    			if (spesaTrasporto || typeof spesaTrasporto === 'number')
 			    				document.getElementById('valoreSintesiImporti_spesaTrasporto').innerHTML = Number(spesaTrasporto.toFixed(2)).toLocaleString('it');
 			    			if (spesaOneri || typeof spesaOneri === 'number')
@@ -606,19 +526,13 @@
 			    			if (iva || typeof iva === 'number')
 			    				document.getElementById('valoreSintesiImporti_iva').innerHTML = Number(iva.toFixed(2)).toLocaleString('it');
 			    			
-			    			// init canone
-			    			document.getElementById('valoreSintesiImporti_canone').innerHTML = Number(canone.toFixed(2)).toLocaleString('it');
-			    			
 			    			// init totale bolletta
 			    			if (totaleBolletta || typeof totaleBolletta === 'number')
 			    				document.getElementById('totaleBolletta').innerHTML = Number(totaleBolletta.toFixed(2)).toLocaleString('it');
-			    			// init totale da pagare
-			    			if (totaleDaPagare || typeof totaleDaPagare === 'number')
-			    				document.getElementById('totaleDaPagare').innerHTML = Number(totaleDaPagare.toFixed(2)).toLocaleString('it');
 			    			
 			            	new Chartist.Pie('#graficoSintesiImporti', {
 			        			series: [{
-			        			    value: spesaMateriaEnergia,  name: 'Spesa materia energia',  className: 'spesaMateriaEnergia', meta: 'Meta - Spesa materia energia'
+			        			    value: spesaMateriaGasNaturale,  name: 'Spesa materia gas naturale',  className: 'spesaMateriaGasNaturale', meta: 'Meta - Spesa materia energia'
 			        			  }, {
 			        			    value: spesaTrasporto,  name: 'Spesa trasporto', className: 'spesaTrasporto', meta: 'Meta - Spesa trasporto'
 			        			  }, {
@@ -815,7 +729,7 @@
 				    				tale sostituzione viene fatta in RIEPILOGO QUANTITA' E COSTI MEDI FATTURATI e 
 				    				il valore calcolato è anche quello che compare appunto in 'Consumi fatturati: ' -->
 				    			<!-- <span data-data_type="single" data-first_node="ConsumiBollettaEle" data-path_type="xpath" data-path_data="ConsumoELetture[Descrizione = &quot;Energia attiva&quot;]/Totale">En.Att.Tot.</span> -->
-								<span id="totaleEnergiaAttivaFatturata">9999,99</span> kWh
+								<span id="totaleEnergiaAttivaFatturata">9999,99</span> Smc
 							</span> 
 						</div>
 					</div>
@@ -823,68 +737,95 @@
 				<div class="content">
 					<div class="pure-g">
 						<div class="pure-u-8-24 grafico-dati">
-							<div class="content" style="width: 240px; height: 110px;">
+							<div class="content" style="width: 240px; height: 140px;">
 								<canvas id="graficoQuadroLettureEConsumi"></canvas>
-							</div>
-							<div class="legenda-grafico-a-barre-per-fasce font6pt">
-								<div class="content">
-									<div class="voce-legenda voce-legenda-f1">
-										<div class="box-colorato f1 back-color7693K"></div><div class="etichetta">Consumo Fatturato [kWh] F1</div>
-									</div>
-									<div class="voce-legenda voce-legenda-f2">
-										<div class="box-colorato f2 back-color625K"></div><div class="etichetta">Consumo Fatturato [kWh] F2</div>
-									</div>
-									<div class="voce-legenda voce-legenda-f3">
-										<div class="box-colorato f3 back-color3035K"></div><div class="etichetta">Consumo Fatturato [kWh] F3</div>
-									</div>
-								</div>
 							</div>
 						</div>
 						<div class="pure-u-16-24 tabella-dati">
 							<div class="content">
 								<table id="tabellaQuadroLettureEConsumi" class="custom font7pt">
-									 <tbody>
-									    <tr class="tabella-energia-attiva">
+							      	<tbody>
+									    <tr>
 									    	<td class="header no-back"></td>
-									    	<td colspan="4" class="header"><span><strong>LETTURA INIZIALE</strong></span></td>
-									        <td colspan="4" class="header grigio-scuro"><span><strong>LETTURA FINALE</strong></span></td>
-									        <td colspan="7" class="header last"><span><strong>CONSUMO FATTURATO [kWh]</strong></span></td>
+									    	<td class="header" colspan="2"><span>LETTURA INIZIALE</span></td>
+									        <td class="header" colspan="2"><span>LETTURA FINALE</span></td>
+									        <td class="header last" colspan="4"><span>CONSUMO FATTURATO (Smc)</span></td>
 									    </tr>
-									    <tr class="tabella-energia-attiva header-riga-2">
-									    	<td class="header grigio-scuro"><span><strong>Tipo dato</strong></span></td>
-									    	<td class="header"><span><strong>Data</strong></span></td>
-									    	<td class="header"><span><strong>F1</strong></span></td>
-									        <td class="header"><span><strong>F2</strong></span></td>
-									        <td class="header"><span><strong>F3</strong></span></td>
-									        <td class="header grigio-scuro"><span><strong>Data</strong></span></td>
-									    	<td class="header grigio-scuro"><span><strong>F1</strong></span></td>
-									        <td class="header grigio-scuro"><span><strong>F2</strong></span></td>
-									        <td class="header grigio-scuro"><span><strong>F3</strong></span></td>
-									        <td colspan="1" class="header"><span><strong>F1</strong></span></td>
-									        <td colspan="1" class="header"><span><strong>F2</strong></span></td>
-									        <td colspan="1" class="header"><span><strong>F3</strong></span></td>
-									        <td class="header last"><span><strong>TOTALE</strong></span></td>
+									    <tr>
+									    	<td class="header grigio-scuro"><span>Tipo Lettura</span></td>
+									    	<td class="header"><span>Data</span></td>
+									    	<td class="header"><span>Smc</span></td>
+									        <td class="header"><span>Data</span></td>
+									        <td class="header"><span>Smc</span></td>
+									        <td class="header grigio-scuro"><span>Consumo rilevato (mc)</span></td>
+									        <td class="header grigio-scuro"><span>Coeff. C</span></td>
+									        <td class="header grigio-scuro"><span>Tipo consumo</span></td>
+									        <td class="header grigio-scuro"><span>Consumo fatturato (Smc)</span></td>
 									    </tr>
-									    <tr class="_data_ConsumoELetture" data-data_type="simple_loop" data-first_node="ConsumiBollettaEle" data-path_type="xpath" data-path_data="ConsumoELetture[Descrizione = &quot;Energia attiva&quot;]/DettagliConsumo/Consumo">
-									    	<td class="grigio-scuro"><span class="_data_TipoLettura" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TipoLettura">Distributore</span></td>
-									        <td><span class="_data_DataLetturaPrecedente" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataLetturaPrecedente">01/05/2015</span></td>
-									        <td><span class="_data_Fascia1Precedente" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Fascia1Precedente">11,99</span></td>
-									        <td><span class="_data_Fascia2Precedente" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Fascia2Precedente">22,99</span></td>
-									        <td><span class="_data_Fascia3Precedente" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Fascia3Precedente">33,99</span></td>
-									        <td class="grigio-scuro"><span class="_data_DataOPeriodo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataOPeriodo">15/06/2015</span></td>
-									        <td class="grigio-scuro"><span class="_data_Fascia1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Fascia1">11,99</span></td>
-									        <td class="grigio-scuro"><span class="_data_Fascia2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Fascia2">22,99</span></td>
-									        <td class="grigio-scuro"><span class="_data_Fascia3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Fascia3">33,99</span></td>
-									        <td><span class="_data_ConsumoF1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoF1">10,99</span></td>
-									        <!-- <td><span class="_data_PercentualeFascia1" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/PercentualeFascia1"></span></td> -->
-									        <td><span class="_data_ConsumoF2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoF2">20,99</span></td>
-									        <!-- <td><span class="_data_PercentualeFascia2" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/PercentualeFascia2"></span></td> -->
-									        <td><span class="_data_ConsumoF3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoF3">30,99</span></td>
-									        <!-- <td><span class="_data_PercentualeFascia3" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/PercentualeFascia3"></span></td> -->
-									        <td class="_data_TotaleParziale last"><span class="sezione-totale-energia-attiva" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleParziale">99,99</span></td>
+									    <tr class="_data_ConsumoELetture" data-data_type="simple_loop" data-first_node="ConsumiBolletta" data-path_type="xpath" data-path_data="/ConsumoELetture/DettagliConsumo/Consumo">
+								    		<td class="grigio-scuro"><span class="_data_TipoLettura" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TipoLettura">Stimata</span></td>
+							    			<td><span class="_data_DataLetturaPrecedente" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataLetturaPrecedente">04/04/2000</span></td>
+							    			<td><span class="_data_LetturaMcPrecedente" style="float: right" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/LetturaMcPrecedente">55,55</span></td>
+							        		<td><span class="_data_DataOPeriodo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataOPeriodo">05/05/2000</span></td>
+							        		<td><span class="_data_Lettura" style="float: right" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Lettura">55,55</span></td>
+									        <td class="grigio-scuro"><span class="_data_ConsumoMc" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoMc">55,55</span></td>
+									        <td class="grigio-scuro"><span class="_data_CoefficienteCorrettivo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/CoefficienteCorrettivo">1,03214</span></td>
+									        <td class="grigio-scuro"><span class="_data_TipoConsumo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TipoConsumo">Reale</span></td>
+									        <td class="grigio-scuro"><span class="_data_ConsumoSmc" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoSmc">55,55</span></td>
 									    </tr>
-									</tbody>
-								</table>
+									    <tr class="_data_ConsumoELetture" data-data_type="simple_loop" data-first_node="ConsumiBolletta" data-path_type="xpath" data-path_data="/ConsumoELetture/DettagliConsumo/Consumo">
+								    		<td class="grigio-scuro"><span class="_data_TipoLettura" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TipoLettura">Stimata</span></td>
+							    			<td><span class="_data_DataLetturaPrecedente" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataLetturaPrecedente">05/05/2000</span></td>
+							    			<td><span class="_data_LetturaMcPrecedente" style="float: right" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/LetturaMcPrecedente">66,66</span></td>
+							        		<td><span class="_data_DataOPeriodo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataOPeriodo">06/06/2000</span></td>
+							        		<td><span class="_data_Lettura" style="float: right" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Lettura">66,66</span></td>
+									        <td class="grigio-scuro"><span class="_data_ConsumoMc" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoMc">66,66</span></td>
+									        <td class="grigio-scuro"><span class="_data_CoefficienteCorrettivo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/CoefficienteCorrettivo">1,03214</span></td>
+									        <td class="grigio-scuro"><span class="_data_TipoConsumo" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TipoConsumo">Reale</span></td>
+									        <td class="grigio-scuro"><span class="_data_ConsumoSmc" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ConsumoSmc">66,66</span></td>
+									    </tr>
+									    <tr>
+									    	<td colspan="6" class="grigio-scuro"><span>Totale Consumo Fatturato (Smc)</span></td>
+									        <td colspan="3" class="last">
+									        	<span class="testo-dettaglio-letture4 dettaglio-a-destra">
+									        		<!-- <span data-data_type="single" data-first_node="ConsumiBolletta" data-path_type="xpath" data-path_data="/ConsumoELetture/TotaleConsumoSmc">1177</span> -->
+									        		<span id="totaleConsumoSmc">999,99</span>
+									        	</span>
+									        </td>
+									    </tr>						    
+							      	</tbody>
+							    </table>
+							    <script type="text/javascript">
+									try {
+										var totaleConsumoSmc;
+										
+										var elems = document.getElementsByClassName('_data_ConsumoSmc');
+										if (elems) {
+											totaleConsumoSmc = 0;
+											var N = elems.length;
+											// ultimo mese
+											if (elems.length > 0) {
+												var elem = elems[N - 1];
+												var consumo = checkNumber(elem.innerHTML);
+												if (consumo && typeof consumo === 'number')
+													totaleConsumoSmc += consumo;
+											}
+											if (elems.length > 1) {
+												var elem = elems[N - 2];
+												var consumo = checkNumber(elem.innerHTML);
+												if (consumo && typeof consumo === 'number')
+													totaleConsumoSmc += consumo;
+											}
+										}
+										
+										if (totaleConsumoSmc === 0 || totaleConsumoSmc && typeof totaleConsumoSmc === 'number')
+											document.getElementById('totaleConsumoSmc').innerHTML = totaleConsumoSmc;	
+										else
+											document.getElementById('totaleConsumoSmc').innerHTML = '-';
+									} catch (e) {
+										console.error('errore init "Totale Consumo Fatturato"', e);
+									}
+								</script>
 							</div>
 						</div>
 					</div>
@@ -893,7 +834,7 @@
 		</div>
 		<!-- *** js - grafico e valori calcolati ****** -->
 		<script type="text/javascript">
-			// SHOW SOLO LE ULTIME <<2>> RIGHE DELLA TABELLA (a destra del grafico)
+			// *** MOSTRA SOLO LE ULTIME <<2>> RIGHE DELLA TABELLA (a destra del grafico)
 			try {
 				// righe della tabella
 				var rows = document.getElementsByClassName('_data_ConsumoELetture');
@@ -920,9 +861,7 @@
 				(function() {
 					var lettureTIPI = [];
 					var lettureDATE = [];
-					var lettureF1 = [];
-					var lettureF2 = [];
-					var lettureF3 = [];
+					var letture = [];
 					var labels = [];
 					
 					// tipi letture
@@ -943,29 +882,11 @@
 						if (counter > 1)
 							break;
 					}
-					// letture fascia F1
-					elements = document.getElementsByClassName('_data_ConsumoF1');
+					// letture
+					elements = document.getElementsByClassName('_data_ConsumoMc');
 					counter = 0;
 					for (var j = elements.length - 1; j > -1; j--) {
-						lettureF1.unshift(checkNumber(elements[j].innerHTML));
-						counter++;
-						if (counter > 1)
-							break;
-					}
-					// letture fascia F2
-					elements = document.getElementsByClassName('_data_ConsumoF2');
-					counter = 0;
-					for (var j = elements.length - 1; j > -1; j--) {
-						lettureF2.unshift(checkNumber(elements[j].innerHTML));
-						counter++;
-						if (counter > 1)
-							break;
-					}
-					// letture fascia F3
-					elements = document.getElementsByClassName('_data_ConsumoF3');
-					counter = 0;
-					for (var j = elements.length - 1; j > -1; j--) {
-						lettureF3.unshift(checkNumber(elements[j].innerHTML));
+						letture.unshift(checkNumber(elements[j].innerHTML));
 						counter++;
 						if (counter > 1)
 							break;
@@ -982,17 +903,9 @@
 					    data: {
 					     	labels: labels,
 					       	datasets: [ {
-								label: 'F1',
-								data: lettureF1,
-								backgroundColor: '#e7d83b' // giallo
-							}, {
-								label: 'F2',
-								data: lettureF2,
-								backgroundColor: '#507f70' // verde
-							}, {
-								label: 'F3',
-								data: lettureF3,
-								backgroundColor: '#003e51' // bu scuro
+								label: '',
+								data: letture,
+								backgroundColor: '#003e51' // blu scuro
 							} ]
 						},
 						options: {
