@@ -513,7 +513,7 @@ table.custom tbody tr td.no-back {
     border-radius: 14px;
     -moz-border-radius: 14px;
     -webkit-border-radius: 14px;
-    padding: 14px 16px;
+    padding: 12px 14px;
     margin: 20px 0;
 }
 #conguagliRicalcoliEBolletteNonPagate .content #conguagliRicalcoli {
@@ -526,7 +526,11 @@ table.custom tbody tr td.no-back {
 #conguagliRicalcoliEBolletteNonPagate .content #conguagliRicalcoli .header,
 #conguagliRicalcoliEBolletteNonPagate .content #bolletteNonPagate .header {
 	font-weight: 800;
-	margin-bottom: 6px;
+	margin-bottom: 3px;
+}
+#conguagliRicalcoliEBolletteNonPagate .content #conguagliRicalcoli .messaggio-esistenza-o-meno,
+#conguagliRicalcoliEBolletteNonPagate .content #bolletteNonPagate .messaggio-esistenza-o-meno {
+	margin-bottom: 2px;
 }
 
 
