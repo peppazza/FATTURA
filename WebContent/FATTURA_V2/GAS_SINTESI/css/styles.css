@@ -149,6 +149,7 @@ table.custom tbody tr td.no-back {
 #headerLogo .logo img {
 	width: 190px;
 	margin-top: 30px;
+	margin-left: 20px;
 }
 #headerLogo .header {
     text-align: right;
@@ -540,7 +541,7 @@ table.custom tbody tr td.no-back {
 	margin-bottom: 2px;
 }
 #guidaLetturaFattura .content .dati .paragrafo {
-	margin-bottom: 8px;
+	margin-bottom: 6px;
 }
 
 
@@ -552,7 +553,7 @@ table.custom tbody tr td.no-back {
 	margin-bottom: 2px;
 }
 #arera .content > .dati .body {
-	margin-bottom: 8px;
+	margin-bottom: 6px;
 }
 #arera .tabella-arera {
 	margin-top: 10px;
