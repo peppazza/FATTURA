@@ -272,7 +272,7 @@ table.custom tbody tr td.no-back {
 
 #qrCodeEIdentificativo .content {
 	margin-top: 30px;
-    margin-left: 90px;
+    margin-left: 70px;
 }
 #indirizzoSpedizione {
 	margin-top: 20px;
@@ -498,11 +498,11 @@ table.custom tbody tr td.no-back {
 }
 /* *** imposte */
 #acciseEdIVA #_TABELLA_DETTAGLIO_Imposte tbody tr td {
-	padding: 1px 2px;
+	padding: 1px 2px!important;
 }
 /* *** iva */
 #acciseEdIVA #_TABELLA_DETTAGLIO_Iva tbody tr td {
-	padding: 1px 2px;
+	padding: 1px 2px!important;
 }
 
 
@@ -514,8 +514,8 @@ table.custom tbody tr td.no-back {
     border-radius: 14px;
     -moz-border-radius: 14px;
     -webkit-border-radius: 14px;
-    padding: 12px 14px;
-    margin: 20px 0;
+    padding: 8px 10px;
+    margin: 14px 0;
 }
 #conguagliRicalcoliEBolletteNonPagate .content #conguagliRicalcoli {
 	padding-right: 0.5rem;
@@ -535,9 +535,6 @@ table.custom tbody tr td.no-back {
 }
 
 
-#guidaLetturaFattura {
-	margin-top: 8px;
-}
 #guidaLetturaFattura .content > .header {
 	font-weight: 800;
 	margin-bottom: 2px;
