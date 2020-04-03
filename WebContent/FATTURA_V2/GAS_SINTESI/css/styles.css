@@ -271,7 +271,8 @@ table.custom tbody tr td.no-back {
 
 
 #qrCodeEIdentificativo .content {
-	padding: 10px 10px 10px 30px;
+	margin-top: 30px;
+    margin-left: 90px;
 }
 #indirizzoSpedizione {
 	margin-top: 20px;
