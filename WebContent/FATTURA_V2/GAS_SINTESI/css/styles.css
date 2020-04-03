@@ -10,10 +10,8 @@ page[size="A4"] {
 	margin: 10mm auto; */
     display: block;
     margin: 0 auto 10px;
-    /*
-    margin-bottom: 0.5cm;
-    padding: 60px 30px 0;
-     */
+    /* margin-bottom: 0.5cm;
+    padding: 60px 30px 0; */
     padding: 0 20px 0;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
 }
@@ -426,11 +424,38 @@ table.custom tbody tr td.no-back {
 		display: inline-block;
 	}
 	/* *** consulente dedicato */
-	#consulenteDedicato .content > img {
+	#consulenteDedicato .box-consulente-dedicato {
 		width: 284px;
 		height: 140px;
 		bottom: 0;
     	display: block;
+    	color: #ffffff;
+	}
+	#consulenteDedicato .box-consulente-dedicato .icona {
+		display: inline-block;
+	}
+	#consulenteDedicato .box-consulente-dedicato .icona img {
+		width: 70px;
+		height: 140px;
+		position: relative;
+		top: 0;
+		left: 0;
+	}
+	#consulenteDedicato .box-consulente-dedicato .testo {
+		display: inline-block;
+	    width: 174px;
+	    position: relative;
+	    top: -6px;
+	    left: 6px;
+	}
+	#consulenteDedicato .box-consulente-dedicato .testo .header {
+		font-weight: 700;
+		line-height: 1.1;
+		margin: 1px 0;
+	}
+	#consulenteDedicato .box-consulente-dedicato .testo .corpo {
+		font-weight: 300;
+		line-height: 1.2;
 	}
 
 #boxOfferta {
