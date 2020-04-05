@@ -423,6 +423,11 @@ table.custom tbody tr td.no-back {
 	#contattiEAutoletturaEGuasti .sezione .corpo .dato-riga-singola .valore-tag {
 		display: inline-block;
 	}
+	/* box autolettura */
+		#contattiEAutoletturaEGuasti .sezione.autolettura .corpo .elenco-canali .canale .icona-canale {
+			float: left;
+			margin-right: 2px;
+		}
 	/* *** consulente dedicato */
 	#consulenteDedicato .box-consulente-dedicato {
 		width: 284px;
