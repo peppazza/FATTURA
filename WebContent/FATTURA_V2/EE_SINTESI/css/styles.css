@@ -407,10 +407,10 @@ table.custom tbody tr td.no-back {
 		font-weight: 800;
 		border-bottom: 1px solid #aaaaaa;
 	    padding: 0 0;
-    	margin-bottom: 2px;
+    	margin-bottom: 0;
 	}
 	#contattiEAutoletturaEGuasti .sezione .corpo {
-		margin-bottom: 6px;
+		margin-bottom: 2px;
 	}
 	#contattiEAutoletturaEGuasti .sezione .corpo .dato-riga-singola .etichetta,
 	#contattiEAutoletturaEGuasti .sezione .corpo .dato-riga-doppia .etichetta {
@@ -420,6 +420,11 @@ table.custom tbody tr td.no-back {
 	#contattiEAutoletturaEGuasti .sezione .corpo .dato-riga-singola .valore-tag {
 		display: inline-block;
 	}
+	/* box autolettura */
+		#contattiEAutoletturaEGuasti .sezione.autolettura .corpo .elenco-canali .canale .icona-canale {
+			float: left;
+			margin-right: 2px;
+		}
 	/* *** consulente dedicato */
 	#consulenteDedicato .box-consulente-dedicato {
 		width: 284px;
@@ -452,7 +457,7 @@ table.custom tbody tr td.no-back {
 	}
 
 #boxOfferta {
-	margin-top: 5px;
+	margin-top: 3px;
 }
 #boxOfferta .content {
 	text-align: center;

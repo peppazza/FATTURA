@@ -48,6 +48,9 @@ page[size="A4"] .sub.pagina-inner {
 	.font6pt {
 		font-size: 6pt!important;
 	}
+	.font5dot5pt {
+		font-size: 5.5pt!important;
+	}
 /* COLORS */
 	.color75K { color: #666666!important; } /* grigio scuro */
 	.color100K { color: #302e2c!important; } /* nero */
@@ -410,10 +413,10 @@ table.custom tbody tr td.no-back {
 		font-weight: 800;
 		border-bottom: 1px solid #aaaaaa;
 	    padding: 0 0;
-    	margin-bottom: 2px;
+    	margin-bottom: 0;
 	}
 	#contattiEAutoletturaEGuasti .sezione .corpo {
-		margin-bottom: 6px;
+		margin-bottom: 2px;
 	}
 	#contattiEAutoletturaEGuasti .sezione .corpo .dato-riga-singola .etichetta,
 	#contattiEAutoletturaEGuasti .sezione .corpo .dato-riga-doppia .etichetta {
@@ -460,7 +463,7 @@ table.custom tbody tr td.no-back {
 	}
 
 #boxOfferta {
-	margin-top: 5px;
+	margin-top: 3px;
 }
 #boxOfferta .content {
 	text-align: center;
