@@ -1,3 +1,10 @@
+/*
+@font-face {
+  font-family: SourceSansPro;
+  src: url(SourceSansPro-Regular.ttf);
+}
+ */
+
 html, body {
 	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 8pt;
@@ -75,27 +82,6 @@ page[size="A4"] .sub.pagina-inner {
 		.back-color625K { background-color: #507f70!important; } /* verde scuro */
 		/* F1 codice tampone non corretto! */
 		.back-color7693K { background-color: #e7d83b!important; } /* giallo scuro */
-			
-	
-/*
-@font-face {
-  font-family: SourceSansPro;
-  src: url(SourceSansPro-Regular.ttf);
-}
-@font-face {
-  font-family: SourceSansPro;
-  src: url(d-din.regular.ttf);
-}
-@font-face {
-  font-family: SourceSansPro;
-  src: url(din1451alt.ttf);
-}
- */
-@font-face {
-  font-family: SourceSansPro;
-  src: url(DIN Regular.ttf);
-}
-
 
 table{
 	width: 100%;
@@ -256,6 +242,10 @@ table.custom tbody tr td.no-back {
 }
 #datiClienteEBolletta .content .colonna-sinistra .valore-tag.codice-cliente {
 	font-weight: 800;
+}
+#datiClienteEBolletta .content .colonna-destra .colonna-destra-inner {
+	border-left: 1px solid #0097a9;
+	padding-left: 10px;
 }
 #datiClienteEBolletta .content .colonna-destra .header-grassetto {
 	font-weight: 800;
@@ -424,14 +414,14 @@ table.custom tbody tr td.no-back {
 		font-weight: 800;
 		border-bottom: 1px solid #aaaaaa;
 	    padding: 0 0;
-    	margin-bottom: 0;
+    	margin-bottom: 1px;
 	}
 	#contattiEAutoletturaEGuasti .sezione .corpo {
 		margin-bottom: 2px;
 	}
 	#contattiEAutoletturaEGuasti .sezione .corpo .dato-riga-singola .etichetta,
 	#contattiEAutoletturaEGuasti .sezione .corpo .dato-riga-doppia .etichetta {
-		font-weight: 800;
+		font-weight: 600;
 	}
 	#contattiEAutoletturaEGuasti .sezione .corpo .dato-riga-singola .etichetta,
 	#contattiEAutoletturaEGuasti .sezione .corpo .dato-riga-singola .valore-tag {
@@ -504,7 +494,6 @@ table.custom tbody tr td.no-back {
     -webkit-border-radius: 5px;
     font-weight: 800;
     padding: 2px 8px;
-    margin-top: -3px;
     display: inline-block;
     background-color: #ffffff;
 }

@@ -19,20 +19,7 @@
 	
 	<script type="text/javascript">
 		var mesiArray = ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic'];
-	
-		function checkNumber_(val) {
-			try {
-				if (val) {
-					val = val.trim();
-					if (val && !isNaN(val))
-						return Number(val);
-				}
-			} catch (err) {
-				console.log('error check valore numerico', err);
-			}
-			return 0;
-		}
-		
+				
 		function checkNumber(str) {
 			try {
 				if (str) {
@@ -175,19 +162,21 @@
 					<div class="content">
 						<div class="pure-g">
 							<div class="pure-u-11-24 colonna-sinistra">
-								<div class="header-grassetto font7pt">N° CLIENTE</div>
-								<div class="valore-tag codice-cliente">
-									<span class="font12pt color1805C" data-data_type="single" data-first_node="ClienteFinaleCodice" data-path_type="xpath" data-path_data="">C-ABC-DEF-GHI</span>
-								</div>
-								<div class="header-grassetto font7pt">CODICE POD</div>
-								<div class="valore-tag">
-									<span data-data_type="single" data-first_node="FornituraCodicePDP" data-path_type="xpath" data-path_data="">XXX XXX XXX</span>
-								</div>
-								<div class="header-grassetto font7pt">CODICE FISCALE</div>
-								<div class="valore-tag">
-									<span id="codiceFiscaleOrPartitaIvaContainer">XXX XXX XXXX XXX XXXX</span>
-									<span id="codiceFiscale" style="display: none;" data-data_type="single" data-first_node="ClienteFinaleCodiceFiscale" data-path_type="xpath" data-path_data=""></span>
-									<span id="piva" style="display: none;" data-data_type="single" data-first_node="ClienteFinalePartitaIva" data-path_type="xpath" data-path_data=""></span>
+								<div class="colonna-sinistra-inner">
+									<div class="header-grassetto font7pt">N° CLIENTE</div>
+									<div class="valore-tag codice-cliente">
+										<span class="font12pt color1805C" data-data_type="single" data-first_node="ClienteFinaleCodice" data-path_type="xpath" data-path_data="">XXX XXX XXX</span>
+									</div>
+									<div class="header-grassetto font7pt">CODICE POD</div>
+									<div class="valore-tag">
+										<span data-data_type="single" data-first_node="FornituraCodicePDP" data-path_type="xpath" data-path_data="">XXX XXX XXX</span>
+									</div>
+									<div class="header-grassetto font7pt">CODICE FISCALE</div>
+									<div class="valore-tag">
+										<span id="codiceFiscaleOrPartitaIvaContainer">XXX XXX XXXX XXX XXXX</span>
+										<span id="codiceFiscale" style="display: none;" data-data_type="single" data-first_node="ClienteFinaleCodiceFiscale" data-path_type="xpath" data-path_data=""></span>
+										<span id="piva" style="display: none;" data-data_type="single" data-first_node="ClienteFinalePartitaIva" data-path_type="xpath" data-path_data=""></span>
+									</div>
 								</div>
 								<script type="text/javascript">
 									(function() {
@@ -204,37 +193,38 @@
 								</script>
 							</div>
 							<div class="pure-u-13-24 colonna-destra">
-								<div class="header-grassetto font7pt">DATI BOLLETTA</div>	
-								<div class="riga">
-									<span class="etichetta">Fornitura</span>
-									<span class="valore-tag">TEST</span>
-								</div>
-								<div class="riga">
-									<span class="etichetta">N° Fattura</span>
-									<span class="valore-tag"><span data-data_type="single" data-first_node="NumeroBolletta" data-path_type="xpath" data-path_data="">TEST</span></span>
-								</div>
-								<div class="riga">
-									<span class="etichetta">Del</span>
-									<span class="valore-tag"><span data-data_type="single" data-first_node="DataEmissione" data-path_type="xpath" data-path_data="">TEST</span></span>
-								</div>
-								<div style="border-top: 1px solid #777777"></div>
-								<div class="riga periodo color1805C">
-									<span class="etichetta">Periodo</span>
-									<span class="valore-tag">
-										<!-- potrebbe essere il tag PeriodoCompetenza -->
-										<span data-data_type="single" data-first_node="PeriodoFatturazione" data-path_type="xpath" data-path_data="">DD/MM/YYYY-DD/MM/YYYY</span>
-									</span>
-								</div>
-								<div style="border-top: 1px solid #777777"></div>
-								<div class="riga">
-									<span class="etichetta">Tipo Fattura</span>
-									<span class="valore-tag">
-										<!-- init in JS -->
-										<!-- fat:= fattura, ndc:= nota di credito, ndd:= nota di debito -->
-										<span class="tipo-documento" style="display: none;" data-data_type="single" data-first_node="TipoDocumento" data-path_type="xpath" data-path_data=""></span>
-										<span id="tipoDocumento"></span>
-									</span>
-									<script type="text/javascript">
+								<div class="colonna-destra-inner">
+									<div class="header-grassetto font7pt">DATI BOLLETTA</div>	
+									<div class="riga">
+										<span class="etichetta">Fornitura</span>
+										<span class="valore-tag">TEST</span>
+									</div>
+									<div class="riga">
+										<span class="etichetta">N° Fattura</span>
+										<span class="valore-tag"><span data-data_type="single" data-first_node="NumeroBolletta" data-path_type="xpath" data-path_data="">TEST</span></span>
+									</div>
+									<div class="riga">
+										<span class="etichetta">Del</span>
+										<span class="valore-tag"><span data-data_type="single" data-first_node="DataEmissione" data-path_type="xpath" data-path_data="">TEST</span></span>
+									</div>
+									<div style="border-top: 1px solid #777777"></div>
+									<div class="riga periodo color1805C">
+										<span class="etichetta">Periodo</span>
+										<span class="valore-tag">
+											<!-- potrebbe essere il tag PeriodoCompetenza -->
+											<span data-data_type="single" data-first_node="PeriodoFatturazione" data-path_type="xpath" data-path_data="">29/09/2099-29/08/2099</span>
+										</span>
+									</div>
+									<div style="border-top: 1px solid #777777"></div>
+									<div class="riga">
+										<span class="etichetta">Tipo Fattura</span>
+										<span class="valore-tag">
+											<!-- init in JS -->
+											<!-- fat:= fattura, ndc:= nota di credito, ndd:= nota di debito -->
+											<span class="tipo-documento" style="display: none;" data-data_type="single" data-first_node="TipoDocumento" data-path_type="xpath" data-path_data=""></span>
+											<span id="tipoDocumento"></span>
+										</span>
+										<script type="text/javascript">
 										try {
 									    	(function () {
 									    		var tipoDocumento = '';									    		
@@ -256,7 +246,8 @@
 									    	console.log('errore init TIPO DOCUMENTO', err);
 									    }
 									</script>
-								</div>
+									</div>
+								</div>								
 							</div>
 						</div>
 					</div>
@@ -656,43 +647,39 @@
 					<div id="contattiEAutoletturaEGuasti">
 						<!-- *** contatti -->
 						<div class="sezione contatti">
-							<div class="header font11pt color1805C">CONTATTI UTILI</div>
+							<div class="header font12pt color1805C">CONTATTI UTILI</div>
 							<div class="corpo font7pt">
 								<div class="dato-riga-singola">
-									<div class="etichetta">NUMERO VERDE DA RETE FISSA</div>
+									<div class="etichetta">NUMERO VERDE</div>
 									<div class="valore-tag">800 98 44 55</div>
 								</div>
-								<div class="dato-riga-singola">
-									<div class="etichetta">CENTRALINO</div>
-									<div class="valore-tag">0984 82 53 56</div>
-								</div>
-								<div class="dato-riga-singola">
-									<div class="etichetta">WHATSAPP</div>
-									<div class="valore-tag">346 86 05 478</div>
-								</div>
-								<!-- <div class="dato-riga-doppia">
-									<div class="etichetta">CONTACT CENTER</div>
-									<div class="valore-tag">Da rete fissa <span data-data_type="single" data-first_node="AziendaCallCenterFisso" data-path_type="xpath" data-path_data="">0000 00 00 00</span></div>
-									<div class="valore-tag">Da rete mobile <span data-data_type="single" data-first_node="AziendaCallCenterCell" data-path_type="xpath" data-path_data="">000 00 00 000</span></div>
-								</div> -->
 								<div class="dato-riga-doppia">
-									<div class="etichetta">OMNIA ENERGY STORE</div>
-									<div class="valore-tag">Via Beato Francesco Marino, 102 Z.I. 87040 Zumpano (CS)</div>
+									<div class="etichetta">CONTACT CENTER</div>
 									<div class="valore-tag">
-										<!-- Corso Mazzini, 5 - Cosenza -->
-										<span data-data_type="single" data-first_node="ServizioIndirizzo" data-path_type="xpath" data-path_data="">Corso Mazzini, 5</span>
-										<span data-data_type="single" data-first_node="ServizioComune" data-path_type="xpath" data-path_data="">Cosenza (CS)</span>
+										<span>Da rete fissa</span> <span>0984 82 53 56</span>
+									</div>
+									<div class="valore-tag">
+										<span>Da mobile</span> <span>346 86 05 478</span>
 									</div>
 								</div>
 								<div class="dato-riga-doppia">
-									<div class="etichetta" style="display: inline;">OMNIA POINT</div>
-									<div class="valore-tag" style="display: inline;">consulta l’elenco dei punti vendita a te più vicini al sito www.omniaenegia.it</div>
+									<div class="etichetta">SEDE</div>
+									<div class="valore-tag">Via Beato Francesco Marino, 102 Z.I. 87040 Zumpano (CS)</div>
+								</div>
+								<div class="dato-riga-singola">
+									<div class="etichetta">PUNTI VENDITA</div>
+									<div class="valore-tag">
+										<div class="valore-tag">
+											<span data-data_type="single" data-first_node="ServizioIndirizzo" data-path_type="xpath" data-path_data="">Corso Mazzini, 5</span>
+											<span data-data_type="single" data-first_node="ServizioComune" data-path_type="xpath" data-path_data="">Cosenza (CS)</span>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 						<!-- *** autolettura -->
-						<div class="sezione autolettura">
-							<div class="header font11pt color1805C">AUTOLETTURA</div>
+						<div class="sezione autolettura" style="margin-top: 5px;">
+							<div class="header font12pt color1805C">AUTOLETTURA</div>
 							<div class="corpo font7pt">
 								<div class="elenco-canali">
 									<div class="intro">Potrai comunicare l'autolettura della tua fornitura di energia elettrica dal 
@@ -776,8 +763,8 @@
 							</div>
 						</div> -->
 						<!-- *** guasti -->
-						<div class="sezione guasti">
-							<div class="header font11pt color1805C">EMERGENZA GUASTI</div>
+						<div class="sezione guasti" style="margin-top: 5px;">
+							<div class="header font12pt color1805C">EMERGENZA GUASTI</div>
 							<div class="corpo font7pt">
 								<div class="contatto">
 									<span class="etichetta">NUMERO VERDE</span>

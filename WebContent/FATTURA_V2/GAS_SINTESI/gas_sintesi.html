@@ -20,19 +20,6 @@
 	<script type="text/javascript">
 		var mesiArray = ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic'];
 	
-		function checkNumber_(val) {
-			try {
-				if (val) {
-					val = val.trim();
-					if (val && !isNaN(val))
-						return Number(val);
-				}
-			} catch (err) {
-				console.log('error check valore numerico', err);
-			}
-			return 0;
-		}
-		
 		function checkNumber(str) {
 			try {
 				if (str) {
@@ -156,26 +143,28 @@ LEGACY
 
 		<!-- CLIENTE-BOLLETTA
 		########################################################################################### -->
-		<div class="pure-g mb3">
+		<div class="pure-g mb2">
 			<!-- INFO GENERALI BOLLETTA -->
 			<div class="pure-u-11-24">
 				<div id="datiClienteEBolletta">
 					<div class="content">
 						<div class="pure-g">
 							<div class="pure-u-11-24 colonna-sinistra">
-								<div class="header-grassetto font7pt">N° CLIENTE</div>
-								<div class="valore-tag codice-cliente">
-									<span class="font12pt color7711C" data-data_type="single" data-first_node="ClienteFinaleCodice" data-path_type="xpath" data-path_data="">C-ABC-DEF-GHI</span>
-								</div>
-								<div class="header-grassetto font7pt">CODICE PDR</div>
-								<div class="valore-tag">
-									<span data-data_type="single" data-first_node="FornituraCodicePDP" data-path_type="xpath" data-path_data="">XXX XXX XXX</span>
-								</div>
-								<div class="header-grassetto font7pt">CODICE FISCALE</div>
-								<div class="valore-tag">
-									<span id="codiceFiscaleOrPartitaIvaContainer">XXX XXX XXXX XXX XXXX</span>
-									<span id="codiceFiscale" style="display: none;" data-data_type="single" data-first_node="ClienteFinaleCodiceFiscale" data-path_type="xpath" data-path_data=""></span>
-									<span id="piva" style="display: none;" data-data_type="single" data-first_node="ClienteFinalePartitaIva" data-path_type="xpath" data-path_data=""></span>
+								<div class="colonna-sinistra-inner">
+									<div class="header-grassetto font7pt">N° CLIENTE</div>
+									<div class="valore-tag codice-cliente">
+										<span class="font12pt color7711C" data-data_type="single" data-first_node="ClienteFinaleCodice" data-path_type="xpath" data-path_data="">XXX XXX XXX</span>
+									</div>
+									<div class="header-grassetto font7pt">CODICE PDR</div>
+									<div class="valore-tag">
+										<span data-data_type="single" data-first_node="FornituraCodicePDP" data-path_type="xpath" data-path_data="">XXX XXX XXX</span>
+									</div>
+									<div class="header-grassetto font7pt">CODICE FISCALE</div>
+									<div class="valore-tag">
+										<span id="codiceFiscaleOrPartitaIvaContainer">XXX XXX XXXX XXX XXXX</span>
+										<span id="codiceFiscale" style="display: none;" data-data_type="single" data-first_node="ClienteFinaleCodiceFiscale" data-path_type="xpath" data-path_data=""></span>
+										<span id="piva" style="display: none;" data-data_type="single" data-first_node="ClienteFinalePartitaIva" data-path_type="xpath" data-path_data=""></span>
+									</div>
 								</div>
 								<script type="text/javascript">
 									(function() {
@@ -192,58 +181,60 @@ LEGACY
 								</script>
 							</div>
 							<div class="pure-u-13-24 colonna-destra">
-								<div class="header-grassetto font7pt">DATI BOLLETTA</div>	
-								<div class="riga">
-									<span class="etichetta">Fornitura</span>
-									<span class="valore-tag">TEST</span>
-								</div>
-								<div class="riga">
-									<span class="etichetta">N° Fattura</span>
-									<span class="valore-tag"><span data-data_type="single" data-first_node="NumeroBolletta" data-path_type="xpath" data-path_data="">TEST</span></span>
-								</div>
-								<div class="riga">
-									<span class="etichetta">Del</span>
-									<span class="valore-tag"><span data-data_type="single" data-first_node="DataEmissione" data-path_type="xpath" data-path_data="">TEST</span></span>
-								</div>
-								<div style="border-top: 1px solid #777777"></div>
-								<div class="riga periodo color7711C">
-									<span class="etichetta">Periodo</span>
-									<span class="valore-tag">
-										<!-- potrebbe essere il tag PeriodoCompetenza -->
-										<span data-data_type="single" data-first_node="PeriodoFatturazione" data-path_type="xpath" data-path_data="">DD/MM/YYYY-DD/MM/YYYY</span>
-									</span>
-								</div>
-								<div style="border-top: 1px solid #777777"></div>
-								<div class="riga">
-									<span class="etichetta">Tipo Fattura</span>
-									<span class="valore-tag">
-										<!-- init in JS -->
-										<!-- fat:= fattura, ndc:= nota di credito, ndd:= nota di debito -->
-										<span class="tipo-documento" style="display: none;" data-data_type="single" data-first_node="TipoDocumento" data-path_type="xpath" data-path_data=""></span>
-										<span id="tipoDocumento"></span>
-									</span>
-									<script type="text/javascript">
-										try {
-									    	(function () {
-									    		var tipoDocumento = '';									    		
-									    		var elems = document.getElementsByClassName('tipo-documento');
-									    		if (elems && elems.length > 0) {
-									    			var tipoDocumentoAbbr = elems[0].innerHTML;
-									    			if (tipoDocumentoAbbr) {
-										    			if (tipoDocumentoAbbr === 'fat')
-										    				tipoDocumento = 'Fattura';
-										    			else if (tipoDocumentoAbbr === 'ndc')
-										    				tipoDocumento = 'Nota di credito';
-										    			else if (tipoDocumentoAbbr === 'ndd')
-										    				tipoDocumento = 'Nota di debito';
-									    			}
-									    		}												            	
-												document.getElementById('tipoDocumento').innerHTML = tipoDocumento;			
-											})();
-									    } catch(err) {
-									    	console.log('errore init TIPO DOCUMENTO', err);
-									    }
-									</script>
+								<div class="colonna-destra-inner">
+									<div class="header-grassetto font7pt">DATI BOLLETTA</div>	
+									<div class="riga">
+										<span class="etichetta">Fornitura</span>
+										<span class="valore-tag">TEST</span>
+									</div>
+									<div class="riga">
+										<span class="etichetta">N° Fattura</span>
+										<span class="valore-tag"><span data-data_type="single" data-first_node="NumeroBolletta" data-path_type="xpath" data-path_data="">TEST</span></span>
+									</div>
+									<div class="riga">
+										<span class="etichetta">Del</span>
+										<span class="valore-tag"><span data-data_type="single" data-first_node="DataEmissione" data-path_type="xpath" data-path_data="">TEST</span></span>
+									</div>
+									<div style="border-top: 1px solid #777777"></div>
+									<div class="riga periodo color7711C">
+										<span class="etichetta">Periodo</span>
+										<span class="valore-tag">
+											<!-- potrebbe essere il tag PeriodoCompetenza -->
+											<span data-data_type="single" data-first_node="PeriodoFatturazione" data-path_type="xpath" data-path_data="">29/09/2099-29/08/2099</span>
+										</span>
+									</div>
+									<div style="border-top: 1px solid #777777"></div>
+									<div class="riga">
+										<span class="etichetta">Tipo Fattura</span>
+										<span class="valore-tag">
+											<!-- init in JS -->
+											<!-- fat:= fattura, ndc:= nota di credito, ndd:= nota di debito -->
+											<span class="tipo-documento" style="display: none;" data-data_type="single" data-first_node="TipoDocumento" data-path_type="xpath" data-path_data=""></span>
+											<span id="tipoDocumento"></span>
+										</span>
+										<script type="text/javascript">
+											try {
+										    	(function () {
+										    		var tipoDocumento = '';									    		
+										    		var elems = document.getElementsByClassName('tipo-documento');
+										    		if (elems && elems.length > 0) {
+										    			var tipoDocumentoAbbr = elems[0].innerHTML;
+										    			if (tipoDocumentoAbbr) {
+											    			if (tipoDocumentoAbbr === 'fat')
+											    				tipoDocumento = 'Fattura';
+											    			else if (tipoDocumentoAbbr === 'ndc')
+											    				tipoDocumento = 'Nota di credito';
+											    			else if (tipoDocumentoAbbr === 'ndd')
+											    				tipoDocumento = 'Nota di debito';
+										    			}
+										    		}												            	
+													document.getElementById('tipoDocumento').innerHTML = tipoDocumento;			
+												})();
+										    } catch(err) {
+										    	console.log('errore init TIPO DOCUMENTO', err);
+										    }
+										</script>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -572,7 +563,7 @@ LEGACY
 					<div id="contattiEAutoletturaEGuasti">
 						<!-- *** contatti -->
 						<div class="sezione contatti">
-							<div class="header font11pt color7711C">CONTATTI UTILI</div>
+							<div class="header font12pt color7711C">CONTATTI UTILI</div>
 							<div class="corpo font7pt">
 								<div class="dato-riga-singola">
 									<div class="etichetta">NUMERO VERDE DA RETE FISSA</div>
@@ -608,7 +599,7 @@ LEGACY
 						</div>
 						<!-- *** autolettura -->
 						<div class="sezione autolettura">
-							<div class="header font11pt color7711C">AUTOLETTURA</div>
+							<div class="header font12pt color7711C">AUTOLETTURA</div>
 							<div class="corpo font7pt">
 								<div class="elenco-canali">
 									<div class="intro" style="margin-bottom: 1px;">Potrai comunicare l'autolettura della tua fornitura di gas dal 
@@ -652,7 +643,7 @@ LEGACY
 						</div>
 						<!-- *** guasti -->
 						<div class="sezione guasti">
-							<div class="header font11pt color7711C">EMERGENZA GUASTI</div>
+							<div class="header font12pt color7711C">EMERGENZA GUASTI</div>
 							<div class="corpo font7pt">
 								<div class="contatto">
 									<span class="etichetta">NUMERO VERDE</span>
