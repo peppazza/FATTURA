@@ -142,12 +142,22 @@ table.custom tbody tr td.no-back {
 	margin: 0 -20px;	
 }
 #headerLogo .logo img {
-	width: 190px;
+	/* width: 190px;
+	height: 96px;
 	margin-top: 30px;
-	margin-left: 20px;
+	margin-left: 20px; */
+	width: auto;
+	height: 80px;
+    margin-top: 50px;
+    margin-left: 20px;
 }
 #headerLogo .header {
     text-align: right;
+}
+#headerLogo .header > img {
+	width: 396px;
+	height: 152px;
+	height: 150px;
 }
 /*
 #headerLogo {
@@ -226,7 +236,7 @@ table.custom tbody tr td.no-back {
 
 
 #datiClienteEBolletta .content {
-    border: 1.5px solid #b6262f;
+    border: 1px solid #b6262f;
     padding: 8px;
     border-radius: 12px;
     -moz-border-radius: 12px;
@@ -402,6 +412,7 @@ table.custom tbody tr td.no-back {
 	/* contatti utili, autolettura, emergenza guasti */
 	#contattiEAutoletturaEGuasti {
 		padding-left: 0.85rem;
+		padding-left: 12px;
 	}
 	#contattiEAutoletturaEGuasti .sezione .header {
 		font-weight: 800;
@@ -481,7 +492,7 @@ table.custom tbody tr td.no-back {
 }
 #lettureEConsumiPeriodoFatturazione .consumi-fatturati .valore-consumi-fatturati {
 	text-align: center;
-    border: 1.5px solid #b6262f;
+    border: 1px solid #b6262f;
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -534,7 +545,7 @@ table.custom tbody tr td.no-back {
 	margin-top: 8px;
 }
 #conguagliRicalcoliEBolletteNonPagate .content {
-	border: 1.5px solid #b6262f;
+	border: 1px solid #b6262f;
     border-radius: 14px;
     -moz-border-radius: 14px;
     -webkit-border-radius: 14px;
