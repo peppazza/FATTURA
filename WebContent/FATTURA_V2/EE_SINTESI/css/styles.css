@@ -51,6 +51,7 @@ page[size="A4"] {
 }
 page[size="A4"] .sub.pagina-inner {
 	height: 1064px;
+	padding-right: 32px;
 }
 @page {
 	size: A4;
@@ -159,10 +160,6 @@ table.custom tbody tr td.no-back {
 	margin: 0 -20px 20px;
 }
 #headerLogo .logo img {
-	/* width: 190px;
-	height: 96px;
-	margin-top: 30px;
-	margin-left: 20px; */
 	width: auto;
 	height: 80px;
     margin-top: 50px;
@@ -173,8 +170,8 @@ table.custom tbody tr td.no-back {
 }
 #headerLogo .header > img {
 	width: 396px;
-	height: 152px;
 	height: 150px;
+	margin-right: -14px;
 }
 /*
 #headerLogo {
@@ -502,7 +499,7 @@ table.custom tbody tr td.no-back {
     height: 320px;
 }
 #boxOfferta .content img {
-	width: 730xpx;
+	width: 730px;
 	height: 320px;    
 }
 
