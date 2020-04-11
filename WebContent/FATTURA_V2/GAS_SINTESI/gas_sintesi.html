@@ -143,7 +143,7 @@ LEGACY
 
 		<!-- CLIENTE-BOLLETTA
 		########################################################################################### -->
-		<div class="pure-g mb2">
+		<div class="pure-g">
 			<!-- INFO GENERALI BOLLETTA -->
 			<div class="pure-u-11-24">
 				<div id="datiClienteEBolletta">
@@ -151,15 +151,15 @@ LEGACY
 						<div class="pure-g">
 							<div class="pure-u-11-24 colonna-sinistra">
 								<div class="colonna-sinistra-inner">
-									<div class="header-grassetto font7pt">N° CLIENTE</div>
+									<div class="header-grassetto font8pt fontDinBlack">N° CLIENTE</div>
 									<div class="valore-tag codice-cliente">
-										<span class="font12pt color7711C" data-data_type="single" data-first_node="ClienteFinaleCodice" data-path_type="xpath" data-path_data="">XXX XXX XXX</span>
+										<span class="font12pt fontDinBlack color7711C" data-data_type="single" data-first_node="ClienteFinaleCodice" data-path_type="xpath" data-path_data="">XXX XXX XXX</span>
 									</div>
-									<div class="header-grassetto font7pt">CODICE PDR</div>
+									<div class="header-grassetto font8pt fontDinBlack">CODICE PDR</div>
 									<div class="valore-tag">
 										<span data-data_type="single" data-first_node="FornituraCodicePDP" data-path_type="xpath" data-path_data="">XXX XXX XXX</span>
 									</div>
-									<div class="header-grassetto font7pt">CODICE FISCALE</div>
+									<div class="header-grassetto font8pt fontDinBlack">CODICE FISCALE</div>
 									<div class="valore-tag">
 										<span id="codiceFiscaleOrPartitaIvaContainer">XXX XXX XXXX XXX XXXX</span>
 										<span id="codiceFiscale" style="display: none;" data-data_type="single" data-first_node="ClienteFinaleCodiceFiscale" data-path_type="xpath" data-path_data=""></span>
@@ -182,7 +182,7 @@ LEGACY
 							</div>
 							<div class="pure-u-13-24 colonna-destra">
 								<div class="colonna-destra-inner">
-									<div class="header-grassetto font7pt">DATI BOLLETTA</div>	
+									<div class="header-grassetto font8pt fontDinBlack">DATI BOLLETTA</div>	
 									<div class="riga">
 										<span class="etichetta">Fornitura</span>
 										<span class="valore-tag">TEST</span>
@@ -197,7 +197,7 @@ LEGACY
 									</div>
 									<div style="border-top: 1px solid #777777"></div>
 									<div class="riga periodo color7711C">
-										<span class="etichetta">Periodo</span>
+										<span class="etichetta fontDinBlack">Periodo</span>
 										<span class="valore-tag">
 											<!-- potrebbe essere il tag PeriodoCompetenza -->
 											<span data-data_type="single" data-first_node="PeriodoFatturazione" data-path_type="xpath" data-path_data="">29/09/2099-29/08/2099</span>
@@ -245,8 +245,8 @@ LEGACY
 			<div class="pure-u-7-24">
 				<div id="qrCodeEIdentificativo">
 					<div class="content">
-						<div class="qr-code">
-							<span data-data_type="single" data-first_node="SpedizioneDataMatrix" data-path_type="xpath" data-path_data=""></span>
+						<div class="qr-code-box">
+							<span class="qr-code" data-data_type="single" data-first_node="SpedizioneDataMatrix" data-path_type="xpath" data-path_data=""></span>
 							<!-- <img src="images/qrcode.png"> -->
 						</div>
 						<div class="identificativo">
@@ -278,15 +278,15 @@ LEGACY
 		<div id="corpoPagina1Con2Colonne" class="pure-g">
 			<!-- SX: DATI FORNITURA, TOTALE SPESA E GRAZIE, GRAFICO A TORTA -->
 			<!-- -------------------------------------------------- -->
-			<div class="pure-u-16-24 colonna-sinistra">
+			<div class="pure-u-15-24 colonna-sinistra">
 				<div class="colonna-sinistra-inner">
 					<!-- *** dati fornitura -->
 					<div class="dati-fornitura font6pt">
 						<div class="content">
-							<div class="header font7pt">DATI FORNITURA</div>
+							<div class="header font7pt fontDinBlack">DATI FORNITURA</div>
 							<div class="pure-g">
 								<div class="pure-u-12-24">
-									<div >
+									<div class="font6pt">
 										<div class="dato-riga-doppia">
 											<div class="etichetta">Forniamo gas in</div>
 											<div class="valore"><span data-data_type="single" data-first_node="ClienteFinaleIndirizzo" data-path_type="xpath" data-path_data="">Via Monte Curcio 14 87040 Castrolibero CS</span></div>
@@ -314,7 +314,7 @@ LEGACY
 									</div>
 								</div>
 								<div class="pure-u-12-24">
-									<div >
+									<div class="font6pt">
 										<div class="dato-riga-singola">
 											<div class="etichetta">Codice REMI</div>
 											<div class="valore"><span data-data_type="single" data-first_node="FornituraCodicePDC" data-path_type="xpath" data-path_data="">TEST</span></div>
@@ -346,18 +346,18 @@ LEGACY
 							</div>
 						</div>
 					</div>
-					<div class="separatore mt1 mb1" style="border-top: 1px solid #0097a9;"></div>
+					<div class="separatore" style="border-top: 1px solid #0097a9;"></div>
 					<!-- *** totale spesa e grazie -->
 					<div class="totale-spesa-e-grazie">
 						<div class="content">
 							<div class="pure-g">				
 								<div class="pure-u-12-24">
 									<div class="totale-spesa">
-										<div class="header font12pt color7711C">TOTALE SPESA</div>
-										<div class="cifra-da-pagare font15pt"><span class="simbolo-euro">€</span><span data-data_type="single" data-first_node="TotaleDaPagare" data-path_type="xpath" data-path_data="">123,12</span></div>			
+										<div class="header font12pt fontDinBlack color7711C">TOTALE SPESA</div>
+										<div class="cifra-da-pagare font17pt"><span class="simbolo-euro fontDinBlack">€</span><span class="fontDinBlack" data-data_type="single" data-first_node="TotaleDaPagare" data-path_type="xpath" data-path_data="">123,12</span></div>			
 									</div>
 									<div class="da-saldare-entro font9pt">
-										<span class="etichetta">DA SALDARE ENTRO</span>
+										<span class="etichetta fontDinBlack">DA SALDARE ENTRO</span>
 										<span class="valore color7711C"><span class="data" data-data_type="single" data-first_node="DataScadenza" data-path_type="xpath" data-path_data="">XX/XX/XXXX</span></span>
 									</div>
 								</div>
@@ -367,8 +367,8 @@ LEGACY
 								<div class="pure-u-11-24">
 									<div>
 										<div id="messaggioGraziePerBolletteTuttePagate" class="contenuto">
-											<div class="titolo color7711C"><strong>Grazie!</strong></div>
-											<div class="messaggio">Ti comunichiamo che, alla data attuale, le tue precedenti bollette risultano tutte pagate</div>
+											<div class="titolo color7711C"><strong class="fontDinBlack">Grazie!</strong></div>
+											<div class="messaggio font7pt">Ti comunichiamo che, alla data attuale, le tue precedenti bollette risultano tutte pagate</div>
 										</div>
 										<div id="messaggioAttenzionePerBolletteNonTuttePagate" class="contenuto">
 											<div class="titolo color7711C"><strong>Attenzione!</strong></div>
@@ -379,7 +379,7 @@ LEGACY
 							</div>
 						</div>				
 					</div>
-					<div class="separatore mt1 mb1" style="border-top: 1px solid #0097a9;"></div>
+					<div class="separatore" style="border-top: 1px solid #0097a9;"></div>
 					<!-- *** grafico a torta (sintesi degli importi) -->
 					<div class="sintesi-importi">
 						<div class="content">
@@ -387,7 +387,7 @@ LEGACY
 								<!-- grafico a torta -->	
 								<div class="pure-u-10-24">
 									<div class="grafico-a-torta">
-										<div class="titolo font10pt color7711C">SINTESI DEGLI IMPORTI</div>
+										<div class="titolo font10pt color7711C fontDinBlack">SINTESI DEGLI IMPORTI</div>
 										<div class="contenitore-grafico">
 											<div id="graficoSintesiImporti" class="ct-chart ct-perfect-fourth"></div>
 										</div>
@@ -401,52 +401,52 @@ LEGACY
 												<div class="rettangolo back-color7711C"></div>
 												<div class="testo">Spesa per la materia gas naturale</div>
 											</div>
-											<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_spesaMateriaGasNaturale" class="val">1,00</span></div>
+											<div class="pure-u-5-24 valore-in-euro"><div class="inner"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_spesaMateriaGasNaturale" class="val">1,00</span></div></div>
 										</div>
 										<div class="pure-g voce-legenda spesaTrasporto">
 											<div class="pure-u-19-24 etichetta">
 												<div class="rettangolo back-color158C"></div>										
 												<div class="testo">Spesa per trasporto e gestione contatore</div>
 											</div>
-											<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_spesaTrasporto" class="val">1,00</span></div>
+											<div class="pure-u-5-24 valore-in-euro"><div class="inner"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_spesaTrasporto" class="val">1,00</span></div></div>
 										</div>
 										<div class="pure-g voce-legenda spesaOneri">
 											<div class="pure-u-19-24 etichetta">
 												<div class="rettangolo back-color368C"></div>
 												<div class="testo">Spesa per oneri di sistema</div>
 											</div>
-											<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_spesaOneri" class="val">1,00</span></div>
+											<div class="pure-u-5-24 valore-in-euro"><div class="inner"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_spesaOneri" class="val">1,00</span></div></div>
 										</div>
 										<div class="pure-g voce-legenda altrePartite">
 											<div class="pure-u-19-24 etichetta">
 												<div class="rettangolo back-color7751C"></div>
 												<div class="testo">Altre partite</div>
 											</div>
-											<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_altrePartite" class="val">1,00</span></div>
+											<div class="pure-u-5-24 valore-in-euro"><div class="inner"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_altrePartite" class="val">1,00</span></div></div>
 										</div>
 										<div class="pure-g voce-legenda altrePartite">
 											<div class="pure-u-19-24 etichetta">
 												<div class="rettangolo back-color142C"></div>
 												<div class="testo">Bonus sociale</div>
 											</div>
-											<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_bonusSociale" class="val">1,00</span></div>
+											<div class="pure-u-5-24 valore-in-euro"><div class="inner"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_bonusSociale" class="val">1,00</span></div></div>
 										</div>
 										<div class="pure-g voce-legenda imposte">
 											<div class="pure-u-19-24 etichetta">
 												<div class="rettangolo back-color5517C"></div>
 												<div class="testo">Imposte</div>
 											</div>
-											<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_imposte" class="val">1,00</span></div>
+											<div class="pure-u-5-24 valore-in-euro"><div class="inner"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_imposte" class="val">1,00</span></div></div>
 										</div>
 										<div class="pure-g voce-legenda imposte mb0">
 											<div class="pure-u-19-24 etichetta">
 												<div class="rettangolo back-color100K"></div>
 												<div class="testo">IVA</div>
 											</div>
-											<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_iva" class="val">1,00</span></div>
+											<div class="pure-u-5-24 valore-in-euro"><div class="inner"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_iva" class="val">1,00</span></div></div>
 										</div>
 									</div>
-									<div class="separatore mt2 mb2" style="border-top: 1px solid #aaaaaa;"></div>
+									<div class="separatore" style="border-top: 1px solid #aaaaaa;"></div>
 									<div class="totale-bolletta font7pt">
 										<div class="content">
 											<div class="pure-g voce-importi">
@@ -557,13 +557,13 @@ LEGACY
 				</div>
 			</div>
 			<!-- DX: CONTATTI UTILI, AUTOLETTURA, EMERGENZA GUASTI, CONSULENTE DEDICATO -->
-			<div class="pure-u-8-24 colonna-destra">
+			<div class="pure-u-9-24 colonna-destra">
 				<div class="colonna-destra-inner">
 					<!-- *** contatti, autolettura, guasti -->
 					<div id="contattiEAutoletturaEGuasti">
 						<!-- *** contatti -->
 						<div class="sezione contatti">
-							<div class="header font12pt color7711C">CONTATTI UTILI</div>
+							<div class="header font12pt color7711C fontDinBlack">CONTATTI UTILI</div>
 							<div class="corpo font7pt">
 								<div class="dato-riga-singola">
 									<div class="etichetta">NUMERO VERDE DA RETE FISSA</div>
@@ -599,7 +599,7 @@ LEGACY
 						</div>
 						<!-- *** autolettura -->
 						<div class="sezione autolettura">
-							<div class="header font12pt color7711C">AUTOLETTURA</div>
+							<div class="header font12pt color7711C fontDinBlack">AUTOLETTURA</div>
 							<div class="corpo font7pt">
 								<div class="elenco-canali">
 									<div class="intro" style="margin-bottom: 1px;">Potrai comunicare l'autolettura della tua fornitura di gas dal 
@@ -610,27 +610,26 @@ LEGACY
 									<div class="canale">
 										<div class="icona-canale"><i class="icofont-web"></i></div>
 										<div class="info-canale">
-											<span class="nome">Sito web:</span> <strong><span data-data_type="single" data-first_node="AziendaInternet" data-path_type="xpath" data-path_data="">www.omniaenergia.it</span></strong>
-											accedendo alla tua area personale
+											<span class="nome"><strong>Sito web</strong>:</span> <span data-data_type="single" data-first_node="AziendaInternet" data-path_type="xpath" data-path_data="">www.omniaenergia.it</span> accedendo alla tua area personale
 										</div>
 									</div>
 									<div class="canale">
 										<div class="icona-canale"><i class="icofont-whatsapp"></i></div>
 										<div class="info-canale">
-											<span class="nome">Whatsapp:</span> <strong><span data-data_type="single" data-first_node="AziendaTelAutolettura" data-path_type="xpath" data-path_data="">XXX XX XX XXX</span></strong>
+											<span class="nome"><strong>Whatsapp:</strong></span> <span data-data_type="single" data-first_node="AziendaTelAutolettura" data-path_type="xpath" data-path_data="">XXX XX XX XXX</span>
 											indicando il PDR <span data-data_type="single" data-first_node="FornituraCodicePDP" data-path_type="xpath" data-path_data="">XXX XXX XXX</span> e allegando una foto del contatore
 										</div>
 									</div>
 									<div class="canale">
 										<div class="icona-canale"><i class="icofont-phone-circle"></i></div>
 										<div class="info-canale">
-											<span class="nome">Numero verde:</span> <span class=""><strong><span data-data_type="single" data-first_node="AziendaTelAutolettura" data-path_type="xpath" data-path_data="">XXX XX XX XX</span></strong> </span>
+											<span class="nome"><strong>Numero verde:</strong></span> <span data-data_type="single" data-first_node="AziendaTelAutolettura" data-path_type="xpath" data-path_data="">XXX XX XX XX</span>
 										</div>
 									</div>
 									<div class="canale">
 										<div class="icona-canale"><i class="icofont-ui-touch-phone"></i></div>
 										<div class="info-canale">
-											<span class="nome">App:</span> <strong><span class="valore">Omnia Energia</span></strong>
+											<span class="nome"><strong>App:</strong></span> <span class="valore">Omnia Energia</span>
 										</div>
 									</div>
 								</div>
@@ -643,7 +642,7 @@ LEGACY
 						</div>
 						<!-- *** guasti -->
 						<div class="sezione guasti">
-							<div class="header font12pt color7711C">EMERGENZA GUASTI</div>
+							<div class="header font12pt color7711C fontDinBlack">EMERGENZA GUASTI</div>
 							<div class="corpo font7pt">
 								<div class="contatto">
 									<span class="etichetta">NUMERO VERDE</span>
@@ -661,7 +660,7 @@ LEGACY
 									<img src="images/icona_consulente.png">
 								</div>
 								<div class="testo">
-									<div class="header font12pt">CONSULENTE DEDICATO</div>
+									<div class="header font14pt fontDinBlack">CONSULENTE DEDICATO</div>
 									<div class="corpo font7pt">
 										Se c'è qualcosa che non ti è chiaro sulla bolletta o desideri informazioni, contatta il tuo Consulente per l'Energia
 										<strong>Alessandro Scavo</strong> a te dedicato per rispondere a tutte le tue domande.
@@ -713,19 +712,19 @@ LEGACY
 			<div class="inner">
 				<div class="header-con-riga-centrale">
 					<div class="pure-g">
-						<div class="pure-u-14-24 testo font10pt color7711C">QUADRO LETTURE E CONSUMI PERIODO DI FATTURAZIONE</div>
-						<div class="pure-u-10-24"><div class="riga-centrale" style="margin-left: -18px;"></div></div>
+						<div class="pure-u-11-24 testo font10pt color7711C fontDinBlack">QUADRO LETTURE E CONSUMI PERIODO DI FATTURAZIONE</div>
+						<div class="pure-u-13-24"><div class="riga-centrale"></div></div>
 					</div>
 					<div class="consumi-fatturati">
 						<div class="valore-consumi-fatturati">
-							<span class="etichetta font12pt color7711C">CONSUMI FATTURATI: </span>
+							<span class="etichetta font12pt color7711C fontDinBlack">CONSUMI FATTURATI: </span>
 							<span class="valore font12pt">
 								<!-- dal momento che nella tabella seguente, ovvero #tabellaQuadroLettureEConsumi, possono comparire più di 2 righe,
 				    				il valore del tag seguente viene sostituito con la somma delle ultme 2 righe del tag '/TotaleParziale';
 				    				tale sostituzione viene fatta in RIEPILOGO QUANTITA' E COSTI MEDI FATTURATI e 
 				    				il valore calcolato è anche quello che compare appunto in 'Consumi fatturati: ' -->
 				    			<!-- <span data-data_type="single" data-first_node="ConsumiBollettaEle" data-path_type="xpath" data-path_data="ConsumoELetture[Descrizione = &quot;Energia attiva&quot;]/Totale">En.Att.Tot.</span> -->
-								<span id="totaleGasFatturato">9999,99</span> Smc
+								<span id="totaleGasFatturato" class="font12pt fontDinBlack">9999,99</span> Smc
 							</span> 
 						</div>
 					</div>
@@ -743,20 +742,20 @@ LEGACY
 							      	<tbody>
 									    <tr>
 									    	<td class="header no-back"></td>
-									    	<td class="header" colspan="2"><span>LETTURA INIZIALE</span></td>
-									        <td class="header" colspan="2"><span>LETTURA FINALE</span></td>
-									        <td class="header last" colspan="4"><span>CONSUMO FATTURATO (Smc)</span></td>
+									    	<td class="header" colspan="2"><span><strong>LETTURA INIZIALE</strong></span></td>
+									        <td class="header" colspan="2"><span><strong>LETTURA FINALE</strong></span></td>
+									        <td class="header last" colspan="4"><span><strong>CONSUMO FATTURATO (Smc)</strong></span></td>
 									    </tr>
 									    <tr>
-									    	<td class="header grigio-scuro"><span>Tipo Lettura</span></td>
-									    	<td class="header"><span>Data</span></td>
-									    	<td class="header"><span>Smc</span></td>
-									        <td class="header"><span>Data</span></td>
-									        <td class="header"><span>Smc</span></td>
-									        <td class="header grigio-scuro"><span>Consumo rilevato (mc)</span></td>
-									        <td class="header grigio-scuro"><span>Coeff. C</span></td>
-									        <td class="header grigio-scuro"><span>Tipo consumo</span></td>
-									        <td class="header grigio-scuro"><span>Consumo fatturato (Smc)</span></td>
+									    	<td class="header grigio-scuro"><span><strong>Tipo Lettura</strong></span></td>
+									    	<td class="header"><span><strong>Data</strong></span></td>
+									    	<td class="header"><span><strong>Smc</strong></span></td>
+									        <td class="header"><span><strong>Data</strong></span></td>
+									        <td class="header"><span><strong>Smc</strong></span></td>
+									        <td class="header grigio-scuro"><span><strong>Consumo rilevato (mc)</strong></span></td>
+									        <td class="header grigio-scuro"><span><strong>Coeff. C</strong></span></td>
+									        <td class="header grigio-scuro"><span><strong>Tipo consumo</strong></span></td>
+									        <td class="header grigio-scuro"><span><strong>Consumo fatturato (Smc)</strong></span></td>
 									    </tr>
 									    <tr class="_data_ConsumoELetture" data-data_type="simple_loop" data-first_node="ConsumiBolletta" data-path_type="xpath" data-path_data="/ConsumoELetture/DettagliConsumo/Consumo">
 								    		<td class="grigio-scuro"><span class="_data_TipoLettura" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TipoLettura">Stimata</span></td>
@@ -1530,14 +1529,6 @@ LEGACY
 			<div class="content">
 				<div class="header font10pt color7711C">ANNOTAZIONI E ULTERIORI INFORMAZIONI PREVISTE DALL'ARERA</div>
 				<div class="dati font6pt">
-					<div class="titolo"><strong>Accedi alla tua area riservata</strong></div>
-					<div class="body">
-						<div>Puoi accedere alla tua area personale online per la gestione della tua fornitura tramite il sito www.omniaenergia.it nella sezione Area Clienti digitando username e password riportati di seguito:</div> 
-						<div class="pure-g">
-							<div class="pure-u-6-24">Username: <span>CLI9353 ??</span></div>
-							<div class="pure-u-18-24">Password: <span>pwd******</span></div>
-						</div>
-					</div>
 					<div class="titolo"><strong>Pagamenti sospesi e rateizzazioni</strong></div>
 					<div class="body">
 						<div>Nei casi indicati all'art 12-bis TIVG - tra cui, a titolo esemplificativo e non esaustivo, nel caso in cui, a seguito di malfunzionamento del gruppo di misura per causa non imputabile al cliente, venga richiesto il pagamento di corrispettivi per consumi non registrati dal gruppo di misura, o, con gruppo di misura accessibile a cui a causa di una o più mancate letture, venga richiesto il pagamento di importi ricalcolati sulla base di consumi effettivi - il cliente può richiedere la rateizzazione degli importi dovuti, entro i 10 giorni successivi dal termine fissato per il pagamento della bolletta, chiamando il Numero Verde gratuito 800 98 44 55 dalle 09:15 alle 13:00 e dalle 14:30 alle 18:00. </div>

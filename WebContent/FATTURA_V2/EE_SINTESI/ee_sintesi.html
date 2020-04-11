@@ -155,7 +155,7 @@
 
 		<!-- CLIENTE-BOLLETTA
 		########################################################################################### -->
-		<div class="pure-g mb2">
+		<div class="pure-g">
 			<!-- INFO GENERALI BOLLETTA -->
 			<div class="pure-u-11-24">
 				<div id="datiClienteEBolletta">
@@ -163,15 +163,15 @@
 						<div class="pure-g">
 							<div class="pure-u-11-24 colonna-sinistra">
 								<div class="colonna-sinistra-inner">
-									<div class="header-grassetto font7pt">N° CLIENTE</div>
+									<div class="header-grassetto font8pt fontDinBlack">N° CLIENTE</div>
 									<div class="valore-tag codice-cliente">
-										<span class="font12pt color1805C" data-data_type="single" data-first_node="ClienteFinaleCodice" data-path_type="xpath" data-path_data="">XXX XXX XXX</span>
+										<span class="font12pt fontDinBlack color1805C" data-data_type="single" data-first_node="ClienteFinaleCodice" data-path_type="xpath" data-path_data="">XXX XXX XXX</span>
 									</div>
-									<div class="header-grassetto font7pt">CODICE POD</div>
+									<div class="header-grassetto font8pt fontDinBlack">CODICE POD</div>
 									<div class="valore-tag">
 										<span data-data_type="single" data-first_node="FornituraCodicePDP" data-path_type="xpath" data-path_data="">XXX XXX XXX</span>
 									</div>
-									<div class="header-grassetto font7pt">CODICE FISCALE</div>
+									<div class="header-grassetto font8pt fontDinBlack">CODICE FISCALE</div>
 									<div class="valore-tag">
 										<span id="codiceFiscaleOrPartitaIvaContainer">XXX XXX XXXX XXX XXXX</span>
 										<span id="codiceFiscale" style="display: none;" data-data_type="single" data-first_node="ClienteFinaleCodiceFiscale" data-path_type="xpath" data-path_data=""></span>
@@ -194,7 +194,7 @@
 							</div>
 							<div class="pure-u-13-24 colonna-destra">
 								<div class="colonna-destra-inner">
-									<div class="header-grassetto font7pt">DATI BOLLETTA</div>	
+									<div class="header-grassetto font8pt fontDinBlack">DATI BOLLETTA</div>	
 									<div class="riga">
 										<span class="etichetta">Fornitura</span>
 										<span class="valore-tag">TEST</span>
@@ -209,7 +209,7 @@
 									</div>
 									<div style="border-top: 1px solid #777777"></div>
 									<div class="riga periodo color1805C">
-										<span class="etichetta">Periodo</span>
+										<span class="etichetta fontDinBlack">Periodo</span>
 										<span class="valore-tag">
 											<!-- potrebbe essere il tag PeriodoCompetenza -->
 											<span data-data_type="single" data-first_node="PeriodoFatturazione" data-path_type="xpath" data-path_data="">29/09/2099-29/08/2099</span>
@@ -257,8 +257,8 @@
 			<div class="pure-u-7-24">
 				<div id="qrCodeEIdentificativo">
 					<div class="content">
-						<div class="qr-code">
-							<span data-data_type="single" data-first_node="SpedizioneDataMatrix" data-path_type="xpath" data-path_data=""></span>
+						<div class="qr-code-box">
+							<span class="qr-code" data-data_type="single" data-first_node="SpedizioneDataMatrix" data-path_type="xpath" data-path_data=""></span>
 							<!-- <img src="images/qrcode.png"> -->
 						</div>
 						<div class="identificativo">
@@ -290,35 +290,35 @@
 		<div id="corpoPagina1Con2Colonne" class="pure-g">
 			<!-- SX: DATI FORNITURA, TOTALE SPESA E GRAZIE, GRAFICO A TORTA -->
 			<!-- -------------------------------------------------- -->
-			<div class="pure-u-16-24 colonna-sinistra">
+			<div class="pure-u-15-24 colonna-sinistra">
 				<div class="colonna-sinistra-inner">
 					<!-- *** dati fornitura -->
-					<div class="dati-fornitura font6pt">
+					<div class="dati-fornitura">
 						<div class="content">
-							<div class="header font7pt">DATI FORNITURA</div>
+							<div class="header font7pt fontDinBlack">DATI FORNITURA</div>
 							<div class="pure-g">
 								<div class="pure-u-12-24">
-									<div >
+									<div class="font6pt">
 										<div class="dato-riga-doppia">
-											<div class="etichetta">Forniamo energia elettrica in</div>
+											<div class="etichetta ">Forniamo energia elettrica in</div>
 											<div class="valore"><span data-data_type="single" data-first_node="ClienteFinaleIndirizzo" data-path_type="xpath" data-path_data="">Via Monte Curcio 14 87040 Castrolibero CS</span></div>
 										</div>
 										<div class="dato-riga-singola">
-											<div class="etichetta">Denominazione contratto (offerta)</div>
+											<div class="etichetta ">Denominazione contratto (offerta)</div>
 											<div class="valore"><span data-data_type="single" data-first_node="Offerta" data-path_type="xpath" data-path_data="">Sempre Con Te</span></div>
 										</div>
 										<div class="dato-riga-singola">
-											<div class="etichetta">Tipologia cliente</div>
+											<div class="etichetta ">Tipologia cliente</div>
 											<div class="valore"><span data-data_type="single" data-first_node="TipoUso" data-path_type="xpath" data-path_data="">Domestico residente</span></div>
 										</div>
 										<div class="dato-riga-doppia">
-											<div class="etichetta">Tipologia pagamento</div>
+											<div class="etichetta ">Tipologia pagamento</div>
 											<div class="valore"><span data-data_type="single" data-first_node="ComunicazioniBolletta" data-path_type="xpath" data-path_data="Comunicazioni[Codice = &quot;P&quot;]/Testo">Addebito nel giorno esatto della scadenza su conto corrente bancario: Banca Carime S.p.a.</span></div>
 										</div>
 									</div>
 								</div>
 								<div class="pure-u-12-24">
-									<div >
+									<div class="font6pt">
 										<div class="dato-riga-singola">
 											<div class="etichetta">Data di attivazione della fornitura</div>
 											<div class="valore"><span data-data_type="single" data-first_node="DataAttivazioneFornitura" data-path_type="xpath" data-path_data="">TEST</span></div>
@@ -372,18 +372,18 @@
 							</div>
 						</div>
 					</div>
-					<div class="separatore mt1 mb1" style="border-top: 1px solid #b6262f;"></div>
+					<div class="separatore" style="border-top: 1px solid #b6262f;"></div>
 					<!-- *** totale spesa e grazie -->
 					<div class="totale-spesa-e-grazie">
 						<div class="content">
 							<div class="pure-g">				
 								<div class="pure-u-12-24">
 									<div class="totale-spesa">
-										<div class="header font12pt color1805C">TOTALE SPESA</div>
-										<div class="cifra-da-pagare font15pt"><span class="simbolo-euro">€</span><span data-data_type="single" data-first_node="TotaleDaPagare" data-path_type="xpath" data-path_data="">123,12</span></div>			
+										<div class="header font12pt fontDinBlack color1805C">TOTALE SPESA</div>
+										<div class="cifra-da-pagare font17pt"><span class="simbolo-euro fontDinBlack">€</span><span class="fontDinBlack" data-data_type="single" data-first_node="TotaleDaPagare" data-path_type="xpath" data-path_data="">123,12</span></div>			
 									</div>
 									<div class="da-saldare-entro font9pt">
-										<span class="etichetta">DA SALDARE ENTRO</span>
+										<span class="etichetta fontDinBlack">DA SALDARE ENTRO</span>
 										<span class="valore color1805C"><span class="data" data-data_type="single" data-first_node="DataScadenza" data-path_type="xpath" data-path_data="">XX/XX/XXXX</span></span>
 									</div>
 								</div>
@@ -393,8 +393,8 @@
 								<div class="pure-u-11-24">
 									<div>
 										<div id="messaggioGraziePerBolletteTuttePagate" class="contenuto">
-											<div class="titolo color1805C"><strong>Grazie!</strong></div>
-											<div class="messaggio">Ti comunichiamo che, alla data attuale, le tue precedenti bollette risultano tutte pagate</div>
+											<div class="titolo color1805C"><strong class="fontDinBlack">Grazie!</strong></div>
+											<div class="messaggio font7pt">Ti comunichiamo che, alla data attuale, le tue precedenti bollette risultano tutte pagate</div>
 										</div>
 										<div id="messaggioAttenzionePerBolletteNonTuttePagate" class="contenuto">
 											<div class="titolo color1805C"><strong>Attenzione!</strong></div>
@@ -405,7 +405,7 @@
 							</div>
 						</div>				
 					</div>
-					<div class="separatore mt1 mb1" style="border-top: 1px solid #b6262f;"></div>
+					<div class="separatore" style="border-top: 1px solid #b6262f;"></div>
 					<!-- *** grafico a torta (sintesi degli importi) -->
 					<div class="sintesi-importi">
 						<div class="content">
@@ -413,7 +413,7 @@
 								<!-- grafico a torta -->	
 								<div class="pure-u-10-24">
 									<div class="grafico-a-torta">
-										<div class="titolo font10pt color1805C">SINTESI DEGLI IMPORTI</div>
+										<div class="titolo font10pt color1805C fontDinBlack">SINTESI DEGLI IMPORTI</div>
 										<div class="contenitore-grafico">
 											<div id="graficoSintesiImporti" class="ct-chart ct-perfect-fourth"></div>
 										</div>
@@ -427,52 +427,52 @@
 												<div class="rettangolo back-color1805C"></div>
 												<div class="testo">Spesa per la materia energia</div>
 											</div>
-											<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_spesaMateriaEnergia" class="val">99,99</span></div>
+											<div class="pure-u-5-24 valore-in-euro"><div class="inner"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_spesaMateriaEnergia" class="val">99,99</span></div></div>
 										</div>
 										<div class="pure-g voce-legenda spesaTrasporto">
 											<div class="pure-u-19-24 etichetta">
 												<div class="rettangolo back-color158C"></div>										
 												<div class="testo">Spesa per trasporto e gestione contatore</div>
 											</div>
-											<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_spesaTrasporto" class="val">99,99</span></div>
+											<div class="pure-u-5-24 valore-in-euro"><div class="inner"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_spesaTrasporto" class="val">99,99</span></div></div>
 										</div>
 										<div class="pure-g voce-legenda spesaOneri">
 											<div class="pure-u-19-24 etichetta">
 												<div class="rettangolo back-color368C"></div>
 												<div class="testo">Spesa per oneri di sistema</div>
 											</div>
-											<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_spesaOneri" class="val">99,99</span></div>
+											<div class="pure-u-5-24 valore-in-euro"><div class="inner"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_spesaOneri" class="val">99,99</span></div></div>
 										</div>
 										<div class="pure-g voce-legenda altrePartite">
 											<div class="pure-u-19-24 etichetta">
 												<div class="rettangolo back-color7751C"></div>
 												<div class="testo">Altre partite</div>
 											</div>
-											<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_altrePartite" class="val">99,99</span></div>
+											<div class="pure-u-5-24 valore-in-euro"><div class="inner"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_altrePartite" class="val">99,99</span></div></div>
 										</div>
 										<div class="pure-g voce-legenda altrePartite">
 											<div class="pure-u-19-24 etichetta">
 												<div class="rettangolo back-color142C"></div>
 												<div class="testo">Bonus sociale</div>
 											</div>
-											<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_bonusSociale" class="val">99,99</span></div>
+											<div class="pure-u-5-24 valore-in-euro"><div class="inner"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_bonusSociale" class="val">99,99</span></div></div>
 										</div>
 										<div class="pure-g voce-legenda imposte">
 											<div class="pure-u-19-24 etichetta">
 												<div class="rettangolo back-color5517C"></div>
 												<div class="testo">Imposte</div>
 											</div>
-											<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_imposte" class="val">99,99</span></div>
+											<div class="pure-u-5-24 valore-in-euro"><div class="inner"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_imposte" class="val">99,99</span></div></div>
 										</div>
 										<div class="pure-g voce-legenda imposte mb0">
 											<div class="pure-u-19-24 etichetta">
 												<div class="rettangolo back-color100K"></div>
 												<div class="testo">IVA</div>
 											</div>
-											<div class="pure-u-5-24 valore-in-euro"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_iva" class="val">99,99</span></div>
+											<div class="pure-u-5-24 valore-in-euro"><div class="inner"><span class="simbolo-euro">€ </span><span id="valoreSintesiImporti_iva" class="val">99,99</span></div></div>
 										</div>
 									</div>
-									<div class="separatore mt1 mb1" style="border-top: 1px solid #aaaaaa;"></div>
+									<div class="separatore" style="border-top: 1px solid #aaaaaa;"></div>
 									<div class="totale-bolletta font6pt">
 										<div class="content">
 											<div class="pure-g voce-importi">
@@ -502,7 +502,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="separatore mt1 mb1" style="border-top: 1px solid #aaaaaa;"></div>
+					<div class="separatore" style="border-top: 1px solid #aaaaaa;"></div>
 					<!-- *** riepilogo IVA -->
 					<div class="riepilogo-iva font6pt">
 						<div class="pure-g">
@@ -534,7 +534,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="separatore mt1 mb1" style="border-top: 1px solid #aaaaaa;"></div>
+					<div class="separatore" style="border-top: 1px solid #aaaaaa;"></div>
 					<!-- ****** js - grafico e valori calcolati ****** -->
 					<script type="text/javascript">
 					// *** GRAFICO A TORTA
@@ -641,13 +641,13 @@
 				</div>
 			</div>
 			<!-- DX: CONTATTI UTILI, AUTOLETTURA, EMERGENZA GUASTI, CONSULENTE DEDICATO -->
-			<div class="pure-u-8-24 colonna-destra">
+			<div class="pure-u-9-24 colonna-destra">
 				<div class="colonna-destra-inner">
 					<!-- *** contatti, autolettura, guasti -->
 					<div id="contattiEAutoletturaEGuasti">
 						<!-- *** contatti -->
 						<div class="sezione contatti">
-							<div class="header font12pt color1805C">CONTATTI UTILI</div>
+							<div class="header font12pt color1805C fontDinBlack">CONTATTI UTILI</div>
 							<div class="corpo font7pt">
 								<div class="dato-riga-singola">
 									<div class="etichetta">NUMERO VERDE</div>
@@ -679,7 +679,7 @@
 						</div>
 						<!-- *** autolettura -->
 						<div class="sezione autolettura" style="margin-top: 5px;">
-							<div class="header font12pt color1805C">AUTOLETTURA</div>
+							<div class="header font12pt color1805C fontDinBlack">AUTOLETTURA</div>
 							<div class="corpo font7pt">
 								<div class="elenco-canali">
 									<div class="intro">Potrai comunicare l'autolettura della tua fornitura di energia elettrica dal 
@@ -690,33 +690,32 @@
 									<div class="canale">
 										<!-- <div class="icona-canale"><i class="icofont-web"></i></div> -->
 										<div class="info-canale">
-											<span class="nome">Sito web:</span>
-											<strong><span data-data_type="single" data-first_node="AziendaInternet" data-path_type="xpath" data-path_data="">www.omniaenergia.it</span></strong>
-											accedendo alla tua area personale
+											<span class="nome"><strong>Sito web:</strong></span>
+											<span data-data_type="single" data-first_node="AziendaInternet" data-path_type="xpath" data-path_data="">www.omniaenergia.it</span> accedendo alla tua area personale
 										</div>
 									</div>
 									<div class="canale">
 										<!-- <div class="icona-canale"><i class="icofont-whatsapp"></i></div> -->
 										<div class="info-canale">
-											<span class="nome">Whatsapp:</span> invia al <strong><span>346 86 05 478</span></strong> una foto del contatore e il POD		
+											<span class="nome"><strong>Whatsapp:</strong></span> invia al <span>346 86 05 478</span> una foto del contatore e il POD		
 										</div>
 									</div>
 									<div class="canale">
 										<!-- <div class="icona-canale"><i class="icofont-web"></i></div> -->
 										<div class="info-canale">
-											<span class="nome">Email</span> <strong><span class="valore">autolettura@omniaenergia.it</span></strong>
+											<span class="nome"><strong>Email</strong></span> <span class="valore">autolettura@omniaenergia.it</span>
 										</div>
 									</div>
 									<div class="canale">
 										<!-- <div class="icona-canale"><i class="icofont-phone-circle"></i></div> -->
 										<div class="info-canale">
-											<span class="nome">Numero verde:</span> <strong><span>800 98 44 55</span></strong>
+											<span class="nome"><strong>Numero verde:</strong></span> <span>800 98 44 55</span>
 										</div>
 									</div>
 									<div class="canale">
 										<!-- <div class="icona-canale"><i class="icofont-ui-touch-phone"></i></div> -->
 										<div class="info-canale">
-											<span class="etichetta">App</span> <strong><span class="valore">Omnia Energia</span></strong>
+											<span class="etichetta"><strong>App</strong></span> <span class="valore">Omnia Energia</span>
 										</div>
 									</div>
 								</div>
@@ -764,7 +763,7 @@
 						</div> -->
 						<!-- *** guasti -->
 						<div class="sezione guasti" style="margin-top: 5px;">
-							<div class="header font12pt color1805C">EMERGENZA GUASTI</div>
+							<div class="header font12pt color1805C fontDinBlack">EMERGENZA GUASTI</div>
 							<div class="corpo font7pt">
 								<div class="contatto">
 									<span class="etichetta">NUMERO VERDE</span>
@@ -782,7 +781,7 @@
 									<img src="images/icona_consulente.png">
 								</div>
 								<div class="testo">
-									<div class="header font12pt">CONSULENTE DEDICATO</div>
+									<div class="header font14pt fontDinBlack">CONSULENTE DEDICATO</div>
 									<div class="corpo font7pt">
 										Se c'è qualcosa che non ti è chiaro sulla bolletta o desideri informazioni, contatta il tuo Consulente per l'Energia
 										<strong>Alessandro Scavo</strong> a te dedicato per rispondere a tutte le tue domande.
@@ -834,19 +833,19 @@
 			<div class="inner">
 				<div class="header-con-riga-centrale">
 					<div class="pure-g">
-						<div class="pure-u-14-24 testo font10pt color1805C">QUADRO LETTURE E CONSUMI PERIODO DI FATTURAZIONE</div>
-						<div class="pure-u-10-24"><div class="riga-centrale" style="margin-left: -18px;"></div></div>
+						<div class="pure-u-11-24 testo font10pt color1805C fontDinBlack">QUADRO LETTURE E CONSUMI PERIODO DI FATTURAZIONE</div>
+						<div class="pure-u-13-24"><div class="riga-centrale"></div></div>
 					</div>
 					<div class="consumi-fatturati">
 						<div class="valore-consumi-fatturati">
-							<span class="etichetta font12pt color1805C">CONSUMI FATTURATI: </span>
+							<span class="etichetta font12pt color1805C fontDinBlack">CONSUMI FATTURATI: </span>
 							<span class="valore font12pt">
 								<!-- dal momento che nella tabella seguente, ovvero #tabellaQuadroLettureEConsumi, possono comparire più di 2 righe,
 				    				il valore del tag seguente viene sostituito con la somma delle ultme 2 righe del tag '/TotaleParziale';
 				    				tale sostituzione viene fatta in RIEPILOGO QUANTITA' E COSTI MEDI FATTURATI e 
 				    				il valore calcolato è anche quello che compare appunto in 'Consumi fatturati: ' -->
 				    			<!-- <span data-data_type="single" data-first_node="ConsumiBollettaEle" data-path_type="xpath" data-path_data="ConsumoELetture[Descrizione = &quot;Energia attiva&quot;]/Totale">En.Att.Tot.</span> -->
-								<span id="totaleEnergiaAttivaFatturata">9999,99</span> kWh
+								<span id="totaleEnergiaAttivaFatturata" class="font12pt fontDinBlack">9999,99</span> kWh
 							</span> 
 						</div>
 					</div>
@@ -1755,14 +1754,6 @@
 			<div class="content">
 				<div class="header font10pt color1805C">ANNOTAZIONI E ULTERIORI INFORMAZIONI PREVISTE DALL'ARERA</div>
 				<div class="dati font6pt">
-					<div class="titolo"><strong>Accedi alla tua area riservata</strong></div>
-					<div class="body">
-						<div>Puoi accedere alla tua area personale online per la gestione della tua fornitura tramite il sito www.omniaenergia.it nella sezione Area Clienti digitando username e password riportati di seguito:</div> 
-						<div class="pure-g">
-							<div class="pure-u-6-24">Username: <span>CLI9353 ??</span></div>
-							<div class="pure-u-18-24">Password: <span>pwd******</span></div>
-						</div>
-					</div>
 					<div class="titolo"><strong>Pagamenti sospesi e rateizzazioni</strong></div>
 					<div class="body">
 						<div>Nei casi indicati agli artt. 13-bis TIV - tra cui a titolo esemplificativo e non esaustivo, nel caso in cui la bolletta contiene ricalcoli, o , a seguito di malfunzionamento del gruppo di misura per causa non imputabile al cliente, venga richiesto il pagamento di corrispettivi per consumi non registrati dal gruppo di misura per un importo superiore a 1,5 volte dell’addebito medio delle bollette emesse per i clienti domestici e di 2,5 volte per i clienti altri usi - il cliente può richiedere la rateizzazione degli importi dovuti, entro i 10 giorni successivi dal termine fissato per il pagamento della bolletta, chiamando il Numero Verde gratuito 800 98 44 55 dalle 09:15 alle 13:00 e dalle 14:30 alle 18:00.</div>

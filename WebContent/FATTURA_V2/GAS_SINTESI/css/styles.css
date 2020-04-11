@@ -1,13 +1,40 @@
-/*
+@font-face {
+  	font-family: dinRegular;
+  	src: url(fonts/dinRegular.ttf);
+}
+@font-face {
+  	font-family: dinMedium;
+  	src: url(fonts/dinMedium.ttf);
+}
+@font-face {
+  	font-family: dinBlack;
+  	src: url(fonts/dinBlack.ttf);
+}
 @font-face {
   font-family: SourceSansPro;
-  src: url(SourceSansPro-Regular.ttf);
+  src: url(fonts/SourceSansPro-Regular.ttf);
 }
- */
 
-html, body {
-	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+* {
+	font-family: dinRegular;
 	font-size: 8pt;
+	line-height: 1;
+}
+
+html, body, div, span, table, tbody, thead, tr, td, th, strong {
+	font-size: inherit;
+}
+
+.qr-code-box,
+.qr-code-box > .qr-code {
+	font-family: "IDAutomationDMatrix" !important;
+	font-size: 8px !important;
+	line-height: 1 !important;
+	max-width: 22mm !important;
+	max-height: 10mm !important;
+	display:inline-block;
+	min-width: 22mm !important;
+	min-height: 10mm !important;
 }
 
 page[size="A4"] {
@@ -23,16 +50,35 @@ page[size="A4"] {
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
 }
 page[size="A4"] .sub.pagina-inner {
-	height: 1048px;
+	height: 1064px;
 }
 @page {
 	size: A4;
 	margin: 0;
 }
 
+/* FONT FAMILIES */
+	.fontDinRegular {
+		font-family: dinRegular !important;
+	}
+	.fontDinMedium {
+		font-family: dinMedium !important;
+	}
+	.fontDinBlack {
+		font-family: dinBlack !important;
+	}
 /* FONT SIZES */
+	.font17pt {
+		font-size: 17pt!important;
+	}
 	.font15pt {
 		font-size: 15pt!important;
+	}
+	.font14pt {
+		font-size: 14pt!important;
+	}
+	.font13pt {
+		font-size: 13pt!important;
 	}
 	.font12pt {
 		font-size: 12pt!important;
@@ -108,30 +154,12 @@ table.custom tbody tr td.no-back {
 	background: none;
 }
 
-.mt0 {
-	margin-top: 0!important;
-}
-.mt1 {
-	margin-top: 0.425rem!important;
-}
-.mt2 {
-	margin-top: 0.85rem!important;	
-}
-.mb0 {
-	margin-bottom: 0!important;
-}
-.mb1 {
-	margin-bottom: 0.425rem!important;	
-}
-.mb2 {
-	margin-bottom: 0.85rem!important;
-}
-.mb3 {
-	margin-bottom: 1.45rem!important;
+.separatore {
+	margin: 6px 0;
 }
 
 #headerLogo {
-	margin: 0 -20px;	
+	margin: 0 -20px 20px;
 }
 #headerLogo .logo img {
 	/* width: 190px;
@@ -212,21 +240,12 @@ table.custom tbody tr td.no-back {
 }
 .header-con-riga-centrale .riga-centrale {
 	border-top: 1px solid #777777;
-    margin-top: 10px;
+    margin-top: 7px;
 }
 
-.qr-code {
-	font-family: "IDAutomationDMatrix";
-	font-size: 8px;
-	line-height: 1;
-	max-width: 22mm !important;
-	max-height: 10mm !important;
-	display:inline-block;
-	min-width: 22mm !important;
-	min-height: 10mm !important;
+#datiClienteEBolletta {
+	margin-bottom: 13px;
 }
-
-
 #datiClienteEBolletta .content {
     border: 1px solid #0097a9;
     padding: 8px;
@@ -236,9 +255,10 @@ table.custom tbody tr td.no-back {
 }
 #datiClienteEBolletta .content .colonna-sinistra .header-grassetto {
 	font-weight: 800;
+	margin-bottom: 2px;
 }
 #datiClienteEBolletta .content .colonna-sinistra .valore-tag {
-	margin-bottom: 2px;
+	margin-bottom: 3px;
 }
 #datiClienteEBolletta .content .colonna-sinistra .valore-tag.codice-cliente {
 	font-weight: 800;
@@ -290,10 +310,11 @@ table.custom tbody tr td.no-back {
 
 
 #corpoPagina1Con2Colonne .colonna-sinistra .colonna-sinistra-inner {
-	padding-right: 0.85rem;
+	padding-right: 12px;
 }
 #corpoPagina1Con2Colonne .colonna-destra .colonna-destra-inner {
 	border-left: 1px solid #aaaaaa;
+	padding-right: 20px;
 }
 /* *** COLONNA SX*/
 	/* *** dati fornitura */
@@ -302,13 +323,21 @@ table.custom tbody tr td.no-back {
 	}
 	#corpoPagina1Con2Colonne .dati-fornitura .content .header {
 		font-weight: 800;
+	    margin-bottom: 3px;
 	}
 	#corpoPagina1Con2Colonne .dati-fornitura .content .etichetta {
 		font-weight: 800;
 	}
+	#corpoPagina1Con2Colonne .dati-fornitura .content .dato-riga-singola,
+	#corpoPagina1Con2Colonne .dati-fornitura .content .dato-riga-doppia {
+		margin-bottom: 1.5px;
+	}
 	#corpoPagina1Con2Colonne .dati-fornitura .content .dato-riga-singola .etichetta,
 	#corpoPagina1Con2Colonne .dati-fornitura .content .dato-riga-singola .valore {
 		display: inline;
+	}
+	#corpoPagina1Con2Colonne .dati-fornitura .content .dato-riga-doppia .etichetta {
+		margin-bottom: 1px;
 	}
 	/* *** totale spesa e grazie */
 	#corpoPagina1Con2Colonne .totale-spesa-e-grazie {
@@ -359,19 +388,22 @@ table.custom tbody tr td.no-back {
 		margin-bottom: 4px;
 	}
 	#corpoPagina1Con2Colonne .sintesi-importi .legenda .voce-legenda .etichetta .rettangolo {
-		display: inline-block;
 		width: 13px;
 		height: 13px;
 		margin-right: 4px;
+		float: left;
 	}
 	#corpoPagina1Con2Colonne .sintesi-importi .legenda .voce-legenda .etichetta .testo {
-		display: inline-block;
+		padding-top: 5px;
 	}
 	#corpoPagina1Con2Colonne .sintesi-importi .legenda .voce-legenda {
-		margin-bottom: 4px;
+		margin-bottom: 6px;
 	}
 	#corpoPagina1Con2Colonne .sintesi-importi .legenda .voce-legenda .valore-in-euro {
 		text-align: right;
+	}
+	#corpoPagina1Con2Colonne .sintesi-importi .legenda .voce-legenda .valore-in-euro .inner {
+	    padding-top: 5px;
 	}
 	#corpoPagina1Con2Colonne .sintesi-importi .legenda .voce-legenda .valore-in-euro .val {
 		display: inline-block;
@@ -407,17 +439,16 @@ table.custom tbody tr td.no-back {
 /* *** COLONNA DX*/
 	/* contatti utili, autolettura, emergenza guasti */
 	#contattiEAutoletturaEGuasti {
-		padding-left: 0.85rem;
 		padding-left: 12px;
+	}
+	#contattiEAutoletturaEGuasti .sezione {
+		margin-bottom: 2px;
 	}
 	#contattiEAutoletturaEGuasti .sezione .header {
 		font-weight: 800;
 		border-bottom: 1px solid #aaaaaa;
-	    padding: 0 0;
-    	margin-bottom: 1px;
-	}
-	#contattiEAutoletturaEGuasti .sezione .corpo {
-		margin-bottom: 2px;
+	    padding: 1px 0;
+    	margin-bottom: 3px;
 	}
 	#contattiEAutoletturaEGuasti .sezione .corpo .dato-riga-singola .etichetta,
 	#contattiEAutoletturaEGuasti .sezione .corpo .dato-riga-doppia .etichetta {
@@ -432,10 +463,19 @@ table.custom tbody tr td.no-back {
 			float: left;
 			margin-right: 2px;
 		}
+		#contattiEAutoletturaEGuasti .sezione.autolettura .corpo .elenco-canali .canale .icona-canale > i {
+			font-size: 8px;
+		}
+		#contattiEAutoletturaEGuasti .sezione.autolettura .corpo .elenco-canali .canale .info-canale {
+			padding-left: 10px;	
+		}
 	/* *** consulente dedicato */
+	#consulenteDedicato {
+		margin-top: 8px;
+	}
 	#consulenteDedicato .box-consulente-dedicato {
-		width: 284px;
-		height: 140px;
+		width: 317px;
+		height: 150px;
 		bottom: 0;
     	display: block;
     	color: #ffffff;
@@ -445,18 +485,17 @@ table.custom tbody tr td.no-back {
 	}
 	#consulenteDedicato .box-consulente-dedicato .icona img {
 		width: 70px;
-		height: 140px;
+		height: 146px;
 	}
 	#consulenteDedicato .box-consulente-dedicato .testo {
 		display: inline-block;
 	    width: 174px;
-		margin-top: 8px;
-		margin-left: 8px;
+		margin-top: 7px;
 	}
 	#consulenteDedicato .box-consulente-dedicato .testo .header {
 		font-weight: 700;
 		line-height: 1.1;
-		margin: 1px 0;
+		margin: 2px 0;
 	}
 	#consulenteDedicato .box-consulente-dedicato .testo .corpo {
 		font-weight: 300;
@@ -464,18 +503,16 @@ table.custom tbody tr td.no-back {
 	}
 
 #boxOfferta {
-	margin-top: 3px;
+	margin-top: 10px;
 }
 #boxOfferta .content {
-	text-align: center;
-    background: #afafaf;
-    width: 790px;
-    height: 320px;
     overflow: hidden;
+    width: 792px;
+    height: 320px;
 }
 #boxOfferta .content img {
-	width: 790px;
-    height: 320px;
+	width: 730px;
+	height: 320px;    
 }
 
 #lettureEConsumiPeriodoFatturazione {
@@ -483,7 +520,7 @@ table.custom tbody tr td.no-back {
 }
 #lettureEConsumiPeriodoFatturazione .consumi-fatturati {
 	text-align: right;
-	margin-top: -24px;
+	margin-top: -18px;
 	background: transparent;
 }
 #lettureEConsumiPeriodoFatturazione .consumi-fatturati .valore-consumi-fatturati {
