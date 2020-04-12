@@ -372,7 +372,7 @@ LEGACY
 										</div>
 										<div id="messaggioAttenzionePerBolletteNonTuttePagate" class="contenuto">
 											<div class="titolo color7711C"><strong>Attenzione!</strong></div>
-											<div class="messaggio">Al momento dell'emissione di questa fattura non risultano pervenuti i pagamenti delle fatture elencate nella sezione "DETTAGLIO BOLLETTE NON PAGATE" (pag 2)</div>
+											<div class="messaggio font7pt">Al momento dell'emissione di questa fattura non risultano pervenuti i pagamenti delle fatture elencate nella sezione "DETTAGLIO BOLLETTE NON PAGATE" (pag 2)</div>
 										</div>
 									</div>
 								</div>
@@ -738,7 +738,7 @@ LEGACY
 						</div>
 						<div class="pure-u-16-24 tabella-dati">
 							<div class="content">
-								<table id="tabellaQuadroLettureEConsumi" class="custom font7pt">
+								<table id="tabellaQuadroLettureEConsumi" class="custom font6pt">
 							      	<tbody>
 									    <tr>
 									    	<td class="header no-back"></td>
@@ -914,7 +914,7 @@ LEGACY
 					            datalabels: {
 					                color: '#ffffff',
 					                font: {
-					                	size: 8,
+					                	size: 6,
 					                	weight: 500
 					                },
 					                formatter: (value, ctx) => {
@@ -933,7 +933,7 @@ LEGACY
 								xAxes: [ {
 									stacked: true,
 									ticks: {
-							          	fontSize: 8,
+							          	fontSize: 7,
 							          	callback: function(value, index, values) {
 					                        return value;
 				                    	}
@@ -942,7 +942,7 @@ LEGACY
 								yAxes: [ {
 									stacked: true,
 									ticks: {
-							          fontSize: 8
+							          fontSize: 7
 							        }
 								} ]
 							}
@@ -1021,8 +1021,8 @@ LEGACY
 			<div class="inner">
 				<div class="header-con-riga-centrale">
 					<div class="pure-g">
-						<div class="pure-u-11-24 testo font10pt color7711C">RIEPILOGO CONSUMI DEGLI ULTIMI 12 MESI</div>
-						<div class="pure-u-13-24"><div class="riga-centrale" style="margin-left: -26px;"></div></div>
+						<div class="pure-u-9-24 testo font10pt color1805C fontDinBlack">RIEPILOGO CONSUMI DEGLI ULTIMI 12 MESI</div>
+						<div class="pure-u-15-24"><div class="riga-centrale" style="margin-left:-12px;"></div></div>
 					</div>
 				</div>
 				<div class="content">
@@ -1154,13 +1154,13 @@ LEGACY
 								xAxes: [ {
 									stacked: true,
 									ticks: {
-							          fontSize: 8
+							          fontSize: 7
 							        }
 								} ],
 								yAxes: [ {
 									stacked: true,
 									ticks: {
-							          fontSize: 8
+							          fontSize: 7
 							        }
 								} ]
 							},
@@ -1171,7 +1171,7 @@ LEGACY
 					            datalabels: {
 					                color: '#242424',
 					                font: {
-					                	size: 7,
+					                	size: 6,
 					                	weight: 500
 					                },
 					                formatter: (value, ctx) => {
@@ -1203,12 +1203,12 @@ LEGACY
 				<div class="colonna-accise">
 					<div class="header-con-riga-centrale">
 						<div class="pure-g">
-							<div class="pure-u-10-24 testo font10pt color7711C">DETTAGLIO ACCISE</div>
-							<div class="pure-u-14-24"><div class="riga-centrale" style="margin-left: -8px;"></div></div>
+							<div class="pure-u-9-24 testo font10pt color7711C fontDinBlack">DETTAGLIO ACCISE</div>
+							<div class="pure-u-15-24"><div class="riga-centrale" style="margin-left: -12px;"></div></div>
 						</div>
 					</div>
 					<div class="content">
-						<div id="_MESSAGGIO_NO_DATI_DETTAGLIO_Imposte" class="messaggio-no-dati-per-dettaglio">
+						<div id="_MESSAGGIO_NO_DATI_DETTAGLIO_Imposte" class="messaggio-no-dati-per-dettaglio font8pt">
 							Nessun dato
 						</div>
 						<table id="_TABELLA_DETTAGLIO_Imposte" class="custom font6pt">
@@ -1286,18 +1286,18 @@ LEGACY
 				<div class="colonna-iva">
 					<div class="header-con-riga-centrale">
 						<div class="pure-g">
-							<div class="pure-u-8-24 testo font10pt color7711C">DETTAGLIO IVA</div>
-							<div class="pure-u-16-24"><div class="riga-centrale" style="margin-left: -6px;"></div></div>
+							<div class="pure-u-7-24 testo font10pt color7711C fontDinBlack">DETTAGLIO IVA</div>
+							<div class="pure-u-17-24"><div class="riga-centrale" style="margin-left: -7px;"></div></div>
 						</div>
 					</div>
 					<div class="content">
 						<table id="_TABELLA_DETTAGLIO_Iva" class="custom font6pt">
 							<tbody>
 								<tr>
-									<td>Descrizione</td>
-									<td class="grigio-scuro">Imponibile</td>
-						            <td>Aliquota (€)</td>
-						            <td class="grigio-scuro">Iva (€)</td>
+									<td><strong>Descrizione</strong></td>
+									<td class="grigio-scuro"><strong>Imponibile</strong></td>
+						            <td><strong>Aliquota (€)</strong></td>
+						            <td class="grigio-scuro"><strong>Iva (€)</strong></td>
 								</tr>
 						        <tr data-data_type="simple_loop" data-first_node="RiepilogoIvaBolletta" data-path_type="xpath" data-path_data="RiepilogoIva">
 						        	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DescrizioneImponibile">Imponibile IVA 22%</span></td>
@@ -1320,7 +1320,7 @@ LEGACY
 				<div class="pure-g">
 					<div class="pure-u-12-24">
 						<div id="conguagliRicalcoli">
-							<div class="header font12pt color7711C">CONGUAGLI E RICALCOLI</div>
+							<div class="header font12pt color7711C fontDinBlack fontDinBlack">CONGUAGLI E RICALCOLI</div>
 							<div class="dati">
 								<!-- *** dati dei conguagli consumi stimati -->
 								<div style="display: none;" class="sezione-conguaglio-consumi-stimati" data-data_type="simple_loop" data-first_node="ConguaglioConsumiStimati" data-path_type="xpath" data-path_data="">
@@ -1331,8 +1331,8 @@ LEGACY
 						        </div>
 								<div>
 									<!-- *** messaggi relativi ai conguagli consumi stimati -->
-									<div id="messaggioNessunConguaglioConsumiStimati" class="messaggio-esistenza-o-meno font9pt">Nessun conguaglio consumi stimati</div>
-									<div id="messaggioEsistenzaConguaglioConsumiStimati" class="messaggio-esistenza-o-meno font9pt">Sono presenti conguagli consumi stimati</div>
+									<div id="messaggioNessunConguaglioConsumiStimati" class="messaggio-esistenza-o-meno font8pt">Nessun conguaglio consumi stimati</div>
+									<div id="messaggioEsistenzaConguaglioConsumiStimati" class="messaggio-esistenza-o-meno font8pt">Sono presenti conguagli consumi stimati</div>
 								</div>
 								<script type="text/javascript">
 									try {
@@ -1364,41 +1364,41 @@ LEGACY
 					</div>					
 					<div class="pure-u-12-24">
 						<div id="bolletteNonPagate">
-							<div class="header font12pt color7711C">DETTAGLIO BOLLETTE NON PAGATE</div>
+							<div class="header font12pt color7711C fontDinBlack">DETTAGLIO BOLLETTE NON PAGATE</div>
 							<div class="dati">
 								<div>
 									<div id="messaggioNessunaBollettaDaPagare" class="messaggio-esistenza-o-meno messaggio font8pt">
 										Le precedenti bollette risultano pagate
 									</div>
-									<div class="table-container">
+									<div id="boxTabellaBolletteNonPagate" class="table-container">
 										<div class="messaggio-esistenza-o-meno font8pt">Al momento dell'emissione di questa fattura non risultano pervenuti i pagamenti delle fatture elencate di seguito</div>
-										<table id="tabellaBolletteNonPagate" class="tabella font6pt">
+										<table class="tabella font6pt">
 											<tbody>
 										        <tr>
 										    		<td colspan="3">
-										    			<span class="morosita-testo morosita-testo-font" data-data_type="single" data-first_node="MorositaDocumenti" data-path_type="xpath" data-path_data="Testo">testo morosita</span>
+										    			<span class="morosita-testo morosita-testo-font" data-data_type="single" data-first_node="MorositaDocumenti" data-path_type="xpath" data-path_data="Testo">TEST testo morosita</span>
 										    		</td>
 										    	</tr>
 										        <tr>
-										        	<td><span>Bolletta</span></td>
-										            <td><span>Scadenza</span></td>
-										            <td><span>Totale (€)</span></td>
+										        	<td><span><strong>Bolletta</strong></span></td>
+										            <td><span><strong>Scadenza</strong></span></td>
+										            <td><span><strong>Totale (€)</strong></span></td>
 										        </tr>
 										        <tr data-data_type="simple_loop" data-first_node="MorositaDocumenti" data-path_type="xpath" data-path_data="Dettagli/Morosita">
-										        	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataEmissione"></span> <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/NumeroDocumento"></span></td>
-										            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataScadenza"></span></td>
+										        	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataEmissione">29/09/2099</span> <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/NumeroDocumento"></span></td>
+										            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataScadenza">29/09/2099</span></td>
 										            <td><span class="importo-bollette-non-pagate" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoDaPagare"></span></td>
 										        </tr>
 										        <tr class="righe-bollette-non-pagate">
-										        	<td><span>Totale insoluto (€)</span></td>
+										        	<td><span><strong>Totale insoluto (€)</strong></span></td>
 										            <td></td>
-										    		<td><span data-data_type="single" data-first_node="MorositaDocumenti" data-path_type="xpath" data-path_data="Totale"></span></td>
+										    		<td><span data-data_type="single" data-first_node="MorositaDocumenti" data-path_type="xpath" data-path_data="Totale">123</span></td>
 										    	</tr>
 										        <!-- <tr class="righe-bollette-non-pagate">
 										    		<td colspan="3"><span>Qualora le bollette sollecitate le risultassero già pagate, consideri nullo questo avviso.</span></td>
 										    	</tr> -->
 										        <tr class="righe-interessi-applicati righe-bollette-non-pagate">
-										    		<td colspan="3"><span >Interessi applicati</span></td>
+										    		<td colspan="3"><span><strong>Interessi applicati</strong></span></td>
 										    	</tr>
 										         <tr class="righe-interessi-applicati righe-bollette-non-pagate">
 										        	<td><span>Periodo</span></td>
@@ -1406,9 +1406,9 @@ LEGACY
 										            <td><span>%</span></td>
 										        </tr>
 										        <tr class="righe-interessi-applicati righe-bollette-non-pagate" data-data_type="simple_loop" data-first_node="MorositaInteressiBollette" data-path_type="xpath" data-path_data="MorositaInteressi">
-										        	<td><span><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Periodo"></span></span></td>
+										        	<td><span><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Periodo">29/08/2099-29/09/2099</span></span></td>
 										            <td><span></span></td>
-										            <td><span><span class="sezione-percentuale-interessi-applicati" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TassoAnnuo"></span></span></td>
+										            <td><span><span class="sezione-percentuale-interessi-applicati" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TassoAnnuo">12</span></span></td>
 										        </tr>   
 									      	</tbody>
 									    </table>
@@ -1434,19 +1434,17 @@ LEGACY
 						}
 					}					
 					if (esistonoBolletteNonPagate) {
-						document.getElementById('tabellaBolletteNonPagate').style.display = 'table';
-						document.getElementById('messaggioNessunaBollettaDaPagare').style.display = 'none';
-						// manage messaggio GRAZIE BOLLETTE TUTTE PAGATE
-						document.getElementById('messaggioGraziePerBolletteTuttePagate').style.display = 'none';
-						// manage messaggio BOLLETTE NON TUTTE PAGATE
 						document.getElementById('messaggioAttenzionePerBolletteNonTuttePagate').style.display = 'block';
+						document.getElementById('boxTabellaBolletteNonPagate').style.display = 'table';
+						//
+						document.getElementById('messaggioNessunaBollettaDaPagare').style.display = 'none';
+						document.getElementById('messaggioGraziePerBolletteTuttePagate').style.display = 'none';
 					} else {
-						document.getElementById('tabellaBolletteNonPagate').style.display = 'none';
-						document.getElementById('messaggioNessunaBollettaDaPagare').style.display = 'block';
-						// manage messaggio GRAZIE BOLLETTE TUTTE PAGATE
-						document.getElementById('messaggioGraziePerBolletteTuttePagate').style.display = 'block';
-						// manage messaggio BOLLETTE NON TUTTE PAGATE
 						document.getElementById('messaggioAttenzionePerBolletteNonTuttePagate').style.display = 'none';
+						document.getElementById('boxTabellaBolletteNonPagate').style.display = 'none';
+						//
+						document.getElementById('messaggioNessunaBollettaDaPagare').style.display = 'block';
+						document.getElementById('messaggioGraziePerBolletteTuttePagate').style.display = 'block';
 					}
 				})();
 			} catch (err) {
@@ -1460,7 +1458,7 @@ LEGACY
 		########################################################################################### -->
 		<div id="guidaLetturaFattura">
 			<div class="content">
-				<div class="header font10pt color7711C">GUIDA ALLA LETTURA DELLA TUA FATTURA</div>
+				<div class="header font10pt color7711C fontDinBlack">GUIDA ALLA LETTURA DELLA TUA FATTURA</div>
 				<div class="dati font6pt">
 					<div>
 						<div class="paragrafo">
@@ -1527,7 +1525,7 @@ LEGACY
 		########################################################################################### -->
 		<div id="arera">
 			<div class="content">
-				<div class="header font10pt color7711C">ANNOTAZIONI E ULTERIORI INFORMAZIONI PREVISTE DALL'ARERA</div>
+				<div class="header font10pt color7711C fontDinBlack">ANNOTAZIONI E ULTERIORI INFORMAZIONI PREVISTE DALL'ARERA</div>
 				<div class="dati font6pt">
 					<div class="titolo"><strong>Pagamenti sospesi e rateizzazioni</strong></div>
 					<div class="body">

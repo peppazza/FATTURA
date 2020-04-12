@@ -51,7 +51,6 @@ page[size="A4"] {
 }
 page[size="A4"] .sub.pagina-inner {
 	height: 1064px;
-	padding-right: 32px;
 }
 @page {
 	size: A4;
@@ -171,7 +170,6 @@ table.custom tbody tr td.no-back {
 #headerLogo .header > img {
 	width: 396px;
 	height: 150px;
-	margin-right: -14px;
 }
 /*
 #headerLogo {
@@ -361,6 +359,7 @@ table.custom tbody tr td.no-back {
 	#corpoPagina1Con2Colonne .totale-spesa-e-grazie #messaggioGraziePerBolletteTuttePagate .titolo,
 	#corpoPagina1Con2Colonne .totale-spesa-e-grazie #messaggioAttenzionePerBolletteNonTuttePagate .titolo {
 		font-weight: 800;
+		margin-bottom: 2px;
 	}
 	/* *** grafico a torta (sintesi degli importi) */
 	#corpoPagina1Con2Colonne .sintesi-importi {
@@ -524,7 +523,7 @@ table.custom tbody tr td.no-back {
 }
 /* *** tabella */
 #lettureEConsumiPeriodoFatturazione #tabellaQuadroLettureEConsumi {
-	margin-top: 1.125rem;
+	margin-top: 18px;
 }
 
 
@@ -546,10 +545,10 @@ table.custom tbody tr td.no-back {
 	margin-top: 8px;
 }
 #acciseEdIVA .colonna-accise {
-	padding-right: 0.775rem;
+	padding-right: 12px;
 }
 #acciseEdIVA .colonna-iva {
-	padding-left: 0.775rem;
+	padding-left: 12px;
 }
 /* *** imposte */
 #acciseEdIVA #_TABELLA_DETTAGLIO_Imposte tbody tr td {
@@ -573,11 +572,11 @@ table.custom tbody tr td.no-back {
     margin: 14px 0;
 }
 #conguagliRicalcoliEBolletteNonPagate .content #conguagliRicalcoli {
-	padding-right: 0.5rem;
+	padding-right: 8px;
 }
 #conguagliRicalcoliEBolletteNonPagate .content #bolletteNonPagate {
 	border-left: 1px solid #777777;
-	padding-left: 0.5rem;
+	padding-left: 8px;
 }
 #conguagliRicalcoliEBolletteNonPagate .content #conguagliRicalcoli .header,
 #conguagliRicalcoliEBolletteNonPagate .content #bolletteNonPagate .header {
@@ -586,12 +585,13 @@ table.custom tbody tr td.no-back {
 }
 #conguagliRicalcoliEBolletteNonPagate .content #conguagliRicalcoli .messaggio-esistenza-o-meno,
 #conguagliRicalcoliEBolletteNonPagate .content #bolletteNonPagate .messaggio-esistenza-o-meno {
-	margin-bottom: 2px;
+	margin-top: 2px;
+	margin-bottom: 4px;
 }
 
 #guidaLetturaFattura .content > .header {
 	font-weight: 800;
-	margin-bottom: 2px;
+	margin-bottom: 4px;
 }
 #guidaLetturaFattura .content .dati .paragrafo {
 	margin-bottom: 6px;
@@ -603,7 +603,7 @@ table.custom tbody tr td.no-back {
 }
 #arera .content > .header {
 	font-weight: 800;
-	margin-bottom: 2px;
+	margin-bottom: 4px;
 }
 #arera .content > .dati .body {
 	margin-bottom: 6px;
