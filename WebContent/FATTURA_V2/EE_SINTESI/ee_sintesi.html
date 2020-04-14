@@ -126,10 +126,10 @@
 </div>
 
 <div class="pure-u-8-24 col2">
-	Costo medio della materia prima: <strong><span class="costo-medio-materia" data-data_type="single" data-first_node="CostoMedioUnitSpesaMateria" data-path_type="xpath" data-path_data="">0,54</span> €/kWh</strong>
+	Costo medio della materia prima: <span class="fontDinMedium"><span class="costo-medio-materia" data-data_type="single" data-first_node="CostoMedioUnitSpesaMateria" data-path_type="xpath" data-path_data="">0,54</span> €/kWh</span>
 </div>
 <div class="pure-u-8-24 col3">
-	Costo medio della bolletta: <strong><span class="costo-medio-bolletta" data-data_type="single" data-first_node="CostoMedioUnitBolletta" data-path_type="xpath" data-path_data="">0,63</span> €/kWh</strong>
+	Costo medio della bolletta: <span class="fontDinMedium"><span class="costo-medio-bolletta" data-data_type="single" data-first_node="CostoMedioUnitBolletta" data-path_type="xpath" data-path_data="">0,63</span> €/kWh</span>
 </div>
  -->
 
@@ -393,11 +393,11 @@
 								<div class="pure-u-11-24">
 									<div>
 										<div id="messaggioGraziePerBolletteTuttePagate" class="contenuto">
-											<div class="titolo color1805C"><strong class="fontDinBlack">Grazie!</strong></div>
+											<div class="titolo color1805C"><span class="fontDinMedium">Grazie!</span></div>
 											<div class="messaggio font7pt">Ti comunichiamo che, alla data attuale, le tue precedenti bollette risultano tutte pagate</div>
 										</div>
 										<div id="messaggioAttenzionePerBolletteNonTuttePagate" class="contenuto">
-											<div class="titolo color1805C"><strong>Attenzione!</strong></div>
+											<div class="titolo color1805C"><span>Attenzione!</span></div>
 											<div class="messaggio font7pt">Al momento dell'emissione di questa fattura non risultano pervenuti i pagamenti delle fatture elencate nella sezione "DETTAGLIO BOLLETTE NON PAGATE" (pag 2)</div>
 										</div>
 									</div>
@@ -650,30 +650,34 @@
 							<div class="header font12pt color1805C fontDinBlack">CONTATTI UTILI</div>
 							<div class="corpo font7pt">
 								<div class="dato-riga-singola">
-									<div class="etichetta">NUMERO VERDE</div>
+									<div class="etichetta">NUMERO VERDE DA RETE FISSA</div>
 									<div class="valore-tag">800 98 44 55</div>
 								</div>
-								<div class="dato-riga-doppia">
-									<div class="etichetta">CONTACT CENTER</div>
-									<div class="valore-tag">
-										<span>Da rete fissa</span> <span>0984 82 53 56</span>
-									</div>
-									<div class="valore-tag">
-										<span>Da mobile</span> <span>346 86 05 478</span>
-									</div>
-								</div>
-								<div class="dato-riga-doppia">
-									<div class="etichetta">SEDE</div>
-									<div class="valore-tag">Via Beato Francesco Marino, 102 Z.I. 87040 Zumpano (CS)</div>
+								<div class="dato-riga-singola">
+									<div class="etichetta">CENTRALINO</div>
+									<div class="valore-tag">0984 82 53 56</div>
 								</div>
 								<div class="dato-riga-singola">
-									<div class="etichetta">PUNTI VENDITA</div>
+									<div class="etichetta">WHATSAPP</div>
+									<div class="valore-tag">346 86 05 478</div>
+								</div>
+								<!-- <div class="dato-riga-doppia">
+									<div class="etichetta">CONTACT CENTER</div>
+									<div class="valore-tag">Da rete fissa <span data-data_type="single" data-first_node="AziendaCallCenterFisso" data-path_type="xpath" data-path_data="">0000 00 00 00</span></div>
+									<div class="valore-tag">Da rete mobile <span data-data_type="single" data-first_node="AziendaCallCenterCell" data-path_type="xpath" data-path_data="">000 00 00 000</span></div>
+								</div> -->
+								<div class="dato-riga-doppia">
+									<div class="etichetta">OMNIA ENERGY STORE</div>
+									<div class="valore-tag">Via Beato Francesco Marino, 102 Z.I. 87040 Zumpano (CS)</div>
 									<div class="valore-tag">
-										<div class="valore-tag">
-											<span data-data_type="single" data-first_node="ServizioIndirizzo" data-path_type="xpath" data-path_data="">Corso Mazzini, 5</span>
-											<span data-data_type="single" data-first_node="ServizioComune" data-path_type="xpath" data-path_data="">Cosenza (CS)</span>
-										</div>
+										<!-- Corso Mazzini, 5 - Cosenza -->
+										<span data-data_type="single" data-first_node="ServizioIndirizzo" data-path_type="xpath" data-path_data="">Corso Mazzini, 5</span>
+										<span data-data_type="single" data-first_node="ServizioComune" data-path_type="xpath" data-path_data="">Cosenza (CS)</span>
 									</div>
+								</div>
+								<div class="dato-riga-doppia">
+									<div class="etichetta" style="display: inline;">OMNIA POINT</div>
+									<div class="valore-tag" style="display: inline;">consulta l’elenco dei punti vendita a te più vicini al sito www.omniaenegia.it</div>
 								</div>
 							</div>
 						</div>
@@ -683,84 +687,44 @@
 							<div class="corpo font7pt">
 								<div class="elenco-canali">
 									<div class="intro">Potrai comunicare l'autolettura della tua fornitura di energia elettrica dal 
-										<strong><span class="valore-autolettura-dal" data-data_type="single" data-first_node="LetturaFuturaInizioAutoLettura" data-path_type="xpath" data-path_data="">XX/XX/XXXX</span></strong>
-										al <strong><span class="valore-autolettura-dal" data-data_type="single" data-first_node="LetturaFuturaFineAutoLettura" data-path_type="xpath" data-path_data="">XX/XX/XXXX</span></strong>
+										<span class="fontDinMedium"><span class="valore-autolettura-dal" data-data_type="single" data-first_node="LetturaFuturaInizioAutoLettura" data-path_type="xpath" data-path_data="">XX/XX/XXXX</span></span>
+										al <span class="fontDinMedium"><span class="valore-autolettura-dal" data-data_type="single" data-first_node="LetturaFuturaFineAutoLettura" data-path_type="xpath" data-path_data="">XX/XX/XXXX</span></span>
 										attraverso i seguenti canali:
 									</div>
 									<div class="canale">
 										<!-- <div class="icona-canale"><i class="icofont-web"></i></div> -->
 										<div class="info-canale">
-											<span class="nome"><strong>Sito web:</strong></span>
+											<span class="nome fontDinMedium">Sito web:</span>
 											<span data-data_type="single" data-first_node="AziendaInternet" data-path_type="xpath" data-path_data="">www.omniaenergia.it</span> accedendo alla tua area personale
 										</div>
 									</div>
 									<div class="canale">
 										<!-- <div class="icona-canale"><i class="icofont-whatsapp"></i></div> -->
 										<div class="info-canale">
-											<span class="nome"><strong>Whatsapp:</strong></span> invia al <span>346 86 05 478</span> una foto del contatore e il POD		
+											<span class="nome fontDinMedium">Whatsapp:</span> invia al <span>346 86 05 478</span> una foto del contatore e il POD		
 										</div>
 									</div>
 									<div class="canale">
 										<!-- <div class="icona-canale"><i class="icofont-web"></i></div> -->
 										<div class="info-canale">
-											<span class="nome"><strong>Email</strong></span> <span class="valore">autolettura@omniaenergia.it</span>
+											<span class="nome fontDinMedium">Email</span> <span class="valore">autolettura@omniaenergia.it</span>
 										</div>
 									</div>
 									<div class="canale">
 										<!-- <div class="icona-canale"><i class="icofont-phone-circle"></i></div> -->
 										<div class="info-canale">
-											<span class="nome"><strong>Numero verde:</strong></span> <span>800 98 44 55</span>
+											<span class="nome fontDinMedium">Numero verde:</span> <span>800 98 44 55</span>
 										</div>
 									</div>
 									<div class="canale">
 										<!-- <div class="icona-canale"><i class="icofont-ui-touch-phone"></i></div> -->
 										<div class="info-canale">
-											<span class="etichetta"><strong>App</strong></span> <span class="valore">Omnia Energia</span>
+											<span class="etichetta fontDinMedium">App</span> <span class="valore">Omnia Energia</span>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<!-- <div class="sezione autolettura">
-							<div class="header font11pt color1805C">AUTOLETTURA</div>
-							<div class="corpo font7pt">
-								<div class="elenco-canali">
-									<div class="intro">Potrai comunicare l'autolettura della tua fornitura di energia elettrica dal 
-										<strong><span class="valore-autolettura-dal" data-data_type="single" data-first_node="LetturaFuturaInizioAutoLettura" data-path_type="xpath" data-path_data="">XX/XX/XXXX</span></strong>
-										al <strong><span class="valore-autolettura-dal" data-data_type="single" data-first_node="LetturaFuturaFineAutoLettura" data-path_type="xpath" data-path_data="">XX/XX/XXXX</span></strong>
-										attraverso i seguenti canali:
-									</div>
-									<div class="canale">
-										<span class="etichetta"><strong>Sito web:</strong></span>
-										<span class="valore">
-											<a href="#">
-												<span data-data_type="single" data-first_node="AziendaInternet" data-path_type="xpath" data-path_data=""></span>
-											</a>
-											accedendo alla tua area personale</span>
-									</div>
-									<div class="canale">
-										<span class="etichetta"><strong>Whatsapp:</strong></span>
-										<span class="valore">invia al
-											<span data-data_type="single" data-first_node="AziendaTelAutolettura" data-path_type="xpath" data-path_data="">346 86 05 478</span>
-											una foto del contatore e il POD
-										</span>
-									</div>
-									<div class="canale">
-										<span class="etichetta"><strong>email</strong></span>
-										<span class="valore">autolettura@omniaenergia.it</span>
-									</div>
-									<div class="canale">
-										<span class="etichetta">Numero verde</span>
-										<span class="valore">
-											<span data-data_type="single" data-first_node="AziendaTelAutolettura" data-path_type="xpath" data-path_data=""></span>
-										</span>
-									</div>
-									<div class="canale">
-										<strong><span class="etichetta">App</span> <span class="valore">Omnia Energia</span></strong>
-									</div>
-								</div>
-							</div>
-						</div> -->
 						<!-- *** guasti -->
 						<div class="sezione guasti" style="margin-top: 5px;">
 							<div class="header font12pt color1805C fontDinBlack">EMERGENZA GUASTI</div>
@@ -784,7 +748,7 @@
 									<div class="header font14pt fontDinBlack">CONSULENTE DEDICATO</div>
 									<div class="corpo font7pt">
 										Se c'è qualcosa che non ti è chiaro sulla bolletta o desideri informazioni, contatta il tuo Consulente per l'Energia
-										<strong>Alessandro Scavo</strong> a te dedicato per rispondere a tutte le tue domande.
+										<span class="fontDinMedium">Alessandro Scavo</span> a te dedicato per rispondere a tutte le tue domande.
 										Puoi chiamarlo al numero di cellulare <span style="display: inline-block;">346 86 05 478</span> o inviare
 										una mail a <span style="display: inline-block;">ascavo@omnia energia.it</span>						
 									</div>
@@ -876,24 +840,24 @@
 									 <tbody>
 									    <tr class="tabella-energia-attiva">
 									    	<td class="header no-back"></td>
-									    	<td colspan="4" class="header"><span><strong>LETTURA INIZIALE</strong></span></td>
-									        <td colspan="4" class="header grigio-scuro"><span><strong>LETTURA FINALE</strong></span></td>
-									        <td colspan="7" class="header last"><span><strong>CONSUMO FATTURATO [kWh]</strong></span></td>
+									    	<td colspan="4" class="header"><span class="fontDinMedium">LETTURA INIZIALE</span></td>
+									        <td colspan="4" class="header grigio-scuro"><span class="fontDinMedium">LETTURA FINALE</span></td>
+									        <td colspan="7" class="header last"><span class="fontDinMedium">CONSUMO FATTURATO [kWh]</span></td>
 									    </tr>
 									    <tr class="tabella-energia-attiva header-riga-2">
-									    	<td class="header grigio-scuro"><span><strong>Tipo dato</strong></span></td>
-									    	<td class="header"><span><strong>Data</strong></span></td>
-									    	<td class="header"><span><strong>F1</strong></span></td>
-									        <td class="header"><span><strong>F2</strong></span></td>
-									        <td class="header"><span><strong>F3</strong></span></td>
-									        <td class="header grigio-scuro"><span><strong>Data</strong></span></td>
-									    	<td class="header grigio-scuro"><span><strong>F1</strong></span></td>
-									        <td class="header grigio-scuro"><span><strong>F2</strong></span></td>
-									        <td class="header grigio-scuro"><span><strong>F3</strong></span></td>
-									        <td colspan="1" class="header"><span><strong>F1</strong></span></td>
-									        <td colspan="1" class="header"><span><strong>F2</strong></span></td>
-									        <td colspan="1" class="header"><span><strong>F3</strong></span></td>
-									        <td class="header last"><span><strong>TOTALE</strong></span></td>
+									    	<td class="header grigio-scuro"><span class="fontDinMedium">Tipo dato</span></td>
+									    	<td class="header"><span class="fontDinMedium">Data</span></td>
+									    	<td class="header"><span class="fontDinMedium">F1</span></td>
+									        <td class="header"><span class="fontDinMedium">F2</span></td>
+									        <td class="header"><span class="fontDinMedium">F3</span></td>
+									        <td class="header grigio-scuro"><span class="fontDinMedium">Data</span></td>
+									    	<td class="header grigio-scuro"><span class="fontDinMedium">F1</span></td>
+									        <td class="header grigio-scuro"><span class="fontDinMedium">F2</span></td>
+									        <td class="header grigio-scuro"><span class="fontDinMedium">F3</span></td>
+									        <td colspan="1" class="header"><span class="fontDinMedium">F1</span></td>
+									        <td colspan="1" class="header"><span class="fontDinMedium">F2</span></td>
+									        <td colspan="1" class="header"><span class="fontDinMedium">F3</span></td>
+									        <td class="header last"><span class="fontDinMedium">TOTALE</span></td>
 									    </tr>
 									    <tr class="_data_ConsumoELetture" data-data_type="simple_loop" data-first_node="ConsumiBollettaEle" data-path_type="xpath" data-path_data="ConsumoELetture[Descrizione = &quot;Energia attiva&quot;]/DettagliConsumo/Consumo">
 									    	<td class="grigio-scuro"><span class="_data_TipoLettura" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TipoLettura">Distributore</span></td>
@@ -1191,15 +1155,15 @@
 									<tbody>
 										<tr>
 											<td class="no-back"></td>
-											<td colspan="3"><strong>CONSUMO FATTURATO [kWh]</strong></td>
+											<td colspan="3"><span class="fontDinMedium">CONSUMO FATTURATO [kWh]</span></td>
 											<td class="no-back"></td>
 										</tr>
 										<tr>
-											<td><strong>Mese/Anno</strong></td>
-											<td><strong>F1</strong></td>
-											<td><strong>F2</strong></td>
-											<td><strong>F3</strong></td>
-											<td><strong>Totale</strong></td>
+											<td><span class="fontDinMedium">Mese/Anno</span></td>
+											<td><span class="fontDinMedium">F1</span></td>
+											<td><span class="fontDinMedium">F2</span></td>
+											<td><span class="fontDinMedium">F3</span></td>
+											<td><span class="fontDinMedium">Totale</span></td>
 										</tr>
 										<tr class="table_consumi_hiddenvalues_row" data-data_type="simple_loop" data-first_node="ConsumoAnnuo" data-path_type="xpath" data-path_data="Consumi">
 									        <td class="cella-mese-anno">
@@ -1214,11 +1178,11 @@
 										</tr>
 										<!-- RIGA TOTALI CALCOLATI -->
 										<tr class="riga-totali">
-											<td><strong>TOTALE</strong></td>
-											<td><strong id="_ultimi12Mesi_totale_F1"></strong></td>
-											<td><strong id="_ultimi12Mesi_totale_F2"></strong></td>
-											<td><strong id="_ultimi12Mesi_totale_F3"></strong></td>
-											<td><strong id="_ultimi12Mesi_totale_TOT"></strong></td>
+											<td><span class="fontDinMedium">TOTALE</span></td>
+											<td><span class="fontDinMedium" id="_ultimi12Mesi_totale_F1"></span></td>
+											<td><span class="fontDinMedium" id="_ultimi12Mesi_totale_F2"></span></td>
+											<td><span class="fontDinMedium" id="_ultimi12Mesi_totale_F3"></span></td>
+											<td><span class="fontDinMedium" id="_ultimi12Mesi_totale_TOT"></span></td>
 										</tr>
 									</tbody>
 								</table>
@@ -1431,12 +1395,12 @@
 					      	<tbody>
 							    <tr>
 							    	<td class="no-back"></td>
-							    	<td class="grigio-scuro"><strong>Periodo</strong></td>
-							        <td><strong>Scaglione</strong></td>
-							        <td class="grigio-scuro"><strong>Quantità</strong></td>
-							        <td><strong>Prezzo [€/kWh]</strong></td>
-							        <td class="grigio-scuro"><strong>Totale [€]</strong></td>
-							        <!-- <td><strong>Iva %</td> -->
+							    	<td class="grigio-scuro"><span class="fontDinMedium">Periodo</span></td>
+							        <td><span class="fontDinMedium">Scaglione</span></td>
+							        <td class="grigio-scuro"><span class="fontDinMedium">Quantità</span></td>
+							        <td><span class="fontDinMedium">Prezzo [€/kWh]</span></td>
+							        <td class="grigio-scuro"><span class="fontDinMedium">Totale [€]</span></td>
+							        <!-- <td><span class="fontDinMedium">Iva %</span></td> -->
 							    </tr>
 							    <!-- *** prima riga dettaglio imposte -->
 							    <tr data-data_type="simple_loop" data-first_node="Imposte" data-path_type="xpath" data-path_data="DettagliImposte/QuotaDettaglioImposte">
@@ -1510,10 +1474,10 @@
 						<table id="_TABELLA_DETTAGLIO_Iva" class="custom font6pt">
 							<tbody>
 								<tr>
-									<td><strong>Descrizione</strong></td>
-									<td class="grigio-scuro"><strong>Imponibile</strong></td>
-						            <td><strong>Aliquota (€)</strong></td>
-						            <td class="grigio-scuro"><strong>Iva (€)</strong></td>
+									<td><span class="fontDinMedium">Descrizione</span></td>
+									<td class="grigio-scuro"><span class="fontDinMedium">Imponibile</span></td>
+						            <td><span class="fontDinMedium">Aliquota (€)</span></td>
+						            <td class="grigio-scuro"><span class="fontDinMedium">Iva (€)</span></td>
 								</tr>
 						        <tr data-data_type="simple_loop" data-first_node="RiepilogoIvaBolletta" data-path_type="xpath" data-path_data="RiepilogoIva">
 						        	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DescrizioneImponibile">Imponibile IVA 22%</span></td>
@@ -1596,9 +1560,9 @@
 										    		</td>
 										    	</tr>
 										        <tr>
-										        	<td><span><strong>Bolletta</strong></span></td>
-										            <td><span><strong>Scadenza</strong></span></td>
-										            <td><span><strong>Totale (€)</strong></span></td>
+										        	<td><span class="fontDinMedium">Bolletta</span></td>
+										            <td><span class="fontDinMedium">Scadenza</span></td>
+										            <td><span class="fontDinMedium">Totale (€)</span></td>
 										        </tr>
 										        <tr data-data_type="simple_loop" data-first_node="MorositaDocumenti" data-path_type="xpath" data-path_data="Dettagli/Morosita">
 										        	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataEmissione">29/09/2099</span> <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/NumeroDocumento">123456789</span></td>
@@ -1606,7 +1570,7 @@
 										            <td><span class="importo-bollette-non-pagate" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoDaPagare">111</span></td>
 										        </tr>
 										        <tr class="righe-bollette-non-pagate">
-										        	<td><span><strong>Totale insoluto (€)</strong></span></td>
+										        	<td><span class="fontDinMedium">Totale insoluto (€)</span></td>
 										            <td></td>
 										    		<td><span data-data_type="single" data-first_node="MorositaDocumenti" data-path_type="xpath" data-path_data="Totale">222</span></td>
 										    	</tr>
@@ -1614,7 +1578,7 @@
 										    		<td colspan="3"><span>Qualora le bollette sollecitate le risultassero già pagate, consideri nullo questo avviso.</span></td>
 										    	</tr> -->
 										        <tr class="righe-interessi-applicati righe-bollette-non-pagate">
-										    		<td colspan="3"><span><strong>Interessi applicati</strong></span></td>
+										    		<td colspan="3"><span class="fontDinMedium">Interessi applicati</span></td>
 										    	</tr>
 										         <tr class="righe-interessi-applicati righe-bollette-non-pagate">
 										        	<td><span>Periodo</span></td>
@@ -1681,37 +1645,37 @@
 							Essere informati è il miglior modo per essere sicuri di pagare ciò che è dovuto. Per noi di Omnia Energia essere vicini al cliente significa anche renderlo autonomo nella corretta lettura della propria bolletta. Per questa ragione ti forniamo informazioni che possono esserti utili.
 						</div>
 						<div class="paragrafo">
-							<strong>La spesa per la materia energia</strong> comprende gli importi fatturati relativamente alle diverse attività svolte dal venditore per fornire l'energia elettrica al cliente finale.
-							<strong>E' composta da</strong>: • <strong>una quota fissa*</strong> (euro/anno); • <strong>una quota energia**</strong> (euro/kWh) con prezzo differenziato per <strong>fasce orarie****</strong> per utenze con contatore elettronico teleletto.
+							<span class="fontDinMedium">La spesa per la materia energia</span> comprende gli importi fatturati relativamente alle diverse attività svolte dal venditore per fornire l'energia elettrica al cliente finale.
+							<span class="fontDinMedium">E' composta da</span>: • <span class="fontDinMedium">una quota fissa*</span> (euro/anno); • <span class="fontDinMedium">una quota energia**</span> (euro/kWh) con prezzo differenziato per <span class="fontDinMedium">fasce orarie****</span> per utenze con contatore elettronico teleletto.
 						</div>
 						<div class="paragrafo">
-							<strong>La spesa per il trasporto e la gestione del contatore</strong> comprende gli importi fatturati per le diverse attività che consentono ai venditori di consegnare ai clienti finali l'energia elettrica.
-							<strong>E' composta da</strong>: • una <strong>quota fissa*</strong> (euro/anno) • una <strong>quota energia**</strong> (euro/kWh) • una <strong>quota potenza***</strong> (euro/kW/anno).
+							<span class="fontDinMedium">La spesa per il trasporto e la gestione del contatore</span> comprende gli importi fatturati per le diverse attività che consentono ai venditori di consegnare ai clienti finali l'energia elettrica.
+							<span class="fontDinMedium">E' composta da</span>: • una <span class="fontDinMedium">quota fissa*</span> (euro/anno) • una <span class="fontDinMedium">quota energia**</span> (euro/kWh) • una <span class="fontDinMedium">quota potenza***</span> (euro/kW/anno).
 						</div>
 						<div class="paragrafo">
-							<strong>La spesa per oneri di sistema</strong> comprende gli importi per la copertura di costi relativi ad attività di interesse generale per il sistema elettrico, che vengono pagati da tutti i clienti finali del servizio elettrico.
-							<strong>E' composta da</strong>: • una <strong>quota fissa*</strong> (euro/anno) • una <strong>quota energia**</strong> (euro/kWh) • una <strong>quota potenza****</strong> (euro/kW/anno). La quota fissa non è applicata alle abitazioni di residenza anagrafica. 
+							<span class="fontDinMedium">La spesa per oneri di sistema</span> comprende gli importi per la copertura di costi relativi ad attività di interesse generale per il sistema elettrico, che vengono pagati da tutti i clienti finali del servizio elettrico.
+							<span class="fontDinMedium">E' composta da</span>: • una <span class="fontDinMedium">quota fissa*</span> (euro/anno) • una <span class="fontDinMedium">quota energia**</span> (euro/kWh) • una <span class="fontDinMedium">quota potenza****</span> (euro/kW/anno). La quota fissa non è applicata alle abitazioni di residenza anagrafica. 
 						</div>
 						<div class="paragrafo">
-							<strong>Altre partite</strong>: Questa voce è presente solo nelle bollette in cui vengono addebitati o accreditati importi diversi da quelli inclusi nelle altre voci di spesa. Ad esempio, possono essere inserite in questa voce gli interessi di mora, l'addebito/restituzione del deposito cauzionale, i contributi di allacciamento, CMOR, ecc.
+							<span class="fontDinMedium">Altre partite</span>: Questa voce è presente solo nelle bollette in cui vengono addebitati o accreditati importi diversi da quelli inclusi nelle altre voci di spesa. Ad esempio, possono essere inserite in questa voce gli interessi di mora, l'addebito/restituzione del deposito cauzionale, i contributi di allacciamento, CMOR, ecc.
 						</div>
 						<div class="paragrafo">
-							<strong>Imposte</strong>: Comprende le voci relative all'imposta di consumo (accisa) e all'imposta sul valore aggiunto (IVA). L'accisa si applica alla quantità di energia consumata mentre l'IVA si applica sull'importo totale della bolletta ad esclusione delle voci fuori campo IVA.
+							<span class="fontDinMedium">Imposte</span>: Comprende le voci relative all'imposta di consumo (accisa) e all'imposta sul valore aggiunto (IVA). L'accisa si applica alla quantità di energia consumata mentre l'IVA si applica sull'importo totale della bolletta ad esclusione delle voci fuori campo IVA.
 						</div>
 						<div class="paragrafo">
-							<strong>Ricalcoli</strong>: Questa voce è presente solo nelle bollette in cui vengono ricalcolati importi già pagati in bollette precedenti, a causa di una modifica dei consumi o dei prezzi applicati.
+							<span class="fontDinMedium">Ricalcoli</span>: Questa voce è presente solo nelle bollette in cui vengono ricalcolati importi già pagati in bollette precedenti, a causa di una modifica dei consumi o dei prezzi applicati.
 						</div>
 						<div class="paragrafo">
-							<strong>Bonus sociale</strong>: Questa voce è presente solo nelle bollette dei clienti domestici in cui è riconosciuto il bonus sociale (o una sua quota parte) e comprende l'importo accreditato al cliente a titolo di bonus.
+							<span class="fontDinMedium">Bonus sociale</span>: Questa voce è presente solo nelle bollette dei clienti domestici in cui è riconosciuto il bonus sociale (o una sua quota parte) e comprende l'importo accreditato al cliente a titolo di bonus.
 						</div>
 						<div class="paragrafo">
-							<strong>Canone di abbonamento alla televisione per uso privato</strong>: Questa voce è presente solo nelle bollette di energia elettrica di clienti domestici residenti e addebita una quota del canone di abbonamento alla TV dovuto per l'anno in corso.
+							<span class="fontDinMedium">Canone di abbonamento alla televisione per uso privato</span>: Questa voce è presente solo nelle bollette di energia elettrica di clienti domestici residenti e addebita una quota del canone di abbonamento alla TV dovuto per l'anno in corso.
 						</div>
 						<div class="paragrafo">
-							<div><strong>*Quota fissa</strong>: è la parte del prezzo espressa in euro/anno, che si paga per avere un punto di consegna attivo, anche in assenza di consumo e qualunque sia la potenza impegnata o prelevata.</div>
-							<div><strong>**Quota energia</strong>: comprende tutti gli importi da pagare in proporzione al consumo.</div>
-							<div><strong>***Quota potenza</strong>: è l'importo da pagare in proporzione alla potenza impegnata o prelevata anche in assenza di consumo di energia.</div>     
-							<div><strong>****Fasce orarie</strong>: Sono periodi di tempo ai quali corrispondono diversi prezzi dell'energia.</div>
+							<div><span class="fontDinMedium">*Quota fissa</span>: è la parte del prezzo espressa in euro/anno, che si paga per avere un punto di consegna attivo, anche in assenza di consumo e qualunque sia la potenza impegnata o prelevata.</div>
+							<div><span class="fontDinMedium">**Quota energia</span>: comprende tutti gli importi da pagare in proporzione al consumo.</div>
+							<div><span class="fontDinMedium">***Quota potenza</span>: è l'importo da pagare in proporzione alla potenza impegnata o prelevata anche in assenza di consumo di energia.</div>     
+							<div><span class="fontDinMedium">****Fasce orarie</span>: Sono periodi di tempo ai quali corrispondono diversi prezzi dell'energia.</div>
 							<div>
 								Sono suddivise in: Fascia F1: da lunedì a venerdì, dalle 8.00 alle 19.00, escluse le festività nazionali.
 								Fascia F2: da lunedì a venerdì, dalle 7.00 alle 8.00 e dalle 19.00 alle 23.00, escluse le festività nazionali; sabato, dalle 7.00 alle 23.00, escluse le festività nazionali. Fascia F3: da lunedì a sabato, dalle 00.00 alle 7.00 e dalle 23.00 alle 24.00; domenica e festivi, tutte le ore della giornata.
@@ -1752,17 +1716,17 @@
 			<div class="content">
 				<div class="header font10pt color1805C fontDinBlack">ANNOTAZIONI E ULTERIORI INFORMAZIONI PREVISTE DALL'ARERA</div>
 				<div class="dati font6pt">
-					<div class="titolo"><strong>Pagamenti sospesi e rateizzazioni</strong></div>
+					<div class="titolo"><span class="fontDinMedium">Pagamenti sospesi e rateizzazioni</span></div>
 					<div class="body">
 						<div>Nei casi indicati agli artt. 13-bis TIV - tra cui a titolo esemplificativo e non esaustivo, nel caso in cui la bolletta contiene ricalcoli, o , a seguito di malfunzionamento del gruppo di misura per causa non imputabile al cliente, venga richiesto il pagamento di corrispettivi per consumi non registrati dal gruppo di misura per un importo superiore a 1,5 volte dell’addebito medio delle bollette emesse per i clienti domestici e di 2,5 volte per i clienti altri usi - il cliente può richiedere la rateizzazione degli importi dovuti, entro i 10 giorni successivi dal termine fissato per il pagamento della bolletta, chiamando il Numero Verde gratuito 800 98 44 55 dalle 09:15 alle 13:00 e dalle 14:30 alle 18:00.</div>
 						<div>In casi DIVERSI da quelli indicati dai suddetti articoli 13-bis TIV la richiesta di rateizzazione deve essere effettuata entro 2 giorni successivi al termine fissato per il pagamento della bolletta, rimane salva la facoltà di Omnia Energia di autorizzare la rateizzazione.</div>
 					</div>
-					<div class="titolo"><strong>Costo medio unitario</strong></div>
+					<div class="titolo"><span class="fontDinMedium">Costo medio unitario</span></div>
 					<div class="body">
-						<div><strong>Il costo medio unitario per la spesa per la materia energia</strong> è pari a 0,0672 €/kWh  (calcolato come rapporto tra la spesa per la materia energia e i kWh fatturati)</div> 
-						<div><strong>Il costo medio unitario della bolletta</strong> è pari a 0.2303 €/kWh  (calcolato come rapporto tra la somma della spesa per: materia energia, trasporto e gestione contatore, oneri di sistema e imposte e i kWh fatturati)</div>
+						<div><span class="fontDinMedium">Il costo medio unitario per la spesa per la materia energia</span> è pari a 0,0672 €/kWh  (calcolato come rapporto tra la spesa per la materia energia e i kWh fatturati)</div> 
+						<div><span class="fontDinMedium">Il costo medio unitario della bolletta</span> è pari a 0.2303 €/kWh  (calcolato come rapporto tra la somma della spesa per: materia energia, trasporto e gestione contatore, oneri di sistema e imposte e i kWh fatturati)</div>
 					</div>
-					<div class="titolo"><strong>Informazioni relative alla morosità</strong></div>
+					<div class="titolo"><span class="fontDinMedium">Informazioni relative alla morosità</span></div>
 					<div class="body">
 						<div>Nei casi previsti dalla delibera dell’ARERA ARG/elt 4/08 e s.m.i., a fronte di mancato pagamento da parte del Cliente del corrispettivo di una o più fatture, sarà attivata la procedura per la sospensione della fornitura di energia per i punti di prelievo intestati al cliente.</div>
 						<div>Come specificato nelle CGF fornite alla stipula del contratto, tale procedura prevede:</div>
@@ -1771,11 +1735,11 @@
 						<div>Eventuali disservizi o danni derivanti dalla sospensione della fornitura, a seguito del processo di messa in mora, non sono da considerarsi di responsabilità di Omnia Energia Spa. Come previsto dalla delibera dell’ARERA ARG/elt 4/08 e s.m.i. i corrispettivi di sospensione ed eventuale riattivazione della fornitura nonché le spese sostenute per l'inoltro delle messe in mora e dei solleciti di pagamento saranno incluse nella prima fattura utile.</div>
 						<div>In caso di risoluzione del Contratto per morosità del Cliente, il Fornitore avrà diritto al versamento degli interessi di mora oltre al maggior danno.</div>
 					</div>					
-					<div class="titolo"><strong>Informazioni relative ai pagamenti ed agli interessi di mora</strong></div>
+					<div class="titolo"><span class="fontDinMedium">Informazioni relative ai pagamenti ed agli interessi di mora</span></div>
 					<div class="body">In caso di ritardato pagamento delle fatture il cliente sarà tenuto, senza la necessità di formale messa in mora da parte del Fornitore, alla corresponsione in favore di quest'ultimo di interessi moratori sugli importi delle fatture insolute al tasso BCE tempo per tempo vigente aumentato di 8 punti percentuali per clienti business e al tasso ufficiale di riferimento (TUR) tempo per tempo vigente aumentato di 3,5 punti percentuali per clienti domestici, così come previsto dal D. Lgs. n.231/2002, dal giorno successivo alla scadenza di ciascuna fattura e sino all'integrale soddisfo.</div>
-					<div class="titolo"><strong>Aggiornamento corrispettivi</strong></div>
+					<div class="titolo"><span class="fontDinMedium">Aggiornamento corrispettivi</span></div>
 					<div class="body">Il prezzo dell’energia e delle perdite di rete sono definiti secondo quanto previsto dalle CTE o da modifiche successivamente comunicate. La tariffa di distribuzione, le componenti tariffarie A/UC/MCT, il corrispettivo a copertura dei costi di trasmissione ed il corrispettivo di misura sono aggiornati ai sensi della delibera ARERA 348/07 e s.m.i. Il corrispettivo a copertura dei costi di dispacciamento è aggiornato ai sensi della delibera ARERA 111/06 e s.m.i..</div>
-					<div class="titolo"><strong>Mix di fonti energetiche della produzione nazionale</strong></div>
+					<div class="titolo"><span class="fontDinMedium">Mix di fonti energetiche della produzione nazionale</span></div>
 					<div class="body">
 						<div>Mix energetico medio nazionale dell'energia elettrica immessa nel sistema elettrico italiano, ivi inclusa l’energia elettrica importata, di cui al Decreto 31 luglio 2009 del Ministero dello Sviluppo Economico “Criteri e modalità per la fornitura ai clienti finali delle informazioni sulla composizione del mix energetico utilizzato per la produzione dell'energia elettrica fornita, nonché sull'impatto ambientale della produzione". Come pubblicato da GSE in data 28/06/2019.</div>
 						<table class="custom tabella-arera">
@@ -1842,23 +1806,23 @@
 					
 					
 					
-					<div class="titolo"><strong>Reclami e segnalazioni</strong></div>
+					<div class="titolo"><span class="fontDinMedium">Reclami e segnalazioni</span></div>
 					<div class="body">
 					Eventuali reclami, possono essere inoltrati a Omnia Energia Spa, oltre che all'indirizzo postale indicato nella prima pagina, anche utilizzando l'apposito modulo disponibile nella sua Area Clienti sul sito www.omniaenergia.it. Nel caso si decida di non utilizzare l'apposito modulo, nella comunicazione si dovranno indicare obbligatoriamente le seguenti informazioni minime: nome, cognome, indirizzo di fornitura, indirizzo postale (se diverso dall'indirizzo di fornitura) o telematico e il servizio a cui si riferisce il reclamo (elettrico, gas o entrambi).
 					</div>
-					<div class="titolo"><strong>Servizi aggiuntivi</strong></div>
+					<div class="titolo"><span class="fontDinMedium">Servizi aggiuntivi</span></div>
 					<div class="body">
 					Se sei un cliente MT hai la possibilità di ricevere GRATUITAMENTE la fattura via e-mail attivando il servizio in modo semplice e immediato accedendo alla tua area riservata del sito www.omniaenergia.it. Per ogni fattura cartacea spedita verrà addebitato il costo di € 2,30 + IVA.
 					</div>
-					<div class="titolo"><strong>Dati Catastali</strong></div>
+					<div class="titolo"><span class="fontDinMedium">Dati Catastali</span></div>
 					<div class="body">
 					Il modulo per la comunicazione dei dati catastali è disponibile nella tua Area Clienti sul sito web www.omniaenergia.it. Il modulo debitamente compilato e firmato può essere inoltrato a mezzo fax al numero 0984 65 60 11.
 					</div>
-					<div class="titolo"><strong>Comunicazione da parte dell'Autorità</strong></div>
+					<div class="titolo"><span class="fontDinMedium">Comunicazione da parte dell'Autorità</span></div>
 					<div class="body">
 					"A partire dal 1 marzo 2018, qualora Ella riceva una fattura contenente importi per consumi riferiti a periodi trascorsi da almeno due anni, può contestarli e non pagarli, in applicazione della Legge di Bilancio 2018 (Legge n. 205/17). Il Suo venditore ha l'obbligo, contestualmente a tale fattura e comunque almeno 10 giorni prima della scadenza del pagamento, di informarLa per agevolarLa nell'esercizio di questa facoltà. Per ulteriori informazioni chiami il numero verde dello Sportello dell'Autorità di Regolazione per Energia Reti e Ambiente (ARERA) 800 166 654."
 					</div>
-					<div class="titolo"><strong>Comunicazione sulla fatturazione elettronica</strong></div>
+					<div class="titolo"><span class="fontDinMedium">Comunicazione sulla fatturazione elettronica</span></div>
 					<div class="body">
 					Qualora la fattura elettronica associata alla presente fattura cortesia non risulti essere stata recapitata dallo SDI, perché il codice destinatario relativo risulta essere “0000000” a causa della mancata comunicazione del tuo codice destinatario o in alternativa del tuo indirizzo PEC in precedenza richiesto o per qualsiasi altra motivazione, ti informiamo che lo SDI rende disponibile la fattura elettronica nell’area a te riservata del sito web dell’Agenzia delle Entrate e che pertanto puoi provvedere a scaricarla.
 					</div>

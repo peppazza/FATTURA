@@ -4,15 +4,26 @@
 }
 @font-face {
   	font-family: dinMedium;
-  	src: url(fonts/dinMedium.ttf);
+  	src: url(fonts/dinMedium.otf);
 }
 @font-face {
   	font-family: dinBlack;
   	src: url(fonts/dinBlack.ttf);
 }
+
+@font-face {
+  	font-family: euroSansStdRegular;
+  	src: url(fonts/euroSansStdRegular.otf);
+}
+@font-face {
+  	font-family: euroSansStdBold;
+  	src: url(fonts/euroSansStdBold.otf);
+}
+
+
 @font-face {
   font-family: SourceSansPro;
-  src: url(fonts/SourceSansPro-Regular.ttf);
+  src: url(fonts/SourceSansProRegular.ttf);
 }
 
 * {
@@ -51,6 +62,7 @@ page[size="A4"] {
 }
 page[size="A4"] .sub.pagina-inner {
 	height: 1064px;
+	padding-right: 20px;
 }
 @page {
 	size: A4;
@@ -66,6 +78,12 @@ page[size="A4"] .sub.pagina-inner {
 	}
 	.fontDinBlack {
 		font-family: dinBlack !important;
+	}
+	.euroSansStdRegular {
+		font-family: euroSansStdRegular !important;
+	}
+	.euroSansStdBold {
+		font-family: euroSansStdBold !important;
 	}
 /* FONT SIZES */
 	.font17pt {
@@ -171,36 +189,6 @@ table.custom tbody tr td.no-back {
 	width: 396px;
 	height: 150px;
 }
-/*
-#headerLogo {
-	margin-bottom: 18px;
-}
-#headerLogo .logo img {
-	width: 160px;
-	margin-top: 30px;
-}
-#headerLogo .header_logo {
-	text-align: right;
-	margin-right: 20px;
-}
-#headerLogo .header_logo img {
-	width: 308px;
-   	margin-right: -40px;
-}
- */
-/*
-#headerLogo .logo img {
-	width: 240px;
-	margin-left: 20px;
-}
-#headerLogo .header_logo {
-	text-align: right;
-	margin-right: 20px;
-}
-#headerLogo .header_logo img {
-	width: 150px;
-}
- */
  
 .header-inizio-pagina {
 	padding-top: 20px;
@@ -358,7 +346,6 @@ table.custom tbody tr td.no-back {
 	}
 	#corpoPagina1Con2Colonne .totale-spesa-e-grazie #messaggioGraziePerBolletteTuttePagate .titolo,
 	#corpoPagina1Con2Colonne .totale-spesa-e-grazie #messaggioAttenzionePerBolletteNonTuttePagate .titolo {
-		font-weight: 800;
 		margin-bottom: 2px;
 	}
 	/* *** grafico a torta (sintesi degli importi) */
@@ -440,12 +427,12 @@ table.custom tbody tr td.no-back {
 	#contattiEAutoletturaEGuasti .sezione .header {
 		font-weight: 800;
 		border-bottom: 1px solid #aaaaaa;
-	    padding: 2px 0 2px;
-    	margin-bottom: 4px;
+	    padding: 1px 0;
+    	margin-bottom: 3px;
 	}
 	#contattiEAutoletturaEGuasti .sezione .corpo .dato-riga-singola .etichetta,
 	#contattiEAutoletturaEGuasti .sezione .corpo .dato-riga-doppia .etichetta {
-		font-weight: 600;
+		font-family: dinMedium;
 	}
 	#contattiEAutoletturaEGuasti .sezione .corpo .dato-riga-singola .etichetta,
 	#contattiEAutoletturaEGuasti .sezione .corpo .dato-riga-singola .valore-tag {
