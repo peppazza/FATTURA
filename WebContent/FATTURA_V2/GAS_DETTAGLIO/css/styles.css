@@ -1,13 +1,8 @@
-* {
-	font-family: "DINPro";
-	font-size: 8pt;
-	line-height: 1;
+/* qr-code */
+@font-face {
+  font-family: SourceSansPro;
+  src: url("fonts/SourceSansPro-Regular.ttf");
 }
-
-html, body, div, span, table, tbody, thead, tr, td, th, strong {
-	font-size: inherit;
-}
-
 .qr-code-box,
 .qr-code-box > .qr-code {
 	font-family: "IDAutomationDMatrix" !important;
@@ -18,6 +13,22 @@ html, body, div, span, table, tbody, thead, tr, td, th, strong {
 	display:inline-block;
 	min-width: 22mm !important;
 	min-height: 10mm !important;
+}
+
+@font-face {
+  font-family: "dinRegularLocal";
+  src: url("fonts/DINPro-Regular.ttf");
+}
+
+* {
+	/* font-family: "DINPro"; */
+	font-family: "dinRegularLocal";
+	font-size: 8pt;
+	line-height: 1;
+}
+
+html, body, div, span, table, tbody, thead, tr, td, th, strong {
+	font-size: inherit;
 }
 
 page[size="A4"] {

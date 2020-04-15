@@ -1593,7 +1593,316 @@ LEGACY
 			</div>
 		</div>	
 		
-		<h1>Ciao</h1>
+		<script type="text/javascript">
+			function showHideBoxBasedOnNumericValue(tableId, noDataMessageBoxId, checkNumericValueBoxId, boxNameForLogging) {
+				try {
+					var esisteDettaglioImposte = false;
+					var esisteAccontiImposte = false;
+					
+					var elems = document.getElementsByClassName(checkNumericValueBoxId);
+					if (elems.length > 0) {
+						var value = elems[0].innerHTML;
+						if (value) {
+							value = value.trim();
+							if (value !== '')
+								esisteDettaglioImposte = true;
+						}
+					}
+					
+					if (esisteDettaglioImposte || esisteAccontiImposte) {
+						document.getElementById(tableId).style.display = 'table';
+						document.getElementById(noDataMessageBoxId).style.display = 'none';
+					} else {
+						document.getElementById(tableId).style.display = 'none';
+						document.getElementById(noDataMessageBoxId).style.display = 'block';
+					}
+				} catch (err) {
+					console.log('errore init display per ' + boxNameForLogging, err);
+				}
+			}
+		</script>
+		
+		<!-- @CONGUAGLI CONSUMI STIMATI - start ==========
+			 ============================================= -->
+		<div id="boxConguagliConsumiStimati" class="pure-g">
+			<div class="pure-u-24-24">
+				<div class="content">
+					<div class="pure-g">
+						<div class="pure-u-24-24">
+							<div class="pure-g titolo sfondo-blu">
+								<div class="pure-u-24-24 contenuto">CONGUAGLI CONSUMI STIMATI</div>
+							</div>
+							<div class="pure-g dati">
+								<div class="pure-u-24-24">
+									<div class="table-container">
+										<div id="_MESSAGGIO_NO_DATI_DETTAGLIO_ConguaglioConsumiStimati" class="messaggio-no-dati-per-dettaglio">
+											Nessun dato
+										</div>
+										<table id="_TABELLA_DETTAGLIO_ConguaglioConsumiStimati">
+											<tbody class="sezione-conguaglio-consumi-stimati" data-data_type="simple_loop" data-first_node="ConguaglioConsumiStimati" data-path_type="xpath" data-path_data="">
+									            <tr>
+									    		    <td colspan="3"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">xxx</span></td>
+									    	    </tr>
+									            <tr class="bordo-tab-sotto">
+									        	    <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span></td>
+									                <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
+									                <td><span class="_CHECKED_VALUE_conguaglio-consumi-stimati-imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">123</span></td>
+									            </tr>
+									        </tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			// ***CONGUAGLI CONSUMI STIMATI
+			showHideBoxBasedOnNumericValue('_TABELLA_DETTAGLIO_ConguaglioConsumiStimati', '_MESSAGGIO_NO_DATI_DETTAGLIO_ConguaglioConsumiStimati', '_CHECKED_VALUE_conguaglio-consumi-stimati-imponibile', 'CONGUAGLI CONSUMI STIMATI');
+		</script>
+		
+		
+		<!-- @RETTIFICHE LETTURE - start ==========
+			 ====================================== -->
+		<div id="boxRettificheLetture" class="pure-g">
+			<div class="pure-u-24-24">
+				<div class="content">
+					<div class="pure-g">
+						<div class="pure-u-24-24">
+							<div class="pure-g titolo sfondo-blu">
+								<div class="pure-u-24-24 contenuto">RETTIFICHE LETTURE</div>
+							</div>
+							<div class="pure-g dati">
+								<div class="pure-u-24-24">
+									<div class="table-container">
+										<div id="_MESSAGGIO_NO_DATI_DETTAGLIO_RettificheLetture" class="messaggio-no-dati-per-dettaglio">
+											Nessun dato
+										</div>
+										<table id="_TABELLA_DETTAGLIO_RettificheLetture">
+											<tbody class="sezione-rettifiche-letture" data-data_type="simple_loop" data-first_node="RettificheLetture" data-path_type="xpath" data-path_data="Rettifiche">
+										        <tr>
+										    		<td colspan="3">
+										    			<span><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">xxx</span>
+											    		del <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataLetturaRettificata"></span>
+											    		di <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/LetturaRettificata"></span> kWh</span>
+											    	</td>
+										    	</tr>
+										        <tr>
+										        	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span></td>
+										            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
+										            <td><span class="_CHECKED_VALUE_rettifiche-letture-imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">123</span></td>
+										        </tr>
+										       </tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			// ***RETTIFICHE LETTURE
+			showHideBoxBasedOnNumericValue('_TABELLA_DETTAGLIO_RettificheLetture', '_MESSAGGIO_NO_DATI_DETTAGLIO_RettificheLetture', '_CHECKED_VALUE_rettifiche-letture-imponibile', 'RETTIFICHE LETTURE');
+		</script>
+			
+		
+		<!-- @CONGUAGLIO TARIFFARIO - start ==========
+			 ======================================= -->
+		<div id="boxConguagliTariffari" class="pure-g">
+			<div class="pure-u-24-24">
+				<div class="content">
+					<div class="pure-g">
+						<div class="pure-u-24-24">
+							<div class="pure-g titolo sfondo-blu">
+								<div class="pure-u-24-24 contenuto">CONGUAGLIO TARIFFARIO</div>
+							</div>
+							<div class="pure-g dati">
+								<div class="pure-u-24-24">
+									<div class="table-container">
+										<div id="_MESSAGGIO_NO_DATI_DETTAGLIO_ConguaglioTariffario" class="messaggio-no-dati-per-dettaglio">
+											Nessun dato
+										</div>
+										<table id="_TABELLA_DETTAGLIO_ConguaglioTariffario">
+											<tbody class="sezione-conguaglio-tariffario" data-data_type="simple_loop" data-first_node="ConguaglioTariffario" data-path_type="xpath" data-path_data="Ricalcolo">
+										        <tr>
+										    		<td colspan="3">
+										    			<span>
+											    			<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">xxx</span>
+											    			<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ComponenteConguagliata"></span>
+											    		</span>
+										    		</td>
+										    	</tr>
+										        <tr class="bordo-tab-sotto">
+										        	<td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span></td>
+										            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
+										            <td><span class="_CHECKED_VALUE_conguaglio-tariffario-imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">123</span></td>
+										        </tr>
+									        </tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<script type="text/javascript">
+			// ***CONGUAGLI TARIFFARI
+			showHideBoxBasedOnNumericValue('_TABELLA_DETTAGLIO_ConguaglioTariffario', '_MESSAGGIO_NO_DATI_DETTAGLIO_ConguaglioTariffario', '_CHECKED_VALUE_conguaglio-tariffario-imponibile', 'CONGUAGLI TARIFFARI');
+		</script>
+		
+		
+		<!-- @DETTAGLIO RICALCOLI - start ==========
+			 ======================================= -->
+		<div id="boxDettaglioRicalcoli" class="pure-g">
+			<div class="pure-u-24-24">
+				<div class="content">
+					<div class="pure-g">
+						<div class="pure-u-24-24">
+							<div class="pure-g titolo sfondo-blu">
+								<div class="pure-u-24-24 contenuto">DETTAGLIO RICALCOLI</div>
+							</div>
+							<div class="pure-g dati">
+								<div class="pure-u-24-24">
+									<div class="table-container">
+										<div id="_MESSAGGIO_NO_DATI_DETTAGLIO_Ricalcoli" class="messaggio-no-dati-per-dettaglio">
+											Nessun dato
+										</div>
+										<table id="_TABELLA_DETTAGLIO_Ricalcoli">
+											<tbody data-data_type="nested_loop" data-level="0" data-first_node="ElementiDettaglio" data-path_type="xpath" data-path_data="Servizi/Servizio[Descrizione = &quot;DETTAGLIO RICALCOLI&quot;]/Quote/Quota">
+												<tr class="riga-intestazione-ricalcoli">
+													<td><span class="rica-dett1b" data-data_type="nested_loop_data" data-level="0" data-path_type="xpath" data-path_data="/Descrizione">test</span></td>
+													<td>Periodo</td>
+													<td>Scaglione/PCS</td>
+													<td>Quantità</td>
+													<td>U. M.</td>
+													<td>Prezzo Unitario</td>
+													<td>Totale (€)</td>
+													<td>IVA %</td>
+												</tr>
+												<tr class="bordo-tab-sopra riga-dettaglio-ricalcoli" data-data_type="nested_loop_child" data-level="1" data-path_type="xpath" data-path_data="Dettagli/QuotaDettaglio">
+													<td class="dettaglio-descrizione"><span class="rica-dett3" data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Descrizione">test</span></td>
+													<td class="dettaglio-periodo">
+														<span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Dal">test</span> - <span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Al">test</span>
+													</td>
+													<td class="dettaglio-scaglione"><span class="allineamento-scaglione" data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Scaglione">test</span></td>
+													<td><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Quantita">test</span></td>
+													<td><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/UnitaMisura">test</span></td>
+													<td><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/ImportoUnitario">test</span></td>
+													<td><span class="_CHECKED_VALUE_dettaglio-ricalcoli-imponibile" data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Imponibile">123</span></td>
+													<td><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/AliquotaIva">test</span></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<script type="text/javascript">
+			// ***DETTAGLIO RICALCOLI
+			showHideBoxBasedOnNumericValue('_TABELLA_DETTAGLIO_Ricalcoli', '_MESSAGGIO_NO_DATI_DETTAGLIO_Ricalcoli', '_CHECKED_VALUE_dettaglio-ricalcoli-imponibile', 'DETTAGLIO RICALCOLI');
+		</script>
+	
+			
+		<!-- @CALCOLO INTERESSI - start ==========
+			 ======================================= -->
+		<div id="boxCalcoloInteressi" class="pure-g">
+			<div class="pure-u-24-24">
+				<div class="content">
+					<div class="pure-g">
+						<div class="pure-u-24-24">
+							<div class="pure-g titolo sfondo-blu">
+								<div class="pure-u-24-24 contenuto">CALCOLO INTERESSI</div>
+							</div>
+							<div class="pure-g dati">
+								<div class="pure-u-24-24">
+									<div class="table-container">
+										<div id="_MESSAGGIO_NO_DATI_DETTAGLIO_CalcoloInteressi" class="messaggio-no-dati-per-dettaglio">
+											Nessun dato
+										</div>
+										<table id="_TABELLA_DETTAGLIO_CalcoloInteressi">
+									   		<tbody>
+										        <tr>
+										    	    <td>Bolletta</td>
+										    	    <td>Totale <br/>Bolletta (€)</td>
+										            <td>Scadenza</td>
+										            <td>Data inizio <br/>calcolo interessi</td>
+										            <td>Data Fine calcolo <br/>interessi</td>
+										            <td>Numero Giorni</td>
+										            <td>Importo per <br/>calcolo (€)</td>
+										            <td>Aliquota %</td>
+										            <td>Totale <br/>interessi (€)</td>
+										        </tr>
+										       <tr data-data_type="simple_loop" data-first_node="ElementiDettaglio" data-path_type="xpath" data-path_data="MorositaInteressiApplicatiBollette/MorositaInteressiApplicati">
+										    	    <td class="left"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataEmissione">test</span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/NumeroDocumento">test</span></td>
+										    	    <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ImportoOriginale">test</span></td>
+										            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataScadenza">test</span></td>
+										            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/InteressiDal">test</span></td>
+										            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/InteressiAl">test</span></td>
+										            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/NumeroGiorni">test</span></td>
+										            <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Valore">test</span></td>
+										            <td><span class="_CHECKED_VALUE_calcolo-interessi-InteressiTassoPercentuale" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/InteressiTassoPercentuale">123</span></td>
+										            <td><span class="_CHECKED_VALUE_calcolo-interessi-TotaleInteressiAddebitati" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/TotaleInteressiAddebitati"></span></td>
+										    	</tr>
+									     	</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			// ***CALCOLO INTERESSI
+			// per questa tabella fa un test su 2 valori (al contrario delle altre su cui si effettua un test soo sull'imponibile)
+			try {
+				(function() {
+					var esisteInteressiTassoPercentuale = false;
+					var esisteTotaleInteressiAddebitati = false;
+					
+					var elems = document.getElementsByClassName('_CHECKED_VALUE_calcolo-interessi-InteressiTassoPercentuale');
+					if (elems.length > 0) {
+						var value = elems[0].innerHTML;
+						if (value) {
+							value = value.trim();
+							if (value !== '')
+								esisteInteressiTassoPercentuale = true;
+						}
+					}
+					
+					elems = document.getElementsByClassName('_CHECKED_VALUE_calcolo-interessi-TotaleInteressiAddebitati');
+					if (elems.length > 0) {
+						var value = elems[0].innerHTML;
+						if (value) {
+							value = value.trim();
+							if (value !== '')
+								esisteTotaleInteressiAddebitati = true;
+						}
+					}
+					
+					if (esisteInteressiTassoPercentuale || esisteTotaleInteressiAddebitati) {
+						document.getElementById('_TABELLA_DETTAGLIO_CalcoloInteressi').style.display = 'table';
+						document.getElementById('_MESSAGGIO_NO_DATI_DETTAGLIO_CalcoloInteressi').style.display = 'none';
+					} else {
+						document.getElementById('_TABELLA_DETTAGLIO_CalcoloInteressi').style.display = 'none';
+						document.getElementById('_MESSAGGIO_NO_DATI_DETTAGLIO_CalcoloInteressi').style.display = 'block';
+					}				
+				})();
+			} catch (err) {
+				console.log('errore init display per DETTAGLIO IMPOSTE', err);
+			}
+		</script>
 	</div>
 	
 	<!-- @FOOTER PAGINA 3 - start ========== -->
