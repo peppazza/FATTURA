@@ -1,33 +1,5 @@
-@font-face {
-  	font-family: dinRegular;
-  	src: url(fonts/dinRegular.ttf);
-}
-@font-face {
-  	font-family: dinMedium;
-  	src: url(fonts/dinMedium.otf);
-}
-@font-face {
-  	font-family: dinBlack;
-  	src: url(fonts/dinBlack.ttf);
-}
-
-@font-face {
-  	font-family: euroSansStdRegular;
-  	src: url(fonts/euroSansStdRegular.otf);
-}
-@font-face {
-  	font-family: euroSansStdBold;
-  	src: url(fonts/euroSansStdBold.otf);
-}
-
-
-@font-face {
-  font-family: SourceSansPro;
-  src: url(fonts/SourceSansProRegular.ttf);
-}
-
 * {
-	font-family: dinRegular;
+	font-family: "DIN Pro Regular";
 	font-size: 8pt;
 	line-height: 1;
 }
@@ -71,13 +43,13 @@ page[size="A4"] .sub.pagina-inner {
 
 /* FONT FAMILIES */
 	.fontDinRegular {
-		font-family: dinRegular !important;
+		font-family: "DIN Pro Regular" !important;
 	}
 	.fontDinMedium {
-		font-family: dinMedium !important;
+		font-family: "DIN Pro Medium" !important;
 	}
 	.fontDinBlack {
-		font-family: dinBlack !important;
+		font-family: "DIN Black" !important;
 	}
 	.euroSansStdRegular {
 		font-family: euroSansStdRegular !important;
@@ -215,9 +187,6 @@ table.custom tbody tr td.no-back {
 .header-con-riga-centrale {
 	margin-bottom: 10px;
 }
-.header-con-riga-centrale .testo {
-	font-weight: 800;
-}
 .header-con-riga-centrale .riga-centrale {
 	border-top: 1px solid #777777;
     margin-top: 7px;
@@ -234,37 +203,25 @@ table.custom tbody tr td.no-back {
     -webkit-border-radius: 12px;
 }
 #datiClienteEBolletta .content .colonna-sinistra .header-grassetto {
-	font-weight: 800;
 	margin-bottom: 2px;
 }
 #datiClienteEBolletta .content .colonna-sinistra .valore-tag {
 	margin-bottom: 3px;
-}
-#datiClienteEBolletta .content .colonna-sinistra .valore-tag.codice-cliente {
-	font-weight: 800;
 }
 #datiClienteEBolletta .content .colonna-destra .colonna-destra-inner {
 	border-left: 1px solid #b6262f;
 	padding-left: 10px;
 }
 #datiClienteEBolletta .content .colonna-destra .header-grassetto {
-	font-weight: 800;
 	margin-bottom: 2px;
 }
 #datiClienteEBolletta .content .colonna-destra .riga {
 	margin-bottom: 3px;
 }
-#datiClienteEBolletta .content .colonna-destra .riga .etichetta {
-	font-weight: 600;
-}
-#datiClienteEBolletta .content .colonna-destra .riga .valore-tag {
-	
-}
 #datiClienteEBolletta .content .colonna-destra .riga.periodo {
 	margin: 2px 0;
 }
 #datiClienteEBolletta .content .colonna-destra .riga.periodo .etichetta {
-	font-weight: 800;
     line-height: 1.2;
 }
 #datiClienteEBolletta .content .colonna-destra .riga .valore-tag {
@@ -282,7 +239,6 @@ table.custom tbody tr td.no-back {
 #indirizzoSpedizione .content {
 	text-transform: uppercase;
 	padding: 15px 0;
-	font-weight: 600;
 }
 #indirizzoSpedizione .content {
 	margin-bottom: 2px;	
@@ -302,11 +258,7 @@ table.custom tbody tr td.no-back {
 	    margin: 6px 0 10px;
 	}
 	#corpoPagina1Con2Colonne .dati-fornitura .content .header {
-		font-weight: 800;
 	    margin-bottom: 3px;
-	}
-	#corpoPagina1Con2Colonne .dati-fornitura .content .etichetta {
-		font-weight: 800;
 	}
 	#corpoPagina1Con2Colonne .dati-fornitura .content .dato-riga-singola,
 	#corpoPagina1Con2Colonne .dati-fornitura .content .dato-riga-doppia {
@@ -323,23 +275,12 @@ table.custom tbody tr td.no-back {
 	#corpoPagina1Con2Colonne .totale-spesa-e-grazie {
 		padding: 2.5px 8px;
 	}
-	#corpoPagina1Con2Colonne .totale-spesa-e-grazie .totale-spesa .header {
-	    font-weight: 800;
-	}
 	#corpoPagina1Con2Colonne .totale-spesa-e-grazie .totale-spesa .cifra-da-pagare {
-	    font-weight: 800;
 	    line-height: 1;
 	}
 	#corpoPagina1Con2Colonne .totale-spesa-e-grazie .totale-spesa .simbolo-euro {
-	    font-weight: 600;
 	    line-height: 1;
 	    margin-right: 2px;
-	}
-	#corpoPagina1Con2Colonne .totale-spesa-e-grazie .da-saldare-entro .etichetta {
-	    font-weight: 800;
-	}
-	#corpoPagina1Con2Colonne .totale-spesa-e-grazie .da-saldare-entro .valore {
-		font-weight: 600;
 	}
 	#corpoPagina1Con2Colonne .totale-spesa-e-grazie #messaggioGraziePerBolletteTuttePagate {
 		margin-top: 5px;
@@ -351,9 +292,6 @@ table.custom tbody tr td.no-back {
 	/* *** grafico a torta (sintesi degli importi) */
 	#corpoPagina1Con2Colonne .sintesi-importi {
 		margin-top: 10px;
-	}
-	#corpoPagina1Con2Colonne .sintesi-importi .grafico-a-torta .titolo {
-		font-weight: 800;
 	}
 	#corpoPagina1Con2Colonne .sintesi-importi .grafico-a-torta .contenitore-grafico {
 	    padding: 3px 0;
@@ -425,14 +363,9 @@ table.custom tbody tr td.no-back {
 		margin-bottom: 5px;
 	}
 	#contattiEAutoletturaEGuasti .sezione .header {
-		font-weight: 800;
 		border-bottom: 1px solid #aaaaaa;
 	    padding: 1px 0;
     	margin-bottom: 3px;
-	}
-	#contattiEAutoletturaEGuasti .sezione .corpo .dato-riga-singola .etichetta,
-	#contattiEAutoletturaEGuasti .sezione .corpo .dato-riga-doppia .etichetta {
-		font-family: dinMedium;
 	}
 	#contattiEAutoletturaEGuasti .sezione .corpo .dato-riga-singola .etichetta,
 	#contattiEAutoletturaEGuasti .sezione .corpo .dato-riga-singola .valore-tag {
@@ -467,12 +400,10 @@ table.custom tbody tr td.no-back {
 		margin-top: 7px;
 	}
 	#consulenteDedicato .box-consulente-dedicato .testo .header {
-		font-weight: 700;
 		line-height: 1.1;
 		margin: 2px 0;
 	}
 	#consulenteDedicato .box-consulente-dedicato .testo .corpo {
-		font-weight: 300;
 		line-height: 1.2;
 	}
 
@@ -503,7 +434,6 @@ table.custom tbody tr td.no-back {
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
-    font-weight: 800;
     padding: 2px 8px;
     display: inline-block;
     background-color: #ffffff;
@@ -567,7 +497,6 @@ table.custom tbody tr td.no-back {
 }
 #conguagliRicalcoliEBolletteNonPagate .content #conguagliRicalcoli .header,
 #conguagliRicalcoliEBolletteNonPagate .content #bolletteNonPagate .header {
-	font-weight: 800;
 	margin-bottom: 3px;
 }
 #conguagliRicalcoliEBolletteNonPagate .content #conguagliRicalcoli .messaggio-esistenza-o-meno,
@@ -577,7 +506,6 @@ table.custom tbody tr td.no-back {
 }
 
 #guidaLetturaFattura .content > .header {
-	font-weight: 800;
 	margin-bottom: 4px;
 }
 #guidaLetturaFattura .content .dati .paragrafo {
@@ -589,7 +517,6 @@ table.custom tbody tr td.no-back {
 	margin-top: 8px;
 }
 #arera .content > .header {
-	font-weight: 800;
 	margin-bottom: 4px;
 }
 #arera .content > .dati .body {
