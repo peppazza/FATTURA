@@ -1,0 +1,62 @@
+.ct-label {
+    color: #555555;
+    font-size: .55rem;
+}
+
+/* SINTESI IMPORTI */
+/* *** tipo pie */
+.ct-series.spesaMateriaEnergia .ct-slice-pie {
+	fill: #af2626;
+}
+.ct-series.spesaTrasporto .ct-slice-pie {
+	fill: #e87722;
+}
+.ct-series.spesaOneri .ct-slice-pie {
+	fill: #78be20;
+}
+.ct-series.altrePartite .ct-slice-pie {
+	fill: #0097a9;
+}
+.ct-series.bonusSociale .ct-slice-pie {
+	fill: #f1be48;
+}
+.ct-series.imposte .ct-slice-pie {
+	fill: #c7ccc4;
+}
+.ct-series.iva .ct-slice-pie {
+	fill: #302e2c;
+}
+/* *** tipo donut */
+.ct-series.spesaMateriaEnergia .ct-slice-donut {
+	/* fill: hsl(120, 40%, 60%); */
+	/* stroke: white; */
+	/* stroke-width: 4px; */
+	stroke: #ff7300;
+}
+.ct-series.spesaTrasporto .ct-slice-donut {
+}
+.ct-series.spesaOneri .ct-slice-donut {
+}
+.ct-series.altrePartite .ct-slice-donut {
+}
+.ct-series.imposte .ct-slice-donut {
+}
+
+
+/* QUADRO LETTURE E CONSUMI */
+/* *** tipo bar */
+.ct-series.tipoDato .ct-bar {
+	/* fill: hsl(120, 40%, 60%); */
+	/* stroke: white; */
+	/* stroke-width: 4px; */
+	stroke: #f67b28;
+}
+.ct-series.f1 .ct-bar {
+	stroke: #ffc604;
+}
+.ct-series.f2 .ct-bar {
+	stroke: #70b243;
+}
+.ct-series.f3 .ct-bar {
+	stroke: #a34b15;
+}

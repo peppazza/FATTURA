@@ -1,0 +1,553 @@
+* {
+	font-family: "DIN Pro Regular";
+	font-size: 8pt;
+	line-height: 1;
+}
+
+html, body, div, span, table, tbody, thead, tr, td, th, strong {
+	font-size: inherit;
+}
+
+.qr-code-box,
+.qr-code-box > .qr-code {
+	font-family: "IDAutomationDMatrix" !important;
+	font-size: 8px !important;
+	line-height: 1 !important;
+	max-width: 22mm !important;
+	max-height: 10mm !important;
+	display:inline-block;
+	min-width: 22mm !important;
+	min-height: 10mm !important;
+}
+
+page[size="A4"] {
+	width: 210mm;
+	height: 297mm;
+    /* padding: 20mm;
+	margin: 10mm auto; */
+    display: block;
+    margin: 0 auto 10px;
+    /* margin-bottom: 0.5cm;
+    padding: 60px 30px 0; */
+    padding: 0 20px 0;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+page[size="A4"] .sub.pagina-inner {
+	height: 1064px;
+	padding-right: 20px;
+}
+@page {
+	size: A4;
+	margin: 0;
+}
+
+/* FONT FAMILIES */
+	.fontDinRegular {
+		font-family: "DIN Pro Regular" !important;
+	}
+	.fontDinMedium {
+		font-family: "DIN Pro Medium" !important;
+	}
+	.fontDinBlack {
+		font-family: "DIN Black" !important;
+	}
+	.euroSansStdRegular {
+		font-family: euroSansStdRegular !important;
+	}
+	.euroSansStdBold {
+		font-family: euroSansStdBold !important;
+	}
+/* FONT SIZES */
+	.font17pt {
+		font-size: 17pt!important;
+	}
+	.font15pt {
+		font-size: 15pt!important;
+	}
+	.font14pt {
+		font-size: 14pt!important;
+	}
+	.font13pt {
+		font-size: 13pt!important;
+	}
+	.font12pt {
+		font-size: 12pt!important;
+	}
+	.font11pt {
+		font-size: 11pt!important;
+	}
+	.font10pt {
+		font-size: 10pt!important;
+	}
+	.font9pt {
+		font-size: 9pt!important;
+	}
+	.font8pt {
+		font-size: 8pt!important;
+	}
+	.font7pt {
+		font-size: 7pt!important;
+	}
+	.font6pt {
+		font-size: 6pt!important;
+	}
+/* COLORS */
+	.color75K { color: #666666!important; } /* grigio scuro */
+	.color100K { color: #302e2c!important; } /* nero */
+	.color142C { color: #f1be48!important; } /* giallo ocra */
+	.color158C { color: #e87722!important; } /* arancione */
+	.color1805C { color: #af2626!important; } /* rosso oe */
+	.color368C { color: #78be20!important; } /* verde */
+	.color5517C { color: #c7ccc4!important; } /* grigio */
+	.color7751C { color: #0097a9!important; } /* blu-verde */
+	.back-color75K { background-color: #666666!important; } /* grigio scuro */
+	.back-color100K { background-color: #302e2c!important; } /* nero */
+	.back-color142C { background-color: #f1be48!important; } /* giallo ocra */
+	.back-color158C { background-color: #e87722!important; } /* arancione */
+	.back-color1805C { background-color: #af2626!important; } /* rosso oe */
+	.back-color368C { background-color: #78be20!important; } /* verde */
+	.back-color5517C { background-color: #c7ccc4!important; } /* grigio */
+	.back-color7751C { background-color: #0097a9!important; } /* blu-verde */
+	/* grafico a barre*/
+		/* F3 */
+		.back-color3035K { background-color: #003e51!important; } /* blu scuro */
+		/* F2 */
+		.back-color625K { background-color: #507f70!important; } /* verde scuro */
+		/* F1 codice tampone non corretto! */
+		.back-color7693K { background-color: #e7d83b!important; } /* giallo scuro */
+
+table{
+	width: 100%;
+}
+table.custom {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+table.custom tbody tr td {
+	border: 1px solid #ffffff;
+	padding: 7px 2px;
+}
+table.custom tbody tr td {
+	background-color: #d9d9d9;
+}
+table.custom tbody tr td.header {
+	text-align: center;
+}
+table.custom tbody tr td.grigio-scuro {
+	background-color: #c2c4c6; /* pantone k25 */
+}
+table.custom tbody tr td.no-back {
+	background: none;
+}
+
+.separatore {
+	margin: 6px 0;
+}
+
+#headerLogo {
+	margin: 0 -20px 20px;
+}
+#headerLogo .logo img {
+	width: auto;
+	height: 80px;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+#headerLogo .header {
+    text-align: right;
+}
+#headerLogo .header > img {
+	width: 396px;
+	height: 150px;
+}
+ 
+.header-inizio-pagina {
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+
+.legenda-grafico-a-barre-per-fasce .voce-legenda {
+	display: inline-block;
+}
+.legenda-grafico-a-barre-per-fasce .voce-legenda.voce-legenda-f1 {
+	display: block;
+}
+.legenda-grafico-a-barre-per-fasce .voce-legenda .box-colorato {
+	display: inline-block;
+	width: 7px;
+	height: 7px;
+	margin-right: 4px;
+}
+.legenda-grafico-a-barre-per-fasce .voce-legenda .etichetta {
+	display: inline-block;
+}
+
+
+.header-con-riga-centrale {
+	margin-bottom: 10px;
+}
+.header-con-riga-centrale .riga-centrale {
+	border-top: 1px solid #777777;
+    margin-top: 7px;
+}
+
+#datiClienteEBolletta {
+	margin-bottom: 13px;
+} 
+#datiClienteEBolletta .content {
+    border: 1px solid #b6262f;
+    padding: 8px;
+    border-radius: 12px;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+}
+#datiClienteEBolletta .content .colonna-sinistra .header-grassetto {
+	margin-bottom: 2px;
+}
+#datiClienteEBolletta .content .colonna-sinistra .valore-tag {
+	margin-bottom: 3px;
+}
+#datiClienteEBolletta .content .colonna-destra .colonna-destra-inner {
+	border-left: 1px solid #b6262f;
+	padding-left: 10px;
+}
+#datiClienteEBolletta .content .colonna-destra .header-grassetto {
+	margin-bottom: 2px;
+}
+#datiClienteEBolletta .content .colonna-destra .riga {
+	margin-bottom: 3px;
+}
+#datiClienteEBolletta .content .colonna-destra .riga.periodo {
+	margin: 2px 0;
+}
+#datiClienteEBolletta .content .colonna-destra .riga.periodo .etichetta {
+    line-height: 1.2;
+}
+#datiClienteEBolletta .content .colonna-destra .riga .valore-tag {
+    line-height: 1.2;
+}
+
+
+#qrCodeEIdentificativo .content {
+	margin-top: 30px;
+    margin-left: 70px;
+}
+#indirizzoSpedizione {
+	margin-top: 20px;
+}
+#indirizzoSpedizione .content {
+	text-transform: uppercase;
+	padding: 15px 0;
+}
+#indirizzoSpedizione .content {
+	margin-bottom: 2px;	
+}
+
+
+#corpoPagina1Con2Colonne .colonna-sinistra .colonna-sinistra-inner {
+	padding-right: 12px;
+}
+#corpoPagina1Con2Colonne .colonna-destra .colonna-destra-inner {
+	border-left: 1px solid #aaaaaa;
+	padding-right: 20px;
+}
+/* *** COLONNA SX*/
+	/* *** dati fornitura */
+	#corpoPagina1Con2Colonne .dati-fornitura {
+	    margin: 6px 0 10px;
+	}
+	#corpoPagina1Con2Colonne .dati-fornitura .content .header {
+	    margin-bottom: 3px;
+	}
+	#corpoPagina1Con2Colonne .dati-fornitura .content .dato-riga-singola,
+	#corpoPagina1Con2Colonne .dati-fornitura .content .dato-riga-doppia {
+		margin-bottom: 1.5px;
+	}
+	#corpoPagina1Con2Colonne .dati-fornitura .content .dato-riga-singola .etichetta,
+	#corpoPagina1Con2Colonne .dati-fornitura .content .dato-riga-singola .valore {
+		display: inline;
+	}
+	#corpoPagina1Con2Colonne .dati-fornitura .content .dato-riga-doppia .etichetta {
+		margin-bottom: 1px;
+	}
+	/* *** totale spesa e grazie */
+	#corpoPagina1Con2Colonne .totale-spesa-e-grazie {
+		padding: 2.5px 8px;
+	}
+	#corpoPagina1Con2Colonne .totale-spesa-e-grazie .totale-spesa .cifra-da-pagare {
+	    line-height: 1;
+	}
+	#corpoPagina1Con2Colonne .totale-spesa-e-grazie .totale-spesa .simbolo-euro {
+	    line-height: 1;
+	    margin-right: 2px;
+	}
+	#corpoPagina1Con2Colonne .totale-spesa-e-grazie #messaggioGraziePerBolletteTuttePagate {
+		margin-top: 5px;
+	}
+	#corpoPagina1Con2Colonne .totale-spesa-e-grazie #messaggioGraziePerBolletteTuttePagate .titolo,
+	#corpoPagina1Con2Colonne .totale-spesa-e-grazie #messaggioAttenzionePerBolletteNonTuttePagate .titolo {
+		margin-bottom: 2px;
+	}
+	/* *** grafico a torta (sintesi degli importi) */
+	#corpoPagina1Con2Colonne .sintesi-importi {
+		margin-top: 10px;
+	}
+	#corpoPagina1Con2Colonne .sintesi-importi .grafico-a-torta .contenitore-grafico {
+	    padding: 3px 0;
+	}
+	#corpoPagina1Con2Colonne .sintesi-importi .grafico-a-torta .contenitore-grafico .ct-perfect-fourth > svg {
+		left: 15px!important;
+	}
+	/* *** legenda */
+	#corpoPagina1Con2Colonne .sintesi-importi .legenda {
+	}
+	#corpoPagina1Con2Colonne .sintesi-importi .legenda .voce-legenda {
+		margin-bottom: 4px;
+	}
+	#corpoPagina1Con2Colonne .sintesi-importi .legenda .voce-legenda .etichetta .rettangolo {
+		width: 13px;
+		height: 13px;
+		margin-right: 4px;
+		float: left;
+	}
+	#corpoPagina1Con2Colonne .sintesi-importi .legenda .voce-legenda .etichetta .testo {
+		padding-top: 5px;
+	}
+	#corpoPagina1Con2Colonne .sintesi-importi .legenda .voce-legenda {
+		margin-bottom: 6px;
+	}
+	#corpoPagina1Con2Colonne .sintesi-importi .legenda .voce-legenda .valore-in-euro {
+		text-align: right;
+	}
+	#corpoPagina1Con2Colonne .sintesi-importi .legenda .voce-legenda .valore-in-euro .inner {
+	    padding-top: 5px;
+	}
+	#corpoPagina1Con2Colonne .sintesi-importi .legenda .voce-legenda .valore-in-euro .val {
+		display: inline-block;
+	}
+	/* *** totali bolletta */
+	#corpoPagina1Con2Colonne .sintesi-importi .totale-bolletta {
+		padding: 2px 0;
+	}
+	#corpoPagina1Con2Colonne .sintesi-importi .totale-bolletta .voce-importi {
+		margin-bottom: 4px;
+	}
+	#corpoPagina1Con2Colonne .sintesi-importi .totale-bolletta .voce-importi .valore-in-euro {
+		text-align: right;
+	}
+	#corpoPagina1Con2Colonne .sintesi-importi .totale-bolletta .voce-importi .valore-in-euro .val {
+		display: inline-block;
+	}
+	/* *** riepilogo IVA */
+	#corpoPagina1Con2Colonne .riepilogo-iva {
+		padding: 2px 0;
+	}
+	#corpoPagina1Con2Colonne .riepilogo-iva table td {
+		text-align: right;
+	}
+	/* *** tabella riepilogo iva */
+	#corpoPagina1Con2Colonne .riepilogo-iva #tabellaRiepilogoIVA {
+		width: 100%;
+	}
+	#corpoPagina1Con2Colonne .riepilogo-iva #tabellaRiepilogoIVA tbody tr td {
+		text-align: left;
+		padding: 1px 2px;
+	}
+/* *** COLONNA DX*/
+	/* contatti utili, autolettura, emergenza guasti */
+	#contattiEAutoletturaEGuasti {
+		padding-left: 12px;
+	}
+	#contattiEAutoletturaEGuasti .sezione {
+		margin-bottom: 5px;
+	}
+	#contattiEAutoletturaEGuasti .sezione .header {
+		border-bottom: 1px solid #aaaaaa;
+	    padding: 1px 0;
+    	margin-bottom: 3px;
+	}
+	#contattiEAutoletturaEGuasti .sezione .corpo .dato-riga-singola .etichetta,
+	#contattiEAutoletturaEGuasti .sezione .corpo .dato-riga-singola .valore-tag {
+		display: inline-block;
+	}
+	/* box autolettura */
+		#contattiEAutoletturaEGuasti .sezione.autolettura .corpo .elenco-canali .canale .icona-canale {
+			float: left;
+			margin-right: 2px;
+		}
+	/* *** consulente dedicato */
+	#consulenteDedicato {
+		margin-top: 13px;
+	}
+	#consulenteDedicato .box-consulente-dedicato {
+		width: 317px;
+		height: 150px;
+		bottom: 0;
+    	display: block;
+    	color: #ffffff;
+	}
+	#consulenteDedicato .box-consulente-dedicato .icona {
+		float: left;
+	}
+	#consulenteDedicato .box-consulente-dedicato .icona img {
+		width: 70px;
+		height: 146px;
+	}
+	#consulenteDedicato .box-consulente-dedicato .testo {
+		display: inline-block;
+	    width: 174px;
+		margin-top: 7px;
+	}
+	#consulenteDedicato .box-consulente-dedicato .testo .header {
+		line-height: 1.1;
+		margin: 2px 0;
+	}
+	#consulenteDedicato .box-consulente-dedicato .testo .corpo {
+		line-height: 1.2;
+	}
+
+#boxOfferta {
+	margin-top: 10px;
+}
+#boxOfferta .content {
+    overflow: hidden;
+    width: 792px;
+    height: 320px;
+}
+#boxOfferta .content img {
+	width: 730px;
+	height: 320px;    
+}
+
+#lettureEConsumiPeriodoFatturazione {
+	margin-top: 8px;
+}
+#lettureEConsumiPeriodoFatturazione .consumi-fatturati {
+	text-align: right;
+	margin-top: -18px;
+	background: transparent;
+}
+#lettureEConsumiPeriodoFatturazione .consumi-fatturati .valore-consumi-fatturati {
+	text-align: center;
+    border: 1px solid #b6262f;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 2px 8px;
+    display: inline-block;
+    background-color: #ffffff;
+}
+/* *** tabella */
+#lettureEConsumiPeriodoFatturazione #tabellaQuadroLettureEConsumi {
+	margin-top: 18px;
+}
+
+
+#riepilogoUltimi12Mesi {
+	margin-top: 8px;
+}
+#riepilogoUltimi12Mesi #tabellaRiepilogoUltimi12Mesi tbody tr td {
+	padding: 1px 2px;
+}
+#riepilogoUltimi12Mesi #tabellaRiepilogoUltimi12Mesi tbody tr.background-grigio-scuro td {
+	background-color: #c2c4c6;
+}
+#riepilogoUltimi12Mesi #tabellaRiepilogoUltimi12Mesi tbody tr.riga-totali td {
+	border-top: 3px solid #ffffff;
+}
+
+
+#acciseEdIVA {
+	margin-top: 8px;
+}
+#acciseEdIVA .colonna-accise {
+	padding-right: 12px;
+}
+#acciseEdIVA .colonna-iva {
+	padding-left: 12px;
+}
+/* *** imposte */
+#acciseEdIVA #_TABELLA_DETTAGLIO_Imposte tbody tr td {
+	padding: 1px 2px!important;
+}
+/* *** iva */
+#acciseEdIVA #_TABELLA_DETTAGLIO_Iva tbody tr td {
+	padding: 1px 2px!important;
+}
+
+
+#conguagliRicalcoliEBolletteNonPagate {
+	margin-top: 8px;
+}
+#conguagliRicalcoliEBolletteNonPagate .content {
+	border: 1px solid #b6262f;
+    border-radius: 14px;
+    -moz-border-radius: 14px;
+    -webkit-border-radius: 14px;
+    padding: 8px 10px;
+    margin: 14px 0;
+}
+#conguagliRicalcoliEBolletteNonPagate .content #conguagliRicalcoli {
+	padding-right: 8px;
+}
+#conguagliRicalcoliEBolletteNonPagate .content #bolletteNonPagate {
+	border-left: 1px solid #777777;
+	padding-left: 8px;
+}
+#conguagliRicalcoliEBolletteNonPagate .content #conguagliRicalcoli .header,
+#conguagliRicalcoliEBolletteNonPagate .content #bolletteNonPagate .header {
+	margin-bottom: 3px;
+}
+#conguagliRicalcoliEBolletteNonPagate .content #conguagliRicalcoli .messaggio-esistenza-o-meno,
+#conguagliRicalcoliEBolletteNonPagate .content #bolletteNonPagate .messaggio-esistenza-o-meno {
+	margin-top: 2px;
+	margin-bottom: 4px;
+}
+
+#guidaLetturaFattura .content > .header {
+	margin-bottom: 4px;
+}
+#guidaLetturaFattura .content .dati .paragrafo {
+	margin-bottom: 6px;
+}
+
+
+#arera {
+	margin-top: 8px;
+}
+#arera .content > .header {
+	margin-bottom: 4px;
+}
+#arera .content > .dati .body {
+	margin-bottom: 6px;
+}
+#arera .tabella-arera {
+	margin-top: 10px;
+}
+#arera .tabella-arera tbody tr td {
+	padding: 1px;	
+}
+
+.dettaglio.header {
+	margin: 8px 0 4px;
+} 
+
+
+@media print {
+	html, body {
+		width: 210mm;
+		height: 297mm;
+	}
+	page[size="A4"] {
+		margin: 0;
+		border: initial;
+		border-radius: initial;
+		width: initial;
+		min-height: initial;
+		box-shadow: initial;
+		background: initial;
+		page-break-after: always;
+	}
+}
+
