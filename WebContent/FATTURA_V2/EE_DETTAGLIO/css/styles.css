@@ -1,28 +1,24 @@
-/* qr-code */
+/*
 @font-face {
   font-family: SourceSansPro;
   src: url("fonts/SourceSansPro-Regular.ttf");
 }
-.qr-code-box,
-.qr-code-box > .qr-code {
-	font-family: "IDAutomationDMatrix" !important;
-	font-size: 8px !important;
-	line-height: 1 !important;
-	max-width: 22mm !important;
-	max-height: 10mm !important;
-	display:inline-block;
-	min-width: 22mm !important;
-	min-height: 10mm !important;
-}
-
 @font-face {
   font-family: "dinRegularLocal";
   src: url("fonts/DINPro-Regular.ttf");
 }
+@font-face {
+  font-family: "dinMediumLocal";
+  src: url("fonts/DIN-Black.ttf");
+}
+@font-face {
+  font-family: "dinBlackLocal";
+  src: url("fonts/DIN-Black.ttf");
+}
+ */
 
 * {
-	/* font-family: "DINPro"; */
-	font-family: "dinRegularLocal";
+	font-family: "DIN Pro";
 	font-size: 8pt;
 	line-height: 1;
 }
@@ -62,8 +58,8 @@ page[size="A4"] .sub.pagina-inner {
 	.fontDinBlack {
 		font-family: "DIN Black" !important;
 	}
-	.euroSansStdRegular {
-		font-family: euroSansStdRegular !important;
+	.fontEuroSansStdRegular {
+		font-family: fontEuroSansStdRegular !important;
 	}
 	.euroSansStdBold {
 		font-family: euroSansStdBold !important;
@@ -126,6 +122,18 @@ page[size="A4"] .sub.pagina-inner {
 		.back-color625K { background-color: #507f70!important; } /* verde scuro */
 		/* F1 codice tampone non corretto! */
 		.back-color7693K { background-color: #e7d83b!important; } /* giallo scuro */
+
+.qr-code-box,
+.qr-code-box > .qr-code {
+	font-family: "IDAutomationDMatrix" !important;
+	font-size: 8px !important;
+	line-height: 1 !important;
+	max-width: 22mm !important;
+	max-height: 10mm !important;
+	display:inline-block;
+	min-width: 22mm !important;
+	min-height: 10mm !important;
+}
 
 table{
 	width: 100%;
