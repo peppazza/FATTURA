@@ -1,5 +1,5 @@
 * {
-	font-family: "DIN Pro Regular";
+	font-family: "DINPro";
 	font-size: 8pt;
 	line-height: 1;
 }
@@ -43,7 +43,7 @@ page[size="A4"] .sub.pagina-inner {
 
 /* FONT FAMILIES */
 	.fontDinRegular {
-		font-family: "DIN Pro Regular" !important;
+		font-family: "DINPro" !important;
 	}
 	.fontDinMedium {
 		font-family: "DIN Pro Medium" !important;

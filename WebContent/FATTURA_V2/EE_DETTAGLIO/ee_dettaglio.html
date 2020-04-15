@@ -1900,7 +1900,7 @@
 			            <tr class="bordo-tab-sotto">
 			        	    <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></span></td>
 			                <td><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></span></td>
-			                <td><span class="_CHECKED_VALUE_conguagli-consumi-stimati-imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile"></span></td>
+			                <td><span class="_CHECKED_VALUE_conguagli-consumi-stimati-imponibile" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Imponibile">11,11</span></td>
 			            </tr>
 			        </tbody>
 				</table>
@@ -1924,9 +1924,11 @@
 					<tbody class="sezione-rettifiche-letture" data-data_type="simple_loop" data-first_node="RettificheLetture" data-path_type="xpath" data-path_data="Rettifiche">
 				        <tr>
 				    		<td colspan="3">
-				    			<span><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></span>
-					    		del <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataLetturaRettificata"></span>
-					    		di <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/LetturaRettificata"></span> kWh</span>
+				    			<span class="fontDinMedium">
+				    				<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></span>
+						    		del <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataLetturaRettificata"></span>
+						    		di <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/LetturaRettificata"></span> kWh
+						    	</span>
 					    	</td>
 				    	</tr>
 				        <tr>
@@ -1957,7 +1959,7 @@
 				        <tr>
 				    		<td colspan="3">
 				    			<span>
-					    			<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">XXX</span>
+					    			<span class="fontDinMedium" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">TEST</span>
 					    			<span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/ComponenteConguagliata"></span>
 					    		</span>
 				    		</td>
@@ -1988,14 +1990,14 @@
 				<table id="_TABELLA_DETTAGLIO_Ricalcoli" class="tabella-dettaglio custom font6pt">
 					<tbody data-data_type="nested_loop" data-level="0" data-first_node="ElementiDettaglio" data-path_type="xpath" data-path_data="Servizi/Servizio[Descrizione = &quot;DETTAGLIO RICALCOLI&quot;]/Quote/Quota">
 						<tr class="riga-intestazione-ricalcoli">
-							<td><span class="rica-dett1b" data-data_type="nested_loop_data" data-level="0" data-path_type="xpath" data-path_data="/Descrizione">test</span></td>
-							<td>Periodo</td>
-							<td>Scaglione</td>
-							<td>Quantità</td>
-							<td>U. M.</td>
-							<td>Prezzo Unitario</td>
-							<td>Totale (€)</td>
-							<td>IVA %</td>
+							<td><span class="fontDinMedium" data-data_type="nested_loop_data" data-level="0" data-path_type="xpath" data-path_data="/Descrizione">test</span></td>
+							<td><span class="fontDinMedium">Periodo</span></td>
+							<td><span class="fontDinMedium">Scaglione</span></td>
+							<td><span class="fontDinMedium">Quantità</span></td>
+							<td><span class="fontDinMedium">U. M.</span></td>
+							<td><span class="fontDinMedium">Prezzo Unitario</span></td>
+							<td><span class="fontDinMedium">Totale (<span class="euroSansStdRegular">€</span>)</span></td>
+							<td><span class="fontDinMedium">IVA %</span></td>
 						</tr>
 						<tr class="bordo-tab-sopra riga-dettaglio-ricalcoli" data-data_type="nested_loop_child" data-level="1" data-path_type="xpath" data-path_data="Dettagli/QuotaDettaglio">
 							<td class="dettaglio-descrizione"><span class="rica-dett3" data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Descrizione">test</span></td>
@@ -2030,15 +2032,15 @@
 				<table id="_TABELLA_DETTAGLIO_CalcoloInteressi" class="tabella-dettaglio custom font6pt">
 			   		<tbody>
 				        <tr>
-				    	    <td>Bolletta</td>
-				    	    <td>Totale <br/>Bolletta (€)</td>
-				            <td>Scadenza</td>
-				            <td>Data inizio <br/>calcolo interessi</td>
-				            <td>Data Fine calcolo <br/>interessi</td>
-				            <td>Numero Giorni</td>
-				            <td>Importo per <br/>calcolo (€)</td>
-				            <td>Aliquota %</td>
-				            <td>Totale <br/>interessi (€)</td>
+				    	    <td><span class="fontDinMedium">Bolletta</span></td>
+				    	    <td><span class="fontDinMedium">Totale <br/>Bolletta (<span class="euroSansStdRegular">€</span>)v</span></td>
+				            <td><span class="fontDinMedium">Scadenza</span></td>
+				            <td><span class="fontDinMedium">Data inizio <br/>calcolo interessi</span></td>
+				            <td><span class="fontDinMedium">Data Fine calcolo <br/>interessi</span></td>
+				            <td><span class="fontDinMedium">Numero Giorni</span></td>
+				            <td><span class="fontDinMedium">Importo per <br/>calcolo (<span class="euroSansStdRegular">€</span>)</span></td>
+				            <td><span class="fontDinMedium">Aliquota %</span></td>
+				            <td><span class="fontDinMedium">Totale <br/>interessi (<span class="euroSansStdRegular">€</span>)</span></td>
 				        </tr>
 				       <tr data-data_type="simple_loop" data-first_node="ElementiDettaglio" data-path_type="xpath" data-path_data="MorositaInteressiApplicatiBollette/MorositaInteressiApplicati">
 				    	    <td class="left"><span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/DataEmissione">test</span> - <span data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/NumeroDocumento">test</span></td>
