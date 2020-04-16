@@ -18,7 +18,7 @@
  */
 
 * {
-	font-family: "DIN Pro";
+	font-family: "DIN Pro Regular";
 	font-size: 8pt;
 	line-height: 1;
 }
@@ -49,20 +49,17 @@ page[size="A4"] .sub.pagina-inner {
 }
 
 /* FONT FAMILIES */
-	.fontDinRegular {
-		font-family: "DINPro" !important;
-	}
 	.fontDinMedium {
 		font-family: "DIN Pro Medium" !important;
 	}
 	.fontDinBlack {
-		font-family: "DIN Black" !important;
+		/* font-family: "DIN Black" !important; */
+		font-weight: bold;
 	}
 	.fontEuroSansStdRegular {
-		font-family: fontEuroSansStdRegular !important;
-	}
-	.euroSansStdBold {
-		font-family: euroSansStdBold !important;
+		/* font-family: fontEuroSansStdRegular !important; */
+		font-family: "Euro Sans Std" !important;
+		font-weight: bold;
 	}
 /* FONT SIZES */
 	.font17pt {
