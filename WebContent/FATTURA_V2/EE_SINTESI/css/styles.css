@@ -316,6 +316,7 @@ table.custom tbody tr td.no-back {
 	}
 	#corpoPagina1Con2Colonne .sintesi-importi .grafico-a-torta .contenitore-grafico {
 	    padding: 3px 0;
+	    min-height: 152px;
 	}
 	#corpoPagina1Con2Colonne .sintesi-importi .grafico-a-torta .contenitore-grafico .ct-perfect-fourth > svg {
 		left: 15px!important;
@@ -514,12 +515,11 @@ table.custom tbody tr td.no-back {
 	padding-right: 8px;
 }
 #conguagliRicalcoliEBolletteNonPagate .content #bolletteNonPagate {
-	border-left: 1px solid #777777;
 	padding-left: 8px;
 }
 #conguagliRicalcoliEBolletteNonPagate .content #conguagliRicalcoli .header,
 #conguagliRicalcoliEBolletteNonPagate .content #bolletteNonPagate .header {
-	margin-bottom: 3px;
+	padding-bottom: 3px;
 }
 #conguagliRicalcoliEBolletteNonPagate .content #conguagliRicalcoli .messaggio-esistenza-o-meno,
 #conguagliRicalcoliEBolletteNonPagate .content #bolletteNonPagate .messaggio-esistenza-o-meno {
@@ -548,6 +548,11 @@ table.custom tbody tr td.no-back {
 }
 #arera .tabella-arera tbody tr td {
 	padding: 1px;	
+}
+
+.messaggio-no-dati {
+	background-color: #d9d9d9;
+	padding: 4px 2px;
 }
 
 .footer .contenuto {

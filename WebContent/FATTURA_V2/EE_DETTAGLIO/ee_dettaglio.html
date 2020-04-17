@@ -9,7 +9,6 @@
     <link rel="stylesheet" rel="stylesheet" href="css/styles.css"/>
     <link rel="stylesheet" rel="stylesheet" href="css/charts.css"/>
     
-    <script src="js/customs.js"></script>
     <script src="js/chartist/dist/chartist.min.js"></script>
 	<script src="js/axistitle/dist/chartist-plugin-axistitle.min.js"></script>
 	<script src="js/chartjs/chart.js"></script>
@@ -31,7 +30,7 @@
 			} catch (err) {
 				console.log('error check valore numerico', err);
 			}
-			return '';
+			return 0;
 		}
 		
 		function formatNumber(val) {
@@ -424,49 +423,49 @@
 								<!-- legenda + totale bolletta -->
 								<div class="pure-u-14-24">
 									<div class="legenda font6pt">
-										<div class="pure-g voce-legenda spesaMateriaEnergia">
+										<div class="pure-g voce-legenda spesaMateriaEnergia _nascostoSeZero">
 											<div class="pure-u-19-24 etichetta">
 												<div class="rettangolo back-color1805C"></div>
 												<div class="testo">Spesa per la materia energia</div>
 											</div>
 											<div class="pure-u-5-24 valore-in-euro"><div class="inner"><span class="simbolo-euro"><span class="fontEuroSansStdRegular">€</span> </span><span id="valoreSintesiImporti_spesaMateriaEnergia" class="val">99,99</span></div></div>
 										</div>
-										<div class="pure-g voce-legenda spesaTrasporto">
+										<div class="pure-g voce-legenda spesaTrasporto _nascostoSeZero">
 											<div class="pure-u-19-24 etichetta">
 												<div class="rettangolo back-color158C"></div>										
 												<div class="testo">Spesa per trasporto e gestione contatore</div>
 											</div>
 											<div class="pure-u-5-24 valore-in-euro"><div class="inner"><span class="simbolo-euro"><span class="fontEuroSansStdRegular">€</span> </span><span id="valoreSintesiImporti_spesaTrasporto" class="val">99,99</span></div></div>
 										</div>
-										<div class="pure-g voce-legenda spesaOneri">
+										<div class="pure-g voce-legenda spesaOneri _nascostoSeZero">
 											<div class="pure-u-19-24 etichetta">
 												<div class="rettangolo back-color368C"></div>
 												<div class="testo">Spesa per oneri di sistema</div>
 											</div>
 											<div class="pure-u-5-24 valore-in-euro"><div class="inner"><span class="simbolo-euro"><span class="fontEuroSansStdRegular">€</span> </span><span id="valoreSintesiImporti_spesaOneri" class="val">99,99</span></div></div>
 										</div>
-										<div class="pure-g voce-legenda altrePartite">
+										<div class="pure-g voce-legenda altrePartite _nascostoSeZero">
 											<div class="pure-u-19-24 etichetta">
 												<div class="rettangolo back-color7751C"></div>
 												<div class="testo">Altre partite</div>
 											</div>
 											<div class="pure-u-5-24 valore-in-euro"><div class="inner"><span class="simbolo-euro"><span class="fontEuroSansStdRegular">€</span> </span><span id="valoreSintesiImporti_altrePartite" class="val">99,99</span></div></div>
 										</div>
-										<div class="pure-g voce-legenda altrePartite">
+										<div class="pure-g voce-legenda bonusSociale _nascostoSeZero">
 											<div class="pure-u-19-24 etichetta">
 												<div class="rettangolo back-color142C"></div>
 												<div class="testo">Bonus sociale</div>
 											</div>
 											<div class="pure-u-5-24 valore-in-euro"><div class="inner"><span class="simbolo-euro"><span class="fontEuroSansStdRegular">€</span> </span><span id="valoreSintesiImporti_bonusSociale" class="val">99,99</span></div></div>
 										</div>
-										<div class="pure-g voce-legenda imposte">
+										<div class="pure-g voce-legenda imposte _nascostoSeZero">
 											<div class="pure-u-19-24 etichetta">
 												<div class="rettangolo back-color5517C"></div>
 												<div class="testo">Imposte</div>
 											</div>
 											<div class="pure-u-5-24 valore-in-euro"><div class="inner"><span class="simbolo-euro"><span class="fontEuroSansStdRegular">€</span> </span><span id="valoreSintesiImporti_imposte" class="val">99,99</span></div></div>
 										</div>
-										<div class="pure-g voce-legenda imposte mb0">
+										<div class="pure-g voce-legenda iva _nascostoSeZero mb0">
 											<div class="pure-u-19-24 etichetta">
 												<div class="rettangolo back-color100K"></div>
 												<div class="testo">IVA</div>
@@ -563,23 +562,22 @@
 			        			var elemIMPONIBILE = elem.getElementsByClassName('sintesiImporti_imponibile')[0];
 			        			var imponibile = checkNumber(elemIMPONIBILE.innerHTML);
 			        			
-			        			if (descrizione.indexOf('materia') > -1) {
+			        			if (descrizione.indexOf('materia') > -1)
 			        				spesaMateriaEnergia = imponibile;
-			        			} else if (descrizione.indexOf('trasporto') > -1) {
+			        			else if (descrizione.indexOf('trasporto') > -1)
 			        				spesaTrasporto = imponibile;
-			        			} else if (descrizione.indexOf('oneri di sistema') > -1) {
+			        			else if (descrizione.indexOf('oneri di sistema') > -1)
 			        				spesaOneri = imponibile;
-			        			} else if (descrizione.indexOf('partite') > -1) {
+			        			else if (descrizione.indexOf('partite') > -1)
 			        				altrePartite = imponibile;
-			        			} else if (descrizione.indexOf('sociale') > -1) {
+			        			else if (descrizione.indexOf('sociale') > -1)
 			        				bonusSociale = imponibile;
-			        			} else if (descrizione.indexOf('imposte') > -1) {
+			        			else if (descrizione.indexOf('imposte') > -1)
 			        				imposte = imponibile;
-			        			} else if (descrizione.indexOf('iva') > -1) {
+			        			else if (descrizione.indexOf('iva') > -1)
 			        				iva = imponibile;
-			        			} else if (descrizione.indexOf('canone') > -1) {
+			        			else if (descrizione.indexOf('canone') > -1)
 			        				canone = imponibile;
-			        			}
 			        		}
 							
 			    			var totaleBolletta = spesaMateriaEnergia + spesaTrasporto + spesaOneri + altrePartite + bonusSociale + imposte + iva;
@@ -600,6 +598,22 @@
 			    				document.getElementById('valoreSintesiImporti_imposte').innerHTML = Number(imposte.toFixed(2)).toLocaleString('it');
 			    			if (iva || typeof iva === 'number')
 			    				document.getElementById('valoreSintesiImporti_iva').innerHTML = Number(iva.toFixed(2)).toLocaleString('it');
+			    			
+			    			// nasconde le righe della legenda se il valore è zero
+			    			if (!spesaMateriaEnergia || Number(spesaMateriaEnergia) === 0)
+			    				document.querySelectorAll('.spesaMateriaEnergia._nascostoSeZero')[0].style.display = 'none';
+			    			if (!spesaTrasporto || Number(spesaTrasporto) === 0)
+			    				document.querySelectorAll('.spesaTrasporto._nascostoSeZero')[0].style.display = 'none';
+			    			if (!spesaOneri || Number(spesaOneri) === 0)
+			    				document.querySelectorAll('.spesaOneri._nascostoSeZero')[0].style.display = 'none';
+			    			if (!altrePartite || Number(altrePartite) === 0)
+			    				document.querySelectorAll('.altrePartite._nascostoSeZero')[0].style.display = 'none';
+			    			if (!bonusSociale || Number(bonusSociale) === 0)
+			    				document.querySelectorAll('.bonusSociale._nascostoSeZero')[0].style.display = 'none';
+			    			if (!imposte || Number(imposte) === 0)
+			    				document.querySelectorAll('.imposte._nascostoSeZero')[0].style.display = 'none';
+			    			if (!iva || Number(iva) === 0)
+			    				document.querySelectorAll('.iva._nascostoSeZero')[0].style.display = 'none';
 			    			
 			    			// init canone
 			    			document.getElementById('valoreSintesiImporti_canone').innerHTML = Number(canone.toFixed(2)).toLocaleString('it');
@@ -1390,7 +1404,7 @@
 						</div>
 					</div>
 					<div class="content">
-						<div id="_MESSAGGIO_NO_DATI_DETTAGLIO_Imposte" class="messaggio-no-dati-per-dettaglio font8pt">
+						<div id="_MESSAGGIO_NO_DATI_DETTAGLIO_Imposte" class="messaggio-no-dati">
 							Nessun dato
 						</div>
 						<table id="_TABELLA_DETTAGLIO_Imposte" class="custom font6pt">
@@ -1503,9 +1517,11 @@
 					<div class="pure-u-12-24">
 						<div id="conguagliRicalcoli">
 							<div class="header font12pt color1805C fontDinBlack">CONGUAGLI E RICALCOLI</div>
+							<!-- CONGUAGLI -->
+							<!-- ============================================ -->
 							<div class="dati">
 								<!-- *** dati dei conguagli consumi stimati -->
-								<div style="display: none;" class="sezione-conguaglio-consumi-stimati" data-data_type="simple_loop" data-first_node="ConguaglioConsumiStimati" data-path_type="xpath" data-path_data="">
+								<div style="display: none;" data-data_type="simple_loop" data-first_node="ConguaglioConsumiStimati" data-path_type="xpath" data-path_data="">
 					    		    <div data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione"></div>
 					        	    <div data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Dal"></div> - <div data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Al"></div>
 					                <div data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Quantita"></div>
@@ -1542,6 +1558,53 @@
 									}
 								</script>
 							</div>
+							<!-- RICALCOLI -->
+							<!-- ============================================ -->
+							<div style="display: none;" data-data_type="nested_loop" data-level="0" data-first_node="ElementiDettaglio" data-path_type="xpath" data-path_data="Servizi/Servizio[Descrizione = &quot;DETTAGLIO RICALCOLI&quot;]/Quote/Quota">
+								<div class="bordo-tab-sopra riga-dettaglio-ricalcoli" data-data_type="nested_loop_child" data-level="1" data-path_type="xpath" data-path_data="Dettagli/QuotaDettaglio">
+									<div class="dettaglio-descrizione"><span class="rica-dett3" data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Descrizione">test</span></div>
+									<div class="dettaglio-periodo">
+										<span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Dal">test</span> - <span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Al">test</span>
+									</div>
+									<div class="dettaglio-scaglione"><span class="allineamento-scaglione" data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Scaglione">test</span></div>
+									<div><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Quantita">test</span></div>
+									<div><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/UnitaMisura">test</span></div>
+									<div><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/ImportoUnitario">test</span></div>
+									<div><span class="yyy_ricalcoli-imponibile" data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Imponibile"></span></div>
+									<div><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/AliquotaIva">test</span></div>
+								</div>
+							</div>
+							<div>
+								<!-- *** messaggi relativi ai ricalcoli -->
+								<div id="messaggioNessunRicalcolo" class="messaggio-esistenza-o-meno font8pt">Nessun ricalcolo</div>
+								<div id="messaggioEsistenzaRicalcoli" class="messaggio-esistenza-o-meno font8pt">Sono presenti dei ricalcoli</div>
+							</div>
+							<!-- *** mostra o nasconde il messaggio relativo alla presenza di ricalcoli -->
+							<script type="text/javascript">
+								try {
+									(function() {
+										var esistonoConguagliConsumiStimati = false;											
+										var elems = document.getElementsByClassName('yyy_ricalcoli-imponibile');
+										if (elems.length > 0) {
+											var value = elems[0].innerHTML;
+											if (value) {
+												value = value.trim();
+												if (value !== '')
+													esistonoConguagliConsumiStimati = true;
+											}
+										}											
+										if (esistonoConguagliConsumiStimati) {
+											document.getElementById('messaggioNessunRicalcolo').style.display = 'none';
+											document.getElementById('messaggioEsistenzaRicalcoli').style.display = 'block';
+										} else {
+											document.getElementById('messaggioNessunRicalcolo').style.display = 'block';
+											document.getElementById('messaggioEsistenzaRicalcoli').style.display = 'none';
+										}				
+									})();
+								} catch (err) {
+									console.log('errore init display per RICALCOLI', err);
+								}
+							</script>
 						</div>
 					</div>					
 					<div class="pure-u-12-24">
@@ -1895,11 +1958,11 @@
 		<div id="boxConguagliConsumiStimati">
 			<div class="dettaglio header font10pt color1805C fontDinBlack">CONGUAGLI CONSUMI STIMATI</div>
 			<div class="dati">
-				<div id="_MESSAGGIO_NO_DATI_DETTAGLIO_ConguaglioConsumiStimati" class="messaggio-no-dati-per-dettaglio">
+				<div id="_MESSAGGIO_NO_DATI_DETTAGLIO_ConguaglioConsumiStimati" class="messaggio-no-dati">
 					Nessun dato
 				</div>
 				<table id="_TABELLA_DETTAGLIO_ConguaglioConsumiStimati" class="tabella-dettaglio custom font6pt">
-					<tbody class="sezione-conguaglio-consumi-stimati" data-data_type="simple_loop" data-first_node="ConguaglioConsumiStimati" data-path_type="xpath" data-path_data="">
+					<tbody data-data_type="simple_loop" data-first_node="ConguaglioConsumiStimati" data-path_type="xpath" data-path_data="">
 			            <tr>
 			    		    <td colspan="3"><span class="fontDinMedium" data-data_type="simple_loop_data" data-path_type="xpath" data-path_data="/Descrizione">xxx</span></td>
 			    	    </tr>
@@ -1923,7 +1986,7 @@
 		<div id="boxRettificheLetture">
 			<div class="dettaglio header font10pt color1805C fontDinBlack">RETTIFICHE LETTURE</div>
 			<div class="dati">
-				<div id="_MESSAGGIO_NO_DATI_DETTAGLIO_RettificheLetture" class="messaggio-no-dati-per-dettaglio">
+				<div id="_MESSAGGIO_NO_DATI_DETTAGLIO_RettificheLetture" class="messaggio-no-dati">
 					Nessun dato
 				</div>
 				<table id="_TABELLA_DETTAGLIO_RettificheLetture" class="tabella-dettaglio custom font6pt">
@@ -1957,7 +2020,7 @@
 		<div id="boxConguagliTariffari">
 			<div class="dettaglio header font10pt color1805C fontDinBlack">CONGUAGLIO TARIFFARIO</div>
 			<div class="dati">
-				<div id="_MESSAGGIO_NO_DATI_DETTAGLIO_ConguaglioTariffario" class="messaggio-no-dati-per-dettaglio">
+				<div id="_MESSAGGIO_NO_DATI_DETTAGLIO_ConguaglioTariffario" class="messaggio-no-dati">
 					Nessun dato
 				</div>
 				<table id="_TABELLA_DETTAGLIO_ConguaglioTariffario" class="tabella-dettaglio custom font6pt">
@@ -1990,7 +2053,7 @@
 		<div id="boxDettaglioRicalcoli">
 			<div class="dettaglio header font10pt color1805C fontDinBlack">DETTAGLIO RICALCOLI</div>
 			<div class="dati">
-				<div id="_MESSAGGIO_NO_DATI_DETTAGLIO_Ricalcoli" class="messaggio-no-dati-per-dettaglio">
+				<div id="_MESSAGGIO_NO_DATI_DETTAGLIO_Ricalcoli" class="messaggio-no-dati">
 					Nessun dato
 				</div>
 				<table id="_TABELLA_DETTAGLIO_Ricalcoli" class="tabella-dettaglio custom font6pt">
@@ -2032,7 +2095,7 @@
 		<div id="boxCalcoloInteressi">
 			<div class="dettaglio header font10pt color1805C fontDinBlack">CALCOLO INTERESSI</div>
 			<div class="dati">
-				<div id="_MESSAGGIO_NO_DATI_DETTAGLIO_CalcoloInteressi" class="messaggio-no-dati-per-dettaglio">
+				<div id="_MESSAGGIO_NO_DATI_DETTAGLIO_CalcoloInteressi" class="messaggio-no-dati">
 					Nessun dato
 				</div>
 				<table id="_TABELLA_DETTAGLIO_CalcoloInteressi" class="tabella-dettaglio custom font6pt">
