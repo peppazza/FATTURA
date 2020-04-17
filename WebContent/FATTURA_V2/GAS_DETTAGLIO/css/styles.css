@@ -53,8 +53,7 @@ page[size="A4"] .sub.pagina-inner {
 		font-family: "DIN Pro Medium" !important;
 	}
 	.fontDinBlack {
-		/* font-family: "DIN Black" !important; */
-		font-weight: bold;
+		font-family: "DIN Black" !important;
 	}
 	.fontEuroSansStdRegular {
 		/* font-family: fontEuroSansStdRegular !important; */
@@ -165,25 +164,29 @@ table.custom tbody tr td.no-back {
 }
 
 #headerLogo {
-	margin: 0 -20px 20px;
+	margin: 0 -20px;
+    margin-bottom: 15mm;
 }
-#headerLogo .logo img {
-	width: auto;
-	height: 80px;
-    margin-top: 50px;
-    margin-left: 20px;
+
+#headerLogo .logo img {	
+	margin-top: 20mm;
+    margin-left: 10mm;
+	height: 17mm;
 }
 #headerLogo .header {
     text-align: right;
 }
 #headerLogo .header > img {
-	width: 396px;
-	height: 150px;
+	width: auto;
+    height: 35mm;
 }
  
 .header-inizio-pagina {
 	padding-top: 20px;
 	padding-bottom: 10px;
+}
+.header-inizio-pagina .contenuto img {
+	height: 13mm;
 }
 
 .legenda-grafico-a-barre-per-fasce .voce-legenda {
@@ -249,11 +252,11 @@ table.custom tbody tr td.no-back {
 
 
 #qrCodeEIdentificativo .content {
-	margin-top: 30px;
+	margin-top: 13mm;
     margin-left: 70px;
 }
 #indirizzoSpedizione {
-	margin-top: 20px;
+	margin-top: 10mm;
 }
 #indirizzoSpedizione .content {
 	text-transform: uppercase;
@@ -263,7 +266,9 @@ table.custom tbody tr td.no-back {
 	margin-bottom: 2px;	
 }
 
-
+#corpoPagina1Con2Colonne {
+	margin-top: 15mm;
+}
 #corpoPagina1Con2Colonne .colonna-sinistra .colonna-sinistra-inner {
 	padding-right: 12px;
 }
@@ -416,8 +421,8 @@ table.custom tbody tr td.no-back {
 		float: left;
 	}
 	#consulenteDedicato .box-consulente-dedicato .icona img {
-		width: 70px;
-		height: 146px;
+		margin-top: 4px;
+		height: 38mm;
 	}
 	#consulenteDedicato .box-consulente-dedicato .testo {
 		display: inline-block;
@@ -435,14 +440,15 @@ table.custom tbody tr td.no-back {
 #boxOfferta {
 	margin-top: 10px;
 }
-#boxOfferta .content {
-    overflow: hidden;
+#boxOfferta .content {    
+	overflow: hidden;
     width: 792px;
-    height: 320px;
+	height: 235px;
+    text-align: center;
 }
 #boxOfferta .content img {
-	width: 730px;
-	height: 320px;    
+	width: auto;
+    height: 100%;
 }
 
 #lettureEConsumiPeriodoFatturazione {
@@ -563,6 +569,12 @@ table.custom tbody tr td.no-back {
 	padding: 7px 2px;
 }
 
+.footer .contenuto {
+    text-align: center;
+}
+.footer .contenuto img {
+    width: 176mm;
+}
 
 @media print {
 	html, body {

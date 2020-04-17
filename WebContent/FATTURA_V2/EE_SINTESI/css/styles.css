@@ -53,7 +53,7 @@ page[size="A4"] .sub.pagina-inner {
 		font-family: "DIN Medium" !important;
 	}
 	.fontDinBlack {
-		font-family: "DIN Black" !important; /* NEW */
+		font-family: "DIN Black" !important;
 	}
 	.fontEuroSansStdRegular {
 		/* font-family: fontEuroSansStdRegular !important; */
@@ -161,39 +161,28 @@ table.custom tbody tr td.no-back {
 }
 
 #headerLogo {
-	/* margin: 0 -20px 20px; 	OLD */
-	margin: 0 -20px; 		/* NEW */
-    margin-bottom: 15mm; 	/* NEW */
+	margin: 0 -20px;
+    margin-bottom: 15mm;
 }
-/* #headerLogo .logo img { */
-	/*width: auto;			OLD */
-	/*height: 80px;			OLD */
-    /*margin-top: 50px;		OLD */
-    /*margin-left: 20px;	OLD */
-/* } */
 
-#headerLogo .logo img {	/* NEW */	
-	margin-top: 20mm;		/* NEW */
-    margin-left: 10mm;		/* NEW */
-	height: 17mm;			/* NEW */
+#headerLogo .logo img {	
+	margin-top: 20mm;
+    margin-left: 10mm;
+	height: 17mm;
 }
 #headerLogo .header {
     text-align: right;
 }
 #headerLogo .header > img {
-	/* width: 396px; OLD */
-	/* height: 150px; OLD */
-	
-	width: auto; /* NEW */
-    height: 35mm;  /* NEW */
+	width: auto;
+    height: 35mm;
 }
  
 .header-inizio-pagina {
 	padding-top: 20px;
 	padding-bottom: 10px;
 }
-
-.header-inizio-pagina .contenuto img { /* NEW */
+.header-inizio-pagina .contenuto img {
 	height: 13mm;
 }
 
@@ -260,13 +249,11 @@ table.custom tbody tr td.no-back {
 
 
 #qrCodeEIdentificativo .content {
-	/* margin-top: 30px; OLD */
-	margin-top: 13mm; /* NEW */
+	margin-top: 13mm;
     margin-left: 70px;
 }
 #indirizzoSpedizione {
-	/* margin-top: 20px; OLD */
-	margin-top: 10mm; /* NEW */
+	margin-top: 10mm;
 }
 #indirizzoSpedizione .content {
 	text-transform: uppercase;
@@ -276,10 +263,9 @@ table.custom tbody tr td.no-back {
 	margin-bottom: 2px;	
 }
 
-#corpoPagina1Con2Colonne { /* NEW */
+#corpoPagina1Con2Colonne {
 	margin-top: 15mm;
 }
-
 #corpoPagina1Con2Colonne .colonna-sinistra .colonna-sinistra-inner {
 	padding-right: 12px;
 }
@@ -426,10 +412,8 @@ table.custom tbody tr td.no-back {
 		float: left;
 	}
 	#consulenteDedicato .box-consulente-dedicato .icona img {
-		/* width: 70px; OLD */
-		/* height: 146px; OLD */
-		margin-top: 4px; /* NEW */
-		height: 38mm; /* NEW */
+		margin-top: 4px;
+		height: 38mm;
 	}
 	#consulenteDedicato .box-consulente-dedicato .testo {
 		display: inline-block;
@@ -447,20 +431,15 @@ table.custom tbody tr td.no-back {
 #boxOfferta {
 	margin-top: 10px;
 }
-#boxOfferta .content {
-    
+#boxOfferta .content {    
 	overflow: hidden;
     width: 792px;
-	/* height: 320px; 		OLD */
-	height: 235px;		/* NEW */
-    text-align: center; /* NEW */
+	height: 235px;
+    text-align: center;
 }
 #boxOfferta .content img {
-	/*width: 730px;		OLD */
-	/*height: 320px; 	OLD */
-
-	width: auto;	/* NEW */
-    height: 100%;	/* NEW */
+	width: auto;
+    height: 100%;
 }
 
 #lettureEConsumiPeriodoFatturazione {
@@ -571,11 +550,10 @@ table.custom tbody tr td.no-back {
 	padding: 1px;	
 }
 
-.footer .contenuto { /* NEW */
+.footer .contenuto {
     text-align: center;
 }
-
-.footer .contenuto img { /* NEW */
+.footer .contenuto img {
     width: 176mm;
 }
 
