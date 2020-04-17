@@ -18,7 +18,7 @@
  */
 
 * {
-	font-family: "DIN Pro Regular";
+	font-family: "DIN RegularCustom";
 	font-size: 8pt;
 	line-height: 1;
 }
@@ -50,11 +50,10 @@ page[size="A4"] .sub.pagina-inner {
 
 /* FONT FAMILIES */
 	.fontDinMedium {
-		font-family: "DIN Pro Medium" !important;
+		font-family: "DIN Medium" !important;
 	}
 	.fontDinBlack {
-		/* font-family: "DIN Black" !important; */
-		font-weight: bold;
+		font-family: "DIN Black" !important; /* NEW */
 	}
 	.fontEuroSansStdRegular {
 		/* font-family: fontEuroSansStdRegular !important; */
@@ -162,25 +161,40 @@ table.custom tbody tr td.no-back {
 }
 
 #headerLogo {
-	margin: 0 -20px 20px;
+	/* margin: 0 -20px 20px; 	OLD */
+	margin: 0 -20px; 		/* NEW */
+    margin-bottom: 15mm; 	/* NEW */
 }
-#headerLogo .logo img {
-	width: auto;
-	height: 80px;
-    margin-top: 50px;
-    margin-left: 20px;
+/* #headerLogo .logo img { */
+	/*width: auto;			OLD */
+	/*height: 80px;			OLD */
+    /*margin-top: 50px;		OLD */
+    /*margin-left: 20px;	OLD */
+/* } */
+
+#headerLogo .logo img {	/* NEW */	
+	margin-top: 20mm;		/* NEW */
+    margin-left: 10mm;		/* NEW */
+	height: 17mm;			/* NEW */
 }
 #headerLogo .header {
     text-align: right;
 }
 #headerLogo .header > img {
-	width: 396px;
-	height: 150px;
+	/* width: 396px; OLD */
+	/* height: 150px; OLD */
+	
+	width: auto; /* NEW */
+    height: 35mm;  /* NEW */
 }
  
 .header-inizio-pagina {
 	padding-top: 20px;
 	padding-bottom: 10px;
+}
+
+.header-inizio-pagina .contenuto img { /* NEW */
+	height: 13mm;
 }
 
 .legenda-grafico-a-barre-per-fasce .voce-legenda {
@@ -246,11 +260,13 @@ table.custom tbody tr td.no-back {
 
 
 #qrCodeEIdentificativo .content {
-	margin-top: 30px;
+	/* margin-top: 30px; OLD */
+	margin-top: 13mm; /* NEW */
     margin-left: 70px;
 }
 #indirizzoSpedizione {
-	margin-top: 20px;
+	/* margin-top: 20px; OLD */
+	margin-top: 10mm; /* NEW */
 }
 #indirizzoSpedizione .content {
 	text-transform: uppercase;
@@ -260,6 +276,9 @@ table.custom tbody tr td.no-back {
 	margin-bottom: 2px;	
 }
 
+#corpoPagina1Con2Colonne { /* NEW */
+	margin-top: 15mm;
+}
 
 #corpoPagina1Con2Colonne .colonna-sinistra .colonna-sinistra-inner {
 	padding-right: 12px;
@@ -407,8 +426,10 @@ table.custom tbody tr td.no-back {
 		float: left;
 	}
 	#consulenteDedicato .box-consulente-dedicato .icona img {
-		width: 70px;
-		height: 146px;
+		/* width: 70px; OLD */
+		/* height: 146px; OLD */
+		margin-top: 4px; /* NEW */
+		height: 38mm; /* NEW */
 	}
 	#consulenteDedicato .box-consulente-dedicato .testo {
 		display: inline-block;
@@ -427,13 +448,19 @@ table.custom tbody tr td.no-back {
 	margin-top: 10px;
 }
 #boxOfferta .content {
-    overflow: hidden;
+    
+	overflow: hidden;
     width: 792px;
-    height: 320px;
+	/* height: 320px; 		OLD */
+	height: 235px;		/* NEW */
+    text-align: center; /* NEW */
 }
 #boxOfferta .content img {
-	width: 730px;
-	height: 320px;    
+	/*width: 730px;		OLD */
+	/*height: 320px; 	OLD */
+
+	width: auto;	/* NEW */
+    height: 100%;	/* NEW */
 }
 
 #lettureEConsumiPeriodoFatturazione {
@@ -528,7 +555,6 @@ table.custom tbody tr td.no-back {
 	margin-bottom: 6px;
 }
 
-
 #arera {
 	margin-top: 8px;
 }
@@ -545,6 +571,13 @@ table.custom tbody tr td.no-back {
 	padding: 1px;	
 }
 
+.footer .contenuto { /* NEW */
+    text-align: center;
+}
+
+.footer .contenuto img { /* NEW */
+    width: 176mm;
+}
 
 @media print {
 	html, body {

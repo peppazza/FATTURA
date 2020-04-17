@@ -8,6 +8,7 @@
     <link rel="stylesheet" rel="stylesheet" href="js/chartist/dist/chartist.min.css"/>
     <link rel="stylesheet" rel="stylesheet" href="css/styles.css"/>
     <link rel="stylesheet" rel="stylesheet" href="css/charts.css"/>
+
     
     <script src="js/customs.js"></script>
     <script src="js/chartist/dist/chartist.min.js"></script>
@@ -141,10 +142,16 @@
 		########################################################################################### -->
 		<div id="headerLogo" class="pure-g">
 			<div class="pure-u-12-24">
-				<div class="logo"><img src="images/logo.png" alt="logo" /></div>
+				<div class="logo">
+					<img src="svg/logo_pag1.svg" alt="Omnia Energia" alt="logo"> <!-- NEW: SOSTITUITO LOGO -->
+					<!-- <img src="images/logo_pag1.jpg" alt="logo" /> OLD -->
+				</div> 
 			</div>
 			<div class="pure-u-12-24">
-				<div class="header"><img src="images/header_ee.png" alt="header" /></div>
+				<div class="header">
+					<img src="svg/header_ee.svg" alt="Bolletta Energia Elettrica" alt="header"> <!-- NEW  -->
+				<!-- <div class="header"><img src="images/header_ee.png" alt="header" /> -->
+				</div>
 			</div>
 		</div>
 		<!-- 
@@ -380,7 +387,7 @@
 								<div class="pure-u-12-24">
 									<div class="totale-spesa">
 										<div class="header font12pt fontDinBlack color1805C">TOTALE SPESA</div>
-										<div class="cifra-da-pagare font17pt"><span class="simbolo-euro"><span class="fontEuroSansStdRegular">€</span></span><span class="fontDinBlack" data-data_type="single" data-first_node="TotaleDaPagare" data-path_type="xpath" data-path_data="">123,12</span></div>			
+										<div class="cifra-da-pagare font17pt"><span class="simbolo-euro"><span class="fontEuroSansStdRegular">€</span></span><span class="fontDinBlack" data-data_type="single" data-first_node="TotaleDaPagare" data-path_type="xpath" data-path_data="">123,12</span></div> <!-- NEW: SOSTITUITA LA CLASSE DINBLACK CON LO STYLE INLINE -->		
 									</div>
 									<div class="da-saldare-entro font9pt">
 										<span class="etichetta fontDinBlack">DA SALDARE ENTRO</span>
@@ -534,7 +541,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="separatore" style="border-top: 1px solid #aaaaaa;"></div>
+					<!-- <div class="separatore" style="border-top: 1px solid #aaaaaa;"></div> NEW(SEPARATORE NASCOSTO)-->
 					<!-- ****** js - grafico e valori calcolati ****** -->
 					<script type="text/javascript">
 					// *** GRAFICO A TORTA
@@ -742,7 +749,8 @@
 							<!-- <img src="images/consulente_con_testo.png" alt="logo" /> -->
 							<div class="box-consulente-dedicato back-color1805C">
 								<div class="icona">
-									<img src="images/icona_consulente.png">
+									<img src="svg/icona_consulente.svg" alt="Consulente"> <!-- NEW -->
+									<!-- <img src="images/icona_consulente.png"> OLD -->
 								</div>
 								<div class="testo">
 									<div class="header font14pt fontDinBlack">CONSULENTE DEDICATO</div>
@@ -764,7 +772,8 @@
 		########################################################################################### -->	
 		<div id="boxOfferta">
 			<div class="content">
-				<img src="images/offerta.png" alt="offerta" />
+				<img src="svg/offerta_gas.svg" alt="Offerta Gas"> <!-- NEW -->
+				<!-- <img src="images/offerta.jpg" alt="offerta" /> OLD -->
 			</div>
 		</div>
 	</div>	
@@ -772,7 +781,8 @@
 	<!-- @FOOTER PAGINA 1 - start ========== -->
 	<div class="footer">
 		<div class="contenuto">
-			<img src="images/piedone.png" width="760px" alt="piedone" />
+			<img src="svg/piedone.svg" alt="Piedone"> <!-- NEW -->
+			<!-- <img src="images/piedone.png" width="760px" alt="piedone" /> OLD -->
 		</div>
 	</div>
 </page>
@@ -787,7 +797,10 @@
 		########################################################################################### -->
 		<div class="header-inizio-pagina">
 			<div class="contenuto">
-				<div class="logo"><img src="images/logo_oe_per_pagina.png" height="60px" alt="logo" /></div>
+				<div class="logo">
+					<img src="svg/logo.svg" alt="logo"> <!-- NEW -->
+					<!-- <img src="images/logo_oe_per_pagina.png" height="60px" alt="logo" /> OLD -->
+				</div>
 			</div>
 		</div>
 		
@@ -1002,8 +1015,8 @@
 					            datalabels: {
 					                color: '#ffffff',
 					                font: {
-					                	size: 6,
-					                	weight: 500
+					                	size: 7
+					                	//weight: 'bold'
 					                },
 					                formatter: (value, ctx) => {
 					                    // let sum = 0;
@@ -1351,8 +1364,7 @@
 					            datalabels: {
 					                color: '#ffffff',
 					                font: {
-					                	size: 6,
-					                	weight: 500
+					                	size: 7
 					                },
 					                formatter: (value, ctx) => {
 					                    // let sum = 0;
@@ -1706,7 +1718,10 @@
 		########################################################################################### -->
 		<div class="header-inizio-pagina">
 			<div class="contenuto">
-				<div class="logo"><img src="images/logo_oe_per_pagina.png" height="60px" alt="logo" /></div>
+				<div class="logo">
+					<img src="svg/logo.svg" alt="logo"> <!-- NEW -->
+					<!-- <img src="images/logo_oe_per_pagina.png" height="60px" alt="logo" /> -->
+				</div>
 			</div>
 		</div>
 		
