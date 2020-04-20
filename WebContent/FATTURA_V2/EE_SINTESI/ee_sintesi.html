@@ -1517,6 +1517,8 @@
 					<div class="pure-u-12-24">
 						<div id="conguagliRicalcoli">
 							<div class="header font12pt color1805C fontDinBlack">CONGUAGLI E RICALCOLI</div>
+							<!-- CONGUAGLI -->
+							<!-- ============================================ -->
 							<div class="dati">
 								<!-- *** dati dei conguagli consumi stimati -->
 								<div style="display: none;" data-data_type="simple_loop" data-first_node="ConguaglioConsumiStimati" data-path_type="xpath" data-path_data="">
@@ -1553,6 +1555,55 @@
 										})();
 									} catch (err) {
 										console.log('errore init display per CONGUAGLIO CONSUMI STIMATI', err);
+									}
+								</script>
+							</div>
+							<!-- RICALCOLI -->
+							<!-- ============================================ -->
+							<div class="dati">	
+								<div style="display: none;" data-data_type="nested_loop" data-level="0" data-first_node="ElementiDettaglio" data-path_type="xpath" data-path_data="Servizi/Servizio[Descrizione = &quot;DETTAGLIO RICALCOLI&quot;]/Quote/Quota">
+									<div class="bordo-tab-sopra riga-dettaglio-ricalcoli" data-data_type="nested_loop_child" data-level="1" data-path_type="xpath" data-path_data="Dettagli/QuotaDettaglio">
+										<div class="dettaglio-descrizione"><span class="rica-dett3" data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Descrizione">test</span></div>
+										<div class="dettaglio-periodo">
+											<span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Dal">test</span> - <span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Al">test</span>
+										</div>
+										<div class="dettaglio-scaglione"><span class="allineamento-scaglione" data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Scaglione">test</span></div>
+										<div><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Quantita">test</span></div>
+										<div><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/UnitaMisura">test</span></div>
+										<div><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/ImportoUnitario">test</span></div>
+										<div><span class="yyy_ricalcoli-imponibile" data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/Imponibile"></span></div>
+										<div><span data-data_type="nested_loop_data" data-level="1" data-path_type="xpath" data-path_data="/AliquotaIva">test</span></div>
+									</div>
+								</div>
+								<div>
+									<!-- *** messaggi relativi ai ricalcoli -->
+									<div id="messaggioNessunRicalcolo" class="messaggio-esistenza-o-meno font8pt">Nessun ricalcolo</div>
+									<div id="messaggioEsistenzaRicalcoli" class="messaggio-esistenza-o-meno font8pt">Sono presenti dei ricalcoli</div>
+								</div>
+								<!-- *** mostra o nasconde il messaggio relativo alla presenza di ricalcoli -->
+								<script type="text/javascript">
+									try {
+										(function() {
+											var esistonoConguagliConsumiStimati = false;											
+											var elems = document.getElementsByClassName('yyy_ricalcoli-imponibile');
+											if (elems.length > 0) {
+												var value = elems[0].innerHTML;
+												if (value) {
+													value = value.trim();
+													if (value !== '')
+														esistonoConguagliConsumiStimati = true;
+												}
+											}											
+											if (esistonoConguagliConsumiStimati) {
+												document.getElementById('messaggioNessunRicalcolo').style.display = 'none';
+												document.getElementById('messaggioEsistenzaRicalcoli').style.display = 'block';
+											} else {
+												document.getElementById('messaggioNessunRicalcolo').style.display = 'block';
+												document.getElementById('messaggioEsistenzaRicalcoli').style.display = 'none';
+											}				
+										})();
+									} catch (err) {
+										console.log('errore init display per RICALCOLI', err);
 									}
 								</script>
 							</div>
